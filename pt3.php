@@ -606,8 +606,8 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Requisitos Documentales de la Estación de Servicio</h2>
-                                        <p><span class="bread-ntd">No. E. S.</span></p>
+                                        <h2>Requisitos Legales</h2>
+                                        <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +621,7 @@
 
                     
                     <!-- ************** DOCUMENTACION LEGAL ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos documentales de Estación de Servicio</h2>
@@ -691,7 +691,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <!--              DIVISION DE LOS ELEMENTOS                     -->
+                                
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -726,10 +726,10 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-        
-
+                    
+                    
+                            
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -764,8 +764,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -800,9 +800,9 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-
+                    
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -837,8 +837,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -873,8 +873,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -909,8 +909,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -945,8 +945,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -981,8 +981,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -1017,8 +1017,8 @@
                                     
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -1053,8 +1053,8 @@
                                     Administrativa
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -1089,8 +1089,8 @@
                                     Ambas
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -1125,8 +1125,8 @@
                                     Ambas
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -1159,6 +1159,3162 @@
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Legales de la Estación de Servicio</h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumplimiento Legal
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dato (registro, núm. de permiso, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumple
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Periodicidad de Cumplimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Documentación y/o Requisitos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Medio de Presentación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Pago Federal/ Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Naturaleza de la Responsabilidad (Ope/Admin)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley de la  Agencia Nacional de Seguridad Industrial y Protección al medio ambiente del sector hidrocarburos.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley de Hidrocarburos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley General del Equilibrio Ecológico y la Protección al Ambiente.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley Federal de Responsabilidad ambiental.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley General para la prevención y gestión integral de los residuos.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley Federal de Metrología y Normalización
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley Federal del trabajo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la ley General para la prevención y gestión integral de los residuos.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                               
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la ley Federal de metrología y normalización
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unica
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la ley de hidrocarburos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la Ley General del Equilibrio Ecológico y la Protección al Ambiente en materia de Prevención y Control de la Contaminación a la atmósfera. 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ley de aguas Nacionales
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la Ley de Aguas Nacionales
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la ley General del Equilibrio Ecológico y la protección al ambiente en materia de autorregulación y Auditorías Ambientales.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la ley General del Equilibrio Ecológico y la Protección al Ambiente en materia de Impacto Ambiental
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reglamento de la Ley General del Equilibrio Ecológico y la Protección al Ambiente en Materia de Ordenamiento Ecológico.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- ************** ASEA ************ -->
+                   <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <div class="form-element-list">
+                           <div class="basic-tb-hd">
+                               <h2>Requisitos Documentales - Agencia de Seguridad, Energía y Ambiente</h2>
+                               <p>Completa el formulario con la información que se te pide para tu control</p>
+                           </div>
+                           <div class="row">
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Cumplimiento Legal
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Dato (registro, núm. de permiso, etc.)
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Cumple
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label style="font-size: .9em;">
+                                           Periodicidad de Cumplimiento
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label style="font-size: .9em;">
+                                           Documentación y/o Requisitos
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label style="font-size: .9em;">
+                                           Medio de Presentación
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label style="font-size: .9em;">
+                                           Pago Federal/ Gestor
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label style="font-size: .9em;">
+                                           Gestor
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   <div class="fm-checkbox">
+                                       <label style="font-size: .9em;">
+                                           Naturaleza de la Responsabilidad (Ope/Admin)
+                                       </label>
+                                   </div>
+                               </div>
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                            Especificaciones y requisitos en materia de seguridad industrial, seguridad operativa y protección al medio ambiente para el diseño, construcción, pre-arranque, operación, mantenimiento, cierre y desmantelamiento de estaciones de servicio con fin específico para el expendio al público de gas licuado de petróleo, por medio del llenado parcial o total de recipientes portátiles a presión, NOM-EM-004-ASEA-2017.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diverso
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Vehículos para el transporte y distribución de Gas L.P.- Condiciones de seguridad, operación y mantenimiento,NOM-007-SESH-2010.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diverso
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Plantas de Distribución de Gas L.P. Diseño, Construcción y Condiciones Seguras en su Operación, NOM-001-SESH-2014.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diverso
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Estaciones de Gas L.P. para carburación, diseño y construcción, NOM-003-SEDG-2004
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diverso
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Diseño, construcción, operación y mantenimiento de Estaciones de Servicio para almacenamiento y expendio de diésel y gasolinas, NOM-005-ASEA-2016.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diversa
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                          Que establece los criterios para clasificar a los Residuos de Manejo Especial del Sector Hidrocarburos y determinar cuáles están sujetos a Plan de Manejo; el listado de los mismos, así como los elementos y procedimientos para la formulación de los Planes de Manejo de Residuos Peligrosos y de Manejo Especial del Sector Hidrocarburos,NOM-EM-005-ASEA-2017.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diversa
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Bodegas de distribución de Gas L.P. Diseño, construcción, operación y condiciones de seguridad, NOM-002-SESH-2009.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diversa
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                          Gas comprimido para uso automotor. Requisitos mínimos de seguridad para estaciones de servicio, NOM-010-SECRE-2002.
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diversa
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                   
+                              
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Gas Natural Comprimido (GNC). Requisitos mínimos de seguridad para Terminales de Carga y Terminales de Descarga de Módulos de almacenamiento transportables y Estaciones de Suministro de vehículos automotores,NOM-010-ASEA-2016.
+                   
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   SI
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Diversa
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Federal
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Documental
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Dictaminador
+                               </div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                   Ambas
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                           </div>
+                       </div>
+                   </div> -->
+
+                    <!-- ************** CRE ************ -->
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Documentales - Comisión Reguladora de Energía</h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumplimiento Legal
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dato (registro, núm. de permiso, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumple
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Periodicidad de Cumplimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Documentación y/o Requisitos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Medio de Presentación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Pago Federal/ Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Naturaleza de la Responsabilidad (Ope/Admin)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reporte Diario
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Volumenes">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Diario
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Electrónico/Linea
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reporte Diario
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Precio">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Diario
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Electrónico/Línea
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Trimestral (Enero - Abril - Junio - Octubre)
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Electrónico/Línea
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Obligaciones Petrolíferos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Trimestral
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Electrónico/Línea
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Obligaciones Petrolíferos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Electrónico/Línea
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Regulación Operativa (controles volumétricos de Dispensarios y Tanques) 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Controles">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Diversa
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dictamen muestro y determinación de Calidad de petrolíferos (Laboratorios).
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="NOM-016-CRE-2016">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Diversa
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Si
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Si
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Comprobante de Pago de Supervisión de Permisos (Derechos, Productos y Aprovechamientos) 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                               
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Póliza anual vigente de seguro
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Seguro">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Año pasado
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Póliza de seguro
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Seguro">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Renovación
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reporte de Quejas 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Declaración">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Procedencia del Producto
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Facturas   ">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dictamen de cumplimiento del Programa de Operación y Mantenimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Facturas   ">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual(Abril)
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Si
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Si
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reporte de incidentes o emergencias
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Facturas   ">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Verificación Petrolíferos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="UVA">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Impresa y Digital
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Si
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Anuncio independiente (número de permiso CRE PL/XX/EXP/20XX
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Facturas   ">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Unico
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Tableta
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    No
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Si
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Operativa
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- ************** PROFECO ************ -->
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Documentales - Procuraduría Federal del Consumidor</h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumplimiento PROFECO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dato (registro, núm. de permiso, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumple
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Periodicidad de Cumplimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Documentación y/o Requisitos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Medio de Presentación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Pago Federal/ Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Naturaleza de la Responsabilidad (Ope/Admin)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Verificación periódica de dispensarios 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Semestral
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    UVA
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Reporte de control a distancia 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- ************** PROTECCIÓN CIVIL ************ -->
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Documentales - Protección Civil </h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumplimiento Protección Civil
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dato (registro, núm. de permiso, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumple
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Periodicidad de Cumplimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Documentación y/o Requisitos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Medio de Presentación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Pago Federal/ Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Naturaleza de la Responsabilidad (Ope/Admin)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Visto Bueno
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Municipal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Auto declaratoria
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Municipal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Ambas
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- ************** STPS ************ -->
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Documentales - Secretaría del Trabajo y Prevensión Social </h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumplimiento STPS
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dato (registro, núm. de permiso, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumple
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Periodicidad de Cumplimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Documentación y/o Requisitos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Medio de Presentación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Pago Federal/ Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Naturaleza de la Responsabilidad (Ope/Admin)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Evaluación de sustancias químicas de acuerdo a la NOM-010-STPS-2014
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Depende de resultados
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Evaluación de ruido de acuerdo a la NOM-011-STPS-2001
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Evaluación de condiciones térmicas elevadas o abatidas de acuerdo a la NOM-015-STPS-2001
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>      
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Evaluación de electricidad estática en los centros de trabajo de acuerdo a la NOM-022-STPS-2008
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Condiciones de seguridad e higiene en los centros de trabajo de acuerdo  a la NOM-024-STPS-2015
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Evaluación de las condiciones de iluminación de acuerdo a la NOM-025-STPS-2008
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Edificios, locales, instalaciones y áreas en los centros de trabajo NOM-001-STPS-2008.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo NOM-002-STPS-2010.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                             Condiciones de seguridad para realizar trabajos en altura NOM-009-STPS-2011.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Equipo de protección personal-Selección, uso y manejo en los centros de trabajo, NOM-017-STPS-2008.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Equipo de protección personal-Selección, uso y manejo en los centros de trabajo, NOM-017-STPS-2008.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo, NOM-018-STPS-2015.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene, NOM-019-STPS-2011.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías, NOM-026-STPS-2008.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                             Actividades de soldadura y corte-Condiciones de seguridad e higiene, NOM-027-STPS-2008.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Mantenimiento de las instalaciones eléctricas en los centros de trabajo, NOM-029-STPS-2011.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Dependiendo Cambios
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Condiciones de seguridad para realizar trabajos en espacios confinados, NOM-033-STPS-2015.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- ************** SEMARNAT ************ -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Documentales - Secretaria de Medio Ambiente y Recursos Naturales </h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumplimiento SEMARNAT
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Dato (registro, núm. de permiso, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Cumple
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Periodicidad de Cumplimiento
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Documentación y/o Requisitos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Medio de Presentación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Pago Federal/ Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Gestor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label style="font-size: .9em;">
+                                            Naturaleza de la Responsabilidad (Ope/Admin)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <!-- Que establece los límites máximos permisibles de contaminantes en las descargas de aguas residuales en aguas y bienes nacionales,  -->NOM-001-SEMARNAT-1996. 
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
+                                
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           <!-- Que establece los límites máximos permisibles de contaminantes en las descargas de aguas residuales a los sistemas de alcantarillado urbano o municipal,  -->NOM-002-SEMARNAT-1996.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>      
+
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           <!-- Que establece los límites máximos permisibles de contaminantes para las aguas residuales tratadas que se reúsen en servicios al público,  -->NOM-003-SEMARNAT-1997.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           <!-- Lodos y biosólidos.-Especificaciones y límites máximos permisibles de contaminantes para su aprovechamiento y disposición final,  -->NOM-004-SEMARNAT-2002.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Anual
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           <!-- Que establece las características, el procedimiento de identificación, clasificación, y los listados de los residuos peligrosos,  -->NOM-052-SEMARNAT-2005.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!--  Que establece el procedimiento para determinar la incompatibilidad entre dos o mas residuos considerados como peligrosos por la  -->NOM-052-SEMARNAT-2005, NOM-054-SEMARNAT-1993
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!-- Que establece los criterios para clasificar a los Residuos de Manejo Especial y determinar cuáles están sujetos a Plan de Manejo; el listado de los mismos, el procedimiento para la inclusión o exclusión a dicho listado; así como los elementos y procedimientos para la formulación de los planes de manejo, --> NOM-161-SEMARNAT-2011.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!-- Que establece la lista de sustancias sujetas a reporte para el registro de emisiones y transferencia de contaminantes, --> NOM-165-SEMARNAT-2013.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!-- Especificaciones de los combustibles fósiles para la protección ambiental,  -->NOM-086-SEMARNAT-SENER-SCFI-2005.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!-- Que establece los límites máximos permisibles de emisión de ruido de las fuentes fijas y su método de medición,  -->NOM-081-SEMARNAT-1994.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Única
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!-- Protección ambiental-Especies nativas de México de flora y fauna silvestres-Categorías de riesgo y especificaciones para su inclusión, exclusión o cambio-Lista de especies en riesgo,  -->NOM-059-SEMARNAT-2010.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Actualización
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                          <!-- Límites máximos permisibles de hidrocarburos en suelos y lineamientos para el muestreo en la caracterización y especificaciones para la remediación, --> NOM-138-SEMARNAT/SSA1-2012.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Reporte">
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    SI
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Federal
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Documental
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Laboratorio Externo
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
