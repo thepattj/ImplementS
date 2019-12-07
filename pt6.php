@@ -4,58 +4,79 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Panel de Inicio | ImplementS</title>
+    <title>Form Components | Notika - Notika Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
-		============================================ -->
+        ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Google Fonts
-		============================================ -->
+        ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
+    <!-- font awesome CSS
+        ============================================ -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- owl.carousel CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/owl.transitions.css">
     <!-- meanmenu CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/meanmenu/meanmenu.min.css">
     <!-- animate CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/animate.css">
+    <!-- summernote CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/summernote/summernote.css">
+    <!-- Range Slider CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/themesaller-forms.css">
     <!-- normalize CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- mCustomScrollbar CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- jvectormap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/jvectormap/jquery-jvectormap-2.0.3.css">
-    <!-- notika icon CSS
-		============================================ -->
+    <!-- Notika icon CSS
+        ============================================ -->
     <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <!-- bootstrap select CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/color-picker/farbtastic.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/chosen/chosen.css">
+    <!-- notification CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/notification/notification.css">
+    <!-- dropzone CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/dropzone/dropzone.css">
     <!-- wave CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/wave/waves.min.css">
     <!-- main CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/main.css">
     <!-- style CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="style.css">
     <!-- responsive CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr JS
-		============================================ -->
+        ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -606,7 +627,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Funciones, responsabilidades y autoridad</h2>
+                                        <h2>Competencia, capacitación y entrenamiento</h2>
                                         <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
                                     </div>
                                 </div>
@@ -622,57 +643,113 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
-                                <h2>Capital Humano </h2>
-                                <p>Completa los datos del personal que labora en la estación de Servicio</p>
+                                <h2></h2>
+                                <p>Podras agregar cursos que han tomado los empleados para generar reportes de capacitación.</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Nombre Completo
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="Apellido Paterno Materno Nombre(s)">
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Puesto que desempeña
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            <select name="" id=""> <option value="">Selecciona....</option> </select>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            <button type="">+</button>
-                                        </label>
-                                    </div>
-                                </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label >
-                                        Agrega tu organigrama actualizado.
+                                        Cursos
                                     </label>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <input type="file" class="form-control" placeholder="col-lg-4">
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Nombre de Curso
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <button type="button" class="btn btn-primary">Guardar</button>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </label>
+                                    </div>
                                 </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Nombre de instructor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Fecha de inicio
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                <div class="input-group date nk-int-st">
+                                                    <span class="input-group-addon"></span>
+                                                    <input type="text" class="form-control" value="03/19/2018">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Certificación
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Nombre de trabajador
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <button>+</button> </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                               
+
+
+
                             </div>
                         </div>
                     </div>
@@ -1112,76 +1189,103 @@
     </div>
     <!-- End Footer area-->
     <!-- jquery
-
-		============================================ -->
-    
-
+        ============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
-		============================================ -->
+        ============================================ -->
     <script src="js/bootstrap.min.js"></script>
     <!-- wow JS
-		============================================ -->
+        ============================================ -->
     <script src="js/wow.min.js"></script>
     <!-- price-slider JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery-price-slider.js"></script>
     <!-- owl.carousel JS
-		============================================ -->
+        ============================================ -->
     <script src="js/owl.carousel.min.js"></script>
     <!-- scrollUp JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- meanmenu JS
-		============================================ -->
+        ============================================ -->
     <script src="js/meanmenu/jquery.meanmenu.js"></script>
     <!-- counterup JS
-		============================================ -->
+        ============================================ -->
     <script src="js/counterup/jquery.counterup.min.js"></script>
     <script src="js/counterup/waypoints.min.js"></script>
     <script src="js/counterup/counterup-active.js"></script>
     <!-- mCustomScrollbar JS
-		============================================ -->
+        ============================================ -->
     <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- jvectormap JS
-		============================================ -->
-    <script src="js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="js/jvectormap/jvectormap-active.js"></script>
     <!-- sparkline JS
-		============================================ -->
+        ============================================ -->
     <script src="js/sparkline/jquery.sparkline.min.js"></script>
     <script src="js/sparkline/sparkline-active.js"></script>
-    <!-- sparkline JS
-		============================================ -->
+    <!-- flot JS
+        ============================================ -->
     <script src="js/flot/jquery.flot.js"></script>
     <script src="js/flot/jquery.flot.resize.js"></script>
-    <script src="js/flot/curvedLines.js"></script>
     <script src="js/flot/flot-active.js"></script>
     <!-- knob JS
-		============================================ -->
+        ============================================ -->
     <script src="js/knob/jquery.knob.js"></script>
     <script src="js/knob/jquery.appear.js"></script>
     <script src="js/knob/knob-active.js"></script>
+    <!-- Input Mask JS
+        ============================================ -->
+    <script src="js/jasny-bootstrap.min.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="js/icheck/icheck.min.js"></script>
+    <script src="js/icheck/icheck-active.js"></script>
+    <!-- rangle-slider JS
+        ============================================ -->
+    <script src="js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="js/rangle-slider/rangle-active.js"></script>
+    <!-- datapicker JS
+        ============================================ -->
+    <script src="js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+        ============================================ -->
+    <script src="js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+        ============================================ -->
+    <script src="js/color-picker/farbtastic.min.js"></script>
+    <script src="js/color-picker/color-picker.js"></script>
+    <!--  notification JS
+        ============================================ -->
+    <script src="js/notification/bootstrap-growl.min.js"></script>
+    <script src="js/notification/notification-active.js"></script>
+    <!--  summernote JS
+        ============================================ -->
+    <script src="js/summernote/summernote-updated.min.js"></script>
+    <script src="js/summernote/summernote-active.js"></script>
+    <!-- dropzone JS
+        ============================================ -->
+    <script src="js/dropzone/dropzone.js"></script>
     <!--  wave JS
-		============================================ -->
+        ============================================ -->
     <script src="js/wave/waves.min.js"></script>
     <script src="js/wave/wave-active.js"></script>
+    <!--  chosen JS
+        ============================================ -->
+    <script src="js/chosen/chosen.jquery.js"></script>
+    <!--  Chat JS
+        ============================================ -->
+    <script src="js/chat/jquery.chat.js"></script>
     <!--  todo JS
-		============================================ -->
+        ============================================ -->
     <script src="js/todo/jquery.todo.js"></script>
     <!-- plugins JS
-		============================================ -->
+        ============================================ -->
     <script src="js/plugins.js"></script>
-	<!--  Chat JS
-		============================================ -->
-    <script src="js/chat/moment.min.js"></script>
-    <script src="js/chat/jquery.chat.js"></script>
     <!-- main JS
-		============================================ -->
+        ============================================ -->
     <script src="js/main.js"></script>
-	<!-- tawk chat JS
-		============================================ -->
+    <!-- tawk chat JS
+        ============================================ -->
     <script src="js/tawk-chat.js"></script>
 
 
