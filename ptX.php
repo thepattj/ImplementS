@@ -627,7 +627,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Comunicación,participación y consulta</h2>
+                                        <h2>Control de actividades y procesos</h2>
                                         <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
                                     </div>
                                 </div>
@@ -639,59 +639,150 @@
                             </div>
                         </div>
                     </div>
+                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
-                                <p>Podras agregar cursos que han tomado los empleados para generar reportes de capacitación.</p>
+                                <p>Actualizaras de manera detallada el cambio de personal de la Estación de Servicio</p>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label >
-                                        Cursos
-                                    </label>
-                                </div>
-
+                            <div class="row">                    
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Nombre de Curso
+                                            Área
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Nombre de instructor
+                                            Nombre del personal
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
+                                
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Fecha de inicio
+                                           Capacitación/Curso
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Se carga de BD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Autorizacion de Cambio
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Se carga de BD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Motivo de cambio
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2></h2>
+                                <p>Actualizaras de manera detallada los cambios técnologicos de la Estación de Servicio</p>
+                            </div>
+                            <div class="row">                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Equipo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Descripcion de cambio
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Fecha
                                         </label>
                                     </div>
                                 </div>
@@ -709,45 +800,186 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Certificación
+                                            Responsable de realización del mantenimiento
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            </div>
+                        </div>
+                    </div> -->
 
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2></h2>
+                                <p>Expedición de Orden de trabajo para realizar cualquier actividad dentr de la estación.</p>
+                            </div>
+                            <div class="row">                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Nombre de trabajador
+                                            Fecha
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="" disabled>
+                                    </div>
+                                </div>                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
-                                            <input type="text" class="form-control" placeholder="">
+                                            No. Permiso
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <button>+</button> </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="" disabled>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                               
 
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Ubicación del trabajo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Detalles del trabajo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        TEXTAREA
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Personal Competente
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="" >
+                                    </div>
+                                </div>                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Externo o interno
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        SELECT
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                AQUI DEBEN SER DE 6 PARTES PARA VER QUE FALTA 
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Tipo de trabajo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        SELECT
+                                    </div>
+                                </div>                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Horario
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        SELECT
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    Asegúrese de  que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.<br>PELIGROS
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    SELECT
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    Seleccionados
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    PRECAUCIONES REQUERIDAS/EQUIPOS                                                     
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    SELECT
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    Seleccionados
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    Área donde se trabajará                                                       
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    SELECT
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    Seleccionados
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
                             </div>
