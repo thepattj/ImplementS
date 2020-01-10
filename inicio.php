@@ -78,11 +78,11 @@
       </div>
       <div class="modal-body">
         <p>Agrega la política (.jpg, .png)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4">
+        <input type="file" class="form-control" placeholder="col-lg-4" id="archivoSel">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarP">Guardar</button>
       </div>
     </div>
   </div>
@@ -99,11 +99,11 @@
       </div>
       <div class="modal-body">
         <p>Agrega el Análisis de Riesgo (A.R.) que se elaboro para el cumplimento de la NOM-005-ASEA-2016 (.pdf, .docx, .doc)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4">
+        <input type="file" class="form-control" placeholder="col-lg-4" id="archivoAR">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
       </div>
     </div>
   </div>

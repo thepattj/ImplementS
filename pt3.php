@@ -30,6 +30,9 @@
     <!-- animate CSS
 		============================================ -->
     <link rel="stylesheet" href="css/animate.css">
+    <!-- summernote CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/summernote/summernote.css">
     <!-- normalize CSS
 		============================================ -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -42,6 +45,36 @@
     <!-- notika icon CSS
 		============================================ -->
     <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <!-- Range Slider CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/themesaller-forms.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- Notika icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <!-- bootstrap select CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/color-picker/farbtastic.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/chosen/chosen.css">
+    <!-- notification CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/notification/notification.css">
+    <!-- dropzone CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/dropzone/dropzone.css">
     <!-- wave CSS
 		============================================ -->
     <link rel="stylesheet" href="css/wave/waves.min.css">
@@ -618,7 +651,9 @@
                             </div>
                         </div>
                     </div>
-
+                    <div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>    
+                    </div>
                     
                     <!-- ************** DOCUMENTACION LEGAL ************ -->
                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -3825,7 +3860,7 @@
                     </div> -->
 
                     <!-- ************** SEMARNAT ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Secretaria de Medio Ambiente y Recursos Naturales </h2>
@@ -3899,7 +3934,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                            <!-- Que establece los límites máximos permisibles de contaminantes en las descargas de aguas residuales en aguas y bienes nacionales,  -->NOM-001-SEMARNAT-1996. 
+                                           NOM-001-SEMARNAT-1996. 
                                         </label>
                                     </div>
                                 </div>
@@ -3934,7 +3969,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                           <!-- Que establece los límites máximos permisibles de contaminantes en las descargas de aguas residuales a los sistemas de alcantarillado urbano o municipal,  -->NOM-002-SEMARNAT-1996.
+                                          NOM-002-SEMARNAT-1996.
                                         </label>
                                     </div>
                                 </div>
@@ -3970,7 +4005,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                           <!-- Que establece los límites máximos permisibles de contaminantes para las aguas residuales tratadas que se reúsen en servicios al público,  -->NOM-003-SEMARNAT-1997.
+                                          NOM-003-SEMARNAT-1997.
                                         </label>
                                     </div>
                                 </div>
@@ -4006,7 +4041,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                           <!-- Lodos y biosólidos.-Especificaciones y límites máximos permisibles de contaminantes para su aprovechamiento y disposición final,  -->NOM-004-SEMARNAT-2002.
+                                          NOM-004-SEMARNAT-2002.
                                         </label>
                                     </div>
                                 </div>
@@ -4041,7 +4076,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                           <!-- Que establece las características, el procedimiento de identificación, clasificación, y los listados de los residuos peligrosos,  -->NOM-052-SEMARNAT-2005.
+                                          NOM-052-SEMARNAT-2005.
                                         </label>
                                     </div>
                                 </div>
@@ -4076,7 +4111,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!--  Que establece el procedimiento para determinar la incompatibilidad entre dos o mas residuos considerados como peligrosos por la  -->NOM-052-SEMARNAT-2005, NOM-054-SEMARNAT-1993
+                                          NOM-052-SEMARNAT-2005, NOM-054-SEMARNAT-1993
                                         </label>
                                     </div>
                                 </div>
@@ -4111,7 +4146,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!-- Que establece los criterios para clasificar a los Residuos de Manejo Especial y determinar cuáles están sujetos a Plan de Manejo; el listado de los mismos, el procedimiento para la inclusión o exclusión a dicho listado; así como los elementos y procedimientos para la formulación de los planes de manejo, --> NOM-161-SEMARNAT-2011.
+                                           NOM-161-SEMARNAT-2011.
                                         </label>
                                     </div>
                                 </div>
@@ -4146,7 +4181,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!-- Que establece la lista de sustancias sujetas a reporte para el registro de emisiones y transferencia de contaminantes, --> NOM-165-SEMARNAT-2013.
+                                          NOM-165-SEMARNAT-2013.
                                         </label>
                                     </div>
                                 </div>
@@ -4181,7 +4216,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!-- Especificaciones de los combustibles fósiles para la protección ambiental,  -->NOM-086-SEMARNAT-SENER-SCFI-2005.
+                                          NOM-086-SEMARNAT-SENER-SCFI-2005.
                                         </label>
                                     </div>
                                 </div>
@@ -4216,7 +4251,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!-- Que establece los límites máximos permisibles de emisión de ruido de las fuentes fijas y su método de medición,  -->NOM-081-SEMARNAT-1994.
+                                          NOM-081-SEMARNAT-1994.
                                         </label>
                                     </div>
                                 </div>
@@ -4251,7 +4286,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!-- Protección ambiental-Especies nativas de México de flora y fauna silvestres-Categorías de riesgo y especificaciones para su inclusión, exclusión o cambio-Lista de especies en riesgo,  -->NOM-059-SEMARNAT-2010.
+                                          NOM-059-SEMARNAT-2010.
                                         </label>
                                     </div>
                                 </div>
@@ -4286,7 +4321,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          <!-- Límites máximos permisibles de hidrocarburos en suelos y lineamientos para el muestreo en la caracterización y especificaciones para la remediación, --> NOM-138-SEMARNAT/SSA1-2012.
+                                          NOM-138-SEMARNAT/SSA1-2012.
                                         </label>
                                     </div>
                                 </div>
@@ -4319,7 +4354,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
