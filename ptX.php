@@ -878,7 +878,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        TEXTAREA
+                                        <textarea class="form-control" rows="5" placeholder="Observación."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -905,8 +905,10 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        SELECT
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -920,8 +922,10 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        SELECT
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
                                     </div>
                                 </div>                    
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -932,8 +936,10 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        SELECT
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -950,7 +956,11 @@
                                     Asegúrese de  que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.<br>PELIGROS
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    SELECT
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     Seleccionados
@@ -962,7 +972,11 @@
                                     PRECAUCIONES REQUERIDAS/EQUIPOS                                                     
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    SELECT
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     Seleccionados
@@ -974,7 +988,11 @@
                                     Área donde se trabajará                                                       
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    SELECT
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     Seleccionados

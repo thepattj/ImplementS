@@ -30,9 +30,6 @@
     <!-- animate CSS
 		============================================ -->
     <link rel="stylesheet" href="css/animate.css">
-    <!-- summernote CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/summernote/summernote.css">
     <!-- normalize CSS
 		============================================ -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -45,36 +42,6 @@
     <!-- notika icon CSS
 		============================================ -->
     <link rel="stylesheet" href="css/notika-custom-icon.css">
-    <!-- Range Slider CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/themesaller-forms.css">
-    <!-- normalize CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- mCustomScrollbar CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- Notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/notika-custom-icon.css">
-    <!-- bootstrap select CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/bootstrap-select/bootstrap-select.css">
-    <!-- datapicker CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/datapicker/datepicker3.css">
-    <!-- Color Picker CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/color-picker/farbtastic.css">
-    <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/chosen/chosen.css">
-    <!-- notification CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/notification/notification.css">
-    <!-- dropzone CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/dropzone/dropzone.css">
     <!-- wave CSS
 		============================================ -->
     <link rel="stylesheet" href="css/wave/waves.min.css">
@@ -651,9 +618,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>    
-                    </div>
+
                     
                     <!-- ************** DOCUMENTACION LEGAL ************ -->
                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -3860,7 +3825,7 @@
                     </div> -->
 
                     <!-- ************** SEMARNAT ************ -->
-                   <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Secretaria de Medio Ambiente y Recursos Naturales </h2>
@@ -3934,7 +3899,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                           NOM-001-SEMARNAT-1996. 
+                                            NOM-001-SEMARNAT-1996. 
                                         </label>
                                     </div>
                                 </div>
@@ -3969,7 +3934,7 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          NOM-002-SEMARNAT-1996.
+                                           NOM-002-SEMARNAT-1996.
                                         </label>
                                     </div>
                                 </div>
@@ -4000,8 +3965,8 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>      
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -4036,12 +4001,12 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
+                    
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          NOM-004-SEMARNAT-2002.
+                                           NOM-004-SEMARNAT-2002.
                                         </label>
                                     </div>
                                 </div>
@@ -4072,11 +4037,11 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                          NOM-052-SEMARNAT-2005.
+                                           NOM-052-SEMARNAT-2005.
                                         </label>
                                     </div>
                                 </div>
@@ -4107,7 +4072,7 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -4142,11 +4107,11 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
-                                           NOM-161-SEMARNAT-2011.
+                                          NOM-161-SEMARNAT-2011.
                                         </label>
                                     </div>
                                 </div>
@@ -4177,7 +4142,7 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -4212,7 +4177,7 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -4247,7 +4212,7 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -4282,7 +4247,7 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
@@ -4317,7 +4282,7 @@
                                     Administrativo
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
+                    
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>

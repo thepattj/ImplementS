@@ -627,7 +627,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Comunicación, Participación y Consulta</h2>
+                                        <h2>Auditorias</h2>
                                         <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
                                     </div>
                                 </div>
@@ -639,112 +639,263 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Agregaras en este apartado las Sugerencias y/o Quejas que los clientes dan a la estación para dar parte de este punto.</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label >
-                                        
-                                    </label>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Fecha:
-                                        </label>
+                    <!-- SE VAN AGREGAR ESTO  ESTACION,DIRECCION, REPRESENTANTE TEC. PERIODO, CARGO-->
+                    <!-- ******************* REPORTE AUDITORIAS *********************** -->
+                   
+                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <div class="form-element-list">
+                           <div class="basic-tb-hd">
+                               <h2>Plan de Audoria:</h2>
+                           </div>
+                           <div class="row">                    
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Alcance
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Criterio de Auditoria
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Selecciona" style="display: none;" name="" id="">
+                                            <option value="">Disposiciones de ASEA (SASISOPA)</option>
+                                            <option value="">Reglas actividades</option>
+                                            <option value="">Requsitos legales</option>
+                                            <option value="">Otros</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                <div class="input-group date nk-int-st">
-                                                    <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" value="03/19/2018">
-                                                </div>
-                                            </div>
-                                        </label>
+                               </div>
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Tipo de Auditoria
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Selecciona" style="display: none;" name="" id="">
+                                            <option value="">INTERNA</option>
+                                            <option value="">EXTERNA</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Objetivos
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Selecciona" style="display: none;" name="" id="">
+                                            <option value="">Determinar la conformidad de la ASEA</option>
+                                            <option value="">Evaluar el cumplimiento de leyes y reglamentos segun la ASEA (SASISOPA)</option>
+                                            <option value="">Determinar la eficacia de implementación y mantenimiento</option>
+                                            <option value="">Oportunidades de mejoras (SASISOPA)</option>  
+                                        </select>
+                                    </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               SE VAN AGREGAR ESTO  COORDINADOR, AUDITOR 1(vocal), AUDITOR(VOCAL2), FECHA Y HORA
+                   
+                   
+                               
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           <h2>Actividades</h2>
+                                       </label>
+                                   </div>
+                               </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Nombre Completo:
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Teléfono:
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                   
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Fecha
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Hora
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Proceso y actividad
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Auditor
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                   
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>  
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               
+                               
+                                                 
+                           </div>
+                       </div>
+                   </div> -->
 
+                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <div class="form-element-list">
+                           <div class="basic-tb-hd">
+                               <h2>Reporte de Auditorias:</h2>
+                           </div>
+                           <div class="row">                    
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Auditoria
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
+                                   </div>
+                               </div>                   
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Tipo de Auditoria
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Fecha de elaboración (con hora):
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="TOMA INFO DE SISTEMA" disabled>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Reporte Elaborado por:
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" class="form-control" placeholder="" >
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Comentarios de hallazgos
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                   <div class="form-group nk-int-st">
+                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Conclusiones
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                   <div class="form-group nk-int-st">
+                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                   
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Recomendaciones:
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                   <div class="form-group nk-int-st">
+                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                           </div>
+                       </div>
+                   </div> -->
 
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Correo Electrónico
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class=" form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Sugerencia/Queja
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group">
-                                        <div class="nk-int-st">
-                                            <textarea class="form-control" rows="5" placeholder="OTRA COSA"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                            </div>
-                        </div>
-                    </div>
+                   <!-- EL MODELO DE NO CONFORMIDAD SE TENDRIA QUE HACER PERO POR OTRO MEDIO... QUE TENEDIRA QUE SER UN MODAL EXTERNO PARA QUE SE VAYAN AGREGANDO FM-01 DEL PUNTO 15-->
                     
                 </div>
             </div>

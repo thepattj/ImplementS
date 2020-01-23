@@ -661,10 +661,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -678,10 +676,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                     <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -718,10 +714,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                     <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -736,10 +730,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <input type="text" class="form-control" placeholder="">
-                                        </label>
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <button>+</button> </div>
