@@ -32,6 +32,36 @@ $(document).ready(function(){
 					
 				});
 	});
+
+	$("#btnlegal").click(function() {
+		$("#legal").show();
+		$("#legis").hide();
+		$("#asea").hide();
+		$("#cre").hide();
+	});
+	$("#btnlegis").click(function() {
+		$("#legis").show();
+		$("#legal").hide();
+		$("#asea").hide();
+	});
+	$("#btnasea").click(function() {
+		$("#asea").show();
+		$("#legal").hide();
+		$("#legis").hide();
+		$("#cre").hide();
+	});
+	$("#btncre").click(function() {
+		$("#cre").show();
+		$("#asea").hide();
+		$("#legal").hide();
+		$("#legis").hide();
+	});
+	$("#btnprofeco").click(function() {
+		$("#cre").show();
+		$("#asea").hide();
+		$("#legal").hide();
+		$("#legis").hide();
+	});
 });
 
 

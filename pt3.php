@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Panel de Inicio | ImplementS</title>
+    <title>Requisitos Legales | ImplementS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -619,9 +619,44 @@
                         </div>
                     </div>
 
-                    
-                    <!-- ************** DOCUMENTACION LEGAL ************ -->
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                       
+                    <div class="wizard-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="wizard-wrap-int">
+                        <!-- <div class="wizard-hd">
+                            <h2></h2>
+                            <p></p>
+                        </div> -->
+                        <div id="rootwizard">
+                            <div class="navbar">
+                                <div class="navbar-inner">
+                                    <div class="container-pro wizard-cts-st">
+                                        <ul>
+                                            <li id="btnlegal"><a href="#tab1" data-toggle="tab">Documentación Legal</a></li>
+                                            <li id="btnlegis"><a href="#tab2" data-toggle="tab">Legislación Aplicable</a></li>
+                                            <li id="btnasea"><a href="#tab3" data-toggle="tab">ASEA</a></li>
+                                            <li id="btncre"><a href="#tab4" data-toggle="tab">CRE</a></li>
+                                            <li id="btnprofeco"><a href="#tab5" data-toggle="tab">PROFECO</a></li>
+                                            <li><a href="#tab6" data-toggle="tab">Protección Civil</a></li>
+                                            <li><a href="#tab7" data-toggle="tab">STPS</a>
+                                            </li>
+                                            <li><a href="#tab8" data-toggle="tab">SEMARNAT</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <!-- DOCUMENTACION LEGAL -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos documentales de Estación de Servicio</h2>
@@ -1163,9 +1198,10 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- LEGISLACION -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legis" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Legales de la Estación de Servicio</h2>
@@ -1809,10 +1845,10 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- ************** ASEA ************ -->
-                   <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="asea" style="display: none;">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2>Requisitos Documentales - Agencia de Seguridad, Energía y Ambiente</h2>
@@ -2206,10 +2242,10 @@
                    
                            </div>
                        </div>
-                   </div> -->
+                   </div>
 
                     <!-- ************** CRE ************ -->
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cre" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Comisión Reguladora de Energía</h2>
@@ -2856,9 +2892,9 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- ************** PROFECO ************ -->
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="profeco" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Procuraduría Federal del Consumidor</h2>
@@ -3000,7 +3036,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- ************** PROTECCIÓN CIVIL ************ -->
                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -4757,7 +4793,6 @@
     <!-- jquery
 
 		============================================ -->
-    
 
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
@@ -4820,6 +4855,10 @@
 		============================================ -->
     <script src="js/chat/moment.min.js"></script>
     <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+        ============================================ -->
+    <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/wizard/wizard-active.js"></script>
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
