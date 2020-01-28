@@ -621,40 +621,40 @@
 
                                        
                     <div class="wizard-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="wizard-wrap-int">
-                        <!-- <div class="wizard-hd">
-                            <h2></h2>
-                            <p></p>
-                        </div> -->
-                        <div id="rootwizard">
-                            <div class="navbar">
-                                <div class="navbar-inner">
-                                    <div class="container-pro wizard-cts-st">
-                                        <ul>
-                                            <li id="btnlegal"><a href="#tab1" data-toggle="tab">Documentación Legal</a></li>
-                                            <li id="btnlegis"><a href="#tab2" data-toggle="tab">Legislación Aplicable</a></li>
-                                            <li id="btnasea"><a href="#tab3" data-toggle="tab">ASEA</a></li>
-                                            <li id="btncre"><a href="#tab4" data-toggle="tab">CRE</a></li>
-                                            <li id="btnprofeco"><a href="#tab5" data-toggle="tab">PROFECO</a></li>
-                                            <li><a href="#tab6" data-toggle="tab">Protección Civil</a></li>
-                                            <li><a href="#tab7" data-toggle="tab">STPS</a>
-                                            </li>
-                                            <li><a href="#tab8" data-toggle="tab">SEMARNAT</a>
-                                            </li>
-                                        </ul>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="wizard-wrap-int">
+                                        <!-- <div class="wizard-hd">
+                                            <h2></h2>
+                                            <p></p>
+                                        </div> -->
+                                        <div id="rootwizard">
+                                            <div class="navbar">
+                                                <div class="navbar-inner">
+                                                    <div class="container-pro wizard-cts-st">
+                                                        <ul>
+                                                            <li id="btnlegal"><a href="#tab1" data-toggle="tab">Documentación Legal</a></li>
+                                                            <li id="btnlegis"><a href="#tab2" data-toggle="tab">Legislación Aplicable</a></li>
+                                                            <li id="btnasea"><a href="#tab3" data-toggle="tab">ASEA</a></li>
+                                                            <li id="btncre"><a href="#tab4" data-toggle="tab">CRE</a></li>
+                                                            <li id="btnprofeco"><a href="#tab5" data-toggle="tab">PROFECO</a></li>
+                                                            <li id="btnpc"><a href="#tab6" data-toggle="tab">Protección Civil</a></li>
+                                                            <li id="btnstps"><a href="#tab7" data-toggle="tab">STPS</a>
+                                                            </li>
+                                                            <li id="btnsemt"><a href="#tab8" data-toggle="tab">SEMARNAT</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-content"> </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-content"> </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
                     <!-- DOCUMENTACION LEGAL -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:none;">
                         <div class="form-element-list">
@@ -3039,7 +3039,7 @@
                     </div>
 
                     <!-- ************** PROTECCIÓN CIVIL ************ -->
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pc" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Protección Civil </h2>
@@ -3181,10 +3181,10 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- ************** STPS ************ -->
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="stps" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Secretaría del Trabajo y Prevensión Social </h2>
@@ -3858,10 +3858,10 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- ************** SEMARNAT ************ -->
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="semt" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Secretaria de Medio Ambiente y Recursos Naturales </h2>
@@ -4355,7 +4355,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -4791,9 +4791,7 @@
     </div>
     <!-- End Footer area-->
     <!-- jquery
-
 		============================================ -->
-
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
 		============================================ -->
@@ -4830,7 +4828,7 @@
 		============================================ -->
     <script src="js/sparkline/jquery.sparkline.min.js"></script>
     <script src="js/sparkline/sparkline-active.js"></script>
-    <!-- sparkline JS
+    <!-- flot JS
 		============================================ -->
     <script src="js/flot/jquery.flot.js"></script>
     <script src="js/flot/jquery.flot.resize.js"></script>
@@ -4841,10 +4839,46 @@
     <script src="js/knob/jquery.knob.js"></script>
     <script src="js/knob/jquery.appear.js"></script>
     <script src="js/knob/knob-active.js"></script>
+    !-- Input Mask JS
+        ============================================ -->
+    <script src="js/jasny-bootstrap.min.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="js/icheck/icheck.min.js"></script>
+    <script src="js/icheck/icheck-active.js"></script>
+    <!-- rangle-slider JS
+        ============================================ -->
+    <script src="js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="js/rangle-slider/rangle-active.js"></script>
+    <!-- datapicker JS
+        ============================================ -->
+    <script src="js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+        ============================================ -->
+    <script src="js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+        ============================================ -->
+    <script src="js/color-picker/farbtastic.min.js"></script>
+    <script src="js/color-picker/color-picker.js"></script>
+    <!--  notification JS
+        ============================================ -->
+    <script src="js/notification/bootstrap-growl.min.js"></script>
+    <script src="js/notification/notification-active.js"></script>
+    <!--  summernote JS
+        ============================================ -->
+    <script src="js/summernote/summernote-updated.min.js"></script>
+    <script src="js/summernote/summernote-active.js"></script>
+    <!-- dropzone JS
+        ============================================ -->
+    <script src="js/dropzone/dropzone.js"></script>
     <!--  wave JS
 		============================================ -->
     <script src="js/wave/waves.min.js"></script>
     <script src="js/wave/wave-active.js"></script>
+    <!--  chosen JS    ============================================ -->
+    <script src="js/chosen/chosen.jquery.js"></script>
     <!--  todo JS
 		============================================ -->
     <script src="js/todo/jquery.todo.js"></script>

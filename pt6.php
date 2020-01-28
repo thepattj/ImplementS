@@ -627,7 +627,7 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Comunicación,participación y consulta</h2>
+                                        <h2>Competencia, capacitación y entrenamiento</h2>
                                         <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
                                     </div>
                                 </div>
@@ -730,18 +730,17 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                            <option value="">Nombre 2</option>
+                                            <option value="">Nombre 3</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <button>+</button> </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                               
-
-
-
                             </div>
                         </div>
                     </div>

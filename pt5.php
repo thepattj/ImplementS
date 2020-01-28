@@ -650,7 +650,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Nombre Completo
+                                            Nombre:
                                         </label>
                                     </div>
                                 </div>
@@ -659,6 +659,37 @@
                                         <input type="text" class="form-control" placeholder="">
                                     </div>
                                 </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Apellido Paterno:
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Apellido Materno:
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
@@ -673,15 +704,49 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label >
-                                            <button type="">+</button>
+                                            <button type="">Guardar + Agregar</button>
                                         </label>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label> Aqui debe ir la lista de los trabajadores</label>
+                                </div>  
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label >
+                                            Nombre
+                                        </label>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label >
+                                            Puesto
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label >
+                                            <button type="">Actualizar</button>
+                                        </label>
+                                    </div>
+                                </div>    
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label >
+                                            <button type="">Guardar</button>
+                                        </label>
+                                    </div>
+                                </div>                         
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label >
                                         Agrega tu organigrama actualizado.
                                     </label>
@@ -691,7 +756,7 @@
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-primary">Guardar</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
