@@ -65,24 +65,26 @@
                 <div class="input-group">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                     <div class="nk-int-st">
-                        <input type="text" class="form-control" placeholder="Usuario">
+                        <input type="text" class="form-control" id="user" placeholder="Usuario">
                     </div>
                 </div>
                 <div class="input-group mg-t-15">
                     <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
                     <div class="nk-int-st">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" class="form-control" id="pass" placeholder="Contraseña">
                     </div>
                 </div>
-                <div class="fm-checkbox">
+                <!-- <div class="fm-checkbox">
                     <label><input type="checkbox" class="i-checks"> <i></i> Recordarme</label>
-                </div>
-                <a href="inicio.php" data-ma-action="" data-ma-block="inicio.php" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></a>
+                </div> -->
+                <a href="" data-ma-action="" data-ma-block="" class="btn btn-login btn-success btn-float" id="btnInicio">
+                    <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
+                </a>
             </div>
 
-            <div class="nk-navigation nk-lg-ic">
+            <!-- <div class="nk-navigation nk-lg-ic">
                 <a href="#" data-ma-action="nk-login-switch" data-ma-block="#l-forget-password"><i>?</i> <span>Recupera contraseña</span></a>
-            </div>
+            </div> -->
         </div>
 
         <!-- Register -->
@@ -206,6 +208,8 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
+    
+    <script type="text/javascript" src="js/funciones.js"></script>
 </body>
 
 </html>

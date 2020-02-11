@@ -655,6 +655,8 @@
                             </div>
                         </div>
                     </div>
+
+
                     <!-- DOCUMENTACION LEGAL -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:none;">
                         <div class="form-element-list">
@@ -663,20 +665,20 @@
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Documentos
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label>
                                             Dato (registro, núm. de permiso, etc.)
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <div class="fm-checkbox">
                                         <label>
@@ -684,14 +686,14 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label style="font-size: .9em;">
                                             Periodicidad de Cumplimiento
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="fm-checkbox">
                                         <label style="font-size: .9em;">
                                             Documentación y/o Requisitos
@@ -727,25 +729,20 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Acta Constitutiva
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     No Especificado
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -765,25 +762,21 @@
                     
                             
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Poder Notarial 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     No Especificado
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -801,25 +794,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Comprobante Original de alta ante hacienda 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                               
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     No Especificado
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -838,25 +827,21 @@
                     
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             R.F.C. Original 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                 
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -874,25 +859,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Permiso de la comisión reguladora de Energía (CRE) 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Federal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -910,25 +891,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Licencia de Funcionamiento 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Pago anual
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Municipal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -946,25 +923,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Dictamenten de uso de suelo / Factibilidad de uso de suelo 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Municipal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -982,25 +955,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Tarjeta oficial de IMSS 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Federal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -1018,25 +987,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Planos Arquitectonicos
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Unica/Actualizada
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -1054,25 +1019,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             SIEM(Sistema de Información Empresarial Mexicano) 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Anual
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Federal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -1090,25 +1051,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Ficha Técnica y manual <br> de tanque de almacenamiento
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Diverso
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Federal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -1126,25 +1083,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Ficha técnica y manual <br> de dispensarios 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Diverso
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Federal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -1162,25 +1115,21 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Ficha técnica y manual <br> de Veeder Root2 
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     SI
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Diverso
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     Federal
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
@@ -4839,7 +4788,7 @@
     <script src="js/knob/jquery.knob.js"></script>
     <script src="js/knob/jquery.appear.js"></script>
     <script src="js/knob/knob-active.js"></script>
-    !-- Input Mask JS
+    <!-- Input Mask JS
         ============================================ -->
     <script src="js/jasny-bootstrap.min.js"></script>
     <!-- icheck JS

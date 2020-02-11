@@ -639,10 +639,43 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="wizard-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="wizard-wrap-int">
+                                        <!-- <div class="wizard-hd">
+                                            <h2></h2>
+                                            <p></p>
+                                        </div> -->
+                                        <div id="rootwizard">
+                                            <div class="navbar">
+                                                <div class="navbar-inner">
+                                                    <div class="container-pro wizard-cts-st">
+                                                        <ul>
+                                                            <li id="btnaudi"><a href="#tab1" data-toggle="tab">Auditoria</a></li>
+                                                            <li id="btnrepa"><a href="#tab2" data-toggle="tab">Reporte de Auditoria</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-content"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                     <!-- SE VAN AGREGAR ESTO  ESTACION,DIRECCION, REPRESENTANTE TEC. PERIODO, CARGO-->
                     <!-- ******************* REPORTE AUDITORIAS *********************** -->
                    
-                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="audi" style="display: none;">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2>Plan de Audoria:</h2>
@@ -789,9 +822,9 @@
                                                  
                            </div>
                        </div>
-                   </div> -->
+                   </div>
 
-                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="repaudi" style="display: none;">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2>Reporte de Auditorias:</h2>
@@ -893,7 +926,7 @@
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                            </div>
                        </div>
-                   </div> -->
+                   </div>
 
                    <!-- EL MODELO DE NO CONFORMIDAD SE TENDRIA QUE HACER PERO POR OTRO MEDIO... QUE TENEDIRA QUE SER UN MODAL EXTERNO PARA QUE SE VAYAN AGREGANDO FM-01 DEL PUNTO 15-->
                     
@@ -1418,6 +1451,10 @@
     <!--  Chat JS
         ============================================ -->
     <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+        ============================================ -->
+    <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/wizard/wizard-active.js"></script>
     <!--  todo JS
         ============================================ -->
     <script src="js/todo/jquery.todo.js"></script>

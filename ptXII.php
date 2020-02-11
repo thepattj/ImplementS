@@ -639,21 +639,53 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="wizard-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="wizard-wrap-int">
+                                        <!-- <div class="wizard-hd">
+                                            <h2></h2>
+                                            <p></p>
+                                        </div> -->
+                                        <div id="rootwizard">
+                                            <div class="navbar">
+                                                <div class="navbar-inner">
+                                                    <div class="container-pro wizard-cts-st">
+                                                        <ul>
+                                                            <li id="btnaddp"><a href="#tab1" data-toggle="tab">Agregar Proveedor</a></li>
+                                                            <li id="btnhepp"><a href="#tab2" data-toggle="tab">Lista de Herramientas EPP</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-content"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
                      <!-- ******************* ADD PROVEEDOR *********************** -->
                     
-                   <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
                                 <p>Listado de proveedores</p>
                             </div>
                         </div>
-                    </div>
-
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    </div> -->
+                   
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="agregarP" style="display: none;">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2></h2>
@@ -725,11 +757,11 @@
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                            </div>
                        </div>
-                   </div> -->
+                   </div>
 
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
                    
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="herramientE" style="display: none;">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2></h2>
@@ -1367,6 +1399,10 @@
     <!--  Chat JS
         ============================================ -->
     <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+        ============================================ -->
+    <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/wizard/wizard-active.js"></script>
     <!--  todo JS
         ============================================ -->
     <script src="js/todo/jquery.todo.js"></script>

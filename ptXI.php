@@ -705,7 +705,7 @@
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
@@ -784,11 +784,11 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
-                   <!--  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2></h2>
@@ -949,7 +949,7 @@
                    
                            </div>
                        </div>
-                   </div> -->
+                   </div>
                     
                 </div>
             </div>
