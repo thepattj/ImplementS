@@ -1,3 +1,6 @@
+<?php
+    $U = $_GET["ty"];
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -100,6 +103,155 @@
       <div class="modal-body">
         <p>Agrega el Análisis de Riesgo (A.R.) que se elaboro para el cumplimento de la NOM-005-ASEA-2016 (.pdf, .docx, .doc)</p>
         <input type="file" class="form-control" placeholder="col-lg-4" id="archivoAR">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modaladdsta"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Estación</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Permiso de la CRE</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Razon Social</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Franquicia</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Dirección Fiscal</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>RFC de estación</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Ubicación de Proyecto</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Telefono</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Correo</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Representante Legal</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>RFC Representante Legal</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>CURP Representante Legal</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Estado</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
+            <p>Municipio</p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -266,124 +418,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
-                                <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Tasks</h2>
-                                    </div>
-                                    <div class="hd-message-info hd-task-info">
-                                        <div class="skill">
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>HTML5 Validation Report</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
-                                                </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>Google Chrome Extension</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>Social Internet Projects</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>75%</span> </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="lead-content">
-                                                    <p>Bootstrap Admin</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 65%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>65%</span> </div>
-                                            </div>
-                                            <div class="progress progress-bt">
-                                                <div class="lead-content">
-                                                    <p>Youtube App</p>
-                                                </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="55%" style="width: 55%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>55%</span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="hd-mg-va">
-                                        <a href="#">View All</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
-                                <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
-                                    <div class="hd-mg-tt">
-                                        <h2>Chat</h2>
-                                    </div>
-                                    <div class="search-people">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" placeholder="Search People" />
-                                    </div>
-                                    <div class="hd-message-info">
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img chat-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Available</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img chat-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Jonathan Morris</h3>
-                                                    <p>Last seen 3 hours ago</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img chat-img">
-                                                    <img src="img/post/4.jpg" alt="" />
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Fredric Mitchell</h3>
-                                                    <p>Last seen 2 minutes ago</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img chat-img">
-                                                    <img src="img/post/1.jpg" alt="" />
-                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>David Belle</h3>
-                                                    <p>Available</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#">
-                                            <div class="hd-message-sn">
-                                                <div class="hd-message-img chat-img">
-                                                    <img src="img/post/2.jpg" alt="" />
-                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
-                                                </div>
-                                                <div class="hd-mg-ctn">
-                                                    <h3>Glenn Jecobs</h3>
-                                                    <p>Available</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="hd-mg-va">
-                                        <a href="#">View All</a>
-                                    </div>
-                                </div>
+                            
+                            <li class="nav-item" id="btnclosei"><a href="" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-close"></i></span></a>
                             </li>
                         </ul>
                     </div>
@@ -638,7 +674,7 @@
         </div>
     </div>
 <?php
-    $U = "clientes";
+    /*$U = "clientes";*/
 
     if( $U == "clientes"){ /*VISTA PARA CLIENTES QUE AGREGARAN CONTENIDO*/  
         echo '<div class="notika-status-area">
@@ -737,7 +773,7 @@
             </div>
         </div>
         </div>';
-    }if( $U == "energas"){/*VISTA PARA SISTEMAS Y ENERGAS*/
+    }if( $U == "Admin"){/*VISTA PARA SISTEMAS Y ENERGAS*/
         /*AREA DE PUNTOS*/
         echo '<div class="notika-status-area">
         <div class="container">
@@ -836,7 +872,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "> <h1> Bienvenido </h1></div>
             <div class="row">                
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div id="btnstasasi" data-toggle="" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div id="btnstasasi" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="">Estaciones</span></h2>
                             <p></p>
@@ -872,7 +908,7 @@
                                 <div class="navbar-inner">
                                     <div class="container-pro wizard-cts-st">
                                         <ul>
-                                            <li style="display: none;" id="btnaddst"><a href="#tab1" data-toggle="tab">Agregar</a></li>
+                                            <li style="display: none;" id="btnaddst" data-toggle="modal" data-target="#modaladdsta"><a href="#tab1" data-toggle="tab">Agregar</a></li>
                                             <li style="display: none;" id="btnupdst"><a href="#tab2" data-toggle="tab">Actualizar</a></li>
                                             <li style="display: none;" id="btnblqst"><a href="#tab3" data-toggle="tab">Bloquear</a></li>
 
@@ -1037,7 +1073,7 @@
     <script src="js/main.js"></script>
 	<!-- tawk chat JS
 		============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>

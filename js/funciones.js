@@ -1,6 +1,10 @@
 
 $(document).ready(function(){
 
+	$("#btnclosei").click(function() {
+		window.location.href = "index.php"
+	});
+
 	//INICIO DE SESION POR TIPO DE USUARIO
 	$("#btnInicio").click(function() {
 		//alert("Va a ingresar a pagina inicio");
@@ -15,18 +19,21 @@ $(document).ready(function(){
 				data:{opc:"user", user:u, pass:c},
 			})
 			.done(function(msg){
-				alert(msg);
+				//alert(msg);
 				if(msg == ""){
 					alert("Error en datos favor de validar");
 				}if(msg == "Admin"){
-					alert("Entra a Admin");
-					$("#btnInicio").attr("href", inicio.php);
+					//alert("Entra a Admin");
+					window.location.href = "inicio.php?ty="+msg;
+				}if(msg == "sasisopa"){
+					//alert("Entra a Admin");
+					window.location.href = "inicio.php?ty="+msg;
 				}if (msg == "RL") {
 					alert("RL");
 				}if(msg == "estacion"){
 					alert("Encargado");
 				}
-				
+
 				//window.open('inicio.php');
 			});
 		} else { alert("no trae nada.")}
