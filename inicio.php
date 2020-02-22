@@ -116,36 +116,27 @@
 <div class="modal fade" id="modaladdsta"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Estación</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Permiso de la CRE</p>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"> Agregar Estación </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+        <div class="modal-body">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Permiso de la Cre </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="form-group nk-int-st">
+                    <input type="text" class="form-control" placeholder="">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Razon Social</p>
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Razon Social</p> </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="form-group nk-int-st">
+                    <input type="text" class="form-control" placeholder="">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Franquicia</p>
-        </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Franquicia</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -154,9 +145,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Dirección Fiscal</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Dirección Fiscal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -164,9 +153,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>RFC de estación</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>RFC de estación</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -174,9 +161,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Ubicación de Proyecto</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Ubicación de Proyecto</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -184,9 +169,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Telefono</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Telefono</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -194,9 +177,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Correo</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Correo</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -204,9 +185,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Representante Legal</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -214,9 +193,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>RFC Representante Legal</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>RFC Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -224,9 +201,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>CURP Representante Legal</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>CURP Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -234,29 +209,25 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Estado</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Estado</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> 
-            <p>Municipio</p>
-        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Municipio</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-      </div>
-      <div class="modal-footer">
+        </div>
+        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
-      </div>
+        <button type="button" class="btn btn-primary" id="btnGuardarEstacion">Guardar</button>
+        </div>
     </div>
   </div>
 </div>

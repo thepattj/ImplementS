@@ -57,12 +57,14 @@ $(document).ready(function(){
 		$("#btnupdst").hide('slow/400/fast');
 		$("#btnblqst").hide('slow/400/fast');		
 	});
+	$("#btnGuardarEstacion").click(function() {
+		/* Act on the event */
+	});
 
 
 
 
-
-
+	//USARIO ESTACION
 	$("#pt3").click(function() {
 		//alert("HOLI");
 		window.open('pt3.php', '_blank');
