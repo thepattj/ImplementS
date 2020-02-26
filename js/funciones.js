@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-	$("#btnclosei").click(function() {
+	$("#btnclosei").click(function() { //BOTON DE CERRAR EN INICIO
 		window.location.href = "index.php"
 	});
 
@@ -59,6 +59,9 @@ $(document).ready(function(){
 	});
 	$("#btnGuardarEstacion").click(function() {
 		/* Act on the event */
+	});
+	$("#btnCerrarModals").click(function() {
+		window.location.href = "inicio.php";
 	});
 
 

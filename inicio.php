@@ -1,5 +1,9 @@
 <?php
     $U = $_GET["ty"];
+
+    include 'php/conex.php';
+    $con = Conectarse();
+
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -11,54 +15,75 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
-		============================================ -->
+        ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Google Fonts
-		============================================ -->
+        ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
+    <!-- font awesome CSS
+        ============================================ -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- owl.carousel CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/owl.transitions.css">
     <!-- meanmenu CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/meanmenu/meanmenu.min.css">
     <!-- animate CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/animate.css">
+    <!-- summernote CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/summernote/summernote.css">
+    <!-- Range Slider CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/themesaller-forms.css">
     <!-- normalize CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- mCustomScrollbar CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- jvectormap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/jvectormap/jquery-jvectormap-2.0.3.css">
-    <!-- notika icon CSS
-		============================================ -->
+    <!-- Notika icon CSS
+        ============================================ -->
     <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <!-- bootstrap select CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/bootstrap-select/bootstrap-select.css">
+    <!-- datapicker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/datapicker/datepicker3.css">
+    <!-- Color Picker CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/color-picker/farbtastic.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/chosen/chosen.css">
+    <!-- notification CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/notification/notification.css">
+    <!-- dropzone CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/dropzone/dropzone.css">
     <!-- wave CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/wave/waves.min.css">
     <!-- main CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/main.css">
     <!-- style CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="style.css">
     <!-- responsive CSS
-		============================================ -->
+        ============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- modernizr JS
-		============================================ -->
+        ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
@@ -121,6 +146,14 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
         </div>
         <div class="modal-body">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Razon Social</p> </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="form-group nk-int-st">
+                    <input type="text" class="form-control" placeholder="">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Permiso de la Cre </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
@@ -129,13 +162,15 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Razon Social</p> </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Num. de Estación</div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
                     <input type="text" class="form-control" placeholder="">
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Franquicia</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
@@ -169,7 +204,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Telefono</p> </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Telefono de estación</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -177,7 +212,7 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Correo</p> </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Correo para ASEA</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
                 <input type="text" class="form-control" placeholder="">
@@ -211,26 +246,63 @@
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Estado</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+            <div class="chosen-select-act fm-cmp-mg">
+                <select class="chosen" data-placeholder="Selecciona Estado"  name="" id="">
+                    <option id="" value="0" style="display: none;">Selecciona el estado</option>
+                    <?php $qri = "SELECT idEstado as id, nombre as estado FROM estado";
+                          $resul = mysqli_query($con,$qri);
+                          while($row = $resul->fetch_object()){ ?>
+                    <option value="<?php echo $row->id ?>"><?php echo ($row->estado);?> </option>}
+                    option
+                    <?php } ?>
+                </select>
             </div>
+            
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Municipio</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
-            </div>
+            <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" data-placeholder="Elige un Mes" name="" id="">
+                                            <option value="">Nombre 1</option>
+                                            <option value="">Nombre 2</option>
+                                            <option value="">Nombre 3</option>
+                                        </select>
+                                    </div>   
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarEstacion">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarEstacion" data-toggle="modal" data-target="#modalsucc">Guardar</button>
         </div>
     </div>
   </div>
 </div>
+
+
+
+<div class="modal fade" id="modalsucc" role="dialog">
+    <div class="modal-dialog modals-default nk-gv">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h2>Carga Satisfactoria.</h2>
+                <p>Usuario: </p> <b></b>
+                <p>Contraseña: </p> <b></b>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="btnCerrarModals" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>   
+
+
+
+
 
 
     <!-- Start Header Top Area -->
@@ -881,10 +953,10 @@
                                         <ul>
                                             <li style="display: none;" id="btnaddst" data-toggle="modal" data-target="#modaladdsta"><a href="#tab1" data-toggle="tab">Agregar</a></li>
                                             <li style="display: none;" id="btnupdst"><a href="#tab2" data-toggle="tab">Actualizar</a></li>
-                                            <li style="display: none;" id="btnblqst"><a href="#tab3" data-toggle="tab">Bloquear</a></li>
+                                            <li style="display: none;" id="btnblqst"><a href="#tab3" data-toggle="tab">Usuarios</a></li>
 
-                                            <li style="display: none;" id="btnsas"><a href="#tab1" data-toggle="tab">Opción</a></li>
-                                            <li style="display: none;" id="btnbl"><a href="#tab2" data-toggle="tab">Bloquear / Desbloquar</a></li>
+                                            <li style="display: none;" id="btnsas"><a href="#tab1" data-toggle="tab">Bloquear Puntos</a></li>
+                                            <li style="display: none;" id="btnbl"><a href="#tab2" data-toggle="tab">Estadísticas</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -970,81 +1042,115 @@
     </div>
     <!-- End Footer area-->
     <!-- jquery
-
-		============================================ -->
-    
-
+        ============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
-		============================================ -->
+        ============================================ -->
     <script src="js/bootstrap.min.js"></script>
     <!-- wow JS
-		============================================ -->
+        ============================================ -->
     <script src="js/wow.min.js"></script>
     <!-- price-slider JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery-price-slider.js"></script>
     <!-- owl.carousel JS
-		============================================ -->
+        ============================================ -->
     <script src="js/owl.carousel.min.js"></script>
     <!-- scrollUp JS
-		============================================ -->
+        ============================================ -->
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- meanmenu JS
-		============================================ -->
+        ============================================ -->
     <script src="js/meanmenu/jquery.meanmenu.js"></script>
     <!-- counterup JS
-		============================================ -->
+        ============================================ -->
     <script src="js/counterup/jquery.counterup.min.js"></script>
     <script src="js/counterup/waypoints.min.js"></script>
     <script src="js/counterup/counterup-active.js"></script>
     <!-- mCustomScrollbar JS
-		============================================ -->
+        ============================================ -->
     <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- jvectormap JS
-		============================================ -->
-    <script src="js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="js/jvectormap/jvectormap-active.js"></script>
     <!-- sparkline JS
-		============================================ -->
+        ============================================ -->
     <script src="js/sparkline/jquery.sparkline.min.js"></script>
     <script src="js/sparkline/sparkline-active.js"></script>
-    <!-- sparkline JS
-		============================================ -->
+    <!-- flot JS
+        ============================================ -->
     <script src="js/flot/jquery.flot.js"></script>
     <script src="js/flot/jquery.flot.resize.js"></script>
-    <script src="js/flot/curvedLines.js"></script>
     <script src="js/flot/flot-active.js"></script>
     <!-- knob JS
-		============================================ -->
+        ============================================ -->
     <script src="js/knob/jquery.knob.js"></script>
     <script src="js/knob/jquery.appear.js"></script>
     <script src="js/knob/knob-active.js"></script>
+    <!-- Input Mask JS
+        ============================================ -->
+    <script src="js/jasny-bootstrap.min.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="js/icheck/icheck.min.js"></script>
+    <script src="js/icheck/icheck-active.js"></script>
+    <!-- rangle-slider JS
+        ============================================ -->
+    <script src="js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="js/rangle-slider/rangle-active.js"></script>
+    <!-- datapicker JS
+        ============================================ -->
+    <script src="js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/datapicker/datepicker-active.js"></script>
+    <!-- bootstrap select JS
+        ============================================ -->
+    <script src="js/bootstrap-select/bootstrap-select.js"></script>
+    <!--  color-picker JS
+        ============================================ -->
+    <script src="js/color-picker/farbtastic.min.js"></script>
+    <script src="js/color-picker/color-picker.js"></script>
+    <!--  notification JS
+        ============================================ -->
+    <script src="js/notification/bootstrap-growl.min.js"></script>
+    <script src="js/notification/notification-active.js"></script>
+    <!--  summernote JS
+        ============================================ -->
+    <script src="js/summernote/summernote-updated.min.js"></script>
+    <script src="js/summernote/summernote-active.js"></script>
+    <!-- dropzone JS
+        ============================================ -->
+    <script src="js/dropzone/dropzone.js"></script>
     <!--  wave JS
-		============================================ -->
+        ============================================ -->
     <script src="js/wave/waves.min.js"></script>
     <script src="js/wave/wave-active.js"></script>
+    <!--  chosen JS
+        ============================================ -->
+    <script src="js/chosen/chosen.jquery.js"></script>
+    <!--  Chat JS
+        ============================================ -->
+    <script src="js/chat/jquery.chat.js"></script>
     <!--  todo JS
-		============================================ -->
+        ============================================ -->
     <script src="js/todo/jquery.todo.js"></script>
     <!-- plugins JS
-		============================================ -->
+        ============================================ -->
     <script src="js/plugins.js"></script>
-	<!--  Chat JS
-		============================================ -->
-    <script src="js/chat/moment.min.js"></script>
-    <script src="js/chat/jquery.chat.js"></script>
-     <!--  wizard JS
+    <!-- main JS
+        ============================================ -->
+    <script src="js/main.js"></script>
+    <!-- tawk chat JS
+        ============================================ -->
+    <script src="js/tawk-chat.js"></script>
+
+    <!--  wizard JS
         ============================================ -->
     <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
     <script src="js/wizard/wizard-active.js"></script>
-    <!-- main JS
-		============================================ -->
-    <script src="js/main.js"></script>
-	<!-- tawk chat JS
-		============================================ -->
-    <!-- <script src="js/tawk-chat.js"></script> -->
+
+    <!-- jvectormap JS
+        ============================================ -->
+    <script src="js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="js/jvectormap/jvectormap-active.js"></script>
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
