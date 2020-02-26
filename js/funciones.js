@@ -58,7 +58,50 @@ $(document).ready(function(){
 		$("#btnblqst").hide('slow/400/fast');		
 	});
 	$("#btnGuardarEstacion").click(function() {
-		/* Act on the event */
+		razonSocial = $('#RS').val();
+		cre = $('#PL').val();
+		noEst = $('#idStation').val();
+		fran = $('#franq').val();
+		dFiscal = $('#dirFis').val();
+		rfcEst = $('#rfcStation').val();
+		uEst = $('#ubiStation').val();
+		tEst = $('#telStation').val();
+		cEst = $('#correoASEA').val();
+		rL = $('#nameRL').val();
+		rfcR = $('#rfcRL').val();
+		curpR = $('#curpRL').val();
+		estadoS = $('#estadoStation').val();
+
+		if((razonSocial != "") && (cre !="") && (noEst !="") && (fran !="") && (dFiscal !="") && (rfcEst !="") && (uEst !="") && (tEst !="") && (cEst !="") && (rL !="") && (rfcR !="") && (curpR !="") && (estadoS !="")){
+			//alert("traen valores");
+			//alert(razonSocial+cre+noEst+fran+dFiscal+rfcEst+uEst+tEst+cEst+rL+rfcR+curpR+estadoS);
+			/*$.ajax({
+				url:'php/insert.php',
+				method:'POST',
+				dataType:'html',
+				data:{opc:"alta", user:u, pass:c},
+			})
+			.done(function(msg){
+				//alert(msg);
+				if(msg == ""){
+					alert("Error en datos favor de validar");
+				}if(msg == "Admin"){
+					//alert("Entra a Admin");
+					window.location.href = "inicio.php?ty="+msg;
+				}if(msg == "sasisopa"){
+					//alert("Entra a Admin");
+					window.location.href = "inicio.php?ty="+msg;
+				}if (msg == "RL") {
+					alert("RL");
+				}if(msg == "estacion"){
+					alert("Encargado");
+				}
+
+				//window.open('inicio.php');
+			});	*/		
+
+		} else { alert("no trae nada.")}
+
 	});
 	$("#btnCerrarModals").click(function() {
 		window.location.href = "inicio.php";

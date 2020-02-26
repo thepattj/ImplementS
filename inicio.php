@@ -3,6 +3,7 @@
 
     include 'php/conex.php';
     $con = Conectarse();
+    $value = "";
 
 ?>
 <!doctype html>
@@ -252,8 +253,8 @@
                     <?php $qri = "SELECT idEstado as id, nombre as estado FROM estado";
                           $resul = mysqli_query($con,$qri);
                           while($row = $resul->fetch_object()){ ?>
-                    <option value="<?php echo $row->id ?>"><?php echo ($row->estado);?> </option>}
-                    option
+                    <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->estado);?> </option>
+                    
                     <?php } ?>
                 </select>
             </div>
@@ -262,15 +263,20 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Municipio</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div class="chosen-select-act fm-cmp-mg">
-                <select class="chosen" data-placeholder="Selecciona Municipio" name="" id="municipioStation">
-                    <option value="0" style="display: none;">Selecciona el Municipio</option>
-                    <?php $qro = "SELECT idMunicipio as id, nombre as municipio FROM municipio WHERE idEStado = ":
-                          $res = mysqli_query($con, $qro);
-                          while ($row = $res->fetch_object()){?>
-                    <option value="<?php echo $row->id ?>"><?php echo ($row->municipio);?> </option>
-                </select>
-            </div>   
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" id="municipioStation" placeholder="">
+            </div>
+            <!-- <div class="chosen-select-act fm-cmp-mg">
+                 <select class="chosen" data-placeholder="Selecciona Municipio" name="" id="municipioStation">
+                     <option id="" value="0" style="display: none;">Selecciona el estado</option>
+                     <?php /*$qro = "SELECT idMunicipio as id, nombre as municipio FROM municipio WHERE idEstado =".$value;
+                           $res = mysqli_query($con,$qro);
+                           while($row1 = $res->fetch_object()){ */?>
+                     <option value="<?php/* echo $row1->id; */?>"><?php/* echo ($row1->municipio);*/?> </option>
+                     
+                     <?php /*}*/ ?>
+                 </select>
+             </div>   --> 
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
         </div>
