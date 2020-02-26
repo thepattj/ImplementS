@@ -149,7 +149,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Razon Social</p> </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" id="RS" placeholder="">
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -157,7 +157,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Permiso de la Cre </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" id="PL" placeholder="">
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -165,7 +165,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Num. de Estación</div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" id="idStation" placeholder="">
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -174,7 +174,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Franquicia</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="franq" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -183,7 +183,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Dirección Fiscal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="dirFis" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -191,7 +191,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>RFC de estación</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="rfcStation" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -199,7 +199,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Ubicación de Proyecto</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="ubiStation" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -207,7 +207,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Telefono de estación</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="telStation" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -215,15 +215,15 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Correo para ASEA</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="correoASEA" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Representante Legal</p> </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Nombre de Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="nameRL" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -231,7 +231,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>RFC Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="rfcRL" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -239,7 +239,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>CURP Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" id="curpRL" placeholder="">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -247,7 +247,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Estado</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="chosen-select-act fm-cmp-mg">
-                <select class="chosen" data-placeholder="Selecciona Estado"  name="" id="">
+                <select class="chosen" data-placeholder="Selecciona Estado"  name="" id="estadoStation">
                     <option id="" value="0" style="display: none;">Selecciona el estado</option>
                     <?php $qri = "SELECT idEstado as id, nombre as estado FROM estado";
                           $resul = mysqli_query($con,$qri);
@@ -263,12 +263,14 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Municipio</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" name="" id="">
-                                            <option value="">Nombre 1</option>
-                                            <option value="">Nombre 2</option>
-                                            <option value="">Nombre 3</option>
-                                        </select>
-                                    </div>   
+                <select class="chosen" data-placeholder="Selecciona Municipio" name="" id="municipioStation">
+                    <option value="0" style="display: none;">Selecciona el Municipio</option>
+                    <?php $qro = "SELECT idMunicipio as id, nombre as municipio FROM municipio WHERE idEStado = ":
+                          $res = mysqli_query($con, $qro);
+                          while ($row = $res->fetch_object()){?>
+                    <option value="<?php echo $row->id ?>"><?php echo ($row->municipio);?> </option>
+                </select>
+            </div>   
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
         </div>
