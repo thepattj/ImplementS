@@ -75,30 +75,15 @@ $(document).ready(function(){
 		if((razonSocial != "") && (cre !="") && (noEst !="") && (fran !="") && (dFiscal !="") && (rfcEst !="") && (uEst !="") && (tEst !="") && (cEst !="") && (rL !="") && (rfcR !="") && (curpR !="") && (estadoS !="")){
 			//alert("traen valores");
 			//alert(razonSocial+cre+noEst+fran+dFiscal+rfcEst+uEst+tEst+cEst+rL+rfcR+curpR+estadoS);
-			/*$.ajax({
+			$.ajax({
 				url:'php/insert.php',
 				method:'POST',
 				dataType:'html',
-				data:{opc:"alta", user:u, pass:c},
+				data:{opc:"alta", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS},
 			})
 			.done(function(msg){
-				//alert(msg);
-				if(msg == ""){
-					alert("Error en datos favor de validar");
-				}if(msg == "Admin"){
-					//alert("Entra a Admin");
-					window.location.href = "inicio.php?ty="+msg;
-				}if(msg == "sasisopa"){
-					//alert("Entra a Admin");
-					window.location.href = "inicio.php?ty="+msg;
-				}if (msg == "RL") {
-					alert("RL");
-				}if(msg == "estacion"){
-					alert("Encargado");
-				}
-
-				//window.open('inicio.php');
-			});	*/		
+				
+			});	
 
 		} else { alert("no trae nada.")}
 

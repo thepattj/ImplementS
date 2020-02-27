@@ -9,17 +9,7 @@ if($opcion=="addStation"){
 	$user = $_POST["user"];
 	$contra = $_POST["pass"];
 
-	$sql = "INSERT  FROM usuario WHERE nUsuario = '".$user."' AND contrasena = '".$contra."'";
-
-			//echo $sql;
-			$resultado =mysqli_query($con, $sql);
-			if($resultado->num_rows > 0){
-				//echo "entro a IF de resultado";
-				while($fila=$resultado->fetch_assoc()){
-					//$salida = $fila['PrecioIgu'];
-					echo $fila['tipo'];
-				}
-			}
+	$sql = "INSERT INTO cesh (idCESH,franquicia,direccionFiscal,rfc,ubicacion,telefono,correo,rl,rfcRl,curpRl,idEstado) VALUES ();"
 }
 
 ?>
