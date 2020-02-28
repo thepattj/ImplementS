@@ -4,12 +4,27 @@ $con = Conectarse();
 
 $opcion=$_POST['opc'];
 
-if($opcion=="addStation"){
-	//echo "esta dentro de user";
-	$user = $_POST["user"];
-	$contra = $_POST["pass"];
+if($opcion=="addSt"){
+	$nost = $_POST['idCESH'];
+	$cre = $_POST['PL'];
+	$RS = $_POST['razonSocial'];
+	$fra = $_POST['franquicia'];
 
-	$sql = "INSERT INTO cesh (idCESH,franquicia,direccionFiscal,rfc,ubicacion,telefono,correo,rl,rfcRl,curpRl,idEstado) VALUES ();"
+	/*
+	$dfis = $_POST['direccionFiscal'];
+	$rfcst = $_POST['rfc'];
+	$ust = $_POST['ubicacion'];
+	$tst = $_POST['telefono'];
+	$cst = $_POST['correo'];
+	$rl = $_POST['rl'];
+	$rfcrl = $_POST['rfcRl'];
+	$curprl = $_POST['curpRl'];
+	$estst = $_POST['idEstado'];*/
+
+
+	$sql = "INSERT INTO cesh (idCESH,PL,razonSocial,franquicia,direccionFiscal,rfc,ubicacion,telefono,correo,rl,rfcRl,curpRl,idEstado) VALUES (".$nost.",'".$cre."','".$RS."','".$fra.");";
+
+	echo $sql;
 }
 
 ?>
@@ -27,3 +42,5 @@ if($opcion=="addStation"){
 	 rfcRL = rfcRl
 	 curpRL = curpRl
 	 estadoStation = idEstado -->
+
+	 <!-- "','".$dfis."','".$rfcst."','".$ust."','".$tst."','".$cst."','".$rl."','".$rfcrl."','".$curprl."',".$estst -->

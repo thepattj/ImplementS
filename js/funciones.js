@@ -79,10 +79,10 @@ $(document).ready(function(){
 				url:'php/insert.php',
 				method:'POST',
 				dataType:'html',
-				data:{opc:"alta", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS},
+				data:{opc:"addSt", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS},
 			})
 			.done(function(msg){
-				
+				alert(msg);
 			});	
 
 		} else { alert("no trae nada.")}
