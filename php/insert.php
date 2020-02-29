@@ -9,10 +9,11 @@ if($opcion=="addSt"){
 	$cre = $_POST['PL'];
 	$RS = $_POST['razonSocial'];
 	$fra = $_POST['franquicia'];
-
-	/*
 	$dfis = $_POST['direccionFiscal'];
 	$rfcst = $_POST['rfc'];
+
+	/*
+	
 	$ust = $_POST['ubicacion'];
 	$tst = $_POST['telefono'];
 	$cst = $_POST['correo'];
@@ -22,7 +23,7 @@ if($opcion=="addSt"){
 	$estst = $_POST['idEstado'];*/
 
 
-	$sql = "INSERT INTO cesh (idCESH,PL,razonSocial,franquicia,direccionFiscal,rfc,ubicacion,telefono,correo,rl,rfcRl,curpRl,idEstado) VALUES (".$nost.",'".$cre."','".$RS."','".$fra.");";
+	$sql = "INSERT INTO cesh (idCESH,PL,razonSocial,franquicia,direccionFiscal,rfc,ubicacion,telefono,correo,rl,rfcRl,curpRl,idEstado) VALUES (".$nost.",'".$cre."','".$RS."','".$fra."','".$dfis."','".$rfcst.");";
 
 	echo $sql;
 }
@@ -43,4 +44,4 @@ if($opcion=="addSt"){
 	 curpRL = curpRl
 	 estadoStation = idEstado -->
 
-	 <!-- "','".$dfis."','".$rfcst."','".$ust."','".$tst."','".$cst."','".$rl."','".$rfcrl."','".$curprl."',".$estst -->
+	 <!-- ."','".$ust."','".$tst."','".$cst."','".$rl."','".$rfcrl."','".$curprl."',".$estst -->
