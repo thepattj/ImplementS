@@ -82,16 +82,40 @@ $(document).ready(function(){
 				data:{opc:"addSt", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS},
 			})
 			.done(function(msg){
-				alert(msg);
-			});	
+				if(msg == 1){
+					//alert("YA QUEDO! ENTONCES HAY QUE DARLE LA CONTRASEÑA AQUI!");
+					sepador = "/";
+					a = cre.split(sepador,2);
+					console.log(a);
+					pw = a[0]+a[1];
+					//console.log("esta es la contraseña"+pw);
+					localStorage.setItem("U",rfcEst);
+					localStorage.setItem("W",pw);
+					$('#userentry').text(rfcEst);
+					$('#pssentry').text(pw);
 
+
+				}else{
+					alert(msg);
+				}
+			});	
 		} else { alert("no trae nada.")}
+
 
 	});
 	$("#btnCerrarModals").click(function() {
-		window.location.href = "inicio.php";
+		ajax donde envie el 
+		U
+		W
+		va insertarlo en usuario
+		E INSERTARLO EN completocesh CON idCESH = noEst y idUsuario *ESTE DEBE JALARSE DESDE EL SELECT QUE SE TIENE*
+		//window.location.href = "inicio.php";
 	});
 
+	$("#btnprueba").click(function() {
+		cre2 = "PL/22402/EXP/ES/2019";
+
+	});
 
 
 

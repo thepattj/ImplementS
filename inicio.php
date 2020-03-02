@@ -298,8 +298,8 @@
             </div>
             <div class="modal-body">
                 <h2>Carga Satisfactoria.</h2>
-                <p>Usuario: </p> <b></b>
-                <p>Contraseña: </p> <b></b>
+                <p>Usuario: </p> <p id="userentry"> </p> <b></b>
+                <p>Contraseña: </p> <p id="pssentry"> </p> <b></b>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" id="btnCerrarModals" data-dismiss="modal">Aceptar</button>
@@ -960,7 +960,7 @@
                                     <div class="container-pro wizard-cts-st">
                                         <ul>
                                             <li style="display: none;" id="btnaddst" data-toggle="modal" data-target="#modaladdsta"><a href="#tab1" data-toggle="tab">Agregar</a></li>
-                                            <li style="display: none;" id="btnupdst"><a href="#tab2" data-toggle="tab">Actualizar</a></li>
+                                            <li style="display: none;" id="btnupdst"><a href="#tab2" data-toggle="tab" id="btnprueba">Actualizar</a></li>
                                             <li style="display: none;" id="btnblqst"><a href="#tab3" data-toggle="tab">Usuarios</a></li>
 
                                             <li style="display: none;" id="btnsas"><a href="#tab1" data-toggle="tab">Bloquear Puntos</a></li>
