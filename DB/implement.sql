@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2020 a las 19:15:01
+-- Tiempo de generación: 03-03-2020 a las 00:25:24
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 5.6.38
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `ar` (
   `idAR` int(11) NOT NULL,
   `direccion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -59,20 +59,28 @@ CREATE TABLE `auditoria` (
 --
 
 CREATE TABLE `cesh` (
-  `idCESH` int(11) NOT NULL,
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `PL` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `razonSocial` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `franquicia` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `franquicia` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `direccionFiscal` varchar(355) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `rfc` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  `ubicacion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `telefono` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  `correo` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
-  `rl` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `rfcRl` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
-  `curpRl` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `rfc` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `ubicacion` varchar(355) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `telefono` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `correo` varchar(35) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `rl` varchar(250) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `rfcRl` varchar(35) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `curpRl` varchar(35) COLLATE utf8_spanish_ci DEFAULT NULL,
   `idEstado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `cesh`
+--
+
+INSERT INTO `cesh` (`idCESH`, `PL`, `razonSocial`, `franquicia`, `direccionFiscal`, `rfc`, `ubicacion`, `telefono`, `correo`, `rl`, `rfcRl`, `curpRl`, `idEstado`) VALUES
+('E0000', 'PL/0000/EXP/ES/2020', 'ESTACION S.A. DE C.V.', 'GULF', 'CALLE NO. COLONIA MUNICIPIO ESTADO', 'RFCSTA0522', 'CALLE NO. COLONIA MUNICIPIO ESTADO', '000 000 0000 ', 'ASEAESTACION@PRUEBA.COM', 'NOMBRE APATERNO AMATERNO', 'RFCRLST023', 'CURPRLST023', 1),
+('E13811', 'PL/22402/EXP/ES/2019', 'Kaizen Hidrocarburos Company, S.A. de C.V.', 'Pemex', 'Carretera Estatal Cuautitlán - Zumpango 870, San Pedro De La Laguna, C. P. 55609. Zumpango, Estado de México.', 'KHI150611K36', 'Carretera Estatal Cuautitlán - Zumpango 870, San Pedro De La Laguna, C. P. 55609. Zumpango, Estado de México.', '55 7621 4866', 'kaizenhidrocarburos@gmail.com', 'José Claudio Morlán Olguín', 'MOOC771229567', 'MOOC771229HMCRLL06', 15);
 
 -- --------------------------------------------------------
 
@@ -81,9 +89,17 @@ CREATE TABLE `cesh` (
 --
 
 CREATE TABLE `completocesh` (
-  `idCESH` int(11) NOT NULL,
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `completocesh`
+--
+
+INSERT INTO `completocesh` (`idCESH`, `idUsuario`) VALUES
+('E0000', 4),
+('E13811', 3);
 
 -- --------------------------------------------------------
 
@@ -97,7 +113,7 @@ CREATE TABLE `controlrbpo` (
   `estado` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `responsable` int(11) NOT NULL,
   `idRbpo` int(11) NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -111,7 +127,7 @@ CREATE TABLE `curso` (
   `nombreIns` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` datetime NOT NULL,
   `certificado` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -138,7 +154,7 @@ CREATE TABLE `dcproveedor` (
   `idProvedor` int(11) NOT NULL,
   `deServicio` varchar(155) COLLATE utf8_spanish_ci NOT NULL,
   `evaluacion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -151,7 +167,7 @@ CREATE TABLE `dctraex` (
   `idTra` int(11) NOT NULL,
   `nombre` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `idProvedor` int(11) DEFAULT NULL,
-  `idCESH` int(11) DEFAULT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -164,7 +180,7 @@ CREATE TABLE `documento` (
   `idDocumento` int(11) NOT NULL,
   `tipo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(125) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL,
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -179,7 +195,7 @@ CREATE TABLE `dzcambiop` (
   `area` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `motivo` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `idTrab` int(11) DEFAULT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -193,7 +209,7 @@ CREATE TABLE `dzcambiot` (
   `equipo` varchar(155) COLLATE utf8_spanish_ci NOT NULL,
   `descripcionC` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `fechaC` datetime NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -215,7 +231,7 @@ CREATE TABLE `dzordentr` (
   `precaucion` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `areaT` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `idTrab` int(11) DEFAULT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -227,7 +243,7 @@ CREATE TABLE `dzordentr` (
 CREATE TABLE `estado` (
   `idEstado` int(11) NOT NULL,
   `nombre` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
-  `abreviatura` char(5) COLLATE utf8_spanish_ci DEFAULT NULL
+  `abreviatura` char(5) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -284,7 +300,7 @@ CREATE TABLE `monverif` (
   `accion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `responsableA` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `fechaA` datetime NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -2775,7 +2791,7 @@ CREATE TABLE `organigrama` (
   `apellidoP` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `apellidoM` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `edad` int(11) NOT NULL,
-  `idCESH` int(11) NOT NULL,
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `idPuesto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -2788,7 +2804,7 @@ CREATE TABLE `organigrama` (
 CREATE TABLE `politica` (
   `idPolitica` int(11) NOT NULL,
   `direccion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -2818,7 +2834,7 @@ CREATE TABLE `rbpo` (
   `incAcc` varchar(155) COLLATE utf8_spanish_ci NOT NULL,
   `causa` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `obser` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -2835,7 +2851,7 @@ CREATE TABLE `reportea` (
   `conclusion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `recomendacion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `idAuditoria` int(11) DEFAULT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -2851,7 +2867,7 @@ CREATE TABLE `sugque` (
   `telefono` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `correo` varchar(55) COLLATE utf8_spanish_ci NOT NULL,
   `sQ` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `idCESH` int(11) NOT NULL
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -2862,8 +2878,8 @@ CREATE TABLE `sugque` (
 
 CREATE TABLE `trabcurso` (
   `idTrab` int(11) NOT NULL,
-  `idCESH` int(11) NOT NULL,
-  `idCurso` int(11) NOT NULL
+  `idCurso` int(11) NOT NULL,
+  `idCESH` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -2896,7 +2912,9 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUsuario`, `nUsuario`, `contrasena`, `tipo`) VALUES
 (1, 'sistemas', 'E281530', 'Admin'),
-(2, 'sasisopa', 'ener.gas05', 'sasisopa');
+(2, 'sasisopa', 'ener.gas05', 'sasisopa'),
+(3, 'KHI150611K36', 'PL22402', 'estacion'),
+(4, 'RFCSTA0522', 'PL0000', 'estacion');
 
 --
 -- Índices para tablas volcadas
@@ -3054,7 +3072,8 @@ ALTER TABLE `sugque`
 -- Indices de la tabla `trabcurso`
 --
 ALTER TABLE `trabcurso`
-  ADD PRIMARY KEY (`idTrab`,`idCESH`,`idCurso`);
+  ADD KEY `Relationship13` (`idTrab`,`idCESH`),
+  ADD KEY `Relationship14` (`idCurso`,`idCESH`);
 
 --
 -- Indices de la tabla `ubicacion`
@@ -3196,7 +3215,7 @@ ALTER TABLE `ubicacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
@@ -3262,6 +3281,13 @@ ALTER TABLE `rbpo`
 --
 ALTER TABLE `sugque`
   ADD CONSTRAINT `Relationship15` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Filtros para la tabla `trabcurso`
+--
+ALTER TABLE `trabcurso`
+  ADD CONSTRAINT `Relationship13` FOREIGN KEY (`idTrab`,`idCESH`) REFERENCES `organigrama` (`idTrab`, `idCESH`),
+  ADD CONSTRAINT `Relationship14` FOREIGN KEY (`idCurso`,`idCESH`) REFERENCES `curso` (`idCurso`, `idCESH`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
