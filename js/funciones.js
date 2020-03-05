@@ -20,18 +20,22 @@ $(document).ready(function(){
 			})
 			.done(function(msg){
 				//alert(msg);
-				if(msg == ""){
+				sepador = ",";
+				a = msg.split(sepador);
+				if(a[0] == ""){
 					alert("Error en datos favor de validar");
-				}if(msg == "Admin"){
+				}if(a[0] == "Admin"){
 					//alert("Entra a Admin");
-					window.location.href = "inicio.php?ty="+msg;
-				}if(msg == "sasisopa"){
+					window.location.href = "inicio.php?ty="+a[0];
+				}if(a[0] == "sasisopa"){
 					//alert("Entra a Admin");
-					window.location.href = "inicio.php?ty="+msg;
-				}if (msg == "RL") {
-					alert("RL");
-				}if(msg == "estacion"){
-					alert("Encargado");
+					window.location.href = "inicio.php?ty="+a[0];
+				}if (a[0] == "RL") {
+					//alert("RL");
+				}if(a[0] == "estacion"){
+					window.location.href = "inicio.php?ty="+a[0];
+					localStorage.setItem("PL",a[3]);
+					localStorage.setItem("RS",a[4]);
 				}
 
 				//window.open('inicio.php');
@@ -91,6 +95,7 @@ $(document).ready(function(){
 					//console.log("esta es la contraseña"+pw);
 					localStorage.setItem("U",rfcEst);
 					localStorage.setItem("W",pw);
+					localStorage.setItem("S",noEst);
 					$('#userentry').text(rfcEst);
 					$('#pssentry').text(pw);
 
@@ -104,16 +109,25 @@ $(document).ready(function(){
 
 	});
 	$("#btnCerrarModals").click(function() {
-		ajax donde envie el 
-		U
-		W
-		va insertarlo en usuario
-		E INSERTARLO EN completocesh CON idCESH = noEst y idUsuario *ESTE DEBE JALARSE DESDE EL SELECT QUE SE TIENE*
-		//window.location.href = "inicio.php";
+		//alert("SI DA EL CLIC");
+		user = localStorage.getItem("U");
+		pss = localStorage.getItem("W");
+		noS = localStorage.getItem("S");
+		//alert("estos son los datos"+user+" "+pss);
+		$.ajax({
+			url: 'php/insert.php',
+			type: 'POST',
+			dataType: 'html',
+			data: {opc: 'usuario', u:user, pw:pss, idC:noS},
+		})
+		.done(function(msg) {
+			console.log(msg);
+		});
+		window.location.href = "inicio.php?ty=sasisopa";
 	});
 
 	$("#btnprueba").click(function() {
-		cre2 = "PL/22402/EXP/ES/2019";
+		//cre2 = "PL/22402/EXP/ES/2019";
 
 	});
 

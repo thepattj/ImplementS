@@ -727,45 +727,193 @@
 <?php
     /*$U = "clientes";*/
 
-    if( $U == "clientes"){ /*VISTA PARA CLIENTES QUE AGREGARAN CONTENIDO*/  
+    if( $U == "estacion"){ /*VISTA PARA CLIENTES QUE AGREGARAN CONTENIDO*/  
         echo '<div class="notika-status-area">
         <div class="container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "> <h1> Bienvenido </h1> <p id="nestacion">  </p></div>
             <div class="row">
-    
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="">Punto 1</span></h2>
-                            <p>Política</p>
+                <div id="1pt" style="display:;">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 1</span></h2>
+                                <p>Política</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 2</span></h2>
+                                <p>Análisis de Riesgo ... </p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div id="pt3" class="website-traffic-ctn">
+                                <h2><span class="">Punto 3</span></h2>
+                                <p>Requisitos Legales</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 4</span></h2>
+                                <p>Objetivos, metas e indicadores</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
                     </div>
                 </div>
-    
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="">Punto 2</span></h2>
-                            <p>Análisis de Riesgo y evaluación de impactos ambientales</p>
+
+                <div id="2pt" style="display:none;">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 5</span></h2>
+                                <p>Funciones y responsabilidades</p>
+                            </div>
                         </div>
-                        <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 6</span></h2>
+                                <p>Competencia y capacitación</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div id="pt3" class="website-traffic-ctn">
+                                <h2><span class="">Punto 7</span></h2>
+                                <p>Comunicación, participación ...</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 8</span></h2>
+                                <p></p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div id="pt3" class="website-traffic-ctn">
-                            <h2><span class="">Punto 3</span></h2>
-                            <p>Requisitos Legales</p>
+
+                <div id="3pt" style="display:none;">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 9</span></h2>
+                                <p>Mejores practicas y estándares</p>
+                            </div>
                         </div>
-                        <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 10</span></h2>
+                                <p>Control de actividades y procesos</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div id="pt3" class="website-traffic-ctn">
+                                <h2><span class="">Punto 11</span></h2>
+                                <p>Integridad mécanica y aseguramiento ...</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 12</span></h2>
+                                <p>Seguridad de Contratista</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="">Punto 4</span></h2>
-                            <p>Objetivos, metas e indicadores</p>
+
+                <div id="3pt" style="display:none;">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 13</span></h2>
+                                <p>Protocolos de respuesta a Emergencias</p>
+                            </div>
                         </div>
-                        <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 14</span></h2>
+                                <p>Monitoreo, verificación ...</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div id="pt3" class="website-traffic-ctn">
+                                <h2><span class="">Punto 15</span></h2>
+                                <p>Auditorias</p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 16</span></h2>
+                                <p></p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="4pt" style="display:none;">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 17</span></h2>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="">Punto 18</span></h2>
+                                <p> </p>
+                            </div>
+                            <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -791,34 +939,7 @@
                             <h2>Punto a Evaluar: Punto 5</h2>
                             <p>Hemos habilitado este punto para que inicies su implementación.</p>
                         </div>
-                            <div class="dash-widget-visits"></div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">3,20,000</span></h3>
-                                <p>Page Views</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar"></div>
-                            </div>
-                        </div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">1,03,000</span></h3>
-                                <p>Total Clicks</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-line"></div>
-                            </div>
-                        </div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">24,00,000</span></h3>
-                                <p>Site Visitors</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar-2"></div>
-                            </div>
-                        </div>
+                        CALENDARIO                         
                     </div>
                 </div>
             </div>
