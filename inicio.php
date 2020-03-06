@@ -730,9 +730,9 @@
     if( $U == "estacion"){ /*VISTA PARA CLIENTES QUE AGREGARAN CONTENIDO*/  
         echo '<div class="notika-status-area">
         <div class="container">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "> <h1> Bienvenido </h1> <p id="nestacion">  </p></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <h1> Bienvenido </h1> <p id="nestacion">  </p></div>
             <div class="row">
-                <div id="1pt" style="display:;">
+                <div class="tab-pane wizard-ctn" id="1pt" style="display:block;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
@@ -773,9 +773,9 @@
                     </div>
                 </div>
 
-                <div id="2pt" style="display:none;">
+                <div class="tab-pane wizard-ctn" id="2pt" style="display:none;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt5" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 5</span></h2>
                                 <p>Funciones y responsabilidades</p>
@@ -784,7 +784,7 @@
                     </div>
         
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt6" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 6</span></h2>
                                 <p>Competencia y capacitación</p>
@@ -795,7 +795,7 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt3" class="website-traffic-ctn">
+                            <div id="pt7" class="website-traffic-ctn">
                                 <h2><span class="">Punto 7</span></h2>
                                 <p>Comunicación, participación ...</p>
                             </div>
@@ -805,9 +805,9 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div class="website-traffic-ctn">
+                            <div id="pt8" class="website-traffic-ctn">
                                 <h2><span class="">Punto 8</span></h2>
-                                <p></p>
+                                <p>Control de documentos</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
@@ -816,7 +816,7 @@
 
                 <div id="3pt" style="display:none;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt9" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 9</span></h2>
                                 <p>Mejores practicas y estándares</p>
@@ -825,7 +825,7 @@
                     </div>
         
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt10" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 10</span></h2>
                                 <p>Control de actividades y procesos</p>
@@ -836,9 +836,9 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt3" class="website-traffic-ctn">
+                            <div id="pt11" class="website-traffic-ctn">
                                 <h2><span class="">Punto 11</span></h2>
-                                <p>Integridad mécanica y aseguramiento ...</p>
+                                <p>Integridad mécanica y ...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
                         </div>
@@ -846,7 +846,7 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div class="website-traffic-ctn">
+                            <div id="pt12" class="website-traffic-ctn">
                                 <h2><span class="">Punto 12</span></h2>
                                 <p>Seguridad de Contratista</p>
                             </div>
@@ -855,18 +855,19 @@
                     </div>
                 </div>
 
-                <div id="3pt" style="display:none;">
+                <div id="4pt" style="display:none;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt13" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 13</span></h2>
-                                <p>Protocolos de respuesta a Emergencias</p>
+                                <p style="display:none;">Protocolos de respuesta ...</p>
+                                <p>PRE</p>
                             </div>
                         </div>
                     </div>
         
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt14" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 14</span></h2>
                                 <p>Monitoreo, verificación ...</p>
@@ -877,7 +878,7 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt3" class="website-traffic-ctn">
+                            <div id="pt15" class="website-traffic-ctn">
                                 <h2><span class="">Punto 15</span></h2>
                                 <p>Auditorias</p>
                             </div>
@@ -887,35 +888,44 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div class="website-traffic-ctn">
+                            <div id="pt16" class="website-traffic-ctn">
                                 <h2><span class="">Punto 16</span></h2>
-                                <p></p>
+                                <p>Investigación de incidentes y ...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
                     </div>
                 </div>
 
-                <div id="4pt" style="display:none;">
+                <div id="5pt" style="display:none;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt17" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 17</span></h2>
-                                <p> </p>
+                                <p>Revisión por la Dirección</p>
                             </div>
                         </div>
                     </div>
         
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt18" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 18</span></h2>
-                                <p> </p>
+                                <p>Informe de desempeño</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="wizard-action-pro">
+                <ul class="wizard-nav-ac">
+                    <li id="btninicio"><a class="button-first a-prevent"><i class="notika-icon notika-more-button"></i></a></li>
+                    <li id="btnatras"><a class="button-previous a-prevent"><i class="notika-icon notika-back"></i></a></li>
+                    <li id="btnadelante"><a class="button-next a-prevent"><i class="notika-icon notika-next-pro"></i></a></li>
+                    <li id="btnfinal"> <a class="button-last a-prevent"><i class="notika-icon notika-more-button"></i></a></li>
+                </ul>
             </div>
         </div>
         </div>';

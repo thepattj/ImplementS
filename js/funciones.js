@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+paginacion = 1;
 
 	$("#btnclosei").click(function() { //BOTON DE CERRAR EN INICIO
 		window.location.href = "index.php"
@@ -105,8 +106,6 @@ $(document).ready(function(){
 				}
 			});	
 		} else { alert("no trae nada.")}
-
-
 	});
 	$("#btnCerrarModals").click(function() {
 		//alert("SI DA EL CLIC");
@@ -134,9 +133,155 @@ $(document).ready(function(){
 
 
 	//USARIO ESTACION
+	 //Boton de inicio
+	 $("#btninicio").click(function(){
+	 	$("#1pt").show();
+	 	$("#2pt").hide();
+	 	$("#3pt").hide();
+	 	$("#4pt").hide();
+	 	$("#5pt").hide();
+	 	paginacion = 1;
+	});
+
+	//Boton atras
+	$("#btnatras").click(function() {
+		if((paginacion <= 2)&&(paginacion > 1)){
+			//alert("enable");
+			paginacion = 1;
+			$("#1pt").show();
+			$("#2pt").hide();
+			$("#3pt").hide();
+			$("#4pt").hide();
+			$("#5pt").hide();
+		}else{
+			paginacion = paginacion -1
+			if(paginacion == 5){
+				$("#1pt").hide();
+			 	$("#2pt").hide();
+			 	$("#3pt").hide();
+			 	$("#4pt").hide();
+			 	$("#5pt").show();
+			}
+			if (paginacion == 4) {
+				$("#1pt").hide();
+			 	$("#2pt").hide();
+			 	$("#3pt").hide();
+			 	$("#4pt").show();
+			 	$("#5pt").hide();
+			}
+			if (paginacion == 3) {
+				$("#1pt").hide();
+			 	$("#2pt").hide();
+			 	$("#3pt").show();
+			 	$("#4pt").hide();
+			 	$("#5pt").hide();
+			}
+			if (paginacion == 2) {
+				$("#1pt").hide();
+			 	$("#2pt").show();
+			 	$("#3pt").hide();
+			 	$("#4pt").hide();
+			 	$("#5pt").hide();
+			}
+		}
+	}); 
+
+	$("#btnadelante").click(function() {//Boton adelante
+		/* Act on the event */
+		if(paginacion > 5){
+			//alert("enable");
+			paginacion = 5;
+		}else{
+			paginacion = paginacion+1;
+			if(paginacion == 2){
+				$("#1pt").hide();
+			 	$("#2pt").show();
+			 	$("#3pt").hide();
+			 	$("#4pt").hide();
+			 	$("#5pt").hide();
+			}
+			if(paginacion == 3){
+				$("#1pt").hide();
+			 	$("#2pt").hide();
+			 	$("#3pt").show();
+			 	$("#4pt").hide();
+			 	$("#5pt").hide();
+			}
+			if(paginacion == 4){
+				$("#1pt").hide();
+			 	$("#2pt").hide();
+			 	$("#3pt").hide();
+			 	$("#4pt").show();
+			 	$("#5pt").hide();
+			}
+			if(paginacion == 5){
+				$("#1pt").hide();
+			 	$("#2pt").hide();
+			 	$("#3pt").hide();
+			 	$("#4pt").hide();
+			 	$("#5pt").show();
+			}
+		}
+	}); 
+
+	$("#btnfinal").click(function() {//Boton final
+		$("#5pt").show();
+		$("#1pt").hide();
+	 	$("#2pt").hide();
+	 	$("#3pt").hide();
+	 	$("#4pt").hide();
+	 	paginacion = 5;
+	}); 
+
+
 	$("#pt3").click(function() {
 		//alert("HOLI");
 		window.open('pt3.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt5").click(function() {
+		//alert("HOLI");
+		window.open('pt5.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt6").click(function() {
+		//alert("HOLI");
+		window.open('pt6.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt7").click(function() {
+		//alert("HOLI");
+		window.open('pt7.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt9").click(function() {
+		//alert("HOLI");
+		window.open('pt9.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt10").click(function() {
+		//alert("HOLI");
+		window.open('ptX.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt11").click(function() {
+		//alert("HOLI");
+		window.open('ptXI.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt12").click(function() {
+		//alert("HOLI");
+		window.open('ptXII.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt14").click(function() {
+		//alert("HOLI");
+		window.open('ptXIV.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});	
+	$("#pt15").click(function() {
+		//alert("HOLI");
+		window.open('ptXV.php', '_blank');
 		//window.open('pt3.php', '_self');
 	});	
 	$("#btnGuardarP").click(function(){
@@ -286,9 +431,6 @@ $(document).ready(function(){
 		$("#repaudi").show('slow/400/fast');
 		$("#audi").hide();
 	});
-
-
-
 
 });
 
