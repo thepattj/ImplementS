@@ -138,6 +138,79 @@
   </div>
 </div>
 
+<div class="modal fade" id="modalpt4"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Punto 4 - Objetivo, metas e indicadores</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Agrega Meta</p>
+        <input type="text" class="form-control" placeholder="col-lg-4" id="id4Titulo">
+
+        <p>Fecha para cumplir</p>
+        <input type="date" class="form-control" placeholder="col-lg-4" id="id4fecha">
+
+        <p>Trabajador a cumplirla</p>
+        <select name="" multiple>
+            <option value="">Selecciona trabajador</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalpt4"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Punto 8 - Control de documentos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Descarga de control</p>
+        <input type="text" class="form-control" placeholder="col-lg-4" id="id4Titulo">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalpt13"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Punto 13 - Protocolos de respuesta a Emergencias</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Agrega los Protocolos de respuesta a Emergencias (P.R.E.) que se elaboro. (.pdf, .docx, .doc)</p>
+        <input type="file" class="form-control" placeholder="col-lg-4" id="archivoAR">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="modal fade" id="modaladdsta"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -763,7 +836,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div id="pt4" data-toggle="modal" data-target="#modalpt4" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 4</span></h2>
                                 <p>Objetivos, metas e indicadores</p>
@@ -804,7 +877,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div id="pt8" data-toggle="modal" data-target="#modalpt8" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div id="pt8" class="website-traffic-ctn">
                                 <h2><span class="">Punto 8</span></h2>
                                 <p>Control de documentos</p>
@@ -857,7 +930,7 @@
 
                 <div id="4pt" style="display:none;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt13" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div id="pt13" data-toggle="modal" data-target="#modalpt13" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 13</span></h2>
                                 <p style="display:none;">Protocolos de respuesta ...</p>
