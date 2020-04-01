@@ -284,20 +284,24 @@ paginacion = 1;
 		window.open('ptXV.php', '_blank');
 		//window.open('pt3.php', '_self');
 	});	
+	/*Accion de modal Politica*/
 	$("#btnGuardarP").click(function(){
-		//alert("empieza a guardar");
-		archivo = $("#archivoSel").val();
-		//alert("valor"+archivo);
-		//https://ricardogeek.com/como-subir-archivos-con-javascript/
+		fd = new FormData();
+		files = $('#archivoSel')[0].files[0];
+		fd.append('file',files);
+															   
 		$.ajax({
-					url:'',
-					method:'POST',
-					dataType:'html',
-					data:{},
-				})
-				.done(function(msg){
-					
-				});
+			url: 'php/upload.php',
+			type: 'POST',
+					 
+			data: {opc:"p", sta:"", file:fd},
+			contentType: false,
+			processData: false,
+		})
+		.done(function(msg) {
+			console.log(msg);
+		});
+		
 	});
 	$("#btnGuardarAR").click(function(){
 		archivo = $("#archivoAR").val();
