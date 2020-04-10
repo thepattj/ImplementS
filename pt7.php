@@ -687,7 +687,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                      <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="nameCl">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -702,7 +702,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="tel">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -719,7 +719,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class=" form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="correo">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>

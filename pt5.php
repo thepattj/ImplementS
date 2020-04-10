@@ -656,7 +656,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="nombreTES">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -670,7 +670,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="aPTES">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -684,7 +684,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="aMTES">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -697,66 +697,30 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Puesto 1</option>
+                                        <select class="chosen" name="" id="puestoTES">
+                                            <option value="Selecciona" style="display: none;">Selecciona una opción</option>
+                                            <option value="Direccion">Alta Dirección</option>
+                                            <option value="RepresentanteT">Representante Técnico</option>
+                                            <option value="Administrativos">Administrativos</option>
+                                            <option value="Despachador">Despachador</option>
+                                            <option value="Intendente">Intendente</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            <button type="">Guardar + Agregar</button>
-                                        </label>
-                                    </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarU" class="btn btn-success notika-btn-success">Guardar + Agregar</button>
                                 </div>
+                                
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label> Aqui debe ir la lista de los trabajadores</label>
+                                    <label>Lista de Trabajadores</label>
                                 </div>  
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            Nombre
-                                        </label>
-                                    </div>
-                                </div>
-                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            Puesto
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            <button type="">Actualizar</button>
-                                        </label>
-                                    </div>
-                                </div>    
+                                                     
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label >
-                                            <button type="">Guardar</button>
-                                        </label>
-                                    </div>
-                                </div>                         
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label >
-                                        Agrega tu organigrama actualizado.
-                                    </label>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <input type="file" class="form-control" placeholder="col-lg-4">
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <button type="button" class="btn btn-primary">Guardar</button>
-                                </div> -->
+
                             </div>
                         </div>
                     </div>

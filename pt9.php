@@ -1,3 +1,10 @@
+<?php
+    include 'php/conex.php';
+    $id = $_GET["x"];
+    $con = Conectarse();
+    $value = "";
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -639,8 +646,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="wizard-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="wizard-wrap-int">
+                                        <!-- <div class="wizard-hd">
+                                            <h2></h2>
+                                            <p></p>
+                                        </div> -->
+                                        <div id="rootwizard">
+                                            <div class="navbar">
+                                                <div class="navbar-inner">
+                                                    <div class="container-pro wizard-cts-st">
+                                                        <ul>
+                                                            <li id="btncontrolr"><a href="#tab1" data-toggle="tab">Control de RBPO</a></li>
+                                                            <li id="btnrbpoc"><a href="#tab2" data-toggle="tab">RBPO</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-content"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="controlr" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
@@ -662,7 +700,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="nomnbreP">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -677,7 +715,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="sugerencia">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -694,7 +732,8 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
+                                        <select class="chosen" style="display: none;" name="" id="meselec">
+                                            <option value="0" style="display: none;">Selecciona el mes</option>
                                             <option value="Enero">Enero</option>
                                             <option value="Febrero">Febrero</option>
                                             <option value="Marzo">Marzo</option>
@@ -708,18 +747,6 @@
                                             <option value="Noviembre">Noviembre</option>
                                             <option value="Diciembre">Diciembre</option>
                                         </select>
-                                        <div class="chosen-container chosen-container-single" style="width: 100%" title>
-                                            <a class="chosen-single">
-                                                <span></span>
-                                                <div> <b></b> </div>
-                                            </a>
-                                            <div class="chosen-drop">
-                                                <div class="chosen-search">
-                                                    <input type="text" autocomplete="off">
-                                                </div>
-                                                <ul class="chosen-results"></ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -735,7 +762,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="statusP">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -751,16 +778,28 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <?php 
+                                              $qi = "SELECT nombre as N, apellidoP as AP, apellidoM as AM FROM organigrama WHERE puesto = 'RepresentanteT' AND idCESH = '".$id."'";
+                                              $rsul = mysqli_query($con,$qi);
+                                              while($rw = $rsul->fetch_assoc()){
+                                                $nrt = $rw['N'];
+                                                $atn = $rw['AP'];
+                                                $amt = $rw['AM'];
+                                              }?>
+                                        <input type="text" class="form-control" id="reprTec" value="<?php echo $nrt." ".$atn." ".$amt; ?>">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarControl" class="btn btn-success notika-btn-success">Guardar Control</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="rbpo" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
@@ -782,7 +821,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="areaRbpo">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -797,7 +836,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="supRbpo">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -808,14 +847,20 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                           Nombre Trabajador
+                                           Nombre Trabajador (realiza)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
+                                        <select class="chosen" name="" id="nombreRbpo">
+                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                  $resul = mysqli_query($con,$qri);
+                                                  while($row = $resul->fetch_object()){ ?>
+                                            <option><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                            
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -832,8 +877,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                    <div class="form-group nk-int-st">
+                                        <textarea class="form-control" rows="5" id="descA"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -843,15 +888,13 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                           Crítica
+                                           Crítica (sobre actividad)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">No</option>
-                                        </select>
+                                    <div class="fm-group nk-int-st">
+                                        <input type="text" class="form-control" id="criticaA">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -868,7 +911,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="incAcc">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -884,7 +927,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="causa">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -899,11 +942,14 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" placeholder="Observación."></textarea>
+                                        <textarea class="form-control" rows="5" id="obs"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarbpo" class="btn btn-success notika-btn-success">Guardar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1440,7 +1486,12 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
+
+     <!--  wizard JS
+        ============================================ -->
+    <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/wizard/wizard-active.js"></script>
 
 
     <script type="text/javascript" src="js/funciones.js"></script>

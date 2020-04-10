@@ -1,3 +1,10 @@
+<?php
+    include 'php/conex.php';
+    $id = $_GET["x"];
+    $con = Conectarse();
+    $value = "";
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -658,6 +665,7 @@
                                                             <li id="btnper"><a href="#tab1" data-toggle="tab">Cambio de personal</a></li>
                                                             <li id="btntec"><a href="#tab2" data-toggle="tab">Cambio técnologico</a></li>
                                                             <li id="btnorden"><a href="#tab3" data-toggle="tab">Orden de trabajo</a></li>
+                                                            <li id="btnbitacora"><a href="#tab4" data-toggle="tab">Subir Bitacora</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -685,13 +693,13 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Área
+                                            Nueva Área
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="aNueva">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -706,32 +714,17 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
+                                        <select class="chosen" name="" id="nombreTrabjC">
+                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                $resul = mysqli_query($con,$qri);
+                                                while($row = $resul->fetch_object()){ ?>
+                                          <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                          <?php } ?>
                                         </select>
-                                    </div>
+                                    </div>   
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           Capacitación/Curso
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Se carga de BD</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
@@ -742,11 +735,17 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Se carga de BD</option>
-                                        </select>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <?php 
+                                              $qi = "SELECT nombre as N, apellidoP as AP, apellidoM as AM FROM organigrama WHERE puesto = 'RepresentanteT' AND idCESH = '".$id."'";
+                                              $rsul = mysqli_query($con,$qi);
+                                              while($rw = $rsul->fetch_assoc()){
+                                                $nrt = $rw['N'];
+                                                $atn = $rw['AP'];
+                                                $amt = $rw['AM'];
+                                              }?>
+                                        <input type="text" class="form-control" id="autori" value="<?php echo $nrt." ".$atn." ".$amt; ?>">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -761,11 +760,14 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                        <textarea class="form-control" rows="5" id="motivoC"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarCPersonal" class="btn btn-success notika-btn-success">Guardar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -789,7 +791,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="equipoC">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -804,7 +806,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                        <textarea class="form-control" rows="5" id="descrpC"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -825,7 +827,7 @@
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                                                 <div class="input-group date nk-int-st">
                                                     <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" value="03/19/2018">
+                                                    <input type="text" class="form-control" id="fechaCT" value="03/19/2018">
                                                 </div>
                                             </div>
                                         </label>
@@ -844,12 +846,22 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="respMant">
+                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                $resul = mysqli_query($con,$qri);
+                                                while($row = $resul->fetch_object()){ ?>
+                                          <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                          <?php } ?>
+                                        </select>
+                                    </div>   
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarCTec" class="btn btn-success notika-btn-success">Guardar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -871,10 +883,17 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="" disabled>
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                <div class="input-group date nk-int-st">
+                                                    <span class="input-group-addon"></span>
+                                                    <input type="text" class="form-control" id="fechaOT" value="03/19/2018">
+                                                </div>
+                                            </div>
+                                        </label>
                                     </div>
-                                </div>                    
+                                </div>                 
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
@@ -884,7 +903,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="" disabled>
+                                        <input type="text" class="form-control" id="noPermiso" disabled>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -899,9 +918,11 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="ubicacionT">
                                     </div>
-                                </div>                    
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
@@ -909,9 +930,9 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" placeholder="Observación."></textarea>
+                                        <textarea class="form-control" rows="5" id="detallesT" placeholder="Observación."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -927,7 +948,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="" >
+                                        <input type="text" class="form-control" id="personalC" >
                                     </div>
                                 </div>                    
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -939,14 +960,16 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
+                                        <select class="chosen" name="" id="tipoT">
+                                            <option value="0" style="display: none;"> Selecciona una opción </option>
+                                            <option value="INTERNO">INTERNO</option>
+                                            <option value="INTERNO">EXTERNO</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                AQUI DEBEN SER DE 6 PARTES PARA VER QUE FALTA 
+                                <!-- AQUI DEBEN SER DE 6 PARTES PARA LA VALIDACION DE VECES QUE LLEVA EL PERMISO  -->
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
@@ -956,22 +979,221 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
+                                        <select class="chosen" id="tipoTrabajo">
+                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                            <option value="Electrico">Eléctrico</option>
+                                            <option value="Trabajo en">Trabajo en Alturas</option>
+                                            <option value="Caliente">Trabajo en Caliente</option>
+                                            <option value="Extraordinaria">Limpieza Extraordinaria</option>
+                                            <option value="EConfinados">Espacios Confinados</option>
+                                            <option value="Otros">Otros</option>
                                         </select>
                                     </div>
-                                </div>                    
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Horario
+                                            Horario De
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
+                                        <select class="chosen" id="hrIni">
+                                            <option value="00">00</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" id="minIni">
+                                            <option value="00">00</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                            <option value="23">23</option>
+                                            <option value="33">33</option>
+                                            <option value="34">34</option>
+                                            <option value="35">35</option>
+                                            <option value="36">36</option>
+                                            <option value="37">37</option>
+                                            <option value="38">38</option>
+                                            <option value="39">39</option>
+                                            <option value="40">40</option>
+                                            <option value="41">41</option>
+                                            <option value="42">42</option>
+                                            <option value="43">43</option>
+                                            <option value="44">44</option>
+                                            <option value="45">45</option>
+                                            <option value="46">46</option>
+                                            <option value="47">47</option>
+                                            <option value="48">48</option>
+                                            <option value="49">49</option>
+                                            <option value="50">50</option>
+                                            <option value="51">51</option>
+                                            <option value="52">52</option>
+                                            <option value="53">53</option>
+                                            <option value="54">54</option>
+                                            <option value="55">55</option>
+                                            <option value="56">56</option>
+                                            <option value="57">57</option>
+                                            <option value="58">58</option>
+                                            <option value="59">59</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            A
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" id="hrFin">
+                                            <option value="00">00</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" id="minFin">
+                                            <option value="00">00</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                            <option value="23">23</option>
+                                            <option value="33">33</option>
+                                            <option value="34">34</option>
+                                            <option value="35">35</option>
+                                            <option value="36">36</option>
+                                            <option value="37">37</option>
+                                            <option value="38">38</option>
+                                            <option value="39">39</option>
+                                            <option value="40">40</option>
+                                            <option value="41">41</option>
+                                            <option value="42">42</option>
+                                            <option value="43">43</option>
+                                            <option value="44">44</option>
+                                            <option value="45">45</option>
+                                            <option value="46">46</option>
+                                            <option value="47">47</option>
+                                            <option value="48">48</option>
+                                            <option value="49">49</option>
+                                            <option value="50">50</option>
+                                            <option value="51">51</option>
+                                            <option value="52">52</option>
+                                            <option value="53">53</option>
+                                            <option value="54">54</option>
+                                            <option value="55">55</option>
+                                            <option value="56">56</option>
+                                            <option value="57">57</option>
+                                            <option value="58">58</option>
+                                            <option value="59">59</option>
                                         </select>
                                     </div>
                                 </div>
@@ -986,53 +1208,251 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    Asegúrese de  que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.<br>PELIGROS
+                                    Asegúrese de  que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
-                                        </select>
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            PELIGROS
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    Seleccionados
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    PRECAUCIONES REQUERIDAS/EQUIPOS                                                     
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
+                                        <select class="chosen" multiple data-placeholder="" id="peligros">
+                                            <option value="0" style="display:none;">Selecciona una opción</option>
+                                            <option value="Gravedad y movimientos">Gravedad y movimientos</option>
+                                            <option value="Herramientas/Equipos/Maquinaria">Herramientas/Equipos/Maquinaria</option>
+                                            <option value="Transporte terrestres"> Transporte terrestres</option>
+                                            <option value="Transporte aereo"> Transporte aéreo</option>
+                                            <option value="Clima">Clima</option>
+                                            <option value="Electricidad">Electricidad</option>
+                                            <option value="Presion">Presión</option>
+                                            <option value="Temperatura">Temperatura</option>
+                                            <option value="Vibracion/Ruido">Vibración/Ruido</option>
+                                            <option value="Radiacion">Radiación</option>
+                                            <option value="Fuego">Fuego</option>
+                                            <option value="Materiales Peligrosos">Materiales Peligrosos</option>
+                                            <option value="Biologicos">Biológicos</option>
+                                            <option value="Fenomenos Naturales">Fenómenos Naturales</option>
+                                            <option value="Otros">Otros</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    Seleccionados
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+  
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            PRECAUCIONES REQUERIDAS/EQUIPOS
+                                        </label>
+                                    </div>
                                 </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" multiple data-placeholder="" id="precauciones">
+                                            <option value="0" style="display:none;">Selecciona una opción</option>
+                                            <option value="Personal competente">Personal competente</option>
+                                            <option value="Equipo de combate de incendios">Equipo de combate de incendios</option>
+                                            <option value="Iluminacion">Iluminación</option>
+                                            <option value="Material combustible removido">Material combustible removido</option>
+                                            <option value="Circuitos Eléctricos Aislados">Circuitos Eléctricos Aislados</option>
+                                            <option value="Equipos de detección">Equipos de detección</option>
+                                            <option value="Equipos de Ignicion">Equipos de Ignición</option>
+                                            <option value="Aparejos de carga certificados">Aparejos de carga certificados</option>
+                                            <option value="Tanques de combustible llenos de agua">Tanques de combustible llenos de agua</option>
+                                            <option value="Equipos de Respiracion">Equipos de Respiración</option>
+                                            <option value="Equipo de hizaje apropiado">Equipo de hizaje apropiado</option>
+                                            <option value="Barricadas / Barreras">Barricadas / Barreras</option>
+                                            <option value="Señales preventivas">Señales preventivas<option>
+                                            <option value="Seguridad / Fuego prevención">Seguridad / Fuego prevención</option>
+                                            <option value="Rutas de escape despejadas">Rutas de escape despejadas</option>
+                                            <option value="Equipos de seguridad relevantes">Equipos de seguridad relevantes</option>
+                                            <option value="EPP">EPP</option>
+                                            <option value="Comunicaciones">Comunicaciones</option>
+                                            <option value="Botiquín">Botiquín</option>
+                                            <option value="Bloqueo">Bloqueo</option>
+                                            <option value="Bloqueos / Soportes">Bloqueos / Soportes</option>
+                                            <option value="MSDS">MSDS</option>
+                                            <option value="Ventilación">Ventilación</option>
+                                            <option value="Otros">Otros</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Area donde se trabajara
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" id="areaTrab">
+                                            <option value="0" style="display:none;">Selecciona una opción</option>
+                                            <option value="Dispensario">Dispensario</option>
+                                            <option value="Tanques">Tanques</option>
+                                            <option value="Techos, faldones, anuncio independiente">Techos, faldones, anuncio independiente</option>
+                                            <option value="Cuarto Electrico">Cuarto Eléctrico</option>
+                                            <option value="Cuarto de Maquinas">Cuarto de Maquinas</option>
+                                            <option value="Otro">Otro</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarOrdenTrabajo" class="btn btn-success notika-btn-success">Guardar</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="display: none;">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2></h2>
+                                <p>Agregaras las bitacoras</p>
+                            </div>
+                            <div class="row">                    
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Mantemiento Preventivo y Correctivo (10-BT-01)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="enviarbt01" id="enviarbt01" enctype="multipart/form-data" method="post">
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" style="display: none;" name="" id="meselec">
+                                            <option value="0" style="display: none;">Selecciona el mes</option>
+                                            <option value="Enero">Enero</option>
+                                            <option value="Febrero">Febrero</option>
+                                            <option value="Marzo">Marzo</option>
+                                            <option value="Abril">Abril</option>
+                                            <option value="Mayo">Mayo</option>
+                                            <option value="Junio">Junio</option>
+                                            <option value="Julio">Julio</option>
+                                            <option value="Agosto">Agosto</option>
+                                            <option value="Septiembre">Septiembre</option>
+                                            <option value="Octubre">Octubre</option>
+                                            <option value="Noviembre">Noviembre</option>
+                                            <option value="Diciembre">Diciembre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </form>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="form-group nk-int-st">
+                                       <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    Área donde se trabajará                                                       
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    Seleccionados
+                                    <button type="button" class="btn btn-primary" id="btnGuardar01">Guardar</button>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-
+                    
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Residuos Peligrosos (10-BT-02)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="enviarbt02" id="enviarbt02" enctype="multipart/form-data" method="post"><div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" style="display: none;" name="" id="meselec">
+                                            <option value="0" style="display: none;">Selecciona el mes</option>
+                                            <option value="Enero">Enero</option>
+                                            <option value="Febrero">Febrero</option>
+                                            <option value="Marzo">Marzo</option>
+                                            <option value="Abril">Abril</option>
+                                            <option value="Mayo">Mayo</option>
+                                            <option value="Junio">Junio</option>
+                                            <option value="Julio">Julio</option>
+                                            <option value="Agosto">Agosto</option>
+                                            <option value="Septiembre">Septiembre</option>
+                                            <option value="Octubre">Octubre</option>
+                                            <option value="Noviembre">Noviembre</option>
+                                            <option value="Diciembre">Diciembre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                </form>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="form-group nk-int-st">
+                                        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar02">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                           Recepción, Descarga y Desviación en el Balance de Producto
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="enviarbt03" id="enviarbt03" enctype="multipart/form-data" method="post">
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" style="display: none;" name="" id="meselec">
+                                            <option value="0" style="display: none;">Selecciona el mes</option>
+                                            <option value="Enero">Enero</option>
+                                            <option value="Febrero">Febrero</option>
+                                            <option value="Marzo">Marzo</option>
+                                            <option value="Abril">Abril</option>
+                                            <option value="Mayo">Mayo</option>
+                                            <option value="Junio">Junio</option>
+                                            <option value="Julio">Julio</option>
+                                            <option value="Agosto">Agosto</option>
+                                            <option value="Septiembre">Septiembre</option>
+                                            <option value="Octubre">Octubre</option>
+                                            <option value="Noviembre">Noviembre</option>
+                                            <option value="Diciembre">Diciembre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                </form>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="form-group nk-int-st">
+                                        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar03">Guardar</button>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1573,7 +1993,7 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>

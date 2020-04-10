@@ -1,3 +1,10 @@
+<?php
+    include 'php/conex.php';
+    $id = $_GET["x"];
+    $con = Conectarse();
+    $value = "";
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -647,7 +654,7 @@
                            <div class="basic-tb-hd">
                                <h2>Solicitud:</h2>
                                <div class="form-group nk-int-st"> <!-- AGREGAR LAS LETRAS DEL INPUT MAS GRANDES ******************** --->
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input type="text" class="form-control" id="solicitud">
                                 </div>
                            </div>
                            <div class="row">                    
@@ -660,8 +667,15 @@
                                </div>
                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">OPCION 1</option>
+                                        <select class="chosen" id="areaTrab14">
+                                            <option value="0" style="display:none;">Selecciona una opción</option>
+                                            <option value="Dispensario">Dispensario</option>
+                                            <option value="Tanques">Tanques</option>
+                                            <option value="Techos, faldones, anuncio independiente">Techos, faldones, anuncio independiente</option>
+                                            <option value="Cuarto Electrico">Cuarto Eléctrico</option>
+                                            <option value="Cuarto de Maquinas">Cuarto de Maquinas</option>
+                                            <option value="Otro">Otro</option>
+
                                         </select>
                                     </div>
                                </div>
@@ -677,7 +691,7 @@
                                </div>
                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                   <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                       <textarea class="form-control" rows="5" id="conformidad"></textarea>
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
@@ -691,9 +705,16 @@
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
-                                   </div>
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="respAprev">
+                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                $resul = mysqli_query($con,$qri);
+                                                while($row = $resul->fetch_object()){ ?>
+                                          <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                          <?php } ?>
+                                        </select>
+                                    </div>
                                </div>                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="fm-checkbox">
@@ -703,9 +724,16 @@
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
-                                   </div>
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="respVerif">
+                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                $resul = mysqli_query($con,$qri);
+                                                while($row = $resul->fetch_object()){ ?>
+                                          <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                          <?php } ?>
+                                        </select>
+                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
@@ -728,6 +756,12 @@
                                        </label>
                                    </div>
                                </div>
+                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st">
+                                       <textarea class="form-control" rows="5" id="accions"></textarea>
+                                   </div>
+                               </div> 
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                    <div class="fm-checkbox">
                                        <label>
@@ -735,6 +769,19 @@
                                        </label>
                                    </div>
                                </div>
+                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="trabjRespo">
+                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                $resul = mysqli_query($con,$qri);
+                                                while($row = $resul->fetch_object()){ ?>
+                                          <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                          <?php } ?>
+                                        </select>
+                                    </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                    <div class="fm-checkbox">
                                        <label>
@@ -742,34 +789,22 @@
                                        </label>
                                    </div>
                                </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
-                                   </div>
-                               </div>  
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Trabajador 1</option>
-                                        </select>
-                                    </div>
-                               </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                    <div class="fm-checkbox">
                                         <label>
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                                                 <div class="input-group date nk-int-st">
                                                     <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" value="03/19/2018">
+                                                    <input type="text" class="form-control" id="fechaProg" value="03/19/2018">
                                                 </div>
                                             </div>
                                         </label>
                                     </div>
                                </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarSolicitud" class="btn btn-success notika-btn-success">Guardar</button>
+                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                                
@@ -1311,7 +1346,7 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>

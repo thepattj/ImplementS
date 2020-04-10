@@ -12,6 +12,7 @@ function Conectarse() {
 		echo "ERROR AL CONECTARSE A LA BASE DE DATOS";
 	}else{
 		return $link;
+		
 	}
 }
 

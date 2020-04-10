@@ -95,7 +95,7 @@
 
 
     <!-- Modal -->
-
+<!-- MODAL DE POLITICA UPDATE FALTA -->
 <div class="modal fade" id="modalpt1"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -105,18 +105,23 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form name="politicaenviar" id="enviarP" enctype="multipart/form-data" method="post">
       <div class="modal-body">
         <p>Agrega la política (.jpg, .png)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4" id="archivoSel">
+        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="cre" name="cre">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="ic" name="ic">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opc">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" id="btnGuardarP">Guardar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
-
+<!-- MODAL DE AR UPDATE FALTA -->
 <div class="modal fade" id="modalpt2"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -126,10 +131,15 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form name="arenviar" id="enviarAR" enctype="multipart/form-data" method="post">
       <div class="modal-body">
-        <p>Agrega el Análisis de Riesgo (A.R.) que se elaboro para el cumplimento de la NOM-005-ASEA-2016 (.pdf, .docx, .doc)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4" id="archivoAR">
+        <p>Agrega el Análisis de Riesgo (A.R.) que se elaboro para el cumplimento de la NOM-005-ASEA-2016 (.pdf)</p>
+        <input type="file" class="form-control" placeholder="" id="archivoAR" name="archivoAR">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="crear" name="crear">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="icar" name="icar">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcar">
       </div>
+      </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
@@ -137,7 +147,7 @@
     </div>
   </div>
 </div>
-
+<!-- MODAL DE PUNTO4 UPDATE FALTA -->
 <div class="modal fade" id="modalpt4"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -149,26 +159,96 @@
       </div>
       <div class="modal-body">
         <p>Agrega Meta</p>
-        <input type="text" class="form-control" placeholder="col-lg-4" id="id4Titulo">
+        <div class="form-group nk-int-st">
+          <input type="text" class="form-control" placeholder="">
+        </div>
 
         <p>Fecha para cumplir</p>
-        <input type="date" class="form-control" placeholder="col-lg-4" id="id4fecha">
+        
+            <div class="fm-checkbox">
+              <label>
+                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                  <div class="input-group date nk-int-st">
+                    <span class="input-group-addon"></span>
+                    <input type="text" class="form-control" value="03/19/2018">
+                  </div>
+                </div>
+              </label>
+            </div>
+        
 
         <p>Trabajador a cumplirla</p>
-        <select name="" multiple>
-            <option value="">Selecciona trabajador</option>
-        </select>
+        
+          <div class="chosen-select-act fm-cmp-mg">
+            <select class="chosen" name="" id="nombreTrabj">
+              <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+              <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                    $resul = mysqli_query($con,$qri);
+                    while($row = $resul->fetch_object()){ ?>
+              <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+              <?php } ?>
+            </select>
+          </div>   
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardar4">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE SUG Y QUEJAS UPDATE FALTA -->
+<div class="modal fade" id="modalpt7"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Punto 7 - Comunicación, Participación y Consulta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form name="enviarsq" id="enviarsq" enctype="multipart/form-data" method="post">
+       <div class="modal-body">
+        <p>Agrega el concentrado de Sugerencias y/o Quejas del mes que seleccionas (.pdf y/o .zip)</p>
+        <input type="file" class="form-control" placeholder="" id="archivosq" name="archivosq">
+        <p></p>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
+        <p>Mes de concentrado</p>
+          <div class="chosen-select-act fm-cmp-mg">
+            <select class="chosen" name="mesconcentrado" id="mesconcentrado">
+              <option value="Selecciona" style="display: none;">Selecciona una opción</option>
+              <option value="Enero">Enero</option>
+              <option value="Febrero">Febrero</option>
+              <option value="Marzo">Marzo</option>
+              <option value="Abril">Abril</option>
+              <option value="Mayo">Mayo</option>
+              <option value="Junio">Junio</option>
+              <option value="Julio">Julio</option>
+              <option value="Agosto">Agosto</option>
+              <option value="Septiembre">Septiembre</option>
+              <option value="Octubre">Octubre</option>
+              <option value="Noviembre">Noviembre</option>
+              <option value="Diciembre">Diciembre</option>
+            </select>
+          </div>
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="cresq" name="cresq">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="icsq" name="icsq">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcsq">
+      </div>
+    </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardar7">Guardar</button>
       </div>
     </div>
   </div>
 </div>
 
 
-<div class="modal fade" id="modalpt4"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- MODAL DE PUNTO8 UPDATE FALTA -->
+<div class="modal fade" id="modalpt8"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -177,19 +257,18 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <p>Descarga de control</p>
-        <input type="text" class="form-control" placeholder="col-lg-4" id="id4Titulo">
+      <div class="modal-body" id="descarga8">
+        <p>Para terminar este punto, deberas Descarga el control de los documentos de SASISOPA</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardar8">Descargar</button>
       </div>
     </div>
   </div>
 </div>
 
-
+<!-- MODAL DE PRE UPDATE FALTA -->
 <div class="modal fade" id="modalpt13"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -199,19 +278,54 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form name="enviarPRE" id="enviarPRE" enctype="multipart/form-data" method="post">
       <div class="modal-body">
         <p>Agrega los Protocolos de respuesta a Emergencias (P.R.E.) que se elaboro. (.pdf, .docx, .doc)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4" id="archivoAR">
+        <input type="file" class="form-control" name="archivopre" id="archivopre">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="crepre" name="crepre">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="icpre" name="icpre">
+        <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="oppre">
       </div>
+      </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarAR">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarPRE">Guardar</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- MODAL DE PUNTO16 UPDATE FALTA -->
+<div class="modal fade" id="modalpt16"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Punto 16 - Investigación de Incidentes y accidentes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Haz tenido algún accidente o incidente en tu ES? </p>
+        <select id="qincident" name="qincident">
+            <option style="display: none;" value="0"> Selecciona una opción</option>
+            <option value="1">SI</option>
+            <option value="2">NO</option>
+        </select>
+      </div>
+      <div class="modal-body" id="descarga1" style="display: none;">
+        <p>Descarga estos formatos y acompletalos</p>
+        <button type="button" class="btn btn-primary" id="btndescarg16">Descargar</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardar16">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- MODAL DE AGREGAR ESTACION UPDATE FALTA -->
 <div class="modal fade" id="modaladdsta"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -330,8 +444,7 @@
                     
                     <?php } ?>
                 </select>
-            </div>
-            
+            </div>            
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Municipio</p> </div>
@@ -362,7 +475,7 @@
 </div>
 
 
-
+<!-- MODAL DE INSER USUARIO UPDATE FALTA -->
 <div class="modal fade" id="modalsucc" role="dialog">
     <div class="modal-dialog modals-default nk-gv">
         <div class="modal-content">
@@ -867,14 +980,14 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt7" class="website-traffic-ctn">
+                        <div id="pt7" data-toggle="modal" data-target="#modalpt7" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div id="pt8" class="website-traffic-ctn">
                                 <h2><span class="">Punto 7</span></h2>
-                                <p>Comunicación, participación ...</p>
+                                <p>Comunicación, Participación...</p>
                             </div>
-                            <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
+                            <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
-                    </div>
+                    </div>                   
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt8" data-toggle="modal" data-target="#modalpt8" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
@@ -960,12 +1073,11 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt16" class="website-traffic-ctn">
+                        <div id="pt16" data-toggle="modal" data-target="#modalpt16" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
                                 <h2><span class="">Punto 16</span></h2>
                                 <p>Investigación de incidentes y ...</p>
                             </div>
-                            <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
                     </div>
                 </div>
@@ -1351,7 +1463,7 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
     <!--  wizard JS
         ============================================ -->

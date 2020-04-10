@@ -680,6 +680,26 @@
                            <div class="basic-tb-hd">
                                <h2>Plan de Audoria:</h2>
                            </div>
+                            <div style="display: none;">
+                                
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Dirección </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="direccionES" type="text" class="form-control"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Representante tecnico </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="reptecnico" type="text" class="form-control"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Periodo de auditoria </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="periodo" type="text" class="form-control"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Cargo </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="cargo" value="Coordinador SASISOPA" type="text" class="form-control"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            </div>
+
+
                            <div class="row">                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="fm-checkbox">
@@ -690,7 +710,7 @@
                                </div>
                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" id="alcance" placeholder="">
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
@@ -705,9 +725,10 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Selecciona" style="display: none;" name="" id="">
+                                        <select class="chosen" name="" id="criterio">
+                                            <option style="display: none;">Selecciona una opción</option>
                                             <option value="">Disposiciones de ASEA (SASISOPA)</option>
-                                            <option value="">Reglas actividades</option>
+                                            <option value="">Reglas y/o actividades</option>
                                             <option value="">Requsitos legales</option>
                                             <option value="">Otros</option>
                                         </select>
@@ -723,7 +744,8 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Selecciona" style="display: none;" name="" id="">
+                                        <select class="chosen" name="" id="tipo">
+                                            <option style="display: none;">Selecciona una opción</option>
                                             <option value="">INTERNA</option>
                                             <option value="">EXTERNA</option>
                                         </select>
@@ -740,7 +762,8 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Selecciona" style="display: none;" name="" id="">
+                                        <select class="chosen" name="" id="objetivos">
+                                            <option style="display: none;">Selecciona una opción</option>
                                             <option value="">Determinar la conformidad de la ASEA</option>
                                             <option value="">Evaluar el cumplimiento de leyes y reglamentos segun la ASEA (SASISOPA)</option>
                                             <option value="">Determinar la eficacia de implementación y mantenimiento</option>
@@ -749,7 +772,51 @@
                                     </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               SE VAN AGREGAR ESTO  COORDINADOR, AUDITOR 1(vocal), AUDITOR(VOCAL2), FECHA Y HORA
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Auditor Lider
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Auditor 1
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                   <div class="fm-checkbox">
+                                       <label>
+                                           Auditor 2
+                                       </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" id="al" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" id="a1" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                   <div class="form-group nk-int-st">
+                                       <input type="text" id="a2" class="form-control" placeholder="">
+                                   </div>
+                               </div>
+
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarauditoria" class="btn btn-success notika-btn-success">Guardar</button>                                    
+                               </div>
+
+
+                               
                    
                    
                                
@@ -763,25 +830,16 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Fecha
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Hora
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="fm-checkbox">
                                        <label>
                                            Proceso y actividad
                                        </label>
+                                   </div>
+                               </div>
+                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                   <div class="form-group nk-int-st">
+                                       <textarea class="form-control" rows="5" placeholder="..." id="procact"></textarea>
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -791,31 +849,15 @@
                                        </label>
                                    </div>
                                </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
-                                   </div>
-                               </div>  
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" placeholder="" id="auditor">
                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardaractaudi" class="btn btn-success notika-btn-success">Guardar</button>                                    
+                               </div>
                    
                                
                                
@@ -833,13 +875,13 @@
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="fm-checkbox">
                                        <label>
-                                           Auditoria
+                                           Auditoria (No.)
                                        </label>
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
+                                       <input type="text" id="noaud" disabled class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
                                    </div>
                                </div>                   
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -851,7 +893,7 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
+                                       <input type="text" id="tau" disabled class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -865,7 +907,7 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="TOMA INFO DE SISTEMA" disabled>
+                                       <input type="text" class="form-control" id="fecharep" placeholder="" disabled>
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -877,7 +919,7 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="" >
+                                       <input type="text" class="form-control" id="elab" placeholder="" >
                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -892,7 +934,7 @@
                                </div>
                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                    <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                       <textarea class="form-control" rows="5" id="hallaz" placeholder="..."></textarea>
                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -906,7 +948,7 @@
                                </div>
                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                    <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                       <textarea class="form-control" rows="5" id="conclu" placeholder="..."></textarea>
                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -920,10 +962,13 @@
                                </div>
                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                    <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                       <textarea class="form-control" rows="5" id="recom" placeholder="..."></textarea>
                                    </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarrepaud" class="btn btn-success notika-btn-success">Guardar</button>                                    
+                               </div>
                            </div>
                        </div>
                    </div>

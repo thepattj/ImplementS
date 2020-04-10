@@ -1,3 +1,10 @@
+<?php
+    include 'php/conex.php';
+    $id = $_GET["x"];
+    $con = Conectarse();
+    $value = "";
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -662,7 +669,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="cursoN">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -677,7 +684,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                      <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="instrucN">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -697,7 +704,7 @@
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                                                 <div class="input-group date nk-int-st">
                                                     <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" value="03/19/2018">
+                                                    <input type="text" class="form-control" id="fechCurso" value="03/19/2018">
                                                 </div>
                                             </div>
                                         </label>
@@ -715,11 +722,14 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                      <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" id="doCert">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarCurso" class="btn btn-success notika-btn-success">Guardar</button>
+                                </div>
 
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -731,14 +741,21 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Nombre 1</option>
-                                            <option value="">Nombre 2</option>
-                                            <option value="">Nombre 3</option>
+                                        <select class="chosen" name="" id="nombreTrabj">
+                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                                  $resul = mysqli_query($con,$qri);
+                                                  while($row = $resul->fetch_object()){ ?>
+                                            <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                            
+                                            <?php } ?>
                                         </select>
-                                    </div>
+                                    </div>   
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <button>+</button> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarCT" class="btn btn-success notika-btn-success">Cargar Trabajador</button>
+                                </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>

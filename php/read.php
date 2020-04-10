@@ -34,18 +34,18 @@ if($opcion=="user"){
 		}
 
 
-		$sql3 = "SELECT PL as pl, razonSOcial as RS FROM cesh WHERE idCESH = '".$idSta."'";
+		$sql3 = "SELECT NoEst as no, razonSocial as RS FROM cesh WHERE idCESH = '".$idSta."'";
 		$resu =mysqli_query($con, $sql3);
 		if($resu->num_rows > 0){
 			//echo "entro a IF de resultado";
 			while($fi=$resu->fetch_assoc()){
 				//$salida = $fila['PrecioIgu'];
-				$cre = $fi['pl'];
+				$NES = $fi['no'];
 				$rs = $fi['RS'];
 			}				
 		}
 
-		echo $tipo.",".$idU.",".$idSta.",".$cre.",".$rs;
+		echo $tipo.",".$idU.",".$NES.",".$idSta.",".$rs;
 	}else{ echo $tipo; }
 }
 /*RFCSTA0522 PL0000*/

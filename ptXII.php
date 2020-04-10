@@ -1,3 +1,9 @@
+<?php
+    include 'php/conex.php';
+    $con = Conectarse();
+    $value = "";
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -687,23 +693,19 @@
                    
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="agregarP" style="display: none;">
                        <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h2></h2>
-                               <p>Agregar un nuevo Proveedor</p>
-                           </div>
                            <div class="row">                    
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Nombre
-                                       </label>
-                                   </div>
-                               </div>
+                              <!--  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                  <div class="fm-checkbox">
+                                      <label>
+                                          Nombre
+                                      </label>
+                                  </div>
+                              </div> 
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                    <div class="form-group nk-int-st">
                                        <input type="text" class="form-control" placeholder="">
                                    </div>
-                               </div>
+                               </div>-->
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
@@ -714,12 +716,11 @@
                                        </label>
                                    </div>
                                </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                    <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                       <input class="form-control" type="text" id="razonP" placeholder="Nombre completo" >
                                    </div>
                                </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                    
@@ -731,13 +732,11 @@
                                        </label>
                                    </div>
                                </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" id="descripcionS" placeholder="">
                                    </div>
                                </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                    
@@ -748,24 +747,27 @@
                                        </label>
                                    </div>
                                </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" id="metodoE" placeholder="">
                                    </div>
                                </div>
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarprove" class="btn btn-success notika-btn-success">Guardar</button> 
+                               </div>
                            </div>
                        </div>
                    </div>
 
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- ******************* DESCRIPCIóN DE LAS HERRAMIENTAS A USAR *********************** -->
                    
                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="herramientE" style="display: none;">
                        <div class="form-element-list">
                            <div class="basic-tb-hd">
                                <h2></h2>
-                               <p>Listado de Herramientas y EPP </p>
+                               <p>Agregar Trabajador por Empresa</p>
                            </div>
                            <div class="row">                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -777,7 +779,7 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" id="nameT">
                                    </div>
                                </div>                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -788,9 +790,17 @@
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="" disabled>
-                                   </div>
+                                   <div class="chosen-select-act fm-cmp-mg">
+                                    <select class="chosen" name="" id="nombreEmpresa">
+                                        <option id="" value="0" style="display: none;">Selecciona la Empresa</option>
+                                        <?php $qri = "SELECT idProvedor as id, razonSocial as nombre FROM dcproveedor";
+                                              $resul = mysqli_query($con,$qri);
+                                              while($row = $resul->fetch_object()){ ?>
+                                        <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>
+
+                                        <?php } ?>
+                                    </select>
+                                </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
@@ -804,7 +814,7 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" id="catT">
                                    </div>
                                </div>                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -820,14 +830,23 @@
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                                                 <div class="input-group date nk-int-st">
                                                     <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" value="03/19/2018">
+                                                    <input type="text" class="form-control" id="fechaT" value="03/19/2018">
                                                 </div>
                                             </div>
                                         </label>
                                     </div>
                                </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardartrab" class="btn btn-success notika-btn-success">Guardar</button> 
+                               </div>
+                               
+                               
+                               
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
+                               <div class="basic-tb-hd">
+                                   <h2></h2>
+                                   <p>Listado de Herramientas y EPP </p>
+                               </div>
                    
                                
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -839,7 +858,7 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="" >
+                                       <input type="text" class="form-control" id="nomHerr" >
                                    </div>
                                </div>       
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -854,8 +873,11 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" data-placeholder="Elige un Mes" style="display: none;" name="" id="">
-                                            <option value="">Bueno</option>
+                                        <select class="chosen"  name="" id="estHerr">
+                                            <option value="">Selecciona una Opción</option>
+                                            <option value="Excelente">Excelente</option>
+                                            <option value="Bueno">Bueno</option>
+                                            <option value="Malo">Malo</option>
                                         </select>
                                     </div>
                                </div>
@@ -871,8 +893,11 @@
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
+                                       <input type="text" class="form-control" id="epp">
                                    </div>
+                               </div>
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarH" class="btn btn-success notika-btn-success">Guardar</button> 
                                </div>                    
                            </div>
                        </div>
