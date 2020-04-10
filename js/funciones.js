@@ -34,7 +34,7 @@ paginacion = 1;
 				}if (a[0] == "RL") {
 					//alert("RL");
 				}if(a[0] == "estacion"){
-					window.location.href = "inicio.php?ty="+a[0];
+					window.location.href = "inicio.php?ty="+a[0]+"&x="+a[3];
 					localStorage.setItem("NES",a[2]);
 					localStorage.setItem("PL",a[3]);
 					localStorage.setItem("RS",a[4]);
@@ -423,6 +423,25 @@ paginacion = 1;
 	});
 
 	/*ALTA PUNTO 4*/
+	$("#btnGuardar4").click(function() {
+		meta4 = $("#metap4").val();
+		fc4 = $("#fechapt4").val();
+		sepador = "/";
+		fecha = fc4.split(sepador);
+		fecha4 = fecha[2]+"-"+fecha[0]+"-"+fecha[1];
+		nombreT4 = $("#nombreTrabjpt4").val();
+		pl = localStorage.getItem("PL");
+
+		$.ajax({
+			url: 'php/insert.php',
+    		method: 'POST',
+    		dataType: 'html',
+    		data: {opc:"add4",m:meta4, f:fecha4, n:nombreT4, cre:pl },
+		})
+		.done(function(msg) {
+			alert(msg);
+		})		
+	});
 
 	/*ALTA PUNTO 5*/
 	$("#guardarU").click(function() {

@@ -1,5 +1,6 @@
 <?php
     $U = $_GET["ty"];
+    $id = $_GET["x"];
 
     include 'php/conex.php';
     $con = Conectarse();
@@ -160,7 +161,7 @@
       <div class="modal-body">
         <p>Agrega Meta</p>
         <div class="form-group nk-int-st">
-          <input type="text" class="form-control" placeholder="">
+          <input type="text" class="form-control" id="metap4">
         </div>
 
         <p>Fecha para cumplir</p>
@@ -170,7 +171,7 @@
                 <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                   <div class="input-group date nk-int-st">
                     <span class="input-group-addon"></span>
-                    <input type="text" class="form-control" value="03/19/2018">
+                    <input type="text" class="form-control" id="fechapt4" value="03/19/2018">
                   </div>
                 </div>
               </label>
@@ -180,12 +181,12 @@
         <p>Trabajador a cumplirla</p>
         
           <div class="chosen-select-act fm-cmp-mg">
-            <select class="chosen" name="" id="nombreTrabj">
+            <select class="chosen" name="" id="nombreTrabjpt4">
               <option id="" value="0" style="display: none;">Selecciona un nombre</option>
               <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
                     $resul = mysqli_query($con,$qri);
                     while($row = $resul->fetch_object()){ ?>
-              <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+              <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM)?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
               <?php } ?>
             </select>
           </div>   

@@ -64,10 +64,13 @@ if($opcion=="addSt"){
 		}
 	}else{ echo $succs;}
 }if($opcion == "add4"){
-	//echo "ENTRO";
+	$meta4 = $_POST['m'];
+	$fecha4 = $_POST['f'];
+	$nombreT4 = $_POST['n'];
+	$id = $_POST['cre'];
 	
 	
-	$sql = "INSERT INTO organigrama (nombre,apellidoP,apellidoM,puesto,idCESH) VALUES ('".$nombrES."','".$aPES."','".$aMES."','".$puesto."','".$id."')";
+	$sql = "INSERT INTO calendario (descripcion,fechainicio,fechaFinal,responsable,status,idCESH) VALUES ('".$meta4."','0000-00-00','".$fecha4."','".$nombreT4."','Iniciada','".$id."')";
 
 	if(mysqli_query($con,$sql)){
 		echo "Insert Correct";
