@@ -513,7 +513,7 @@
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
                             <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                                <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a> -->
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
                                         <i class="notika-icon notika-left-arrow"></i>
@@ -521,7 +521,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -588,8 +588,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            </li> -->
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -1281,7 +1281,7 @@
                                             <li style="display: none;" id="btnblqst"><a href="#tab3" data-toggle="tab">Usuarios</a></li>
 
                                             <li style="display: none;" id="btnsas"><a href="#tab1" data-toggle="tab">Bloquear Puntos</a></li>
-                                            <li style="display: none;" id="btnbl"><a href="#tab2" data-toggle="tab">Estadísticas</a></li>
+                                            <li style="display: none;" id="btnbl"><a href="#tab2" data-toggle="tab">Implementación</a></li>
                                         </ul>
                                     </div>
                                 </div>

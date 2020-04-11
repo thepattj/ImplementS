@@ -27,10 +27,10 @@ paginacion = 1;
 					alert("Error en datos favor de validar");
 				}if(a[0] == "Admin"){
 					//alert("Entra a Admin");
-					window.location.href = "inicio.php?ty="+a[0];
+					window.location.href = "inicio.php?ty="+a[0]+"&x=";
 				}if(a[0] == "sasisopa"){
-					//alert("Entra a Admin");
-					window.location.href = "inicio.php?ty="+a[0];
+					//alert("Entra a SASISOPA");
+					window.location.href = "inicio.php?ty="+a[0]+"&x=";
 				}if (a[0] == "RL") {
 					//alert("RL");
 				}if(a[0] == "estacion"){
