@@ -1,7 +1,7 @@
 <?php
 function Conectarse() {
 	$host="localhost";
-	$user="root";
+	$user="root"; 
 	$pass="";
 	$database="implement";
 

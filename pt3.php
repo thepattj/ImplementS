@@ -1,3 +1,10 @@
+<?php
+    include 'php/conex.php';
+    $cre = $_GET["x"];
+    $con = Conectarse();
+    $rep="";
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -59,7 +66,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body id="nombreestacioncompleto">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -77,7 +84,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
@@ -85,8 +92,8 @@
                                         <input type="text" />
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -153,8 +160,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            </li> -->
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -221,7 +228,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Tasks</h2>
@@ -265,8 +272,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                            </li> -->
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Chat</h2>
@@ -339,7 +346,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -607,7 +614,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Requisitos Legales</h2>
-                                        <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd" id="datacre">No. E. S.</span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -635,15 +642,15 @@
                                                     <div class="container-pro wizard-cts-st">
                                                         <ul>
                                                             <li id="btnlegal"><a href="#tab1" data-toggle="tab">Documentación Legal</a></li>
-                                                            <li id="btnlegis"><a href="#tab2" data-toggle="tab">Legislación Aplicable</a></li>
+                                                            <!-- <li id="btnlegis"><a href="#tab2" data-toggle="tab">Legislación Aplicable</a></li> -->
                                                             <li id="btnasea"><a href="#tab3" data-toggle="tab">ASEA</a></li>
                                                             <li id="btncre"><a href="#tab4" data-toggle="tab">CRE</a></li>
                                                             <li id="btnprofeco"><a href="#tab5" data-toggle="tab">PROFECO</a></li>
                                                             <li id="btnpc"><a href="#tab6" data-toggle="tab">Protección Civil</a></li>
                                                             <li id="btnstps"><a href="#tab7" data-toggle="tab">STPS</a>
                                                             </li>
-                                                            <li id="btnsemt"><a href="#tab8" data-toggle="tab">SEMARNAT</a>
-                                                            </li>
+                                                            <!-- <li id="btnsemt"><a href="#tab8" data-toggle="tab">SEMARNAT</a>
+                                                            </li> -->
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -657,6 +664,19 @@
                     </div>
 
 
+                    <?php
+                        $sqldoc = "SELECT status as s FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadodoc =mysqli_query($con, $sqldoc);
+                        if($resultadodoc->num_rows > 0){
+                            $n = 0;
+                            while($filadoc = $resultadodoc->fetch_assoc()){
+                                $consdoc = $filadoc['s'];
+                                $datos6 [$n] = $consdoc;
+                                $n++;
+                            }
+                        }else{ $datos6 = "000000000000000000"; }
+                        //echo "datos: ".$datos6[0].$datos6[1].$datos6[2].$datos6[3].$datos6[4].$datos6[5];
+                    ?>
                     <!-- DOCUMENTACION LEGAL -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:block;">
                         <div class="form-element-list">
@@ -665,2604 +685,1153 @@
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Documentos
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Dato (registro, núm. de permiso, etc.)
-                                        </label>
-                                    </div>
-                                </div> -->
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <!-- ******************** DATOS ******************************* -->
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Acta Constitutiva
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No Especificado
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                               
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                            
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Poder Notarial 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No Especificado
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Comprobante Original de alta ante hacienda 
-                                        </label>
-                                    </div>
-                                </div>
-                               
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No Especificado
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            R.F.C. Original 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Permiso de la comisión reguladora de Energía (CRE) 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Licencia de Funcionamiento 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Pago anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Municipal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Dictamenten de uso de suelo / Factibilidad de uso de suelo 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Municipal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Tarjeta oficial de IMSS 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Planos Arquitectonicos
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica/Actualizada
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            SIEM(Sistema de Información Empresarial Mexicano) 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ficha Técnica y manual <br> de tanque de almacenamiento
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diverso
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ficha técnica y manual <br> de dispensarios 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diverso
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ficha técnica y manual <br> de Veeder Root2 
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diverso
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y digital
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Documentos</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Periocidad </th>
+                                                <th>Requisitos</th>
+                                                <th>Presentación</th>
+                                                <th style="font-size: .9em;">Pago Federal/Gestor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Acta Constitutiva</td>
+                                                <?php if($datos6[0] == 1){ ?>
+                                                <td value="1" id="cActa" class="active">Si</td>
+                                                <?php } if($datos6[0] == 0) { ?>
+                                                <td value="0" id="cActa" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="cActa"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica</td>
+                                                <td style="font-size: .8em;">No especificado</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Poder Notarial</td>
+                                                <?php if($datos6[1] == 1){ ?>
+                                                <td value="1" id="cPNot" class="active">Si</td>
+                                                <?php } if($datos6[1] == 0) { ?>
+                                                <td value="0" id="cPNot" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="cPNot"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica</td>
+                                                <td style="font-size: .8em;">No especificado</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Comprobante Original de alta ante hacienda</td>
+                                                <?php if($datos6[2] == 1){ ?>
+                                                <td value="1" id="altaSHCP" class="active">Si</td>
+                                                <?php } if($datos6[2] == 0) { ?>
+                                                <td value="0" id="altaSHCP" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="altaSHCP"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica</td>
+                                                <td style="font-size: .8em;">No especificado</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>R.F.C. Original</td>
+                                                <?php if($datos6[3] == 1){ ?>
+                                                <td value="1" id="RFCS" class="active">Si</td>
+                                                <?php } if($datos6[3] == 0) { ?>
+                                                <td value="0" id="RFCS" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="RFCS"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica</td>
+                                                <td> - </td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Permiso de la comisión reguladora de Energía <b>(CRE)</b></td>
+                                                <?php if($datos6[4] == 1){ ?>
+                                                <td value="1" id="PL" class="active">Si</td>
+                                                <?php } if($datos6[4] == 0) { ?>
+                                                <td value="0" id="PL" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="PL"> - </td>
+                                                <?php } ?>
+
+                                                <td>Unica</td>
+                                                <td>Federal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Licencia de Funcionamiento (Municipal)</td>
+                                                <?php if($datos6[5] == 1){ ?>
+                                                <td value="1" id="LFM" class="active">Si</td>
+                                                <?php } if($datos6[5] == 0) { ?>
+                                                <td value="0" id="LFM" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="LFM"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Anual</td>
+                                                <td>Municipal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Dictamenten de uso de suelo / Factibilidad de uso de suelo</td>
+                                                <?php if($datos6[6] == 1){ ?>
+                                                <td value="1" id="dicSuelo" class="active">Si</td>
+                                                <?php } if($datos6[6] == 0) { ?>
+                                                <td value="0" id="dicSuelo" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="dicSuelo"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica</td>
+                                                <td>Municipal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Tarjeta oficial de IMSS</td>
+                                                <?php if($datos6[7] == 1){ ?>
+                                                <td value="1" id="oImss" class="active">Si</td>
+                                                <?php } if($datos6[7] == 0) { ?>
+                                                <td value="0" id="oImss" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="oImss"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica</td>
+                                                <td>Federal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Planos Arquitectonicos</td>
+                                                <?php if($datos6[8] == 1){ ?>
+                                                <td value="1" id="planoA" class="active">Si</td>
+                                                <?php } if($datos6[8] == 0) { ?>
+                                                <td value="0" id="planoA" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="planoA"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unica/Actualizaciones</td>
+                                                <td> - </td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td><b>SIEM</b> (Sistema de Información Empresarial Mexicano)</td>
+                                                <?php if($datos6[9] == 1){ ?>
+                                                <td value="1" id="aSiem" class="active">Si</td>
+                                                <?php } if($datos6[9] == 0) { ?>
+                                                <td value="0" id="aSiem" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="aSiem"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>Dictámenes eléctricos</td>
+                                                <?php if($datos6[10] == 1){ ?>
+                                                <td value="1" id="dElec" class="active">Si</td>
+                                                <?php } if($datos6[10] == 0) { ?>
+                                                <td value="0" id="dElec" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="dElec"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Cada 5 años</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>Dictámenes Tierras Fisicas y pararrayos</td>
+                                                <?php if($datos6[11] == 1){ ?>
+                                                <td value="1" id="dTfisica" class="active">Si</td>
+                                                <?php } if($datos6[11] == 0) { ?>
+                                                <td value="0" id="dTfisica" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="dTfisica"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Cada 5 años</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>Calibración de dispensarios</td>
+                                                <?php if($datos6[12] == 1){ ?>
+                                                <td value="1" id="calDisp" class="active">Si</td>
+                                                <?php } if($datos6[12] == 0) { ?>
+                                                <td value="0" id="calDisp" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="calDisp"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Semestral</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                             <tr>
+                                                <td>14</td>
+                                                <td>Pruebas de Hermeticidad</td>
+                                                <?php if($datos6[13] == 1){ ?>
+                                                <td value="1" id="pHerm" class="active">Si</td>
+                                                <?php } if($datos6[13] == 0) { ?>
+                                                <td value="0" id="pHerm" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="pHerm"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Semestral</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>Pruebas de Hermeticidad a Tuberias</td>
+                                                <?php if($datos6[14] == 1){ ?>
+                                                <td value="1" id="pHermT" class="active">Si</td>
+                                                <?php } if($datos6[14] == 0) { ?>
+                                                <td value="0" id="pHermT" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="pHermT"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td> - </td>
+                                                <td> - </td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>Ficha Técnica y manual de tanque de almacenamiento</td>
+                                                <?php if($datos6[15] == 1){ ?>
+                                                <td value="1" id="tanqueA" class="active">Si</td>
+                                                <?php } if($datos6[15] == 0) { ?>
+                                                <td value="0" id="tanqueA" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="tanqueA"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Diverso</td>
+                                                <td>Federal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>Ficha técnica y manual de dispensarios</td>
+                                                <?php if($datos6[16] == 1){ ?>
+                                                <td value="1" id="dispensarios" class="active">Si</td>
+                                                <?php } if($datos6[16] == 0) { ?>
+                                                <td value="0" id="dispensarios" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="dispensarios"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Diverso</td>
+                                                <td>Federal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>Ficha técnica y manual de Control de inventarios</td>
+                                                <?php if($datos6[17] == 1){ ?>
+                                                <td value="1" id="cIventarios" class="active">Si</td>
+                                                <?php } if($datos6[17] == 0) { ?>
+                                                <td value="0" id="cIventarios" class="success">No</td>
+                                                <?php } if($datos6 == 500) { ?>
+                                                <td value="" id="cIventarios"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Diverso</td>
+                                                <td>Federal</td>
+                                                <td style="font-size: .9em;">Impresa y digital</td>
+                                                <td>No</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php if($datos6 == 000000000000000000){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDocEst" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDocEst" class="btn btn-info notika-btn-info">Actualizar </button>                   
+                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
 
-                    <!-- LEGISLACION -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legis" style="display: none;">
+                    <!-- DOCUMENTACION ASEA -->
+                    <?php
+                        $sqlasea = "SELECT num as n, status as s FROM documento WHERE tipo = 'ASEA' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadoasea =mysqli_query($con, $sqlasea);
+                        if($resultadoasea->num_rows > 0){
+                            $i = 0;
+                            while($fila = $resultadoasea->fetch_assoc()){
+                                $id = $fila['n'];
+                                $cons = $fila['s'];
+                                $datos1 [$i] = $cons;
+                                $i++;
+                            }
+                        }else{ $datos1 = "000000"; }
+                        //echo "datos: ".$datos1[0].$datos1[1].$datos1[2].$datos1[3].$datos1[4].$datos1[5];
+                    ?>
+                    <!-- DOCUMENTACION ASEA -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="asea" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
-                                <h2>Requisitos Legales de la Estación de Servicio</h2>
+                                <h2>Requisitos Documentales - Agencia de Seguridad, Energía y Ambiente</h2>
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumplimiento Legal
-                                        </label>
-                                    </div>
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Cumplimiento ASEA</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Periocidad </th>
+                                                <th>Requisitos</th>
+                                                <th>Presentación</th>
+                                                <th style="font-size: .9em;">Pago Federal / Gestor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>NOM-005-ASEA-2016.</td>
+                                                <?php if($datos1[0] == 1){ ?>
+                                                <td value="1" id="c005" class="active">Si</td>
+                                                <?php } if($datos1[0] == 0) { ?>
+                                                <td value="0" id="c005" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="c005"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Diverso</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Manifiesto Impacto Ambiental (<b>MIA</b>)</td>
+                                                <?php if($datos1[1] == 1){ ?>
+                                                <td value="1" id="cMia" class="active">Si</td>
+                                                <?php } if($datos1[1] == 0) { ?>
+                                                <td value="0" id="cMia" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="cMia"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Único / Actualizar</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/digital</td>
+                                                <td>Ambos</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Informe Preventivo (<b>IP</b>)</td>
+                                                <?php if($datos1[2] == 1){ ?>
+                                                <td value="1" id="cIp" class="active">Si</td>
+                                                <?php } if($datos1[2] == 0) { ?>
+                                                <td value="0" id="cIp" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="cIp"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Único / Actualizar</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Ambos</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Licencia Ambiental Única (<b>LAU</b>) / Licencia de Funcionamiento(<b>LF</b>)</td>
+                                                <?php if($datos1[3] == 1){ ?>
+                                                <td value="1" id="cLf" class="active">Si</td>
+                                                <?php } if($datos1[3] == 0) { ?>
+                                                <td value="0" id="cLf" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="cLf"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Unica / Actualizar</td>
+                                                <td style="font-size: .9em;">Estatal / Municipal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Ambos</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Residuos Peligrosos (<b>RP</b>)</td>
+                                                <?php if($datos1[4] == 1){ ?>
+                                                <td value="1" id="cGrp" class="active">Si</td>
+                                                <?php } if($datos1[4] == 0) { ?>
+                                                <td value="0" id="cGrp" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="cGrp"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Unica / Actualizar</td>
+                                                <td style="font-size: .9em;">Estatal / Municipal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Federal</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Cedula Operación Anual(<b>COA</b>)</td>
+                                                <?php if($datos1[5] == 1){ ?>
+                                                <td value="1" id="cCoa" class="active">Si</td>
+                                                <?php } if($datos1[5] == 0) { ?>
+                                                <td value="0" id="cCoa" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="cCoa"> - </td>
+                                                <?php } ?>                                                
+                                                <td style="font-size: .9em;">Anual, posterior a Licencia</td>
+                                                <td>Federal</td>
+                                                <td>Impresa/Digital</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
+                                <?php if($datos1 == 000000){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDocASEA" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDocASEA" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>    
+                                <?php } ?>
                                 
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley de la  Agencia Nacional de Seguridad Industrial y Protección al medio ambiente del sector hidrocarburos.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley de Hidrocarburos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley General del Equilibrio Ecológico y la Protección al Ambiente.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley Federal de Responsabilidad ambiental.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley General para la prevención y gestión integral de los residuos.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley Federal de Metrología y Normalización
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley Federal del trabajo
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la ley General para la prevención y gestión integral de los residuos.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                               
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la ley Federal de metrología y normalización
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unica
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la ley de hidrocarburos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la Ley General del Equilibrio Ecológico y la Protección al Ambiente en materia de Prevención y Control de la Contaminación a la atmósfera. 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ley de aguas Nacionales
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la Ley de Aguas Nacionales
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la ley General del Equilibrio Ecológico y la protección al ambiente en materia de autorregulación y Auditorías Ambientales.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la ley General del Equilibrio Ecológico y la Protección al Ambiente en materia de Impacto Ambiental
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reglamento de la Ley General del Equilibrio Ecológico y la Protección al Ambiente en Materia de Ordenamiento Ecológico.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ************** ASEA ************ -->
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="asea" style="display: none;">
-                       <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h2>Requisitos Documentales - Agencia de Seguridad, Energía y Ambiente</h2>
-                               <p>Completa el formulario con la información que se te pide para tu control</p>
-                           </div>
-                           <div class="row">
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Cumplimiento Legal
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Cumple
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Periodicidad de Cumplimiento
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   <div class="fm-checkbox">
-                                       <label style="font-size: .9em;">
-                                           Documentación y/o Requisitos
-                                       </label>
-                                   </div>
-                               </div> <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   <div class="fm-checkbox">
-                                       <label style="font-size: .9em;">
-                                           Medio de Presentación
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   <div class="fm-checkbox">
-                                       <label style="font-size: .9em;">
-                                           Pago Federal/ Gestor
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                            <!-- Especificaciones y requisitos en materia de seguridad industrial, seguridad operativa y protección al medio ambiente para el diseño, construcción, pre-arranque, operación, mantenimiento, cierre y desmantelamiento de estaciones de servicio con fin específico para el expendio al público de gas licuado de petróleo, por medio del llenado parcial o total de recipientes portátiles a presión,  -->NOM-EM-004-ASEA-2017.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diverso
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <!-- Vehículos para el transporte y distribución de Gas L.P.- Condiciones de seguridad, operación y mantenimiento, -->NOM-007-SESH-2010.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diverso
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <!-- Plantas de Distribución de Gas L.P. Diseño, Construcción y Condiciones Seguras en su Operación,  -->NOM-001-SESH-2014.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diverso
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <!-- Estaciones de Gas L.P. para carburación, diseño y construcción,  -->NOM-003-SEDG-2004
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diverso
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <!-- Diseño, construcción, operación y mantenimiento de Estaciones de Servicio para almacenamiento y expendio de diésel y gasolinas, --> NOM-005-ASEA-2016.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diversa
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                          <!-- Que establece los criterios para clasificar a los Residuos de Manejo Especial del Sector Hidrocarburos y determinar cuáles están sujetos a Plan de Manejo; el listado de los mismos, así como los elementos y procedimientos para la formulación de los Planes de Manejo de Residuos Peligrosos y de Manejo Especial del Sector Hidrocarburos, -->NOM-EM-005-ASEA-2017.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diversa
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <!-- Bodegas de distribución de Gas L.P. Diseño, construcción, operación y condiciones de seguridad,  -->NOM-002-SESH-2009.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diversa
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                          <!-- Gas comprimido para uso automotor. Requisitos mínimos de seguridad para estaciones de servicio,  -->NOM-010-SECRE-2002.
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diversa
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                              
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <!-- Gas Natural Comprimido (GNC). Requisitos mínimos de seguridad para Terminales de Carga y Terminales de Descarga de Módulos de almacenamiento transportables y Estaciones de Suministro de vehículos automotores, -->NOM-010-ASEA-2016.
-                   
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   SI
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Diversa
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Federal
-                               </div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                   Documental
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   Dictaminador
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                           </div>
-                       </div>
-                   </div>
 
-                    <!-- ************** CRE ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cre" style="display: none;">
+                    <!-- DOCUMENTACION CRE -->
+                    <?php
+                        $sqlcre = "SELECT status as s FROM documento WHERE tipo = 'CRE' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadocre =mysqli_query($con, $sqlcre);
+                        if($resultadocre->num_rows > 0){
+                            $l = 0;
+                            while($filacre = $resultadocre->fetch_assoc()){
+                                //$idprofe = $filaprofe['n'];
+                                $conscre = $filacre['s'];
+                                $datos4 [$l] = $conscre;
+                                $l++;
+                            }
+                        }else{ $datos4 = "000000000000"; }
+                        //echo "datos: ".$datos4[0].$datos4[1];
+                    ?>
+
+                    <!-- DOCUMENTACION CRE -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cre" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Comisión Reguladora de Energía</h2>
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumplimiento Legal
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reporte Diario
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diario
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Electrónico/Linea
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reporte Diario
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diario
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Electrónico/Línea
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Trimestral (Enero - Abril - Junio - Octubre)
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Electrónico/Línea
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Obligaciones Petrolíferos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Trimestral
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Electrónico/Línea
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Obligaciones Petrolíferos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Electrónico/Línea
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Regulación Operativa (controles volumétricos de Dispensarios y Tanques) 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diversa
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Dictamen muestro y determinación de Calidad de petrolíferos (Laboratorios).
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Diversa
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Si
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Comprobante de Pago de Supervisión de Permisos (Derechos, Productos y Aprovechamientos) 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                               
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Póliza anual vigente de seguro
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Año pasado
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Póliza de seguro
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Renovación
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reporte de Quejas 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Procedencia del Producto
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Dictamen de cumplimiento del Programa de Operación y Mantenimiento
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual(Abril)
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Si
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reporte de incidentes o emergencias
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Verificación Petrolíferos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Impresa y Digital
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Anuncio independiente (número de permiso CRE PL/XX/EXP/20XX
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Unico
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Tableta
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    No
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Cumplimiento CRE</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Periocidad </th>
+                                                <th>Requisitos</th>
+                                                <th>Presentación</th>
+                                                <th>Pago Federal / Gestor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Reporte Diario (Volúmenes)</td>
+                                                <?php if($datos4[0] == 1){ ?>
+                                                <td value="1" id="rDiariov" class="active">Si</td>
+                                                <?php } if($datos4[0] == 0) { ?>
+                                                <td value="0" id="rDiariov" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="rDiariov"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Diario</td>
+                                                <td>Federal</td>
+                                                <td>Electrónico/Línea</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Reporte Diario (Precios)</td>
+                                                <?php if($datos4[1] == 1){ ?>
+                                                <td value="1" id="rDiariop" class="active">Si</td>
+                                                <?php } if($datos4[1] == 0) { ?>
+                                                <td value="0" id="rDiariop" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="rDiariop"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Diario</td>
+                                                <td>Federal</td>
+                                                <td>Electrónico/Línea</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes</td>
+                                                <?php if($datos4[2] == 1){ ?>
+                                                <td value="1" id="cEstad" class="active">Si</td>
+                                                <?php } if($datos4[2] == 0) { ?>
+                                                <td value="0" id="cEstad" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="cEstad"> - </td>
+                                                <?php } ?>                                                
+                                                <td>1 al 10 de enero (Reporte de octubre-diciembre) 1 al 10 de abril</td>
+                                                <td>Federal</td>
+                                                <td>Electrónico/Línea</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
+                                                <?php if($datos4[3] == 1){ ?>
+                                                <td value="1" id="016" class="active">Si</td>
+                                                <?php } if($datos4[3] == 0) { ?>
+                                                <td value="0" id="016" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="016"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Semestral</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2017</b>)</td>
+                                                <?php if($datos4[4] == 1){ ?>
+                                                <td value="1" id="0162017" class="active">Si</td>
+                                                <?php } if($datos4[4] == 0) { ?>
+                                                <td value="0" id="0162017" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="0162017"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>Si</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Reporte de Pagos Supervisión de permisos<br>(Derechos, Productos y Aprovechamiento)</td>
+                                                <?php if($datos4[5] == 1){ ?>
+                                                <td value="1" id="rPsupervi" class="active">Si</td>
+                                                <?php } if($datos4[5] == 0) { ?>
+                                                <td value="0" id="rPsupervi" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="rPsupervi"> - </td>
+                                                <?php } ?>
+                                                <td>Anual, 1 - 15 feb.</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Poliza anual vigente de seguro (Seguro)</td>
+                                                <?php if($datos4[6] == 1){ ?>
+                                                <td value="1" id="polizAnual" class="active">Si</td>
+                                                <?php } if($datos4[6] == 0) { ?>
+                                                <td value="0" id="polizAnual" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="polizAnual"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual, 1 - 10 abr. del año siguiente</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Poliza de seguro (Seguro)</td>
+                                                <?php if($datos4[7] == 1){ ?>
+                                                <td value="1" id="polizaSg" class="active">Si</td>
+                                                <?php } if($datos4[7] == 0) { ?>
+                                                <td value="0" id="polizaSg" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="polizaSg"> - </td>
+                                                <?php } ?>                                                
+                                                <td>En caso de renovación</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Reporte de Quejas</td>
+                                                <?php if($datos4[8] == 1){ ?>
+                                                <td value="1" id="rQue" class="active">Si</td>
+                                                <?php } if($datos4[8] == 0) { ?>
+                                                <td value="0" id="rQue" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="rQue"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual, 1 - 10 abr. del año siguiente</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Procedencia del producto (facturas)</td>
+                                                <?php if($datos4[9] == 1){ ?>
+                                                <td value="1" id="factProd" class="active">Si</td>
+                                                <?php } if($datos4[9] == 0) { ?>
+                                                <td value="0" id="factProd" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="factProd"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Anual, 2 - 10 abr. del año siguiente</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>Reporte de inicidentes o emergencias</td>
+                                                <?php if($datos4[10] == 1){ ?>
+                                                <td value="1" id="incidentes" class="active">Si</td>
+                                                <?php } if($datos4[10] == 0) { ?>
+                                                <td value="0" id="incidentes" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="incidentes"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual, 1 - 10 abr. del año siguiente</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/20XX)</td>
+                                                <?php if($datos4[11] == 1){ ?>
+                                                <td value="1" id="anInde" class="active">Si</td>
+                                                <?php } if($datos4[11] == 0) { ?>
+                                                <td value="0" id="anInde" class="success">No</td>
+                                                <?php } if($datos4 == 500) { ?>
+                                                <td value="" id="anInde"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>Unico</td>
+                                                <td>Federal</td>
+                                                <td>Impresa y Digital</td>
+                                                <td>No</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php if($datos4 == 000000000000){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDoCre" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDoCre" class="btn btn-info notika-btn-info">Actualizar </button>                   
+                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
-                    <!-- ************** PROFECO ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="profeco" style="display: none;">
+
+
+                    <!-- DOCUMENTACION PROFECO -->
+                    <?php
+                        $sqlprofe = "SELECT status as s FROM documento WHERE tipo = 'PROFECO' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadoprofe =mysqli_query($con, $sqlprofe);
+                        if($resultadoprofe->num_rows > 0){
+                            $j = 0;
+                            while($filaprofe = $resultadoprofe->fetch_assoc()){
+                                //$idprofe = $filaprofe['n'];
+                                $consprofe = $filaprofe['s'];
+                                $datos2 [$j] = $consprofe;
+                                $j++;
+                            }
+                        }else{ $datos2 = "00"; }
+                        //echo "datos: ".$datos2." - ".$datos2[0];
+                    ?>
+
+                    <!-- DOCUMENTACION PROFECO -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="profeco" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos Documentales - Procuraduría Federal del Consumidor</h2>
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumplimiento PROFECO
-                                        </label>
-                                    </div>
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Cumplimiento PROFECO</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Periocidad </th>
+                                                <th>Requisitos</th>
+                                                <th>Presentación</th>
+                                                <th>Pago Federal / Gestor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Verificación periódica de dispensarios </td>
+                                                <?php if($datos2[0] == 1){ ?>
+                                                <td value="1" id="vPerdisp" class="active">Si</td>
+                                                <?php } if($datos2[0] == 0) { ?>
+                                                <td value="0" id="vPerdisp" class="success">No</td>
+                                                <?php } ?>                                                
+                                                <td>Semestrales</td>
+                                                <td>UVA</td>
+                                                <td>Documental</td>
+                                                <td>Ambas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Reporte de control a distancia </td>
+                                                <?php if($datos2[1] == 1){ ?>
+                                                <td value="1" id="rControldis" class="active">Si</td>
+                                                <?php } if($datos2[1] == 0) { ?>
+                                                <td value="0" id="rControldis" class="success">No</td>
+                                                <?php } ?>                                                
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Ambas</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
+                                <?php if($datos2 == 00){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDocp" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDocP" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Verificación periódica de dispensarios 
-                                        </label>
-                                    </div>
-                                </div>                                
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Semestral
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    UVA
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Reporte de control a distancia 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ************** PROTECCIÓN CIVIL ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pc" style="display: none;">
+
+                    <!-- DOCUMENTACION PROTECCION CIVIL -->
+                    <?php
+                        $sqlpc = "SELECT status as s FROM documento WHERE tipo = 'Protección Civi' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadopc =mysqli_query($con, $sqlpc);
+                        if($resultadopc->num_rows > 0){
+                            $k = 0;
+                            while($filapc = $resultadopc->fetch_assoc()){
+                                //$idprofe = $filaprofe['n'];
+                                $conspc = $filapc['s'];
+                                $datos3 [$k] = $conspc;
+                                $k++;
+                            }
+                        }else{ $datos3 = "00"; }
+                        //echo "datos: ".$datos3[0].$datos3[1];
+                    ?>
+
+                    <!-- DOCUMENTACION PROTECCION CIVIL -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pc" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Protección Civil </h2>
+                                <h2>Requisitos Documentales - Protección Civil</h2>
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumplimiento Protección Civil
-                                        </label>
-                                    </div>
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Cumplimiento Protección Civil</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Periocidad </th>
+                                                <th>Requisitos</th>
+                                                <th>Presentación</th>
+                                                <th>Pago Federal / Gestor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Visto Bueno</td>
+                                                <?php if($datos3[0] == 1){ ?>
+                                                <td value="1" id="vBueno" class="active">Si</td>
+                                                <?php } if($datos3[0] == 0) { ?>
+                                                <td value="0" id="vBueno" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="vBueno"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Unica</td>
+                                                <td>Municipal</td>
+                                                <td>Documental</td>
+                                                <td>Ambas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Auto declaratoria</td>
+                                                <?php if($datos3[1] == 1){ ?>
+                                                <td value="1" id="cdecla" class="active">Si</td>
+                                                <?php } if($datos3[1] == 0) { ?>
+                                                <td value="0" id="cdecla" class="success">No</td>
+                                                <?php } if($datos1 == 500) { ?>
+                                                <td value="" id="cdecla"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual</td>
+                                                <td>Municipal</td>
+                                                <td>Documental</td>
+                                                <td>Ambas</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
+                                <?php if($datos1 == 00){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDocPc" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDocPc" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>    
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Visto Bueno
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Municipal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           Auto declaratoria
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Municipal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Ambas
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ************** STPS ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="stps" style="display: none;">
+
+                    <!-- DOCUMENTACION STPS -->
+                    <?php
+                        $sqlstp = "SELECT status as s FROM documento WHERE tipo = 'STPS' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadostp =mysqli_query($con, $sqlstp);
+                        if($resultadostp->num_rows > 0){
+                            $m = 0;
+                            while($filastp = $resultadostp->fetch_assoc()){
+                                //$idprofe = $filaprofe['n'];
+                                $consstp = $filastp['s'];
+                                $datos5 [$m] = $consstp;
+                                $m++;
+                            }
+                        }else{ $datos5 = "000000000000000"; }
+                        //echo "datos: ".$datos5[0].$datos5[1].$datos5[2].$datos5[3];
+                    ?>
+
+                    <!-- DOCUMENTACION STPS -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="stps" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Secretaría del Trabajo y Prevensión Social </h2>
+                                <h2>Requisitos Documentales - Secretaría del Trabajo y Prevensión Social</h2>
                                 <p>Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumplimiento STPS
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Evaluación de sustancias químicas de acuerdo a la  -->NOM-010-STPS-2014
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Depende de resultados
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!-- Evaluación de ruido de acuerdo a la  -->NOM-011-STPS-2001
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!-- Evaluación de condiciones térmicas elevadas o abatidas de acuerdo a la  -->NOM-015-STPS-2001
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>      
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!-- Evaluación de electricidad estática en los centros de trabajo de acuerdo a la  -->NOM-022-STPS-2008
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!-- Condiciones de seguridad e higiene en los centros de trabajo de acuerdo  a la  -->NOM-024-STPS-2015
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!-- Evaluación de las condiciones de iluminación de acuerdo a la  -->NOM-025-STPS-2008
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Edificios, locales, instalaciones y áreas en los centros de trabajo  -->NOM-001-STPS-2008.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo  -->NOM-002-STPS-2010.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                             <!-- Condiciones de seguridad para realizar trabajos en altura --> NOM-009-STPS-2011.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!--  Equipo de protección personal-Selección, uso y manejo en los centros de trabajo,  -->NOM-017-STPS-2008.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> 
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Equipo de protección personal-Selección, uso y manejo en los centros de trabajo,  -->NOM-017-STPS-2008.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo,  -->NOM-018-STPS-2015.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene,  -->NOM-019-STPS-2011.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías,  -->NOM-026-STPS-2008.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                             <!-- Actividades de soldadura y corte-Condiciones de seguridad e higiene,  -->NOM-027-STPS-2008.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <!-- Mantenimiento de las instalaciones eléctricas en los centros de trabajo,  -->NOM-029-STPS-2011.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Dependiendo Cambios
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           <!-- Condiciones de seguridad para realizar trabajos en espacios confinados,  -->NOM-033-STPS-2015.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Cumplimiento STPS</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Periocidad </th>
+                                                <th>Requisitos</th>
+                                                <th>Presentación</th>
+                                                <th>Pago Federal / Gestor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Edificios, locales, instalaciones y áreas en los centros de trabajo<br><b>NOM-001-STPS-2008.</b></td>
+                                                <?php if($datos5[0] == 1){ ?>
+                                                <td value="1" id="001stps" class="active">Si</td>
+                                                <?php } if($datos5[0] == 0) { ?>
+                                                <td value="0" id="001stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="001stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo<br><b>NOM-002-STPS-2010.</b></td>
+                                                <?php if($datos5[1] == 1){ ?>
+                                                <td value="1" id="002stps" class="active">Si</td>
+                                                <?php } if($datos5[1] == 0) { ?>
+                                                <td value="0" id="002stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="002stps"> - </td>
+                                                <?php } ?>
+                                                <td>Trianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Condiciones de seguridad para realizar trabajos en altura<br><b>NOM-009-STPS-2011.</b></td>
+                                                <?php if($datos5[2] == 1){ ?>
+                                                <td value="1" id="009stps" class="active">Si</td>
+                                                <?php } if($datos5[2] == 0) { ?>
+                                                <td value="0" id="009stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="009stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Evaluación de sustancias química<br><b>NOM-010-STPS-2014.</b></td>
+                                                <?php if($datos5[3] == 1){ ?>
+                                                <td value="1" id="010stps" class="active">Si</td>
+                                                <?php } if($datos5[3] == 0) { ?>
+                                                <td value="0" id="010stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="010stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Dependiendo los resultados</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Evaluación de ruido<br><b>NOM-011-STPS-2001</b></td>
+                                                <?php if($datos5[4] == 1){ ?>
+                                                <td value="1" id="011stps" class="active">Si</td>
+                                                <?php } if($datos5[4] == 0) { ?>
+                                                <td value="0" id="011stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="011stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Equipo de protección personal-Selección, uso y manejo en los centros de trabajo<br><b>NOM-017-STPS-2008.</b></td>
+                                                <?php if($datos5[5] == 1){ ?>
+                                                <td value="1" id="017stps" class="active">Si</td>
+                                                <?php } if($datos5[5] == 0) { ?>
+                                                <td value="0" id="017stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="017stps"> - </td>
+                                                <?php } ?>
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo<br><b>NOM-018-STPS-2015.</b></td>
+                                                <?php if($datos5[6] == 1){ ?>
+                                                <td value="1" id="018stps" class="active">Si</td>
+                                                <?php } if($datos5[6] == 0) { ?>
+                                                <td value="0" id="018stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="018stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene<br><b>NOM-019-STPS-2011.</b></td>
+                                                <?php if($datos5[7] == 1){ ?>
+                                                <td value="1" id="019stps" class="active">Si</td>
+                                                <?php } if($datos5[7] == 0) { ?>
+                                                <td value="0" id="019stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="019stps"> - </td>
+                                                <?php } ?>
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Evaluación de electricidad estática en los centros de trabajo<br><b>NOM-022-STPS-2008</b></td>
+                                                <?php if($datos5[8] == 1){ ?>
+                                                <td value="1" id="022stps" class="active">Si</td>
+                                                <?php } if($datos5[8] == 0) { ?>
+                                                <td value="0" id="022stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="022stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Condiciones de seguridad e higiene en los centros de trabajo<br><b>NOM-024-STPS-2015</b></td>
+                                                <?php if($datos5[9] == 1){ ?>
+                                                <td value="1" id="024stps" class="active">Si</td>
+                                                <?php } if($datos5[9] == 0) { ?>
+                                                <td value="0" id="024stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="024stps"> - </td>
+                                                <?php } ?> 
+
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
+                                                <?php if($datos5[10] == 1){ ?>
+                                                <td value="1" id="025stps" class="active">Si</td>
+                                                <?php } if($datos5[10] == 0) { ?>
+                                                <td value="0" id="025stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="025stps"> - </td>
+                                                <?php } ?>
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
+                                                <?php if($datos5[11] == 1){ ?>
+                                                <td value="1" id="026stps" class="active">Si</td>
+                                                <?php } if($datos5[11] == 0) { ?>
+                                                <td value="0" id="026stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="026stps"> - </td>
+                                                <?php } ?>                                                
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>Actividades de soldadura y corte-Condiciones de seguridad e higiene<br><b>NOM-027-STPS-2008.</b></td>
+                                                <?php if($datos5[12] == 1){ ?>
+                                                <td value="1" id="027stps" class="active">Si</td>
+                                                <?php } if($datos5[12] == 0) { ?>
+                                                <td value="0" id="027stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="027stps"> - </td>
+                                                <?php } ?>
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
+                                                <?php if($datos5[13] == 1){ ?>
+                                                <td value="1" id="029stps" class="active">Si</td>
+                                                <?php } if($datos5[13] == 0) { ?>
+                                                <td value="0" id="029stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="029stps"> - </td>
+                                                <?php } ?>
+                                                <td>Bianual/Actualización</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr><tr>
+                                                <td>15</td>
+                                                <td>Condiciones de seguridad para realizar trabajos en espacios confinados<br><b>NOM-033-STPS-2015.</b></td>
+                                                <?php if($datos5[14] == 1){ ?>
+                                                <td value="1" id="033stps" class="active">Si</td>
+                                                <?php } if($datos5[14] == 0) { ?>
+                                                <td value="0" id="033stps" class="success">No</td>
+                                                <?php } if($datos5 == 500) { ?>
+                                                <td value="" id="033stps"> - </td>
+                                                <?php } ?>
+
+                                                <td>Anual</td>
+                                                <td>Federal</td>
+                                                <td>Documental</td>
+                                                <td>Gestor</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php if($datos5 == 000000000000000){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDocstp" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDocstp" class="btn btn-info notika-btn-info">Actualizar </button>                   
+                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ************** SEMARNAT ************ -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="semt" style="display: none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Secretaria de Medio Ambiente y Recursos Naturales </h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumplimiento SEMARNAT
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Cumple
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Periodicidad de Cumplimiento
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Documentación y/o Requisitos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Medio de Presentación
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Pago Federal/ Gestor
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>  
-
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            NOM-001-SEMARNAT-1996. 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>        
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           NOM-002-SEMARNAT-1996.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>      
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-003-SEMARNAT-1997.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           NOM-004-SEMARNAT-2002.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Anual
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           NOM-052-SEMARNAT-2005.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-052-SEMARNAT-2005(NOM-054-SEMARNAT-1993)
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-161-SEMARNAT-2011.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-165-SEMARNAT-2013.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-086-SEMARNAT-SENER-SCFI-2005.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-24col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-081-SEMARNAT-1994.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Única
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-059-SEMARNAT-2010.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Actualización
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                          NOM-138-SEMARNAT/SSA1-2012.
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    SI
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Federal
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    Documental
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    Laboratorio Externo
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -3805,10 +2374,11 @@
     <script src="js/main.js"></script>
 	<!-- tawk chat JS
 		============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/onload.js"></script>
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>

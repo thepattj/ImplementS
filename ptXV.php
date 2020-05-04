@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Form Components | Notika - Notika Admin Template</title>
+    <title>Auditoria | ImplementS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -80,7 +80,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body id="nombreestacioncompleto">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -98,7 +98,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
@@ -174,8 +174,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            </li> -->
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Tasks</h2>
@@ -360,7 +360,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -628,7 +628,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Auditorias</h2>
-                                        <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd" id="datacre">No. E. S.</span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -820,7 +820,7 @@
                    
                    
                                
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="auditoriaNumero">
                                    <div class="fm-checkbox">
                                        <label>
                                            <h2>Actividades</h2>
@@ -828,7 +828,11 @@
                                    </div>
                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
+
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <label id="auditorias"> ... </label>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="fm-checkbox">
@@ -1511,10 +1515,11 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/onload.js"></script>
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>

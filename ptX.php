@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Form Components | Notika - Notika Admin Template</title>
+    <title>Control de actividades y procesos | ImplementS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -87,7 +87,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body id="nombreestacion">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -105,16 +105,16 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
-                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
-                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                    <div class="search-input">
-                                        <i class="notika-icon notika-left-arrow"></i>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
+                           <!--  <li class="nav-item dropdown">
+                               <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                               <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                   <div class="search-input">
+                                       <i class="notika-icon notika-left-arrow"></i>
+                                       <input type="text" />
+                                   </div>
+                               </div>
+                           </li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -181,8 +181,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            </li> -->
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -249,7 +249,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Tasks</h2>
@@ -293,8 +293,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                            </li> -->
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Chat</h2>
@@ -367,7 +367,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -635,7 +635,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Control de actividades y procesos</h2>
-                                        <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -653,10 +653,10 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="wizard-wrap-int">
-                                        <!-- <div class="wizard-hd">
+                                        <div class="wizard-hd">
                                             <h2></h2>
                                             <p></p>
-                                        </div> -->
+                                        </div>
                                         <div id="rootwizard">
                                             <div class="navbar">
                                                 <div class="navbar-inner">
@@ -698,8 +698,16 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="aNueva">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="aNueva">
+                                            <option value="Selecciona" style="display: none;">Selecciona una opción</option>
+                                            <option value="Direccion">Alta Dirección</option>
+                                            <option value="RepresentanteT">Representante Técnico</option>
+                                            <option value="Administrativos">Administrativos</option>
+                                            <option value="Despachador">Despachador</option>
+                                            <option value="Intendente">Intendente</option>
+                                            <option value="FinLaboral">Fin de relación laboral</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -716,7 +724,7 @@
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="nombreTrabjC">
                                           <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                                                 $resul = mysqli_query($con,$qri);
                                                 while($row = $resul->fetch_object()){ ?>
                                           <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
@@ -738,7 +746,7 @@
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
                                         <?php 
-                                              $qi = "SELECT nombre as N, apellidoP as AP, apellidoM as AM FROM organigrama WHERE puesto = 'RepresentanteT' AND idCESH = '".$id."'";
+                                              $qi = "SELECT nombre as N, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND puesto = 'RepresentanteT' AND idCESH = '".$id."'";
                                               $rsul = mysqli_query($con,$qi);
                                               while($rw = $rsul->fetch_assoc()){
                                                 $nrt = $rw['N'];
@@ -849,7 +857,7 @@
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="respMant">
                                           <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                                                 $resul = mysqli_query($con,$qri);
                                                 while($row = $resul->fetch_object()){ ?>
                                           <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
@@ -872,7 +880,7 @@
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
-                                <p>Expedición de Orden de trabajo para realizar cualquier actividad dentr de la estación.</p>
+                                <p>Expedición de Orden de trabajo para realizar cualquier actividad dentro de la estación.</p>
                             </div>
                             <div class="row">                    
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -902,8 +910,15 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <?php $sql = "SELECT idOrdenT FROM dzordentr WHERE idCESH = '".$id."' ORDER BY idOrdenT DESC LIMIT 1";
+                                          $resultado =mysqli_query($con, $sql);
+                                          if($resultado->num_rows > 0){
+                                            $fila1 = $resultado->fetch_assoc();
+                                            $datos1 = implode("", $fila1);
+                                          }
+                                    ?>
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="noPermiso" disabled>
+                                        <input type="text" class="form-control" id="noPermiso" disabled value="<?php echo $datos1+1 ?>">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -963,7 +978,7 @@
                                         <select class="chosen" name="" id="tipoT">
                                             <option value="0" style="display: none;"> Selecciona una opción </option>
                                             <option value="INTERNO">INTERNO</option>
-                                            <option value="INTERNO">EXTERNO</option>
+                                            <option value="EXTERNO">EXTERNO</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1219,8 +1234,8 @@
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" multiple data-placeholder="" id="peligros">
-                                            <option value="0" style="display:none;">Selecciona una opción</option>
+                                        <select class="chosen" multiple data-placeholder="Selecciona una/varias opciones" id="peligros">
+                                            <!-- <option value="0" style="display:none;">Selecciona una opción</option> -->
                                             <option value="Gravedad y movimientos">Gravedad y movimientos</option>
                                             <option value="Herramientas/Equipos/Maquinaria">Herramientas/Equipos/Maquinaria</option>
                                             <option value="Transporte terrestres"> Transporte terrestres</option>
@@ -1251,8 +1266,8 @@
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" multiple data-placeholder="" id="precauciones">
-                                            <option value="0" style="display:none;">Selecciona una opción</option>
+                                        <select class="chosen" multiple data-placeholder="Selecciona una/varias opciones" id="precauciones">
+                                            <!-- <option value="0" style="display:none;">Selecciona una opción</option> -->
                                             <option value="Personal competente">Personal competente</option>
                                             <option value="Equipo de combate de incendios">Equipo de combate de incendios</option>
                                             <option value="Iluminacion">Iluminación</option>
@@ -1321,91 +1336,130 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Agregaras las bitacoras</p>
+                                <h2>Cargar bitacoras del punto 10</h2>
+                                <p>Para cumplir este punto deberas cargar las bitacoras. Estas deben ser las ultimas que realizaste en fisico de los siguiente temas:</p>
                             </div>
                             <div class="row">                    
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Mantemiento Preventivo y Correctivo (10-BT-01)
+                                            Mantemiento Preventivo y Correctivo (10-BT-01) (.pdf)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <form name="enviarbt01" id="enviarbt01" enctype="multipart/form-data" method="post">
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" style="display: none;" name="" id="meselec">
-                                            <option value="0" style="display: none;">Selecciona el mes</option>
-                                            <option value="Enero">Enero</option>
-                                            <option value="Febrero">Febrero</option>
-                                            <option value="Marzo">Marzo</option>
-                                            <option value="Abril">Abril</option>
-                                            <option value="Mayo">Mayo</option>
-                                            <option value="Junio">Junio</option>
-                                            <option value="Julio">Julio</option>
-                                            <option value="Agosto">Agosto</option>
-                                            <option value="Septiembre">Septiembre</option>
-                                            <option value="Octubre">Octubre</option>
-                                            <option value="Noviembre">Noviembre</option>
-                                            <option value="Diciembre">Diciembre</option>
-                                        </select>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="datebt01" id="datebt01" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                </form>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <div class="form-group nk-int-st">
-                                       <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt01" name="archivobt01">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt01" name="idbt01">
+                                        </div>
+                                    </div>
+                                <?php 
+                                    $sqlprueba = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBitacoras DESC LIMIT 1";
+                                    $result =mysqli_query($con, $sqlprueba);
+                                    if($result->num_rows > 0){ 
+                                        $fila1 = $result->fetch_assoc();
+                                        $datos1 = implode("", $fila1);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos1;?>" placeholder="" id="idActualiza01" name="idActualiza01">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        </form>
+                                        
+                                <?php
+                                    }
+                                ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <button type="button" class="btn btn-primary" id="btnGuardar01">Guardar</button>
                                 </div>
+
+
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
                     
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                     <div class="fm-checkbox">
                                         <label>
-                                            Residuos Peligrosos (10-BT-02)
+                                            Residuos Peligrosos (10-BT-02) (.pdf)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <form name="enviarbt02" id="enviarbt02" enctype="multipart/form-data" method="post"><div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" style="display: none;" name="" id="meselec">
-                                            <option value="0" style="display: none;">Selecciona el mes</option>
-                                            <option value="Enero">Enero</option>
-                                            <option value="Febrero">Febrero</option>
-                                            <option value="Marzo">Marzo</option>
-                                            <option value="Abril">Abril</option>
-                                            <option value="Mayo">Mayo</option>
-                                            <option value="Junio">Junio</option>
-                                            <option value="Julio">Julio</option>
-                                            <option value="Agosto">Agosto</option>
-                                            <option value="Septiembre">Septiembre</option>
-                                            <option value="Octubre">Octubre</option>
-                                            <option value="Noviembre">Noviembre</option>
-                                            <option value="Diciembre">Diciembre</option>
-                                        </select>
+                                <form name="enviarbt02" id="enviarbt02" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="datebt02" id="datebt02" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                </form>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <div class="form-group nk-int-st">
-                                        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt02" name="archivobt02">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt02" name="idbt02">
+                                        </div>
+                                    </div>
+                                <?php 
+                                    $sqlprueb = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-02' ORDER BY idBitacoras DESC LIMIT 1";
+                                    $resul =mysqli_query($con, $sqlprueb);
+                                    if($resul->num_rows > 0){ 
+                                        $fila2 = $resul->fetch_assoc();
+                                        $datos2 = implode("", $fila2);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos2;?>" placeholder="" id="idActualiza" name="idActualiza02">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <button type="button" class="btn btn-primary" id="btnGuardar02">Guardar</button>
                                 </div>
+                                
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
@@ -1413,44 +1467,60 @@
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                     <div class="fm-checkbox">
                                         <label>
-                                           Recepción, Descarga y Desviación en el Balance de Producto
+                                           Recepción, Descarga y Desviación en el Balance de Producto (10-BT-03)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <form name="enviarbt03" id="enviarbt03" enctype="multipart/form-data" method="post">
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" style="display: none;" name="" id="meselec">
-                                            <option value="0" style="display: none;">Selecciona el mes</option>
-                                            <option value="Enero">Enero</option>
-                                            <option value="Febrero">Febrero</option>
-                                            <option value="Marzo">Marzo</option>
-                                            <option value="Abril">Abril</option>
-                                            <option value="Mayo">Mayo</option>
-                                            <option value="Junio">Junio</option>
-                                            <option value="Julio">Julio</option>
-                                            <option value="Agosto">Agosto</option>
-                                            <option value="Septiembre">Septiembre</option>
-                                            <option value="Octubre">Octubre</option>
-                                            <option value="Noviembre">Noviembre</option>
-                                            <option value="Diciembre">Diciembre</option>
-                                        </select>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="datebt03" id="datebt03" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
-                                </form>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <div class="form-group nk-int-st">
-                                        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                                
+                                    
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt03" name="archivobt03">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt03" name="idbt03">
+                                        </div>
+                                    </div>
+                                <?php 
+                                    $sqlprue = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBitacoras DESC LIMIT 1";
+                                    $res =mysqli_query($con, $sqlprue);
+                                    if($res->num_rows > 0){ 
+                                        $fila3 = $res->fetch_assoc();
+                                        $datos3 = implode("", $fila3);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos3;?>" placeholder="" id="idActualiza03" name="idActualiza03">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <button type="button" class="btn btn-primary" id="btnGuardar03">Guardar</button>
-                                </div>                                
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 
                             </div>
@@ -1997,6 +2067,7 @@
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/onload.js"></script>
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>

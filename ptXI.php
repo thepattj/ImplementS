@@ -1,10 +1,17 @@
+<?php
+    include 'php/conex.php';
+    $con = Conectarse();
+
+    $id = $_GET["x"];
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Form Components | Notika - Notika Admin Template</title>
+    <title>Integridad mécanica y Aseguramiento de la calidad| ImplementS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -80,7 +87,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body id="nombreestacioncompleto">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -92,13 +99,13 @@
             <div class="row">
                 <div class=" col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                        <a href="inicio.php?ty=estacion&x=PL/0000/EXP/ES/2020"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
@@ -106,8 +113,8 @@
                                         <input type="text" />
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -174,8 +181,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            </li> -->
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -242,7 +249,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Tasks</h2>
@@ -360,7 +367,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -627,8 +634,8 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Integridad mecánica y aseguramiento de la calidad</h2>
-                                        <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
+                                        <h2>Control de actividades y procesos</h2>
+                                        <p><span class="bread-ntd" id="datacre">  </span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -639,317 +646,609 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Inventario de los Equipos que se tienen dentro de la estación.</p>
-                            </div>
+
+                    <!-- <div class="wizard-area">
+                        <div class="container">
                             <div class="row">
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Equipo 
-                                        </label>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="wizard-wrap-int">
+                                        <div class="wizard-hd">
+                                            <h2></h2>
+                                            <p></p>
+                                        </div>
+                                        <div id="rootwizard">
+                                            <div class="navbar">
+                                                <div class="navbar-inner">
+                                                    <div class="container-pro wizard-cts-st">
+                                                        <ul>
+                                                            <li id="btnper"><a href="#tab1" data-toggle="tab">Cambio de personal</a></li>
+                                                            <li id="btntec"><a href="#tab2" data-toggle="tab">Cambio técnologico</a></li>
+                                                            <li id="btnorden"><a href="#tab3" data-toggle="tab">Orden de trabajo</a></li>
+                                                            <li id="btnbitacora"><a href="#tab4" data-toggle="tab">Subir Bitacora</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-content"> </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Manuales técnicos de equipos
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Periodos de calibración
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Registro de calibración
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Certificado de calibración
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Informes de pruebas, fallas e inspecciones
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label style="font-size: .9em;">
-                                            Procedimiento de seguridad
-                                        </label>
-                                    </div>
-                                </div>                
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
-                                <p>Actualizaras de manera detallada los cambios técnologicos de la Estación de Servicio</p>
+                                <p>Para poder cumplir el punto deberas realizar dos actividades</p>
+                                <p>I Cargar las fechas de las bitacoras que ya haz realizado hasta este momento.</p>
+                                <p>II Cargar la bitacora (formato .pdf) en las fechas indicadas.</p>
                             </div>
-                            <div class="row">                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class="row">
+                                
+
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Equipo
-                                        </label>
+                                        <h4>Monitoreo y observación (11 BT 01)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Mensualmente .pdf)</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                
+                                <form name="frm11bt01" id="frm11bt01" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt01" id="date11bt01" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                                                   
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt1" name="archivo11bt1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt01" name="id11bt01">
+                                        </div>
+                                    </div> 
+                                <?php 
+                                    $sql1 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBit DESC LIMIT 1";
+                                    $res1 =mysqli_query($con, $sql1);
+                                    if($res1->num_rows > 0){ 
+                                        $fila1 = $res1->fetch_assoc();
+                                        $datos1 = implode("", $fila1);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos1;?>" placeholder="" id="idActualiza11bt01" name="idActualiza11bt01">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar11bt01">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Descripcion de cambio
-                                        </label>
+                                        <h4>Limpiezas y/o Mantemienito Preventico y Correctivo (Limpieza General - Diario - 11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Mensualmente, todas las bitacoras en un mismo .pdf)</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" placeholder="..."></textarea>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02" id="frm11bt02" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02" id="date11bt02" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>    
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2" name="archivo11bt2">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02" name="id11bt02">
+                                        </div>
+                                    </div>
+                                <?php 
+                                    $sql2 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Diario' ORDER BY idBit DESC LIMIT 1";
+                                    $res2 =mysqli_query($con, $sql2);
+                                    if($res2->num_rows > 0){ 
+                                        $fila2 = $res2->fetch_assoc();
+                                        $datos2 = implode("", $fila2);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos2;?>" placeholder="" id="idActualiza11bt02" name="idActualiza11bt02">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar11bt02">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                    
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="fm-checkbox">
+                                        <h4> Limpiezas y/o Mantemiento Preventivio y Correctivo Mensual (11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Mensualmente las bitacoras - .pdf)</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02m" id="frm11bt02m" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02m" id="date11bt02m" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2m" name="archivo11bt2m">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02m" name="id11bt02m">
+                                        </div>
+                                    </div>
+
+                                <?php 
+                                    $sql3 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Mensual' ORDER BY idBit DESC LIMIT 1";
+                                    $res3 =mysqli_query($con, $sql3);
+                                    if($res3->num_rows > 0){ 
+                                        $fila3 = $res3->fetch_assoc();
+                                        $datos3 = implode("", $fila3);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos3;?>" placeholder="" id="idActualiza11bt02m" name="idActualiza11bt02m">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar02m">Guardar</button>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
                                 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <div class="fm-checkbox">
-                                        <label>
-                                           Fecha
-                                        </label>
+                                        <h4>Mantemiento Preventivio y Correctivo Trimestral (Limpieza Ecologica - 11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Trismestralmente las bitacoras - .pdf)</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                <div class="input-group date nk-int-st">
-                                                    <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" value="03/19/2018">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02t" id="frm11bt02t" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02t" id="date11bt02t" value="03/19/2018">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </label>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2t" name="archivo11bt2t">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02t" name="id11bt02t">
+                                        </div>
+                                    </div>
+
+                                <?php 
+                                    $sql4 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Trimestral' ORDER BY idBit DESC LIMIT 1";
+                                    $res4 =mysqli_query($con, $sql4);
+                                    if($res4->num_rows > 0){ 
+                                        $fila4 = $res4->fetch_assoc();
+                                        $datos4 = implode("", $fila4);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos4;?>" placeholder="" id="idActualiza11bt02t" name="idActualiza11bt02t">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar03t">Guardar</button>
+                                </div>                                
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+
+
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Responsable de realización del mantenimiento
-                                        </label>
+                                        <h4> Mantemiento Preventivio y Correctivo Cuatrimestral (Señalamientos - 11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Cuatrimestralmente las bitacoras - .pdf)</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02c" id="frm11bt02c" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02c" id="date11bt02c" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2c" name="archivo11bt2c">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02c" name="id11bt02c">
+                                        </div>
+                                    </div>
+
+                                    <?php 
+                                    $sql5 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Cuatrimestral' ORDER BY idBit DESC LIMIT 1";
+                                    $res5 =mysqli_query($con, $sql5);
+                                    if($res5->num_rows > 0){ 
+                                        $fila5 = $res5->fetch_assoc();
+                                        $datos5 = implode("", $fila5);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos5;?>" placeholder="" id="idActualiza11bt02c" name="idActualiza11bt02c">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar03c">Guardar</button>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                    <div class="fm-checkbox">
+                                        <h4> Mantemiento Preventivio y Correctivo Semestral (Instalaciones eléctricas - 11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Semestralmente las bitacoras - .pdf)</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02s" id="frm11bt02s" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02s" id="date11bt02s" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02s" name="archivo11bt02s">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02s" name="id11bt02s">
+                                        </div>
+                                    </div>
+                                    
+                                    <?php 
+                                    $sql6 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Semestral' ORDER BY idBit DESC LIMIT 1";
+                                    $res6 =mysqli_query($con, $sql6);
+                                    if($res6->num_rows > 0){ 
+                                        $fila6 = $res6->fetch_assoc();
+                                        $datos6 = implode("", $fila6);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos6;?>" placeholder="" id="idActualiza11bt02s" name="idActualiza11bt02s">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar03s">Guardar</button>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="fm-checkbox">
+                                        <h4> Mantemiento Preventivio y Correctivo Anual (11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Anualmente las bitacoras - .pdf)</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02a" id="frm11bt02a" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02a" id="date11bt02a" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02a" name="archivo11bt02a">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02a" name="id11bt02a">
+                                        </div>
+                                    </div>
+                               <?php 
+                                    $sql7 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Anual' ORDER BY idBit DESC LIMIT 1";
+                                    $res7 =mysqli_query($con, $sql7);
+                                    if($res7->num_rows > 0){ 
+                                        $fila7 = $res7->fetch_assoc();
+                                        $datos7 = implode("", $fila7);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos7;?>" placeholder="" id="idActualiza11bt02a" name="idActualiza11bt02a">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar03a">Guardar</button>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="fm-checkbox">
+                                        <h4> Mantemiento Preventivio y Correctivo Quinquenal (11 BT 02)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Quinquenalmente las bitacoras - .pdf)</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt02q" id="frm11bt02q" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt02q" id="date11bt02q" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02q" name="archivo11bt02q">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02q" name="id11bt02q">
+                                        </div>
+                                    </div>
+                                    
+                                    <?php 
+                                    $sql8 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Quinquenal' ORDER BY idBit DESC LIMIT 1";
+                                    $res8 =mysqli_query($con, $sql8);
+                                    if($res8->num_rows > 0){ 
+                                        $fila8 = $res8->fetch_assoc();
+                                        $datos8 = implode("", $fila8);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos8;?>" placeholder="" id="idActualiza11bt02q" name="idActualiza11bt02q">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                    <?php
+                                        }else{ ?>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                            </form>
+                                    <?php
+                                        }
+                                    ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar03q">Guardar</button>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="fm-checkbox">
+                                        <h4>Fugas, derrames, pruebas de hermeticidad y drenado de agua (11 BT 03)</h4>
+                                        <p style="font-size: .8em;">(Se subiran Mensualmente .pdf)</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <form name="frm11bt03" id="frm11bt03" enctype="multipart/form-data" method="post">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="fm-checkbox">
+                                            <label>
+                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                    <div class="input-group date nk-int-st">
+                                                        <span class="input-group-addon"></span>
+                                                        <input type="text" class="form-control" name="date11bt03" id="date11bt03" value="03/19/2018">
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>                                
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt03" name="archivo11bt03">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt03" name="id11bt03">
+                                        </div>
+                                    </div>
+                                <?php 
+                                    $sql9 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBit DESC LIMIT 1";
+                                    $res9 =mysqli_query($con, $sql9);
+                                    if($res9->num_rows > 0){ 
+                                        $fila9 = $res9->fetch_assoc();
+                                        $datos9 = implode("", $fila9);
+                                        //echo $datos1; ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="form-group nk-int-st">
+                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos9;?>" placeholder="" id="idActualiza11bt03" name="idActualiza11bt03">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    </form>
+                                <?php
+                                    }else{ ?>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" id="btnGuardar04">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
                             </div>
                         </div>
                     </div>
-
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                       <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h2></h2>
-                               <p>Expedición de Orden de trabajo para realizar cualquier actividad dentr de la estación.</p>
-                           </div>
-                           <div class="row">                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Fecha
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="" disabled>
-                                   </div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           No. Permiso
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="" disabled>
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Ubicación del trabajo
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="">
-                                   </div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Detalles del trabajo
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       TEXTAREA
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                               
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Personal Competente
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="" >
-                                   </div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Externo o interno
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       SELECT
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               AQUI DEBEN SER DE 6 PARTES PARA VER QUE FALTA 
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Tipo de trabajo
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       SELECT
-                                   </div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Horario
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       SELECT
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   Asegúrese de  que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.<br>PELIGROS
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   SELECT
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   Seleccionados
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   PRECAUCIONES REQUERIDAS/EQUIPOS                                                     
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   SELECT
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   Seleccionados
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   Área donde se trabajará                                                       
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   SELECT
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   Seleccionados
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                           </div>
-                       </div>
-                   </div>
                     
                 </div>
             </div>
@@ -1472,6 +1771,10 @@
     <!--  Chat JS
         ============================================ -->
     <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+        ============================================ -->
+    <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/wizard/wizard-active.js"></script>
     <!--  todo JS
         ============================================ -->
     <script src="js/todo/jquery.todo.js"></script>
@@ -1483,10 +1786,11 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/onload.js"></script>
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>

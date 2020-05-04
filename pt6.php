@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Form Components | Notika - Notika Admin Template</title>
+    <title>Competencia, capacitación y entrenamiento | ImplementS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -87,7 +87,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body id="nombreestacion">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -105,7 +105,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
@@ -113,8 +113,8 @@
                                         <input type="text" />
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -181,8 +181,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            </li> -->
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -249,7 +249,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Tasks</h2>
@@ -293,8 +293,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                            </li> -->
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Chat</h2>
@@ -367,7 +367,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -635,7 +635,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Competencia, capacitación y entrenamiento</h2>
-                                        <p><span class="bread-ntd">No. E. S.</span> <span class="bread-ntd">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd"><?php echo $id; ?></span> - <span class="bread-ntd" id="dataRS"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -732,6 +732,36 @@
                                 </div>
 
 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label >
+                                        Agregar trabajadores a cursos
+                                    </label>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Nombre de Curso
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="numCurso">
+                                            <option id="" value="0" style="display: none;">Selecciona un curso</option>
+                                            <?php $qr = "SELECT idCurso as id, nombreCurso as nombre FROM curso WHERE idCESH = '".$id."'";
+                                                  $res = mysqli_query($con,$qr);
+                                                  while($row = $res->fetch_object()){ ?>
+                                            <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>
+                                            
+                                            <?php } ?>
+                                        </select>
+                                    </div>   
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
@@ -743,7 +773,7 @@
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="nombreTrabj">
                                             <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                                                   $resul = mysqli_query($con,$qri);
                                                   while($row = $resul->fetch_object()){ ?>
                                             <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
@@ -1294,10 +1324,11 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <!-- <script src="js/tawk-chat.js"></script> -->
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/onload.js"></script>
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>

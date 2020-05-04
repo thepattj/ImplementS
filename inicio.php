@@ -4,7 +4,7 @@
 
     include 'php/conex.php';
     $con = Conectarse();
-    $value = "";
+    
 
 ?>
 <!doctype html>
@@ -14,6 +14,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Panel de Inicio | ImplementS</title>
+    <style type="text/css">
+        a:link, a:visited, a:active {
+            text-decoration:none;
+        }
+    </style>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -75,6 +80,10 @@
     <!-- wave CSS
         ============================================ -->
     <link rel="stylesheet" href="css/wave/waves.min.css">
+    <!-- Data Table JS
+    ============================================ -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+
     <!-- main CSS
         ============================================ -->
     <link rel="stylesheet" href="css/main.css">
@@ -89,7 +98,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body >
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -183,7 +192,7 @@
           <div class="chosen-select-act fm-cmp-mg">
             <select class="chosen" name="" id="nombreTrabjpt4">
               <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-              <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE idCESH = '".$id."'";
+              <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                     $resul = mysqli_query($con,$qri);
                     while($row = $resul->fetch_object()){ ?>
               <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM)?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
@@ -248,7 +257,7 @@
 </div>
 
 
-<!-- MODAL DE PUNTO8 UPDATE FALTA -->
+<!-- MODAL DE PUNTO8 NO SIRVE -->
 <div class="modal fade" id="modalpt8"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -262,12 +271,17 @@
         <p>Para terminar este punto, deberas Descarga el control de los documentos de SASISOPA</p>
       </div>
       <div class="modal-footer">
+        <?php
+          $partes = explode("/", $id);
+          $x = $partes[0].$partes[1];
+        ?>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardar8">Descargar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardar8"><a href="documents/Punto8/<?php echo $x?>/08SASISOPA.zip" class="nounderline" >Descargar</a></button>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- MODAL DE PRE UPDATE FALTA -->
 <div class="modal fade" id="modalpt13"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -281,7 +295,7 @@
       </div>
       <form name="enviarPRE" id="enviarPRE" enctype="multipart/form-data" method="post">
       <div class="modal-body">
-        <p>Agrega los Protocolos de respuesta a Emergencias (P.R.E.) que se elaboro. (.pdf, .docx, .doc)</p>
+        <p>Agrega los Protocolos de respuesta a Emergencias (P.R.E.) que se elaboro. (.pdf)</p>
         <input type="file" class="form-control" name="archivopre" id="archivopre">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="crepre" name="crepre">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="icpre" name="icpre">
@@ -296,7 +310,9 @@
   </div>
 </div>
 
-<!-- MODAL DE PUNTO16 UPDATE FALTA -->
+
+
+<!-- MODAL DE PUNTO16 NO SIRVE -->
 <div class="modal fade" id="modalpt16"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -316,7 +332,7 @@
       </div>
       <div class="modal-body" id="descarga1" style="display: none;">
         <p>Descarga estos formatos y acompletalos</p>
-        <button type="button" class="btn btn-primary" id="btndescarg16">Descargar</button>
+        <button type="button" class="btn btn-primary"><a href="documents/Punto16/16-FM.zip" class="nounderline" >Descargar</a></button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -326,7 +342,8 @@
   </div>
 </div>
 
-<!-- MODAL DE AGREGAR ESTACION UPDATE FALTA -->
+<!-- *****************************************SASISOPA************************************* -->
+<!-- MODAL DE AGREGAR ESTACION -->
 <div class="modal fade" id="modaladdsta"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -474,9 +491,139 @@
     </div>
   </div>
 </div>
+<!-- MODAL DE EDITAR DATOS ESTACION -->
+<div class="modal fade" id="modaleditsta"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"> Editar Estación </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+
+            <p>Selecciona la estación a editar</p>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="chosen-select-act fm-cmp-mg">
+                <select class="chosen" name="nombreEstacion" id="nombreEstacion">
+                  <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                    <?php $qestacion = "SELECT idCESH as id, razonSocial as nombre FROM cesh";
+                          $rrazon = mysqli_query($con,$qestacion);
+                          while($row1 = $rrazon->fetch_object()){ ?>
+                            <option value="<?php echo $row1->id; ?>"> <?php echo ($row1->nombre); ?> </option>
+                    <?php } ?>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button type="button" class="btn btn-primary" id="btnSeleccionarEstacion" data-toggle="modal" data-target="">Seleccionar</button>
+            </div>  
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+        </div>
+        <div class="modal-body" style="display: none;" id="actuB">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Razon Social</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="RSu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Permiso de la Cre </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="PLu" disabled placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Num. de Estación</div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="idStationu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
-<!-- MODAL DE INSER USUARIO UPDATE FALTA -->
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Franquicia</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="franqu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Dirección Fiscal</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="dirFisu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>RFC de estación</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="rfcStationu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Ubicación de Proyecto</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="ubiStationu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Telefono de estación</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="telStationu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Correo para ASEA</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="correoASEAu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Nombre de Representante Legal</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="nameRLu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>RFC Representante Legal</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="rfcRLu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>CURP Representante Legal</p> </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+              <input type="text" class="form-control" id="curpRLu" placeholder="">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+        
+        </div>
+        <div class="modal-footer" style="display: none;" id="actuF">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnActualizarEstacion" data-toggle="modal" data-target="#modalsuccu">Actualizar</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL DE USUARIO Y CONTRASEÑA DE ESTACION CREADA-->
 <div class="modal fade" id="modalsucc" role="dialog">
     <div class="modal-dialog modals-default nk-gv">
         <div class="modal-content">
@@ -494,7 +641,54 @@
         </div>
     </div>
 </div>   
+<!-- MODAL DE CREACION DE USARIO RL  -->
+<div class="modal fade" id="modaladduser"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"> Agregar Usuario </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Usuario</p> </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="form-group nk-int-st">
+                    <input type="text" class="form-control" id="User" placeholder="Max 10 caracteres">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Contraseña</div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="form-group nk-int-st">
+                    <input type="text" class="form-control" id="pass" placeholder="Max 8 caracteres">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+            <p>Selecciona la estación para agregar Usuario</p>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="chosen-select-act fm-cmp-mg">
+                <select class="chosen" name="nombreEstacion" id="nombreEstacion">
+                  <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                    <?php $qestacion = "SELECT idCESH as id, razonSocial as nombre FROM cesh";
+                          $rrazon = mysqli_query($con,$qestacion);
+                          while($row1 = $rrazon->fetch_object()){ ?>
+                            <option value="<?php echo $row1->id; ?>"> <?php echo ($row1->nombre); ?> </option>
+                    <?php } ?>
+                </select>
+              </div>
+            </div>
+
+            
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarUser" data-toggle="modal" data-target="#modalsucc">Guardar</button>
+        </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -915,15 +1109,15 @@
     /*$U = "clientes";*/
 
     if( $U == "estacion"){ /*VISTA PARA CLIENTES QUE AGREGARAN CONTENIDO*/  
-        echo '<div class="notika-status-area">
+        echo '<div class="notika-status-area" id="inicioc">
         <div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <h1> Bienvenido </h1> <p id="nestacion">  </p></div>
             <div class="row">
                 <div class="tab-pane wizard-ctn" id="1pt" style="display:block;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                            <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 1</span></h2>
+                            <div id="pt1text" class="website-traffic-ctn">
+                                <h2><span>Punto 1</span></h2>
                                 <p>Política</p>
                             </div>
                         </div>
@@ -932,18 +1126,18 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 2</span></h2>
-                                <p>Análisis de Riesgo ... </p>
+                                <h2 id="pt2Title" ><span class="">Punto 2</span></h2>
+                                <p id="pt2Text" >Análisis de Riesgo ... </p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt3" class="website-traffic-ctn">
-                                <h2><span class="">Punto 3</span></h2>
-                                <p>Requisitos Legales</p>
+                        <div id="pt3" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2 id="pt3Title" ><span class="">Punto 3</span></h2>
+                                <p id="pt3Text" >Requisitos Legales</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
                         </div>
@@ -952,8 +1146,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt4" data-toggle="modal" data-target="#modalpt4" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 4</span></h2>
-                                <p>Objetivos, metas e indicadores</p>
+                                <h2 id="pt4Title" ><span class="">Punto 4</span></h2>
+                                <p id="pt4Text" >Objetivos, metas e indicadores</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
@@ -964,8 +1158,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt5" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 5</span></h2>
-                                <p>Funciones y responsabilidades</p>
+                                <h2 id="pt5Title" ><span class="">Punto 5</span></h2>
+                                <p id="pt5Text" >Funciones y responsabilidades</p>
                             </div>
                         </div>
                     </div>
@@ -973,8 +1167,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt6" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 6</span></h2>
-                                <p>Competencia y capacitación</p>
+                                <h2 id="pt6Title" ><span class="">Punto 6</span></h2>
+                                <p id="pt6Text" >Competencia y capacitación</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
                         </div>
@@ -982,9 +1176,9 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt7" data-toggle="modal" data-target="#modalpt7" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt8" class="website-traffic-ctn">
-                                <h2><span class="">Punto 7</span></h2>
-                                <p>Comunicación, Participación...</p>
+                            <div class="website-traffic-ctn">
+                                <h2 id="pt7Title" ><span class="">Punto 7</span></h2>
+                                <p id="pt7Text" >Comunicación, Participación...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
@@ -992,9 +1186,9 @@
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt8" data-toggle="modal" data-target="#modalpt8" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt8" class="website-traffic-ctn">
-                                <h2><span class="">Punto 8</span></h2>
-                                <p>Control de documentos</p>
+                            <div class="website-traffic-ctn">
+                                <h2 id="pt8Title" ><span class="">Punto 8</span></h2>
+                                <p id="pt8Text" >Control de documentos</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
@@ -1005,8 +1199,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt9" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 9</span></h2>
-                                <p>Mejores practicas y estándares</p>
+                                <h2 id="pt9Title" ><span class="">Punto 9</span></h2>
+                                <p id="pt9Text" >Mejores practicas y estándares</p>
                             </div>
                         </div>
                     </div>
@@ -1014,28 +1208,28 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt10" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 10</span></h2>
-                                <p>Control de actividades y procesos</p>
+                                <h2 id="pt10Title" ><span class="">Punto 10</span></h2>
+                                <p id="pt10Text" >Control de actividades y procesos</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div id="pt11" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div id="pt11" class="website-traffic-ctn">
-                                <h2><span class="">Punto 11</span></h2>
-                                <p>Integridad mécanica y ...</p>
+                                <h2 id="pt11Title" ><span class="">Punto 11</span></h2>
+                                <p id="pt11Text" >Integridad mécanica y ...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt12" class="website-traffic-ctn">
-                                <h2><span class="">Punto 12</span></h2>
-                                <p>Seguridad de Contratista</p>
+                        <div id="pt12" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2 id="pt12Title" ><span class="">Punto 12</span></h2>
+                                <p id="pt12Text" >Seguridad de Contratista</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
                         </div>
@@ -1046,9 +1240,9 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt13" data-toggle="modal" data-target="#modalpt13" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 13</span></h2>
+                                <h2 id="pt13Title" ><span class="">Punto 13</span></h2>
                                 <p style="display:none;">Protocolos de respuesta ...</p>
-                                <p>PRE</p>
+                                <p id="pt13Text" >PRE</p>
                             </div>
                         </div>
                     </div>
@@ -1056,18 +1250,18 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt14" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 14</span></h2>
-                                <p>Monitoreo, verificación ...</p>
+                                <h2 id="pt14Title" ><span class="">Punto 14</span></h2>
+                                <p id="pt14Text" >Monitoreo, verificación ...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                            <div id="pt15" class="website-traffic-ctn">
-                                <h2><span class="">Punto 15</span></h2>
-                                <p>Auditorias</p>
+                        <div id="pt15" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2 id="pt15Title" ><span class="">Punto 15</span></h2>
+                                <p id="pt15Text" >Auditorias</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
                         </div>
@@ -1076,8 +1270,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt16" data-toggle="modal" data-target="#modalpt16" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 16</span></h2>
-                                <p>Investigación de incidentes y ...</p>
+                                <h2 id="pt16Title" ><span class="">Punto 16</span></h2>
+                                <p id="pt16Text" >Investigación de incidentes y ...</p>
                             </div>
                         </div>
                     </div>
@@ -1087,8 +1281,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt17" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 17</span></h2>
-                                <p>Revisión por la Dirección</p>
+                                <h2 id="pt17Title" ><span class="">Punto 17</span></h2>
+                                <p id="pt17Text" >Revisión por la Dirección</p>
                             </div>
                         </div>
                     </div>
@@ -1096,8 +1290,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                         <div id="pt18" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
-                                <h2><span class="">Punto 18</span></h2>
-                                <p>Informe de desempeño</p>
+                                <h2 id="pt18Title" ><span class="">Punto 18</span></h2>
+                                <p id="pt18Text" >Informe de desempeño</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
                         </div>
@@ -1118,8 +1312,17 @@
         echo '<div class="sale-statistic-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
+                        <div class="past-day-statis">
+                            <h2>Punto a Evaluar: Punto 5</h2>
+                            <p>Hemos habilitado este punto para que inicies su implementación.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <div class="sale-statistic-inner notika-shadow mg-tb-20">
                         <div class="curved-inner-pro">
                             <div class="curved-ctn">
                                 <h2>Puntos Evaluados</h2>
@@ -1129,13 +1332,136 @@
                         <div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
+                
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <div class="statistic-right-area notika-shadow mg-tb-20 sm-res-mg-t-0">
                         <div class="past-day-statis">
-                            <h2>Punto a Evaluar: Punto 5</h2>
-                            <p>Hemos habilitado este punto para que inicies su implementación.</p>
+                          <h2>Actividades a Cargar</h2>
                         </div>
-                        CALENDARIO                         
+                        <div class="bsc-tbl-cls">
+                            <table class="table table-cl">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Actividad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                                  $fhoy = strtotime(date("d-m-Y",time()));
+                                  //$fbd = strtotime("01-05-2020");
+                                  //echo $fhoy;
+                                  
+
+                                  $sqlpt4 = "SELECT fechaFinal AS fecha, descripcion AS actividad FROM calendario WHERE idCESH ='".$id."' AND status = 'Iniciada'";
+                                  $resultado =mysqli_query($con, $sqlpt4);
+                                  if($resultado->num_rows > 0){
+                                    while($fila=$resultado->fetch_assoc()){
+                                      list($a,$mes,$dia) = split('[-.-]',$fila['fecha']);
+                                      //$partes = explode("/", $cre);
+                                      
+                                      $fechaC = $dia."-".$mes."-".$a;
+                                      $fechaN = strtotime($fechaC);
+                                      if($fhoy >= $fechaN){
+                                       /* $diferencia = $fhoy-$fechaN;
+                                        //echo $diferencia;
+                                        $yer = $diferencia / (365*60*60*24);
+                                        echo $yer;*/
+                                        
+                                        echo'<tr class="info updatecalendario"> <td>'.$fechaC.'</td> <td>'.$fila['actividad'].'</td> </tr>';
+                                      }
+                                    }       
+                                  } else {
+                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
+                                  }
+
+                                  $sqlpt11 = "SELECT fechaF AS fecha, descripcion AS actividad FROM bitacoras WHERE idCESH ='".$id."' AND estatus = 'P'";
+                                  $result =mysqli_query($con, $sqlpt11);
+                                  if($result->num_rows > 0){
+                                    while($fil=$result->fetch_assoc()){
+                                      list($a2,$mes2,$dia2) = split('[-.-]', $fil['fecha']);
+                                      $fechaC2 = $dia2."-".$mes2."-".$a2;
+                                      $fechaN2 = strtotime($fechaC2);
+                                      if($fhoy <= $fechaN2){
+                                        $fechactual = date("d-m-Y");
+                                        //echo  $fil['actividad'];
+                                        
+                                        if( $fil['actividad'] == "bt-01"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Monitoreo y observación</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Diario"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Limpieza General Diaria</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Mensual"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Limpiezas y/o Mantenimiento Preventivo Mensual</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Trimestral"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Limpieza Ecologica</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Cuatrimestral"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Revisión de Señalamientos</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Semestral"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Instalaciones Electricas</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Anual"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Mantenimiento Preventivo y Correctivo Anual</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-02 Quinquenal"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Mantenimiento Preventivo y Correctivo Quinquenal</td> </tr>';
+                                        }if( $fil['actividad'] == "bt-03"){
+                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Fugas, derrames, drenado y pruebas de hermeticidad</td> </tr>';
+                                        }
+                                      }
+                                    }       
+                                  } else {
+                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
+                                  }
+                                  $sqlpt10 = "SELECT fechaFin AS fecha, descripcion AS actividad FROM dzbitacora WHERE idCESH ='".$id."' AND estatus = 'P'";
+                                  $resul =mysqli_query($con, $sqlpt10);
+                                  if($resul->num_rows > 0){
+                                    while($fi=$resul->fetch_assoc()){
+                                      list($a3,$mes3,$dia3) = split('[-.-]', $fi['fecha']);
+                                      $fechaC3 = $dia3."-".$mes3."-".$a3;
+                                      $fechaN3 = strtotime($fechaC3);
+                                      if($fhoy <= $fechaN3){
+                                        //echo $dia3."-".$mes3."-".$a3;
+                                        if( $fi['actividad'] == "bt-01"){
+                                          echo'<tr class="info update10"> <td>'.$fechaC3.'</td> <td>Mantenimiento Preventivo y Correctivo</td> </tr>';
+                                        }if( $fi['actividad'] == "bt-02"){
+                                          echo'<tr class="info update10"> <td>'.$fechaC3.'</td> <td>Residuos Peligrosos</td> </tr>';
+                                        }if( $fi['actividad'] == "bt-03"){
+                                          echo'<tr class="info update10"> <td>'.$fechaC3.'</td> <td>Recepción, Descarga y Desviación en el Balance de Producto</td> </tr>';
+                                        }
+                                      }
+                                    }       
+                                  } else {
+                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
+                                  }
+                                  
+                                  $sqlpt14 = "SELECT fechaA AS fecha, solicitud AS actividad FROM monverif WHERE idCESH ='".$id."' AND estatus = 'INICIADA'";
+                                  $res =mysqli_query($con, $sqlpt14);
+                                  if($res->num_rows > 0){
+                                    while($f=$res->fetch_assoc()){
+                                      list($a4,$mes4,$dia4) = split('[-.-]', $f['fecha']);
+                                      $fechaC4 = $dia4."-".$mes4."-".$a4;
+                                      $fechaN4 = strtotime($fechaC4);
+                                      if ($fhoy >= $fechaN4) {
+                                        echo'<tr class="info updatemon"> <td>'.$fechaC4.'</td> <td>'.$f['actividad'].'</td> </tr>';
+                                      }
+                                      
+                                    }       
+                                  } else {
+                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
+                                  }
+                                  
+                                  /*<tr class="warning">
+                                          <td>01-ene-118</td>
+                                          <td>Mitchell</td>
+                                      </tr>
+                                      <tr class="success">
+                                          <td>20-feb-20</td>
+                                          <td>Madeleine</td>
+                                      </tr>
+                                      <tr class="danger">
+                                          <td>05-ene-18</td>
+                                          <td>Elizabeth</td>
+                                      </tr>*/
+                                echo '</tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1277,10 +1603,10 @@
                                     <div class="container-pro wizard-cts-st">
                                         <ul>
                                             <li style="display: none;" id="btnaddst" data-toggle="modal" data-target="#modaladdsta"><a href="#tab1" data-toggle="tab">Agregar</a></li>
-                                            <li style="display: none;" id="btnupdst"><a href="#tab2" data-toggle="tab" id="btnprueba">Actualizar</a></li>
-                                            <li style="display: none;" id="btnblqst"><a href="#tab3" data-toggle="tab">Usuarios</a></li>
+                                            <li style="display: none;" id="btnupdst" data-toggle="modal" data-target="#modaleditsta"><a href="#tab2" data-toggle="tab">Actualizar</a></li>
+                                            <li style="display: none;" id="btnAdu" data-toggle="modal" data-target="#modaladduser"><a href="#tab3" data-toggle="tab">Usuarios</a></li>
 
-                                            <li style="display: none;" id="btnsas"><a href="#tab1" data-toggle="tab">Bloquear Puntos</a></li>
+                                            <li style="display: none;" id="btnsas"><a href="#tab1" data-toggle="tab">Bloquear</a></li>
                                             <li style="display: none;" id="btnbl"><a href="#tab2" data-toggle="tab">Implementación</a></li>
                                         </ul>
                                     </div>
@@ -1462,6 +1788,12 @@
     <!-- main JS
         ============================================ -->
     <script src="js/main.js"></script>
+
+    <!-- Data Table JS
+    ============================================ -->
+    <script src="js/data-table/jquery.dataTables.min.js"></script>
+    <script src="js/data-table/data-table-act.js"></script>
+
     <!-- tawk chat JS
         ============================================ -->
     <!-- <script src="js/tawk-chat.js"></script> -->
@@ -1479,6 +1811,7 @@
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/onload.js"></script>
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>
