@@ -110,6 +110,7 @@ $("#inicioc").ready(function() {
 			//alert(datos[19]);
 			ci = localStorage.getItem("PL");
 			if (datos[0] == ci) {
+				//alert("valor del 1ro: "+datos[0]);
 				$("#pt1").css("background","#00c292");
 				$("#pt1").css("cursor","no-drop");
 

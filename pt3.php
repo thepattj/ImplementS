@@ -674,7 +674,7 @@
                                 $datos6 [$n] = $consdoc;
                                 $n++;
                             }
-                        }else{ $datos6 = "000000000000000000"; }
+                        }else{  $datos6 = "------------------"; }
                         //echo "datos: ".$datos6[0].$datos6[1].$datos6[2].$datos6[3].$datos6[4].$datos6[5];
                     ?>
                     <!-- DOCUMENTACION LEGAL -->
@@ -702,11 +702,11 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Acta Constitutiva</td>
-                                                <?php if($datos6[0] == 1){ ?>
+                                                <?php if($datos6[0] === 1){ ?>
                                                 <td value="1" id="cActa" class="active">Si</td>
-                                                <?php } if($datos6[0] == 0) { ?>
+                                                <?php } if($datos6[0] === 0) { ?>
                                                 <td value="0" id="cActa" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[0] == "-") { ?>
                                                 <td value="" id="cActa"> - </td>
                                                 <?php } ?>
                                                 
@@ -718,11 +718,11 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Poder Notarial</td>
-                                                <?php if($datos6[1] == 1){ ?>
+                                                <?php if($datos6[1] === 1){ ?>
                                                 <td value="1" id="cPNot" class="active">Si</td>
-                                                <?php } if($datos6[1] == 0) { ?>
+                                                <?php } if($datos6[1] === 0) { ?>
                                                 <td value="0" id="cPNot" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[1] === "-") { ?>
                                                 <td value="" id="cPNot"> - </td>
                                                 <?php } ?>
                                                 
@@ -734,11 +734,11 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>Comprobante Original de alta ante hacienda</td>
-                                                <?php if($datos6[2] == 1){ ?>
+                                                <?php if($datos6[2] === 1){ ?>
                                                 <td value="1" id="altaSHCP" class="active">Si</td>
-                                                <?php } if($datos6[2] == 0) { ?>
+                                                <?php } if($datos6[2] === 0) { ?>
                                                 <td value="0" id="altaSHCP" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[2] === "-") { ?>
                                                 <td value="" id="altaSHCP"> - </td>
                                                 <?php } ?>
                                                 
@@ -750,11 +750,11 @@
                                             <tr>
                                                 <td>4</td>
                                                 <td>R.F.C. Original</td>
-                                                <?php if($datos6[3] == 1){ ?>
+                                                <?php if($datos6[3] === 1){ ?>
                                                 <td value="1" id="RFCS" class="active">Si</td>
-                                                <?php } if($datos6[3] == 0) { ?>
+                                                <?php } if($datos6[3] === 0) { ?>
                                                 <td value="0" id="RFCS" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[3] === "-") { ?>
                                                 <td value="" id="RFCS"> - </td>
                                                 <?php } ?>
                                                 
@@ -766,11 +766,11 @@
                                             <tr>
                                                 <td>5</td>
                                                 <td>Permiso de la comisión reguladora de Energía <b>(CRE)</b></td>
-                                                <?php if($datos6[4] == 1){ ?>
+                                                <?php if($datos6[4] === 1){ ?>
                                                 <td value="1" id="PL" class="active">Si</td>
-                                                <?php } if($datos6[4] == 0) { ?>
+                                                <?php } if($datos6[4] === 0) { ?>
                                                 <td value="0" id="PL" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[4] === "-") { ?>
                                                 <td value="" id="PL"> - </td>
                                                 <?php } ?>
 
@@ -782,11 +782,11 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>Licencia de Funcionamiento (Municipal)</td>
-                                                <?php if($datos6[5] == 1){ ?>
+                                                <?php if($datos6[5] === 1){ ?>
                                                 <td value="1" id="LFM" class="active">Si</td>
-                                                <?php } if($datos6[5] == 0) { ?>
+                                                <?php } if($datos6[5] === 0) { ?>
                                                 <td value="0" id="LFM" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[5] === "-") { ?>
                                                 <td value="" id="LFM"> - </td>
                                                 <?php } ?>
                                                 
@@ -798,11 +798,11 @@
                                             <tr>
                                                 <td>7</td>
                                                 <td>Dictamenten de uso de suelo / Factibilidad de uso de suelo</td>
-                                                <?php if($datos6[6] == 1){ ?>
+                                                <?php if($datos6[6] === 1){ ?>
                                                 <td value="1" id="dicSuelo" class="active">Si</td>
-                                                <?php } if($datos6[6] == 0) { ?>
+                                                <?php } if($datos6[6] === 0) { ?>
                                                 <td value="0" id="dicSuelo" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[6] === "-") { ?>
                                                 <td value="" id="dicSuelo"> - </td>
                                                 <?php } ?>
                                                 
@@ -814,11 +814,11 @@
                                             <tr>
                                                 <td>8</td>
                                                 <td>Tarjeta oficial de IMSS</td>
-                                                <?php if($datos6[7] == 1){ ?>
+                                                <?php if($datos6[7] === 1){ ?>
                                                 <td value="1" id="oImss" class="active">Si</td>
-                                                <?php } if($datos6[7] == 0) { ?>
+                                                <?php } if($datos6[7] === 0) { ?>
                                                 <td value="0" id="oImss" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[7] === "-") { ?>
                                                 <td value="" id="oImss"> - </td>
                                                 <?php } ?>
                                                 
@@ -830,11 +830,11 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>Planos Arquitectonicos</td>
-                                                <?php if($datos6[8] == 1){ ?>
+                                                <?php if($datos6[8] === 1){ ?>
                                                 <td value="1" id="planoA" class="active">Si</td>
-                                                <?php } if($datos6[8] == 0) { ?>
+                                                <?php } if($datos6[8] === 0) { ?>
                                                 <td value="0" id="planoA" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[8] === "-") { ?>
                                                 <td value="" id="planoA"> - </td>
                                                 <?php } ?>
                                                 
@@ -846,11 +846,11 @@
                                             <tr>
                                                 <td>10</td>
                                                 <td><b>SIEM</b> (Sistema de Información Empresarial Mexicano)</td>
-                                                <?php if($datos6[9] == 1){ ?>
+                                                <?php if($datos6[9] === 1){ ?>
                                                 <td value="1" id="aSiem" class="active">Si</td>
-                                                <?php } if($datos6[9] == 0) { ?>
+                                                <?php } if($datos6[9] === 0) { ?>
                                                 <td value="0" id="aSiem" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[9] === "-") { ?>
                                                 <td value="" id="aSiem"> - </td>
                                                 <?php } ?>
                                                 
@@ -862,11 +862,11 @@
                                             <tr>
                                                 <td>11</td>
                                                 <td>Dictámenes eléctricos</td>
-                                                <?php if($datos6[10] == 1){ ?>
+                                                <?php if($datos6[10] === 1){ ?>
                                                 <td value="1" id="dElec" class="active">Si</td>
-                                                <?php } if($datos6[10] == 0) { ?>
+                                                <?php } if($datos6[10] === 0) { ?>
                                                 <td value="0" id="dElec" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[10] === "-") { ?>
                                                 <td value="" id="dElec"> - </td>
                                                 <?php } ?>
                                                 
@@ -878,11 +878,11 @@
                                             <tr>
                                                 <td>12</td>
                                                 <td>Dictámenes Tierras Fisicas y pararrayos</td>
-                                                <?php if($datos6[11] == 1){ ?>
+                                                <?php if($datos6[11] === 1){ ?>
                                                 <td value="1" id="dTfisica" class="active">Si</td>
-                                                <?php } if($datos6[11] == 0) { ?>
+                                                <?php } if($datos6[11] === 0) { ?>
                                                 <td value="0" id="dTfisica" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[11] === "-") { ?>
                                                 <td value="" id="dTfisica"> - </td>
                                                 <?php } ?>
                                                 
@@ -894,11 +894,11 @@
                                             <tr>
                                                 <td>13</td>
                                                 <td>Calibración de dispensarios</td>
-                                                <?php if($datos6[12] == 1){ ?>
+                                                <?php if($datos6[12] === 1){ ?>
                                                 <td value="1" id="calDisp" class="active">Si</td>
-                                                <?php } if($datos6[12] == 0) { ?>
+                                                <?php } if($datos6[12] === 0) { ?>
                                                 <td value="0" id="calDisp" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[12] === "-") { ?>
                                                 <td value="" id="calDisp"> - </td>
                                                 <?php } ?>
                                                 
@@ -910,11 +910,11 @@
                                              <tr>
                                                 <td>14</td>
                                                 <td>Pruebas de Hermeticidad</td>
-                                                <?php if($datos6[13] == 1){ ?>
+                                                <?php if($datos6[13] === 1){ ?>
                                                 <td value="1" id="pHerm" class="active">Si</td>
-                                                <?php } if($datos6[13] == 0) { ?>
+                                                <?php } if($datos6[13] === 0) { ?>
                                                 <td value="0" id="pHerm" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[13] === "-") { ?>
                                                 <td value="" id="pHerm"> - </td>
                                                 <?php } ?>
                                                 
@@ -926,11 +926,11 @@
                                             <tr>
                                                 <td>15</td>
                                                 <td>Pruebas de Hermeticidad a Tuberias</td>
-                                                <?php if($datos6[14] == 1){ ?>
+                                                <?php if($datos6[14] === 1){ ?>
                                                 <td value="1" id="pHermT" class="active">Si</td>
-                                                <?php } if($datos6[14] == 0) { ?>
+                                                <?php } if($datos6[14] === 0) { ?>
                                                 <td value="0" id="pHermT" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[14] === "-") { ?>
                                                 <td value="" id="pHermT"> - </td>
                                                 <?php } ?>
                                                 
@@ -942,11 +942,11 @@
                                             <tr>
                                                 <td>16</td>
                                                 <td>Ficha Técnica y manual de tanque de almacenamiento</td>
-                                                <?php if($datos6[15] == 1){ ?>
+                                                <?php if($datos6[15] === 1){ ?>
                                                 <td value="1" id="tanqueA" class="active">Si</td>
-                                                <?php } if($datos6[15] == 0) { ?>
+                                                <?php } if($datos6[15] === 0) { ?>
                                                 <td value="0" id="tanqueA" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[15] === "-") { ?>
                                                 <td value="" id="tanqueA"> - </td>
                                                 <?php } ?>
                                                 
@@ -958,11 +958,11 @@
                                             <tr>
                                                 <td>17</td>
                                                 <td>Ficha técnica y manual de dispensarios</td>
-                                                <?php if($datos6[16] == 1){ ?>
+                                                <?php if($datos6[16] === 1){ ?>
                                                 <td value="1" id="dispensarios" class="active">Si</td>
-                                                <?php } if($datos6[16] == 0) { ?>
+                                                <?php } if($datos6[16] === 0) { ?>
                                                 <td value="0" id="dispensarios" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[16] === "-") { ?>
                                                 <td value="" id="dispensarios"> - </td>
                                                 <?php } ?>
                                                 
@@ -974,11 +974,11 @@
                                             <tr>
                                                 <td>18</td>
                                                 <td>Ficha técnica y manual de Control de inventarios</td>
-                                                <?php if($datos6[17] == 1){ ?>
+                                                <?php if($datos6[17] === 1){ ?>
                                                 <td value="1" id="cIventarios" class="active">Si</td>
-                                                <?php } if($datos6[17] == 0) { ?>
+                                                <?php } if($datos6[17] === 0) { ?>
                                                 <td value="0" id="cIventarios" class="success">No</td>
-                                                <?php } if($datos6 == 500) { ?>
+                                                <?php } if($datos6[17] === "-") { ?>
                                                 <td value="" id="cIventarios"> - </td>
                                                 <?php } ?>
                                                 
@@ -991,7 +991,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos6 == 000000000000000000){?>
+                                <?php if($datos6 == "------------------"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDocEst" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
@@ -1016,7 +1016,7 @@
                                 $datos1 [$i] = $cons;
                                 $i++;
                             }
-                        }else{ $datos1 = "000000"; }
+                        }else{ $datos1 = "------"; }
                         //echo "datos: ".$datos1[0].$datos1[1].$datos1[2].$datos1[3].$datos1[4].$datos1[5];
                     ?>
                     <!-- DOCUMENTACION ASEA -->
@@ -1044,11 +1044,11 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>NOM-005-ASEA-2016.</td>
-                                                <?php if($datos1[0] == 1){ ?>
+                                                <?php if($datos1[0] === 1){ ?>
                                                 <td value="1" id="c005" class="active">Si</td>
-                                                <?php } if($datos1[0] == 0) { ?>
+                                                <?php } if($datos1[0] === 0) { ?>
                                                 <td value="0" id="c005" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1[0] === "-") { ?>
                                                 <td value="" id="c005"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Diverso</td>
@@ -1059,11 +1059,11 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Manifiesto Impacto Ambiental (<b>MIA</b>)</td>
-                                                <?php if($datos1[1] == 1){ ?>
+                                                <?php if($datos1[1] === 1){ ?>
                                                 <td value="1" id="cMia" class="active">Si</td>
-                                                <?php } if($datos1[1] == 0) { ?>
+                                                <?php } if($datos1[1] === 0) { ?>
                                                 <td value="0" id="cMia" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1[1] === "-") { ?>
                                                 <td value="" id="cMia"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Único / Actualizar</td>
@@ -1074,11 +1074,11 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>Informe Preventivo (<b>IP</b>)</td>
-                                                <?php if($datos1[2] == 1){ ?>
+                                                <?php if($datos1[2] === 1){ ?>
                                                 <td value="1" id="cIp" class="active">Si</td>
-                                                <?php } if($datos1[2] == 0) { ?>
+                                                <?php } if($datos1[2] === 0) { ?>
                                                 <td value="0" id="cIp" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1[2] === "-") { ?>
                                                 <td value="" id="cIp"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Único / Actualizar</td>
@@ -1089,11 +1089,11 @@
                                             <tr>
                                                 <td>4</td>
                                                 <td>Licencia Ambiental Única (<b>LAU</b>) / Licencia de Funcionamiento(<b>LF</b>)</td>
-                                                <?php if($datos1[3] == 1){ ?>
+                                                <?php if($datos1[3] === 1){ ?>
                                                 <td value="1" id="cLf" class="active">Si</td>
-                                                <?php } if($datos1[3] == 0) { ?>
+                                                <?php } if($datos1[3] === 0) { ?>
                                                 <td value="0" id="cLf" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1[3] === "-") { ?>
                                                 <td value="" id="cLf"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Unica / Actualizar</td>
@@ -1104,11 +1104,11 @@
                                             <tr>
                                                 <td>5</td>
                                                 <td>Residuos Peligrosos (<b>RP</b>)</td>
-                                                <?php if($datos1[4] == 1){ ?>
+                                                <?php if($datos1[4] === 1){ ?>
                                                 <td value="1" id="cGrp" class="active">Si</td>
-                                                <?php } if($datos1[4] == 0) { ?>
+                                                <?php } if($datos1[4] === 0) { ?>
                                                 <td value="0" id="cGrp" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1[4] === "-") { ?>
                                                 <td value="" id="cGrp"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Unica / Actualizar</td>
@@ -1119,11 +1119,11 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>Cedula Operación Anual(<b>COA</b>)</td>
-                                                <?php if($datos1[5] == 1){ ?>
+                                                <?php if($datos1[5] === 1){ ?>
                                                 <td value="1" id="cCoa" class="active">Si</td>
-                                                <?php } if($datos1[5] == 0) { ?>
+                                                <?php } if($datos1[5] === 0) { ?>
                                                 <td value="0" id="cCoa" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1[5] === "-") { ?>
                                                 <td value="" id="cCoa"> - </td>
                                                 <?php } ?>                                                
                                                 <td style="font-size: .9em;">Anual, posterior a Licencia</td>
@@ -1134,7 +1134,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos1 == 000000){?>
+                                <?php if($datos1 == "------"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDocASEA" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
@@ -1161,7 +1161,7 @@
                                 $datos4 [$l] = $conscre;
                                 $l++;
                             }
-                        }else{ $datos4 = "000000000000"; }
+                        }else{ $datos4 = "------------"; }
                         //echo "datos: ".$datos4[0].$datos4[1];
                     ?>
 
@@ -1190,11 +1190,11 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Reporte Diario (Volúmenes)</td>
-                                                <?php if($datos4[0] == 1){ ?>
+                                                <?php if($datos4[0] === 1){ ?>
                                                 <td value="1" id="rDiariov" class="active">Si</td>
-                                                <?php } if($datos4[0] == 0) { ?>
+                                                <?php } if($datos4[0] === 0) { ?>
                                                 <td value="0" id="rDiariov" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[0] === "-") { ?>
                                                 <td value="" id="rDiariov"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Diario</td>
@@ -1205,11 +1205,11 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Reporte Diario (Precios)</td>
-                                                <?php if($datos4[1] == 1){ ?>
+                                                <?php if($datos4[1] === 1){ ?>
                                                 <td value="1" id="rDiariop" class="active">Si</td>
-                                                <?php } if($datos4[1] == 0) { ?>
+                                                <?php } if($datos4[1] === 0) { ?>
                                                 <td value="0" id="rDiariop" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[1] === "-") { ?>
                                                 <td value="" id="rDiariop"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Diario</td>
@@ -1220,11 +1220,11 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes</td>
-                                                <?php if($datos4[2] == 1){ ?>
+                                                <?php if($datos4[2] === 1){ ?>
                                                 <td value="1" id="cEstad" class="active">Si</td>
-                                                <?php } if($datos4[2] == 0) { ?>
+                                                <?php } if($datos4[2] === 0) { ?>
                                                 <td value="0" id="cEstad" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[2] === "-") { ?>
                                                 <td value="" id="cEstad"> - </td>
                                                 <?php } ?>                                                
                                                 <td>1 al 10 de enero (Reporte de octubre-diciembre) 1 al 10 de abril</td>
@@ -1235,11 +1235,11 @@
                                             <tr>
                                                 <td>4</td>
                                                 <td>Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
-                                                <?php if($datos4[3] == 1){ ?>
+                                                <?php if($datos4[3] === 1){ ?>
                                                 <td value="1" id="016" class="active">Si</td>
-                                                <?php } if($datos4[3] == 0) { ?>
+                                                <?php } if($datos4[3] === 0) { ?>
                                                 <td value="0" id="016" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[3] === "-") { ?>
                                                 <td value="" id="016"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Semestral</td>
@@ -1250,11 +1250,11 @@
                                             <tr>
                                                 <td>5</td>
                                                 <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2017</b>)</td>
-                                                <?php if($datos4[4] == 1){ ?>
+                                                <?php if($datos4[4] === 1){ ?>
                                                 <td value="1" id="0162017" class="active">Si</td>
-                                                <?php } if($datos4[4] == 0) { ?>
+                                                <?php } if($datos4[4] === 0) { ?>
                                                 <td value="0" id="0162017" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[4] === "-") { ?>
                                                 <td value="" id="0162017"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual</td>
@@ -1265,11 +1265,11 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>Reporte de Pagos Supervisión de permisos<br>(Derechos, Productos y Aprovechamiento)</td>
-                                                <?php if($datos4[5] == 1){ ?>
+                                                <?php if($datos4[5] === 1){ ?>
                                                 <td value="1" id="rPsupervi" class="active">Si</td>
-                                                <?php } if($datos4[5] == 0) { ?>
+                                                <?php } if($datos4[5] === 0) { ?>
                                                 <td value="0" id="rPsupervi" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[5] === "-") { ?>
                                                 <td value="" id="rPsupervi"> - </td>
                                                 <?php } ?>
                                                 <td>Anual, 1 - 15 feb.</td>
@@ -1280,11 +1280,11 @@
                                             <tr>
                                                 <td>7</td>
                                                 <td>Poliza anual vigente de seguro (Seguro)</td>
-                                                <?php if($datos4[6] == 1){ ?>
+                                                <?php if($datos4[6] === 1){ ?>
                                                 <td value="1" id="polizAnual" class="active">Si</td>
-                                                <?php } if($datos4[6] == 0) { ?>
+                                                <?php } if($datos4[6] === 0) { ?>
                                                 <td value="0" id="polizAnual" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[6] === "-") { ?>
                                                 <td value="" id="polizAnual"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual, 1 - 10 abr. del año siguiente</td>
@@ -1295,11 +1295,11 @@
                                             <tr>
                                                 <td>8</td>
                                                 <td>Poliza de seguro (Seguro)</td>
-                                                <?php if($datos4[7] == 1){ ?>
+                                                <?php if($datos4[7] === 1){ ?>
                                                 <td value="1" id="polizaSg" class="active">Si</td>
-                                                <?php } if($datos4[7] == 0) { ?>
+                                                <?php } if($datos4[7] === 0) { ?>
                                                 <td value="0" id="polizaSg" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[7] === "-") { ?>
                                                 <td value="" id="polizaSg"> - </td>
                                                 <?php } ?>                                                
                                                 <td>En caso de renovación</td>
@@ -1310,11 +1310,11 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>Reporte de Quejas</td>
-                                                <?php if($datos4[8] == 1){ ?>
+                                                <?php if($datos4[8] === 1){ ?>
                                                 <td value="1" id="rQue" class="active">Si</td>
-                                                <?php } if($datos4[8] == 0) { ?>
+                                                <?php } if($datos4[8] === 0) { ?>
                                                 <td value="0" id="rQue" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[8] === "-") { ?>
                                                 <td value="" id="rQue"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual, 1 - 10 abr. del año siguiente</td>
@@ -1325,11 +1325,11 @@
                                             <tr>
                                                 <td>10</td>
                                                 <td>Procedencia del producto (facturas)</td>
-                                                <?php if($datos4[9] == 1){ ?>
+                                                <?php if($datos4[9] === 1){ ?>
                                                 <td value="1" id="factProd" class="active">Si</td>
-                                                <?php } if($datos4[9] == 0) { ?>
+                                                <?php } if($datos4[9] === 0) { ?>
                                                 <td value="0" id="factProd" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[9] === "-") { ?>
                                                 <td value="" id="factProd"> - </td>
                                                 <?php } ?>
                                                 
@@ -1341,11 +1341,11 @@
                                             <tr>
                                                 <td>11</td>
                                                 <td>Reporte de inicidentes o emergencias</td>
-                                                <?php if($datos4[10] == 1){ ?>
+                                                <?php if($datos4[10] === 1){ ?>
                                                 <td value="1" id="incidentes" class="active">Si</td>
-                                                <?php } if($datos4[10] == 0) { ?>
+                                                <?php } if($datos4[10] === 0) { ?>
                                                 <td value="0" id="incidentes" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[10] === "-") { ?>
                                                 <td value="" id="incidentes"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual, 1 - 10 abr. del año siguiente</td>
@@ -1356,11 +1356,11 @@
                                             <tr>
                                                 <td>12</td>
                                                 <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/20XX)</td>
-                                                <?php if($datos4[11] == 1){ ?>
+                                                <?php if($datos4[11] === 1){ ?>
                                                 <td value="1" id="anInde" class="active">Si</td>
-                                                <?php } if($datos4[11] == 0) { ?>
+                                                <?php } if($datos4[11] === 0) { ?>
                                                 <td value="0" id="anInde" class="success">No</td>
-                                                <?php } if($datos4 == 500) { ?>
+                                                <?php } if($datos4[11] === "-") { ?>
                                                 <td value="" id="anInde"> - </td>
                                                 <?php } ?>
                                                 
@@ -1372,7 +1372,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos4 == 000000000000){?>
+                                <?php if($datos4 == "------------"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDoCre" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
@@ -1398,7 +1398,7 @@
                                 $datos2 [$j] = $consprofe;
                                 $j++;
                             }
-                        }else{ $datos2 = "00"; }
+                        }else{ $datos2 = "--"; }
                         //echo "datos: ".$datos2." - ".$datos2[0];
                     ?>
 
@@ -1427,11 +1427,13 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Verificación periódica de dispensarios </td>
-                                                <?php if($datos2[0] == 1){ ?>
+                                                <?php if($datos2[0] === 1){ ?>
                                                 <td value="1" id="vPerdisp" class="active">Si</td>
-                                                <?php } if($datos2[0] == 0) { ?>
+                                                <?php } if($datos2[0] === 0) { ?>
                                                 <td value="0" id="vPerdisp" class="success">No</td>
-                                                <?php } ?>                                                
+                                                <?php } if($datos2[0] === "-") {?>         
+                                                <td value="" id="vPerdisp" class=""> - </td>     
+                                                <?php } ?>                                        
                                                 <td>Semestrales</td>
                                                 <td>UVA</td>
                                                 <td>Documental</td>
@@ -1440,11 +1442,13 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Reporte de control a distancia </td>
-                                                <?php if($datos2[1] == 1){ ?>
+                                                <?php if($datos2[1] === 1){ ?>
                                                 <td value="1" id="rControldis" class="active">Si</td>
-                                                <?php } if($datos2[1] == 0) { ?>
+                                                <?php } if($datos2[1] === 0) { ?>
                                                 <td value="0" id="rControldis" class="success">No</td>
-                                                <?php } ?>                                                
+                                                <?php } if($datos2[1] === "-") {?>   
+                                                <td value="" id="rControldis" class=""> - </td>    
+                                                <?php } ?>                                            
                                                 <td>Anual</td>
                                                 <td>Federal</td>
                                                 <td>Documental</td>
@@ -1453,7 +1457,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos2 == 00){?>
+                                <?php if($datos2 == "--"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDocp" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
@@ -1479,7 +1483,7 @@
                                 $datos3 [$k] = $conspc;
                                 $k++;
                             }
-                        }else{ $datos3 = "00"; }
+                        }else{ $datos3 = "--"; }
                         //echo "datos: ".$datos3[0].$datos3[1];
                     ?>
 
@@ -1508,11 +1512,11 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Visto Bueno</td>
-                                                <?php if($datos3[0] == 1){ ?>
+                                                <?php if($datos3[0] === 1){ ?>
                                                 <td value="1" id="vBueno" class="active">Si</td>
-                                                <?php } if($datos3[0] == 0) { ?>
+                                                <?php } if($datos3[0] === 0) { ?>
                                                 <td value="0" id="vBueno" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1 === "-") { ?>
                                                 <td value="" id="vBueno"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Unica</td>
@@ -1523,11 +1527,11 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Auto declaratoria</td>
-                                                <?php if($datos3[1] == 1){ ?>
+                                                <?php if($datos3[1] === 1){ ?>
                                                 <td value="1" id="cdecla" class="active">Si</td>
-                                                <?php } if($datos3[1] == 0) { ?>
+                                                <?php } if($datos3[1] === 0) { ?>
                                                 <td value="0" id="cdecla" class="success">No</td>
-                                                <?php } if($datos1 == 500) { ?>
+                                                <?php } if($datos1 === "-") { ?>
                                                 <td value="" id="cdecla"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual</td>
@@ -1538,7 +1542,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos1 == 00){?>
+                                <?php if($datos1 == "--"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDocPc" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
@@ -1564,7 +1568,7 @@
                                 $datos5 [$m] = $consstp;
                                 $m++;
                             }
-                        }else{ $datos5 = "000000000000000"; }
+                        }else{ $datos5 = "---------------"; }
                         //echo "datos: ".$datos5[0].$datos5[1].$datos5[2].$datos5[3];
                     ?>
 
@@ -1593,11 +1597,11 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Edificios, locales, instalaciones y áreas en los centros de trabajo<br><b>NOM-001-STPS-2008.</b></td>
-                                                <?php if($datos5[0] == 1){ ?>
+                                                <?php if($datos5[0] === 1){ ?>
                                                 <td value="1" id="001stps" class="active">Si</td>
-                                                <?php } if($datos5[0] == 0) { ?>
+                                                <?php } if($datos5[0] === 0) { ?>
                                                 <td value="0" id="001stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[0] === "-") { ?>
                                                 <td value="" id="001stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Bianual/Actualización</td>
@@ -1608,11 +1612,11 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo<br><b>NOM-002-STPS-2010.</b></td>
-                                                <?php if($datos5[1] == 1){ ?>
+                                                <?php if($datos5[1] === 1){ ?>
                                                 <td value="1" id="002stps" class="active">Si</td>
-                                                <?php } if($datos5[1] == 0) { ?>
+                                                <?php } if($datos5[1] === 0) { ?>
                                                 <td value="0" id="002stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[1] === "-") { ?>
                                                 <td value="" id="002stps"> - </td>
                                                 <?php } ?>
                                                 <td>Trianual/Actualización</td>
@@ -1623,11 +1627,11 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en altura<br><b>NOM-009-STPS-2011.</b></td>
-                                                <?php if($datos5[2] == 1){ ?>
+                                                <?php if($datos5[2] === 1){ ?>
                                                 <td value="1" id="009stps" class="active">Si</td>
-                                                <?php } if($datos5[2] == 0) { ?>
+                                                <?php } if($datos5[2] === 0) { ?>
                                                 <td value="0" id="009stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[2] === "-") { ?>
                                                 <td value="" id="009stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Bianual/Actualización</td>
@@ -1638,11 +1642,11 @@
                                             <tr>
                                                 <td>4</td>
                                                 <td>Evaluación de sustancias química<br><b>NOM-010-STPS-2014.</b></td>
-                                                <?php if($datos5[3] == 1){ ?>
+                                                <?php if($datos5[3] === 1){ ?>
                                                 <td value="1" id="010stps" class="active">Si</td>
-                                                <?php } if($datos5[3] == 0) { ?>
+                                                <?php } if($datos5[3] === 0) { ?>
                                                 <td value="0" id="010stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[3] === "-") { ?>
                                                 <td value="" id="010stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Dependiendo los resultados</td>
@@ -1653,11 +1657,11 @@
                                             <tr>
                                                 <td>5</td>
                                                 <td>Evaluación de ruido<br><b>NOM-011-STPS-2001</b></td>
-                                                <?php if($datos5[4] == 1){ ?>
+                                                <?php if($datos5[4] === 1){ ?>
                                                 <td value="1" id="011stps" class="active">Si</td>
-                                                <?php } if($datos5[4] == 0) { ?>
+                                                <?php } if($datos5[4] === 0) { ?>
                                                 <td value="0" id="011stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[4] === "-") { ?>
                                                 <td value="" id="011stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual</td>
@@ -1668,11 +1672,11 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>Equipo de protección personal-Selección, uso y manejo en los centros de trabajo<br><b>NOM-017-STPS-2008.</b></td>
-                                                <?php if($datos5[5] == 1){ ?>
+                                                <?php if($datos5[5] === 1){ ?>
                                                 <td value="1" id="017stps" class="active">Si</td>
-                                                <?php } if($datos5[5] == 0) { ?>
+                                                <?php } if($datos5[5] === 0) { ?>
                                                 <td value="0" id="017stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[5] === "-") { ?>
                                                 <td value="" id="017stps"> - </td>
                                                 <?php } ?>
                                                 <td>Bianual/Actualización</td>
@@ -1683,11 +1687,11 @@
                                             <tr>
                                                 <td>7</td>
                                                 <td>Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo<br><b>NOM-018-STPS-2015.</b></td>
-                                                <?php if($datos5[6] == 1){ ?>
+                                                <?php if($datos5[6] === 1){ ?>
                                                 <td value="1" id="018stps" class="active">Si</td>
-                                                <?php } if($datos5[6] == 0) { ?>
+                                                <?php } if($datos5[6] === 0) { ?>
                                                 <td value="0" id="018stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[6] === "-") { ?>
                                                 <td value="" id="018stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Bianual/Actualización</td>
@@ -1698,11 +1702,11 @@
                                             <tr>
                                                 <td>8</td>
                                                 <td>Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene<br><b>NOM-019-STPS-2011.</b></td>
-                                                <?php if($datos5[7] == 1){ ?>
+                                                <?php if($datos5[7] === 1){ ?>
                                                 <td value="1" id="019stps" class="active">Si</td>
-                                                <?php } if($datos5[7] == 0) { ?>
+                                                <?php } if($datos5[7] === 0) { ?>
                                                 <td value="0" id="019stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[7] === "-") { ?>
                                                 <td value="" id="019stps"> - </td>
                                                 <?php } ?>
                                                 <td>Bianual/Actualización</td>
@@ -1713,11 +1717,11 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>Evaluación de electricidad estática en los centros de trabajo<br><b>NOM-022-STPS-2008</b></td>
-                                                <?php if($datos5[8] == 1){ ?>
+                                                <?php if($datos5[8] === 1){ ?>
                                                 <td value="1" id="022stps" class="active">Si</td>
-                                                <?php } if($datos5[8] == 0) { ?>
+                                                <?php } if($datos5[8] === 0) { ?>
                                                 <td value="0" id="022stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[8] === "-") { ?>
                                                 <td value="" id="022stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Anual</td>
@@ -1728,11 +1732,11 @@
                                             <tr>
                                                 <td>10</td>
                                                 <td>Condiciones de seguridad e higiene en los centros de trabajo<br><b>NOM-024-STPS-2015</b></td>
-                                                <?php if($datos5[9] == 1){ ?>
+                                                <?php if($datos5[9] === 1){ ?>
                                                 <td value="1" id="024stps" class="active">Si</td>
-                                                <?php } if($datos5[9] == 0) { ?>
+                                                <?php } if($datos5[9] === 0) { ?>
                                                 <td value="0" id="024stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[9] === "-") { ?>
                                                 <td value="" id="024stps"> - </td>
                                                 <?php } ?> 
 
@@ -1744,11 +1748,11 @@
                                             <tr>
                                                 <td>11</td>
                                                 <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
-                                                <?php if($datos5[10] == 1){ ?>
+                                                <?php if($datos5[10] === 1){ ?>
                                                 <td value="1" id="025stps" class="active">Si</td>
-                                                <?php } if($datos5[10] == 0) { ?>
+                                                <?php } if($datos5[10] === 0) { ?>
                                                 <td value="0" id="025stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[10] === "-") { ?>
                                                 <td value="" id="025stps"> - </td>
                                                 <?php } ?>
                                                 <td>Bianual/Actualización</td>
@@ -1759,11 +1763,11 @@
                                             <tr>
                                                 <td>12</td>
                                                 <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
-                                                <?php if($datos5[11] == 1){ ?>
+                                                <?php if($datos5[11] === 1){ ?>
                                                 <td value="1" id="026stps" class="active">Si</td>
-                                                <?php } if($datos5[11] == 0) { ?>
+                                                <?php } if($datos5[11] === 0) { ?>
                                                 <td value="0" id="026stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[11] === "-") { ?>
                                                 <td value="" id="026stps"> - </td>
                                                 <?php } ?>                                                
                                                 <td>Bianual/Actualización</td>
@@ -1774,11 +1778,11 @@
                                             <tr>
                                                 <td>13</td>
                                                 <td>Actividades de soldadura y corte-Condiciones de seguridad e higiene<br><b>NOM-027-STPS-2008.</b></td>
-                                                <?php if($datos5[12] == 1){ ?>
+                                                <?php if($datos5[12] === 1){ ?>
                                                 <td value="1" id="027stps" class="active">Si</td>
-                                                <?php } if($datos5[12] == 0) { ?>
+                                                <?php } if($datos5[12] === 0) { ?>
                                                 <td value="0" id="027stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[12] === "-") { ?>
                                                 <td value="" id="027stps"> - </td>
                                                 <?php } ?>
                                                 <td>Bianual/Actualización</td>
@@ -1789,25 +1793,26 @@
                                             <tr>
                                                 <td>14</td>
                                                 <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
-                                                <?php if($datos5[13] == 1){ ?>
+                                                <?php if($datos5[13] === 1){ ?>
                                                 <td value="1" id="029stps" class="active">Si</td>
-                                                <?php } if($datos5[13] == 0) { ?>
+                                                <?php } if($datos5[13] === 0) { ?>
                                                 <td value="0" id="029stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[13] === "-") { ?>
                                                 <td value="" id="029stps"> - </td>
                                                 <?php } ?>
                                                 <td>Bianual/Actualización</td>
                                                 <td>Federal</td>
                                                 <td>Documental</td>
                                                 <td>Gestor</td>
-                                            </tr><tr>
+                                            </tr>
+                                            <tr>
                                                 <td>15</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en espacios confinados<br><b>NOM-033-STPS-2015.</b></td>
-                                                <?php if($datos5[14] == 1){ ?>
+                                                <?php if($datos5[14] === 1){ ?>
                                                 <td value="1" id="033stps" class="active">Si</td>
-                                                <?php } if($datos5[14] == 0) { ?>
+                                                <?php } if($datos5[14] === 0) { ?>
                                                 <td value="0" id="033stps" class="success">No</td>
-                                                <?php } if($datos5 == 500) { ?>
+                                                <?php } if($datos5[14] === "-") { ?>
                                                 <td value="" id="033stps"> - </td>
                                                 <?php } ?>
 
@@ -1819,7 +1824,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos5 == 000000000000000){?>
+                                <?php if($datos5 == "---------------"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDocstp" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>

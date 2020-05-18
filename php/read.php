@@ -85,42 +85,42 @@ if($opcion == "inicioPt"){
 	$id = $_POST['cre'];
 
 	//PUNTO 1
-	$sql = "SELECT p1.idCESH punto1 FROM CESH sta INNER JOIN politica p1 ON sta.idCESH = p1.idCESH  WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql = "SELECT idCESH FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 2
-	$sql1 = "SELECT p2.idCESH punto2 FROM CESH sta INNER JOIN ar p2 ON sta.idCESH = p2.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql1 = "SELECT idCESH FROM ar WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 3
-	$sql2 = "SELECT p3.idCESH punto3 FROM CESH sta INNER JOIN documento p3 ON sta.idCESH = p3.idCESH  WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql2 = "SELECT idCESH FROM documento WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 4
-	$sql3 = "SELECT p4.idCESH punto4 FROM CESH sta INNER JOIN calendario p4 ON sta.idCESH = p4.idCESH  WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql3 = "SELECT idCESH FROM calendario WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 5
-	$sql4 = "SELECT p5.idCESH punto5 FROM CESH sta INNER JOIN organigrama p5 ON sta.idCESH = p5.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql4 = "SELECT idCESH FROM organigrama WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 6
-	$sql5 = "SELECT p6.idCESH punto6 FROM CESH sta INNER JOIN curso p6 ON sta.idCESH = p6.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql5 = "SELECT idCESH FROM curso WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 7
-	$sql6 = "SELECT p7.idCESH punto7 FROM CESH sta INNER JOIN sugque p7 ON sta.idCESH = p7.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql6 = "SELECT idCESH FROM sugque WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 8
-	$sql7 = "SELECT p8.idCESH punto8 FROM CESH sta INNER JOIN control p8 ON sta.idCESH = p8.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql7 = "SELECT idCESH FROM control WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 9
-	$sql8 = "SELECT p91.idCESH punto9_1 FROM CESH sta INNER JOIN rbpo p91 ON sta.idCESH = p91.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
-	$sql08 = "SELECT p92.idCESH punto9_2 FROM CESH sta INNER JOIN controlrbpo p92 ON sta.idCESH = p92.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql8 = "SELECT idCESH FROM rbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
+	$sql08 = "SELECT idCESH FROM controlrbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 10
-	$sql9 = "SELECT p101.idCESH punto10_1 FROM CESH sta INNER JOIN dzbitacora p101 ON sta.idCESH = p101.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
-	$sql10 = "SELECT p102.idCESH punto10_2 FROM CESH sta INNER JOIN dzcambiop p102 ON sta.idCESH = p102.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
-	$sql11 = "SELECT p103.idCESH punto10_3 FROM CESH sta INNER JOIN dzcambiot p103 ON sta.idCESH = p103.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
-	$sql12 = "SELECT p104.idCESH punto10_4 FROM CESH sta INNER JOIN dzordentr p104 ON sta.idCESH = p104.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql9 = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."' GROUP BY idCESH";
+	$sql10 = "SELECT idCESH FROM dzcambiop WHERE idCESH = '".$id."' GROUP BY idCESH";
+	$sql11 = "SELECT idCESH FROM dzcambiot WHERE idCESH = '".$id."' GROUP BY idCESH";
+	$sql12 = "SELECT idCESH FROM dzordentr WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 11
-	$sql13 = "SELECT p11.idCESH punto11 FROM CESH sta INNER JOIN bitacoras p11 ON sta.idCESH = p11.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql13 = "SELECT idCESH FROM bitacoras WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 12
-	$sql14 = "SELECT p122.idCESH punto12_2 FROM CESH sta INNER JOIN dcproveedor p122 ON sta.idCESH = p122.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
-	$sql15 = "SELECT p123.idCESH punto12_3 FROM CESH sta INNER JOIN dctraex p123 ON sta.idCESH = p123.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql14 = "SELECT idCESH FROM dcproveedor WHERE idCESH = '".$id."' GROUP BY idCESH";
+	$sql15 = "SELECT idCESH FROM dctraex WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 13
-	$sql16 = "SELECT p13.idCESH punto13 FROM CESH sta INNER JOIN pre p13 ON sta.idCESH = p13.idCESH  WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql16 = "SELECT idCESH FROM pre WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 14
-	$sql17 = "SELECT p14.idCESH punto14 FROM cesh sta INNER JOIN monverif p14 ON sta.idCESH = p14.idCESH  WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql17 = "SELECT idCESH FROM monverif WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 15
-	$sql18 = "SELECT p151.idCESH FROM cesh sta INNER JOIN reportea p151 ON sta.idCESH = p151.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql18 = "SELECT idCESH FROM reportea WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 16
-	$sql19 ="SELECT p16.idCESH FROM cesh sta INNER JOIN incidentes p16 ON sta.idCESH = p16.idCESH WHERE sta.idCESH = '".$id."' GROUP BY sta.idCESH";
+	$sql19 ="SELECT idCESH FROM incidentes WHERE idCESH = '".$id."' GROUP BY idCESH";
 
 	$resultado = mysqli_query($con, $sql);
 	$resultado1 = mysqli_query($con, $sql1);

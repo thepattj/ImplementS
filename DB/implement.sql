@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2020 a las 20:12:47
--- Versión del servidor: 10.1.36-MariaDB
--- Versión de PHP: 5.6.38
+-- Host: 127.0.0.1
+-- Generation Time: May 11, 2020 at 08:38 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `implement`
+-- Database: `implement`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `actauditoria`
+-- Table structure for table `actauditoria`
 --
 
 CREATE TABLE `actauditoria` (
@@ -36,15 +36,10 @@ CREATE TABLE `actauditoria` (
   `idAuditoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `actauditoria`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ar`
+-- Table structure for table `ar`
 --
 
 CREATE TABLE `ar` (
@@ -54,15 +49,11 @@ CREATE TABLE `ar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `ar`
---
-
-
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `auditoria`
+-- Table structure for table `auditoria`
 --
 
 CREATE TABLE `auditoria` (
@@ -76,16 +67,10 @@ CREATE TABLE `auditoria` (
   `auditor2` varchar(255) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `auditoria`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `bitacoras`
+-- Table structure for table `bitacoras`
 --
 
 CREATE TABLE `bitacoras` (
@@ -98,15 +83,10 @@ CREATE TABLE `bitacoras` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `bitacoras`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `calendario`
+-- Table structure for table `calendario`
 --
 
 CREATE TABLE `calendario` (
@@ -119,16 +99,10 @@ CREATE TABLE `calendario` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `calendario`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cesh`
+-- Table structure for table `cesh`
 --
 
 CREATE TABLE `cesh` (
@@ -149,7 +123,7 @@ CREATE TABLE `cesh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `cesh`
+-- Dumping data for table `cesh`
 --
 
 INSERT INTO `cesh` (`idCESH`, `NoEst`, `razonSocial`, `franquicia`, `direccionFiscal`, `rfc`, `ubicacion`, `telefono`, `correo`, `rl`, `rfcRl`, `curpRl`, `estatus`, `idEstado`) VALUES
@@ -160,7 +134,7 @@ INSERT INTO `cesh` (`idCESH`, `NoEst`, `razonSocial`, `franquicia`, `direccionFi
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `completocesh`
+-- Table structure for table `completocesh`
 --
 
 CREATE TABLE `completocesh` (
@@ -169,18 +143,18 @@ CREATE TABLE `completocesh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `completocesh`
+-- Dumping data for table `completocesh`
 --
 
 INSERT INTO `completocesh` (`idCESH`, `idUsuario`) VALUES
-('E05552', 5),
 ('PL/0000/EXP/ES/2020', 4),
+('PL/1389/EXP/ES/2015', 5),
 ('PL/22402/EXP/ES/2019', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `control`
+-- Table structure for table `control`
 --
 
 CREATE TABLE `control` (
@@ -189,15 +163,10 @@ CREATE TABLE `control` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `control`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `controlrbpo`
+-- Table structure for table `controlrbpo`
 --
 
 CREATE TABLE `controlrbpo` (
@@ -210,16 +179,10 @@ CREATE TABLE `controlrbpo` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `controlrbpo`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `curso`
+-- Table structure for table `curso`
 --
 
 CREATE TABLE `curso` (
@@ -231,16 +194,10 @@ CREATE TABLE `curso` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `curso`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dcherramienta`
+-- Table structure for table `dcherramienta`
 --
 
 CREATE TABLE `dcherramienta` (
@@ -251,16 +208,10 @@ CREATE TABLE `dcherramienta` (
   `idTra` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `dcherramienta`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dcproveedor`
+-- Table structure for table `dcproveedor`
 --
 
 CREATE TABLE `dcproveedor` (
@@ -271,16 +222,10 @@ CREATE TABLE `dcproveedor` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `dcproveedor`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dctraex`
+-- Table structure for table `dctraex`
 --
 
 CREATE TABLE `dctraex` (
@@ -290,16 +235,10 @@ CREATE TABLE `dctraex` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `dctraex`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `documento`
+-- Table structure for table `documento`
 --
 
 CREATE TABLE `documento` (
@@ -310,16 +249,10 @@ CREATE TABLE `documento` (
   `status` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `documento`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dzbitacora`
+-- Table structure for table `dzbitacora`
 --
 
 CREATE TABLE `dzbitacora` (
@@ -332,15 +265,10 @@ CREATE TABLE `dzbitacora` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `dzbitacora`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dzcambiop`
+-- Table structure for table `dzcambiop`
 --
 
 CREATE TABLE `dzcambiop` (
@@ -351,16 +279,10 @@ CREATE TABLE `dzcambiop` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `dzcambiop`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dzcambiot`
+-- Table structure for table `dzcambiot`
 --
 
 CREATE TABLE `dzcambiot` (
@@ -374,7 +296,7 @@ CREATE TABLE `dzcambiot` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dzordentr`
+-- Table structure for table `dzordentr`
 --
 
 CREATE TABLE `dzordentr` (
@@ -393,16 +315,10 @@ CREATE TABLE `dzordentr` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `dzordentr`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estado`
+-- Table structure for table `estado`
 --
 
 CREATE TABLE `estado` (
@@ -412,7 +328,7 @@ CREATE TABLE `estado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `estado`
+-- Dumping data for table `estado`
 --
 
 INSERT INTO `estado` (`idEstado`, `nombre`, `abreviatura`) VALUES
@@ -452,7 +368,7 @@ INSERT INTO `estado` (`idEstado`, `nombre`, `abreviatura`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `incidentes`
+-- Table structure for table `incidentes`
 --
 
 CREATE TABLE `incidentes` (
@@ -461,16 +377,10 @@ CREATE TABLE `incidentes` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `incidentes`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `monverif`
+-- Table structure for table `monverif`
 --
 
 CREATE TABLE `monverif` (
@@ -487,16 +397,10 @@ CREATE TABLE `monverif` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `monverif`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `municipio`
+-- Table structure for table `municipio`
 --
 
 CREATE TABLE `municipio` (
@@ -506,7 +410,7 @@ CREATE TABLE `municipio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `municipio`
+-- Dumping data for table `municipio`
 --
 
 INSERT INTO `municipio` (`idMunicipio`, `nombre`, `idEstado`) VALUES
@@ -2972,7 +2876,7 @@ INSERT INTO `municipio` (`idMunicipio`, `nombre`, `idEstado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `organigrama`
+-- Table structure for table `organigrama`
 --
 
 CREATE TABLE `organigrama` (
@@ -2985,16 +2889,10 @@ CREATE TABLE `organigrama` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `organigrama`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `politica`
+-- Table structure for table `politica`
 --
 
 CREATE TABLE `politica` (
@@ -3004,14 +2902,13 @@ CREATE TABLE `politica` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `politica`
+-- Dumping data for table `politica`
 --
-
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pre`
+-- Table structure for table `pre`
 --
 
 CREATE TABLE `pre` (
@@ -3020,16 +2917,10 @@ CREATE TABLE `pre` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `pre`
---
-
-(1, '../documents/Punto13/PL0000/776519b71fe271a66ca031bd391c23fa.pdf', 'PL/0000/EXP/ES/2020');
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rbpo`
+-- Table structure for table `rbpo`
 --
 
 CREATE TABLE `rbpo` (
@@ -3045,15 +2936,10 @@ CREATE TABLE `rbpo` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `rbpo`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reportea`
+-- Table structure for table `reportea`
 --
 
 CREATE TABLE `reportea` (
@@ -3067,14 +2953,10 @@ CREATE TABLE `reportea` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `reportea`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sugque`
+-- Table structure for table `sugque`
 --
 
 CREATE TABLE `sugque` (
@@ -3084,16 +2966,10 @@ CREATE TABLE `sugque` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `sugque`
---
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `trabcurso`
+-- Table structure for table `trabcurso`
 --
 
 CREATE TABLE `trabcurso` (
@@ -3102,15 +2978,10 @@ CREATE TABLE `trabcurso` (
   `idCESH` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `trabcurso`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ubicacion`
+-- Table structure for table `ubicacion`
 --
 
 CREATE TABLE `ubicacion` (
@@ -3121,7 +2992,7 @@ CREATE TABLE `ubicacion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -3132,7 +3003,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nUsuario`, `contrasena`, `tipo`) VALUES
@@ -3143,45 +3014,45 @@ INSERT INTO `usuario` (`idUsuario`, `nUsuario`, `contrasena`, `tipo`) VALUES
 (5, 'SGO980909CB3', 'PL1389', 'estacion');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `actauditoria`
+-- Indexes for table `actauditoria`
 --
 ALTER TABLE `actauditoria`
   ADD PRIMARY KEY (`idAct`,`idAuditoria`),
   ADD KEY `Relationship59` (`idAuditoria`);
 
 --
--- Indices de la tabla `ar`
+-- Indexes for table `ar`
 --
 ALTER TABLE `ar`
   ADD PRIMARY KEY (`idAR`,`idCESH`),
   ADD KEY `Relationship6` (`idCESH`);
 
 --
--- Indices de la tabla `auditoria`
+-- Indexes for table `auditoria`
 --
 ALTER TABLE `auditoria`
   ADD PRIMARY KEY (`idAuditoria`);
 
 --
--- Indices de la tabla `bitacoras`
+-- Indexes for table `bitacoras`
 --
 ALTER TABLE `bitacoras`
   ADD PRIMARY KEY (`idBit`,`idCESH`),
   ADD KEY `Relationship82` (`idCESH`);
 
 --
--- Indices de la tabla `calendario`
+-- Indexes for table `calendario`
 --
 ALTER TABLE `calendario`
   ADD PRIMARY KEY (`idCalendario`,`idCESH`),
   ADD KEY `Relationship70` (`idCESH`);
 
 --
--- Indices de la tabla `cesh`
+-- Indexes for table `cesh`
 --
 ALTER TABLE `cesh`
   ADD PRIMARY KEY (`idCESH`),
@@ -3189,445 +3060,508 @@ ALTER TABLE `cesh`
   ADD KEY `IX_Relationship50` (`idEstado`);
 
 --
--- Indices de la tabla `completocesh`
+-- Indexes for table `completocesh`
 --
 ALTER TABLE `completocesh`
-  ADD PRIMARY KEY (`idCESH`,`idUsuario`);
+  ADD PRIMARY KEY (`idCESH`,`idUsuario`),
+  ADD KEY `idUsuario` (`idUsuario`);
 
 --
--- Indices de la tabla `control`
+-- Indexes for table `control`
 --
 ALTER TABLE `control`
   ADD PRIMARY KEY (`idControl`,`idCESH`),
   ADD KEY `Relationship54` (`idCESH`);
 
 --
--- Indices de la tabla `controlrbpo`
+-- Indexes for table `controlrbpo`
 --
 ALTER TABLE `controlrbpo`
   ADD PRIMARY KEY (`idControlR`,`idCESH`),
   ADD KEY `Relationship62` (`idCESH`);
 
 --
--- Indices de la tabla `curso`
+-- Indexes for table `curso`
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`idCurso`,`idCESH`),
   ADD KEY `Relationship10` (`idCESH`);
 
 --
--- Indices de la tabla `dcherramienta`
+-- Indexes for table `dcherramienta`
 --
 ALTER TABLE `dcherramienta`
   ADD PRIMARY KEY (`idEPP`),
   ADD KEY `IX_Relationship36` (`idTra`);
 
 --
--- Indices de la tabla `dcproveedor`
+-- Indexes for table `dcproveedor`
 --
 ALTER TABLE `dcproveedor`
-  ADD PRIMARY KEY (`idProvedor`,`idCESH`);
+  ADD PRIMARY KEY (`idProvedor`,`idCESH`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `dctraex`
+-- Indexes for table `dctraex`
 --
 ALTER TABLE `dctraex`
   ADD PRIMARY KEY (`idTra`),
-  ADD KEY `IX_Relationship35` (`idProvedor`,`idCESH`);
+  ADD KEY `IX_Relationship35` (`idProvedor`,`idCESH`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `documento`
+-- Indexes for table `documento`
 --
 ALTER TABLE `documento`
   ADD PRIMARY KEY (`idDocumento`,`idCESH`),
   ADD KEY `Relationship7` (`idCESH`);
 
 --
--- Indices de la tabla `dzbitacora`
+-- Indexes for table `dzbitacora`
 --
 ALTER TABLE `dzbitacora`
   ADD PRIMARY KEY (`idBitacoras`,`idCESH`),
   ADD KEY `Relationship80` (`idCESH`);
 
 --
--- Indices de la tabla `dzcambiop`
+-- Indexes for table `dzcambiop`
 --
 ALTER TABLE `dzcambiop`
   ADD PRIMARY KEY (`idCambio`,`idCESH`),
-  ADD KEY `IX_Relationship29` (`idTrab`,`idCESH`);
+  ADD KEY `IX_Relationship29` (`idTrab`,`idCESH`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `dzcambiot`
+-- Indexes for table `dzcambiot`
 --
 ALTER TABLE `dzcambiot`
-  ADD PRIMARY KEY (`idCambioT`,`idCESH`);
+  ADD PRIMARY KEY (`idCambioT`,`idCESH`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `dzordentr`
+-- Indexes for table `dzordentr`
 --
 ALTER TABLE `dzordentr`
-  ADD PRIMARY KEY (`idOrdenT`,`idCESH`);
+  ADD PRIMARY KEY (`idOrdenT`,`idCESH`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `estado`
+-- Indexes for table `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`idEstado`);
 
 --
--- Indices de la tabla `incidentes`
+-- Indexes for table `incidentes`
 --
 ALTER TABLE `incidentes`
   ADD PRIMARY KEY (`idIncidentes`,`idCESH`),
   ADD KEY `Relationship55` (`idCESH`);
 
 --
--- Indices de la tabla `monverif`
+-- Indexes for table `monverif`
 --
 ALTER TABLE `monverif`
-  ADD PRIMARY KEY (`idMonV`,`idCESH`);
+  ADD PRIMARY KEY (`idMonV`,`idCESH`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `municipio`
+-- Indexes for table `municipio`
 --
 ALTER TABLE `municipio`
-  ADD PRIMARY KEY (`idMunicipio`,`idEstado`);
+  ADD PRIMARY KEY (`idMunicipio`,`idEstado`),
+  ADD KEY `idEstado` (`idEstado`);
 
 --
--- Indices de la tabla `organigrama`
+-- Indexes for table `organigrama`
 --
 ALTER TABLE `organigrama`
   ADD PRIMARY KEY (`idTrab`,`idCESH`),
   ADD KEY `Relationship8` (`idCESH`);
 
 --
--- Indices de la tabla `politica`
+-- Indexes for table `politica`
 --
 ALTER TABLE `politica`
   ADD PRIMARY KEY (`idPolitica`,`idCESH`),
   ADD KEY `Relationship24` (`idCESH`);
 
 --
--- Indices de la tabla `pre`
+-- Indexes for table `pre`
 --
 ALTER TABLE `pre`
   ADD PRIMARY KEY (`idPRE`,`idCESH`),
   ADD KEY `Relationship53` (`idCESH`);
 
 --
--- Indices de la tabla `rbpo`
+-- Indexes for table `rbpo`
 --
 ALTER TABLE `rbpo`
   ADD PRIMARY KEY (`idRbpo`,`idCESH`),
   ADD KEY `Relationship25` (`idCESH`);
 
 --
--- Indices de la tabla `reportea`
+-- Indexes for table `reportea`
 --
 ALTER TABLE `reportea`
   ADD PRIMARY KEY (`idreporte`,`idCESH`),
-  ADD KEY `IX_Relationship42` (`idAuditoria`);
+  ADD KEY `IX_Relationship42` (`idAuditoria`),
+  ADD KEY `idCESH` (`idCESH`);
 
 --
--- Indices de la tabla `sugque`
+-- Indexes for table `sugque`
 --
 ALTER TABLE `sugque`
   ADD PRIMARY KEY (`idSugQ`,`idCESH`),
   ADD KEY `Relationship15` (`idCESH`);
 
 --
--- Indices de la tabla `trabcurso`
+-- Indexes for table `trabcurso`
 --
 ALTER TABLE `trabcurso`
   ADD KEY `Relationship13` (`idTrab`,`idCESH`),
   ADD KEY `Relationship14` (`idCurso`,`idCESH`);
 
 --
--- Indices de la tabla `ubicacion`
+-- Indexes for table `ubicacion`
 --
 ALTER TABLE `ubicacion`
   ADD PRIMARY KEY (`idUbicacion`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `actauditoria`
+-- AUTO_INCREMENT for table `actauditoria`
 --
 ALTER TABLE `actauditoria`
   MODIFY `idAct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `ar`
+-- AUTO_INCREMENT for table `ar`
 --
 ALTER TABLE `ar`
-  MODIFY `idAR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `auditoria`
+-- AUTO_INCREMENT for table `auditoria`
 --
 ALTER TABLE `auditoria`
   MODIFY `idAuditoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `bitacoras`
+-- AUTO_INCREMENT for table `bitacoras`
 --
 ALTER TABLE `bitacoras`
   MODIFY `idBit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT de la tabla `calendario`
+-- AUTO_INCREMENT for table `calendario`
 --
 ALTER TABLE `calendario`
   MODIFY `idCalendario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `control`
+-- AUTO_INCREMENT for table `control`
 --
 ALTER TABLE `control`
   MODIFY `idControl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `controlrbpo`
+-- AUTO_INCREMENT for table `controlrbpo`
 --
 ALTER TABLE `controlrbpo`
   MODIFY `idControlR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `curso`
+-- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
   MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `dcherramienta`
+-- AUTO_INCREMENT for table `dcherramienta`
 --
 ALTER TABLE `dcherramienta`
   MODIFY `idEPP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `dcproveedor`
+-- AUTO_INCREMENT for table `dcproveedor`
 --
 ALTER TABLE `dcproveedor`
   MODIFY `idProvedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `dctraex`
+-- AUTO_INCREMENT for table `dctraex`
 --
 ALTER TABLE `dctraex`
   MODIFY `idTra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `documento`
+-- AUTO_INCREMENT for table `documento`
 --
 ALTER TABLE `documento`
-  MODIFY `idDocumento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `idDocumento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
--- AUTO_INCREMENT de la tabla `dzbitacora`
+-- AUTO_INCREMENT for table `dzbitacora`
 --
 ALTER TABLE `dzbitacora`
   MODIFY `idBitacoras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de la tabla `dzcambiop`
+-- AUTO_INCREMENT for table `dzcambiop`
 --
 ALTER TABLE `dzcambiop`
   MODIFY `idCambio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `dzcambiot`
+-- AUTO_INCREMENT for table `dzcambiot`
 --
 ALTER TABLE `dzcambiot`
   MODIFY `idCambioT` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `dzordentr`
+-- AUTO_INCREMENT for table `dzordentr`
 --
 ALTER TABLE `dzordentr`
   MODIFY `idOrdenT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `estado`
+-- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
   MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT de la tabla `incidentes`
+-- AUTO_INCREMENT for table `incidentes`
 --
 ALTER TABLE `incidentes`
   MODIFY `idIncidentes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `monverif`
+-- AUTO_INCREMENT for table `monverif`
 --
 ALTER TABLE `monverif`
   MODIFY `idMonV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `municipio`
+-- AUTO_INCREMENT for table `municipio`
 --
 ALTER TABLE `municipio`
   MODIFY `idMunicipio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2458;
 
 --
--- AUTO_INCREMENT de la tabla `organigrama`
+-- AUTO_INCREMENT for table `organigrama`
 --
 ALTER TABLE `organigrama`
   MODIFY `idTrab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `politica`
+-- AUTO_INCREMENT for table `politica`
 --
 ALTER TABLE `politica`
-  MODIFY `idPolitica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPolitica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `pre`
+-- AUTO_INCREMENT for table `pre`
 --
 ALTER TABLE `pre`
   MODIFY `idPRE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `rbpo`
+-- AUTO_INCREMENT for table `rbpo`
 --
 ALTER TABLE `rbpo`
   MODIFY `idRbpo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `reportea`
+-- AUTO_INCREMENT for table `reportea`
 --
 ALTER TABLE `reportea`
   MODIFY `idreporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `sugque`
+-- AUTO_INCREMENT for table `sugque`
 --
 ALTER TABLE `sugque`
   MODIFY `idSugQ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `ubicacion`
+-- AUTO_INCREMENT for table `ubicacion`
 --
 ALTER TABLE `ubicacion`
   MODIFY `idUbicacion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `actauditoria`
+-- Constraints for table `actauditoria`
 --
 ALTER TABLE `actauditoria`
   ADD CONSTRAINT `Relationship59` FOREIGN KEY (`idAuditoria`) REFERENCES `auditoria` (`idAuditoria`);
 
 --
--- Filtros para la tabla `ar`
+-- Constraints for table `ar`
 --
 ALTER TABLE `ar`
   ADD CONSTRAINT `Relationship6` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `bitacoras`
+-- Constraints for table `bitacoras`
 --
 ALTER TABLE `bitacoras`
   ADD CONSTRAINT `Relationship82` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `calendario`
+-- Constraints for table `calendario`
 --
 ALTER TABLE `calendario`
   ADD CONSTRAINT `Relationship70` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `control`
+-- Constraints for table `cesh`
+--
+ALTER TABLE `cesh`
+  ADD CONSTRAINT `cesh_ibfk_1` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`);
+
+--
+-- Constraints for table `completocesh`
+--
+ALTER TABLE `completocesh`
+  ADD CONSTRAINT `completocesh_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+
+--
+-- Constraints for table `control`
 --
 ALTER TABLE `control`
   ADD CONSTRAINT `Relationship54` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `controlrbpo`
+-- Constraints for table `controlrbpo`
 --
 ALTER TABLE `controlrbpo`
   ADD CONSTRAINT `Relationship62` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `curso`
+-- Constraints for table `curso`
 --
 ALTER TABLE `curso`
   ADD CONSTRAINT `Relationship10` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `documento`
+-- Constraints for table `dcproveedor`
+--
+ALTER TABLE `dcproveedor`
+  ADD CONSTRAINT `dcproveedor_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Constraints for table `dctraex`
+--
+ALTER TABLE `dctraex`
+  ADD CONSTRAINT `dctraex_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Constraints for table `documento`
 --
 ALTER TABLE `documento`
   ADD CONSTRAINT `Relationship7` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `dzbitacora`
+-- Constraints for table `dzbitacora`
 --
 ALTER TABLE `dzbitacora`
   ADD CONSTRAINT `Relationship80` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `dzcambiop`
+-- Constraints for table `dzcambiop`
 --
 ALTER TABLE `dzcambiop`
-  ADD CONSTRAINT `Relationship29` FOREIGN KEY (`idTrab`,`idCESH`) REFERENCES `organigrama` (`idTrab`, `idCESH`);
+  ADD CONSTRAINT `dzcambiop_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `incidentes`
+-- Constraints for table `dzcambiot`
+--
+ALTER TABLE `dzcambiot`
+  ADD CONSTRAINT `dzcambiot_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Constraints for table `dzordentr`
+--
+ALTER TABLE `dzordentr`
+  ADD CONSTRAINT `dzordentr_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Constraints for table `incidentes`
 --
 ALTER TABLE `incidentes`
   ADD CONSTRAINT `Relationship55` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `organigrama`
+-- Constraints for table `monverif`
+--
+ALTER TABLE `monverif`
+  ADD CONSTRAINT `monverif_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Constraints for table `municipio`
+--
+ALTER TABLE `municipio`
+  ADD CONSTRAINT `municipio_ibfk_1` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`);
+
+--
+-- Constraints for table `organigrama`
 --
 ALTER TABLE `organigrama`
   ADD CONSTRAINT `Relationship8` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `politica`
+-- Constraints for table `politica`
 --
 ALTER TABLE `politica`
   ADD CONSTRAINT `Relationship24` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `pre`
+-- Constraints for table `pre`
 --
 ALTER TABLE `pre`
   ADD CONSTRAINT `Relationship53` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `rbpo`
+-- Constraints for table `rbpo`
 --
 ALTER TABLE `rbpo`
   ADD CONSTRAINT `Relationship25` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `sugque`
+-- Constraints for table `reportea`
+--
+ALTER TABLE `reportea`
+  ADD CONSTRAINT `reportea_ibfk_1` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
+
+--
+-- Constraints for table `sugque`
 --
 ALTER TABLE `sugque`
   ADD CONSTRAINT `Relationship15` FOREIGN KEY (`idCESH`) REFERENCES `cesh` (`idCESH`);
 
 --
--- Filtros para la tabla `trabcurso`
+-- Constraints for table `trabcurso`
 --
 ALTER TABLE `trabcurso`
   ADD CONSTRAINT `Relationship13` FOREIGN KEY (`idTrab`,`idCESH`) REFERENCES `organigrama` (`idTrab`, `idCESH`),

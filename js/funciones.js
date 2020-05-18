@@ -398,7 +398,8 @@ $(document).ready(function(){
 			})
 			.done(function(msg){
 				alert(msg);
-			});		
+			});
+		location.reload();
 	});
 	/*Accion de modal AR - PUNTO 2*/
 	$("#btnGuardarAR").click(function(){
@@ -424,6 +425,7 @@ $(document).ready(function(){
 			.done(function(msg){
 				alert(msg);
 			});
+		location.reload();
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 3*/
@@ -440,9 +442,9 @@ $(document).ready(function(){
 	});
 	/*BOTON ACTA CUMPLE*/
 	$("#cActa").click(function() {	
-		alert("entra");
+		//alert("entra");
 		statusActa = $("#cActa").text();
-		alert("es: "+statusActa);
+		//alert("es: "+statusActa);
 
 		if(statusActa == " - "){
 			//alert("Si");

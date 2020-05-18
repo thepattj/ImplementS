@@ -56,7 +56,7 @@ if($opcion=="addSt"){
 			}				
 		}
 
-		$sqlcompleto = "INSERT INTO completocesh (idCESH, idUsuario) VALUES ('".$noSta."',".$idU.")";
+		$sqlcompleto = "INSERT INTO completocesh (idCESH, idUsuario) VALUES ('".$cre."',".$idU.")";
 		if(mysqli_query($con, $sqlcompleto)){
 			echo "Inserción Completa.";
 		}else{
