@@ -7,11 +7,16 @@
 		//echo "entra a politica";
 		$id = $_POST['cre'];
 		$cesh = $_POST['ic'];
-		//echo "entro - ".$id. " - ".$cesh;
-		$politica = $_FILES["archviopol"];
-		/*foreach ($politica as $key => $value) {
+		$fechad = $_POST["fechadiv"];
+		$pfecha = explode("/", $fechad);
+		$fechad = $pfecha[2]."/".$pfecha[0]."/".$pfecha[1];
+		$divulga = $_POST["dvlpolitica"];
+		echo "entro - ".$id. " - ".$cesh. " - F: ".$fechad. " - D: ".$divulga;
+		/*$politica = $_FILES["archviopol"];
+		foreach ($politica as $key => $value) {
 			echo $key.' '.$value.'->';
-		}*/
+		}
+
 
 		$micarpeta = '../documents/Punto1/'.$id;
 		//echo $micarpeta;
@@ -25,7 +30,7 @@
 			//echo $ruta;
 			move_uploaded_file($politica["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO politica (direccion,idCESH) VALUES ('".$ruta."','".$cesh."')";
+			$sql = "INSERT INTO politica (direccion,fechaD,tipoD,idCESH) VALUES ('".$ruta."','".$fechad."','".$divulga."','".$cesh."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Insert Correct";
@@ -40,6 +45,10 @@
 	if(isset($_POST['opcar'])){
 		$cesh = $_POST['icar'];
 		$id = $_POST['crear'];
+		$fechard = $_POST["fechardiv"];
+		$pfecha = explode("/", $fechard);
+		$fechard = $pfecha[2]."/".$pfecha[0]."/".$pfecha[1];
+		$divulgar = $_POST["dvlar"];
 		//echo "entro - ".$id. " - ".$cesh;
 		$ar = $_FILES["archivoAR"];
 		/*foreach ($ar as $key => $value) {
@@ -58,7 +67,7 @@
 			//echo $ruta;
 			move_uploaded_file($ar["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO ar (direccion,idCESH) VALUES ('".$ruta."','".$cesh."')";
+			$sql = "INSERT INTO ar (direccion,fechaD,tipoD,idCESH) VALUES ('".$ruta."','".$fechard."','".$divulgar."','".$cesh."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Insert Correct";

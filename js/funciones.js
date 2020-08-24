@@ -38,7 +38,7 @@ $(document).ready(function(){
 					}if (a[0] == "RL") {
 						//alert("RL");
 					}if(a[0] == "estacion"){
-						alert("Ingreso exitoso");
+						alert("Ingreso exitoso"); //aqui hay que ver si se puede cambiar por un MODAL
 						window.location.href = "inicio.php?ty="+a[0]+"&x="+a[3];
 						localStorage.setItem("NES",a[2]);
 						localStorage.setItem("PL",a[3]);
@@ -150,7 +150,7 @@ $(document).ready(function(){
 		})
 		.done(function(msg) {
 			//console.log("success");
-			alert(msg);
+			//alert(msg);
 			sepador = "*";
 			datos = msg.split(sepador);
 			$("#PLu").val(datos[0]);
@@ -357,7 +357,29 @@ $(document).ready(function(){
 		window.open('ptXV.php', '_blank');
 		//window.open('pt3.php', '_self');
 	});	
-    
+
+	$("#pt17").click(function() {
+		//alert("HOLI");
+		window.open('ptXVIII.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});
+
+	$("#pt18").click(function() {
+		//alert("HOLI");
+		window.open('ptXVIII.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});
+
+
+	//CLIC DE CALENDARIO
+	$("#actcal").click(function() {
+		//alert("HOLI");
+		window.open('calendarioA.php', '_blank');
+		//window.open('pt3.php', '_self');
+	});
+
+
+
 	$(".updatecalendario").click(function() {
 		alert("ajax");
 	});
@@ -399,7 +421,7 @@ $(document).ready(function(){
 			.done(function(msg){
 				alert(msg);
 			});
-		location.reload();
+		//location.reload();
 	});
 	/*Accion de modal AR - PUNTO 2*/
 	$("#btnGuardarAR").click(function(){
@@ -429,6 +451,7 @@ $(document).ready(function(){
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 3*/
+	
 	//DOCUMENTACION LEGAL
 	$("#btnlegal").click(function() {
 		$("#legal").show();
@@ -439,6 +462,7 @@ $(document).ready(function(){
 		$("#pc").hide();
 		$("#semt").hide();
 		$("#stps").hide();
+		$("#se").hide();
 	});
 	/*BOTON ACTA CUMPLE*/
 	$("#cActa").click(function() {	
@@ -450,19 +474,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#cActa").text("Si");
 			$("#cActa").addClass("active");
-			cumActa = 1;
+			cumActa = "Si";
 		}if(statusActa == "Si"){
 			//alert("No");
 			$("#cActa").text("No");
 			$("#cActa").addClass("success");
 			$("#cActa").removeClass("active");
-			cumActa = 0;
+			cumActa = "No";
 		}if(statusActa == "No"){
 			//alert("otra SI");
 			$("#cActa").text("Si");
 			$("#cActa").addClass("active");
 			$("#cActa").removeClass("success");
-			cumActa = 1;
+			cumActa = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -477,19 +501,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#cPNot").text("Si");
 			$("#cPNot").addClass("active");
-			cumPoder = 1;
+			cumPoder = "Si";
 		}if(statusPoder == "Si"){
 			//alert("No");
 			$("#cPNot").text("No");
 			$("#cPNot").addClass("success");
 			$("#cPNot").removeClass("active");
-			cumPoder = 0;
+			cumPoder = "No";
 		}if(statusPoder == "No"){
 			//alert("otra SI");
 			$("#cPNot").text("Si");
 			$("#cPNot").addClass("active");
 			$("#cPNot").removeClass("success");
-			cumPoder = 1;
+			cumPoder = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -503,19 +527,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#altaSHCP").text("Si");
 			$("#altaSHCP").addClass("active");
-			cumAltaShcp = 1;
+			cumAltaShcp = "Si";
 		}if(statusAltaS == "Si"){
 			//alert("No");
 			$("#altaSHCP").text("No");
 			$("#altaSHCP").addClass("success");
 			$("#altaSHCP").removeClass("active");
-			cumAltaShcp = 0;
+			cumAltaShcp = "No";
 		}if(statusAltaS == "No"){
 			//alert("otra SI");
 			$("#altaSHCP").text("Si");
 			$("#altaSHCP").addClass("active");
 			$("#altaSHCP").removeClass("success");
-			cumAltaShcp = 1;
+			cumAltaShcp = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -529,19 +553,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#RFCS").text("Si");
 			$("#RFCS").addClass("active");
-			cumRfc = 1;
+			cumRfc = "Si";
 		}if(statusrfc == "Si"){
 			//alert("No");
 			$("#RFCS").text("No");
 			$("#RFCS").addClass("success");
 			$("#RFCS").removeClass("active");
-			cumRfc = 0;
+			cumRfc = "No";
 		}if(statusrfc == "No"){
 			//alert("otra SI");
 			$("#RFCS").text("Si");
 			$("#RFCS").addClass("active");
 			$("#RFCS").removeClass("success");
-			cumRfc = 1;
+			cumRfc = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -555,19 +579,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#PL").text("Si");
 			$("#PL").addClass("active");
-			cumpl = 1;
+			cumpl = "Si";
 		}if(statuspl == "Si"){
 			//alert("No");
 			$("#PL").text("No");
 			$("#PL").addClass("success");
 			$("#PL").removeClass("active");
-			cumpl = 0;
+			cumpl = "No";
 		}if(statuspl == "No"){
 			//alert("otra SI");
 			$("#PL").text("Si");
 			$("#PL").addClass("active");
 			$("#PL").removeClass("success");
-			cumpl = 1;
+			cumpl = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -581,19 +605,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#LFM").text("Si");
 			$("#LFM").addClass("active");
-			cumlfm = 1;
+			cumlfm = "Si";
 		}if(statusLfm == "Si"){
 			//alert("No");
 			$("#LFM").text("No");
 			$("#LFM").addClass("success");
 			$("#LFM").removeClass("active");
-			cumlfm = 0;
+			cumlfm = "No";
 		}if(statusLfm == "No"){
 			//alert("otra SI");
 			$("#LFM").text("Si");
 			$("#LFM").addClass("active");
 			$("#LFM").removeClass("success");
-			cumlfm = 1;
+			cumlfm = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -607,19 +631,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#dicSuelo").text("Si");
 			$("#dicSuelo").addClass("active");
-			cumdS = 1;
+			cumdS = "Si";
 		}if(statusdS == "Si"){
 			//alert("No");
 			$("#dicSuelo").text("No");
 			$("#dicSuelo").addClass("success");
 			$("#dicSuelo").removeClass("active");
-			cumdS = 0;
+			cumdS = "No";
 		}if(statusdS == "No"){
 			//alert("otra SI");
 			$("#dicSuelo").text("Si");
 			$("#dicSuelo").addClass("active");
 			$("#dicSuelo").removeClass("success");
-			cumdS = 1;
+			cumdS = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -633,19 +657,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#oImss").text("Si");
 			$("#oImss").addClass("active");
-			cumimss = 1;
+			cumimss = "Si";
 		}if(statusimss == "Si"){
 			//alert("No");
 			$("#oImss").text("No");
 			$("#oImss").addClass("success");
 			$("#oImss").removeClass("active");
-			cumimss = 0;
+			cumimss = "No";
 		}if(statusimss == "No"){
 			//alert("otra SI");
 			$("#oImss").text("Si");
 			$("#oImss").addClass("active");
 			$("#oImss").removeClass("success");
-			cumimss = 1;
+			cumimss = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -659,19 +683,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#planoA").text("Si");
 			$("#planoA").addClass("active");
-			cumplano = 1;
+			cumplano = "Si";
 		}if(statusplano == "Si"){
 			//alert("No");
 			$("#planoA").text("No");
 			$("#planoA").addClass("success");
 			$("#planoA").removeClass("active");
-			cumplano = 0;
+			cumplano = "No";
 		}if(statusplano == "No"){
 			//alert("otra SI");
 			$("#planoA").text("Si");
 			$("#planoA").addClass("active");
 			$("#planoA").removeClass("success");
-			cumplano = 1;
+			cumplano = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -685,19 +709,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#aSiem").text("Si");
 			$("#aSiem").addClass("active");
-			cumpSiem = 1;
+			cumpSiem = "Si";
 		}if(statusSiem == "Si"){
 			//alert("No");
 			$("#aSiem").text("No");
 			$("#aSiem").addClass("success");
 			$("#aSiem").removeClass("active");
-			cumpSiem = 0;
+			cumpSiem = "No";
 		}if(statusSiem == "No"){
 			//alert("otra SI");
 			$("#aSiem").text("Si");
 			$("#aSiem").addClass("active");
 			$("#aSiem").removeClass("success");
-			cumpSiem = 1;
+			cumpSiem = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -711,19 +735,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#dElec").text("Si");
 			$("#dElec").addClass("active");
-			cumpEl = 1;
+			cumpEl = "Si";
 		}if(statusdEl == "Si"){
 			//alert("No");
 			$("#dElec").text("No");
 			$("#dElec").addClass("success");
 			$("#dElec").removeClass("active");
-			cumpEl = 0;
+			cumpEl = "No";
 		}if(statusdEl == "No"){
 			//alert("otra SI");
 			$("#dElec").text("Si");
 			$("#dElec").addClass("active");
 			$("#dElec").removeClass("success");
-			cumpEl = 1;
+			cumpEl = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -737,19 +761,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#dTfisica").text("Si");
 			$("#dTfisica").addClass("active");
-			cumpdTF = 1;
+			cumpdTF = "Si";
 		}if(statusdTf == "Si"){
 			//alert("No");
 			$("#dTfisica").text("No");
 			$("#dTfisica").addClass("success");
 			$("#dTfisica").removeClass("active");
-			cumpdTF = 0;
+			cumpdTF = "No";
 		}if(statusdTf == "No"){
 			//alert("otra SI");
 			$("#dTfisica").text("Si");
 			$("#dTfisica").addClass("active");
 			$("#dTfisica").removeClass("success");
-			cumpdTF = 1;
+			cumpdTF = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -763,19 +787,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#calDisp").text("Si");
 			$("#calDisp").addClass("active");
-			cumpCd = 1;
+			cumpCd = "Si";
 		}if(statuscD == "Si"){
 			//alert("No");
 			$("#calDisp").text("No");
 			$("#calDisp").addClass("success");
 			$("#calDisp").removeClass("active");
-			cumpCd = 0;
+			cumpCd = "No";
 		}if(statuscD == "No"){
 			//alert("otra SI");
 			$("#calDisp").text("Si");
 			$("#calDisp").addClass("active");
 			$("#calDisp").removeClass("success");
-			cumpCd = 1;
+			cumpCd = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -789,19 +813,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#pHerm").text("Si");
 			$("#pHerm").addClass("active");
-			cumpHm = 1;
+			cumpHm = "Si";
 		}if(statusHr == "Si"){
 			//alert("No");
 			$("#pHerm").text("No");
 			$("#pHerm").addClass("success");
 			$("#pHerm").removeClass("active");
-			cumpHm = 0;
+			cumpHm = "No";
 		}if(statusHr == "No"){
 			//alert("otra SI");
 			$("#pHerm").text("Si");
 			$("#pHerm").addClass("active");
 			$("#pHerm").removeClass("success");
-			cumpHm = 1;
+			cumpHm = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -815,19 +839,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#pHermT").text("Si");
 			$("#pHermT").addClass("active");
-			cumpHmT = 1;
+			cumpHmT = "Si";
 		}if(statusHT == "Si"){
 			//alert("No");
 			$("#pHermT").text("No");
 			$("#pHermT").addClass("success");
 			$("#pHermT").removeClass("active");
-			cumpHmT = 0;
+			cumpHmT = "No";
 		}if(statusHT == "No"){
 			//alert("otra SI");
 			$("#pHermT").text("Si");
 			$("#pHermT").addClass("active");
 			$("#pHermT").removeClass("success");
-			cumpHmT = 1;
+			cumpHmT = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -841,13 +865,13 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#tanqueA").text("Si");
 			$("#tanqueA").addClass("active");
-			cumpTnA = 1;
+			cumpTnA = "Si";
 		}if(statusTa == "Si"){
 			//alert("No");
 			$("#tanqueA").text("No");
 			$("#tanqueA").addClass("success");
 			$("#tanqueA").removeClass("active");
-			cumpTnA = 0;
+			cumpTnA = "No";
 		}if(statusTa == "No"){
 			//alert("otra SI");
 			$("#tanqueA").text("Si");
@@ -867,19 +891,19 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#dispensarios").text("Si");
 			$("#dispensarios").addClass("active");
-			cumpdis = 1;
+			cumpdis = "Si";
 		}if(statusdis == "Si"){
 			//alert("No");
 			$("#dispensarios").text("No");
 			$("#dispensarios").addClass("success");
 			$("#dispensarios").removeClass("active");
-			cumpdis = 0;
+			cumpdis = "No";
 		}if(statusdis == "No"){
 			//alert("otra SI");
 			$("#dispensarios").text("Si");
 			$("#dispensarios").addClass("active");
 			$("#dispensarios").removeClass("success");
-			cumpdis = 1;
+			cumpdis = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -893,13 +917,13 @@ $(document).ready(function(){
 			//alert("Si");
 			$("#cIventarios").text("Si");
 			$("#cIventarios").addClass("active");
-			cumpIn = 1;
+			cumpIn = "Si";
 		}if(statuscIn == "Si"){
 			//alert("No");
 			$("#cIventarios").text("No");
 			$("#cIventarios").addClass("success");
 			$("#cIventarios").removeClass("active");
-			cumpIn = 0;
+			cumpIn = "No";
 		}if(statuscIn == "No"){
 			//alert("otra SI");
 			$("#cIventarios").text("Si");
@@ -914,12 +938,85 @@ $(document).ready(function(){
 		/* Act on the event */
 		//alert("tomar los 18 valores");
 		//alert("tomar los 18 valores: "+cumActa+" - "+cumPoder+" - "+cumAltaShcp+" - "+cumRfc+" - "+cumpl+" - "+cumlfm+" - "+cumdS+" - "+cumimss+" - "+cumplano+" - "+cumpSiem+" - "+cumpEl+" - "+cumpdTF+" - "+cumpCd+" - "+cumpHm+" - "+cumpHmT+" - "+cumpTnA+" - "+cumpdis+" - "+cumpIn);
+		sta01 = $("#estAct").val();
+		por01 = $("#porceAct").val();
+		evi01 = $("#eviAct").val();
+
+		sta02 = $("#estPn").val();
+		por02 = $("#porcePn").val();
+		evi02 = $("#eviPn").val();
+
+		sta03 = $("#estSHCP").val();
+		por03 = $("#porceSHCP").val();
+		evi03 = $("#eviSHCP").val();
+
+		sta04 = $("#estSRFCS").val();
+		por04 = $("#porceRFCS").val();
+		evi04 = $("#eviRFCS").val();
+
+		sta05 = $("#estPL").val();
+		por05 = $("#porcePL").val();
+		evi05 = $("#eviPL").val();
+
+		sta06 = $("#estLFM").val();
+		por06 = $("#porceLFM").val();
+		evi06 = $("#eviLFM").val();
+
+		sta07 = $("#estdicS").val();
+		por07 = $("#porcedicS").val();
+		evi07 = $("#evidicS").val();
+
+		sta08 = $("#estoIm").val();
+		por08 = $("#porceoIm").val();
+		evi08 = $("#evidoIm").val();
+
+		sta09 = $("#estplano").val();
+		por09 = $("#porceplano").val();
+		evi09 = $("#evidplano").val();
+
+		sta10 = $("#estSiem").val();
+		por10 = $("#porceSiem").val();
+		evi10 = $("#evidSiem").val();
+
+		sta11 = $("#estdElec").val();
+		por11 = $("#porcedElec").val();
+		evi11 = $("#eviddElec").val();
+
+		sta12 = $("#estdTfi").val();
+		por12 = $("#porcedTfi").val();
+		evi12 = $("#eviddTfi").val();
+
+		sta13 = $("#estcalD").val();
+		por13 = $("#porcecalD").val();
+		evi13 = $("#evidcalD").val();
+
+		sta14 = $("#estpHerm").val();
+		por14 = $("#porcepHerm").val();
+		evi14 = $("#evidpHerm").val();
+
+		sta15 = $("#estpHt").val();
+		por15 = $("#porcepHt").val();
+		evi15 = $("#evidpHt").val();
+
+		sta16 = $("#estTanque").val();
+		por16 = $("#porceTanque").val();
+		evi16 = $("#evidTanque").val();
+
+		sta17 = $("#estdisp").val();
+		por17 = $("#porcedisp").val();
+		evi17 = $("#eviddisp").val();
+
+		sta18 = $("#estCiv").val();
+		por18 = $("#porceCiv").val();
+		evi18 = $("#evidCiv").val();
+
 		cre = localStorage.getItem("PL");
+		//alert("LOS VALORES DEL PRIMER ELEMENTO LEGALES:"+sta01+"-"+por01+"-"+evi01);
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3d",acta:cumActa, poder:cumPoder, alta:cumAltaShcp, rfc:cumRfc, pl:cumpl, lfm:cumlfm, ds:cumdS, timss:cumimss, pA:cumplano, aS:cumpSiem, de:cumpEl, dtf:cumpdTF, cld:cumpCd, phm:cumpHm, phmt:cumpHmT, tqA:cumpTnA, dis:cumpdis, cIn:cumpIn, cre:cre },
+    		data: {opc:"add3d",acta:cumActa, staacta:sta01, poracta:por01, eviacta:evi01, poder:cumPoder, stapoder:sta02, porpoder:por02, evipoder:evi02, alta:cumAltaShcp, staalta:sta03, poralta:por03, evialta:evi03, rfc:cumRfc, starfc:sta04, porrfc:por04, evirfc:evi04, pl:cumpl, stapl:sta05, porpl:por05, evipl:evi05, lfm:cumlfm, stalfm:sta06, porlfm:por06, evilfm:evi06, ds:cumdS, stads:sta07, pords:por07, evids:evi07,timss:cumimss, statim:sta08, portim:por08, evitim:evi08, pA:cumplano, stapA:sta09, porpA:por09, evipA:evi09, aS:cumpSiem, staaS:sta10, poraS:por10, eviaS:evi10, de:cumpEl, stade:sta11, porde:por11, evide:evi11, dtf:cumpdTF, stadtf:sta12, pordtf:por12, evidtf:evi12, cld:cumpCd, stacld:sta13, porcld:por13, evicld:evi13, phm:cumpHm, staphm:sta14, porphm:por14, eviphm:evi14, phmt:cumpHmT, staphmt:sta15, porphmt:por15, eviphmt:evi15, tqA:cumpTnA, statqA:sta16, portqA:por16, evitqA:evi16, dis:cumpdis, stadis:sta17, pordis:por17, evidis:evi17, cIn:cumpIn, stacIn:sta18, porcIn:por18, evicIn:evi18, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -969,6 +1066,7 @@ $(document).ready(function(){
 		$("#legal").hide();
 		$("#legis").hide();
 		$("#cre").hide();
+		$("#se").hide();
 	});
 	$("#c005").click(function(){
 		//alert("entra");
@@ -999,25 +1097,52 @@ $(document).ready(function(){
 	$("#cMia").click(function(){
 		//alert("entra");
 		statusmia = $("#cMia").text();
+		Pstatusip = $("#cIp").text();
 		//alert("es: "+statusActa);
+
 
 		if(statusmia == " - "){
 			//alert("Si");
 			$("#cMia").text("Si");
 			$("#cMia").addClass("active");
+			//alert("ESTADO DE IP: "+Pstatusip);
 			cumpmia = 1;
+
+			if(Pstatusip == " - "){
+				$("#cIp").text("No");
+				$("#cIp").addClass("success");
+				$("#cIp").removeClass("active");
+				cumpip = 0;
+			}
+			
 		}if(statusmia == "Si"){
 			//alert("No");
 			$("#cMia").text("No");
 			$("#cMia").addClass("success");
 			$("#cMia").removeClass("active");
 			cumpmia = 0;
+
+			if(Pstatusip == "No"){
+				$("#cIp").text("Si");
+				$("#cIp").addClass("active");
+				$("#cIp").removeClass("success");
+				cumpip = 1;
+			}
+			
 		}if(statusmia == "No"){
 			//alert("otra SI");
 			$("#cMia").text("Si");
 			$("#cMia").addClass("active");
 			$("#cMia").removeClass("success");
 			cumpmia = 1;
+
+			if(Pstatusip == "Si"){
+				$("#cIp").text("No");
+				$("#cIp").addClass("success");
+				$("#cIp").removeClass("active");
+				cumpip = 0;
+			}
+			
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -1025,6 +1150,7 @@ $(document).ready(function(){
 	$("#cIp").click(function(){
 		//alert("entra");
 		statusip = $("#cIp").text();
+		Pstatusmia = $("#cMia").text();
 		//alert("es: "+statusActa);
 
 		if(statusip == " - "){
@@ -1032,18 +1158,39 @@ $(document).ready(function(){
 			$("#cIp").text("Si");
 			$("#cIp").addClass("active");
 			cumpip = 1;
+
+			if(Pstatusmia == " - "){
+				$("#cMia").text("No");
+				$("#cMia").addClass("success");
+				$("#cMia").removeClass("active");
+				cumpmia = 0;
+			}
 		}if(statusip == "Si"){
 			//alert("No");
 			$("#cIp").text("No");
 			$("#cIp").addClass("success");
 			$("#cIp").removeClass("active");
 			cumpip = 0;
+
+			if(Pstatusmia == "No"){
+				$("#cMia").text("Si");
+				$("#cMia").addClass("active");
+				$("#cMia").removeClass("success");
+				cumpmia = 1;
+			}
 		}if(statusip == "No"){
 			//alert("otra SI");
 			$("#cIp").text("Si");
 			$("#cIp").addClass("active");
 			$("#cIp").removeClass("success");
 			cumpip = 1;
+
+			if(Pstatusmia == "Si"){
+				$("#cMia").text("No");
+				$("#cMia").addClass("success");
+				$("#cMia").removeClass("active");
+				cumpmia = 0;
+			}
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -1127,16 +1274,39 @@ $(document).ready(function(){
 		//$("#cActa").val("Si");
 	});
 	$("#guardarDocASEA").click(function() {
+		A1sta = $("#estc005").val();
+		A1por = $("#porcec005").val();
+		A1evi = $("#evidc005").val();
+
+		A2sta = $("#estcMia").val();
+		A2por = $("#porcecMia").val();
+		A2evi = $("#evidcMia").val();
+
+		A3sta = $("#estcIp").val();
+		A3por = $("#porcecIp").val();
+		A3evi = $("#evidcIp").val();
+
+		A4sta = $("#estcLf").val();
+		A4por = $("#porcecLf").val();
+		A4evi = $("#evidcLf").val();
+
+		A5sta = $("#estcGrp").val();
+		A5por = $("#porcecGrp").val();
+		A5evi = $("#evidcGrp").val();
+
+		A6sta = $("#estcCoa").val();
+		A6por = $("#porcecCoa").val();
+		A6evi = $("#evidcCoa").val();
 		/* Act on the event */
 		//alert("tomar los 6 valores"); 
 		//cump005 nom005 Cumpmia  MIA cumpip IP cumplf LF cumpgrp GRP cumpcoa COA
-		//alert("tomar los 2 valores: "+cump005+" DOS:"+" - "+cumpmia+" - "+cumpip+" - "+cumplf+" - "+cumpgrp+" - "+cumpcoa);
+		//alert("tomar los 2 valores: "+cump005+" - % No. 1 "+A1por+" DOS:"+" - "+cumpmia+" la evidencia 5"+A5evi+" - "+cumpip+" - "+cumplf+" - "+cumpgrp+" - "+cumpcoa);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3a",n005:cump005, mia:cumpmia, ip:cumpip, lf:cumplf, grp:cumpgrp, coa:cumpcoa, cre:cre },
+    		data: {opc:"add3a",n005:cump005, sn005:A1sta, en005:A1evi, pn005:A1por, mia:cumpmia, smia:A2sta, emia:A2evi, pmia:A2por, ip:cumpip, sip:A3sta, eip:A3evi, pip:A3por, lf:cumplf, slf:A4sta, elf:A4evi, plf:A4por, grp:cumpgrp, sgrp:A5sta, egrp:A5evi, pgrp:A5por, coa:cumpcoa, scoa:A6sta, ecoa:A6evi, pcoa:A6por, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1176,6 +1346,7 @@ $(document).ready(function(){
 		$("#asea").hide();
 		$("#legal").hide();
 		$("#legis").hide();
+		$("#se").hide();
 	});
 	$("#rDiariov").click(function(){
 		//alert("entra");
@@ -1491,14 +1662,62 @@ $(document).ready(function(){
 	});
 	$("#guardarDoCre").click(function() {
 		/* Act on the event */
-		//alert("tomar los 12 valores");
+		
+		Csta1 = $("#estRdia").val();
+		Cpor1 = $("#porceRdia").val();
+		Cevi1 = $("#evidRdia").val();
+
+		Csta2 = $("#estRdiap").val();
+		Cpor2 = $("#porceRdiap").val();
+		Cevi2 = $("#evidRdiap").val();
+
+		Csta3 = $("#estcEs").val();
+		Cpor3 = $("#porcecEs").val();
+		Cevi3 = $("#evidcEs").val();
+
+		Csta4 = $("#est016").val();
+		Cpor4 = $("#porce016").val();
+		Cevi4 = $("#evid016").val();
+
+		Csta5 = $("#est0162017").val();
+		Cpor5 = $("#porce0162017").val();
+		Cevi5 = $("#evid0162017").val();
+
+		Csta6 = $("#estrPs").val();
+		Cpor6 = $("#porcerPs").val();
+		Cevi6 = $("#evidrPs").val();
+
+		Csta7 = $("#estPoliza").val();
+		Cevi7 = $("#evidPoliza").val();
+		Cpor7 = $("#porcePoliza").val();
+
+		Csta8 = $("#estPsg").val();
+		Cevi8 = $("#evidPsg").val();
+		Cpor8 = $("#porcePsg").val();
+
+		Csta9 = $("#estrQ").val();
+		Cevi9 = $("#evidrQ").val();
+		Cpor9 = $("#porcerQ").val();
+
+		Csta10 = $("#estFacP").val();
+		Cevi10 = $("#evidFacP").val();
+		Cpor10 = $("#porceFacP").val();
+
+		Csta11 = $("#estInc").val();
+		Cevi11 = $("#evidInc").val();
+		Cpor11 = $("#porceInc").val();
+
+		Csta12 = $("#estAnI").val();
+		Cevi12 = $("#evidAnI").val();
+		Cpor12 = $("#porceAnI").val();
+		//alert("Valores "+cumprdp+"evidencia 4 "+Cevi4+"porcenteja 9 "+Cpor9);
 		//alert("tomar los 12 valores: "+cumprdv+" DOS:"+" - "+cumprdp+" - "+cumpesta+" - "+cump016+" - "+cump0162017+" - "+cumprpag+" - "+cumpAnual+" - "+cumpSg+" - "+cumprQ+" - "+cumpfPr+" - "+cumpInc+" - "+cumpAnIn);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3c",rdv:cumprdv, rdp:cumprdp, sta:cumpesta, cpet:cump016, dcpet:cump0162017, sup:cumprpag, cre:cre, panual:cumpAnual, pseg:cumpSg, repq:cumprQ, proc:cumpfPr, reme:cumpInc, anuncio:cumpAnIn },
+    		data: {opc:"add3c",rdv:cumprdv, srdv:Csta1, erdv:Cevi1, prdv:Cpor1, rdp:cumprdp, srdp:Csta2, erdp:Cevi2, prdp:Cpor2, sta:cumpesta, ssta:Csta3, esta:Cevi3, psta:Cpor3, cpet:cump016, scpet:Csta4, ecpet:Cevi4, pcpet:Cpor4, dcpet:cump0162017, sdcpet:Csta5, edcpet:Cevi5, pdcpet:Cpor5, sup:cumprpag, ssup:Csta6, esup:Cevi6, psup:Cpor6, cre:cre, panual:cumpAnual, spanual:Csta7, epanual:Cevi7, ppanual:Cpor7, pseg:cumpSg, spseg:Csta8, epseg:Cevi8, ppseg:Cpor8, repq:cumprQ, srepq:Csta9, erepq:Cevi9, prepq:Cpor9, proc:cumpfPr, sproc:Csta10, eproc:Cevi10, pproc:Cpor10, reme:cumpInc, sreme:Csta11, ereme:Cevi11, preme:Cpor11, anuncio:cumpAnIn, sanuncio:Csta12, eanuncio:Cevi12, panuncio:Cpor12 },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1542,6 +1761,7 @@ $(document).ready(function(){
 		$("#asea").hide();
 		$("#legal").hide();
 		$("#legis").hide();
+		$("#se").hide();
 	});
 	$("#vPerdisp").click(function(){
 		//alert("entra");
@@ -1595,21 +1815,34 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});
-	$("#guardarDocP").click(function() {
+	$("#guardarDocp").click(function() {
 		/* Act on the event */
 		//cumpvDis //verificacion de dispensario
 		//cumprCd //reporte a distancia
-		//alert("tomar los 2 valores: "+cumpvDis+" DOS:"+cumprCd);
+		Psta1 = $("#estvPd").val();;
+		Ppor1 = $("#porcevPd").val();;
+		Pevi1 = $("#evidvPd").val();;
+
+		Psta2 = $("#estrCtd").val();;
+		Ppor2 = $("#porcerCtd").val();;
+		Pevi2 = $("#evidrCtd").val();;
+
+		//alert("Primer valor "+cumpvDis+" DOS:"+cumprCd);
+		//alert("Primer valor "+cumpvDis+" estatus1:"+Psta1+" porcentaje2:"+Ppor2);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3pr",unoprofeco:cumpvDis, dosprofeco:cumprCd, cre:cre },
+    		data: {opc:"add3pr",unoprofeco:cumpvDis, unoprofecos:Psta1, unoprofecop:Ppor1, unoprofecoe:Pevi1, dosprofeco:cumprCd, dosprofecos:Psta2, dosprofecop:Ppor2, dosprofecoe:Pevi2, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
 		})	
+	});
+	$("#actualizarDocP").click(function() {
+		/* Act on the event */
+		alert("no funciona");
 	});
 
 	//DOCUMENTACION PROTECCION CIVIL
@@ -1622,6 +1855,7 @@ $(document).ready(function(){
 		$("#asea").hide();
 		$("#legal").hide();
 		$("#legis").hide();
+		$("#se").hide();
 	});
 	$("#vBueno").click(function(){
 		//alert("entra");
@@ -1679,13 +1913,20 @@ $(document).ready(function(){
 		/* Act on the event */
 		//cumpvB //visto bueno
 		//cumpdL //autodeclaratoria
-		//alert("tomar los 2 valores: "+cumpvB+" DOS:"+cumpdL);
+		PCs1 = $("#estVb").val();;
+		PCe1 = $("#evidVb").val();;
+		PCp1 = $("#porceVb").val();;
+
+		PCs2 = $("#estCdc").val();;
+		PCe2 = $("#evidCdc").val();;
+		PCp2 = $("#porceCdc").val();;
+		//alert("tomar valores: "+cumpvB+" Porcentaje uno:"+PCp1+" Evidencia dos:"+PCe2);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3pc",unopc:cumpvB, dospc:cumpdL, cre:cre },
+    		data: {opc:"add3pc",unopc:cumpvB, unopcs:PCs1, unopce:PCe1, unopcp:PCp1, dospc:cumpdL, dospcs:PCs2, dospce:PCe2, dospcp:PCp2, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1710,6 +1951,84 @@ $(document).ready(function(){
 		})	
 	});
 
+	//DOCUMENTACION DE SECRETARIA DE ECONOMIA
+	$("#btnse").click(function() {
+		$("#se").show();
+		$("#pc").hide();
+		$("#semt").hide();
+		$("#stps").hide();
+		$("#profeco").hide();
+		$("#cre").hide();
+		$("#asea").hide();
+		$("#legal").hide();
+		$("#legis").hide();
+	});
+	$("#conNac").click(function(){
+		//alert("entra");
+		statusconNac = $("#conNac").text();
+		//alert("es: "+statusActa);
+
+		if(statusconNac == " - "){
+			//alert("Si");
+			$("#conNac").text("Si");
+			$("#conNac").addClass("active");
+			cumpconN = 1;
+		}if(statusconNac == "Si"){
+			//alert("No");
+			$("#conNac").text("No");
+			$("#conNac").addClass("success");
+			$("#conNac").removeClass("active");
+			cumpconN = 0;
+		}if(statusconNac == "No"){
+			//alert("otra SI");
+			$("#conNac").text("Si");
+			$("#conNac").addClass("active");
+			$("#conNac").removeClass("success");
+			cumpconN = 1;
+		}
+		//console.log(cumActa);
+		//$("#cActa").val("Si");
+	});
+	
+	$("#guardarDocSe").click(function() {
+		/* Act on the event */
+		//cumpvB //visto bueno
+		//cumpdL //autodeclaratoria
+		contNS = $("#estconNac").val();
+		contNP = $("#porceconNac").val();
+		contNE = $("#evidconNac").val();
+
+		//alert("tomar el valor: "+cumpconN+"%"+contNP+"evi:"+contNE);
+		cre = localStorage.getItem("PL");
+		$.ajax({
+			url: 'php/insert.php',
+    		method: 'POST',
+    		dataType: 'html',
+    		data: {opc:"add3se",unose:cumpconN, unoseS:contNS, unoseE:contNE, unoseP:contNP, cre:cre },
+		})
+		.done(function(msg) {
+			alert(msg);
+		})		
+	});
+
+	$("#actualizarDocSe").click(function() {
+		/* Act on the event */
+		cumpconN = $("#conNac").text();
+		//alert("tomar los 2 valores: "+cumpvB+" DOS:"+cumpdL);
+		cre = localStorage.getItem("PL");
+		$.ajax({
+			url: 'php/update.php',
+    		method: 'POST',
+    		dataType: 'html',
+    		data: {opc:"upd3se",unose:cumpconN, cre:cre },
+		})
+		.done(function(msg) {
+			alert(msg);
+			location.reload();
+		})	
+	});
+
+
 	//DOCUMENTACION STPS
 	$("#btnstps").click(function() {
 		$("#stps").show();
@@ -1720,6 +2039,7 @@ $(document).ready(function(){
 		$("#asea").hide();
 		$("#legal").hide();
 		$("#legis").hide();
+		$("#se").hide();
 	});
 	$("#001stps").click(function(){
 		//alert("entra");
@@ -2113,14 +2433,74 @@ $(document).ready(function(){
 	});
 	$("#guardarDocstp").click(function() {
 		/* Act on the event */
-		//alert("tomar los 15 valores");
-		//alert("tomar los 15 valores: "+cump001s+" - "+cump002s+" - "+cump009s+" - "+cump010s+" - "+cump011s+" - "+cump017s+" - "+cump018s+" - "+cump019s+" - "+cump022s+" - "+cump024s+" - "+cump025s+" - "+cump026s+" - "+cump027s+" - "+cump029s+" - "+cump033s);
+		stps1s = $("#est001").val();
+		stps1e = $("#evid001").val();
+		stps1p = $("#porce001").val();
+
+		stps2s = $("#est002").val();
+		stps2e = $("#evid002").val();
+		stps2p = $("#porce002").val();
+
+		stps3s = $("#est009").val();
+		stps3e = $("#evid009").val();
+		stps3p = $("#porce009").val();
+
+		stps4s = $("#est010").val();
+		stps4e = $("#evid010").val();
+		stps4p = $("#porce010").val();
+
+		stps5s = $("#est011").val();
+		stps5e = $("#evid011").val();
+		stps5p = $("#porce011").val();
+
+		stps6s = $("#est017").val();
+		stps6e = $("#evid017").val();
+		stps6p = $("#porce017").val();
+
+		stps7s = $("#est018").val();
+		stps7e = $("#evid018").val();
+		stps7p = $("#porce018").val();
+
+		stps8s = $("#est019").val();
+		stps8e = $("#evid019").val();
+		stps8p = $("#porce019").val();
+
+		stps9s = $("#est022").val();
+		stps9e = $("#evid022").val();
+		stps9p = $("#porce022").val();
+
+		stps10s = $("#est024").val();
+		stps10e = $("#evid024").val();
+		stps10p = $("#porce024").val();
+
+		stps11s = $("#est025").val();
+		stps11e = $("#evid025").val();
+		stps11p = $("#porce025").val();
+
+		stps12s = $("#est026").val();
+		stps12e = $("#evid026").val();
+		stps12p = $("#porce026").val();
+
+		stps13s = $("#est027").val();
+		stps13e = $("#evid027").val();
+		stps13p = $("#porce027").val();
+
+		stps14s = $("#est029").val();
+		stps14e = $("#evid029").val();
+		stps14p = $("#porce029").val();
+
+		stps15s = $("#est033").val();
+		stps15e = $("#evid033").val();
+		stps15p = $("#porce033").val();
+		
+		//alert("tomar los valores 12: "+cump026s+" evidencia 10 "+stps10e+" porcentaje 5 "+stps5p+" status 15 "+stps15s);
 		cre = localStorage.getItem("PL");
+		
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3s",unos:cump001s, doss:cump002s, tress:cump009s, cuatros:cump010s, cincos:cump011s, seiss:cump017s, sietes:cump018s, ochos:cump019s,  nueves:cump022s, diezs:cump024s, onces:cump025s, doces:cump026s, treces:cump027s, cators:cump029s, quins:cump033s, cre:cre },
+    		data: {opc:"add3s",unos:cump001s, unosS:stps1s, unosE:stps1e, unosP:stps1p, doss:cump002s, dossS:stps2s, dossE:stps2e, dossP:stps2p, tress:cump009s, tressS:stps3s, tressE:stps3e, tressP:stps3p, cuatros:cump010s, cuatrosS:stps4s, cuatrosE:stps4e, cuatrosP:stps4p, cincos:cump011s, cincosS:stps5s, cincosE:stps5e, cincosP:stps5p, seiss:cump017s, seissS:stps6s, seissE:stps6e, seissP:stps6p, sietes:cump018s, sietesS:stps7s, sietesE:stps7e, sietesP:stps7p, ochos:cump019s, ochosS:stps8s, ochosE:stps8e, ochosP:stps8p, nueves:cump022s, nuevesS:stps9s, nuevesE:stps9e, nuevesP:stps9p, diezs:cump024s, diezsS:stps10s, diezsE:stps10e, diezsP:stps10p, onces:cump025s, oncesS:stps11s, oncesE:stps11e, oncesP:stps11p, doces:cump026s, docesS:stps12s, docesE:stps12e, docesP:stps12p, treces:cump027s, trecesS:stps13s, trecesE:stps13e, trecesP:stps13p, cators:cump029s, catorsS:stps14s, catorsE:stps14e, catorsP:stps14p, quins:cump033s, quinsS:stps15s, quinsE:stps15e, quinsP:stps15p, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);

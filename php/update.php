@@ -78,6 +78,18 @@ if($opcion == "upd3pc"){
 	
 	echo "Actualización Correcta";
 	//echo $sqluno.$sqldos;
+}if($opcion == "upd3se"){
+	$solo = $_POST['unose'];
+	$cre = $_POST['cre'];
+
+	if($solo == "Si"){ $solo = 1; } if ($solo == "No") { $solo = 0; }
+
+	$sqlsolo = "UPDATE documento SET status=".$solo." WHERE tipo = 'Sec. Economia' AND num = 1";
+	
+	mysqli_query($con,$sqlsolo);
+	
+	echo "Actualización Correcta";
+	//echo $sqluno.$sqldos;
 }
 if($opcion == "upd3c"){
 	$rdv = $_POST['rdv'];

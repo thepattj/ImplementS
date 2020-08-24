@@ -117,11 +117,43 @@
       </div>
       <form name="politicaenviar" id="enviarP" enctype="multipart/form-data" method="post">
       <div class="modal-body">
-        <p>Agrega la política (.jpg, .png)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
+        <p>Describe la forma de divulgación de la política </p>
+        <input type="text" class="form-control" placeholder="Indica si se uso lona, cartas, en televisión y/o reunión." id="dvlpolitica" name="dvlpolitica">
+
+        <p>Agrega pruebas de divulgación (.jpg, .png)</p>
+        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol" multiple>
         <input style="display:none;" type="input" class="form-control" placeholder="" id="cre" name="cre">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="ic" name="ic">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opc">
+        
+        <!-- <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol"> -->
+
+        <p>Fecha de divulgación</p>
+        <div class="fm-checkbox">
+              <label>
+                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                  <div class="input-group date nk-int-st">
+                    <span class="input-group-addon"></span>
+                    <input type="text" class="form-control" id="fechadiv" name="fechadiv" value="">
+                  </div>
+                </div>
+              </label>
+            </div>
+
+        <p>Fecha para cumplir</p>        
+            <div class="fm-checkbox">
+              <label>
+                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                  <div class="input-group date nk-int-st">
+                    <span class="input-group-addon"></span>
+                    <?php $q = "SELECT fechaImp as imple FROM sasisopa WHERE idCESH = '".$id."'";
+                    $r = mysqli_query($con,$q);
+                    while($rst = $r->fetch_object()){ $fecha=$rst->imple; }?>
+                    <input type="text" class="form-control" id="fechaplan" name="fechadiv" value="<?php $pfecha = explode("-", $fecha); $fecha = $pfecha[1]."/".$pfecha[2]."/".$pfecha[0]; echo $fecha;  ?>" disabled>
+                  </div>
+                </div>
+              </label>
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -148,6 +180,20 @@
         <input style="display:none;" type="input" class="form-control" placeholder="" id="crear" name="crear">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="icar" name="icar">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcar">
+        <p>Escribe la forma de divulgación del Análisis de Riesgo </p>
+        <input type="text" class="form-control" placeholder="" id="dvlar" name="dvlar">
+        <!-- <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol"> -->
+         <p>Fecha de cumplimiento</p>        
+            <div class="fm-checkbox">
+              <label>
+                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                  <div class="input-group date nk-int-st">
+                    <span class="input-group-addon"></span>
+                    <input type="text" class="form-control" id="fechardiv" name="fechardiv" value="03/19/2020">
+                  </div>
+                </div>
+              </label>
+            </div>
       </div>
       </form>
       <div class="modal-footer">
@@ -168,39 +214,38 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Agrega Meta</p>
-        <div class="form-group nk-int-st">
-          <input type="text" class="form-control" id="metap4">
-        </div>
-
-        <p>Fecha para cumplir</p>
-        
-            <div class="fm-checkbox">
-              <label>
-                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                  <div class="input-group date nk-int-st">
-                    <span class="input-group-addon"></span>
-                    <input type="text" class="form-control" id="fechapt4" value="03/19/2018">
-                  </div>
-                </div>
-              </label>
+        <p>Selecciona el objetivo</p>
+        <div class="chosen-select-act fm-cmp-mg">
+          <select class="chosen" name="" id="objetivopt4">
+            <option value="0" style="display: none;">Selecciona un objetivo</option>
+            <?php $qri = "SELECT idCobj as id, descripcion as objetivo FROM cobjetivo";
+                  $res = mysqli_query($con, $qri);
+                  while($row = $res->fetch_object()){ ?>
+            <option value="<?php echo ($row->id); ?>"> <?php echo ($row->objetivo); ?> </option>
+                  <?php } ?>
+          </select>
+        </div>   
+        <!-- <p>Fecha para cumplir</p>        
+        <div class="fm-checkbox">
+          <label>
+            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+              <div class="input-group date nk-int-st">
+                <span class="input-group-addon"></span>
+                <input type="text" class="form-control" id="fechapt4" value="03/19/2018">
+              </div>
             </div>
-        
+          </label>
+        </div> -->        
 
-        <p>Trabajador a cumplirla</p>
+        <p>Responsable</p>
+        <input type="text" class="form-control" placeholder="Puesto de trabajador" id="dvlpolitica" name="objrespon">
+
+        <p>Prueba de Cumplimiento</p>
+        <input type="text" class="form-control" placeholder="Nombre de documento" id="dvlpolitica" name="cumpliobj">
+
         
-          <div class="chosen-select-act fm-cmp-mg">
-            <select class="chosen" name="" id="nombreTrabjpt4">
-              <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-              <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
-                    $resul = mysqli_query($con,$qri);
-                    while($row = $resul->fetch_object()){ ?>
-              <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM)?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
-              <?php } ?>
-            </select>
-          </div>   
         
-      </div>
+    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" id="btnGuardar4">Guardar</button>
@@ -1312,158 +1357,33 @@
         echo '<div class="sale-statistic-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="actcal">
                     <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                         <div class="past-day-statis">
-                            <h2>Punto a Evaluar: Punto 5</h2>
-                            <p>Hemos habilitado este punto para que inicies su implementación.</p>
+                            <h2>Calendario de Actividades</h2>
+                            <p>Da clíc aqui para que visualices las actividade de este mes.</p>
                         </div>
                     </div>
-                </div>
+                </div>                
 
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-20">
-                        <div class="curved-inner-pro">
-                            <div class="curved-ctn">
-                                <h2>Puntos Evaluados</h2>
-                                <p>Se mostrara el progreso de los puntos que se han evaluado.</p>
-                            </div>
-                        </div>
-                        <div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="statistic-right-area notika-shadow mg-tb-20 sm-res-mg-t-0">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                         <div class="past-day-statis">
-                          <h2>Actividades a Cargar</h2>
-                        </div>
-                        <div class="bsc-tbl-cls">
-                            <table class="table table-cl">
-                                <thead>
-                                    <tr>
-                                        <th>Fecha</th>
-                                        <th>Actividad</th>
-                                    </tr>
-                                </thead>
-                                <tbody>';
-                                  $fhoy = strtotime(date("d-m-Y",time()));
-                                  //$fbd = strtotime("01-05-2020");
-                                  //echo $fhoy;
-                                  
-
-                                  $sqlpt4 = "SELECT fechaFinal AS fecha, descripcion AS actividad FROM calendario WHERE idCESH ='".$id."' AND status = 'Iniciada'";
-                                  $resultado =mysqli_query($con, $sqlpt4);
-                                  if($resultado->num_rows > 0){
-                                    while($fila=$resultado->fetch_assoc()){
-                                      list($a,$mes,$dia) = split('[-.-]',$fila['fecha']);
-                                      //$partes = explode("/", $cre);
-                                      
-                                      $fechaC = $dia."-".$mes."-".$a;
-                                      $fechaN = strtotime($fechaC);
-                                      if($fhoy >= $fechaN){
-                                       /* $diferencia = $fhoy-$fechaN;
-                                        //echo $diferencia;
-                                        $yer = $diferencia / (365*60*60*24);
-                                        echo $yer;*/
-                                        
-                                        echo'<tr class="info updatecalendario"> <td>'.$fechaC.'</td> <td>'.$fila['actividad'].'</td> </tr>';
-                                      }
-                                    }       
-                                  } else {
-                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
-                                  }
-
-                                  $sqlpt11 = "SELECT fechaF AS fecha, descripcion AS actividad FROM bitacoras WHERE idCESH ='".$id."' AND estatus = 'P'";
-                                  $result =mysqli_query($con, $sqlpt11);
-                                  if($result->num_rows > 0){
-                                    while($fil=$result->fetch_assoc()){
-                                      list($a2,$mes2,$dia2) = split('[-.-]', $fil['fecha']);
-                                      $fechaC2 = $dia2."-".$mes2."-".$a2;
-                                      $fechaN2 = strtotime($fechaC2);
-                                      if($fhoy <= $fechaN2){
-                                        $fechactual = date("d-m-Y");
-                                        //echo  $fil['actividad'];
-                                        
-                                        if( $fil['actividad'] == "bt-01"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Monitoreo y observación</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Diario"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Limpieza General Diaria</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Mensual"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Limpiezas y/o Mantenimiento Preventivo Mensual</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Trimestral"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Limpieza Ecologica</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Cuatrimestral"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Revisión de Señalamientos</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Semestral"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Instalaciones Electricas</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Anual"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Mantenimiento Preventivo y Correctivo Anual</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-02 Quinquenal"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Mantenimiento Preventivo y Correctivo Quinquenal</td> </tr>';
-                                        }if( $fil['actividad'] == "bt-03"){
-                                          echo'<tr class="info update11"> <td>'.$fechaC2.'</td> <td>Fugas, derrames, drenado y pruebas de hermeticidad</td> </tr>';
-                                        }
-                                      }
-                                    }       
-                                  } else {
-                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
-                                  }
-                                  $sqlpt10 = "SELECT fechaFin AS fecha, descripcion AS actividad FROM dzbitacora WHERE idCESH ='".$id."' AND estatus = 'P'";
-                                  $resul =mysqli_query($con, $sqlpt10);
-                                  if($resul->num_rows > 0){
-                                    while($fi=$resul->fetch_assoc()){
-                                      list($a3,$mes3,$dia3) = split('[-.-]', $fi['fecha']);
-                                      $fechaC3 = $dia3."-".$mes3."-".$a3;
-                                      $fechaN3 = strtotime($fechaC3);
-                                      if($fhoy <= $fechaN3){
-                                        //echo $dia3."-".$mes3."-".$a3;
-                                        if( $fi['actividad'] == "bt-01"){
-                                          echo'<tr class="info update10"> <td>'.$fechaC3.'</td> <td>Mantenimiento Preventivo y Correctivo</td> </tr>';
-                                        }if( $fi['actividad'] == "bt-02"){
-                                          echo'<tr class="info update10"> <td>'.$fechaC3.'</td> <td>Residuos Peligrosos</td> </tr>';
-                                        }if( $fi['actividad'] == "bt-03"){
-                                          echo'<tr class="info update10"> <td>'.$fechaC3.'</td> <td>Recepción, Descarga y Desviación en el Balance de Producto</td> </tr>';
-                                        }
-                                      }
-                                    }       
-                                  } else {
-                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
-                                  }
-                                  
-                                  $sqlpt14 = "SELECT fechaA AS fecha, solicitud AS actividad FROM monverif WHERE idCESH ='".$id."' AND estatus = 'INICIADA'";
-                                  $res =mysqli_query($con, $sqlpt14);
-                                  if($res->num_rows > 0){
-                                    while($f=$res->fetch_assoc()){
-                                      list($a4,$mes4,$dia4) = split('[-.-]', $f['fecha']);
-                                      $fechaC4 = $dia4."-".$mes4."-".$a4;
-                                      $fechaN4 = strtotime($fechaC4);
-                                      if ($fhoy >= $fechaN4) {
-                                        echo'<tr class="info updatemon"> <td>'.$fechaC4.'</td> <td>'.$f['actividad'].'</td> </tr>';
-                                      }
-                                      
-                                    }       
-                                  } else {
-                                    echo'<tr class=""> <td> </td> <td> </td> </tr>';
-                                  }
-                                  
-                                  /*<tr class="warning">
-                                          <td>01-ene-118</td>
-                                          <td>Mitchell</td>
-                                      </tr>
-                                      <tr class="success">
-                                          <td>20-feb-20</td>
-                                          <td>Madeleine</td>
-                                      </tr>
-                                      <tr class="danger">
-                                          <td>05-ene-18</td>
-                                          <td>Elizabeth</td>
-                                      </tr>*/
-                                echo '</tbody>
-                            </table>
+                            <h2>Repositorio</h2>
+                            <p>Alojamiento de archivos de la estación</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
+                        <div class="past-day-statis">
+                            <h2>Indicadores</h2>
+                            <p>Se mostrara el progreso de los puntos que se han evaluado.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         </div>';

@@ -91,7 +91,7 @@ if($opcion == "inicioPt"){
 	//PUNTO 3
 	$sql2 = "SELECT idCESH FROM documento WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 4
-	$sql3 = "SELECT idCESH FROM calendario WHERE idCESH = '".$id."' GROUP BY idCESH";
+	$sql3 = "SELECT idCESH FROM objetivo WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 5
 	$sql4 = "SELECT idCESH FROM organigrama WHERE idCESH = '".$id."' GROUP BY idCESH";
 	//PUNTO 6
@@ -268,6 +268,32 @@ if($opcion == "inicioPt"){
 	echo $datos1.",".$datos2.",".$datos3.",".$datos4.",".$datos5.",".$datos6.",".$datos7.",".$datos8.",".$datos9.",".$datos91.",".$datos10.",".$datos101.",".$datos102.",".$datos103.",".$datos11.",".$datos12.",".$datos121.",".$datos13.",".$datos14.",".$datos15.",".$datos16;
 }
 
+if ($opcion == "fecha") {
+	$id = $_POST['pl'];
+	$sqlf = "SELECT fechaImp as imple FROM sasisopa WHERE idCESH = '".$id."'";
+	$result = mysqli_query($con,$sqlf);
+	if($result->num_rows > 0){
+		while ($fila = $result->fetch_assoc()) {
+			$divpol = $fila['imple'];
+		}
+	}
+	//son 20 dias depues de la fecha, con 7 dias de accion
+	$fecha2 = date("Y-m-d", strtotime($divpol."+ 20 days"));
+	$fecha3 = date("Y-m-d", strtotime($fecha2."+ 7 days"));
+	
+	/*$divAR = son 20 dias despues de la fecha de POL o al finalizar sus 7 dias de pol
+	$meta4 = son las fechas que juan coloco
+	$cap6 = son las fechas de capacitación que se tienen con Energas
+	$siete = no lo se!
+	$div8 = capacitación energas de la lista maestra, 7 dias despues de su AREA
+	$cal9 = no recuerdo
+	$cal12 = responsabilidades y/o actividades que se deben realizar por los contratistas aunque no se tenga certeza que lo haga un contratistas
+	$simulacros13
+	$cal14 = puras inspecciones*/
+	//$fechapol = [$divpol, $fecha2, $fecha3];
+	echo $divpol.",Politica,".$fecha2.",".$fecha3;
+	//echo "esta es la fecha: ".$divpol." ESTA ES LA FECHA 2: ".$fecha2;
+}
 
 /*RFCSTA0522 PL0000*/
 ?>

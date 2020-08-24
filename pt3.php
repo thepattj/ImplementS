@@ -5,7 +5,7 @@
     $rep="";
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
 
 <head>
@@ -49,6 +49,9 @@
     <!-- notika icon CSS
 		============================================ -->
     <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <!-- chosen CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/chosen/chosen.css">
     <!-- wave CSS
 		============================================ -->
     <link rel="stylesheet" href="css/wave/waves.min.css">
@@ -647,6 +650,8 @@
                                                             <li id="btncre"><a href="#tab4" data-toggle="tab">CRE</a></li>
                                                             <li id="btnprofeco"><a href="#tab5" data-toggle="tab">PROFECO</a></li>
                                                             <li id="btnpc"><a href="#tab6" data-toggle="tab">Protección Civil</a></li>
+                                                            <li id="btnse"><a href="#tab8" data-toggle="tab">SE</a>
+                                                            </li>
                                                             <li id="btnstps"><a href="#tab7" data-toggle="tab">STPS</a>
                                                             </li>
                                                             <!-- <li id="btnsemt"><a href="#tab8" data-toggle="tab">SEMARNAT</a>
@@ -663,19 +668,26 @@
                         </div>
                     </div>
 
-
+                    <!-- DOCUMENTACION LEGAL -->
                     <?php
-                        $sqldoc = "SELECT status as s FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $sqldoc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
                         $resultadodoc =mysqli_query($con, $sqldoc);
                         if($resultadodoc->num_rows > 0){
                             $n = 0;
                             while($filadoc = $resultadodoc->fetch_assoc()){
-                                $consdoc = $filadoc['s'];
-                                $datos6 [$n] = $consdoc;
+                                $dcumpl = $filadoc['cumplimiento'];
+                                $dstatus = $filadoc['status'];
+                                $dporce = $filadoc['porcentaje'];
+                                $devid = $filadoc['evidencia'];
+
+                                $datos6 [$n] = $dcumpl;
+                                $datos6 [$n+18] = $dstatus;
+                                $datos6 [$n+36] = $dporce;
+                                $datos6 [$n+54] = $devid;
                                 $n++;
                             }
-                        }else{  $datos6 = "------------------"; }
-                        //echo "datos: ".$datos6[0].$datos6[1].$datos6[2].$datos6[3].$datos6[4].$datos6[5];
+                        }else{  for ($i=0; $i<=71; $i++) { $datos6[$i] = "-"; } }
+                        /*echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54]*/;
                     ?>
                     <!-- DOCUMENTACION LEGAL -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:block;">
@@ -692,300 +704,453 @@
                                                 <th>#</th>
                                                 <th>Documentos</th>
                                                 <th>¿Cumple?</th>
-                                                <th>Periocidad </th>
-                                                <th>Requisitos</th>
-                                                <th>Presentación</th>
-                                                <th style="font-size: .9em;">Pago Federal/Gestor</th>
+                                                <th>Estatus </th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- VALORES QUE SE TIENEN DE ACTA -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>Acta Constitutiva</td>
-                                                <?php if($datos6[0] === 1){ ?>
+                                                <?php if($datos6[0] === "Si"){  ?>
                                                 <td value="1" id="cActa" class="active">Si</td>
-                                                <?php } if($datos6[0] === 0) { ?>
+                                                <?php } if($datos6[0] === "No") { ?>
                                                 <td value="0" id="cActa" class="success">No</td>
-                                                <?php } if($datos6[0] == "-") { ?>
+                                                <?php } if($datos6[0] === "-") { ?>
                                                 <td value="" id="cActa"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica</td>
-                                                <td style="font-size: .8em;">No especificado</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estAct">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <?php if($datos6[36] != '') { ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[36]; ?>" class="form-control" id="porceAct" placeholder="%"> </div> 
+                                                      <?php } else {?> 
+                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porceAct" placeholder="%"> </div> 
+                                                     <?php } ?>
+                                                </td>
+                                                <td> <?php if($datos6[54] != '') { ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[54]; ?>" class="form-control" id="eviAct" placeholder="No. de Acta"> </div> </td>
+                                                    <?php } else {?> 
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviAct" placeholder="No. de Acta"> </div> 
+                                                    <?php } ?>
+                                                </td>
                                             </tr>
+                                            <!-- VALORES QUE TIENEN PODER NOTARIAL -->
                                             <tr>
                                                 <td>2</td>
                                                 <td>Poder Notarial</td>
-                                                <?php if($datos6[1] === 1){ ?>
+                                                <?php if($datos6[1] === "Si"){ ?>
                                                 <td value="1" id="cPNot" class="active">Si</td>
-                                                <?php } if($datos6[1] === 0) { ?>
+                                                <?php } if($datos6[1] === "No") { ?>
                                                 <td value="0" id="cPNot" class="success">No</td>
                                                 <?php } if($datos6[1] === "-") { ?>
                                                 <td value="" id="cPNot"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica</td>
-                                                <td style="font-size: .8em;">No especificado</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estPn">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePn" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviPn" placeholder="No. de Poder"> </div> </td>
                                             </tr>
+                                            <!-- VALORES QUE TIENEN ALTA DE SHCP -->
                                             <tr>
                                                 <td>3</td>
                                                 <td>Comprobante Original de alta ante hacienda</td>
-                                                <?php if($datos6[2] === 1){ ?>
+                                                <?php if($datos6[2] === "Si"){ ?>
                                                 <td value="1" id="altaSHCP" class="active">Si</td>
-                                                <?php } if($datos6[2] === 0) { ?>
+                                                <?php } if($datos6[2] === "No") { ?>
                                                 <td value="0" id="altaSHCP" class="success">No</td>
                                                 <?php } if($datos6[2] === "-") { ?>
                                                 <td value="" id="altaSHCP"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica</td>
-                                                <td style="font-size: .8em;">No especificado</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estSHCP">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceSHCP" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviSHCP" placeholder="No. de tramite"> </div> </td>
                                             </tr>
+                                            <!-- VALORES QUE TIENEN RFC ORIGINAL -->
                                             <tr>
                                                 <td>4</td>
                                                 <td>R.F.C. Original</td>
-                                                <?php if($datos6[3] === 1){ ?>
+                                                <?php if($datos6[3] === "Si"){ ?>
                                                 <td value="1" id="RFCS" class="active">Si</td>
-                                                <?php } if($datos6[3] === 0) { ?>
+                                                <?php } if($datos6[3] === "No") { ?>
                                                 <td value="0" id="RFCS" class="success">No</td>
                                                 <?php } if($datos6[3] === "-") { ?>
                                                 <td value="" id="RFCS"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica</td>
-                                                <td> - </td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estSRFCS">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRFCS" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviRFCS" placeholder="No. de tramite"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE PERMISO DE LA CRE -->
                                             <tr>
                                                 <td>5</td>
                                                 <td>Permiso de la comisión reguladora de Energía <b>(CRE)</b></td>
-                                                <?php if($datos6[4] === 1){ ?>
+                                                <?php if($datos6[4] === "Si"){ ?>
                                                 <td value="1" id="PL" class="active">Si</td>
-                                                <?php } if($datos6[4] === 0) { ?>
+                                                <?php } if($datos6[4] === "No") { ?>
                                                 <td value="0" id="PL" class="success">No</td>
                                                 <?php } if($datos6[4] === "-") { ?>
                                                 <td value="" id="PL"> - </td>
                                                 <?php } ?>
 
-                                                <td>Unica</td>
-                                                <td>Federal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estPL">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePL" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviPL" placeholder="No. de PL"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE LICENCIA DE MUNICIPIO -->
                                             <tr>
                                                 <td>6</td>
                                                 <td>Licencia de Funcionamiento (Municipal)</td>
-                                                <?php if($datos6[5] === 1){ ?>
+                                                <?php if($datos6[5] === "Si"){ ?>
                                                 <td value="1" id="LFM" class="active">Si</td>
-                                                <?php } if($datos6[5] === 0) { ?>
+                                                <?php } if($datos6[5] === "No") { ?>
                                                 <td value="0" id="LFM" class="success">No</td>
                                                 <?php } if($datos6[5] === "-") { ?>
                                                 <td value="" id="LFM"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Anual</td>
-                                                <td>Municipal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estLFM">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceLFM" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviLFM" placeholder="No. de Licencia"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE DICTAMEN DE SUELO -->
                                             <tr>
                                                 <td>7</td>
                                                 <td>Dictamenten de uso de suelo / Factibilidad de uso de suelo</td>
-                                                <?php if($datos6[6] === 1){ ?>
+                                                <?php if($datos6[6] === "Si"){ ?>
                                                 <td value="1" id="dicSuelo" class="active">Si</td>
-                                                <?php } if($datos6[6] === 0) { ?>
+                                                <?php } if($datos6[6] === "No") { ?>
                                                 <td value="0" id="dicSuelo" class="success">No</td>
                                                 <?php } if($datos6[6] === "-") { ?>
                                                 <td value="" id="dicSuelo"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica</td>
-                                                <td>Municipal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estdicS">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedicS" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE TARJETA IMSS -->
                                             <tr>
                                                 <td>8</td>
                                                 <td>Tarjeta oficial de IMSS</td>
-                                                <?php if($datos6[7] === 1){ ?>
+                                                <?php if($datos6[7] === "Si"){ ?>
                                                 <td value="1" id="oImss" class="active">Si</td>
-                                                <?php } if($datos6[7] === 0) { ?>
+                                                <?php } if($datos6[7] === "No") { ?>
                                                 <td value="0" id="oImss" class="success">No</td>
                                                 <?php } if($datos6[7] === "-") { ?>
                                                 <td value="" id="oImss"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica</td>
-                                                <td>Federal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estoIm">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceoIm" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidoIm" placeholder="No. de Licencia"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE PLANOS -->
                                             <tr>
                                                 <td>9</td>
                                                 <td>Planos Arquitectonicos</td>
-                                                <?php if($datos6[8] === 1){ ?>
+                                                <?php if($datos6[8] === "Si"){ ?>
                                                 <td value="1" id="planoA" class="active">Si</td>
-                                                <?php } if($datos6[8] === 0) { ?>
+                                                <?php } if($datos6[8] === "No") { ?>
                                                 <td value="0" id="planoA" class="success">No</td>
                                                 <?php } if($datos6[8] === "-") { ?>
                                                 <td value="" id="planoA"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unica/Actualizaciones</td>
-                                                <td> - </td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estplano">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceplano" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidplano" placeholder="No. de "> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE SIEM -->
                                             <tr>
                                                 <td>10</td>
                                                 <td><b>SIEM</b> (Sistema de Información Empresarial Mexicano)</td>
-                                                <?php if($datos6[9] === 1){ ?>
+                                                <?php if($datos6[9] === "Si"){ ?>
                                                 <td value="1" id="aSiem" class="active">Si</td>
-                                                <?php } if($datos6[9] === 0) { ?>
+                                                <?php } if($datos6[9] === "No") { ?>
                                                 <td value="0" id="aSiem" class="success">No</td>
                                                 <?php } if($datos6[9] === "-") { ?>
                                                 <td value="" id="aSiem"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estSiem">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceSiem" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidSiem" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE DICTAMENES ELECTRICOS -->
                                             <tr>
                                                 <td>11</td>
                                                 <td>Dictámenes eléctricos</td>
-                                                <?php if($datos6[10] === 1){ ?>
+                                                <?php if($datos6[10] === "Si"){ ?>
                                                 <td value="1" id="dElec" class="active">Si</td>
-                                                <?php } if($datos6[10] === 0) { ?>
+                                                <?php } if($datos6[10] === "No") { ?>
                                                 <td value="0" id="dElec" class="success">No</td>
                                                 <?php } if($datos6[10] === "-") { ?>
                                                 <td value="" id="dElec"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Cada 5 años</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estdElec">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedElec" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviddElec" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- VALOR DE TIERRAS FISICAS -->
                                             <tr>
                                                 <td>12</td>
                                                 <td>Dictámenes Tierras Fisicas y pararrayos</td>
-                                                <?php if($datos6[11] === 1){ ?>
+                                                <?php if($datos6[11] === "Si"){ ?>
                                                 <td value="1" id="dTfisica" class="active">Si</td>
-                                                <?php } if($datos6[11] === 0) { ?>
+                                                <?php } if($datos6[11] === "No") { ?>
                                                 <td value="0" id="dTfisica" class="success">No</td>
                                                 <?php } if($datos6[11] === "-") { ?>
                                                 <td value="" id="dTfisica"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Cada 5 años</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estdTfi">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedTfi" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviddTfi" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE CALIBRACION -->
                                             <tr>
                                                 <td>13</td>
                                                 <td>Calibración de dispensarios</td>
-                                                <?php if($datos6[12] === 1){ ?>
+                                                <?php if($datos6[12] === "Si"){ ?>
                                                 <td value="1" id="calDisp" class="active">Si</td>
-                                                <?php } if($datos6[12] === 0) { ?>
+                                                <?php } if($datos6[12] === "No") { ?>
                                                 <td value="0" id="calDisp" class="success">No</td>
                                                 <?php } if($datos6[12] === "-") { ?>
                                                 <td value="" id="calDisp"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Semestral</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estcalD">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecalD" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcalD" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE HERMETICIDAD -->
                                              <tr>
                                                 <td>14</td>
                                                 <td>Pruebas de Hermeticidad</td>
-                                                <?php if($datos6[13] === 1){ ?>
+                                                <?php if($datos6[13] === "Si"){ ?>
                                                 <td value="1" id="pHerm" class="active">Si</td>
-                                                <?php } if($datos6[13] === 0) { ?>
+                                                <?php } if($datos6[13] === "No") { ?>
                                                 <td value="0" id="pHerm" class="success">No</td>
                                                 <?php } if($datos6[13] === "-") { ?>
                                                 <td value="" id="pHerm"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Semestral</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estpHerm">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcepHerm" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidpHerm" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- VALORES DE HERMITICIDAD A TUBERIAS -->
                                             <tr>
                                                 <td>15</td>
                                                 <td>Pruebas de Hermeticidad a Tuberias</td>
-                                                <?php if($datos6[14] === 1){ ?>
+                                                <?php if($datos6[14] === "Si"){ ?>
                                                 <td value="1" id="pHermT" class="active">Si</td>
-                                                <?php } if($datos6[14] === 0) { ?>
+                                                <?php } if($datos6[14] === "No") { ?>
                                                 <td value="0" id="pHermT" class="success">No</td>
                                                 <?php } if($datos6[14] === "-") { ?>
                                                 <td value="" id="pHermT"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td> - </td>
-                                                <td> - </td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Si</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estpHt">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcepHt" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidpHt" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE TANQUE DE ALMACENAMIENTO -->
                                             <tr>
                                                 <td>16</td>
                                                 <td>Ficha Técnica y manual de tanque de almacenamiento</td>
-                                                <?php if($datos6[15] === 1){ ?>
+                                                <?php if($datos6[15] === "Si"){ ?>
                                                 <td value="1" id="tanqueA" class="active">Si</td>
-                                                <?php } if($datos6[15] === 0) { ?>
+                                                <?php } if($datos6[15] === "No") { ?>
                                                 <td value="0" id="tanqueA" class="success">No</td>
                                                 <?php } if($datos6[15] === "-") { ?>
                                                 <td value="" id="tanqueA"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Diverso</td>
-                                                <td>Federal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estTanque">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceTanque" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidTanque" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE DISPENSARIOS -->
                                             <tr>
                                                 <td>17</td>
                                                 <td>Ficha técnica y manual de dispensarios</td>
-                                                <?php if($datos6[16] === 1){ ?>
+                                                <?php if($datos6[16] === "Si"){ ?>
                                                 <td value="1" id="dispensarios" class="active">Si</td>
-                                                <?php } if($datos6[16] === 0) { ?>
+                                                <?php } if($datos6[16] === "No") { ?>
                                                 <td value="0" id="dispensarios" class="success">No</td>
                                                 <?php } if($datos6[16] === "-") { ?>
                                                 <td value="" id="dispensarios"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Diverso</td>
-                                                <td>Federal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estdisp">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedisp" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviddisp" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE CONTROL DE INVENTARIOS -->
                                             <tr>
                                                 <td>18</td>
                                                 <td>Ficha técnica y manual de Control de inventarios</td>
-                                                <?php if($datos6[17] === 1){ ?>
+                                                <?php if($datos6[17] === "Si"){ ?>
                                                 <td value="1" id="cIventarios" class="active">Si</td>
-                                                <?php } if($datos6[17] === 0) { ?>
+                                                <?php } if($datos6[17] === "No") { ?>
                                                 <td value="0" id="cIventarios" class="success">No</td>
                                                 <?php } if($datos6[17] === "-") { ?>
                                                 <td value="" id="cIventarios"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Diverso</td>
-                                                <td>Federal</td>
-                                                <td style="font-size: .9em;">Impresa y digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estCiv">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceCiv" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidCiv" placeholder="Número"> </div> </td>
                                             </tr>
 
                                         </tbody>
@@ -1034,13 +1199,13 @@
                                                 <th>#</th>
                                                 <th>Cumplimiento ASEA</th>
                                                 <th>¿Cumple?</th>
-                                                <th>Periocidad </th>
-                                                <th>Requisitos</th>
-                                                <th>Presentación</th>
-                                                <th style="font-size: .9em;">Pago Federal / Gestor</th>
+                                                <th>Estauts</th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- DATOS DE NOM-005 -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>NOM-005-ASEA-2016.</td>
@@ -1050,12 +1215,21 @@
                                                 <td value="0" id="c005" class="success">No</td>
                                                 <?php } if($datos1[0] === "-") { ?>
                                                 <td value="" id="c005"> - </td>
-                                                <?php } ?>                                                
-                                                <td>Diverso</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <?php } ?> 
+
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estc005">
+                                                            <option value="Selecciona" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcec005" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidc005" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE MIA -->
                                             <tr>
                                                 <td>2</td>
                                                 <td>Manifiesto Impacto Ambiental (<b>MIA</b>)</td>
@@ -1066,11 +1240,21 @@
                                                 <?php } if($datos1[1] === "-") { ?>
                                                 <td value="" id="cMia"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Único / Actualizar</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/digital</td>
-                                                <td>Ambos</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estcMia">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                            <option value="NoAplica">No Aplica</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecMia" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcMia" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE IP -->
                                             <tr>
                                                 <td>3</td>
                                                 <td>Informe Preventivo (<b>IP</b>)</td>
@@ -1081,11 +1265,21 @@
                                                 <?php } if($datos1[2] === "-") { ?>
                                                 <td value="" id="cIp"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Único / Actualizar</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Ambos</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estcIp">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                            <option value="NoAplica">No Aplica</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecIp" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcIp" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE LF -->
                                             <tr>
                                                 <td>4</td>
                                                 <td>Licencia Ambiental Única (<b>LAU</b>) / Licencia de Funcionamiento(<b>LF</b>)</td>
@@ -1096,11 +1290,20 @@
                                                 <?php } if($datos1[3] === "-") { ?>
                                                 <td value="" id="cLf"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Unica / Actualizar</td>
-                                                <td style="font-size: .9em;">Estatal / Municipal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Ambos</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estcLf">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecLf" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcLf" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE RGRP -->
                                             <tr>
                                                 <td>5</td>
                                                 <td>Residuos Peligrosos (<b>RP</b>)</td>
@@ -1111,11 +1314,20 @@
                                                 <?php } if($datos1[4] === "-") { ?>
                                                 <td value="" id="cGrp"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Unica / Actualizar</td>
-                                                <td style="font-size: .9em;">Estatal / Municipal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Federal</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estcGrp">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecGrp" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcGrp" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE COA -->
                                             <tr>
                                                 <td>6</td>
                                                 <td>Cedula Operación Anual(<b>COA</b>)</td>
@@ -1126,10 +1338,18 @@
                                                 <?php } if($datos1[5] === "-") { ?>
                                                 <td value="" id="cCoa"> - </td>
                                                 <?php } ?>                                                
-                                                <td style="font-size: .9em;">Anual, posterior a Licencia</td>
-                                                <td>Federal</td>
-                                                <td>Impresa/Digital</td>
-                                                <td>Gestor</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estcCoa">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="">Otorgada</option>
+                                                            <option value="">En tramite</option>
+                                                            <option value="">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecCoa" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcCoa" placeholder="Número"> </div> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1180,13 +1400,13 @@
                                                 <th>#</th>
                                                 <th>Cumplimiento CRE</th>
                                                 <th>¿Cumple?</th>
-                                                <th>Periocidad </th>
-                                                <th>Requisitos</th>
-                                                <th>Presentación</th>
-                                                <th>Pago Federal / Gestor</th>
+                                                <th>Estatus</th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- DATOS DE REPORTE DIARIO -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>Reporte Diario (Volúmenes)</td>
@@ -1196,12 +1416,21 @@
                                                 <td value="0" id="rDiariov" class="success">No</td>
                                                 <?php } if($datos4[0] === "-") { ?>
                                                 <td value="" id="rDiariov"> - </td>
-                                                <?php } ?>                                                
-                                                <td>Diario</td>
-                                                <td>Federal</td>
-                                                <td>Electrónico/Línea</td>
-                                                <td>No</td>
+                                                <?php } ?> 
+
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estRdia">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRdia" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidRdia" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE REPORTE DE PRECIOS -->
                                             <tr>
                                                 <td>2</td>
                                                 <td>Reporte Diario (Precios)</td>
@@ -1212,11 +1441,20 @@
                                                 <?php } if($datos4[1] === "-") { ?>
                                                 <td value="" id="rDiariop"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Diario</td>
-                                                <td>Federal</td>
-                                                <td>Electrónico/Línea</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estRdiap">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRdiap" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidRdiap" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- ESTADISITCAS DE VARIOS -->
                                             <tr>
                                                 <td>3</td>
                                                 <td>Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes</td>
@@ -1227,11 +1465,20 @@
                                                 <?php } if($datos4[2] === "-") { ?>
                                                 <td value="" id="cEstad"> - </td>
                                                 <?php } ?>                                                
-                                                <td>1 al 10 de enero (Reporte de octubre-diciembre) 1 al 10 de abril</td>
-                                                <td>Federal</td>
-                                                <td>Electrónico/Línea</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estcEs">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecEs" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcEs" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATO DE NOM 016 -->
                                             <tr>
                                                 <td>4</td>
                                                 <td>Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
@@ -1242,11 +1489,20 @@
                                                 <?php } if($datos4[3] === "-") { ?>
                                                 <td value="" id="016"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Semestral</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>Si</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="est016">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce016" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid016" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DICTAMEN DE LA 16 -->
                                             <tr>
                                                 <td>5</td>
                                                 <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2017</b>)</td>
@@ -1257,11 +1513,20 @@
                                                 <?php } if($datos4[4] === "-") { ?>
                                                 <td value="" id="0162017"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>Si</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="est0162017">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce0162017" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid0162017" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- PAGO DE SUPERVISION -->
                                             <tr>
                                                 <td>6</td>
                                                 <td>Reporte de Pagos Supervisión de permisos<br>(Derechos, Productos y Aprovechamiento)</td>
@@ -1272,11 +1537,20 @@
                                                 <?php } if($datos4[5] === "-") { ?>
                                                 <td value="" id="rPsupervi"> - </td>
                                                 <?php } ?>
-                                                <td>Anual, 1 - 15 feb.</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estrPs">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerPs" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrPs" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- POLIZA SEGURO -->
                                             <tr>
                                                 <td>7</td>
                                                 <td>Poliza anual vigente de seguro (Seguro)</td>
@@ -1287,11 +1561,20 @@
                                                 <?php } if($datos4[6] === "-") { ?>
                                                 <td value="" id="polizAnual"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual, 1 - 10 abr. del año siguiente</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estPoliza">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePoliza" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidPoliza" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- POLIZA -->
                                             <tr>
                                                 <td>8</td>
                                                 <td>Poliza de seguro (Seguro)</td>
@@ -1302,11 +1585,20 @@
                                                 <?php } if($datos4[7] === "-") { ?>
                                                 <td value="" id="polizaSg"> - </td>
                                                 <?php } ?>                                                
-                                                <td>En caso de renovación</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estPsg">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePsg" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidPsg" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- REPORTE DE QUEJAS -->
                                             <tr>
                                                 <td>9</td>
                                                 <td>Reporte de Quejas</td>
@@ -1317,11 +1609,20 @@
                                                 <?php } if($datos4[8] === "-") { ?>
                                                 <td value="" id="rQue"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual, 1 - 10 abr. del año siguiente</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estrQ">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerQ" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrQ" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- FACTURAS DE PROCEDENCIA -->
                                             <tr>
                                                 <td>10</td>
                                                 <td>Procedencia del producto (facturas)</td>
@@ -1333,11 +1634,19 @@
                                                 <td value="" id="factProd"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Anual, 2 - 10 abr. del año siguiente</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estFacP">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceFacP" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidFacP" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- REPORTE DE INCIDENTES -->
                                             <tr>
                                                 <td>11</td>
                                                 <td>Reporte de inicidentes o emergencias</td>
@@ -1348,11 +1657,20 @@
                                                 <?php } if($datos4[10] === "-") { ?>
                                                 <td value="" id="incidentes"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual, 1 - 10 abr. del año siguiente</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estInc">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceInc" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidInc" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- ANUNCIO PL -->
                                             <tr>
                                                 <td>12</td>
                                                 <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/20XX)</td>
@@ -1364,10 +1682,17 @@
                                                 <td value="" id="anInde"> - </td>
                                                 <?php } ?>
                                                 
-                                                <td>Unico</td>
-                                                <td>Federal</td>
-                                                <td>Impresa y Digital</td>
-                                                <td>No</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" name="" id="estAnI">
+                                                            <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceAnI" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidAnI" placeholder="Número"> </div> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1417,13 +1742,13 @@
                                                 <th>#</th>
                                                 <th>Cumplimiento PROFECO</th>
                                                 <th>¿Cumple?</th>
-                                                <th>Periocidad </th>
-                                                <th>Requisitos</th>
-                                                <th>Presentación</th>
-                                                <th>Pago Federal / Gestor</th>
+                                                <th>Estatus</th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- VERIFICACION PERIODICA -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>Verificación periódica de dispensarios </td>
@@ -1434,11 +1759,20 @@
                                                 <?php } if($datos2[0] === "-") {?>         
                                                 <td value="" id="vPerdisp" class=""> - </td>     
                                                 <?php } ?>                                        
-                                                <td>Semestrales</td>
-                                                <td>UVA</td>
-                                                <td>Documental</td>
-                                                <td>Ambas</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estvPd">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcevPd" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidvPd" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- CONTROL A DISTANCIA -->
                                             <tr>
                                                 <td>2</td>
                                                 <td>Reporte de control a distancia </td>
@@ -1449,10 +1783,18 @@
                                                 <?php } if($datos2[1] === "-") {?>   
                                                 <td value="" id="rControldis" class=""> - </td>    
                                                 <?php } ?>                                            
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Ambas</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estrCtd">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerCtd" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1485,6 +1827,7 @@
                             }
                         }else{ $datos3 = "--"; }
                         //echo "datos: ".$datos3[0].$datos3[1];
+                        //var_dump("datos: ".$datos3[0].$datos3[1]);
                     ?>
 
                     <!-- DOCUMENTACION PROTECCION CIVIL -->
@@ -1502,13 +1845,13 @@
                                                 <th>#</th>
                                                 <th>Cumplimiento Protección Civil</th>
                                                 <th>¿Cumple?</th>
-                                                <th>Periocidad </th>
-                                                <th>Requisitos</th>
-                                                <th>Presentación</th>
-                                                <th>Pago Federal / Gestor</th>
+                                                <th>Estatus</th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- DATOS DE VISTO BUENO -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>Visto Bueno</td>
@@ -1516,14 +1859,23 @@
                                                 <td value="1" id="vBueno" class="active">Si</td>
                                                 <?php } if($datos3[0] === 0) { ?>
                                                 <td value="0" id="vBueno" class="success">No</td>
-                                                <?php } if($datos1 === "-") { ?>
+                                                <?php } if($datos3[0] === "-") { ?>
                                                 <td value="" id="vBueno"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Unica</td>
-                                                <td>Municipal</td>
-                                                <td>Documental</td>
-                                                <td>Ambas</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estVb">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceVb" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidVb" placeholder="Número"> </div> </td>
                                             </tr>
+                                            <!-- DATOS DE AUTO DECLARATORIA -->
                                             <tr>
                                                 <td>2</td>
                                                 <td>Auto declaratoria</td>
@@ -1531,24 +1883,111 @@
                                                 <td value="1" id="cdecla" class="active">Si</td>
                                                 <?php } if($datos3[1] === 0) { ?>
                                                 <td value="0" id="cdecla" class="success">No</td>
-                                                <?php } if($datos1 === "-") { ?>
+                                                <?php } if($datos3[1] === "-") { ?>
                                                 <td value="" id="cdecla"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual</td>
-                                                <td>Municipal</td>
-                                                <td>Documental</td>
-                                                <td>Ambas</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estCdc">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceCdc" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidCdc" placeholder="Número"> </div> </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos1 == "--"){?>
+                                <?php if($datos3 == "--"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="guardarDocPc" class="btn btn-success notika-btn-success">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                                     <button id="actualizarDocPc" class="btn btn-info notika-btn-info">Actualizar </button>                   
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- DOCUMENTACION secretaria de ECONOMIA -->
+                    <?php
+                        $sqlpc = "SELECT status as s FROM documento WHERE tipo = 'Sec. Economia' AND idCESH = '".$cre."' ORDER BY num ASC";
+                        $resultadopc =mysqli_query($con, $sqlpc);
+                        if($resultadopc->num_rows > 0){
+                            $k = 0;
+                            while($filapc = $resultadopc->fetch_assoc()){
+                                //$idprofe = $filaprofe['n'];
+                                $conspc = $filapc['s'];
+                                $datos6 [$k] = $conspc;
+                                $k++;
+                            }
+                        }else{ $datos6 = "-"; }
+                        //echo "datos: ".$datos3[0].$datos3[1];
+                        //var_dump("datos: ".$datos3[0].$datos3[1]);
+                    ?>
+
+                    <!-- DOCUMENTACION secretaria de ECONOMIA -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="se" style="display:none;">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">
+                                <h2>Requisitos Documentales - Secretaría de Economía</h2>
+                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                            </div>
+                            <div class="row">
+                                <div class="bsc-tbl-cls">
+                                    <table class="table table-cl">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Cumplimiento Secretaría de Economía</th>
+                                                <th>¿Cumple?</th>
+                                                <th>Estatus</th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Informe de Contenido Nacional (Permisos)</td>
+                                                <?php if($datos6[0] === 1){ ?>
+                                                <td value="1" id="conNac" class="active">Si</td>
+                                                <?php } if($datos6[0] === 0) { ?>
+                                                <td value="0" id="conNac" class="success">No</td>
+                                                <?php } if($datos6[0] === "-") { ?>
+                                                <td value="" id="conNac"> - </td>
+                                                <?php } ?>                                                
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="estconNac">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceconNac" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidconNac" placeholder="Número"> </div> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php if($datos6 == "-"){?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="guardarDocSe" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                </div>
+                                <?php }else{ ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                    <button id="actualizarDocSe" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>
@@ -1587,10 +2026,9 @@
                                                 <th>#</th>
                                                 <th>Cumplimiento STPS</th>
                                                 <th>¿Cumple?</th>
-                                                <th>Periocidad </th>
-                                                <th>Requisitos</th>
-                                                <th>Presentación</th>
-                                                <th>Pago Federal / Gestor</th>
+                                                <th>Estatus </th>
+                                                <th>Porcentaje</th>
+                                                <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1604,10 +2042,17 @@
                                                 <?php } if($datos5[0] === "-") { ?>
                                                 <td value="" id="001stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est001">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce001" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid001" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
@@ -1619,10 +2064,18 @@
                                                 <?php } if($datos5[1] === "-") { ?>
                                                 <td value="" id="002stps"> - </td>
                                                 <?php } ?>
-                                                <td>Trianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est002">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce002" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid002" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
@@ -1634,10 +2087,17 @@
                                                 <?php } if($datos5[2] === "-") { ?>
                                                 <td value="" id="009stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est009">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce009" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid009" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
@@ -1649,10 +2109,17 @@
                                                 <?php } if($datos5[3] === "-") { ?>
                                                 <td value="" id="010stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Dependiendo los resultados</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est010">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce010" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid010" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
@@ -1664,10 +2131,17 @@
                                                 <?php } if($datos5[4] === "-") { ?>
                                                 <td value="" id="011stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est011">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce011" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid011" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
@@ -1679,10 +2153,18 @@
                                                 <?php } if($datos5[5] === "-") { ?>
                                                 <td value="" id="017stps"> - </td>
                                                 <?php } ?>
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est017">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce017" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid017" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>7</td>
@@ -1694,10 +2176,17 @@
                                                 <?php } if($datos5[6] === "-") { ?>
                                                 <td value="" id="018stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est018">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce018" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid018" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>8</td>
@@ -1709,10 +2198,18 @@
                                                 <?php } if($datos5[7] === "-") { ?>
                                                 <td value="" id="019stps"> - </td>
                                                 <?php } ?>
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est019">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce019" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid019" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>9</td>
@@ -1724,10 +2221,17 @@
                                                 <?php } if($datos5[8] === "-") { ?>
                                                 <td value="" id="022stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est022">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce022" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid022" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>10</td>
@@ -1740,10 +2244,17 @@
                                                 <td value="" id="024stps"> - </td>
                                                 <?php } ?> 
 
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est024">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce024" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid024" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>11</td>
@@ -1755,10 +2266,18 @@
                                                 <?php } if($datos5[10] === "-") { ?>
                                                 <td value="" id="025stps"> - </td>
                                                 <?php } ?>
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est025">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce025" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid025" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>12</td>
@@ -1770,10 +2289,17 @@
                                                 <?php } if($datos5[11] === "-") { ?>
                                                 <td value="" id="026stps"> - </td>
                                                 <?php } ?>                                                
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est026">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce026" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid026" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>13</td>
@@ -1785,10 +2311,18 @@
                                                 <?php } if($datos5[12] === "-") { ?>
                                                 <td value="" id="027stps"> - </td>
                                                 <?php } ?>
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                               
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est027">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce027" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid027" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>14</td>
@@ -1800,10 +2334,18 @@
                                                 <?php } if($datos5[13] === "-") { ?>
                                                 <td value="" id="029stps"> - </td>
                                                 <?php } ?>
-                                                <td>Bianual/Actualización</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est029">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce029" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid029" placeholder="Número"> </div> </td>
                                             </tr>
                                             <tr>
                                                 <td>15</td>
@@ -1816,10 +2358,17 @@
                                                 <td value="" id="033stps"> - </td>
                                                 <?php } ?>
 
-                                                <td>Anual</td>
-                                                <td>Federal</td>
-                                                <td>Documental</td>
-                                                <td>Gestor</td>
+                                                <td> <div class="chosen-select-act fm-cmp-mg">
+                                                        <select class="chosen" id="est033">
+                                                            <option value="0" style="display: none;">Selecciona una opción</option>
+                                                            <option value="Otorgada">Otorgada</option>
+                                                            <option value="Tramite">En tramite</option>
+                                                            <option value="Seguimiento">Seguimiento</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce033" placeholder="%"> </div> </td>
+                                                <td> <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid033" placeholder="Número"> </div> </td>
                                             </tr>
                                         </tbody>
                                     </table>
