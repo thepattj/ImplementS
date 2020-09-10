@@ -118,10 +118,12 @@
       <form name="politicaenviar" id="enviarP" enctype="multipart/form-data" method="post">
       <div class="modal-body">
         <p>Describe la forma de divulgación de la política </p>
-        <input type="text" class="form-control" placeholder="Indica si se uso lona, cartas, en televisión y/o reunión." id="dvlpolitica" name="dvlpolitica">
+        <div class="form-group nk-int-st">
+          <input type="text" class="form-control" placeholder="Indica si se uso lona, cartas, en televisión y/o reunión." id="dvlpolitica" name="dvlpolitica">
+        </div> 
 
-        <p>Agrega pruebas de divulgación (.jpg, .png)</p>
-        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol" multiple>
+        <p>Agrega pruebas de divulgación (.zip, .pdf)</p>
+        <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="cre" name="cre">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="ic" name="ic">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opc">
@@ -134,26 +136,26 @@
                 <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                   <div class="input-group date nk-int-st">
                     <span class="input-group-addon"></span>
-                    <input type="text" class="form-control" id="fechadiv" name="fechadiv" value="">
+                    <input type="text" class="form-control" id="fechadiv" name="fechadiv" value="08/22/2020">
                   </div>
                 </div>
               </label>
             </div>
 
-        <p>Fecha para cumplir</p>        
+        <!-- <p>Fecha para cumplir</p>        
             <div class="fm-checkbox">
               <label>
                 <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                   <div class="input-group date nk-int-st">
                     <span class="input-group-addon"></span>
-                    <?php $q = "SELECT fechaImp as imple FROM sasisopa WHERE idCESH = '".$id."'";
+                    <?php /*$q = "SELECT fechaImp as imple FROM sasisopa WHERE idCESH = '".$id."'";
                     $r = mysqli_query($con,$q);
                     while($rst = $r->fetch_object()){ $fecha=$rst->imple; }?>
-                    <input type="text" class="form-control" id="fechaplan" name="fechadiv" value="<?php $pfecha = explode("-", $fecha); $fecha = $pfecha[1]."/".$pfecha[2]."/".$pfecha[0]; echo $fecha;  ?>" disabled>
+                    <input type="text" class="form-control" id="fechaplan" name="fechadiv" value="<?php $pfecha = explode("-", $fecha); $fecha = $pfecha[1]."/".$pfecha[2]."/".$pfecha[0]; echo $fecha;*/  ?>" disabled>
                   </div>
                 </div>
               </label>
-            </div>
+            </div> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -174,27 +176,31 @@
         </button>
       </div>
       <form name="arenviar" id="enviarAR" enctype="multipart/form-data" method="post">
-      <div class="modal-body">
-        <p>Agrega el Análisis de Riesgo (A.R.) que se elaboro para el cumplimento de la NOM-005-ASEA-2016 (.pdf)</p>
-        <input type="file" class="form-control" placeholder="" id="archivoAR" name="archivoAR">
-        <input style="display:none;" type="input" class="form-control" placeholder="" id="crear" name="crear">
-        <input style="display:none;" type="input" class="form-control" placeholder="" id="icar" name="icar">
-        <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcar">
-        <p>Escribe la forma de divulgación del Análisis de Riesgo </p>
-        <input type="text" class="form-control" placeholder="" id="dvlar" name="dvlar">
-        <!-- <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol"> -->
-         <p>Fecha de cumplimiento</p>        
-            <div class="fm-checkbox">
-              <label>
-                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                  <div class="input-group date nk-int-st">
-                    <span class="input-group-addon"></span>
-                    <input type="text" class="form-control" id="fechardiv" name="fechardiv" value="03/19/2020">
+        <div class="modal-body">
+          <p>Escribe la forma de divulgación del Análisis de Riesgo </p>
+          <div class="form-group nk-int-st">
+            <input type="text" class="form-control" placeholder="Indica si se uso lona, cartas, en televisión y/o reunión." id="dvlar" name="dvlar">
+          </div>
+
+          <p>Agregar pruebas de divulgacion de Riesgos en las instalaciones (.zip, .pdf)</p>
+          <input type="file" class="form-control" placeholder="" id="archivoAR" name="archivoAR">
+          <input style="display:none;" type="input" class="form-control" placeholder="" id="crear" name="crear">
+          <input style="display:none;" type="input" class="form-control" placeholder="" id="icar" name="icar">
+          <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcar">
+          
+          <!-- <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol"> -->
+           <p>Fecha de cumplimiento</p>        
+              <div class="fm-checkbox">
+                <label>
+                  <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                    <div class="input-group date nk-int-st">
+                      <span class="input-group-addon"></span>
+                      <input type="text" class="form-control" id="fechardiv" name="fechardiv" value="03/19/2020">
+                    </div>
                   </div>
-                </div>
-              </label>
-            </div>
-      </div>
+                </label>
+              </div>
+        </div>
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -225,7 +231,8 @@
                   <?php } ?>
           </select>
         </div>   
-        <!-- <p>Fecha para cumplir</p>        
+
+        <p>Fecha de cumplimiento</p>        
         <div class="fm-checkbox">
           <label>
             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -235,13 +242,17 @@
               </div>
             </div>
           </label>
-        </div> -->        
+        </div>        
 
         <p>Responsable</p>
-        <input type="text" class="form-control" placeholder="Puesto de trabajador" id="dvlpolitica" name="objrespon">
+        <div class="form-group nk-int-st">
+          <input type="text" class="form-control" placeholder="Puesto de trabajador" value="Representante Técnico" id="objrespon" name="objrespon" disabled>
+        </div>
 
         <p>Prueba de Cumplimiento</p>
-        <input type="text" class="form-control" placeholder="Nombre de documento" id="dvlpolitica" name="cumpliobj">
+        <div class="form-group nk-int-st">
+          <input type="text" class="form-control" placeholder="Nombre de documento" id="cumpliobj" name="cumpliobj">
+        </div>
 
         
         
@@ -264,13 +275,22 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <?php $mhoy = date("F"); if($mhoy == "August"){ $mhoy = "Agosto";} if($mhoy == "January"){ $mhoy = "Enero";} if($mhoy == "February"){ $mhoy = "Febrero";}if($mhoy == "March"){ $mhoy = "Marzo";} if($mhoy == "April"){ $mhoy = "Abril";} if($mhoy == "May"){ $mhoy = "Mayo";} if($mhoy == "June"){ $mhoy = "Junio";} if($mhoy == "July"){ $mhoy = "Julio";} if($mhoy == "September"){ $mhoy = "Septiembre";} if($mhoy == "October"){ $mhoy = "Octubre";} if($mhoy == "November"){ $mhoy = "Noviembre";} if($mhoy == "Decenmber"){ $mhoy = "Diciembre";} ?>
       <form name="enviarsq" id="enviarsq" enctype="multipart/form-data" method="post">
-       <div class="modal-body">
-        <p>Agrega el concentrado de Sugerencias y/o Quejas del mes que seleccionas (.pdf y/o .zip)</p>
+        <div class="modal-body" style="display: ;">
+          <p>¿Se tiene alguna Sugerencia y/o Quejas en el mes que termino (<?php echo $mhoy; ?>)? </p>
+          <select id="qsugque" name="qsugque">
+              <option style="display: none;" value="0"> Selecciona una opción</option>
+              <option value="1">SI</option>
+              <option value="2">NO</option>
+          </select>
+        </div>
+       <div class="modal-body" id="sugquese" name="sugquese" style="display: none;">
+        <p>Agrega el seguimiento que se a realizado ante las Sugerencias y/o Quejas (.pdf y/o .zip)</p>
         <input type="file" class="form-control" placeholder="" id="archivosq" name="archivosq">
         <p></p>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
-        <p>Mes de concentrado</p>
+        <!-- <p>Mes de concentrado</p>
           <div class="chosen-select-act fm-cmp-mg">
             <select class="chosen" name="mesconcentrado" id="mesconcentrado">
               <option value="Selecciona" style="display: none;">Selecciona una opción</option>
@@ -287,7 +307,7 @@
               <option value="Noviembre">Noviembre</option>
               <option value="Diciembre">Diciembre</option>
             </select>
-          </div>
+          </div> -->
         <input style="display:none;" type="input" class="form-control" placeholder="" id="cresq" name="cresq">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="icsq" name="icsq">
         <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcsq">
@@ -338,19 +358,77 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form name="enviarPRE" id="enviarPRE" enctype="multipart/form-data" method="post">
-      <div class="modal-body">
-        <p>Agrega los Protocolos de respuesta a Emergencias (P.R.E.) que se elaboro. (.pdf)</p>
-        <input type="file" class="form-control" name="archivopre" id="archivopre">
-        <input style="display:none;" type="input" class="form-control" placeholder="" id="crepre" name="crepre">
-        <input style="display:none;" type="input" class="form-control" placeholder="" id="icpre" name="icpre">
-        <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="oppre">
+
+      <?php $compre = "SELECT idPRE as id FROM pre WHERE idCESH = '".$id."'";
+            //$compre = "SELECT idPRE as id FROM pre WHERER idCESH = 'PL/22402/EXP/ES/2019'";
+            $resultadopre = mysqli_query($con, $compre);
+            if($resultadopre->num_rows > 0){
+              while($fila = $resultadopre->fetch_assoc()){
+                $idPre = $fila['id'];
+              }
+            }else{
+              $idPre = "";
+            }
+            //echo "ESTO ES LO QUE SALE DEL SELECT: ".$idPre;
+      ?>
+      
+        <?php if($idPre != ""){?>
+          <form name="enviarSimP" id="enviarSimP" enctype="multipart/form-data" method="post">
+            <div class="modal-body" id="dos" style="display: ;">
+              <p>Carga de informe de simulacro</p>
+              <p>Selecciona el simulacro</p>
+                  <!-- <button type="button" class="btn btn-primary"><a href="documents/Punto16/16-FM.zip" class="nounderline" >Descargar</a></button> -->
+              <select id="qsimulacro" name="qsimulacro">
+                <option style="display: none;" value="0"> Selecciona una opción</option>
+                <option value="inmueble">Evaluación de inmuebles</option>
+                <option value="incendio">Conato de incendio</option>
+                <option value="colision">Colisión en la estación de servicio</option>
+                <option value="derrame">Emergencia derrame de hidrocarburos</option>
+                <option value="lesionado">Rescate de lesionado</option>
+              </select>
+
+              <p>Fecha de realización</p>
+                <div class="fm-checkbox">
+                  <label>
+                   <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                      <div class="input-group date nk-int-st">
+                        <span class="input-group-addon"></span>
+                        <input type="text" class="form-control" id="fechadivpre" name="fechadivpre" value="08/27/2020">
+                      </div>
+                    </div>
+                  </label>
+                </div>
+
+              <p>Agrega el informe del simulacro (.pdf)</p>
+              <input type="file" class="form-control" name="archivosimu" id="archivosimu">
+            </div>
+          </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-warning" id="btnCargarSimu">Carga de Simulacro</button>
       </div>
-      </form>
+
+        <?php }else{ ?>
+      <form name="enviarPRE" id="enviarPRE" enctype="multipart/form-data" method="post">
+        <div class="modal-body" style="display: ;">
+          <p>Agrega el acuse de ingreso a ASEA de tu Protocolos de Respuesta a Emergencias P.R.E. (.pdf)</p>
+          <input type="file" class="form-control" name="archivopre" id="archivopre">
+          <input style="display:none;" type="input" class="form-control" placeholder="" id="crepre" name="crepre">
+          <input style="display:none;" type="input" class="form-control" placeholder="" id="icpre" name="icpre">
+          <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="oppre">
+        </div>
+       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" id="btnGuardarPRE">Guardar</button>
       </div>
+    <?php } ?>
+      
+
+      
+        
+        
+     
     </div>
   </div>
 </div>
@@ -368,7 +446,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Haz tenido algún accidente o incidente en tu ES? </p>
+        <p>¿Haz tenido algún accidente o incidente en tu ES? </p>
         <select id="qincident" name="qincident">
             <option style="display: none;" value="0"> Selecciona una opción</option>
             <option value="1">SI</option>
@@ -376,8 +454,17 @@
         </select>
       </div>
       <div class="modal-body" id="descarga1" style="display: none;">
+        <p>Tipo de Incidente</p>
+        <select id="tipinc" name="tipinc">
+            <option style="display: none;" value="0"> Selecciona una opción</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
         <p>Descarga estos formatos y acompletalos</p>
-        <button type="button" class="btn btn-primary"><a href="documents/Punto16/16-FM.zip" class="nounderline" >Descargar</a></button>
+        <button id="tipo1" style="display: none;" type="button" class="btn btn-primary"><a href="documents/Punto16/t1.zip" class="nounderline" >Descargar</a></button>
+        <button id="tipo2" style="display: none;" type="button" class="btn btn-primary"><a href="documents/Punto16/t2.zip" class="nounderline" >Descargar</a></button>
+        <button id="tipo3" style="display: none;" type="button" class="btn btn-primary"><a href="documents/Punto16/t3.zip" class="nounderline" >Descargar</a></button>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -1366,10 +1453,10 @@
                     </div>
                 </div>                
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="docAr">
                     <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                         <div class="past-day-statis">
-                            <h2>Repositorio</h2>
+                            <h2>Historial de documentación</h2>
                             <p>Alojamiento de archivos de la estación</p>
                         </div>
                     </div>

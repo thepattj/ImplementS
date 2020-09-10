@@ -11,6 +11,111 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Funciones, responsabilidades y autoridad | ImplementS</title>
+    <!-- * * ESTILOS PARA LA ORGANIGRAMA * * -->
+    <style type="text/css">
+       
+      .organigrama * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .organigrama ul {
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .organigrama li {
+        float: left;
+        text-align: center;
+        list-style-type: none;
+        padding: 20px 5px 0px 5px;
+        position: relative;
+      }
+
+      .organigrama li::before, .organigrama li::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 50%;
+        border-top: 1px solid #f80;
+        width: 50%;
+        height: 20px;
+      }
+
+      .organigrama li::after{
+        right: auto;
+        left: 50%;
+        border-left: 1px solid #f80;
+      }
+
+      .organigrama li:only-child::before, .organigrama li:only-child::after {
+        display: none;
+      }
+
+      .organigrama li:only-child {
+        padding-top: 0;
+      }
+
+      .organigrama li:first-child::before, .organigrama li:last-child::after{
+        border: 0 none;
+      }
+
+      .organigrama li:last-child::before{
+        border-right: 1px solid #f80;
+        -webkit-border-radius: 0 5px 0 0;
+        -moz-border-radius: 0 5px 0 0;
+        border-radius: 0 5px 0 0;
+      }
+
+      .organigrama li:first-child::after{
+        border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+      }
+
+      .organigrama ul ul::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid #f80;
+        width: 0;
+        height: 20px;
+      }
+
+      .organigrama li a {
+        border: 1px solid #f80;
+        padding: 1em 0.75em;
+        text-decoration: none;
+        color: #333;
+        background-color: rgba(255,255,255,0.5);
+        font-family: arial, verdana, tahoma;
+        font-size: 0.85em;
+        display: inline-block;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        transition: all 500ms;
+      }
+
+      .organigrama li a:hover {
+        border: 1px solid #fff;
+        color: #ddd;
+        background-color: rgba(255,128,0,0.7);
+        display: inline-block;
+      }
+
+      .organigrama > ul > li > a {
+        font-size: 1em;
+        font-weight: bold;
+      }
+
+      .organigrama > ul > li > ul > li > a {
+        width: 8em;
+      }
+    </style>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -90,6 +195,44 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+    <div class="modal fade" id="modalorg" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Organigrama</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>      
+          <div class="modal-body">
+            <div class="organigrama">
+                <ul>
+                    <li>
+                      <a href="#">Alta Dirección</a>
+                        <ul>
+                            <li><a href="#">Representante Técnico</a>
+                              <ul>
+                                <li><a href="#">Despachador</a>
+                                <li><a href="#">Despachador</a>
+                              </ul>
+                            </li>
+                            <li><a href="#">Administrativo</a>
+                              <ul>
+                                <li><a href="#">Intendente</a>
+                              </ul>
+                          </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          </div>      
+        </div>
+      </div>
+    </div>
 
 
     <!-- Start Header Top Area -->
@@ -718,6 +861,8 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
                                     <button id="guardarU" class="btn btn-success notika-btn-success">Guardar</button>
+
+                                    <button id="cargaO" data-toggle="modal" data-target="#modalorg" class="btn btn-primary notika-btn-primary">Organigrama</button>
                                 </div>
                                 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>

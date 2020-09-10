@@ -678,7 +678,7 @@
 
 
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="controlr" style="display: none;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="controlr" style="display:;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
@@ -700,7 +700,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="nomnbreP">
+                                        <input type="text" class="form-control" id="nomnbreP" placeholder="Nombre técnico que se tiene">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -715,7 +715,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="sugerencia">
+                                        <input type="text" class="form-control" id="sugerencia" placeholder="Que mejoras se deben hacer">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -762,7 +762,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="statusP">
+                                        <input type="text" class="form-control" id="statusP" placeholder="Seguimiento, Terminado, etc.">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -786,7 +786,7 @@
                                                 $atn = $rw['AP'];
                                                 $amt = $rw['AM'];
                                               }?>
-                                        <input type="text" class="form-control" id="reprTec" value="<?php echo $nrt." ".$atn." ".$amt; ?>">
+                                        <input type="text" class="form-control" id="reprTec" value="<?php echo $nrt." ".$atn." ".$amt; ?>" disabled>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -821,7 +821,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="areaRbpo">
+                                        <input type="text" class="form-control" id="areaRbpo" placeholder="Zona de la estación">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -836,7 +836,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="supRbpo">
+                                        <input type="text" class="form-control" id="supRbpo" placeholder="Persona que supervisara el mejoramiento">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
@@ -847,7 +847,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
                                         <label>
-                                           Nombre Trabajador (realiza)
+                                           Nombre Trabajador (realiza la práctica)
                                         </label>
                                     </div>
                                 </div>
@@ -878,7 +878,7 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" id="descA"></textarea>
+                                        <textarea class="form-control" rows="5" id="descA" placeholder="Descripción completa."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>

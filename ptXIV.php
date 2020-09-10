@@ -785,7 +785,7 @@
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                    <div class="fm-checkbox">
                                        <label>
-                                           Fecha Programada
+                                           Fecha Programada de subsanación
                                        </label>
                                    </div>
                                </div>

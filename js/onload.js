@@ -19,88 +19,88 @@ $("#inicioc").ready(function() {
 			$("#pt1").css("cursor","pointer");
 
 			$("#pt2").css("background","#fb9678");
-			$("#pt2").css("cursor","no-drop");
+			
 			$("#pt2Title").css("color","#6D6E6A");
 			$("#pt2Text").css("color","#6D6E6A");
 
 
 			$("#pt3").css("background","#fb9678");
-			$("#pt3").css("cursor","no-drop");
+			
 			$("#pt3Title").css("color","#6D6E6A");
 			$("#pt3Text").css("color","#6D6E6A");
 
 			$("#pt4").css("background","#fb9678");
-			$("#pt4").css("cursor","no-drop");
+			
 			$("#pt4Title").css("color","#6D6E6A");
 			$("#pt4Text").css("color","#6D6E6A");
 
 			$("#pt5").css("background","#fb9678");
-			$("#pt5").css("cursor","no-drop");
+			
 			$("#pt5Title").css("color","#6D6E6A");
 			$("#pt5Text").css("color","#6D6E6A");
 
 			$("#pt6").css("background","#fb9678");
-			$("#pt6").css("cursor","no-drop");
+			
 			$("#pt6Title").css("color","#6D6E6A");
 			$("#pt6Text").css("color","#6D6E6A");
 
 			$("#pt7").css("background","#fb9678");
-			$("#pt7").css("cursor","no-drop");
+			
 			$("#pt7Title").css("color","#6D6E6A");
 			$("#pt7Text").css("color","#6D6E6A");
 
 			$("#pt8").css("background","#fb9678");
-			$("#pt8").css("cursor","no-drop");
+			
 			$("#pt8Title").css("color","#6D6E6A");
 			$("#pt8Text").css("color","#6D6E6A");
 
 			$("#pt9").css("background","#fb9678");
-			$("#pt9").css("cursor","no-drop");
+			
 			$("#pt9Title").css("color","#6D6E6A");
 			$("#pt9Text").css("color","#6D6E6A");
 
 			$("#pt10").css("background","#fb9678");
-			$("#pt10").css("cursor","no-drop");
+			
 			$("#pt10Title").css("color","#6D6E6A");
 			$("#pt10Text").css("color","#6D6E6A");
 
 			$("#pt11").css("background","#fb9678");
-			$("#pt11").css("cursor","no-drop");
+			
 			$("#pt11Title").css("color","#6D6E6A");
 			$("#pt11Text").css("color","#6D6E6A");
 
 			$("#pt12").css("background","#fb9678");
-			$("#pt12").css("cursor","no-drop");
+			
 			$("#pt12Title").css("color","#6D6E6A");
 			$("#pt12Text").css("color","#6D6E6A");
 
 			$("#pt13").css("background","#fb9678");
-			$("#pt13").css("cursor","no-drop");
+			
 			$("#pt13Title").css("color","#6D6E6A");
 			$("#pt13Text").css("color","#6D6E6A");
 
 			$("#pt14").css("background","#fb9678");
-			$("#pt14").css("cursor","no-drop");
+			
 			$("#pt14Title").css("color","#6D6E6A");
 			$("#pt14Text").css("color","#6D6E6A");
 
 			$("#pt15").css("background","#fb9678");
-			$("#pt15").css("cursor","no-drop");
+			
 			$("#pt15Title").css("color","#6D6E6A");
 			$("#pt15Text").css("color","#6D6E6A");
 
 			$("#pt16").css("background","#fb9678");
-			$("#pt16").css("cursor","no-drop");
+			
 			$("#pt16Title").css("color","#6D6E6A");
 			$("#pt16Text").css("color","#6D6E6A");
 
 			$("#pt17").css("background","#fb9678");
-			$("#pt17").css("cursor","no-drop");
+			
 			$("#pt17Title").css("color","#6D6E6A");
 			$("#pt17Text").css("color","#6D6E6A");
 
 			$("#pt18").css("background","#fb9678");
-			$("#pt18").css("cursor","no-drop");
+			
 			$("#pt18Title").css("color","#6D6E6A");
 			$("#pt18Text").css("color","#6D6E6A");
 		}else{
@@ -112,7 +112,8 @@ $("#inicioc").ready(function() {
 			if (datos[0] == ci) {
 				//alert("valor del 1ro: "+datos[0]);
 				$("#pt1").css("background","#00c292");
-				$("#pt1").css("cursor","no-drop");
+				$("#pt1").css("cursor","pointer");
+				
 
 				$("#pt2").css("background","#fb9678");
 				$("#pt2Title").css("color","#333");
@@ -120,89 +121,89 @@ $("#inicioc").ready(function() {
 				$("#pt2").css("cursor","pointer");
 
 				$("#pt3").css("background","#fb9678");
-				$("#pt3").css("cursor","no-drop");
+				
 				$("#pt3Title").css("color","#6D6E6A");
 				$("#pt3Text").css("color","#6D6E6A");
 
 				$("#pt4").css("background","#fb9678");
-				$("#pt4").css("cursor","no-drop");
+				
 				$("#pt4Title").css("color","#6D6E6A");
 				$("#pt4Text").css("color","#6D6E6A");
 
 				$("#pt5").css("background","#fb9678");
-				$("#pt5").css("cursor","no-drop");
+				
 				$("#pt5Title").css("color","#6D6E6A");
 				$("#pt5Text").css("color","#6D6E6A");
 
 				$("#pt6").css("background","#fb9678");
-				$("#pt6").css("cursor","no-drop");
+				
 				$("#pt6Title").css("color","#6D6E6A");
 				$("#pt6Text").css("color","#6D6E6A");
 
 				$("#pt7").css("background","#fb9678");
-				$("#pt7").css("cursor","no-drop");
+				
 				$("#pt7Title").css("color","#6D6E6A");
 				$("#pt7Text").css("color","#6D6E6A");
 
 				$("#pt8").css("background","#fb9678");
-				$("#pt8").css("cursor","no-drop");
+				
 				$("#pt8Title").css("color","#6D6E6A");
 				$("#pt8Text").css("color","#6D6E6A");
 
 				$("#pt9").css("background","#fb9678");
-				$("#pt9").css("cursor","no-drop");
+				
 				$("#pt9Title").css("color","#6D6E6A");
 				$("#pt9Text").css("color","#6D6E6A");
 
 				$("#pt10").css("background","#fb9678");
-				$("#pt10").css("cursor","no-drop");
+				
 				$("#pt10Title").css("color","#6D6E6A");
 				$("#pt10Text").css("color","#6D6E6A");
 
 				$("#pt11").css("background","#fb9678");
-				$("#pt11").css("cursor","no-drop");
+				
 				$("#pt11Title").css("color","#6D6E6A");
 				$("#pt11Text").css("color","#6D6E6A");
 
 				$("#pt12").css("background","#fb9678");
-				$("#pt12").css("cursor","no-drop");
+				
 				$("#pt12Title").css("color","#6D6E6A");
 				$("#pt12Text").css("color","#6D6E6A");
 
 				$("#pt13").css("background","#fb9678");
-				$("#pt13").css("cursor","no-drop");
+				
 				$("#pt13Title").css("color","#6D6E6A");
 				$("#pt13Text").css("color","#6D6E6A");
 
 				$("#pt14").css("background","#fb9678");
-				$("#pt14").css("cursor","no-drop");
+				
 				$("#pt14Title").css("color","#6D6E6A");
 				$("#pt14Text").css("color","#6D6E6A");
 
 				$("#pt15").css("background","#fb9678");
-				$("#pt15").css("cursor","no-drop");
+				
 				$("#pt15Title").css("color","#6D6E6A");
 				$("#pt15Text").css("color","#6D6E6A");
 
 				$("#pt16").css("background","#fb9678");
-				$("#pt16").css("cursor","no-drop");
+				
 				$("#pt16Title").css("color","#6D6E6A");
 				$("#pt16Text").css("color","#6D6E6A");
 
 				$("#pt17").css("background","#fb9678");
-				$("#pt17").css("cursor","no-drop");
+				
 				$("#pt17Title").css("color","#6D6E6A");
 				$("#pt17Text").css("color","#6D6E6A");
 
 				$("#pt18").css("background","#fb9678");
-				$("#pt18").css("cursor","no-drop");
+				
 				$("#pt18Title").css("color","#6D6E6A");
 				$("#pt18Text").css("color","#6D6E6A");				
 			}//FINAL DE PUNTO 1
 
 			if (datos[1] == ci) {
 				$("#pt2").css("background","#00c292");
-				$("#pt2").css("cursor","no-drop");
+				
 
 				$("#pt3").css("background","#fb9678");
 				$("#pt3Title").css("color","#333");
@@ -289,7 +290,7 @@ $("#inicioc").ready(function() {
 
 			if (datos[7] == ci) {
 				$("#pt8").css("background","#00c292");
-				$("#pt8").css("cursor","no-drop");
+				
 			}//FINAL DE PUNTO 8
 
 			if ((datos[8] == ci) || (datos[9] == ci)) {
@@ -322,7 +323,7 @@ $("#inicioc").ready(function() {
 
 			if (datos[17] == ci) {
 				$("#pt13").css("background","#00c292");
-				$("#pt13").css("cursor","no-drop");
+				
 			}//FINAL DE PUNTO 13
 
 			if (datos[18] == ci) {
@@ -352,13 +353,13 @@ $("#inicioc").ready(function() {
 			if (datos[21] == ci) {
 				//alert(datos[21]);
 				$("#pt17").css("background","#00c292");
-				$("#pt17").css("cursor","no-drop");
+				
 			}//FINAL DE PUNTO 17
 
 			if (datos[22] == ci) {	
 				//alert(datos[22]);
 				$("#pt18").css("background","#00c292");
-				$("#pt18").css("cursor","no-drop");
+				
 			}//FINAL DE PUNTO 18
 		}
 	})

@@ -108,7 +108,7 @@ if($opcion=="addSt"){
 	$soloP = $_POST['unoseP'];
 
 	$cre = $_POST['cre'];
-	$sqlcompleto = "INSERT INTO documento (tipo,num,idCESH,status) VALUES ('Sec. Economia',1,'".$cre."',".$solo.",".$soloP.",'".$soloE."','".$soloS."')";
+	$sqlcompleto = "INSERT INTO documento (tipo,num,idCESH,cumplimiento,porcentaje,evidencia,status) VALUES ('Sec. Economia',1,'".$cre."','".$solo."',".$soloP.",'".$soloE."','".$soloS."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
@@ -201,12 +201,12 @@ if($opcion=="addSt"){
 	$cre = $_POST['cre'];
 
 	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('CRE',1,'".$cre."',".$rdv.",".$prdv.",'".$erdv."','".$srdv."'), ('CRE',2,'".$cre."',".$rdp.",".$prdp.",'".$erdp."','".$srdp."'), ('CRE',3,'".$cre."',".$sta.",".$psta.",'".$esta."','".$ssta."'), ('CRE',4,'".$cre."',".$cpet.",".$pcpet.",'".$ecpet."','".$scpet."'), ('CRE',5,'".$cre."',".$dcpet.",".$pdcpet.",'".$edcpet."','".$sdcpet."'), ('CRE',6,'".$cre."',".$sup.",".$psup.",'".$esup."','".$ssup."'), ('CRE',7,'".$cre."',".$panual.",".$ppanual.",'".$epanual."','".$spanual."'), ('CRE',8,'".$cre."',".$pseg.",".$ppseg.",'".$epseg."','".$spseg."'), ('CRE',9,'".$cre."',".$repq.",".$prepq.",'".$erepq."','".$srepq."'), ('CRE',10,'".$cre."',".$proc.",".$pproc.",'".$eproc."','".$sproc."'), ('CRE',11,'".$cre."',".$reme.",".$preme.",'".$ereme."','".$sreme."'), ('CRE',12,'".$cre."',".$anuncio.",".$panunci.",'".$eanuncio."','".$sanuncio."')";
-	/*if(mysqli_query($con, $sqlcompleto)){
-		echo "Carga Complete.";
+	if(mysqli_query($con, $sqlcompleto)){
+		echo "Carga Completa.";
 	}else{
 		echo "Error: ".mysqli_error($con);
-	}*/
-	echo $sqlcompleto;	
+	}
+	//echo $sqlcompleto;	
 }/*DATOS DE REQUISITOS DE STPS*/if($opcion == "add3s"){
 	$cump001s = $_POST['unos'];
 	$scump001s = $_POST['unosS'];
@@ -361,13 +361,14 @@ if($opcion=="addSt"){
 	}
 	//echo $sqlcompleto;	
 }if($opcion == "add4"){
-	$meta4 = $_POST['m'];
+	$objetivo = $_POST['o'];
 	$fecha4 = $_POST['f'];
-	$nombreT4 = $_POST['n'];
+	$responsable = $_POST['r'];
+	$pruebacump = $_POST['c'];
 	$id = $_POST['cre'];
 	
 	
-	$sql = "INSERT INTO objetivo (obj,meta,cumplimiento	,responsable,unidadC,status,idCESH) VALUES ('".$meta4."','0000-00-00','".$fecha4."','".$nombreT4."','Iniciada','".$id."')";
+	$sql = "INSERT INTO objetivo (obj,cumplimiento,rutaCumObj,fechaCump,responsable,idCESH) VALUES ('".$objetivo."','".$pruebacump."','NULL','".$fecha4."','".$responsable."','".$id."')";
 
 	if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";
@@ -402,7 +403,7 @@ if($opcion=="addSt"){
 	$sql = "INSERT INTO curso (nombreCurso,nombreIns,fecha,certificado,idCESH) VALUES ('".$nombreCur."','".$instru."','".$feCur."','".$certi."','".$id."')";
 	
 	if(mysqli_query($con,$sql)){
-		echo "Carga Correcta";
+		//echo "Carga Correcta";
 		/* $sqlselec = "SELECT idCurso as n FROM curso WHERE idCESH ='".$id."' ORDER BY idCurso DESC LIMIT 1";
 		$result =mysqli_query($con, $sqlselec);
 		if($result->num_rows > 0){
@@ -427,6 +428,21 @@ if($opcion=="addSt"){
 		echo "Error:".mysqli_error($con);
 	}
 	//echo $sql;
+}if($opcion == "add10Np"){
+	//echo "ENTRO";
+	$aNueva = $_POST['areaNP'];
+	$trab = $_POST['ntrab'];
+	$apePaterN = $_POST['aptrab'];
+	$apeMaterN = $_POST['amtrab'];
+		
+	$id = $_POST['cre'];
+	$sqlNp = "INSERT INTO organigrama (nombre,apellidoP,apellidoM,puesto,status,idCESH) VALUES ('".$trab."','".$apePaterN."','".$apeMaterN."','".$aNueva."','ACTIVO','".$id."')";
+	if(mysqli_query($con,$sqlNp)){
+		echo "Carga Correcta";
+	}else{
+		echo "Error:".mysqli_error($con);
+	}
+	//echo $sqlNp;
 }if($opcion == "add10"){
 	//echo "ENTRO";
 	$aNueva = $_POST['area'];
@@ -685,14 +701,62 @@ if($opcion=="addSt"){
 }if($opcion == "add16"){
 	$rpt = $_POST['r'];
 	$cre = $_POST['cesh'];
+	//$fecha = "2015-03-19";
+	//echo "la fecha actual es " . date("d") . " del " . date("m") . "
+	//$fecha = "2016-06-29";
+	$fecha = date("Y")."-".date("m")."-".date("d");
+	
 	//select para poder realizar un update
-	$sql = "INSERT INTO incidentes (resp,idCESH) VALUES ('".$rpt."','".$cre."')";
+	$sqldecision = "SELECT fechaInicio FROM incidentes WHERE idCESH = '".$cre."'";
+	$resultadodec = mysqli_query($con, $sqldecision);
+	//ESTE IF FUNCIONA PARA SABER SI VA A AGREGAR PRIMERO O VA ACTUALIZAR ALGO QUE YA SE TIENEN INGRESADO
+	if($resultadodec->num_rows > 0){
+		if($rpt == "SI"){
+			$sqlUs = "UPDATE incidentes SET fechaActualizada = '".$fecha."', fechaInicio = '".$fecha."', resp = '".$rpt."', diasT = 0";
+			//echo $sqlU;
+			if(mysqli_query($con,$sqlUs)){
+				echo "Actualización Correcta";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}if($rpt == "NO"){
+			$sqlresta = "SELECT fechaInicio as fechaAnt FROM incidentes WHERE idCESH = '".$cre."'";
+			$resultadores = mysqli_query($con, $sqlresta);
+			if($resultadores->num_rows > 0){
+				while ( $fila = $resultadores->fetch_assoc()) {
+					$fechaant = $fila['fechaAnt'];
+				}
+			}
+			$fechac = new DateTime('now');
+			$fechat = new DateTime($fechaant);
+			//echo "1er Fecha: ".$fechaant." - 2da Fecha: ".$fecha;
+			$dif = $fechac->diff($fechat);
+			//echo $dif->days.' dias';
+			$diff = $dif->days;
+			$sqlU = "UPDATE incidentes SET fechaActualizada = '".$fecha."', diasT = ".$diff;
+			//echo $sqlU;
+			if(mysqli_query($con,$sqlU)){
+				echo "Actualización Correcta";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}
+	}else{
+		//echo "entro a insertar";
+		$sqlAdd = "INSERT INTO incidentes (resp,fechaInicio,fechaActualizada,diasT,idCESH) VALUES ('".$rpt."','".$fecha."','".$fecha."',0,'".$cre."')";
+		if(mysqli_query($con,$sqlAdd)){
+			echo "Carga de primer reporte de incidente completa";
+		}else{
+			echo "Error:".mysqli_error($con);
+		}		
+	}
+	
 
-	if(mysqli_query($con,$sql)){
+	/*if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";
 	}else{
 		echo "Error:".mysqli_error($con);
-	}
+	}*/
 	//echo $sql;
 }
 

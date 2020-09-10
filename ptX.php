@@ -662,6 +662,7 @@
                                                 <div class="navbar-inner">
                                                     <div class="container-pro wizard-cts-st">
                                                         <ul>
+                                                            <li id="btnNper"><a href="#tab1" data-toggle="tab">Alta de nuevo personal</a></li>
                                                             <li id="btnper"><a href="#tab1" data-toggle="tab">Cambio de personal</a></li>
                                                             <li id="btntec"><a href="#tab2" data-toggle="tab">Cambio técnologico</a></li>
                                                             <li id="btnorden"><a href="#tab3" data-toggle="tab">Orden de trabajo</a></li>
@@ -673,6 +674,151 @@
                                             <div class="tab-content"> </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="personalN" style="display:;">
+                        <div class="form-element-list">
+                            <div class="basic-tb-hd">                                
+                                <p>Agregaras de manera detalladas información del nuevo personal de la Estación de Servicio</p>
+                            </div>
+                            <div class="row">                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Puesto de trabajo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="areaCn">
+                                            <option value="Selecciona" style="display: none;">Selecciona una opción</option>
+                                            <option value="Direccion">Alta Dirección</option>
+                                            <option value="RepresentanteT">Representante Técnico</option>
+                                            <option value="Administrativos">Administrativos</option>
+                                            <option value="Despachador">Despachador</option>
+                                            <option value="Intendente">Intendente</option>
+                                            <option value="FinLaboral">Fin de relación laboral</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    Nombre del personal
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" id="nombreCn">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    Apellido Paterno
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" id="apellidoCpat">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    Apellido Materno
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" id="apellidoCmat">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            CURP
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" id="Ncurp">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            RFC
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" id="Nrfc">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Numero de Seguro Social (NSS)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st">
+                                        <input type="text" class="form-control" id="nss">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                    
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            Fecha de ingreso
+                                        </label>
+                                    </div>
+                                </div>
+                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label>
+                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                <div class="input-group date nk-int-st">
+                                                    <span class="input-group-addon"></span>
+                                                    <input type="text" class="form-control" id="fechaIngresoN" value="03/19/2020">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <button id="guardarNPersonal" class="btn btn-success notika-btn-success">Guardar</button>
                                 </div>
                             </div>
                         </div>

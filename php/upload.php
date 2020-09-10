@@ -9,14 +9,13 @@
 		$cesh = $_POST['ic'];
 		$fechad = $_POST["fechadiv"];
 		$pfecha = explode("/", $fechad);
-		$fechad = $pfecha[2]."/".$pfecha[0]."/".$pfecha[1];
+		$fechad = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
 		$divulga = $_POST["dvlpolitica"];
-		echo "entro - ".$id. " - ".$cesh. " - F: ".$fechad. " - D: ".$divulga;
-		/*$politica = $_FILES["archviopol"];
-		foreach ($politica as $key => $value) {
+		//echo "entro - paraCarpeta: ".$id. " - PL: ".$cesh. " - Fecha: ".$fechad. " - Fordiv: ".$divulga;
+		$politica = $_FILES["archviopol"];
+		/*foreach ($politica as $key => $value) {
 			echo $key.' '.$value.'->';
-		}
-
+		}*/
 
 		$micarpeta = '../documents/Punto1/'.$id;
 		//echo $micarpeta;
@@ -24,8 +23,14 @@
 			mkdir($micarpeta, 0777, true);
 		}
 		
-		if($politica["type"] == "image/jpg" or $politica["type"] == "image/jpeg"){
-			$nom_encriptado = md5($politica["tmp_name"]).".jpg";
+		if($politica["type"] == "application/pdf" or $politica["type"] == "application/x-zip-compressed"){
+			
+
+			if($politica["type"] == "application/x-zip-compressed"){
+				$nom_encriptado = md5($politica["tmp_name"]).".zip";
+			}if($politica["type"] == "application/pdf"){
+				$nom_encriptado = md5($politica["tmp_name"]).".pdf";
+			}
 			$ruta = "../documents/Punto1/".$id."/".$nom_encriptado;
 			//echo $ruta;
 			move_uploaded_file($politica["tmp_name"], $ruta);
@@ -33,12 +38,12 @@
 			$sql = "INSERT INTO politica (direccion,fechaD,tipoD,idCESH) VALUES ('".$ruta."','".$fechad."','".$divulga."','".$cesh."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
-				echo "Insert Correct";
+				echo "Carga Correcta";
 			}else{
 				echo "Error:".mysqli_error($con);
 			}
 		}else{
-			echo "Verifica tu formato de imagen";
+			echo "Verifica el formato a cargar.";
 		}
 	}
 	/*INSERT Y UPLOAD DE AR*/
@@ -47,9 +52,9 @@
 		$id = $_POST['crear'];
 		$fechard = $_POST["fechardiv"];
 		$pfecha = explode("/", $fechard);
-		$fechard = $pfecha[2]."/".$pfecha[0]."/".$pfecha[1];
+		$fechard = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
 		$divulgar = $_POST["dvlar"];
-		//echo "entro - ".$id. " - ".$cesh;
+		//echo "entro - paraCarpeta: ".$id. " - PL: ".$cesh. " - Fecha: ".$fechard. " - Fordiv: ".$divulgar;
 		$ar = $_FILES["archivoAR"];
 		/*foreach ($ar as $key => $value) {
 			echo $key.' '.$value.'->';
@@ -61,8 +66,12 @@
 			mkdir($micarpeta, 0777, true);
 		}
 		
-		if($ar["type"] == "application/pdf"){
-			$nom_encriptado = md5($ar["tmp_name"]).".pdf";
+		if($ar["type"] == "application/pdf" or $ar["type"] == "application/x-zip-compressed"){
+			if($ar["type"] == "application/x-zip-compressed"){
+				$nom_encriptado = md5($ar["tmp_name"]).".zip";
+			}if($ar["type"] == "application/pdf"){
+				$nom_encriptado = md5($ar["tmp_name"]).".pdf";
+			}
 			$ruta = "../documents/Punto2/".$id."/".$nom_encriptado;
 			//echo $ruta;
 			move_uploaded_file($ar["tmp_name"], $ruta);
@@ -70,7 +79,7 @@
 			$sql = "INSERT INTO ar (direccion,fechaD,tipoD,idCESH) VALUES ('".$ruta."','".$fechard."','".$divulgar."','".$cesh."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
-				echo "Insert Correct";
+				echo "Carga Correcta";
 			}else{
 				echo "Error:".mysqli_error($con);
 			}
@@ -82,41 +91,53 @@
 	if(isset($_POST['opcsq'])){
 		$cesh = $_POST['icsq'];
 		$id = $_POST['cresq'];
-		$mesup = $_POST['mesconcentrado'];
-		//echo "entro - ".$id. " - ".$cesh." - ".$mesup;
-		$sq = $_FILES["archivosq"];
-		/*foreach ($sq as $key => $value) {
-			echo $key.' '.$value.'->';
-		}*/
+		$fecsq = date("Y")."-".date("m")."-".date("d");
+		$repsq = $_POST['qsugque'];
+		//$mesup = $_POST['mesconcentrado'];
+		//echo "entro - ".$id. " - ".$cesh." - ".$fecsq." - ".$repsq.":";
+		if($repsq == 1){
+			$sq = $_FILES["archivosq"];
+			/*foreach ($sq as $key => $value) {
+				echo $key.' '.$value.'->';
+			}*/
 
-		$micarpeta = '../documents/Punto7/'.$id;
-		//echo $micarpeta;
-		if(!file_exists($micarpeta)){
-			mkdir($micarpeta, 0777, true);
-		}
-		
-		if($sq["type"] == "application/pdf" or $sq["type"] == "application/x-zip-compressed"){
-			
-			if($sq["type"] == "application/x-zip-compressed"){
-				$nom_encriptado = md5($sq["tmp_name"]).".zip";
-			}if($sq["type"] == "application/pdf"){
-				$nom_encriptado = md5($sq["tmp_name"]).".pdf";
+			$micarpeta = '../documents/Punto7/'.$id;
+			//echo $micarpeta;
+			if(!file_exists($micarpeta)){
+				mkdir($micarpeta, 0777, true);
 			}
+			
+			if($sq["type"] == "application/pdf" or $sq["type"] == "application/x-zip-compressed"){
+				
+				if($sq["type"] == "application/x-zip-compressed"){
+					$nom_encriptado = md5($sq["tmp_name"]).".zip";
+				}if($sq["type"] == "application/pdf"){
+					$nom_encriptado = md5($sq["tmp_name"]).".pdf";
+				}
 
-			$ruta = "../documents/Punto7/".$id."/".$nom_encriptado;
-			//echo $ruta;
-			move_uploaded_file($sq["tmp_name"], $ruta);
+				$ruta = "../documents/Punto7/".$id."/".$nom_encriptado;
+				//echo $ruta;
+				move_uploaded_file($sq["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO sugque (fecha,direccion,idCESH) VALUES ('".$mesup."','".$ruta."','".$cesh."')";
+				$sql = "INSERT INTO sugque (respSugQ,fecha,direccion,idCESH) VALUES ('".$repsq."','".$fecsq."','".$ruta."','".$cesh."')";
+				//echo $sql;
+				if(mysqli_query($con,$sql)){
+					echo "Carga de Siguimiento Correcta";
+				}else{
+					echo "Error:".mysqli_error($con);
+				}
+			}else{
+				echo "Revisa el formato de tu archivo";
+			}
+		}else{
+			$sqlN = "INSERT INTO sugque (respSugQ,fecha,direccion,idCESH) VALUES ('".$repsq."','".$fecsq."','NULL','".$cesh."')";
 			//echo $sql;
-			if(mysqli_query($con,$sql)){
-				echo "Insert Correct";
+			if(mysqli_query($con,$sqlN)){
+				echo "Carga Correcta";
 			}else{
 				echo "Error:".mysqli_error($con);
 			}
-		}else{
-			echo "Revisa el formato de tu archivo";
-		}
+		}		
 	}
 	/*INSERT Y UPLOAD DE PRE*/
 	if(isset($_POST['oppre'])){
@@ -143,7 +164,7 @@
 			$sql = "INSERT INTO pre (direccion,idCESH) VALUES ('".$ruta."','".$cesh."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
-				echo "Insert Correct";
+				echo "Carga Correcta";
 			}else{
 				echo "Error:".mysqli_error($con);
 			}
