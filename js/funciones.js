@@ -85,15 +85,20 @@ $(document).ready(function(){
 		rfcR = $('#rfcRL').val();
 		curpR = $('#curpRL').val();
 		estadoS = $('#estadoStation').val();
+		NumAuto = $('#sasiAutori').val();
+		fecA = $('#fechaAut').val();
+		sep = "/";
+		fechaAut = fecA.split(sep);
+		fechaAut = fechaAut[2]+"-"+fechaAut[0]+"-"+fechaAut[1];
 
-		if((razonSocial != "") && (cre !="") && (noEst !="") && (fran !="") && (dFiscal !="") && (rfcEst !="") && (uEst !="") && (tEst !="") && (cEst !="") && (rL !="") && (rfcR !="") && (curpR !="") && (estadoS !="")){
+		if((razonSocial != "") && (cre !="") && (noEst !="") && (fran !="") && (dFiscal !="") && (rfcEst !="") && (uEst !="") && (tEst !="") && (cEst !="") && (rL !="") && (rfcR !="") && (curpR !="") && (estadoS !="")&&(NumAuto !="") && (fechaAut !="") ){
 			//alert("traen valores");
 			//alert(razonSocial+cre+noEst+fran+dFiscal+rfcEst+uEst+tEst+cEst+rL+rfcR+curpR+estadoS);
 			$.ajax({
 				url:'php/insert.php',
 				method:'POST',
 				dataType:'html',
-				data:{opc:"addSt", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS},
+				data:{opc:"addSt", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS, nAut:NumAuto, fAut:fechaAut},
 			})
 			.done(function(msg){
 				if(msg == 1){
@@ -106,10 +111,9 @@ $(document).ready(function(){
 					localStorage.setItem("U",rfcEst);
 					localStorage.setItem("W",pw);
 					localStorage.setItem("S",noEst);
+					localStorage.setItem("cesh",cre);
 					$('#userentry').text(rfcEst);
 					$('#pssentry').text(pw);
-
-
 				}else{
 					alert(msg);
 				}
@@ -121,7 +125,7 @@ $(document).ready(function(){
 		//alert("SI DA EL CLIC");
 		user = localStorage.getItem("U");
 		pss = localStorage.getItem("W");
-		noS = localStorage.getItem("S");
+		noS = localStorage.getItem("cesh");
 		//alert("estos son los datos"+user+" "+pss);
 		$.ajax({
 			url: 'php/insert.php',
@@ -131,6 +135,7 @@ $(document).ready(function(){
 		})
 		.done(function(msg) {
 			console.log(msg);
+			alert(msg);
 		});
 		//window.location.href = "inicio.php?ty=sasisopa";
 		location.reload();

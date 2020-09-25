@@ -558,6 +558,29 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Número de Autorización</p> </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group nk-int-st">
+                <input type="text" class="form-control" id="sasiAutori" placeholder="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Fecha de Autorización</p> </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="fm-checkbox">
+                <label>
+                    <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                        <div class="input-group date nk-int-st">
+                            <span class="input-group-addon"></span>
+                            <input type="text" class="form-control" id="fechaAut" name="fechaAut" value="08/22/2020">
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Nombre de Representante Legal</p> </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="form-group nk-int-st">

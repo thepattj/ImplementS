@@ -455,7 +455,7 @@
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
-                                <p>Podras estaciones morosas</p>
+                                <p>Podras bloquear estaciones morosas</p>
                             </div>
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">

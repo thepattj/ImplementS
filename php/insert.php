@@ -18,10 +18,10 @@ if($opcion=="addSt"){
 	$rfcrl = $_POST['rfcRl'];
 	$curprl = $_POST['curpRl'];
 	$estst = $_POST['idEstado'];
-	/*
+	$numAu = $_POST['nAut'];
+	$fecAu = $_POST['fAut'];
 	
-	
-	$estst = $_POST['idEstado'];*/
+	/*$estst = $_POST['idEstado'];*/
 
 
 	$sql = "INSERT INTO cesh (idCESH,NoEst,razonSocial,franquicia,direccionFiscal,rfc,ubicacion,telefono,correo,rl,rfcRl,curpRl,estatus,idEstado) VALUES ('".$cre."','".$nost."','".$RS."','".$fra."','".$dfis."','".$rfcst."','".$ust."','".$tst."','".$cst."','".$rl."','".$rfcrl."','".$curprl."','ACTIVADO',".$estst.")";
@@ -36,7 +36,7 @@ if($opcion=="addSt"){
 }if($opcion == "usuario"){
 	$user = $_POST['u'];
 	$passw = $_POST['pw'];
-	$noSta = $_POST['idC'];
+	$cre = $_POST['idC'];
 
 	$sqluser = "INSERT INTO usuario (nUsuario, contrasena, tipo) VALUES ('".$user."','".$passw."','estacion')";
 	if(mysqli_query($con, $sqluser)){
@@ -58,7 +58,8 @@ if($opcion=="addSt"){
 
 		$sqlcompleto = "INSERT INTO completocesh (idCESH, idUsuario) VALUES ('".$cre."',".$idU.")";
 		if(mysqli_query($con, $sqlcompleto)){
-			echo "Inserción Completa.";
+			//echo "Inserción Completa. DE: ".$sqlcompleto;
+			echo "Inserción Completa."
 		}else{
 			echo "Error: ".mysqli_error($con);
 		}
