@@ -64,6 +64,24 @@ if($opcion=="addSt"){
 			echo "Error: ".mysqli_error($con);
 		}
 	}else{ echo $succs;}
+}if($opcion == "insUser"){
+	/*inserción de usuario*/
+	$userG = $_POST[];
+	$passG = $_POST[];
+	$razonSocs = $_POST[];
+
+	//CONTABILIZAR LAS RAZON SOCIALES
+
+	//SE DEBE REALIZAR UN
+
+	$sqlbus = "SELECT idCESH FROM cesh WHERE razonSocial LIKE '%".$razonSocs."%'";
+
+	$sqladdUser = "";
+	/*if(mysqli_query($con, $sqladdUser)){
+
+	}else{
+
+	}*/
 }/*DATOS DE REQUISITOS DE PROFECO*/ if($opcion == "add3pr"){
 	$uno = $_POST['unoprofeco'];
 	$suno = $_POST['unoprofecos'];

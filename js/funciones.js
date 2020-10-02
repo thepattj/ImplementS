@@ -120,6 +120,7 @@ $(document).ready(function(){
 			});	
 		} else { alert("no trae nada.")}
 	});
+	
 	/*MUESTRA LOS DATOS FINALES DE USUARIO Y CONTRASEÑA*/
 	$("#btnCerrarModals").click(function() {
 		//alert("SI DA EL CLIC");
@@ -140,6 +141,7 @@ $(document).ready(function(){
 		//window.location.href = "inicio.php?ty=sasisopa";
 		location.reload();
 	});
+	
 	/*BOTON QUE SELECIONA LOS DATOS DE LA ESTACION A ACTUALIZAR*/
 	$("#btnSeleccionarEstacion").click(function() {
 		/* Act on the event */
@@ -172,6 +174,7 @@ $(document).ready(function(){
 			$("#curpRLu").val(datos[11]);
 		})		
 	});
+	
 	/*ACTUALIZA LOS DATOS ATRAVEZ DE UN PHP*/
 	$("#btnActualizarEstacion").click(function() {
 		/* Act on the event */
@@ -200,6 +203,26 @@ $(document).ready(function(){
 			alert(msg);
 		})	
 	});
+
+	/*CREA USUARIO DE GENERAL*/
+	$("#btnGuardarUser").click(function() {
+		/* Act on the event */
+		userIns = $("#UserC").val();
+		passIns = $("#passC").val();
+
+		//AQUI SE TOMARAN LOS DIFERENTES NOMBRES DE RAZON SOCIALES
+
+		/*$.ajax({
+			url: 'php/insert.php',
+			method:'POST',
+			dataType:'html',
+			data:{opc:"insUser",  uI:, pI:, pl: },
+		})
+		.done(function(msg) {
+			alert(msg);
+		})*/
+	});
+
 	/*ABRIR PAGINA PARA PODER BLOQUEAR*/
 	$("#btnsas").click(function() {
 		/* Act on the event */

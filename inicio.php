@@ -808,7 +808,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <p>Usuario</p> </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
-                    <input type="text" class="form-control" id="User" placeholder="Max 10 caracteres">
+                    <input type="text" class="form-control" id="UserC" placeholder="Max 10 caracteres">
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -816,7 +816,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> Contraseña</div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="form-group nk-int-st">
-                    <input type="text" class="form-control" id="pass" placeholder="Max 8 caracteres">
+                    <input type="text" class="form-control" id="passC" placeholder="Max 8 caracteres">
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -1595,7 +1595,7 @@
         <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "> <h1> Bienvenido </h1></div>
             <div class="row">                
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div id="btnstasasi" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="">Estaciones</span></h2>
@@ -1603,7 +1603,7 @@
                         </div>
                         <div style="margin-left: 15%;"> <i class="notika-icon notika-plus-symbol"> </i> </div>
                     </div>
-                </div>
+                </div> -->
     
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div id="btnsasisasi" data-toggle="" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
@@ -1652,7 +1652,7 @@
         echo '<div class="sale-statistic-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
                         <div class="curved-inner-pro">
                             <div class="curved-ctn">
@@ -1663,6 +1663,55 @@
                         <div id="curved-line-chart" class="flot-chart-sts flot-chart"></div>
                     </div>
                 </div>
+
+                <!-- ESTA ES LA NUEVA LISTA QUE SE VA ESTAR USANDO -->
+                
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div id="btnaddst" data-toggle="modal" data-target="#modaladdsta" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class=""> <a href="#tab1" data-toggle="tab">Agregar Estaciones</a> </span></h2>
+                            <p></p>
+                        </div>
+                        <div style="margin-left: 15%;"> <i class="notika-icon notika-plus-symbol"> </i> </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div id="btnstasasi" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="">Actualizar Estaciones</span></h2>
+                            <p></p>
+                        </div>
+                        <div style="margin-left: 15%;"> <i class="notika-icon notika-plus-symbol"> </i> </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div id="btnstasasi" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="">Agregar Usarios a Estaciones</span></h2>
+                            <p></p>
+                        </div>
+                        <div style="margin-left: 15%;"> <i class="notika-icon notika-plus-symbol"> </i> </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div id="btnstasasi" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="">Bloquear a Estaciones</span></h2>
+                            <p></p>
+                        </div>
+                        <div style="margin-left: 15%;"> <i class="notika-icon notika-plus-symbol"> </i> </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div id="btnstasasi" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="">Implementación</span></h2>
+                            <p></p>
+                        </div>
+                        <div style="margin-left: 15%;"> <i class="notika-icon notika-plus-symbol"> </i> </div>
+                    </div>
+                </div>
+                
                 <!-- <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
                     <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
                         <div class="past-day-statis">
