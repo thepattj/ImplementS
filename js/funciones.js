@@ -30,7 +30,7 @@ $(document).ready(function(){
 					if(a[0] == ""){
 					alert("Error en datos favor de validar");
 					}if(a[0] == "Admin"){
-						//alert("Entra a Admin");
+						alert("Entra a Admin, respuesta:"+a[0]);
 						window.location.href = "inicio.php?ty="+a[0]+"&x=";
 					}if(a[0] == "sasisopa"){
 						//alert("Entra a SASISOPA");
