@@ -278,8 +278,8 @@ if ($opcion == "fecha") {
 		}
 	}
 	//son 20 dias depues de la fecha, con 7 dias de accion
-	$fecha2 = date("Y-m-d", strtotime($divpol."+ 20 days"));
-	$fecha3 = date("Y-m-d", strtotime($fecha2."+ 7 days"));
+	$fecha2 = date("Y-m-d", strtotime($divpol."+ 15 days"));
+	/*$fecha3 = date("Y-m-d", strtotime($fecha2."+ 10 days"));*/
 	
 	/*$divAR = son 20 dias despues de la fecha de POL o al finalizar sus 7 dias de pol
 	$meta4 = son las fechas que juan coloco
@@ -291,7 +291,7 @@ if ($opcion == "fecha") {
 	$simulacros13
 	$cal14 = puras inspecciones*/
 	//$fechapol = [$divpol, $fecha2, $fecha3];
-	echo $divpol.",Politica,".$fecha2.",".$fecha3;
+	echo $divpol.",Politica,".$fecha2;
 	//echo "esta es la fecha: ".$divpol." ESTA ES LA FECHA 2: ".$fecha2;
 }
 

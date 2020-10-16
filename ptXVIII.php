@@ -182,7 +182,7 @@
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Actividades de implementación </h2>
-                                <p>Vizaulización de la carga de trabajo según los puntos actividados</p>
+                                <p>Vizaulización de la carga de trabajo según los puntos activados.</p>
                             </div>  
 
                             <div class="row">
@@ -224,10 +224,10 @@
                 data: ganttData,
                 slideWidth: 900,
                 behavior: {
-                    onClick: function (data) { 
+                    /*onClick: function (data) { 
                         var msg = "You clicked on an CLIC!: { start: " + data.start.toString("M/d/yyyy") + ", end: " + data.end.toString("M/d/yyyy") + " }";
                         $("#eventMessage").text(msg);
-                    },
+                    },*/
                     onResize: function (data) { 
                         var msg = "You resized an ALARGADO: { start: " + data.start.toString("M/d/yyyy") + ", end: " + data.end.toString("M/d/yyyy") + " }";
                         $("#eventMessage").text(msg);

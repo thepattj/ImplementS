@@ -230,6 +230,7 @@ $.extend(Date.prototype, {
     
 })(jQuery);
 
+//AQUI EMPIEZA LOS DATOS PARA EL CALENDARIO Y  LOS SELECT!
 z = localStorage.getItem("PL");
 
 $.ajax({
@@ -245,7 +246,8 @@ $.ajax({
         
 datosF = localStorage.getItem("datoF");
 //2020-08-24,Politica,2020-09-13,2020-09-20
-//alert(datosF);
+//IMPLEMENTA
+alert(datosF);
 
 
 var data = [],
