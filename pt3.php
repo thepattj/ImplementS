@@ -2454,9 +2454,9 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Reporte Diario (Volúmenes)</td>
-                                                <?php if($datos4[0] == 1){ ?>
+                                                <?php if($datos4[0] == "Si"){ ?>
                                                     <td value="1" id="rDiariov" class="active">Si</td>
-                                                <?php } if($datos4[0] == 0) { ?>
+                                                <?php } if($datos4[0] == "No") { ?>
                                                     <td value="0" id="rDiariov" class="success">No</td>
                                                 <?php } if($datos4[0] == "-") { ?>
                                                     <td value="" id="rDiariov"> - </td>

@@ -59,13 +59,13 @@ if($opcion=="addSt"){
 		$sqlcompleto = "INSERT INTO completocesh (idCESH, idUsuario) VALUES ('".$cre."',".$idU.")";
 		if(mysqli_query($con, $sqlcompleto)){
 			//echo "Inserción Completa. DE: ".$sqlcompleto;
-			echo "Inserción Completa."
+			echo "Inserción Completa.";
 		}else{
 			echo "Error: ".mysqli_error($con);
 		}
-	}else{ echo $succs;}
-}if($opcion == "insUser"){
-	/*inserción de usuario*/
+	}else{ echo $succs; }
+/*}if($opcion == "insUser"){
+	/*inserción de usuario
 	$userG = $_POST[];
 	$passG = $_POST[];
 	$razonSocs = $_POST[];
@@ -95,7 +95,7 @@ if($opcion=="addSt"){
 
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('PROFECO',1,'".$cre."',".$uno.",".$puno.",'".$euno."','".$suno."'), ('PROFECO',2,'".$cre."',".$dos.",".$pdos.",'".$edos."','".$sdos."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('PROFECO',1,'".$cre."','".$uno."',".$puno.",'".$euno."','".$suno."'), ('PROFECO',2,'".$cre."','".$dos."',".$pdos.",'".$edos."','".$sdos."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
@@ -113,7 +113,7 @@ if($opcion=="addSt"){
 	$dosP = $_POST['dospcp'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('Protección Civil',1,'".$cre."',".$uno.",".$unoP.",'".$unoE."','".$unoS."'), ('Protección Civil',2,'".$cre."',".$dos.",".$dosP.",'".$dosE."','".$dosS."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('Protección Civil',1,'".$cre."','".$uno."',".$unoP.",'".$unoE."','".$unoS."'), ('Protección Civil',2,'".$cre."','".$dos."',".$dosP.",'".$dosE."','".$dosS."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Complete.";
 	}else{
@@ -161,13 +161,14 @@ if($opcion=="addSt"){
 	$ecoa = $_POST['ecoa'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('ASEA',1,'".$cre."',".$n005.",".$pn005.",'".$en005."','".$sn005."'), ('ASEA',2,'".$cre."',".$mia.",".$pmia.",'".$emia."','".$smia."'), ('ASEA',3,'".$cre."',".$ip.",".$pip.",'".$eip."','".$sip."'), ('ASEA',4,'".$cre."',".$lf.",".$plf.",'".$elf."','".$slf."'), ('ASEA',5,'".$cre."',".$grp.",".$pgrp.",'".$egrp."','".$sgrp."'), ('ASEA',6,'".$cre."',".$coa.",".$pcoa.",'".$ecoa."','".$scoa."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('ASEA',1,'".$cre."','".$n005."',".$pn005.",'".$en005."','".$sn005."'), ('ASEA',2,'".$cre."','".$mia."',".$pmia.",'".$emia."','".$smia."'), ('ASEA',3,'".$cre."','".$ip."',".$pip.",'".$eip."','".$sip."'), ('ASEA',4,'".$cre."','".$lf."',".$plf.",'".$elf."','".$slf."'), ('ASEA',5,'".$cre."','".$grp."',".$pgrp.",'".$egrp."','".$sgrp."'), ('ASEA',6,'".$cre."','".$coa."',".$pcoa.",'".$ecoa."','".$scoa."')";
+	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
 		echo "Error: ".mysqli_error($con);
 	}
-	//echo $sqlcompleto;
+	
 }/*DATOS DE REQUISITOS DE CRE*/ if($opcion == "add3c"){
 	$rdv = $_POST['rdv'];
 	$srdv = $_POST['srdv'];
@@ -219,13 +220,13 @@ if($opcion=="addSt"){
 	$psup = $_POST['psup'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('CRE',1,'".$cre."',".$rdv.",".$prdv.",'".$erdv."','".$srdv."'), ('CRE',2,'".$cre."',".$rdp.",".$prdp.",'".$erdp."','".$srdp."'), ('CRE',3,'".$cre."',".$sta.",".$psta.",'".$esta."','".$ssta."'), ('CRE',4,'".$cre."',".$cpet.",".$pcpet.",'".$ecpet."','".$scpet."'), ('CRE',5,'".$cre."',".$dcpet.",".$pdcpet.",'".$edcpet."','".$sdcpet."'), ('CRE',6,'".$cre."',".$sup.",".$psup.",'".$esup."','".$ssup."'), ('CRE',7,'".$cre."',".$panual.",".$ppanual.",'".$epanual."','".$spanual."'), ('CRE',8,'".$cre."',".$pseg.",".$ppseg.",'".$epseg."','".$spseg."'), ('CRE',9,'".$cre."',".$repq.",".$prepq.",'".$erepq."','".$srepq."'), ('CRE',10,'".$cre."',".$proc.",".$pproc.",'".$eproc."','".$sproc."'), ('CRE',11,'".$cre."',".$reme.",".$preme.",'".$ereme."','".$sreme."'), ('CRE',12,'".$cre."',".$anuncio.",".$panunci.",'".$eanuncio."','".$sanuncio."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('CRE',1,'".$cre."','".$rdv."',".$prdv.",'".$erdv."','".$srdv."'), ('CRE',2,'".$cre."','".$rdp."',".$prdp.",'".$erdp."','".$srdp."'), ('CRE',3,'".$cre."','".$sta."',".$psta.",'".$esta."','".$ssta."'), ('CRE',4,'".$cre."','".$cpet."',".$pcpet.",'".$ecpet."','".$scpet."'), ('CRE',5,'".$cre."','".$dcpet."',".$pdcpet.",'".$edcpet."','".$sdcpet."'), ('CRE',6,'".$cre."','".$sup."',".$psup.",'".$esup."','".$ssup."'), ('CRE',7,'".$cre."','".$panual."',".$ppanual.",'".$epanual."','".$spanual."'), ('CRE',8,'".$cre."','".$pseg."',".$ppseg.",'".$epseg."','".$spseg."'), ('CRE',9,'".$cre."','".$repq."',".$prepq.",'".$erepq."','".$srepq."'), ('CRE',10,'".$cre."','".$proc."',".$pproc.",'".$eproc."','".$sproc."'), ('CRE',11,'".$cre."','".$reme."',".$preme.",'".$ereme."','".$sreme."'), ('CRE',12,'".$cre."','".$anuncio."',".$panunci.",'".$eanuncio."','".$sanuncio."')";
+	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
 		echo "Error: ".mysqli_error($con);
 	}
-	//echo $sqlcompleto;	
 }/*DATOS DE REQUISITOS DE STPS*/if($opcion == "add3s"){
 	$cump001s = $_POST['unos'];
 	$scump001s = $_POST['unosS'];
@@ -289,13 +290,13 @@ if($opcion=="addSt"){
 	$pcump033s = $_POST['quinsP'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('STPS',1,'".$cre."',".$cump001s.",".$pcump001s.",'".$ecump001s."','".$scump001s."'), ('STPS',2,'".$cre."',".$cump002s.",".$pcump002s.",'".$ecump002s."','".$scump002s."'), ('STPS',3,'".$cre."',".$cump009s.",".$pcump009s.",'".$ecump009s."','".$scump009s."'), ('STPS',4,'".$cre."',".$cump010s.",".$pcump010s.",'".$ecump010s."','".$scump010s."'), ('STPS',5,'".$cre."',".$cump011s.",".$pcump011s.",'".$ecump011s."','".$scump011s."'), ('STPS',6,'".$cre."',".$cump017s.",".$pcump017s.",'".$ecump017s."','".$scump017s."'), ('STPS',7,'".$cre."',".$cump018s.",".$pcump018s.",'".$ecump018s."','".$scump018s."'), ('STPS',8,'".$cre."',".$cump019s.",".$pcump019s.",'".$ecump019s."','".$scump019s."'), ('STPS',9,'".$cre."',".$cump022s.",".$pcump022s.",'".$ecump022s."','".$scump022s."'), ('STPS',10,'".$cre."',".$cump024s.",".$pcump024s.",'".$ecump024s."','".$scump024s."'), ('STPS',11,'".$cre."',".$cump025s.",".$pcump025s.",'".$ecump025s."','".$scump025s."'), ('STPS',12,'".$cre."',".$cump026s.",".$pcump026s.",'".$ecump026s."','".$scump026s."'), ('STPS',13,'".$cre."',".$cump027s.",".$pcump027s.",'".$ecump027s."','".$scump027s."'), ('STPS',14,'".$cre."',".$cump029s.",".$pcump029s.",'".$ecump029s."','".$scump029s."'), ('STPS',15,'".$cre."',".$cump033s.",".$pcump033s.",'".$ecump033s."','".$scump033s."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('STPS',1,'".$cre."','".$cump001s."',".$pcump001s.",'".$ecump001s."','".$scump001s."'), ('STPS',2,'".$cre."','".$cump002s."',".$pcump002s.",'".$ecump002s."','".$scump002s."'), ('STPS',3,'".$cre."','".$cump009s."',".$pcump009s.",'".$ecump009s."','".$scump009s."'), ('STPS',4,'".$cre."','".$cump010s."',".$pcump010s.",'".$ecump010s."','".$scump010s."'), ('STPS',5,'".$cre."','".$cump011s."',".$pcump011s.",'".$ecump011s."','".$scump011s."'), ('STPS',6,'".$cre."','".$cump017s."',".$pcump017s.",'".$ecump017s."','".$scump017s."'), ('STPS',7,'".$cre."','".$cump018s."',".$pcump018s.",'".$ecump018s."','".$scump018s."'), ('STPS',8,'".$cre."','".$cump019s."',".$pcump019s.",'".$ecump019s."','".$scump019s."'), ('STPS',9,'".$cre."','".$cump022s."',".$pcump022s.",'".$ecump022s."','".$scump022s."'), ('STPS',10,'".$cre."','".$cump024s."',".$pcump024s.",'".$ecump024s."','".$scump024s."'), ('STPS',11,'".$cre."','".$cump025s."',".$pcump025s.",'".$ecump025s."','".$scump025s."'), ('STPS',12,'".$cre."','".$cump026s."',".$pcump026s.",'".$ecump026s."','".$scump026s."'), ('STPS',13,'".$cre."','".$cump027s."',".$pcump027s.",'".$ecump027s."','".$scump027s."'), ('STPS',14,'".$cre."','".$cump029s."',".$pcump029s.",'".$ecump029s."','".$scump029s."'), ('STPS',15,'".$cre."','".$cump033s."',".$pcump033s.",'".$ecump033s."','".$scump033s."')";
+	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
 		echo "Error: ".mysqli_error($con);
 	}
-	//echo $sqlcompleto;	
 }/*DATOS DE REQUISITOS DOCUMENTALES*/if($opcion == "add3d"){
 	
 	$act = $_POST['acta'];
@@ -372,7 +373,7 @@ if($opcion=="addSt"){
 	$einv = $_POST['evicIn'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('Documentación',1,'".$cre."',".$act.",".$pact.",'".$eact."','".$sact."'), ('Documentación',2,'".$cre."',".$pNot.",".$ppNot.",'".$epNot."','".$spNot."'), ('Documentación',3,'".$cre."',".$aShcp.",".$paShcp.",'".$eaShcp."','".$saShcp."'), ('Documentación',4,'".$cre."',".$rfcEst.",".$prfcE.",'".$erfcE."','".$srfcE."'), ('Documentación',5,'".$cre."',".$pCre.",".$ppCre.",'".$epCre."','".$spCre."'), ('Documentación',6,'".$cre."',".$licf.",".$plicf.",'".$elicf."','".$slicf."'), ('Documentación',7,'".$cre."',".$dicS.",".$pdicS.",'".$edicS."','".$sdicS."'), ('Documentación',8,'".$cre."',".$imss.",".$pimss.",'".$eimss."','".$simss."'), ('Documentación',9,'".$cre."',".$Plano.",".$pPlano.",'".$ePlano."','".$sPlano."'), ('Documentación',10,'".$cre."',".$siem.",".$psiem.",'".$esiem."','".$ssiem."'), ('Documentación',11,'".$cre."',".$elct.",".$plect.",'".$eelect."','".$slect."'), ('Documentación',12,'".$cre."',".$tierra.",".$ptierra.",'".$etierra."','".$stierra."'), ('Documentación',13,'".$cre."',".$caldis.",".$pcaldis.",'".$ecaldis."','".$scaldis."'), ('Documentación',14,'".$cre."',".$herme.",".$pherme.",'".$eherme."','".$sherme."'), ('Documentación',15,'".$cre."',".$hermeT.",".$phermeT.",'".$ehermeT."','".$shermeT."'), ('Documentación',16,'".$cre."',".$tanque.",".$ptanque.",'".$etanque."','".$stanque."'), ('Documentación',17,'".$cre."',".$fdis.",".$pfdis.",'".$efdis."','".$sfdis."'), ('Documentación',18,'".$cre."',".$inv.",".$pinv.",'".$einv."','".$sinv."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('Documentación',1,'".$cre."','".$act."',".$pact.",'".$eact."','".$sact."'), ('Documentación',2,'".$cre."','".$pNot."',".$ppNot.",'".$epNot."','".$spNot."'), ('Documentación',3,'".$cre."','".$aShcp."',".$paShcp.",'".$eaShcp."','".$saShcp."'), ('Documentación',4,'".$cre."','".$rfcEst."',".$prfcE.",'".$erfcE."','".$srfcE."'), ('Documentación',5,'".$cre."','".$pCre."',".$ppCre.",'".$epCre."','".$spCre."'), ('Documentación',6,'".$cre."','".$licf."',".$plicf.",'".$elicf."','".$slicf."'), ('Documentación',7,'".$cre."','".$dicS."',".$pdicS.",'".$edicS."','".$sdicS."'), ('Documentación',8,'".$cre."','".$imss."',".$pimss.",'".$eimss."','".$simss."'), ('Documentación',9,'".$cre."','".$Plano."',".$pPlano.",'".$ePlano."','".$sPlano."'), ('Documentación',10,'".$cre."','".$siem."',".$psiem.",'".$esiem."','".$ssiem."'), ('Documentación',11,'".$cre."','".$elct."',".$plect.",'".$eelect."','".$slect."'), ('Documentación',12,'".$cre."','".$tierra."',".$ptierra.",'".$etierra."','".$stierra."'), ('Documentación',13,'".$cre."','".$caldis."',".$pcaldis.",'".$ecaldis."','".$scaldis."'), ('Documentación',14,'".$cre."','".$herme."',".$pherme.",'".$eherme."','".$sherme."'), ('Documentación',15,'".$cre."','".$hermeT."',".$phermeT.",'".$ehermeT."','".$shermeT."'), ('Documentación',16,'".$cre."','".$tanque."',".$ptanque.",'".$etanque."','".$stanque."'), ('Documentación',17,'".$cre."','".$fdis."',".$pfdis.",'".$efdis."','".$sfdis."'), ('Documentación',18,'".$cre."','".$inv."',".$pinv.",'".$einv."','".$sinv."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
