@@ -3572,7 +3572,10 @@ textarea.auto-size {
 .login-content, .error-page-area{
     min-height:100vh;
     text-align:center;
-    background-color:#00c292;
+    /*background-color:#00c292;*/
+    background-image: url("images/background_index.png");
+    background-size: cover;
+    background-repeat: no-repeat !important;
 }
 .login-content:before, .error-page-area:before{
     content:'';
@@ -3601,6 +3604,9 @@ textarea.auto-size {
     -webkit-animation-fill-mode:both;
     animation-fill-mode:both;
     z-index:10;
+
+        margin-left: 55%;
+    margin-top: 20%;
 }
 .nk-block:not(.lc-block-alt) .nk-form{
     padding:40px;
@@ -3611,9 +3617,9 @@ textarea.auto-size {
     right:-25px;
 }
 .nk-form, .error-page-wrap{
-    background:#fff;
+    /*background:#fff;
     box-shadow:0 1px 1px rgba(0,0,0,.1);
-    border-radius:2px;
+    border-radius:2px;*/
 }
 .nk-navigation{
     margin-top:15px;
