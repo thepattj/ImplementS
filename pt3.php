@@ -76,17 +76,28 @@
 
 
     <!-- Start Header Top Area -->
-    <div class="header-top-area">
+    <div class="header-top-area" style="background: transparent; !important">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"><img src="images/Logo-esquina.png"></div>
+        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12" style="background:rgb(27,22,50);">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
+        </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 3 </H1></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><label></label></div>
+
         <div class="container">
             <div class="row">
-                <div class=" col-md-4 col-sm-12 col-xs-12">
+                <!-- <div class=" col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
                         <a href="#"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
+                        <ul class="nav navbar-nav notika-top-nav"> -->
                             <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
@@ -164,7 +175,7 @@
                                     </div>
                                 </div>
                             </li> -->
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
+                           <!-- <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span> <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> </a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -230,7 +241,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li>-->
                             <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -350,9 +361,9 @@
                                     </div>
                                 </div>
                             </li> -->
-                        </ul>
+                      <!--   </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -462,146 +473,7 @@
 </div> -->
     <!-- Mobile Menu end -->
     <!-- Main Menu area start-->
-    <div class="main-menu-area mg-tb-40">
-        <div class="container">
-            <div class="row">
-<!--                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
-        </li>
-        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
-        </li>
-        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
-        </li>
-        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
-        </li>
-        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
-        </li>
-        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
-        </li>
-        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
-        </li>
-        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
-        </li>
-    </ul>
-    <div class="tab-content custom-menu-content">
-        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="index.html">Dashboard One</a>
-                </li>
-                <li><a href="index-2.html">Dashboard Two</a>
-                </li>
-                <li><a href="index-3.html">Dashboard Three</a>
-                </li>
-                <li><a href="index-4.html">Dashboard Four</a>
-                </li>
-                <li><a href="analytics.html">Analytics</a>
-                </li>
-                <li><a href="widgets.html">Widgets</a>
-                </li>
-            </ul>
-        </div>
-        <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="inbox.html">Inbox</a>
-                </li>
-                <li><a href="view-email.html">View Email</a>
-                </li>
-                <li><a href="compose-email.html">Compose Email</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="animations.html">Animations</a>
-                </li>
-                <li><a href="google-map.html">Google Map</a>
-                </li>
-                <li><a href="data-map.html">Data Maps</a>
-                </li>
-                <li><a href="code-editor.html">Code Editor</a>
-                </li>
-                <li><a href="image-cropper.html">Images Cropper</a>
-                </li>
-                <li><a href="wizard.html">Wizard</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="flot-charts.html">Flot Charts</a>
-                </li>
-                <li><a href="bar-charts.html">Bar Charts</a>
-                </li>
-                <li><a href="line-charts.html">Line Charts</a>
-                </li>
-                <li><a href="area-charts.html">Area Charts</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="normal-table.html">Normal Table</a>
-                </li>
-                <li><a href="data-table.html">Data Table</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="form-elements.html">Form Elements</a>
-                </li>
-                <li><a href="form-components.html">Form Components</a>
-                </li>
-                <li><a href="form-examples.html">Form Examples</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="notification.html">Notifications</a>
-                </li>
-                <li><a href="alert.html">Alerts</a>
-                </li>
-                <li><a href="modals.html">Modals</a>
-                </li>
-                <li><a href="buttons.html">Buttons</a>
-                </li>
-                <li><a href="tabs.html">Tabs</a>
-                </li>
-                <li><a href="accordion.html">Accordion</a>
-                </li>
-                <li><a href="dialog.html">Dialogs</a>
-                </li>
-                <li><a href="popovers.html">Popovers</a>
-                </li>
-                <li><a href="tooltips.html">Tooltips</a>
-                </li>
-                <li><a href="dropdown.html">Dropdowns</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="contact.html">Contact</a>
-                </li>
-                <li><a href="invoice.html">Invoice</a>
-                </li>
-                <li><a href="typography.html">Typography</a>
-                </li>
-                <li><a href="color.html">Color</a>
-                </li>
-                <li><a href="login-register.html">Login Register</a>
-                </li>
-                <li><a href="404.html">404 Page</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div> -->
-            </div>
-        </div>
-    </div>
+    
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     <div class="notika-status-area">
@@ -617,56 +489,43 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Requisitos Legales</h2>
-                                        <p><span class="bread-ntd" id="datacre">No. E. S.</span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd" id="datacre">No. E. S.</span></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
-                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+
                             </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                                <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                
+                                
+
+                                <div class="col-lg-2 col-md-1 col-sm-1" style="background: rgb(254,174,0); color: rgb(27,22,50);">Documentación Legal</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">ASEA</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">CRE</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">PROFECO</div>
+                                <div class="col-lg-2 col-md-1 col-sm-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">Protección Cívil</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">Sec. Eco.</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">STPS</div>
+                                
+                                
+                            </div>                         
                         </div>
                     </div>
-
-                                       
-                    <div class="wizard-area">
+                                                         
+                    <!-- <div class="wizard-area">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="wizard-wrap-int">
-                                        <!-- <div class="wizard-hd">
-                                            <h2></h2>
-                                            <p></p>
-                                        </div> -->
-                                        <div id="rootwizard">
-                                            <div class="navbar">
-                                                <div class="navbar-inner">
-                                                    <div class="container-pro wizard-cts-st">
-                                                        <ul>
-                                                            <li id="btnlegal"><a href="#tab1" data-toggle="tab">Documentación Legal</a></li>
-                                                            <!-- <li id="btnlegis"><a href="#tab2" data-toggle="tab">Legislación Aplicable</a></li> -->
-                                                            <li id="btnasea"><a href="#tab3" data-toggle="tab">ASEA</a></li>
-                                                            <li id="btncre"><a href="#tab4" data-toggle="tab">CRE</a></li>
-                                                            <li id="btnprofeco"><a href="#tab5" data-toggle="tab">PROFECO</a></li>
-                                                            <li id="btnpc"><a href="#tab6" data-toggle="tab">Protección Civil</a></li>
-                                                            <li id="btnse"><a href="#tab8" data-toggle="tab">SE</a>
-                                                            </li>
-                                                            <li id="btnstps"><a href="#tab7" data-toggle="tab">STPS</a>
-                                                            </li>
-                                                            <!-- <li id="btnsemt"><a href="#tab8" data-toggle="tab">SEMARNAT</a>
-                                                            </li> -->
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-content"> </div>
-                                        </div>
+                                    
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- DOCUMENTACION LEGAL -->
                    <?php
@@ -692,16 +551,16 @@
                     ?>
                     <!-- DOCUMENTACION LEGAL -->
                     
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:block;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:block; border-color: rgb(0,0,0);">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Requisitos documentales de Estación de Servicio</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
+                                <p style="color: rgb(198,198,198);">Completa el formulario con la información que se te pide para tu control</p>
                             </div>
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Documentos</th>
@@ -778,7 +637,7 @@
                                                 </td>
                                             </tr>
                                             <!-- VALORES QUE TIENEN PODER NOTARIAL -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
                                                 <td>Poder Notarial</td>
                                                 <?php if($datos6[1] == "Si"){ ?>
@@ -910,7 +769,7 @@
                                                 </td>                                                
                                             </tr>
                                             <!-- VALORES QUE TIENEN RFC ORIGINAL -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>4</td>
                                                 <td>R.F.C. Original</td>
                                                 <?php if($datos6[3] === "Si"){ ?>
@@ -1044,7 +903,7 @@
                                                 </td>
                                             </tr>
                                              <!-- VALORES DE LICENCIA DE MUNICIPIO -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>6</td>
                                                 <td>Licencia de Funcionamiento (Municipal)</td>
                                                 <?php if($datos6[5] == "Si"){ ?>
@@ -1176,7 +1035,7 @@
                                                 </td>
                                             </tr>
                                             <!-- VALORES DE TARJETA IMSS -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>8</td>
                                                 <td>Tarjeta oficial de IMSS</td>
                                                 <?php if($datos6[7] == "Si"){ ?>
@@ -1308,7 +1167,7 @@
                                                 </td>
                                             </tr>
                                             <!-- VALORES DE SIEM -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>10</td>
                                                 <td><b>SIEM</b> (Sistema de Información Empresarial Mexicano)</td>
                                                 <?php if($datos6[9] == "Si"){ ?>
@@ -1440,7 +1299,7 @@
                                                 </td>
                                             </tr>
                                             <!-- VALOR DE TIERRAS FISICAS -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>12</td>
                                                 <td>Dictámenes Tierras Fisicas y pararrayos</td>
                                                 <?php if($datos6[11] == "Si"){ ?>
@@ -1572,7 +1431,7 @@
                                                 </td>
                                             </tr>
                                             <!-- VALORES DE HERMETICIDAD -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>14</td>
                                                 <td>Pruebas de Hermeticidad</td>
                                                 <?php if($datos6[13] == "Si"){ ?>
@@ -1704,7 +1563,7 @@
                                                 </td>
                                             </tr>
                                              <!-- DATOS DE TANQUE DE ALMACENAMIENTO -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>16</td>
                                                 <td>Ficha Técnica y manual de tanque de almacenamiento</td>
                                                 <?php if($datos6[15] === "Si"){ ?>
@@ -1836,7 +1695,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATOS DE CONTROL DE INVENTARIOS -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>18</td>
                                                 <td>Ficha técnica y manual de Control de inventarios</td>
                                                 <?php if($datos6[17] === "Si"){ ?>
@@ -1906,7 +1765,7 @@
                                 </div>
                                 <?php if($datos6[71] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDocEst" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDocEst" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ //echo "EL VALOR 71 ES: ".$datos6[71];?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
@@ -1948,7 +1807,7 @@
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Cumplimiento ASEA</th>
@@ -2026,7 +1885,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATOS DE MIA -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
                                                 <td>Manifiesto Impacto Ambiental (<b>MIA</b>)</td>
                                                 <?php if($datos1[1] == "Si"){ ?>
@@ -2190,7 +2049,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATOS DE LF -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>4</td>
                                                 <td>Licencia Ambiental Única (<b>LAU</b>) / Licencia de Funcionamiento(<b>LF</b>)</td>
                                                 <?php if($datos1[3] == "Si"){ ?>
@@ -2323,7 +2182,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATOS DE COA -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>6</td>
                                                 <td>Cedula Operación Anual(<b>COA</b>)</td>
                                                 <?php if($datos1[5] == "Si"){ ?>
@@ -2393,7 +2252,7 @@
                                 </div>
                                 <?php if($datos1[23] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDocASEA" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDocASEA" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
@@ -2438,7 +2297,7 @@
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Cumplimiento CRE</th>
@@ -2517,7 +2376,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATOS DE REPORTE DE PRECIOS -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
                                                 <td>Reporte Diario (Precios)</td>
                                                 <?php if($datos4[1] == "Si"){ ?>
@@ -2650,7 +2509,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATO DE NOM 016 -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>4</td>
                                                 <td>Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
                                                 <?php if($datos4[3] == "Si"){ ?>
@@ -2782,7 +2641,7 @@
                                                 </td>
                                             </tr>
                                             <!-- PAGO DE SUPERVISION -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>6</td>
                                                 <td>Reporte de Pagos Supervisión de permisos<br>(Derechos, Productos y Aprovechamiento)</td>
                                                 <?php if($datos4[5] == "Si"){ ?>
@@ -2914,7 +2773,7 @@
                                                 </td>
                                             </tr>
                                             <!-- POLIZA -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>8</td>
                                                 <td>Poliza de seguro (Seguro)</td>
                                                 <?php if($datos4[7] == "Si"){ ?>
@@ -3046,7 +2905,7 @@
                                                 </td>
                                             </tr>
                                             <!-- FACTURAS DE PROCEDENCIA -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>10</td>
                                                 <td>Procedencia del producto (facturas)</td>
                                                 <?php if($datos4[9] == "Si"){ ?>
@@ -3178,7 +3037,7 @@
                                                 </td>
                                             </tr>
                                             <!-- ANUNCIO PL -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>12</td>
                                                 <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/20XX)</td>
                                                 <?php if($datos4[11] == "Si"){ ?>
@@ -3248,7 +3107,7 @@
                                 </div>
                                 <?php if($datos4[47] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDoCre" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDoCre" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
@@ -3292,7 +3151,7 @@
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Cumplimiento PROFECO</th>
@@ -3368,7 +3227,7 @@
                                                 </td>
                                             </tr>
                                             <!-- CONTROL A DISTANCIA -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
                                                 <td>Reporte de control a distancia </td>
                                                 <?php if($datos2[1] == "Si"){ ?>
@@ -3435,7 +3294,7 @@
                                 </div>
                                 <?php if($datos2[7] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDocp" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDocp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
@@ -3480,7 +3339,7 @@
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Cumplimiento Protección Civil</th>
@@ -3557,7 +3416,7 @@
                                                 </td>
                                             </tr>
                                             <!-- DATOS DE AUTO DECLARATORIA -->
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
                                                 <td>Auto declaratoria</td>
                                                 <?php if($datos3[1] == "Si"){ ?>
@@ -3627,7 +3486,7 @@
                                 </div>
                                 <?php if($datos3[7] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDocPc" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDocPc" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
@@ -3669,7 +3528,7 @@
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Cumplimiento Secretaría de Economía</th>
@@ -3750,7 +3609,7 @@
                                 </div>
                                 <?php if($datos7[3] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDocSe" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDocSe" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
@@ -3793,7 +3652,7 @@
                             <div class="row">
                                 <div class="bsc-tbl-cls">
                                     <table class="table table-cl">
-                                        <thead>
+                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Cumplimiento STPS</th>
@@ -3868,7 +3727,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
                                                 <td>Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo<br><b>NOM-002-STPS-2010.</b></td>
                                                 <?php if($datos5[1] == "Si"){ ?>
@@ -3998,7 +3857,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>4</td>
                                                 <td>Evaluación de sustancias química<br><b>NOM-010-STPS-2014.</b></td>
                                                 <?php if($datos5[3] == "Si"){ ?>
@@ -4126,7 +3985,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>6</td>
                                                 <td>Equipo de protección personal-Selección, uso y manejo en los centros de trabajo<br><b>NOM-017-STPS-2008.</b></td>
                                                 <?php if($datos5[5] == "Si"){ ?>
@@ -4255,7 +4114,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>8</td>
                                                 <td>Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene<br><b>NOM-019-STPS-2011.</b></td>
                                                 <?php if($datos5[7] == "Si"){ ?>
@@ -4386,7 +4245,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>10</td>
                                                 <td>Condiciones de seguridad e higiene en los centros de trabajo<br><b>NOM-024-STPS-2015</b></td>
                                                 <?php if($datos5[9] == "Si"){ ?>
@@ -4517,7 +4376,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>12</td>
                                                 <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
                                                 <?php if($datos5[11] == "Si"){ ?>
@@ -4647,7 +4506,7 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>14</td>
                                                 <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
                                                 <?php if($datos5[13] == "Si"){ ?>
@@ -4782,7 +4641,7 @@
                                 </div>
                                 <?php if($datos5[59] == "-"){?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="guardarDocstp" class="btn btn-success notika-btn-success">Guardar</button>                   
+                                    <button id="guardarDocstp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             

@@ -1,17 +1,10 @@
-<?php
-    include 'php/conex.php';
-    $id = $_GET["x"];
-    $con = Conectarse();
-    $value = "";
-?>
-
 <!doctype html>
 <html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Competencia, capacitación y entrenamiento | ImplementS</title>
+    <title>Revisión de Resultados | ImplementS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -87,7 +80,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body id="nombreestacion">
+<body id="nombreestacioncompleto">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -103,15 +96,398 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
         </div>
               <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 6 </H1></div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 17 </H1></div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><label></label></div>
 
-    <!-- Mobile Menu end -->
-    <!-- Main Menu area start-->
-    
         <div class="container">
             <div class="row">
-<!--            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- <div class=" col-md-4 col-sm-12 col-xs-12">
+                    <div class="logo-area">
+                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="header-top-menu">
+                        <ul class="nav navbar-nav notika-top-nav"> -->
+                            <!-- <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                    <div class="search-input">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
+                                <div role="menu" class="dropdown-menu message-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Messages</h2>
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li> -->
+                           <!-- <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span> <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> </a>
+                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Notification</h2>
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>-->
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                                <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Tasks</h2>
+                                    </div>
+                                    <div class="hd-message-info hd-task-info">
+                                        <div class="skill">
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>HTML5 Validation Report</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Google Chrome Extension</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Social Internet Projects</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="75%" style="width: 75%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>75%</span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Bootstrap Admin</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 65%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>65%</span> </div>
+                                            </div>
+                                            <div class="progress progress-bt">
+                                                <div class="lead-content">
+                                                    <p>Youtube App</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="55%" style="width: 55%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>55%</span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li> -->
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                                <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Chat</h2>
+                                    </div>
+                                    <div class="search-people">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" placeholder="Search People" />
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Last seen 3 hours ago</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Last seen 2 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li> -->
+                      <!--   </ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top Area -->
+    <!-- Mobile Menu start -->
+    <!--     <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul class="mobile-menu-nav">
+                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                    <ul class="collapse dropdown-header-top">
+                                        <li><a href="index.html">Dashboard One</a></li>
+                                        <li><a href="index-2.html">Dashboard Two</a></li>
+                                        <li><a href="index-3.html">Dashboard Three</a></li>
+                                        <li><a href="index-4.html">Dashboard Four</a></li>
+                                        <li><a href="analytics.html">Analytics</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                    <ul id="demoevent" class="collapse dropdown-header-top">
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <li><a href="view-email.html">View Email</a></li>
+                                        <li><a href="compose-email.html">Compose Email</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
+                                    <ul id="democrou" class="collapse dropdown-header-top">
+                                        <li><a href="animations.html">Animations</a></li>
+                                        <li><a href="google-map.html">Google Map</a></li>
+                                        <li><a href="data-map.html">Data Maps</a></li>
+                                        <li><a href="code-editor.html">Code Editor</a></li>
+                                        <li><a href="image-cropper.html">Images Cropper</a></li>
+                                        <li><a href="wizard.html">Wizard</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                    <ul id="demolibra" class="collapse dropdown-header-top">
+                                        <li><a href="flot-charts.html">Flot Charts</a></li>
+                                        <li><a href="bar-charts.html">Bar Charts</a></li>
+                                        <li><a href="line-charts.html">Line Charts</a></li>
+                                        <li><a href="area-charts.html">Area Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                    <ul id="demodepart" class="collapse dropdown-header-top">
+                                        <li><a href="normal-table.html">Normal Table</a></li>
+                                        <li><a href="data-table.html">Data Table</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
+                                    <ul id="demo" class="collapse dropdown-header-top">
+                                        <li><a href="form-elements.html">Form Elements</a></li>
+                                        <li><a href="form-components.html">Form Components</a></li>
+                                        <li><a href="form-examples.html">Form Examples</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
+                                    <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                        <li><a href="notification.html">Notifications</a>
+                                        </li>
+                                        <li><a href="alert.html">Alerts</a>
+                                        </li>
+                                        <li><a href="modals.html">Modals</a>
+                                        </li>
+                                        <li><a href="buttons.html">Buttons</a>
+                                        </li>
+                                        <li><a href="tabs.html">Tabs</a>
+                                        </li>
+                                        <li><a href="accordion.html">Accordion</a>
+                                        </li>
+                                        <li><a href="dialog.html">Dialogs</a>
+                                        </li>
+                                        <li><a href="popovers.html">Popovers</a>
+                                        </li>
+                                        <li><a href="tooltips.html">Tooltips</a>
+                                        </li>
+                                        <li><a href="dropdown.html">Dropdowns</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
+                                    <ul id="Pagemob" class="collapse dropdown-header-top">
+                                        <li><a href="contact.html">Contact</a>
+                                        </li>
+                                        <li><a href="invoice.html">Invoice</a>
+                                        </li>
+                                        <li><a href="typography.html">Typography</a>
+                                        </li>
+                                        <li><a href="color.html">Color</a>
+                                        </li>
+                                        <li><a href="login-register.html">Login Register</a>
+                                        </li>
+                                        <li><a href="404.html">404 Page</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Mobile Menu end -->
+    <!-- Main Menu area start-->
+    <!-- <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
@@ -244,17 +620,17 @@
                             </ul>
                         </div>
                     </div>
-                </div> -->
+                </div> 
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     <div class="notika-status-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!--<div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -262,143 +638,221 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Competencia, capacitación y entrenamiento</h2>
-                                        <p><span class="bread-ntd"><?php echo $id; ?></span></p>
+                                        <h2>Revisión de Resultados</h2>
+                                        <p><span class="bread-ntd" id="datacre">No. E. S.</span> </p> 
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
-                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <!-- SE VAN AGREGAR ESTO  ESTACION,DIRECCION, REPRESENTANTE TEC. PERIODO, CARGO-->
+                    <!-- ******************* REPORTE auditorías *********************** -->
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-8 col-sm-8 col-xs-8" id="tabrevision" style="border-radius: 35px;">
+                        <div class="form-element-list "style="border-radius: 35px;">
+                            <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-edit"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Revisión de Resultados</h2>
+                                        <p><span class="bread-ntd" id="datacre">No. E. S.</span> </p>
+                                    </div>
+                                </div>
+                            <div class="basic-tb-hd">
+                                <!-- <h2>Revisión de desempeño</h2> -->
+                                <p>En la siguiente tabla veras los estatus de tus avances por punto, al finalizar la tabla encontraras un espacio para que puedas registrar tus conclusiones de la evaluación que le das a tus cumplimientos.</p>
+                            </div>
+                                
+                            <!-- TABLA DE ESTATUS -->
+                            <div class="row" style="boder: black 1px solid">
+                                <div class="" style="overflow: auto; width: 80%; height: 250px; margin-left: 10%;"> <!-- AQUI AGREGUE EL SCROLL -->
+                                    <table class="table table-cl">
+                                        <thead style="background: rgb(198,198,198);">
+                                            <tr>
+                                                <th>Punto</th>
+                                                <th>Concepto</th>
+                                                <th>Completo</th>
+                                                <th>En Tramite</th>
+                                                <th>No disponible</th>
+                                                <th>Observación</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           <!-- VALORES QUE SE TIENEN DE ACTA -->
+                                           <tr>
+                                                <td>1.</td>
+                                                <td>Política</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES QUE TIENEN PODER NOTARIAL -->
+                                            <tr style="background: rgba(198,198,198,.2);">
+                                                <td>2.</td>
+                                                <td>Identificación de peligros y aspectos ambientales, Análisis de riesgo y evaluación de impactos ambientales</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES QUE TIENEN ALTA DE SHCP -->
+                                            <tr>
+                                                <td>3.</td>
+                                                <td>Requisitos Legales</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>                                               
+                                            </tr>
+                                            <!-- VALORES QUE TIENEN RFC ORIGINAL -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>4.</td>
+                                                <td>Objetivos, Metas e indicadores</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE PERMISO DE LA CRE -->
+                                            <tr>
+                                                <td>5.</td>
+                                                <td>Funciones, Responsabilidades y Autoridad</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                             <!-- VALORES DE LICENCIA DE MUNICIPIO -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>6. </td>
+                                                <td>Competencia del personal, capacitación y entrenamiento</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE DICTAMEN DE SUELO -->
+                                            <tr>
+                                                <td>7.</td>
+                                                <td>Comunicación, Participación y Consulta</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE TARJETA IMSS -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>8.</td>
+                                                <td>Control de documentos y registros</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE PLANOS -->
+                                            <tr>
+                                                <td>9.</td>
+                                                <td>Mejores prácticas y estándares</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE SIEM -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>10.</td>
+                                                <td>Control de actividades y procesos</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE DICTAMENES ELECTRICOS -->
+                                            <tr>
+                                                <td>11.</td>
+                                                <td>Integridad mécanica y aseguramiento de la calidad</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALOR DE TIERRAS FISICAS -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>12.</td>
+                                                <td>Seguridad de contratistas</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE CALIBRACION -->
+                                            <tr>
+                                                <td>13.</td>
+                                                <td>Protocolo de respuesta a Emergencias / Preparación y respuesta a Emergencias </td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE HERMETICIDAD -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>14.</td>
+                                                <td>Monitoreo, Verificación y Evaluación</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE HERMITICIDAD A TUBERIAS -->
+                                            <tr>
+                                                <td>15.</td>
+                                                <td>Auditorías</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                             <!-- DATOS DE TANQUE DE ALMACENAMIENTO -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>16.</td>
+                                                <td>Investigación de incidentes y accidentes</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                             <!-- DATOS DE DISPENSARIOS -->
+                                            <tr>
+                                                <td>17.</td>
+                                                <td>Revisión de resultados</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- DATOS DE CONTROL DE INVENTARIOS -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>18.</td>
+                                                <td>Informes de desempeño</td>
+                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
+                                                <td>Si EN TRAMITE</td>
+                                                <td> SI DISPONIBLE</td>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: white;">
-                        <div class="basic-tb-hd">
-                            <h2></h2>
-                            <p style="color: rgb(198,198,198);">Podras agregar cursos que han tomado los empleados para generar reportes de capacitación por cada empleado.</p>
-                        </div>
-                    </div>
-                    <!-- ALTA DE CURSOS -->
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-element-list" style="border: 1px solid black; border-radius: 35px;">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- TITULO -->
-                                    <H4> Cursos </H4>
-                                </div>
+                    <div class="col-lg-1"></div>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- PRIMERELEMENT -->
-                                    
-                                         Nombre de Curso
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- PRIMERELEMENTINPUT -->
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="cursoN">
-                                    </div>
-                                </div>
-                                
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- SEGUNDOELEMENT -->
-                                    
-                                         Nombre de instructor
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- SEGUNDOELEMENTINPUT -->
-                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="instrucN">
-                                    </div>
-                                </div>
-                                
-
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    
-                                         Fecha de inicio
-                                    
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                <div class="input-group date nk-int-st">
-                                                    <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" id="fechCurso" value="03/19/2018">
-                                                </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    
-                                         Certificación/Capacitación/Acreditación
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="doCert" placeholder="Colocar el nombre de la acreditación">
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarCurso" class="btn btn-warning notika-btn-warning">Guardar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-element-list" style="border: 1px solid black; border-radius: 35px;">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <h4> Agregar trabajadores a cursos </h4>
-                                </div>
-                                
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="fm-checkbox">
-                                        <label> Nombre de Curso </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="numCurso">
-                                            <option id="" value="0" style="display: none;">Selecciona un curso</option>
-                                            <?php $qr = "SELECT idCurso as id, nombreCurso as nombre FROM curso WHERE idCESH = '".$id."'";
-                                                    $res = mysqli_query($con,$qr);
-                                                    while($row = $res->fetch_object()){ ?>
-                                             <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>                                          
-                                            <?php } ?>
-                                        </select>
-                                     </div>   
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="fm-checkbox">
-                                        <label> Nombre de trabajador </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="nombreTrabj">
-                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
-                                                $resul = mysqli_query($con,$qri);
-                                                while($row = $resul->fetch_object()){ ?>
-                                            <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>                <?php } ?>
-                                        </select>
-                                    </div>   
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarCT" class="btn btn-warning notika-btn-warning">Cargar Trabajador</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
@@ -920,6 +1374,10 @@
     <!--  Chat JS
         ============================================ -->
     <script src="js/chat/jquery.chat.js"></script>
+    <!--  wizard JS
+        ============================================ -->
+    <script src="js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/wizard/wizard-active.js"></script>
     <!--  todo JS
         ============================================ -->
     <script src="js/todo/jquery.todo.js"></script>

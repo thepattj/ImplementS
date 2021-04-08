@@ -94,17 +94,28 @@
 
 
     <!-- Start Header Top Area -->
-    <div class="header-top-area">
+    <div class="header-top-area" style="background: transparent; !important">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"><img src="images/Logo-esquina.png"></div>
+        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12" style="background:rgb(27,22,50);">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
+        </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 9 </H1></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><label></label></div>
+
         <div class="container">
             <div class="row">
-                <div class=" col-md-4 col-sm-12 col-xs-12">
+                <!-- <div class=" col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
                         <a href="#"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
+                        <ul class="nav navbar-nav notika-top-nav"> -->
                             <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
@@ -113,8 +124,8 @@
                                         <input type="text" />
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> -->
+                            <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -182,7 +193,7 @@
                                     </div>
                                 </div>
                             </li> -->
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
+                           <!-- <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span> <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> </a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -248,7 +259,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li>-->
                             <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -293,8 +304,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                            </li> -->
+                            <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Chat</h2>
@@ -368,258 +379,258 @@
                                     </div>
                                 </div>
                             </li> -->
-                        </ul>
+                      <!--   </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <!-- End Header Top Area -->
     <!-- Mobile Menu start -->
-<!--     <div class="mobile-menu-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="mobile-menu">
-                    <nav id="dropdown">
-                        <ul class="mobile-menu-nav">
-                            <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
-                                <ul class="collapse dropdown-header-top">
-                                    <li><a href="index.html">Dashboard One</a></li>
-                                    <li><a href="index-2.html">Dashboard Two</a></li>
-                                    <li><a href="index-3.html">Dashboard Three</a></li>
-                                    <li><a href="index-4.html">Dashboard Four</a></li>
-                                    <li><a href="analytics.html">Analytics</a></li>
-                                    <li><a href="widgets.html">Widgets</a></li>
+    <!-- <div class="mobile-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul class="mobile-menu-nav">
+                                    <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
+                                        <ul class="collapse dropdown-header-top">
+                                            <li><a href="index.html">Dashboard One</a></li>
+                                            <li><a href="index-2.html">Dashboard Two</a></li>
+                                            <li><a href="index-3.html">Dashboard Three</a></li>
+                                            <li><a href="index-4.html">Dashboard Four</a></li>
+                                            <li><a href="analytics.html">Analytics</a></li>
+                                            <li><a href="widgets.html">Widgets</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
+                                        <ul id="demoevent" class="collapse dropdown-header-top">
+                                            <li><a href="inbox.html">Inbox</a></li>
+                                            <li><a href="view-email.html">View Email</a></li>
+                                            <li><a href="compose-email.html">Compose Email</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
+                                        <ul id="democrou" class="collapse dropdown-header-top">
+                                            <li><a href="animations.html">Animations</a></li>
+                                            <li><a href="google-map.html">Google Map</a></li>
+                                            <li><a href="data-map.html">Data Maps</a></li>
+                                            <li><a href="code-editor.html">Code Editor</a></li>
+                                            <li><a href="image-cropper.html">Images Cropper</a></li>
+                                            <li><a href="wizard.html">Wizard</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
+                                        <ul id="demolibra" class="collapse dropdown-header-top">
+                                            <li><a href="flot-charts.html">Flot Charts</a></li>
+                                            <li><a href="bar-charts.html">Bar Charts</a></li>
+                                            <li><a href="line-charts.html">Line Charts</a></li>
+                                            <li><a href="area-charts.html">Area Charts</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
+                                        <ul id="demodepart" class="collapse dropdown-header-top">
+                                            <li><a href="normal-table.html">Normal Table</a></li>
+                                            <li><a href="data-table.html">Data Table</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
+                                        <ul id="demo" class="collapse dropdown-header-top">
+                                            <li><a href="form-elements.html">Form Elements</a></li>
+                                            <li><a href="form-components.html">Form Components</a></li>
+                                            <li><a href="form-examples.html">Form Examples</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
+                                        <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                            <li><a href="notification.html">Notifications</a>
+                                            </li>
+                                            <li><a href="alert.html">Alerts</a>
+                                            </li>
+                                            <li><a href="modals.html">Modals</a>
+                                            </li>
+                                            <li><a href="buttons.html">Buttons</a>
+                                            </li>
+                                            <li><a href="tabs.html">Tabs</a>
+                                            </li>
+                                            <li><a href="accordion.html">Accordion</a>
+                                            </li>
+                                            <li><a href="dialog.html">Dialogs</a>
+                                            </li>
+                                            <li><a href="popovers.html">Popovers</a>
+                                            </li>
+                                            <li><a href="tooltips.html">Tooltips</a>
+                                            </li>
+                                            <li><a href="dropdown.html">Dropdowns</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
+                                        <ul id="Pagemob" class="collapse dropdown-header-top">
+                                            <li><a href="contact.html">Contact</a>
+                                            </li>
+                                            <li><a href="invoice.html">Invoice</a>
+                                            </li>
+                                            <li><a href="typography.html">Typography</a>
+                                            </li>
+                                            <li><a href="color.html">Color</a>
+                                            </li>
+                                            <li><a href="login-register.html">Login Register</a>
+                                            </li>
+                                            <li><a href="404.html">404 Page</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
-                                <ul id="demoevent" class="collapse dropdown-header-top">
-                                    <li><a href="inbox.html">Inbox</a></li>
-                                    <li><a href="view-email.html">View Email</a></li>
-                                    <li><a href="compose-email.html">Compose Email</a></li>
-                                </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#democrou" href="#">Interface</a>
-                                <ul id="democrou" class="collapse dropdown-header-top">
-                                    <li><a href="animations.html">Animations</a></li>
-                                    <li><a href="google-map.html">Google Map</a></li>
-                                    <li><a href="data-map.html">Data Maps</a></li>
-                                    <li><a href="code-editor.html">Code Editor</a></li>
-                                    <li><a href="image-cropper.html">Images Cropper</a></li>
-                                    <li><a href="wizard.html">Wizard</a></li>
-                                </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#demolibra" href="#">Charts</a>
-                                <ul id="demolibra" class="collapse dropdown-header-top">
-                                    <li><a href="flot-charts.html">Flot Charts</a></li>
-                                    <li><a href="bar-charts.html">Bar Charts</a></li>
-                                    <li><a href="line-charts.html">Line Charts</a></li>
-                                    <li><a href="area-charts.html">Area Charts</a></li>
-                                </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#demodepart" href="#">Tables</a>
-                                <ul id="demodepart" class="collapse dropdown-header-top">
-                                    <li><a href="normal-table.html">Normal Table</a></li>
-                                    <li><a href="data-table.html">Data Table</a></li>
-                                </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#demo" href="#">Forms</a>
-                                <ul id="demo" class="collapse dropdown-header-top">
-                                    <li><a href="form-elements.html">Form Elements</a></li>
-                                    <li><a href="form-components.html">Form Components</a></li>
-                                    <li><a href="form-examples.html">Form Examples</a></li>
-                                </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">App views</a>
-                                <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                    <li><a href="notification.html">Notifications</a>
-                                    </li>
-                                    <li><a href="alert.html">Alerts</a>
-                                    </li>
-                                    <li><a href="modals.html">Modals</a>
-                                    </li>
-                                    <li><a href="buttons.html">Buttons</a>
-                                    </li>
-                                    <li><a href="tabs.html">Tabs</a>
-                                    </li>
-                                    <li><a href="accordion.html">Accordion</a>
-                                    </li>
-                                    <li><a href="dialog.html">Dialogs</a>
-                                    </li>
-                                    <li><a href="popovers.html">Popovers</a>
-                                    </li>
-                                    <li><a href="tooltips.html">Tooltips</a>
-                                    </li>
-                                    <li><a href="dropdown.html">Dropdowns</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages</a>
-                                <ul id="Pagemob" class="collapse dropdown-header-top">
-                                    <li><a href="contact.html">Contact</a>
-                                    </li>
-                                    <li><a href="invoice.html">Invoice</a>
-                                    </li>
-                                    <li><a href="typography.html">Typography</a>
-                                    </li>
-                                    <li><a href="color.html">Color</a>
-                                    </li>
-                                    <li><a href="login-register.html">Login Register</a>
-                                    </li>
-                                    <li><a href="404.html">404 Page</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- Mobile Menu end -->
+    <!-- Main Menu area start-->
+    <!-- <div class="main-menu-area mg-tb-40">
+        <div class="container">
+            <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
+                </li>
+                <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
+                </li>
+                <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
+                </li>
+                <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
+                </li>
+                <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
+                </li>
+                <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
+                </li>
+                <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
+                </li>
+                <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
+                </li>
+            </ul>
+            <div class="tab-content custom-menu-content">
+                <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="index.html">Dashboard One</a>
+                        </li>
+                        <li><a href="index-2.html">Dashboard Two</a>
+                        </li>
+                        <li><a href="index-3.html">Dashboard Three</a>
+                        </li>
+                        <li><a href="index-4.html">Dashboard Four</a>
+                        </li>
+                        <li><a href="analytics.html">Analytics</a>
+                        </li>
+                        <li><a href="widgets.html">Widgets</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="inbox.html">Inbox</a>
+                        </li>
+                        <li><a href="view-email.html">View Email</a>
+                        </li>
+                        <li><a href="compose-email.html">Compose Email</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="animations.html">Animations</a>
+                        </li>
+                        <li><a href="google-map.html">Google Map</a>
+                        </li>
+                        <li><a href="data-map.html">Data Maps</a>
+                        </li>
+                        <li><a href="code-editor.html">Code Editor</a>
+                        </li>
+                        <li><a href="image-cropper.html">Images Cropper</a>
+                        </li>
+                        <li><a href="wizard.html">Wizard</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="flot-charts.html">Flot Charts</a>
+                        </li>
+                        <li><a href="bar-charts.html">Bar Charts</a>
+                        </li>
+                        <li><a href="line-charts.html">Line Charts</a>
+                        </li>
+                        <li><a href="area-charts.html">Area Charts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="normal-table.html">Normal Table</a>
+                        </li>
+                        <li><a href="data-table.html">Data Table</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="form-elements.html">Form Elements</a>
+                        </li>
+                        <li><a href="form-components.html">Form Components</a>
+                        </li>
+                        <li><a href="form-examples.html">Form Examples</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="notification.html">Notifications</a>
+                        </li>
+                        <li><a href="alert.html">Alerts</a>
+                        </li>
+                        <li><a href="modals.html">Modals</a>
+                        </li>
+                        <li><a href="buttons.html">Buttons</a>
+                        </li>
+                        <li><a href="tabs.html">Tabs</a>
+                        </li>
+                        <li><a href="accordion.html">Accordion</a>
+                        </li>
+                        <li><a href="dialog.html">Dialogs</a>
+                        </li>
+                        <li><a href="popovers.html">Popovers</a>
+                        </li>
+                        <li><a href="tooltips.html">Tooltips</a>
+                        </li>
+                        <li><a href="dropdown.html">Dropdowns</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
+                    <ul class="notika-main-menu-dropdown">
+                        <li><a href="contact.html">Contact</a>
+                        </li>
+                        <li><a href="invoice.html">Invoice</a>
+                        </li>
+                        <li><a href="typography.html">Typography</a>
+                        </li>
+                        <li><a href="color.html">Color</a>
+                        </li>
+                        <li><a href="login-register.html">Login Register</a>
+                        </li>
+                        <li><a href="404.html">404 Page</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-</div> -->
-    <!-- Mobile Menu end -->
-    <!-- Main Menu area start-->
-    <div class="main-menu-area mg-tb-40">
-        <div class="container">
-            <div class="row">
-<!--                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
-        </li>
-        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
-        </li>
-        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
-        </li>
-        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
-        </li>
-        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
-        </li>
-        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
-        </li>
-        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
-        </li>
-        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
-        </li>
-    </ul>
-    <div class="tab-content custom-menu-content">
-        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="index.html">Dashboard One</a>
-                </li>
-                <li><a href="index-2.html">Dashboard Two</a>
-                </li>
-                <li><a href="index-3.html">Dashboard Three</a>
-                </li>
-                <li><a href="index-4.html">Dashboard Four</a>
-                </li>
-                <li><a href="analytics.html">Analytics</a>
-                </li>
-                <li><a href="widgets.html">Widgets</a>
-                </li>
-            </ul>
-        </div>
-        <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="inbox.html">Inbox</a>
-                </li>
-                <li><a href="view-email.html">View Email</a>
-                </li>
-                <li><a href="compose-email.html">Compose Email</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="animations.html">Animations</a>
-                </li>
-                <li><a href="google-map.html">Google Map</a>
-                </li>
-                <li><a href="data-map.html">Data Maps</a>
-                </li>
-                <li><a href="code-editor.html">Code Editor</a>
-                </li>
-                <li><a href="image-cropper.html">Images Cropper</a>
-                </li>
-                <li><a href="wizard.html">Wizard</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Charts" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="flot-charts.html">Flot Charts</a>
-                </li>
-                <li><a href="bar-charts.html">Bar Charts</a>
-                </li>
-                <li><a href="line-charts.html">Line Charts</a>
-                </li>
-                <li><a href="area-charts.html">Area Charts</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Tables" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="normal-table.html">Normal Table</a>
-                </li>
-                <li><a href="data-table.html">Data Table</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Forms" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="form-elements.html">Form Elements</a>
-                </li>
-                <li><a href="form-components.html">Form Components</a>
-                </li>
-                <li><a href="form-examples.html">Form Examples</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Appviews" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="notification.html">Notifications</a>
-                </li>
-                <li><a href="alert.html">Alerts</a>
-                </li>
-                <li><a href="modals.html">Modals</a>
-                </li>
-                <li><a href="buttons.html">Buttons</a>
-                </li>
-                <li><a href="tabs.html">Tabs</a>
-                </li>
-                <li><a href="accordion.html">Accordion</a>
-                </li>
-                <li><a href="dialog.html">Dialogs</a>
-                </li>
-                <li><a href="popovers.html">Popovers</a>
-                </li>
-                <li><a href="tooltips.html">Tooltips</a>
-                </li>
-                <li><a href="dropdown.html">Dropdowns</a>
-                </li>
-            </ul>
-        </div>
-        <div id="Page" class="tab-pane notika-tab-menu-bg animated flipInX">
-            <ul class="notika-main-menu-dropdown">
-                <li><a href="contact.html">Contact</a>
-                </li>
-                <li><a href="invoice.html">Invoice</a>
-                </li>
-                <li><a href="typography.html">Typography</a>
-                </li>
-                <li><a href="color.html">Color</a>
-                </li>
-                <li><a href="login-register.html">Login Register</a>
-                </li>
-                <li><a href="404.html">404 Page</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div> -->
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     <div class="notika-status-area">
@@ -635,50 +646,22 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Mejores prácticas y estándares</h2>
-                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
-                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                                
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background: rgb(254,174,0); color: rgb(27,22,50);">Practicas de operación</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> RBPO </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="wizard-area">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="wizard-wrap-int">
-                                        <!-- <div class="wizard-hd">
-                                            <h2></h2>
-                                            <p></p>
-                                        </div> -->
-                                        <div id="rootwizard">
-                                            <div class="navbar">
-                                                <div class="navbar-inner">
-                                                    <div class="container-pro wizard-cts-st">
-                                                        <ul>
-                                                            <li id="btncontrolr"><a href="#tab1" data-toggle="tab">Control de RBPO</a></li>
-                                                            <li id="btnrbpoc"><a href="#tab2" data-toggle="tab">RBPO</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-content"> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="controlr" style="display:;">
+                    <!-- CONTROL SEGUIMIENTO -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="controlr" style="display: none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
@@ -686,16 +669,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label >
-                                        Control y seguimiento a recomendaciones de revisión de buenas practicas de operación (RBPO)
-                                    </label>
+                                    <label > Control y seguimiento a recomendaciones de revisión de buenas practicas de operación (RBPO)</label>
                                 </div>
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Nombre del procedimiento:
-                                        </label>
+                                        <label> Nombre del procedimiento: </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -708,9 +687,7 @@
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Sugerencias:
-                                        </label>
+                                        <label> Sugerencias:  </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -725,9 +702,7 @@
                                 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Mes programado
-                                        </label>
+                                        <label> Mes programado </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -755,9 +730,7 @@
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Estado (Status)
-                                        </label>
+                                        <label> Estado (Status) </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -771,9 +744,7 @@
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Responsable
-                                        </label>
+                                        <label> Responsable (Rep. Técnico) </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -792,14 +763,14 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarControl" class="btn btn-success notika-btn-success">Guardar Control</button>
+                                    <button id="guardarControl" class="btn btn-warning notika-btn-warning">Guardar Control</button>
                                 </div>
-
                             </div>
                         </div>
-                    </div>
+                    </div><!-- CONTROL SEGUIMIENTO -->
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="rbpo" style="display: none;">
+                    <!-- DESCRIPCION DE PROCEDIMIENTOS -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="rbpo" style="display: ;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2></h2>
@@ -807,51 +778,60 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label >
-                                        Revisión de Buenas Practicas de Operación
-                                    </label>
+                                    <label > Practicas y Estandares de Operacion (Procedimientos)</label>
                                 </div>
                     
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Área
-                                        </label>
-                                    </div>
+                                <div class="col-lg-3 col-md-3col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Área </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
                                         <input type="text" class="form-control" id="areaRbpo" placeholder="Zona de la estación">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Fecha </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                        <input type="date" class="form-control" id="fecharbpo" placeholder="dd/mm/aaaa" name="">
+                                    </div>
+                                </div>                                
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Nombre del supervisor
-                                        </label>
+                                        <label> Operación/Actividad </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-group nk-int-st">
+                                        <input type="text" class="form-control" id="actrbpo" placeholder="Nombre del proceso">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label> Nombre del supervisor </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-group nk-int-st">
                                         <input type="text" class="form-control" id="supRbpo" placeholder="Persona que supervisara el mejoramiento">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
+                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
                     
                                 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                            Nombre Trabajador (realiza la práctica)
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="nombreRbpo">
                                             <option id="" value="0" style="display: none;">Selecciona un nombre</option>
@@ -863,69 +843,50 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                </div>                    
                     
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Descripción de Actividad
-                                        </label>
+                                        <label> Crítica (Si/NO) </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" id="descA" placeholder="Descripción completa."></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           Crítica (sobre actividad)
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-group nk-int-st">
                                         <input type="text" class="form-control" id="criticaA">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Incidentes y/o accidentes
-                                        </label>
+                                        <label> Descripción de Actividad </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st">
+                                        <textarea class="form-control" rows="5" id="descA" placeholder="Descripción completa."></textarea>
+                                    </div>
+                                </div>
+                             
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label> Incidentes y/o accidentes </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-group nk-int-st">
                                         <input type="text" class="form-control" id="incAcc">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Causas que pueden generar el incidente y/o accidente
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
                                         <input type="text" class="form-control" id="causa">
                                     </div>
@@ -933,14 +894,14 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             Observaciones
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                                     <div class="form-group nk-int-st">
                                         <textarea class="form-control" rows="5" id="obs"></textarea>
                                     </div>
@@ -948,12 +909,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarbpo" class="btn btn-success notika-btn-success">Guardar</button>
+                                    <button id="guardarbpo" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> <!-- DESCRIPCION DE PROCEDIMIENTOS -->
+
                 </div>
             </div>
         </div>

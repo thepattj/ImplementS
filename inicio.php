@@ -850,10 +850,21 @@
 
 
     <!-- Start Header Top Area -->
-    <div class="header-top-area">
+    <div class="header-top-area" style="background: white; !important"> <!-- AQUI TIENE EL COLOR VERDE -->
+      <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"><img src="images/Logo-esquina.png"></div>
+        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12" style="background:rgb(27,22,50);">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
+        </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Bienvenidos </H1></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><label></label></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              
+                <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
                         <a href="#"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
@@ -862,7 +873,7 @@
                     <div class="header-top-menu">
                         <ul class="nav navbar-nav notika-top-nav">
                             <li class="nav-item dropdown">
-                                <!-- <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a> -->
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
                                 <div role="menu" class="dropdown-menu search-dd animated flipInX">
                                     <div class="search-input">
                                         <i class="notika-icon notika-left-arrow"></i>
@@ -870,7 +881,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <!-- <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -937,8 +948,8 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li> -->
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
+                            </li>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -1010,7 +1021,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -1120,10 +1131,10 @@
     </div> -->
     <!-- Mobile Menu end -->
     <!-- Main Menu area start-->
-    <div class="main-menu-area mg-tb-40">
+    <!--<div class="main-menu-area mg-tb-40">
         <div class="container">
             <div class="row">
-<!--                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
         </li>
@@ -1256,201 +1267,219 @@
             </ul>
         </div>
     </div>
-</div> -->
+</div> 
             </div>
         </div>
-    </div>
+    </div>-->
 <?php
     /*$U = "clientes";*/
 
     if( $U == "estacion"){ /*VISTA PARA CLIENTES QUE AGREGARAN CONTENIDO*/  
-        echo '<div class="notika-status-area" id="inicioc">
+        echo '<div class="notika-status-area" id="inicioc" style="background:white;">
         <div class="container">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <h1> Bienvenido </h1> <p id="nestacion">  </p></div>
             <div class="row">
                 <div class="tab-pane wizard-ctn" id="1pt" style="display:block;">
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt1" data-toggle="modal" data-target="#modalpt1" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                      <img src="images/Punto-1.png" style="width: 80%; position: relative; margin-left: 12%;" id="pt1" data-toggle="modal" data-target="#modalpt1">'.
+
+                        
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div id="pt1text" class="website-traffic-ctn">
                                 <h2><span>Punto 1</span></h2>
                                 <p>Política</p>
                             </div>
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
         
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt2" data-toggle="modal" data-target="#modalpt2" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt2" data-toggle="modal" data-target="#modalpt2">
+                      <img src="images/Punto-2.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt2Title" ><span class="">Punto 2</span></h2>
                                 <p id="pt2Text" >Análisis de Riesgo ... </p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt3" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"> <!-- PUNTO 3 REQ. LEGALES -->
+                        <img id="pt3" src="images/Punto-3.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div id="pt3" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt3Title" ><span class="">Punto 3</span></h2>
                                 <p id="pt3Text" >Requisitos Legales</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt4" data-toggle="modal" data-target="#modalpt4" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt4" data-toggle="modal" data-target="#modalpt4">
+                        <img src="images/Punto-4.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt4Title" ><span class="">Punto 4</span></h2>
                                 <p id="pt4Text" >Objetivos, metas e indicadores</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
                 </div>
 
                 <div class="tab-pane wizard-ctn" id="2pt" style="display:none;">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt5" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt5" data-toggle="modal" data-target="">
+                        <img src="images/Punto-5.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt5Title" ><span class="">Punto 5</span></h2>
                                 <p id="pt5Text" >Funciones y responsabilidades</p>
                             </div>
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
         
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt6" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt6" data-toggle="modal" data-target="">
+                        <img src="images/Punto-6.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt6Title" ><span class="">Punto 6</span></h2>
                                 <p id="pt6Text" >Competencia y capacitación</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt7" data-toggle="modal" data-target="#modalpt7" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt7" data-toggle="modal" data-target="#modalpt7">
+                        <img src="images/Punto-7.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt7Title" ><span class="">Punto 7</span></h2>
                                 <p id="pt7Text" >Comunicación, Participación...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
-                        </div>
-                    </div>                   
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt8" data-toggle="modal" data-target="#modalpt8" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt8" data-toggle="modal" data-target="#modalpt8">
+                        <img src="images/Punto-8.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt8Title" ><span class="">Punto 8</span></h2>
                                 <p id="pt8Text" >Control de documentos</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
                 </div>
 
                 <div id="3pt" style="display:none;">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt9" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt9" data-toggle="modal" data-target="">
+                      <img src="images/Punto-9.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt9Title" ><span class="">Punto 9</span></h2>
                                 <p id="pt9Text" >Mejores practicas y estándares</p>
                             </div>
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
         
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt10" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt10" data-toggle="modal" data-target="">
+                        <img src="images/Punto-10.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<!--<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt10Title" ><span class="">Punto 10</span></h2>
                                 <p id="pt10Text" >Control de actividades y procesos</p>
                             </div>
-                            <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
-                        </div>
-                    </div>
+                             <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->*/                        
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt11" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt11" data-toggle="modal" data-target="">
+                        <img src="images/Punto-11.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div id="pt11" class="website-traffic-ctn">
                                 <h2 id="pt11Title" ><span class="">Punto 11</span></h2>
                                 <p id="pt11Text" >Integridad mécanica y ...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt12" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt12">
+                        <img src="images/Punto-12.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt12Title" ><span class="">Punto 12</span></h2>
                                 <p id="pt12Text" >Seguridad de Contratista</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats4">2,4,8,4,5,7,4,7,3,5,7,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
                 </div>
 
                 <div id="4pt" style="display:none;">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt13" data-toggle="modal" data-target="#modalpt13" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                            <div class="website-traffic-ctn">
-                                <h2 id="pt13Title" ><span class="">Punto 13</span></h2>
-                                <p style="display:none;">Protocolos de respuesta ...</p>
-                                <p id="pt13Text" >PRE</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt13" data-toggle="modal" data-target="#modalpt13">
+                      <img src="images/Punto-13.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                          /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                              <div class="website-traffic-ctn">
+                                  <h2 id="pt13Title" ><span class="">Punto 13</span></h2>
+                                  <p style="display:none;">Protocolos de respuesta ...</p>
+                                  <p id="pt13Text" >PRE</p>
+                              </div>
+                          </div>*/
+                    '</div>
         
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt14" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt14" data-toggle="modal" data-target="">
+                        <img src="images/Punto-14.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt14Title" ><span class="">Punto 14</span></h2>
                                 <p id="pt14Text" >Monitoreo, verificación ...</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt15" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt15">
+                        <img src="images/Punto-15.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt15Title" ><span class="">Punto 15</span></h2>
                                 <p id="pt15Text" >Auditorias</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats3">4,2,8,2,5,6,3,8,3,5,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt16" data-toggle="modal" data-target="#modalpt16" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt16" data-toggle="modal" data-target="#modalpt16">
+                      <img src="images/Punto-16.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt16Title" ><span class="">Punto 16</span></h2>
                                 <p id="pt16Text" >Investigación de incidentes y ...</p>
                             </div>
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
                 </div>
 
                 <div id="5pt" style="display:none;">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt17" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt17">
+                        <img src="images/Punto-17.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt17Title" ><span class="">Punto 17</span></h2>
                                 <p id="pt17Text" >Revisión por la Dirección</p>
                             </div>
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
         
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div id="pt18" data-toggle="modal" data-target="" class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt18" data-toggle="modal" data-target="">
+                        <img src="images/Punto-18.png" style="width: 80%; position: relative; margin-left: 12%;" alt>'.
+                        /*<div  class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2 id="pt18Title" ><span class="">Punto 18</span></h2>
                                 <p id="pt18Text" >Informe de desempeño</p>
                             </div>
                             <!-- <div class="sparkline-bar-stats2">1,4,8,3,5,6,4,8,3,3,9,5</div> -->
-                        </div>
-                    </div>
+                        </div>*/
+                    '</div>
                 </div>
             </div>
 
@@ -1463,40 +1492,15 @@
                 </ul>
             </div>
         </div>
-        </div>';
+        </div>';/*
         echo '<div class="sale-statistic-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="actcal">
-                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
-                        <div class="past-day-statis">
-                            <h2>Calendario de Actividades</h2>
-                            <p>Da clíc aqui para que visualices las actividade de este mes.</p>
-                        </div>
-                    </div>
-                </div>                
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="docAr">
-                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
-                        <div class="past-day-statis">
-                            <h2>Historial de documentación</h2>
-                            <p>Alojamiento de archivos de la estación</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
-                        <div class="past-day-statis">
-                            <h2>Indicadores</h2>
-                            <p>Se mostrara el progreso de los puntos que se han evaluado.</p>
-                        </div>
-                    </div>
-                </div>
+              
 
             </div>
         </div>
-        </div>';
+        </div>';*/
     }if( $U == "Admin"){/*VISTA PARA SISTEMAS Y ENERGAS*/
         /*AREA DE PUNTOS*/
         echo '<div class="notika-status-area">

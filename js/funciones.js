@@ -388,15 +388,15 @@ $(document).ready(function(){
 
 	$("#pt17").click(function() {
 		//alert("HOLI");
-		window.open('ptXVIII.php', '_blank');
+		window.open('ptXVII.php', '_blank');
 		//window.open('pt3.php', '_self');
 	});
 
-	$("#pt18").click(function() {
+	/*$("#pt18").click(function() {
 		//alert("HOLI");
 		window.open('ptXVIII.php', '_blank');
 		//window.open('pt3.php', '_self');
-	});
+	});*/
 
 
 	//CLIC DE CALENDARIO

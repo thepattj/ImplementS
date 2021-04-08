@@ -94,26 +94,37 @@
 
 
     <!-- Start Header Top Area -->
-    <div class="header-top-area">
+    <div class="header-top-area" style="background: transparent; !important">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"><img src="images/Logo-esquina.png"></div>
+        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12" style="background:rgb(27,22,50);">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
+        </div>
+              <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 10 </H1></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><label></label></div>
+
         <div class="container">
             <div class="row">
-                <div class=" col-md-4 col-sm-12 col-xs-12">
+                <!-- <div class=" col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
                         <a href="#"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
-                           <!--  <li class="nav-item dropdown">
-                               <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
-                               <div role="menu" class="dropdown-menu search-dd animated flipInX">
-                                   <div class="search-input">
-                                       <i class="notika-icon notika-left-arrow"></i>
-                                       <input type="text" />
-                                   </div>
-                               </div>
-                           </li> -->
+                        <ul class="nav navbar-nav notika-top-nav"> -->
+                            <!-- <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                    <div class="search-input">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                            </li> -->
                             <!-- <li class="nav-item dropdown">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
                                 <div role="menu" class="dropdown-menu message-dd animated zoomIn">
@@ -182,7 +193,7 @@
                                     </div>
                                 </div>
                             </li> -->
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><!-- <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> --></a>
+                           <!-- <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span> <div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div> </a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -248,7 +259,7 @@
                                         <a href="#">View All</a>
                                     </div>
                                 </div>
-                            </li>
+                            </li>-->
                             <!-- <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
@@ -368,9 +379,9 @@
                                     </div>
                                 </div>
                             </li> -->
-                        </ul>
+                      <!--   </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -480,10 +491,10 @@
 </div> -->
     <!-- Mobile Menu end -->
     <!-- Main Menu area start-->
-    <div class="main-menu-area mg-tb-40">
+    <!-- <div class="main-menu-area mg-tb-40">
         <div class="container">
             <div class="row">
-<!--                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
         <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
         </li>
@@ -616,10 +627,10 @@
             </ul>
         </div>
     </div>
-</div> -->
+</div> 
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     <div class="notika-status-area">
@@ -635,7 +646,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Control de actividades y procesos</h2>
-                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span> - <span class="bread-ntd" id="dataRS">Nombre E. S.</span></p>
+                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span> </p>
                                     </div>
                                 </div>
                             </div>
@@ -644,47 +655,24 @@
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
                                </div> -->
                             </div>
-                        </div>
-                    </div>
-
-
-                    <div class="wizard-area">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="wizard-wrap-int">
-                                        <div class="wizard-hd">
-                                            <h2></h2>
-                                            <p></p>
-                                        </div>
-                                        <div id="rootwizard">
-                                            <div class="navbar">
-                                                <div class="navbar-inner">
-                                                    <div class="container-pro wizard-cts-st">
-                                                        <ul>
-                                                            <li id="btnNper"><a href="#tab1" data-toggle="tab">Alta de nuevo personal</a></li>
-                                                            <li id="btnper"><a href="#tab1" data-toggle="tab">Cambio de personal</a></li>
-                                                            <li id="btntec"><a href="#tab2" data-toggle="tab">Cambio técnologico</a></li>
-                                                            <li id="btnorden"><a href="#tab3" data-toggle="tab">Orden de trabajo</a></li>
-                                                            <li id="btnbitacora"><a href="#tab4" data-toggle="tab">Subir Bitacora</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-content"> </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2" style="background: rgb(254,174,0); color: rgb(27,22,50);">Alta de nuevo personal</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Cambio de personal </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Cambio ténologico </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Alta de Contratista </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Orden de trabajo </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Carga de bitacoras </div>
                             </div>
                         </div>
                     </div>
 
 
 
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- ******************* ALTA DE PERSONAL *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="personalN" style="display:;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="personalN" style="display:none;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">                                
                                 <p>Agregaras de manera detalladas información del nuevo personal de la Estación de Servicio</p>
@@ -818,7 +806,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarNPersonal" class="btn btn-success notika-btn-success">Guardar</button>
+                                    <button id="guardarNPersonal" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
                         </div>
@@ -826,7 +814,7 @@
 
 
 
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- ******************* CAMBIO DE PERSONAL *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="personal" style="display: none;">
@@ -920,13 +908,13 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarCPersonal" class="btn btn-success notika-btn-success">Guardar</button>
+                                    <button id="guardarCPersonal" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- ******************* CAMBIOS TECNOLOGICOS *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="tecno" style="display: none;">
@@ -1014,13 +1002,13 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarCTec" class="btn btn-success notika-btn-success">Guardar</button>
+                                    <button id="guardarCTec" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
+                    <!-- ******************* ORDEN DE TRABAJOS *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ordent" style="display: none;">
                         <div class="form-element-list">
@@ -1468,7 +1456,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarOrdenTrabajo" class="btn btn-success notika-btn-success">Guardar</button>
+                                    <button id="guardarOrdenTrabajo" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
 
 
@@ -1478,24 +1466,23 @@
 
 
 
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="display: none;">
+                    <!-- ******************* CARGA DE BITACORAS *********************** -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="display: ;">
                         <div class="form-element-list">
                             <div class="basic-tb-hd">
                                 <h2>Cargar bitacoras del punto 10</h2>
                                 <p>Para cumplir este punto deberas cargar las bitacoras. Estas deben ser las ultimas que realizaste en fisico de los siguiente temas:</p>
                             </div>
                             <div class="row">                    
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Mantemiento Preventivo y Correctivo (10-BT-01) (.pdf)
-                                        </label>
+                                        <label> Mantemiento Preventivo y Correctivo (10-BT-01) (.pdf) </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
                                 <form name="enviarbt01" id="enviarbt01" enctype="multipart/form-data" method="post">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
                                                 <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -1507,14 +1494,14 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                         <div class="form-group nk-int-st">
                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt01" name="archivobt01">
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st">
                                            <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt01" name="idbt01">
                                         </div>
@@ -1531,7 +1518,7 @@
                                            <input style="display:none;" type="input" class="form-control" value="<?php echo $datos1;?>" placeholder="" id="idActualiza01" name="idActualiza01">
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    
                                     </form>
                                 <?php
                                     }else{ ?>
@@ -1540,24 +1527,23 @@
                                 <?php
                                     }
                                 ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <button type="button" class="btn btn-primary" id="btnGuardar01">Guardar</button>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <button type="button" class="btn btn-warning" id="btnGuardar01">Guardar</button>
                                 </div>
 
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
                     
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="fm-checkbox">
-                                        <label>
-                                            Residuos Peligrosos (10-BT-02) (.pdf)
-                                        </label>
+                                        <label> Residuos Peligrosos (10-BT-02) (.pdf) </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+
                                 <form name="enviarbt02" id="enviarbt02" enctype="multipart/form-data" method="post">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
                                                 <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -1569,14 +1555,14 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                         <div class="form-group nk-int-st">
                                             <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt02" name="archivobt02">
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st">
                                            <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt02" name="idbt02">
                                         </div>
@@ -1593,24 +1579,23 @@
                                            <input style="display:none;" type="input" class="form-control" value="<?php echo $datos2;?>" placeholder="" id="idActualiza" name="idActualiza02">
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    
                                     </form>
                                 <?php
                                     }else{ ?>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        
                                         </form>
                                 <?php
                                     }
                                 ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <button type="button" class="btn btn-primary" id="btnGuardar02">Guardar</button>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <button type="button" class="btn btn-warning" id="btnGuardar02">Guardar</button>
                                 </div>
-                                
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
                                 
-                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="fm-checkbox">
                                         <label>
                                            Recepción, Descarga y Desviación en el Balance de Producto (10-BT-03)
@@ -1618,8 +1603,9 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
                                 <form name="enviarbt03" id="enviarbt03" enctype="multipart/form-data" method="post">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
                                                 <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -1631,14 +1617,14 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                                
+                                                                  
                                     
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                         <div class="form-group nk-int-st">
                                             <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt03" name="archivobt03">
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st">
                                            <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt03" name="idbt03">
                                         </div>
@@ -1655,17 +1641,17 @@
                                            <input style="display:none;" type="input" class="form-control" value="<?php echo $datos3;?>" placeholder="" id="idActualiza03" name="idActualiza03">
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    
                                     </form>
                                 <?php
                                     }else{ ?>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        
                                         </form>
                                 <?php
                                     }
                                 ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <button type="button" class="btn btn-primary" id="btnGuardar03">Guardar</button>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <button type="button" class="btn btn-warning" id="btnGuardar03">Guardar</button>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 
@@ -1949,7 +1935,7 @@
                                     </div>
                                     <div class="col-sm-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="notika-todo-btn">
-                                            <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">Archive</a>
+                                            <a href="#" class="pull-right btn btn-warning btn-sm" id="btn-archive">Archive</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1964,7 +1950,7 @@
                                                     <input type="text" id="todo-input-text" name="todo-input-text" class="form-control" placeholder="Add new todo">
                                                 </div>
                                                 <div class="todo-send">
-                                                    <button class="btn-primary btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Add</button>
+                                                    <button class="btn-warning btn-md btn-block btn notika-add-todo" type="button" id="todo-btn-submit">Add</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -2079,7 +2065,7 @@
                                                     <input type="text" class="form-control chat-input" placeholder="Enter your text">
                                                 </div>
                                                 <div class="chat-send">
-                                                    <button type="submit" class="btn btn-md btn-primary btn-block notika-chat-btn">Send</button>
+                                                    <button type="submit" class="btn btn-md btn-warning btn-block notika-chat-btn">Send</button>
                                                 </div>
                                             </div>
                                         </div>
