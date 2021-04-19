@@ -85,9 +85,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacion">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -637,7 +642,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -646,14 +651,14 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Control de actividades y procesos</h2>
-                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span> </p>
+                                        <p><span class="bread-ntd"> <?php /*echo $id;*/ ?> </span> </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
+                               <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                               </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
@@ -665,27 +670,55 @@
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Carga de bitacoras </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
-                    <!-- ******************* ALTA DE PERSONAL *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+                    
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="personalN" style="display:none;">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="" style="display: ;">
                         <div class="form-element-list">
-                            <div class="basic-tb-hd">                                
-                                <p>Agregaras de manera detalladas información del nuevo personal de la Estación de Servicio</p>
-                            </div>
-                            <div class="row">                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Puesto de trabajo
-                                        </label>
-                                    </div>
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="breadcomb-ctn">
+                                    <h2>Control de actividades</h2>
+                                    <p><span class="bread-ntd"><?php echo $id; ?></span> </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
+                                <button id="btnNper" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 13%;">Alta de ingreso</button>
+                                <button id="btnper" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Cambio de personal</button>
+                                <button id="btntec" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Cambio técnologico</button>
+                                <button id="btnorden" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Orden de trabajo</button>
+                                <button id="btnbitacora" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Carga de bitacora</button>
+                                <!-- <button id="btnevap" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Evaluación de Proveedor</button> -->
+                            </div>
+
+                            <div class="basic-tb-hd" id="personalAInst" style="display: ;">                                
+                                <p>Agregaras de manera detalladas información del nuevo personal de la estación de servicio.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="personalInst" style="display: none;">                                
+                                <p>Actualizaras de manera detallada el cambio de personal de la estación de servicio.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="tecnoInst" style="display: none;">                                
+                                <p>Actualizaras de manera detallada los cambios técnologicos de la estación de servicio.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="ordentInst" style="display: none;">                                
+                                <p>Expedición de orden de trabajo para realizar cualquier actividad dentro de la estación.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="bitInst" style="display: none;">                                
+                                <p>Completar el siguiente formulario, anexando las fechas de las bitácoras que ya se han implementado y subirlo en PDF en los campos señalados.</p>
+                            </div>
+
+                            <!-- ******************* ALTA DE PERSONAL *********************** -->
+                            <div class="row" style="border: black 1px solid; display:;" id="personalN">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Puesto de trabajo </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="areaCn">
                                             <option value="Selecciona" style="display: none;">Selecciona una opción</option>
@@ -698,96 +731,61 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    Nombre del personal
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox"> <label> Nombre del personal </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="nombreCn">
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="nombreCn"> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                                 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    Apellido Paterno
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Apellido paterno </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="apellidoCpat">
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="apellidoCpat"> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Apellido materno </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="apellidoCmat"> </div>
+                                </div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    Apellido Materno
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> CURP </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="apellidoCmat">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            CURP
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
                                         <input type="text" class="form-control" id="Ncurp">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            RFC
-                                        </label>
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> RFC </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st">
                                         <input type="text" class="form-control" id="Nrfc">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Numero de Seguro Social (NSS)
-                                        </label>
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Numero de Seguro Social (NSS) </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="nss">
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="nss"> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                     
                     
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Fecha de ingreso
-                                        </label>
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label>  Fecha de ingreso </label> </div>
                                 </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -799,37 +797,19 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
                                 
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
                                     <button id="guardarNPersonal" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-
-
-                    <!-- ******************* CAMBIO DE PERSONAL *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="personal" style="display: none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Actualizaras de manera detallada el cambio de personal de la Estación de Servicio</p>
-                            </div>
-                            <div class="row">                    
+                            <!-- ******************* CAMBIO DE PERSONAL *********************** -->
+                            <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+                            <div class="row" style="border: black 1px solid; display: none;" id="personal">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Nueva Área
-                                        </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Nueva área </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
@@ -848,10 +828,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Nombre del personal
-                                        </label>
+                                    <div class="fm-checkbox"> <label> Nombre del personal </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -871,10 +848,7 @@
                     
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Autorizacion de Cambio
-                                        </label>
+                                    <div class="fm-checkbox"> <label> Autorizacion de cambio </label>
                                     </div>
                                 </div>
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -894,11 +868,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Motivo de cambio
-                                        </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Motivo de cambio </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
@@ -907,63 +877,26 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarCPersonal" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- ******************* CAMBIOS TECNOLOGICOS *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="tecno" style="display: none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Actualizaras de manera detallada los cambios técnologicos de la Estación de Servicio</p>
-                            </div>
-                            <div class="row">                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Equipo
-                                        </label>
-                                    </div>
+                            <!-- ******************* CAMBIOS TECNOLOGICOS *********************** -->
+                            <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+                            <div class="row" style="border: black 1px solid; display: none;" id="tecno">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Equipo </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="equipoC">
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="equipoC"> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Descripcion de cambio
-                                        </label>
-                                    </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Fecha </label> </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" id="descrpC"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           Fecha
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox">
                                         <label>
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -975,17 +908,18 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Responsable de realización del mantenimiento
-                                        </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Descripcion de cambio </label> </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm- col-xs-8">
+                                    <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="descrpC"></textarea> </div>
+                                </div>
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Responsable de realización del mantenimiento </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
@@ -1001,483 +935,423 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
                                     <button id="guardarCTec" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- ******************* ORDEN DE TRABAJOS *********************** -->
-                    <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ordent" style="display: none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Expedición de Orden de trabajo para realizar cualquier actividad dentro de la estación.</p>
-                            </div>
-                            <div class="row">                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Fecha
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                <div class="input-group date nk-int-st">
-                                                    <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" id="fechaOT" value="03/19/2018">
-                                                </div>
+                            <!-- ******************* ORDEN DE TRABAJOS *********************** -->
+                            <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
+                            <div class="row" style="border: black 1px solid; display: none;" id="ordent">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Fecha </label> </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox">
+                                                <label>
+                                                    <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                        <div class="input-group date nk-int-st">
+                                                            <span class="input-group-addon"></span>
+                                                            <input type="text" class="form-control" id="fechaOT" value="03/19/2018">
+                                                        </div>
+                                                    </div>
+                                                </label>
                                             </div>
-                                        </label>
-                                    </div>
-                                </div>                 
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            No. Permiso
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <?php $sql = "SELECT idOrdenT FROM dzordentr WHERE idCESH = '".$id."' ORDER BY idOrdenT DESC LIMIT 1";
-                                          $resultado =mysqli_query($con, $sql);
-                                          if($resultado->num_rows > 0){
-                                            $fila1 = $resultado->fetch_assoc();
-                                            $datos1 = implode("", $fila1);
-                                          }
-                                    ?>
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="noPermiso" disabled value="<?php echo $datos1+1 ?>">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        </div>            
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> No. permiso </label> </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <?php $sql = "SELECT idOrdenT FROM dzordentr WHERE idCESH = '".$id."' ORDER BY idOrdenT DESC LIMIT 1";
+                                                  $resultado =mysqli_query($con, $sql);
+                                                  if($resultado->num_rows > 0){
+                                                    $fila1 = $resultado->fetch_assoc();
+                                                    $datos1 = implode("", $fila1);
+                                                  }else{
+                                                    $datos1 = "0";
+                                                  }
+                                            ?>
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="noPermiso" disabled value="<?php echo $datos1+1 ?>"> </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Ubicación del trabajo
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="ubicacionT">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label>  Ubicación del trabajo </label> </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="form-group nk-int-st">
+                                                <input type="text" class="form-control" id="ubicacionT">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Tipo de trabajo </label> </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="tipoTrabajo">
+                                                    <option value="0" style="display: none;">Selecciona una opción</option>
+                                                    <option value="Electrico">Eléctrico</option>
+                                                    <option value="Trabajo en">Trabajo en Alturas</option>
+                                                    <option value="Caliente">Trabajo en Caliente</option>
+                                                    <option value="Extraordinaria">Limpieza Extraordinaria</option>
+                                                    <option value="EConfinados">Espacios Confinados</option>
+                                                    <option value="Otros">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Detalles del trabajo
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" id="detallesT" placeholder="Observación."></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Personal Competente
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="personalC" >
-                                    </div>
-                                </div>                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Externo o interno
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="tipoT">
-                                            <option value="0" style="display: none;"> Selecciona una opción </option>
-                                            <option value="INTERNO">INTERNO</option>
-                                            <option value="EXTERNO">EXTERNO</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Personal competente </label> </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="personalC" placeholder="Nombre completo del personal" > </div>
+                                        </div>                    
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Tipo de personal </label> </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="" id="tipoT">
+                                                    <option value="0" style="display: none;"> Selecciona una opción </option>
+                                                    <option value="INTERNO">INTERNO</option>
+                                                    <option value="EXTERNO">EXTERNO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <!-- AQUI DEBEN SER DE 6 PARTES PARA LA VALIDACION DE VECES QUE LLEVA EL PERMISO  -->
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Tipo de trabajo
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" id="tipoTrabajo">
-                                            <option value="0" style="display: none;">Selecciona una opción</option>
-                                            <option value="Electrico">Eléctrico</option>
-                                            <option value="Trabajo en">Trabajo en Alturas</option>
-                                            <option value="Caliente">Trabajo en Caliente</option>
-                                            <option value="Extraordinaria">Limpieza Extraordinaria</option>
-                                            <option value="EConfinados">Espacios Confinados</option>
-                                            <option value="Otros">Otros</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Horario De
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" id="hrIni">
-                                            <option value="00">00</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" id="minIni">
-                                            <option value="00">00</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                            <option value="23">23</option>
-                                            <option value="33">33</option>
-                                            <option value="34">34</option>
-                                            <option value="35">35</option>
-                                            <option value="36">36</option>
-                                            <option value="37">37</option>
-                                            <option value="38">38</option>
-                                            <option value="39">39</option>
-                                            <option value="40">40</option>
-                                            <option value="41">41</option>
-                                            <option value="42">42</option>
-                                            <option value="43">43</option>
-                                            <option value="44">44</option>
-                                            <option value="45">45</option>
-                                            <option value="46">46</option>
-                                            <option value="47">47</option>
-                                            <option value="48">48</option>
-                                            <option value="49">49</option>
-                                            <option value="50">50</option>
-                                            <option value="51">51</option>
-                                            <option value="52">52</option>
-                                            <option value="53">53</option>
-                                            <option value="54">54</option>
-                                            <option value="55">55</option>
-                                            <option value="56">56</option>
-                                            <option value="57">57</option>
-                                            <option value="58">58</option>
-                                            <option value="59">59</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            A
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" id="hrFin">
-                                            <option value="00">00</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" id="minFin">
-                                            <option value="00">00</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                            <option value="23">23</option>
-                                            <option value="33">33</option>
-                                            <option value="34">34</option>
-                                            <option value="35">35</option>
-                                            <option value="36">36</option>
-                                            <option value="37">37</option>
-                                            <option value="38">38</option>
-                                            <option value="39">39</option>
-                                            <option value="40">40</option>
-                                            <option value="41">41</option>
-                                            <option value="42">42</option>
-                                            <option value="43">43</option>
-                                            <option value="44">44</option>
-                                            <option value="45">45</option>
-                                            <option value="46">46</option>
-                                            <option value="47">47</option>
-                                            <option value="48">48</option>
-                                            <option value="49">49</option>
-                                            <option value="50">50</option>
-                                            <option value="51">51</option>
-                                            <option value="52">52</option>
-                                            <option value="53">53</option>
-                                            <option value="54">54</option>
-                                            <option value="55">55</option>
-                                            <option value="56">56</option>
-                                            <option value="57">57</option>
-                                            <option value="58">58</option>
-                                            <option value="59">59</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Detalles del trabajo: </label> </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                            <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="detallesT" placeholder="Observación."></textarea> </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Horario de: </label> </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="hrIni">
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="minIni">
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                    <option value="23">23</option>
+                                                    <option value="33">33</option>
+                                                    <option value="34">34</option>
+                                                    <option value="35">35</option>
+                                                    <option value="36">36</option>
+                                                    <option value="37">37</option>
+                                                    <option value="38">38</option>
+                                                    <option value="39">39</option>
+                                                    <option value="40">40</option>
+                                                    <option value="41">41</option>
+                                                    <option value="42">42</option>
+                                                    <option value="43">43</option>
+                                                    <option value="44">44</option>
+                                                    <option value="45">45</option>
+                                                    <option value="46">46</option>
+                                                    <option value="47">47</option>
+                                                    <option value="48">48</option>
+                                                    <option value="49">49</option>
+                                                    <option value="50">50</option>
+                                                    <option value="51">51</option>
+                                                    <option value="52">52</option>
+                                                    <option value="53">53</option>
+                                                    <option value="54">54</option>
+                                                    <option value="55">55</option>
+                                                    <option value="56">56</option>
+                                                    <option value="57">57</option>
+                                                    <option value="58">58</option>
+                                                    <option value="59">59</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <div class="fm-checkbox"> <label> a </label> </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="hrFin">
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="minFin">
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                    <option value="23">23</option>
+                                                    <option value="33">33</option>
+                                                    <option value="34">34</option>
+                                                    <option value="35">35</option>
+                                                    <option value="36">36</option>
+                                                    <option value="37">37</option>
+                                                    <option value="38">38</option>
+                                                    <option value="39">39</option>
+                                                    <option value="40">40</option>
+                                                    <option value="41">41</option>
+                                                    <option value="42">42</option>
+                                                    <option value="43">43</option>
+                                                    <option value="44">44</option>
+                                                    <option value="45">45</option>
+                                                    <option value="46">46</option>
+                                                    <option value="47">47</option>
+                                                    <option value="48">48</option>
+                                                    <option value="49">49</option>
+                                                    <option value="50">50</option>
+                                                    <option value="51">51</option>
+                                                    <option value="52">52</option>
+                                                    <option value="53">53</option>
+                                                    <option value="54">54</option>
+                                                    <option value="55">55</option>
+                                                    <option value="56">56</option>
+                                                    <option value="57">57</option>
+                                                    <option value="58">58</option>
+                                                    <option value="59">59</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    Asegúrese de  que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            PELIGROS
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" multiple data-placeholder="Selecciona una/varias opciones" id="peligros">
-                                            <!-- <option value="0" style="display:none;">Selecciona una opción</option> -->
-                                            <option value="Gravedad y movimientos">Gravedad y movimientos</option>
-                                            <option value="Herramientas/Equipos/Maquinaria">Herramientas/Equipos/Maquinaria</option>
-                                            <option value="Transporte terrestres"> Transporte terrestres</option>
-                                            <option value="Transporte aereo"> Transporte aéreo</option>
-                                            <option value="Clima">Clima</option>
-                                            <option value="Electricidad">Electricidad</option>
-                                            <option value="Presion">Presión</option>
-                                            <option value="Temperatura">Temperatura</option>
-                                            <option value="Vibracion/Ruido">Vibración/Ruido</option>
-                                            <option value="Radiacion">Radiación</option>
-                                            <option value="Fuego">Fuego</option>
-                                            <option value="Materiales Peligrosos">Materiales Peligrosos</option>
-                                            <option value="Biologicos">Biológicos</option>
-                                            <option value="Fenomenos Naturales">Fenómenos Naturales</option>
-                                            <option value="Otros">Otros</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="fm-checkbox"> <label> No. de Revalidación</label> </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="revapermiso">
+                                                    <option value="00">00</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div> -->
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-  
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            PRECAUCIONES REQUERIDAS/EQUIPOS
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" multiple data-placeholder="Selecciona una/varias opciones" id="precauciones">
-                                            <!-- <option value="0" style="display:none;">Selecciona una opción</option> -->
-                                            <option value="Personal competente">Personal competente</option>
-                                            <option value="Equipo de combate de incendios">Equipo de combate de incendios</option>
-                                            <option value="Iluminacion">Iluminación</option>
-                                            <option value="Material combustible removido">Material combustible removido</option>
-                                            <option value="Circuitos Eléctricos Aislados">Circuitos Eléctricos Aislados</option>
-                                            <option value="Equipos de detección">Equipos de detección</option>
-                                            <option value="Equipos de Ignicion">Equipos de Ignición</option>
-                                            <option value="Aparejos de carga certificados">Aparejos de carga certificados</option>
-                                            <option value="Tanques de combustible llenos de agua">Tanques de combustible llenos de agua</option>
-                                            <option value="Equipos de Respiracion">Equipos de Respiración</option>
-                                            <option value="Equipo de hizaje apropiado">Equipo de hizaje apropiado</option>
-                                            <option value="Barricadas / Barreras">Barricadas / Barreras</option>
-                                            <option value="Señales preventivas">Señales preventivas<option>
-                                            <option value="Seguridad / Fuego prevención">Seguridad / Fuego prevención</option>
-                                            <option value="Rutas de escape despejadas">Rutas de escape despejadas</option>
-                                            <option value="Equipos de seguridad relevantes">Equipos de seguridad relevantes</option>
-                                            <option value="EPP">EPP</option>
-                                            <option value="Comunicaciones">Comunicaciones</option>
-                                            <option value="Botiquín">Botiquín</option>
-                                            <option value="Bloqueo">Bloqueo</option>
-                                            <option value="Bloqueos / Soportes">Bloqueos / Soportes</option>
-                                            <option value="MSDS">MSDS</option>
-                                            <option value="Ventilación">Ventilación</option>
-                                            <option value="Otros">Otros</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            Asegúrese de que los siguientes peligros son identificados y conocidos por todas las personas y que existen controles en el sitio.
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Peligros </label> </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" multiple data-placeholder="Selecciona una/varias opciones" id="peligros">
+                                                    <!-- <option value="0" style="display:none;">Selecciona una opción</option> -->
+                                                    <option value="Gravedad y movimientos">Gravedad y movimientos</option>
+                                                    <option value="Herramientas/Equipos/Maquinaria">Herramientas/Equipos/Maquinaria</option>
+                                                    <option value="Transporte terrestres"> Transporte terrestres</option>
+                                                    <option value="Transporte aereo"> Transporte aéreo</option>
+                                                    <option value="Clima">Clima</option>
+                                                    <option value="Electricidad">Electricidad</option>
+                                                    <option value="Presion">Presión</option>
+                                                    <option value="Temperatura">Temperatura</option>
+                                                    <option value="Vibracion/Ruido">Vibración/Ruido</option>
+                                                    <option value="Radiacion">Radiación</option>
+                                                    <option value="Fuego">Fuego</option>
+                                                    <option value="Materiales Peligrosos">Materiales Peligrosos</option>
+                                                    <option value="Biologicos">Biológicos</option>
+                                                    <option value="Fenomenos Naturales">Fenómenos Naturales</option>
+                                                    <option value="Otros">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+          
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Precauciones requeridas/Equipos </label> </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" multiple data-placeholder="Selecciona una/varias opciones" id="precauciones">
+                                                    <!-- <option value="0" style="display:none;">Selecciona una opción</option> -->
+                                                    <option value="Personal competente">Personal competente</option>
+                                                    <option value="Equipo de combate de incendios">Equipo de combate de incendios</option>
+                                                    <option value="Iluminacion">Iluminación</option>
+                                                    <option value="Material combustible removido">Material combustible removido</option>
+                                                    <option value="Circuitos Eléctricos Aislados">Circuitos Eléctricos Aislados</option>
+                                                    <option value="Equipos de detección">Equipos de detección</option>
+                                                    <option value="Equipos de Ignicion">Equipos de Ignición</option>
+                                                    <option value="Aparejos de carga certificados">Aparejos de carga certificados</option>
+                                                    <option value="Tanques de combustible llenos de agua">Tanques de combustible llenos de agua</option>
+                                                    <option value="Equipos de Respiracion">Equipos de Respiración</option>
+                                                    <option value="Equipo de hizaje apropiado">Equipo de hizaje apropiado</option>
+                                                    <option value="Barricadas / Barreras">Barricadas / Barreras</option>
+                                                    <option value="Señales preventivas">Señales preventivas<option>
+                                                    <option value="Seguridad / Fuego prevención">Seguridad / Fuego prevención</option>
+                                                    <option value="Rutas de escape despejadas">Rutas de escape despejadas</option>
+                                                    <option value="Equipos de seguridad relevantes">Equipos de seguridad relevantes</option>
+                                                    <option value="EPP">EPP</option>
+                                                    <option value="Comunicaciones">Comunicaciones</option>
+                                                    <option value="Botiquín">Botiquín</option>
+                                                    <option value="Bloqueo">Bloqueo</option>
+                                                    <option value="Bloqueos / Soportes">Bloqueos / Soportes</option>
+                                                    <option value="MSDS">MSDS</option>
+                                                    <option value="Ventilación">Ventilación</option>
+                                                    <option value="Otros">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Area donde se trabajara
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" id="areaTrab">
-                                            <option value="0" style="display:none;">Selecciona una opción</option>
-                                            <option value="Dispensario">Dispensario</option>
-                                            <option value="Tanques">Tanques</option>
-                                            <option value="Techos, faldones, anuncio independiente">Techos, faldones, anuncio independiente</option>
-                                            <option value="Cuarto Electrico">Cuarto Eléctrico</option>
-                                            <option value="Cuarto de Maquinas">Cuarto de Maquinas</option>
-                                            <option value="Otro">Otro</option>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox"> <label> Area donde se trabajara </label> </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" id="areaTrab">
+                                                    <option value="0" style="display:none;">Selecciona una opción</option>
+                                                    <option value="Dispensario">Dispensario</option>
+                                                    <option value="Tanques">Tanques</option>
+                                                    <option value="Techos, faldones, anuncio independiente">Techos, faldones, anuncio independiente</option>
+                                                    <option value="Cuarto Electrico">Cuarto Eléctrico</option>
+                                                    <option value="Cuarto de Maquinas">Cuarto de Maquinas</option>
+                                                    <option value="Otro">Otro</option>
 
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarOrdenTrabajo" class="btn btn-warning notika-btn-warning">Guardar</button>
-                                </div>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                            <button id="guardarOrdenTrabajo" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                        </div>
                             </div>
-                        </div>
-                    </div>
 
-
-
-                    <!-- ******************* CARGA DE BITACORAS *********************** -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="display: ;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Cargar bitacoras del punto 10</h2>
-                                <p>Para cumplir este punto deberas cargar las bitacoras. Estas deben ser las ultimas que realizaste en fisico de los siguiente temas:</p>
-                            </div>
-                            <div class="row">                    
+                            <div class="row" style="border: black 1px solid; display: none;" id="bit">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="fm-checkbox">
-                                        <label> Mantemiento Preventivo y Correctivo (10-BT-01) (.pdf) </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Mantemiento Preventivo y Correctivo (10-BT-01) (.pdf) </label> </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
@@ -1497,167 +1371,134 @@
                                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt01" name="archivobt01">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt01" name="archivobt01"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt01" name="idbt01">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt01" name="idbt01"> </div>
                                     </div>
-                                <?php 
-                                    $sqlprueba = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBitacoras DESC LIMIT 1";
-                                    $result =mysqli_query($con, $sqlprueba);
-                                    if($result->num_rows > 0){ 
-                                        $fila1 = $result->fetch_assoc();
-                                        $datos1 = implode("", $fila1);
-                                        //echo $datos1; ?>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos1;?>" placeholder="" id="idActualiza01" name="idActualiza01">
-                                        </div>
-                                    </div>
-                                    
-                                    </form>
-                                <?php
-                                    }else{ ?>
-                                        </form>
+                                    <?php 
+                                        $sqlprueba = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $result =mysqli_query($con, $sqlprueba);
+                                        if($result->num_rows > 0){ 
+                                            $fila1 = $result->fetch_assoc();
+                                            $datos1 = implode("", $fila1);
+                                            //echo $datos1; ?>
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="form-group nk-int-st">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos1;*/ ?>" placeholder="" id="idActualiza01" name="idActualiza01">
+                                            </div>
+                                        </div> -->
                                         
-                                <?php
-                                    }
-                                ?>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <button type="button" class="btn btn-warning" id="btnGuardar01">Guardar</button>
-                                </div>
-
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                    
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="fm-checkbox">
-                                        <label> Residuos Peligrosos (10-BT-02) (.pdf) </label>
+                                    </form>
+                                    <?php }else{ ?>
+                                    </form>
+                                    <?php } ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <button type="button" class="btn btn-warning" id="btnGuardar01">Guardar</button>
                                     </div>
-                                </div>
-                                
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <form name="enviarbt02" id="enviarbt02" enctype="multipart/form-data" method="post">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="fm-checkbox"> <label> Residuos Peligrosos (10-BT-02) (.pdf) </label> </div>
+                                    </div>
+                                    <form name="enviarbt02" id="enviarbt02" enctype="multipart/form-data" method="post">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div class="fm-checkbox">
+                                                <label>
+                                                    <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                        <div class="input-group date nk-int-st">
+                                                            <span class="input-group-addon"></span>
+                                                            <input type="text" class="form-control" name="datebt02" id="datebt02" value="03/19/2018">
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                            <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt02" name="archivobt02"> </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt02" name="idbt02"> </div>
+                                        </div>
+                                    <?php 
+                                        $sqlprueb = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-02' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resul =mysqli_query($con, $sqlprueb);
+                                        if($resul->num_rows > 0){ 
+                                            $fila2 = $resul->fetch_assoc();
+                                            $datos2 = implode("", $fila2);
+                                            //echo $datos1; ?>
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="form-group nk-int-st">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos2;*/ ?>" placeholder="" id="idActualiza" name="idActualiza02">
+                                            </div>
+                                        </div> -->                                        
+                                    </form>
+                                    <?php }else{ ?>
+                                    </form>
+                                    <?php } ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <button type="button" class="btn btn-warning" id="btnGuardar02">Guardar</button>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                        
+                        
+                                    
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="fm-checkbox">
                                             <label>
-                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                    <div class="input-group date nk-int-st">
-                                                        <span class="input-group-addon"></span>
-                                                        <input type="text" class="form-control" name="datebt02" id="datebt02" value="03/19/2018">
-                                                    </div>
-                                                </div>
+                                               Recepción, Descarga y Desviación en el Balance de Producto (10-BT-03)
                                             </label>
                                         </div>
                                     </div>
-                                    
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt02" name="archivobt02">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt02" name="idbt02">
-                                        </div>
-                                    </div>
-                                <?php 
-                                    $sqlprueb = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-02' ORDER BY idBitacoras DESC LIMIT 1";
-                                    $resul =mysqli_query($con, $sqlprueb);
-                                    if($resul->num_rows > 0){ 
-                                        $fila2 = $resul->fetch_assoc();
-                                        $datos2 = implode("", $fila2);
-                                        //echo $datos1; ?>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos2;?>" placeholder="" id="idActualiza" name="idActualiza02">
-                                        </div>
-                                    </div>
-                                    
-                                    </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <button type="button" class="btn btn-warning" id="btnGuardar02">Guardar</button>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           Recepción, Descarga y Desviación en el Balance de Producto (10-BT-03)
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                <form name="enviarbt03" id="enviarbt03" enctype="multipart/form-data" method="post">
-                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
-                                        <div class="fm-checkbox">
-                                            <label>
-                                                <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                    <div class="input-group date nk-int-st">
-                                                        <span class="input-group-addon"></span>
-                                                        <input type="text" class="form-control" name="datebt03" id="datebt03" value="03/19/2018">
+                                    <form name="enviarbt03" id="enviarbt03" enctype="multipart/form-data" method="post">
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                            <div class="fm-checkbox">
+                                                <label>
+                                                    <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                        <div class="input-group date nk-int-st">
+                                                            <span class="input-group-addon"></span>
+                                                            <input type="text" class="form-control" name="datebt03" id="datebt03" value="03/19/2018">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </label>
+                                                </label>
+                                            </div>
                                         </div>
-                                    </div>
-                                                                  
-                                    
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt03" name="archivobt03">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt03" name="idbt03">
-                                        </div>
-                                    </div>
-                                <?php 
-                                    $sqlprue = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBitacoras DESC LIMIT 1";
-                                    $res =mysqli_query($con, $sqlprue);
-                                    if($res->num_rows > 0){ 
-                                        $fila3 = $res->fetch_assoc();
-                                        $datos3 = implode("", $fila3);
-                                        //echo $datos1; ?>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos3;?>" placeholder="" id="idActualiza03" name="idActualiza03">
-                                        </div>
-                                    </div>
-                                    
-                                    </form>
-                                <?php
-                                    }else{ ?>
+                                                                      
                                         
-                                        </form>
-                                <?php
-                                    }
-                                ?>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <button type="button" class="btn btn-warning" id="btnGuardar03">Guardar</button>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
+                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                            <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivobt03" name="archivobt03"> </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt03" name="idbt03"> </div>
+                                        </div>
+                                    <?php 
+                                        $sqlprue = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $res =mysqli_query($con, $sqlprue);
+                                        if($res->num_rows > 0){ 
+                                            $fila3 = $res->fetch_assoc();
+                                            $datos3 = implode("", $fila3);
+                                            //echo $datos1; ?>
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="form-group nk-int-st">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos3;*/ ?>" placeholder="" id="idActualiza03" name="idActualiza03">
+                                            </div>
+                                        </div -->>
+                                        
+                                    </form>
+                                    <?php }else{ ?>
+                                    </form>
+                                    <?php } ?>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <button type="button" class="btn btn-warning" id="btnGuardar03">Guardar</button>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-1"></div>
                     
                 </div>
             </div>
@@ -2080,7 +1921,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -2091,7 +1932,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

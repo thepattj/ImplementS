@@ -85,9 +85,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacioncompleto">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -637,7 +642,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -651,66 +656,37 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
+                                <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- <div class="wizard-area">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="wizard-wrap-int">
-                                        <div class="wizard-hd">
-                                            <h2></h2>
-                                            <p></p>
-                                        </div>
-                                        <div id="rootwizard">
-                                            <div class="navbar">
-                                                <div class="navbar-inner">
-                                                    <div class="container-pro wizard-cts-st">
-                                                        <ul>
-                                                            <li id="btnper"><a href="#tab1" data-toggle="tab">Cambio de personal</a></li>
-                                                            <li id="btntec"><a href="#tab2" data-toggle="tab">Cambio técnologico</a></li>
-                                                            <li id="btnorden"><a href="#tab3" data-toggle="tab">Orden de trabajo</a></li>
-                                                            <li id="btnbitacora"><a href="#tab4" data-toggle="tab">Subir Bitacora</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-content"> </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               </div>
                             </div>
                         </div>
                     </div> -->
 
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bit" style="">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="bit" style="">
                         <div class="form-element-list">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Integridad Mecánica y Aseguramiento de la calidad</h2>
+                                    <p><span class="bread-ntd" id="datacre">  </span> </p>
+                                </div>
+                            </div>
                             <div class="basic-tb-hd">
                                 <h2></h2>
-                                <p>Para poder cumplir el punto deberas realizar dos actividades</p>
-                                <p>I Cargar las fechas de las bitacoras que ya haz realizado hasta este momento.</p>
-                                <p>II Cargar la bitacora (formato .pdf) en las fechas indicadas.</p>
+                                <p>Completar el siguiente formulario, anexando las fechas de las bitácoras que ya se han implementado y subirlo en PDF en los campos señalados.</p>
                             </div>
-                            <div class="row">
-                                
-
+                            <div class="row" style="border: black 1px solid; display:; overflow: auto; width: 90%; height: 290px; margin-left: 5%;" id="">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="fm-checkbox">
                                         <h4>Monitoreo y observación (11 BT 01)</h4>
                                         <p style="font-size: .8em;">(Se subiran Mensualmente .pdf)</p>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-                                
                                 <form name="frm11bt01" id="frm11bt01" enctype="multipart/form-data" method="post">
-                                    <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div> -->
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
@@ -723,19 +699,11 @@
                                             </label>
                                         </div>
                                     </div>
-                                                                   
-                                    
-
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt1" name="archivo11bt1">
-                                        </div>
+                                        <div class="form-group nk-int-st "> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt1" name="archivo11bt1"> </div>
                                     </div>
-
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt01" name="id11bt01">
-                                        </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <!-- NO SE VE -->
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt01" name="id11bt01"> </div>
                                     </div> 
                                 <?php 
                                     $sql1 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBit DESC LIMIT 1";
@@ -744,29 +712,21 @@
                                         $fila1 = $res1->fetch_assoc();
                                         $datos1 = implode("", $fila1);
                                         //echo $datos1; ?>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" value="<?php echo $datos1;?>" placeholder="" id="idActualiza11bt01" name="idActualiza11bt01">
-                                        </div>
-                                    </div>
-                                    
-                                    </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
-
+                                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <div class="form-group nk-int-st">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos1;*/ ?>" placeholder="" id="idActualiza11bt01" name="idActualiza11bt01">
+                                            </div>
+                                        </div>  --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->                                  
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar11bt01">Guardar</button>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE PRIMER BITACORA -->
 
-
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIO DE SEGUNDA BITACORA -->
                                     <div class="fm-checkbox">
                                         <h4>Limpiezas y/o Mantemienito Preventico y Correctivo (Limpieza General - Diario - 11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Mensualmente, todas las bitacoras en un mismo .pdf)</p>
@@ -774,7 +734,6 @@
                                 </div>
                                 
                                 <form name="frm11bt02" id="frm11bt02" enctype="multipart/form-data" method="post">
-                                    <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div> -->
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
@@ -787,17 +746,11 @@
                                             </label>
                                         </div>
                                     </div>    
-                                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2" name="archivo11bt2">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2" name="archivo11bt2"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02" name="id11bt02">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02" name="id11bt02"> </div>
                                     </div>
                                 <?php 
                                     $sql2 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Diario' ORDER BY idBit DESC LIMIT 1";
@@ -806,28 +759,22 @@
                                         $fila2 = $res2->fetch_assoc();
                                         $datos2 = implode("", $fila2);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos2;?>" placeholder="" id="idActualiza11bt02" name="idActualiza11bt02">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos2;*/ ?>" placeholder="" id="idActualiza11bt02" name="idActualiza11bt02">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar11bt02">Guardar</button>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div><!-- TERMINA CARGA DE SEGUNDA BITACORA -->
 
-                    
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><!-- INICIO DE TERCERA BITACORA -->
                                     <div class="fm-checkbox">
                                         <h4> Limpiezas y/o Mantemiento Preventivio y Correctivo Mensual (11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Mensualmente las bitacoras - .pdf)</p>
@@ -851,14 +798,10 @@
                                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2m" name="archivo11bt2m">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2m" name="archivo11bt2m"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02m" name="id11bt02m">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02m" name="id11bt02m"> </div>
                                     </div>
 
                                 <?php 
@@ -868,36 +811,27 @@
                                         $fila3 = $res3->fetch_assoc();
                                         $datos3 = implode("", $fila3);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos3;?>" placeholder="" id="idActualiza11bt02m" name="idActualiza11bt02m">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos3;*/ ?>" placeholder="" id="idActualiza11bt02m" name="idActualiza11bt02m">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar02m">Guardar</button>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                    
-                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE TERCERA BITACORA -->
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA CARGA DE CUARTA BITACORA -->
                                     <div class="fm-checkbox">
                                         <h4>Mantemiento Preventivio y Correctivo Trimestral (Limpieza Ecologica - 11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Trismestralmente las bitacoras - .pdf)</p>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                                 <form name="frm11bt02t" id="frm11bt02t" enctype="multipart/form-data" method="post">
-                                    <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div> -->
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
@@ -910,16 +844,11 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2t" name="archivo11bt2t">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt2t" name="archivo11bt2t"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02t" name="id11bt02t">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02t" name="id11bt02t"> </div>
                                     </div>
 
                                 <?php 
@@ -929,37 +858,28 @@
                                         $fila4 = $res4->fetch_assoc();
                                         $datos4 = implode("", $fila4);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos4;?>" placeholder="" id="idActualiza11bt02t" name="idActualiza11bt02t">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos4;*/ ?>" placeholder="" id="idActualiza11bt02t" name="idActualiza11bt02t">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03t">Guardar</button>
                                 </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE CUARTA BITACORA -->
 
-
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA CARGA DE QUINTA BITACORA -->
                                     <div class="fm-checkbox">
                                         <h4> Mantemiento Preventivio y Correctivo Cuatrimestral (Señalamientos - 11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Cuatrimestralmente las bitacoras - .pdf)</p>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                                 <form name="frm11bt02c" id="frm11bt02c" enctype="multipart/form-data" method="post">
-                                    <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><b>Fecha</b></div> -->
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                         <div class="fm-checkbox">
                                             <label>
@@ -972,7 +892,6 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
                                     
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                         <div class="form-group nk-int-st">
@@ -985,34 +904,28 @@
                                         </div>
                                     </div>
 
-                                    <?php 
+                                <?php 
                                     $sql5 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Cuatrimestral' ORDER BY idBit DESC LIMIT 1";
                                     $res5 =mysqli_query($con, $sql5);
                                     if($res5->num_rows > 0){ 
                                         $fila5 = $res5->fetch_assoc();
                                         $datos5 = implode("", $fila5);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos5;?>" placeholder="" id="idActualiza11bt02c" name="idActualiza11bt02c">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos5;*/ ?>" placeholder="" id="idActualiza11bt02c" name="idActualiza11bt02c">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php  }else{ ?>
+                                </form>
+                                <?php } ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03c">Guardar</button>
                                 </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE QUINTA BITACORA -->
 
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA CARGA DE L SEXTA -->
                                     <div class="fm-checkbox">
                                         <h4> Mantemiento Preventivio y Correctivo Semestral (Instalaciones eléctricas - 11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Semestralmente las bitacoras - .pdf)</p>
@@ -1036,44 +949,34 @@
                                     
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02s" name="archivo11bt02s">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02s" name="archivo11bt02s"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02s" name="id11bt02s">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02s" name="id11bt02s"> </div>
                                     </div>
                                     
-                                    <?php 
+                                <?php 
                                     $sql6 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Semestral' ORDER BY idBit DESC LIMIT 1";
                                     $res6 =mysqli_query($con, $sql6);
                                     if($res6->num_rows > 0){ 
                                         $fila6 = $res6->fetch_assoc();
                                         $datos6 = implode("", $fila6);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos6;?>" placeholder="" id="idActualiza11bt02s" name="idActualiza11bt02s">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos6;*/ ?>" placeholder="" id="idActualiza11bt02s" name="idActualiza11bt02s">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03s">Guardar</button>
                                 </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA SEXTA BITACORA -->
 
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA SEPTIMA BITACORA -->
                                     <div class="fm-checkbox">
                                         <h4> Mantemiento Preventivio y Correctivo Anual (11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Anualmente las bitacoras - .pdf)</p>
@@ -1097,14 +1000,10 @@
                                     
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02a" name="archivo11bt02a">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02a" name="archivo11bt02a"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02a" name="id11bt02a">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02a" name="id11bt02a"> </div>
                                     </div>
                                <?php 
                                     $sql7 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Anual' ORDER BY idBit DESC LIMIT 1";
@@ -1113,28 +1012,22 @@
                                         $fila7 = $res7->fetch_assoc();
                                         $datos7 = implode("", $fila7);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos7;?>" placeholder="" id="idActualiza11bt02a" name="idActualiza11bt02a">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos7;*/ ?>" placeholder="" id="idActualiza11bt02a" name="idActualiza11bt02a">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03a">Guardar</button>
                                 </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA SEPTIMA CARGA -->
 
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA OCTAVA CARGA -->
                                     <div class="fm-checkbox">
                                         <h4> Mantemiento Preventivio y Correctivo Quinquenal (11 BT 02)</h4>
                                         <p style="font-size: .8em;">(Se subiran Quinquenalmente las bitacoras - .pdf)</p>
@@ -1158,46 +1051,37 @@
                                     
                                     
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                            <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02q" name="archivo11bt02q">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt02q" name="archivo11bt02q"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02q" name="id11bt02q">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02q" name="id11bt02q"> </div>
                                     </div>
                                     
                                     <?php 
-                                    $sql8 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Quinquenal' ORDER BY idBit DESC LIMIT 1";
-                                    $res8 =mysqli_query($con, $sql8);
-                                    if($res8->num_rows > 0){ 
+                                        $sql8 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Quinquenal' ORDER BY idBit DESC LIMIT 1";
+                                        $res8 =mysqli_query($con, $sql8);
+                                        if($res8->num_rows > 0){ 
                                         $fila8 = $res8->fetch_assoc();
                                         $datos8 = implode("", $fila8);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos8;?>" placeholder="" id="idActualiza11bt02q" name="idActualiza11bt02q">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos8;*/ ?>" placeholder="" id="idActualiza11bt02q" name="idActualiza11bt02q">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                    <?php
-                                        }else{ ?>
-                                            
-                                            </form>
-                                    <?php
-                                        }
-                                    ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                    </form>
+                                    <?php }else{ ?>
+                                    </form>
+                                    <?php } ?>
                                 
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03q">Guardar</button>
                                 </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA DE OCTAVA -->
 
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA NOVENA -->
                                     <div class="fm-checkbox">
                                         <h4>Fugas, derrames, pruebas de hermeticidad y drenado de agua (11 BT 03)</h4>
                                         <p style="font-size: .8em;">(Se subiran Mensualmente .pdf)</p>
@@ -1221,14 +1105,10 @@
                                     
 
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                        <div class="form-group nk-int-st">
-                                           <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt03" name="archivo11bt03">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input type="file" class="form-control" placeholder="col-lg-4" id="archivo11bt03" name="archivo11bt03"> </div>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <div class="form-group nk-int-st">
-                                           <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt03" name="id11bt03">
-                                        </div>
+                                        <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt03" name="id11bt03"> </div>
                                     </div>
                                 <?php 
                                     $sql9 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBit DESC LIMIT 1";
@@ -1237,29 +1117,24 @@
                                         $fila9 = $res9->fetch_assoc();
                                         $datos9 = implode("", $fila9);
                                         //echo $datos1; ?>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php echo $datos9;?>" placeholder="" id="idActualiza11bt03" name="idActualiza11bt03">
+                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos9;*/ ?>" placeholder="" id="idActualiza11bt03" name="idActualiza11bt03">
                                             </div>
-                                        </div>
-                                        
-                                        </form>
-                                <?php
-                                    }else{ ?>
-                                        
-                                        </form>
-                                <?php
-                                    }
-                                ?>
+                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                </form>
+                                <?php }else{ ?>
+                                </form>
+                                <?php } ?>
                                 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar04">Guardar</button>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA NOVENA -->
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-2"></div>
                     
                 </div>
             </div>
@@ -1682,7 +1557,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1693,7 +1568,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

@@ -1,3 +1,11 @@
+<?php
+    include 'php/conex.php';
+    $id = $_GET["x"];
+    $con = Conectarse();
+
+    date_default_timezone_set('America/Mexico_City');
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -78,9 +86,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacioncompleto">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -630,7 +643,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -638,114 +651,71 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Auditorías</h2>
+                                        <h2></h2>
                                         <p><span class="bread-ntd" id="datacre">No. E. S.</span> </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
+                                <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                               </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
-                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2" style="background: rgb(254,174,0); color: rgb(27,22,50);">Auditoria</div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Reporte de auditoria </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- <div class="wizard-area">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="wizard-wrap-int">
-                                        < <div class="wizard-hd">
-                                            <h2></h2>
-                                            <p></p>
-                                        </div>
-                                        <div id="rootwizard">
-                                            <div class="navbar">
-                                                <div class="navbar-inner">
-                                                    <div class="container-pro wizard-cts-st">
-                                                        <ul>
-                                                            <li id="btnaudi"><a href="#tab1" data-toggle="tab">Auditoria</a></li>
-                                                            <li id="btnrepa"><a href="#tab2" data-toggle="tab">Reporte de Auditoria</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-content"> </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div> -->
 
-
-
-
                     <!-- SE VAN AGREGAR ESTO  ESTACION,DIRECCION, REPRESENTANTE TEC. PERIODO, CARGO-->
                     <!-- ******************* REPORTE auditorías *********************** -->
-                   
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="audi" style="display:;">
-                       <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h2>Información de Audoria:</h2>
-                               <p>Deberás acompletar cada uno de los requisitos de información para poder pasar a las actividades.</p>
-                           </div>
-                            <!-- DATOS PENDIENTES POR AGREGAR EN PDF -->
-                            <div style="display: none;">                                
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Dirección </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="direccionES" type="text" class="form-control"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Representante tecnico </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="reptecnico" type="text" class="form-control"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                
-
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> Cargo </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <input id="cargo" value="Coordinador SASISOPA" type="text" class="form-control"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-8 col-sm-8 col-xs-8" >
+                        <div class="form-element-list" style="display:; border-radius: 35px;">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Auditorías</h2>
+                                    <p><span class="bread-ntd"><?php echo $id; ?></span> </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
+                                <button id="btnaudi" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 70%">Auditoria</button>
+                                <button id="btnrepa" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Reporte de auditoria</button>
                             </div>
 
-                            <!-- PLAN DE AUDITORIA -->
-                           <div class="row">                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                       <label> Periodo de auditoria </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input id="periodo" type="text" class="form-control" placeholder="Ej: Ene-Jun 2021">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Alcance </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="alcance" placeholder="Descripción de la razón de la auditoria">
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            <div class="basic-tb-hd" id="audInstr">
+                                <h2>Información de Audoria:</h2>
+                                <p>Completar el siguiente formulario para dar de alta la información de tu auditoría.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="reporInstr" style="display: none;">
+                                <h2>Reporte de Auditorías:</h2>
+                                <p>Completar el siguiente formulario para generar el reporte de tu auditoría.</p>
+                            </div>
 
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Criterio de Auditoria </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="chosen-select-act fm-cmp-mg">
+                            <div class="row" style="border: black 1px solid; display: ;" id="audi">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Periodo de auditoria </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input id="periodo" type="text" class="form-control" placeholder="Ej: Ene-Jun 2021"> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Alcance </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="alcance" placeholder="Descripción de la razón de la auditoria"> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                       
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Criterio de Auditoria </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="criterio">
                                             <option style="display: none;">Selecciona una opción</option>
                                             <option value="">Disposiciones de ASEA (SASISOPA)</option>
@@ -754,32 +724,27 @@
                                             <option value="">Otros</option>
                                         </select>
                                     </div>
-                               </div>
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Tipo de Auditoria </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="chosen-select-act fm-cmp-mg">
+                                </div>
+                       
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Tipo de Auditoria </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="tipo">
                                             <option style="display: none;">Selecciona una opción</option>
                                             <option value="">INTERNA</option>
                                             <option value="">EXTERNA</option>
                                         </select>
                                     </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>Objetivos</label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="chosen-select-act fm-cmp-mg">
+                                    <div class="fm-checkbox"> <label>Objetivos</label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="objetivos">
                                             <option style="display: none;">Selecciona una opción</option>
                                             <option value="">Determinar la conformidad de la ASEA</option>
@@ -788,85 +753,61 @@
                                             <option value="">Oportunidades de mejoras (SASISOPA)</option>  
                                         </select>
                                     </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>Auditor Lider</label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label> Auditor 1 </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label> Auditor 2 </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" id="al" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno">
-                                   </div>
-                               </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" id="a1" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno">
-                                   </div>
-                               </div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" id="a2" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno">
-                                   </div>
-                               </div>
-
-                               <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"></div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
-                                    <button id="guardarauditoria" class="btn btn-warning notika-btn-warning">Guardar</button>                                    
-                               </div>
-
-
-                               
-                   
-                   
-                               
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="auditoriaNumero">
-                                   <div class="basic-tb-hd">
-                                       <h2>Plan de Audoria:</h2>
-                                       <p>Deberás cargar cada una de las actividades/procesos que se auditaran para tener el programa de auditorías de cada periodo</p>
-                                   </div>
-                               </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Fecha </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Hora de aplicación </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Proceso y/o actividad </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Auditor </label>
-                                   </div>
-                               </div>
+                                   
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label>Auditor Lider</label> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Auditor 1 </label> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Auditor 2 </label> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                        <label>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st"> <input type="text" id="al" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno"> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st"> <input type="text" id="a1" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno"> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st"> <input type="text" id="a2" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno"> </div>
+                                </div>
+
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="guardarauditoria" class="btn btn-warning notika-btn-warning">Guardar</button>                                  
+                                </div> 
+
+                                <!-- ACTIVIDADES AUDITADAS -->
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="auditoriaNumero">
+                                    <div class="basic-tb-hd">
+                                        <h2>Actividades realizadas:</h2>
+                                        <p>Deberás cargar cada una de las actividades/procesos que se auditaron</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                       
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Fecha </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Hora de aplicación </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Proceso y/o actividad </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Auditor </label> </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label> 
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                                                 <div class="input-group date nk-int-st">
                                                     <span class="input-group-addon"></span>
@@ -875,144 +816,95 @@
                                             </div>
                                         </label>
                                     </div>
-                               </div>
+                                </div>
 
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                      <input type="time" class="form-control" placeholder="" id="horaadu">
-                                   </div>
-                               </div>
-                               
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="Nombre" id="actividadpau">
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno" id="auditor">
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               
-                               <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="time" class="form-control" placeholder="" id="horaadu"> </div>
+                                </div>
+                                   
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" placeholder="Nombre" id="actividadpau"> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" placeholder="Nombre(s) Apellido Paterno Apellido Materno" id="auditor"> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                   
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
                                     <button id="guardaractaudi" class="btn btn-warning notika-btn-warning">Guardar</button>                                    
-                               </div>
-                   
-                               
-                               
-                                                 
-                           </div>
-                       </div>
-                   </div>
+                                </div>
+                            </div>
 
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="repaudi" style="display: none;">
-                       <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h2>Reporte de auditorías:</h2>
-                           </div>
-                           <div class="row">                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Auditoria (No.)
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" id="noaud" disabled class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
-                                   </div>
-                               </div>                   
+                            <div class="row" style="border: black 1px solid; display: none;" id="repaudi" >
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Tipo de Auditoria
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" id="tau" disabled class="form-control" placeholder="TOMA INFO DE LO ANTERIOR">
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Fecha de elaboración (con hora):
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="fecharep" placeholder="" disabled>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Reporte Elaborado por:
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="elab" placeholder="Nombre(s) Apellido Paterno Apellido Materno" >
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Comentarios de hallazgos
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" id="hallaz" placeholder="Se deben escribir los comentarios completamente"></textarea>
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Conclusiones
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" id="conclu" placeholder="Se deben explicar las conclusiones"></textarea>
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Recomendaciones:
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" id="recom" placeholder="De ser necesario deberan escribir los pasos de las recomendaciones"></textarea>
-                                   </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarrepaud" class="btn btn-success notika-btn-success">Guardar</button>                                    
-                               </div>
-                           </div>
-                       </div>
-                   </div>
+                                    <div class="fm-checkbox"> <label>Auditoria (No.)</label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <?php 
+                                    $sqlaud = "SELECT idAuditoria as num, tipoA as auditoriaTp FROM auditoria /*WHERE idcesh == $*/";
+                                    $resulsaud = mysqli_query($con, $sqlaud);
+                                    if($resulsaud->num_rows > 0){
+                                        while($fil = $resulsaud->fetch_assoc()){
+                                            $numAudi = $fil['num'];
+                                            $tAuditoria = $fil['auditoriaTp'];
+                                        }
+                                    }
+                                    ?>
+                                    <div class="form-group nk-int-st"> <input type="text" id="noaud" disabled class="form-control" placeholder="<?php echo $numAudi; ?> "> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Tipo de Auditoria </label></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" id="tau" disabled class="form-control" placeholder="<?php echo $tAuditoria; ?> "> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Fecha de elaboración (con hora): </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="fecharep" placeholder="<?php echo date("F j, Y, g:i a");?>" disabled> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Reporte Elaborado por: </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="elab" placeholder="Nombre(s) Apellido Paterno Apellido Materno" > </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                       <div class="fm-checkbox"> <label> Comentarios de hallazgos </label> </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="hallaz" placeholder="Se deben escribir los comentarios completamente"></textarea> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                       
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Conclusiones </label> </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="conclu" placeholder="Se deben explicar las conclusiones"></textarea> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                       
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Recomendaciones: </label> </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="recom" placeholder="De ser necesario deberan escribir los pasos de las recomendaciones"></textarea> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="guardarrepaud" class="btn btn-warning notika-btn-warning">Guardar</button>                                    
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
 
                    <!-- EL MODELO DE NO CONFORMIDAD SE TENDRIA QUE HACER PERO POR OTRO MEDIO... QUE TENEDIRA QUE SER UN MODAL EXTERNO PARA QUE SE VAYAN AGREGANDO FM-01 DEL PUNTO 15-->
                     
@@ -1437,7 +1329,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1448,7 +1340,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->
@@ -1556,7 +1448,7 @@
 
 
     <script type="text/javascript" src="js/funciones.js"></script>
-    <script type="text/javascript" src="js/onload.js"></script>
+    <!-- <script type="text/javascript" src="js/onload.js"></script> -->
 
     <script src="js/vendor/jquery.min.js"></script>
 </body>

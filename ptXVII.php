@@ -1,3 +1,9 @@
+<?php
+    include 'php/conex.php';
+    $id = $_GET["x"];
+    $con = Conectarse();
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -78,9 +84,15 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+
+    </style>
 </head>
 
-<body id="nombreestacioncompleto">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -651,7 +663,7 @@
                     <!-- SE VAN AGREGAR ESTO  ESTACION,DIRECCION, REPRESENTANTE TEC. PERIODO, CARGO-->
                     <!-- ******************* REPORTE auditorías *********************** -->
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-10 col-md-8 col-sm-8 col-xs-8" id="tabrevision" style="border-radius: 35px;">
+                    <div class="col-lg-10 col-md-8 col-sm-8 col-xs-8" id="tabrevision">
                         <div class="form-element-list "style="border-radius: 35px;">
                             <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
@@ -664,7 +676,7 @@
                                 </div>
                             <div class="basic-tb-hd">
                                 <!-- <h2>Revisión de desempeño</h2> -->
-                                <p>En la siguiente tabla veras los estatus de tus avances por punto, al finalizar la tabla encontraras un espacio para que puedas registrar tus conclusiones de la evaluación que le das a tus cumplimientos.</p>
+                                <p>En la siguiente tabla veras los estatus de tus avances por punto, al finalizar la tabla encontraras un espacio para que puedas anexar tus conclusiones de la evaluación que le das a tus cumplimientos.</p>
                             </div>
                                 
                             <!-- TABLA DE ESTATUS -->
@@ -675,179 +687,285 @@
                                             <tr>
                                                 <th>Punto</th>
                                                 <th>Concepto</th>
-                                                <th>Completo</th>
-                                                <th>En Tramite</th>
-                                                <th>No disponible</th>
+                                                <th colspan="2">Estatus</th>
+                                                <!-- <th></th> -->
+                                                <!-- <th>No disponible</th> -->
                                                 <th>Observación</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           <!-- VALORES QUE SE TIENEN DE ACTA -->
-                                           <tr>
-                                                <td>1.</td>
-                                                <td>Política</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
-                                                <td><input type="text" name=""></td>
-                                            </tr>
-                                            <!-- VALORES QUE TIENEN PODER NOTARIAL -->
-                                            <tr style="background: rgba(198,198,198,.2);">
-                                                <td>2.</td>
-                                                <td>Identificación de peligros y aspectos ambientales, Análisis de riesgo y evaluación de impactos ambientales</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
-                                                <td><input type="text" name=""></td>
-                                            </tr>
-                                            <!-- VALORES QUE TIENEN ALTA DE SHCP -->
+                                           <!-- VALORES QUE SE TIENEN DE 1 -->
                                             <tr>
-                                                <td>3.</td>
-                                                <td>Requisitos Legales</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">1.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Política</td>
+                                                <?php 
+                                                $sql = "SELECT idCESH FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado = mysqli_query($con, $sql);
+                                                if($resultado->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
+                                                <?php } else {?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES QUE DE 2-->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">2.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Identificación de peligros y aspectos ambientales, Análisis de riesgo y evaluación de impactos ambientales</td>
+                                                <?php
+                                                $sql1 = "SELECT idCESH FROM ar WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado1 = mysqli_query($con, $sql1);
+                                                if($resultado1->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
+                                                <?php } else { ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
+                                                <td><input type="text" name=""></td>
+                                            </tr>
+                                            <!-- VALORES DE 3 -->
+                                            <tr>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">3.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Requisitos Legales</td>
+                                                <?php
+                                                $sql2 = "SELECT idCESH FROM documento WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado2 = mysqli_query($con, $sql2);
+                                                if($resultado2->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
+                                                <?php } else {?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>                                               
                                             </tr>
-                                            <!-- VALORES QUE TIENEN RFC ORIGINAL -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>4.</td>
-                                                <td>Objetivos, Metas e indicadores</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <!-- VALORES DE 4 -->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">4.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Objetivos, Metas e indicadores</td>
+                                                <?php
+                                                $sql3 = "SELECT idCESH FROM objetivo WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado3 = mysqli_query($con, $sql3);
+                                                if($resultado3->num_rows > 0){?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE PERMISO DE LA CRE -->
+                                            <!-- VALORES DE 5 -->
                                             <tr>
-                                                <td>5.</td>
-                                                <td>Funciones, Responsabilidades y Autoridad</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">5.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Funciones, Responsabilidades y Autoridad</td>
+                                                <?php
+                                                $sql4 = "SELECT idCESH FROM organigrama WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado4 = mysqli_query($con, $sql4);
+                                                if($resultado4->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                             <!-- VALORES DE LICENCIA DE MUNICIPIO -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>6. </td>
-                                                <td>Competencia del personal, capacitación y entrenamiento</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                             <!-- VALORES DE 6 -->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">6. </td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Competencia del personal, capacitación y entrenamiento</td>
+                                                <?php
+                                                $sql5 = "SELECT idCESH FROM curso WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado5 = mysqli_query($con, $sql5);
+                                                if($resultado5->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php } else {?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE DICTAMEN DE SUELO -->
+                                            <!-- VALORES DE 7 -->
                                             <tr>
-                                                <td>7.</td>
-                                                <td>Comunicación, Participación y Consulta</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">7.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Comunicación, Participación y Consulta</td>
+                                                <?php
+                                                $sql6 = "SELECT idCESH FROM sugque WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado6 = mysqli_query($con, $sql6);
+                                                if($resultado6->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php }?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE TARJETA IMSS -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>8.</td>
-                                                <td>Control de documentos y registros</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <!-- VALORES DE 8 -->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">8.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Control de documentos y registros</td>
+                                                <?php
+                                                $sql7 = "SELECT idCESH FROM control WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado7 = mysqli_query($con, $sql7);
+                                                if($resultado7->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE PLANOS -->
+                                            <!-- VALORES DE 9 -->
                                             <tr>
-                                                <td>9.</td>
-                                                <td>Mejores prácticas y estándares</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">9.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Mejores prácticas y estándares</td>
+                                                <?php
+                                                $sql8 = "SELECT idCESH FROM rbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $sql08 = "SELECT idCESH FROM controlrbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado8 = mysqli_query($con, $sql8);
+                                                $resultado9 = mysqli_query($con, $sql08);
+                                                if($resultado8->num_rows > 0) { ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php }
+                                                //if($resultado9->num_rows > 0){} ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE SIEM -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>10.</td>
-                                                <td>Control de actividades y procesos</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <!-- VALORES DE 10 -->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">10.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Control de actividades y procesos</td>
+                                                <?php
+                                                $sql9 = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $sql10 = "SELECT idCESH FROM dzcambiop WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $sql11 = "SELECT idCESH FROM dzcambiot WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $sql12 = "SELECT idCESH FROM dzordentr WHERE idCESH = '".$id."' GROUP BY idCESH";
+
+                                                $resultado10 = mysqli_query($con, $sql9);
+                                                $resultado010 = mysqli_query($con, $sql10);
+                                                $resultado11 = mysqli_query($con, $sql11);
+                                                $resultado011 = mysqli_query($con, $sql12);
+                                                if($resultado10->num_rows > 0) { ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } 
+                                                /*if($resultado010->num_rows > 0){}
+                                                if($resultado11->num_rows > 0){}
+                                                if($resultado011->num_rows > 0){}*/?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE DICTAMENES ELECTRICOS -->
+                                            <!-- VALORES DE  11-->
                                             <tr>
-                                                <td>11.</td>
-                                                <td>Integridad mécanica y aseguramiento de la calidad</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">11.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Integridad mécanica y aseguramiento de la calidad</td>
+                                                <?php
+                                                $sql13 = "SELECT idCESH FROM bitacoras WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado12 = mysqli_query($con, $sql13);
+                                                if($resultado12->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALOR DE TIERRAS FISICAS -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>12.</td>
-                                                <td>Seguridad de contratistas</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <!-- VALOR DE 12 -->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">12.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"> Seguridad de contratistas</td>
+                                                <?php
+                                                $sql14 = "SELECT idCESH FROM dcproveedor WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $sql15 = "SELECT idCESH FROM dctraex WHERE idCESH = '".$id."' GROUP BY idCESH";
+
+                                                $resultado012 = mysqli_query($con, $sql14);
+                                                $resultado13 = mysqli_query($con, $sql15);
+                                                if($resultado012->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php }
+                                                /*if($resultado13->num_rows > 0){}*/ ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE CALIBRACION -->
+                                            <!-- VALORES DE 13 -->
                                             <tr>
-                                                <td>13.</td>
-                                                <td>Protocolo de respuesta a Emergencias / Preparación y respuesta a Emergencias </td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">13.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Protocolo de respuesta a Emergencias / Preparación y respuesta a Emergencias </td>
+                                                <?php
+                                                $sql16 = "SELECT idCESH FROM pre WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado014 = mysqli_query($con, $sql16);
+                                                if($resultado014->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE HERMETICIDAD -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>14.</td>
-                                                <td>Monitoreo, Verificación y Evaluación</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <!-- VALORES DE 14 -->
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">14.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Monitoreo, Verificación y Evaluación</td>
+                                                <?php
+                                                $sql17 = "SELECT idCESH FROM monverif WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado15 = mysqli_query($con, $sql17);
+                                                if($resultado15->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
                                             <!-- VALORES DE HERMITICIDAD A TUBERIAS -->
                                             <tr>
-                                                <td>15.</td>
-                                                <td>Auditorías</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">15.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Auditorías</td>
+                                                <?php
+                                                $sql18 = "SELECT idCESH FROM reportea WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado015 = mysqli_query($con, $sql18);
+                                                if($resultado015->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
                                              <!-- DATOS DE TANQUE DE ALMACENAMIENTO -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>16.</td>
-                                                <td>Investigación de incidentes y accidentes</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">16.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Investigación de incidentes y accidentes</td>
+                                                <?php
+                                                $sql19 ="SELECT idCESH FROM incidentes WHERE idCESH = '".$id."' GROUP BY idCESH";
+                                                $resultado16 = mysqli_query($con, $sql19);
+                                                if($resultado16->num_rows > 0){ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php }else{ ?>
+                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
                                              <!-- DATOS DE DISPENSARIOS -->
                                             <tr>
-                                                <td>17.</td>
-                                                <td>Revisión de resultados</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">17.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Revisión de resultados</td>
+                                                <?php
+                                                $s="";
+                                                $r="";
+                                                /*if(){*/ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php /*}else{*/ ?>
+                                                    <!-- <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td> -->
+                                                <?php /*}*/ ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
                                             <!-- DATOS DE CONTROL DE INVENTARIOS -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>18.</td>
-                                                <td>Informes de desempeño</td>
-                                                <td style="background: rgb(254,174,0);">Si COMPLETO</td>                                                
-                                                <td>Si EN TRAMITE</td>
-                                                <td> SI DISPONIBLE</td>
+                                            <tr style="background: rgba(198,198,198,.4);">
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">18.</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;">Informes de desempeño</td>
+                                                <?php
+                                                $s="";
+                                                $r="";
+                                                /*if(){*/ ?>
+                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                <?php /*}else{*/ ?>
+                                                    <!-- <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td> -->
+                                                <?php /*}*/ ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -1274,18 +1392,18 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
                         <p>Copyright © 2018 
-. All rights reserved. ENERGAS S.A de C.V.<a href="https://colorlib.com"></a>.</p>
+                            . All rights reserved. ENERGAS S.A de C.V.<a href="https://colorlib.com"></a>.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

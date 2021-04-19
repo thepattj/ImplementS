@@ -1,5 +1,6 @@
 <?php
     include 'php/conex.php';
+    $id = $_GET["x"];
     $con = Conectarse();
     $value = "";
 
@@ -84,9 +85,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacioncompleto">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -636,7 +642,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -650,9 +656,9 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
+                                <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                               </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
@@ -660,108 +666,86 @@
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> Lista de Herramientas EPP </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <!-- ******************* PROGRAMACIÓN DE ACTIVIDADES *********************** -->
                     <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
 
-                     <!-- ******************* ADD PROVEEDOR *********************** -->
-                    
-                   <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Listado de proveedores</p>
-                            </div>
-                        </div>
-                    </div> -->
-                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+
+                   <div class="col-lg-2"></div>
                    <!-- ALTA DE PROVEEDOR O CONTRATISTA -->
-                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="agregarP" style="display:none;">
+                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="display:;">
                        <div class="form-element-list">
-                           <div class="row">                                       
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Seguridad de Contratista</h2>
+                                    <p><span class="bread-ntd"><?php echo $id; ?></span> </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
+                                <button id="btnaddp" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 47%;">Agregar Proveedor</button>
+                                <button id="btnhepp" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Listado de herrmaientas</button>
+                                <!-- <button id="btnevap" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Evaluación de Proveedor</button> -->
+                            </div>
+                            <div class="basic-tb-hd" id="proInstr" style="display: ;">
+                                <!-- <h2>Información de Proveedor/Contratista:</h2> -->
+                                <p>Completar el siguiente formulario para dar de alta la información de tu Proveedor.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="eppInstr" style="display:none;">
+                                <!-- <h2>Alta de Herramientas y/o Equipo de protección personal:</h2> -->
+                                <p>Completar el siguiente formulario para dar de alta herramientas y su Equipo de protección personal(EPP) a utilizar.</p>
+                            </div>
+
+                           <div class="row" style="border: black 1px solid; display:;" id="agregarP">
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label> Razón Social (contratista) </label>
-                                   </div>
+                                   <div class="fm-checkbox"><label> Razón Social (contratista/proveedor) </label></div>
                                </div>
                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                   <div class="form-group nk-int-st">
-                                       <input class="form-control" type="text" id="razonP" placeholder="Nombre completo" >
-                                   </div>
+                                   <div class="form-group nk-int-st"><input class="form-control" type="text" id="razonP" placeholder="Nombre completo" ></div>
                                </div>
-                               <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
+                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                    
                                
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label> Descripción de Servicio </label>
-                                   </div>
+                                   <div class="fm-checkbox"> <label> Descripción de Servicio </label></div>
                                </div>
                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="descripcionS" placeholder="">
-                                   </div>
+                                   <div class="form-group nk-int-st"><input type="text" class="form-control" id="descripcionS" placeholder=""></div>
                                </div>                  
                    
                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label> Método de Evaluación </label>
-                                   </div>
+                                   <div class="fm-checkbox"><label> Método de Evaluación </label></div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="metodoE" placeholder="Examen, Pruebas de servicio">
-                                   </div>
+                                   <div class="form-group nk-int-st"><input type="text" class="form-control" id="metodoE" placeholder="Examen, Pruebas de servicio"></div>
                                </div>
 
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Calificación </label>
-                                   </div>
+                                   <div class="fm-checkbox"> <label> Calificación </label></div>
                                </div>
                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   <div class="form-group nk-int-st">
-                                       <input type="number" class="form-control" id="calificacionE" placeholder="1 al 10">
-                                   </div>
+                                   <div class="form-group nk-int-st"><input type="number" class="form-control" id="calificacionE" placeholder="1 al 10"></div>
                                </div>
                                
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarprove" class="btn btn-warning notika-btn-warning">Guardar</button> 
-                               </div>
+                                </div>
                            </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-
-
-
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- PARA QUE SE CENTRE LA PARTE DEL SEGUNDO RECUADRO -->
-                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                   <!-- ******************* DESCRIPCIóN DE LAS HERRAMIENTAS A USAR *********************** -->                   
-                   <div class="col-lg98 col-md-9 col-sm-9 col-xs-9" id="herramientE" style="display: ;">
-                       <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h5>Agregar Trabajador por Empresa</h5>
-                               <p></p>
-                           </div>
-                           <div class="row">                    
+                           <div class="row" style="border: black 1px solid; display:none;" id="herramientE">
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Nombre del Trabajador </label>
-                                   </div>
+                                   <div class="fm-checkbox"> <label> Nombre del Trabajador </label> </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="nameT">
-                                   </div>
+                                   <div class="form-group nk-int-st"><input type="text" class="form-control" id="nameT"></div>
                                </div>                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Empresa </label>
-                                   </div>
+                                   <div class="fm-checkbox"> <label> Empresa </label> </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="chosen-select-act fm-cmp-mg">
@@ -780,8 +764,7 @@
                    
                    
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Categoría </label>
+                                   <div class="fm-checkbox"> <label> Categoría </label>
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -811,10 +794,7 @@
                                     <button id="guardartrab" class="btn btn-warning notika-btn-warning">Guardar</button> 
                                </div>
                                <!-- s -->
-                               
-                               
-                               
-                               
+
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="basic-tb-hd">
                                        <h5>Listado de Herramientas y EPP</h5>
@@ -867,11 +847,11 @@
                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">                                
                                     <button id="guardarH" class="btn btn-warning notika-btn-warning">Guardar</button> 
-                               </div>                    
+                               </div>
                            </div>
                        </div>
                    </div>
-                    
+                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>                    
                 </div>
             </div>
         </div>
@@ -1293,7 +1273,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1304,7 +1284,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

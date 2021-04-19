@@ -85,9 +85,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacion">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -637,7 +642,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -646,36 +651,45 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Monitoreo, verificación y evaluación</h2>
-                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span> </p>
+                                        <p><span class="bread-ntd"> <?php /*echo $id;*/ ?> </span> </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
+                              <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                               </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- SE VAN AGREGAR ESTO  Fecha Folio-->
                     <!-- ******************* HALLAZGOS *********************** -->
-                   
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                       <div class="form-element-list">
-                           <div class="basic-tb-hd">
-                               <h2>Solicitud:</h2>
-                               <div class="form-group nk-int-st"> <!-- AGREGAR LAS LETRAS DEL INPUT MAS GRANDES ******************** --->
-                                    <input type="text" class="form-control" id="solicitud" placeholder="Descripción de hallazgo">
+                    <div class="col-lg-1"></div>                   
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                       <div class="form-element-list" style="display:; border-radius: 35px;">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
                                 </div>
-                           </div>
-                           <div class="row">                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Hallazgo proviene de: </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <div class="chosen-select-act fm-cmp-mg">
+                                <div class="breadcomb-ctn">
+                                    <h2>Monitoreo, verificación y evaluación</h2>
+                                    <p><span class="bread-ntd"><?php echo $id; ?></span> </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            <div class="basic-tb-hd">
+                                <h2>Solicitud:</h2>
+                                <div class="form-group nk-int-st"> <!-- AGREGAR LAS LETRAS DEL INPUT MAS GRANDES ******************** --->
+                                     <input type="text" class="form-control" id="solicitud" placeholder="Descripción de hallazgo">
+                                </div>
+                            </div>
+                            <div class="row" style="border: black 1px solid;">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Hallazgo proviene de: </label> </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" id="areaTrab14">
                                             <option value="0" style="display:none;">Selecciona una opción</option>
                                             <option value="Dispensario">Dispensario</option>
@@ -687,58 +701,46 @@
 
                                         </select>
                                     </div>
-                               </div>
-                               <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div> -->
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Describir la no conformidad </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                  <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" id="conformidad"></textarea>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                        <label> Describir la no conformidad </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st"><textarea class="form-control" rows="5" id="conformidad"></textarea></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Responsables de acción preventiva
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="chosen-select-act fm-cmp-mg">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"><label>Responsables de acción preventiva</label></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="respAprev">
-                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
+                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                                                 $resul = mysqli_query($con,$qri);
                                                 while($row = $resul->fetch_object()){ ?>
-                                          <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
-                                          <?php } ?>
+                                            <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                            <?php } ?>
                                         </select>
                                     </div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Responsable de verificación
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="chosen-select-act fm-cmp-mg">
+                                </div>                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"><label>Responsable de verificación</label></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="respVerif">
-                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
+                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                                                 $resul = mysqli_query($con,$qri);
                                                 while($row = $resul->fetch_object()){ ?>
-                                          <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
-                                          <?php } ?>
+                                            <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                </div>
@@ -746,57 +748,39 @@
                    
                    
                                
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           <h2>Plan de Accion</h2>
-                                       </label>
-                                   </div>
-                               </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom: black 1px solid;">
+                                    <div class="fm-checkbox"><label><h2>Plan de Accion</h2></label></div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
 
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Acciones
-                                       </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <div class="form-group nk-int-st">
-                                       <textarea class="form-control" rows="5" id="accions"></textarea>
-                                   </div>
-                               </div> 
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"><label>Acciones</label></div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><textarea class="form-control" rows="5" id="accions"></textarea></div>
+                                </div> 
                                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Responsable
-                                       </label>
-                                   </div>
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"><label>Responsable</label></div>
                                </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="trabjRespo">
-                                          <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                          <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
+                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
                                                 $resul = mysqli_query($con,$qri);
                                                 while($row = $resul->fetch_object()){ ?>
-                                          <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                            <option value="<?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
                                           <?php } ?>
                                         </select>
                                     </div>
                                </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox">
-                                       <label>
-                                           Fecha Programada de subsanación
-                                       </label>
-                                   </div>
+                               
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                   <div class="fm-checkbox"><label>Fecha Programada de subsanación</label></div>
                                </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                    <div class="fm-checkbox">
                                         <label>
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -809,8 +793,10 @@
                                     </div>
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarSolicitud" class="btn btn-success notika-btn-success">Guardar</button>
+
+                               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="guardarSolicitud" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
@@ -819,8 +805,8 @@
                                                  
                            </div>
                        </div>
-                   </div>
-                    
+                    </div>
+                    <div class="col-lg-1"></div>                    
                 </div>
             </div>
         </div>
@@ -1242,7 +1228,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1253,7 +1239,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->
