@@ -189,9 +189,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacion">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -396,7 +401,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -404,94 +409,84 @@
                                         <i class="notika-icon notika-edit"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Funciones, responsabilidades y autoridad</h2>
-                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span></p>
+                                        <h2></h2>
+                                        <p><span class="bread-ntd"> <?php /*echo $id;*/ ?> </span></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
-                                   <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                                <div class="breadcomb-report">
+                                <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                               </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: white;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">                            
-                                <div class="basic-tb-hd">
-                                    <h2>Capital Humano </h2>
-                                    <p>Completa los datos del personal que labora en la estación de Servicio</p>
+                    </div> -->
+                    
+                    <div class="col-lg-12 col-md-11 col-sm-11 col-xs-11">
+                        <div class="form-element-list" style="display:; border-radius: 35px;">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="fm-checkbox">
-                                            <label> Nombre: </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group nk-int-st">
-                                            <input type="text" class="form-control" id="nombreTES">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Funciones, responsabilidades y autoridad</h2>
+                                    <p><span class="bread-ntd"><?php echo $id; ?></span> </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="fm-checkbox">
-                                            <label> Apellido Paterno: </label>
-                                        </div>
+                                    <div class="basic-tb-hd" style="margin-top: 5%;">
+                                        <h2>Capital Humano</h2>
+                                        <p style="color: rgb(198,198,198);">Completa los datos del personal que labora en la estación de Servicio</p>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group nk-int-st">
-                                            <input type="text" class="form-control" id="aPTES">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border: black 1px solid;">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fm-checkbox"> <label> Nombre: </label> </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="nombreTES"> </div>
+                                        </div>
 
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="fm-checkbox">
-                                            <label> Apellido Materno: </label>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fm-checkbox"> <label> Apellido Paterno: </label> </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group nk-int-st">
-                                            <input type="text" class="form-control" id="aMTES">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="aPTES"> </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fm-checkbox"> <label> Apellido Materno: </label> </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="aMTES"> </div>
+                                        </div>                                    
+                                        
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fm-checkbox"> <label> Puesto que desempeña </label> </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="chosen-select-act fm-cmp-mg">
+                                                <select class="chosen" name="" id="puestoTES">
+                                                    <option value="Selecciona" style="display: none;">Selecciona una opción</option>
+                                                    <option value="Direccion">Alta Dirección</option>
+                                                    <option value="RepresentanteT">Representante Técnico</option>
+                                                    <option value="Administrativos">Administrativos</option>
+                                                    <option value="Despachador">Despachador</option>
+                                                    <option value="Intendente">Intendente</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                    
-                                    
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="fm-checkbox">
-                                            <label> Puesto que desempeña </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="chosen-select-act fm-cmp-mg">
-                                            <select class="chosen" name="" id="puestoTES">
-                                                <option value="Selecciona" style="display: none;">Selecciona una opción</option>
-                                                <option value="Direccion">Alta Dirección</option>
-                                                <option value="RepresentanteT">Representante Técnico</option>
-                                                <option value="Administrativos">Administrativos</option>
-                                                <option value="Despachador">Despachador</option>
-                                                <option value="Intendente">Intendente</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><label style="display: fixed;"></label></div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"></div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
                                         <button id="guardarU" class="btn btn-warning notika-btn-warning">Guardar</button>
                                         <!-- <button id="cargaO" data-toggle="modal" data-target="#modalorg" class="btn btn-primary notika-btn-primary">Organigrama</button> -->
                                     </div>
-                                </div>                            
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label>Lista de Trabajadores</label>
-                            </div>  
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            
-                                <div class="bsc-tbl" id="">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <table class="table table-sc-ex">
                                         <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
@@ -501,21 +496,21 @@
                                             <!-- <th></th> -->
                                             </tr>
                                         </thead>
-                                        <tbody id="contenidotrab">
+                                        <tbody id="contenidotrab" style="border:1px solid black;">
                                             <?php  $sql = "SELECT idTrab as id, nombre as name, apellidoP as paterno, apellidoM as materno, puesto as p FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."' ORDER BY p ASC";
                                                    $resultado =mysqli_query($con, $sql);
                                                    if($resultado->num_rows > 0){
                                                       $id = 1;
                                                       while($fila=$resultado->fetch_assoc()){ 
                                                         if($id%2==0){?>
-                                                            <tr> 
+                                                            <tr style="background: rgb(198,198,198);"> 
                                                                 <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $id; ?>  </td>
                                                                 <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fila['name']." ".$fila['paterno']." ".$fila['materno']; ?></td>
                                                                 <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fila['p']; ?> </td>
                                                                 <!-- <td> <button class="btn btn-warning notika-btn-warning" value="<?php //echo $fila['id']?>"> Actualizar </button> </td> -->
                                                             </tr>
                                             <?php       }else{ ?>
-                                                            <tr style="background: rgb(198,198,198);"> 
+                                                            <tr > 
                                                                 <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $id; ?>  </td>
                                                                 <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fila['name']." ".$fila['paterno']." ".$fila['materno']; ?></td>
                                                                 <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fila['p']; ?> </td>
@@ -533,7 +528,9 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>                    
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
                 </div>
             </div>
         </div>
@@ -955,7 +952,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -966,7 +963,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

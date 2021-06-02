@@ -85,9 +85,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacion">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -637,7 +642,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -646,7 +651,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Mejores prácticas y estándares</h2>
-                                        <p><span class="bread-ntd"> <?php echo $id; ?> </span></p>
+                                        <p><span class="bread-ntd"> <?php /*echo $id;*/ ?> </span></p>
                                     </div>
                                 </div>
                             </div>
@@ -655,45 +660,150 @@
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"></div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background: rgb(254,174,0); color: rgb(27,22,50);">Practicas de operación</div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);"> RBPO </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background: rgb(254,174,0); color: rgb(27,22,50);"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background: rgb(27,22,50); color: rgb(255,255,255);">  </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- CONTROL SEGUIMIENTO -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="controlr" style="display: none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Agregaras actividades a realizar en la Estación, las cuales seran programas y temporizadas para alertar de su cumplimiento
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
+                        <div class="form-element-list" style="display:; border-radius: 35px;">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Mejores prácticas y estándares</h2>
+                                    <p><span class="bread-ntd"> <?php /*echo $id;*/ ?> </span></p>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label > Control y seguimiento a recomendaciones de revisión de buenas practicas de operación (RBPO)</label>
+                            <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
+                                <button id="btnrbpoc" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 64%">RBPO</button>
+                                <button id="btncontrolr" style="background: rgb(27,22,50); color: rgb(255,255,255);">Practicas de operación</button>
+                            </div>
+                            <div class="basic-tb-hd" id="rbpoInstr">
+                                <h2>Practicas y Estandares de Operacion (Procedimientos):</h2>
+                                <p>Agregaras actividades que seran discritas paso a paso para su revisión.</p>
+                            </div>
+                            <div class="basic-tb-hd" id="controlInstr" style="display: none;">
+                                <h2>Control y seguimiento a recomendaciones de revisión de buenas practicas de operación (RBPO)</h2>
+                                <p>Agregaras actividades a realizar en la Estación, las cuales seran programas y temporizadas para alertar de su cumplimiento</p>
+                            </div>
+
+                            <div class="row" style="border: black 1px solid; display: ;" id="rbpo">
+                                <div class="col-lg-3 col-md-3col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Área </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="areaRbpo" placeholder="Zona de la estación"> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Fecha </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="fecharep" placeholder="<?php echo date("F j, Y,");?>" disabled> </div>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Operación/Actividad </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-group nk-int-st"> <input type="text" class="form-control" id="actrbpo" placeholder="Nombre del proceso"> </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Nombre del supervisor </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-group nk-int-st"> <input type="text" class="form-control" id="supRbpo" placeholder="Persona que supervisara el mejoramiento"> </div>
+                                </div>                                
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
+                    
+                                
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Nombre Trabajador (realiza la práctica) </label></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="nombreRbpo">
+                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
+                                                  $resul = mysqli_query($con,$qri);
+                                                  while($row = $resul->fetch_object()){ ?>
+                                            <option><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
+                                            
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>                    
+                    
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Crítica (Si/NO) </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-group nk-int-st"> <input type="text" class="form-control" id="criticaA"> </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Descripción de Actividad </label> </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="descA" placeholder="Descripción completa."></textarea> </div>
+                                </div>
+                             
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Incidentes y/o accidentes </label> </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-group nk-int-st"> <input type="text" class="form-control" id="incAcc"> </div>
                                 </div>
                     
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label> Nombre del procedimiento: </label>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Causas que pueden generar el incidente y/o accidente </label>
                                     </div>
                                 </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="causa"> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Observaciones </label> </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    <div class="form-group nk-int-st"> <textarea class="form-control" rows="5" id="obs"></textarea> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-8 col-md-9 col-sm-9 col-xs-9"></div>
+                                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="guardarbpo" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="pdfrbpo" class="btn btn-warning notika-btn-warning">Descargar</button>
+                                </div>
+                            </div>
+
+                            <div class="row" style="border: black 1px solid; display: none;" id="controlr">
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="nomnbreP" placeholder="Nombre técnico que se tiene">
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Nombre del procedimiento: </label> </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="nomnbreP" placeholder="Nombre técnico que se tiene"> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label> Sugerencias:  </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Sugerencias: </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="sugerencia" placeholder="Que mejoras se deben hacer">
-                                    </div>
+                                    <div class="fm-group nk-int-st"> <input type="text" class="form-control" id="sugerencia" placeholder="Que mejoras se deben hacer"> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
@@ -701,9 +811,7 @@
                     
                                 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label> Mes programado </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Mes programado de revisión </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
@@ -729,23 +837,17 @@
                     
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label> Estado (Status) </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Estado (Status) </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="statusP" placeholder="Seguimiento, Terminado, etc.">
-                                    </div>
+                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="statusP" placeholder="Seguimiento, Terminado, etc."> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                     
                     
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox">
-                                        <label> Responsable (Rep. Técnico) </label>
-                                    </div>
+                                    <div class="fm-checkbox"> <label> Responsable (Rep. Técnico) </label> </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
@@ -762,158 +864,19 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarControl" class="btn btn-warning notika-btn-warning">Guardar Control</button>
+                                
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                             
+                                    <button id="guardarControl" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                             </div>
+                            
                         </div>
-                    </div><!-- CONTROL SEGUIMIENTO -->
+                    </div>
+                    <div class="col-lg-2"></div>
 
                     <!-- DESCRIPCION DE PROCEDIMIENTOS -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="rbpo" style="display: ;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2></h2>
-                                <p>Agregaras actividades que seran discritas paso a paso para su mejora de práctica.
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label > Practicas y Estandares de Operacion (Procedimientos)</label>
-                                </div>
-                    
-                                <div class="col-lg-3 col-md-3col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox"> <label> Área </label> </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="areaRbpo" placeholder="Zona de la estación">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox"> <label> Fecha </label> </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input type="date" class="form-control" id="fecharbpo" placeholder="dd/mm/aaaa" name="">
-                                    </div>
-                                </div>                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label> Operación/Actividad </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="actrbpo" placeholder="Nombre del proceso">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label> Nombre del supervisor </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="supRbpo" placeholder="Persona que supervisara el mejoramiento">
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>                    
-                    
-                                
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                           Nombre Trabajador (realiza la práctica)
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="nombreRbpo">
-                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
-                                                  $resul = mysqli_query($con,$qri);
-                                                  while($row = $resul->fetch_object()){ ?>
-                                            <option><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>
-                                            
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                </div>                    
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label> Crítica (Si/NO) </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="criticaA">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label> Descripción de Actividad </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" id="descA" placeholder="Descripción completa."></textarea>
-                                    </div>
-                                </div>
-                             
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label> Incidentes y/o accidentes </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-group nk-int-st">
-                                        <input type="text" class="form-control" id="incAcc">
-                                    </div>
-                                </div>
-                    
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Causas que pueden generar el incidente y/o accidente
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="causa">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            Observaciones
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                    <div class="form-group nk-int-st">
-                                        <textarea class="form-control" rows="5" id="obs"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarbpo" class="btn btn-warning notika-btn-warning">Guardar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- DESCRIPCION DE PROCEDIMIENTOS -->
+                     <!-- DESCRIPCION DE PROCEDIMIENTOS -->
 
                 </div>
             </div>
@@ -1336,7 +1299,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1347,7 +1310,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

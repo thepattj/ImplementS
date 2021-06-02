@@ -491,6 +491,17 @@ $(document).ready(function(){
 	//DOCUMENTACION LEGAL
 	$("#btnlegal").click(function() {
 		$("#legal").show();
+		$("#titdoc").show();
+		$("#btnlegal").css({"background":"rgb(254,174,0)","color":"rgb(27,22,50)"});
+
+		/*BOTONES*/
+		$("#btnasea").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+		$("#btncre").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+		$("#btnprofeco").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+		$("#btnpc").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+		$("#btnse").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+		$("#btnstps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+		/*ROW*/
 		$("#legis").hide();
 		$("#asea").hide();
 		$("#profeco").hide();
@@ -499,6 +510,13 @@ $(document).ready(function(){
 		$("#semt").hide();
 		$("#stps").hide();
 		$("#se").hide();
+		/*Instrucciones*/
+		$("#titasea").hide();
+		$("#titcre").hide();
+		$("#titpro").hide();
+		$("#titpc").hide();
+		$("#titse").hide();
+		$("#titstps").hide();
 	});
 	/*BOTON ACTA CUMPLE*/
 	$("#cActa").click(function() {	
@@ -509,19 +527,22 @@ $(document).ready(function(){
 		if(statusActa == " - "){
 			//alert("Si");
 			$("#cActa").text("Si");
-			$("#cActa").addClass("active");
+			/*$("#cActa").addClass("active");*/
+			$("#cActa").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumActa = "Si";
 		}if(statusActa == "Si"){
 			//alert("No");
 			$("#cActa").text("No");
-			$("#cActa").addClass("success");
-			$("#cActa").removeClass("active");
+			/*$("#cActa").addClass("success");
+			$("#cActa").removeClass("active");*/
+			$("#cActa").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			cumActa = "No";
 		}if(statusActa == "No"){
 			//alert("otra SI");
 			$("#cActa").text("Si");
-			$("#cActa").addClass("active");
-			$("#cActa").removeClass("success");
+			$("#cActa").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#cActa").addClass("active");
+			$("#cActa").removeClass("success");*/
 			cumActa = "Si";
 		}
 		//console.log(cumActa);
@@ -536,19 +557,19 @@ $(document).ready(function(){
 		if(statusPoder == " - "){
 			//alert("Si");
 			$("#cPNot").text("Si");
-			$("#cPNot").addClass("active");
+			$("#cPNot").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumPoder = "Si";
 		}if(statusPoder == "Si"){
 			//alert("No");
 			$("#cPNot").text("No");
-			$("#cPNot").addClass("success");
-			$("#cPNot").removeClass("active");
+			$("#cPNot").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#cPNot").removeClass("active");*/
 			cumPoder = "No";
 		}if(statusPoder == "No"){
 			//alert("otra SI");
 			$("#cPNot").text("Si");
-			$("#cPNot").addClass("active");
-			$("#cPNot").removeClass("success");
+			$("#cPNot").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#cPNot").removeClass("success");*/
 			cumPoder = "Si";
 		}
 		//console.log(cumActa);
@@ -562,19 +583,19 @@ $(document).ready(function(){
 		if(statusAltaS == " - "){
 			//alert("Si");
 			$("#altaSHCP").text("Si");
-			$("#altaSHCP").addClass("active");
+			$("#altaSHCP").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumAltaShcp = "Si";
 		}if(statusAltaS == "Si"){
 			//alert("No");
 			$("#altaSHCP").text("No");
-			$("#altaSHCP").addClass("success");
-			$("#altaSHCP").removeClass("active");
+			$("#altaSHCP").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#altaSHCP").removeClass("active");*/
 			cumAltaShcp = "No";
 		}if(statusAltaS == "No"){
 			//alert("otra SI");
 			$("#altaSHCP").text("Si");
-			$("#altaSHCP").addClass("active");
-			$("#altaSHCP").removeClass("success");
+			$("#altaSHCP").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#altaSHCP").removeClass("success");*/
 			cumAltaShcp = "Si";
 		}
 		//console.log(cumActa);
@@ -588,19 +609,19 @@ $(document).ready(function(){
 		if(statusrfc == " - "){
 			//alert("Si");
 			$("#RFCS").text("Si");
-			$("#RFCS").addClass("active");
+			$("#RFCS").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumRfc = "Si";
 		}if(statusrfc == "Si"){
 			//alert("No");
 			$("#RFCS").text("No");
-			$("#RFCS").addClass("success");
-			$("#RFCS").removeClass("active");
+			$("#RFCS").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#RFCS").removeClass("active");*/
 			cumRfc = "No";
 		}if(statusrfc == "No"){
 			//alert("otra SI");
 			$("#RFCS").text("Si");
-			$("#RFCS").addClass("active");
-			$("#RFCS").removeClass("success");
+			$("#RFCS").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#RFCS").removeClass("success");*/
 			cumRfc = "Si";
 		}
 		//console.log(cumActa);
@@ -614,19 +635,19 @@ $(document).ready(function(){
 		if(statuspl == " - "){
 			//alert("Si");
 			$("#PL").text("Si");
-			$("#PL").addClass("active");
+			$("#PL").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpl = "Si";
 		}if(statuspl == "Si"){
 			//alert("No");
 			$("#PL").text("No");
-			$("#PL").addClass("success");
-			$("#PL").removeClass("active");
+			$("#PL").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#PL").removeClass("active");*/
 			cumpl = "No";
 		}if(statuspl == "No"){
 			//alert("otra SI");
 			$("#PL").text("Si");
-			$("#PL").addClass("active");
-			$("#PL").removeClass("success");
+			$("#PL").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#PL").removeClass("success");*/
 			cumpl = "Si";
 		}
 		//console.log(cumActa);
@@ -640,19 +661,19 @@ $(document).ready(function(){
 		if(statusLfm == " - "){
 			//alert("Si");
 			$("#LFM").text("Si");
-			$("#LFM").addClass("active");
+			$("#LFM").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumlfm = "Si";
 		}if(statusLfm == "Si"){
 			//alert("No");
 			$("#LFM").text("No");
-			$("#LFM").addClass("success");
-			$("#LFM").removeClass("active");
+			$("#LFM").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#LFM").removeClass("active");*/
 			cumlfm = "No";
 		}if(statusLfm == "No"){
 			//alert("otra SI");
 			$("#LFM").text("Si");
-			$("#LFM").addClass("active");
-			$("#LFM").removeClass("success");
+			$("#LFM").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#LFM").removeClass("success");*/
 			cumlfm = "Si";
 		}
 		//console.log(cumActa);
@@ -666,19 +687,19 @@ $(document).ready(function(){
 		if(statusdS == " - "){
 			//alert("Si");
 			$("#dicSuelo").text("Si");
-			$("#dicSuelo").addClass("active");
+			$("#dicSuelo").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumdS = "Si";
 		}if(statusdS == "Si"){
 			//alert("No");
 			$("#dicSuelo").text("No");
-			$("#dicSuelo").addClass("success");
-			$("#dicSuelo").removeClass("active");
+			$("#dicSuelo").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#dicSuelo").removeClass("active");*/
 			cumdS = "No";
 		}if(statusdS == "No"){
 			//alert("otra SI");
 			$("#dicSuelo").text("Si");
-			$("#dicSuelo").addClass("active");
-			$("#dicSuelo").removeClass("success");
+			$("#dicSuelo").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#dicSuelo").removeClass("success");*/
 			cumdS = "Si";
 		}
 		//console.log(cumActa);
@@ -692,19 +713,19 @@ $(document).ready(function(){
 		if(statusimss == " - "){
 			//alert("Si");
 			$("#oImss").text("Si");
-			$("#oImss").addClass("active");
+			$("#oImss").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumimss = "Si";
 		}if(statusimss == "Si"){
 			//alert("No");
 			$("#oImss").text("No");
-			$("#oImss").addClass("success");
-			$("#oImss").removeClass("active");
+			$("#oImss").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#oImss").removeClass("active");*/
 			cumimss = "No";
 		}if(statusimss == "No"){
 			//alert("otra SI");
 			$("#oImss").text("Si");
-			$("#oImss").addClass("active");
-			$("#oImss").removeClass("success");
+			$("#oImss").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#oImss").removeClass("success");*/
 			cumimss = "Si";
 		}
 		//console.log(cumActa);
@@ -718,19 +739,19 @@ $(document).ready(function(){
 		if(statusplano == " - "){
 			//alert("Si");
 			$("#planoA").text("Si");
-			$("#planoA").addClass("active");
+			$("#planoA").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumplano = "Si";
 		}if(statusplano == "Si"){
 			//alert("No");
 			$("#planoA").text("No");
-			$("#planoA").addClass("success");
-			$("#planoA").removeClass("active");
+			$("#planoA").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#planoA").removeClass("active");*/
 			cumplano = "No";
 		}if(statusplano == "No"){
 			//alert("otra SI");
 			$("#planoA").text("Si");
-			$("#planoA").addClass("active");
-			$("#planoA").removeClass("success");
+			$("#planoA").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#planoA").removeClass("success");*/
 			cumplano = "Si";
 		}
 		//console.log(cumActa);
@@ -744,19 +765,19 @@ $(document).ready(function(){
 		if(statusSiem == " - "){
 			//alert("Si");
 			$("#aSiem").text("Si");
-			$("#aSiem").addClass("active");
+			$("#aSiem").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpSiem = "Si";
 		}if(statusSiem == "Si"){
 			//alert("No");
 			$("#aSiem").text("No");
-			$("#aSiem").addClass("success");
-			$("#aSiem").removeClass("active");
+			$("#aSiem").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#aSiem").removeClass("active");*/
 			cumpSiem = "No";
 		}if(statusSiem == "No"){
 			//alert("otra SI");
 			$("#aSiem").text("Si");
-			$("#aSiem").addClass("active");
-			$("#aSiem").removeClass("success");
+			$("#aSiem").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#aSiem").removeClass("success");*/
 			cumpSiem = "Si";
 		}
 		//console.log(cumActa);
@@ -770,19 +791,19 @@ $(document).ready(function(){
 		if(statusdEl == " - "){
 			//alert("Si");
 			$("#dElec").text("Si");
-			$("#dElec").addClass("active");
+			$("#dElec").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpEl = "Si";
 		}if(statusdEl == "Si"){
 			//alert("No");
 			$("#dElec").text("No");
-			$("#dElec").addClass("success");
-			$("#dElec").removeClass("active");
+			$("#dElec").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#dElec").removeClass("active");*/
 			cumpEl = "No";
 		}if(statusdEl == "No"){
 			//alert("otra SI");
 			$("#dElec").text("Si");
-			$("#dElec").addClass("active");
-			$("#dElec").removeClass("success");
+			$("#dElec").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#dElec").removeClass("success");*/
 			cumpEl = "Si";
 		}
 		//console.log(cumActa);
@@ -796,19 +817,19 @@ $(document).ready(function(){
 		if(statusdTf == " - "){
 			//alert("Si");
 			$("#dTfisica").text("Si");
-			$("#dTfisica").addClass("active");
+			$("#dTfisica").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpdTF = "Si";
 		}if(statusdTf == "Si"){
 			//alert("No");
 			$("#dTfisica").text("No");
-			$("#dTfisica").addClass("success");
-			$("#dTfisica").removeClass("active");
+			$("#dTfisica").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#dTfisica").removeClass("active");*/
 			cumpdTF = "No";
 		}if(statusdTf == "No"){
 			//alert("otra SI");
 			$("#dTfisica").text("Si");
-			$("#dTfisica").addClass("active");
-			$("#dTfisica").removeClass("success");
+			$("#dTfisica").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#dTfisica").removeClass("success");*/
 			cumpdTF = "Si";
 		}
 		//console.log(cumActa);
@@ -822,19 +843,19 @@ $(document).ready(function(){
 		if(statuscD == " - "){
 			//alert("Si");
 			$("#calDisp").text("Si");
-			$("#calDisp").addClass("active");
+			$("#calDisp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpCd = "Si";
 		}if(statuscD == "Si"){
 			//alert("No");
 			$("#calDisp").text("No");
-			$("#calDisp").addClass("success");
-			$("#calDisp").removeClass("active");
+			$("#calDisp").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#calDisp").removeClass("active");*/
 			cumpCd = "No";
 		}if(statuscD == "No"){
 			//alert("otra SI");
 			$("#calDisp").text("Si");
-			$("#calDisp").addClass("active");
-			$("#calDisp").removeClass("success");
+			$("#calDisp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#calDisp").removeClass("success");*/
 			cumpCd = "Si";
 		}
 		//console.log(cumActa);
@@ -848,19 +869,19 @@ $(document).ready(function(){
 		if(statusHr == " - "){
 			//alert("Si");
 			$("#pHerm").text("Si");
-			$("#pHerm").addClass("active");
+			$("#pHerm").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpHm = "Si";
 		}if(statusHr == "Si"){
 			//alert("No");
 			$("#pHerm").text("No");
-			$("#pHerm").addClass("success");
-			$("#pHerm").removeClass("active");
+			$("#pHerm").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#pHerm").removeClass("active");*/
 			cumpHm = "No";
 		}if(statusHr == "No"){
 			//alert("otra SI");
 			$("#pHerm").text("Si");
-			$("#pHerm").addClass("active");
-			$("#pHerm").removeClass("success");
+			$("#pHerm").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#pHerm").removeClass("success");*/
 			cumpHm = "Si";
 		}
 		//console.log(cumActa);
@@ -874,19 +895,19 @@ $(document).ready(function(){
 		if(statusHT == " - "){
 			//alert("Si");
 			$("#pHermT").text("Si");
-			$("#pHermT").addClass("active");
+			$("#pHermT").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpHmT = "Si";
 		}if(statusHT == "Si"){
 			//alert("No");
 			$("#pHermT").text("No");
-			$("#pHermT").addClass("success");
-			$("#pHermT").removeClass("active");
+			$("#pHermT").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#pHermT").removeClass("active");*/
 			cumpHmT = "No";
 		}if(statusHT == "No"){
 			//alert("otra SI");
 			$("#pHermT").text("Si");
-			$("#pHermT").addClass("active");
-			$("#pHermT").removeClass("success");
+			$("#pHermT").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#pHermT").removeClass("success");*/
 			cumpHmT = "Si";
 		}
 		//console.log(cumActa);
@@ -900,19 +921,19 @@ $(document).ready(function(){
 		if(statusTa == " - "){
 			//alert("Si");
 			$("#tanqueA").text("Si");
-			$("#tanqueA").addClass("active");
+			$("#tanqueA").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpTnA = "Si";
 		}if(statusTa == "Si"){
 			//alert("No");
 			$("#tanqueA").text("No");
-			$("#tanqueA").addClass("success");
-			$("#tanqueA").removeClass("active");
+			$("#tanqueA").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#tanqueA").removeClass("active");*/
 			cumpTnA = "No";
 		}if(statusTa == "No"){
 			//alert("otra SI");
 			$("#tanqueA").text("Si");
-			$("#tanqueA").addClass("active");
-			$("#tanqueA").removeClass("success");
+			$("#tanqueA").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#tanqueA").removeClass("success");*/
 			cumpTnA = "Si";
 		}
 		//console.log(cumActa);
@@ -926,19 +947,19 @@ $(document).ready(function(){
 		if(statusdis == " - "){
 			//alert("Si");
 			$("#dispensarios").text("Si");
-			$("#dispensarios").addClass("active");
+			$("#dispensarios").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpdis = "Si";
 		}if(statusdis == "Si"){
 			//alert("No");
 			$("#dispensarios").text("No");
-			$("#dispensarios").addClass("success");
-			$("#dispensarios").removeClass("active");
+			$("#dispensarios").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#dispensarios").removeClass("active");*/
 			cumpdis = "No";
 		}if(statusdis == "No"){
 			//alert("otra SI");
 			$("#dispensarios").text("Si");
-			$("#dispensarios").addClass("active");
-			$("#dispensarios").removeClass("success");
+			$("#dispensarios").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#dispensarios").removeClass("success");*/
 			cumpdis = "Si";
 		}
 		//console.log(cumActa);
@@ -952,19 +973,19 @@ $(document).ready(function(){
 		if(statuscIn == " - "){
 			//alert("Si");
 			$("#cIventarios").text("Si");
-			$("#cIventarios").addClass("active");
+			$("#cIventarios").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpIn = "Si";
 		}if(statuscIn == "Si"){
 			//alert("No");
 			$("#cIventarios").text("No");
-			$("#cIventarios").addClass("success");
-			$("#cIventarios").removeClass("active");
+			$("#cIventarios").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#cIventarios").removeClass("active");*/
 			cumpIn = "No";
 		}if(statuscIn == "No"){
 			//alert("otra SI");
 			$("#cIventarios").text("Si");
-			$("#cIventarios").addClass("active");
-			$("#cIventarios").removeClass("success");
+			$("#cIventarios").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#cIventarios").removeClass("success");*/
 			cumpIn = "Si";
 		}
 		//console.log(cumActa);
@@ -975,75 +996,75 @@ $(document).ready(function(){
 		//alert("tomar los 18 valores");
 		//alert("tomar los 18 valores: "+cumActa+" - "+cumPoder+" - "+cumAltaShcp+" - "+cumRfc+" - "+cumpl+" - "+cumlfm+" - "+cumdS+" - "+cumimss+" - "+cumplano+" - "+cumpSiem+" - "+cumpEl+" - "+cumpdTF+" - "+cumpCd+" - "+cumpHm+" - "+cumpHmT+" - "+cumpTnA+" - "+cumpdis+" - "+cumpIn);
 		sta01 = $("#estAct").val();
-		por01 = $("#porceAct").val();
+		/*por01 = $("#porceAct").val();*/
 		evi01 = $("#eviAct").val();
 
 		sta02 = $("#estPn").val();
-		por02 = $("#porcePn").val();
+		/*por02 = $("#porcePn").val();*/
 		evi02 = $("#eviPn").val();
 
 		sta03 = $("#estSHCP").val();
-		por03 = $("#porceSHCP").val();
+		/*por03 = $("#porceSHCP").val();*/
 		evi03 = $("#eviSHCP").val();
 
 		sta04 = $("#estSRFCS").val();
-		por04 = $("#porceRFCS").val();
+		/*por04 = $("#porceRFCS").val();*/
 		evi04 = $("#eviRFCS").val();
 
 		sta05 = $("#estPL").val();
-		por05 = $("#porcePL").val();
+		/*por05 = $("#porcePL").val();*/
 		evi05 = $("#eviPL").val();
 
 		sta06 = $("#estLFM").val();
-		por06 = $("#porceLFM").val();
+		/*por06 = $("#porceLFM").val();*/
 		evi06 = $("#eviLFM").val();
 
 		sta07 = $("#estdicS").val();
-		por07 = $("#porcedicS").val();
+		/*por07 = $("#porcedicS").val();*/
 		evi07 = $("#evidicS").val();
 
 		sta08 = $("#estoIm").val();
-		por08 = $("#porceoIm").val();
+		/*por08 = $("#porceoIm").val();*/
 		evi08 = $("#evidoIm").val();
 
 		sta09 = $("#estplano").val();
-		por09 = $("#porceplano").val();
+		/*por09 = $("#porceplano").val();*/
 		evi09 = $("#evidplano").val();
 
 		sta10 = $("#estSiem").val();
-		por10 = $("#porceSiem").val();
+		/*por10 = $("#porceSiem").val();*/
 		evi10 = $("#evidSiem").val();
 
 		sta11 = $("#estdElec").val();
-		por11 = $("#porcedElec").val();
+		/*por11 = $("#porcedElec").val();*/
 		evi11 = $("#eviddElec").val();
 
 		sta12 = $("#estdTfi").val();
-		por12 = $("#porcedTfi").val();
+		/*por12 = $("#porcedTfi").val();*/
 		evi12 = $("#eviddTfi").val();
 
 		sta13 = $("#estcalD").val();
-		por13 = $("#porcecalD").val();
+		/*por13 = $("#porcecalD").val();*/
 		evi13 = $("#evidcalD").val();
 
 		sta14 = $("#estpHerm").val();
-		por14 = $("#porcepHerm").val();
+		/*por14 = $("#porcepHerm").val();*/
 		evi14 = $("#evidpHerm").val();
 
 		sta15 = $("#estpHt").val();
-		por15 = $("#porcepHt").val();
+		/*por15 = $("#porcepHt").val();*/
 		evi15 = $("#evidpHt").val();
 
 		sta16 = $("#estTanque").val();
-		por16 = $("#porceTanque").val();
+		/*por16 = $("#porceTanque").val();*/
 		evi16 = $("#evidTanque").val();
 
 		sta17 = $("#estdisp").val();
-		por17 = $("#porcedisp").val();
+		/*por17 = $("#porcedisp").val();*/
 		evi17 = $("#eviddisp").val();
 
 		sta18 = $("#estCiv").val();
-		por18 = $("#porceCiv").val();
+		/*por18 = $("#porceCiv").val();*/
 		evi18 = $("#evidCiv").val();
 
 		cre = localStorage.getItem("PL");
@@ -1052,7 +1073,7 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3d",acta:cumActa, staacta:sta01, poracta:por01, eviacta:evi01, poder:cumPoder, stapoder:sta02, porpoder:por02, evipoder:evi02, alta:cumAltaShcp, staalta:sta03, poralta:por03, evialta:evi03, rfc:cumRfc, starfc:sta04, porrfc:por04, evirfc:evi04, pl:cumpl, stapl:sta05, porpl:por05, evipl:evi05, lfm:cumlfm, stalfm:sta06, porlfm:por06, evilfm:evi06, ds:cumdS, stads:sta07, pords:por07, evids:evi07,timss:cumimss, statim:sta08, portim:por08, evitim:evi08, pA:cumplano, stapA:sta09, porpA:por09, evipA:evi09, aS:cumpSiem, staaS:sta10, poraS:por10, eviaS:evi10, de:cumpEl, stade:sta11, porde:por11, evide:evi11, dtf:cumpdTF, stadtf:sta12, pordtf:por12, evidtf:evi12, cld:cumpCd, stacld:sta13, porcld:por13, evicld:evi13, phm:cumpHm, staphm:sta14, porphm:por14, eviphm:evi14, phmt:cumpHmT, staphmt:sta15, porphmt:por15, eviphmt:evi15, tqA:cumpTnA, statqA:sta16, portqA:por16, evitqA:evi16, dis:cumpdis, stadis:sta17, pordis:por17, evidis:evi17, cIn:cumpIn, stacIn:sta18, porcIn:por18, evicIn:evi18, cre:cre },
+    		data: {opc:"add3d",acta:cumActa, staacta:sta01, eviacta:evi01, poder:cumPoder, stapoder:sta02, evipoder:evi02, alta:cumAltaShcp, staalta:sta03, evialta:evi03, rfc:cumRfc, starfc:sta04, evirfc:evi04, pl:cumpl, stapl:sta05, evipl:evi05, lfm:cumlfm, stalfm:sta06, evilfm:evi06, ds:cumdS, stads:sta07, evids:evi07, timss:cumimss, statim:sta08, evitim:evi08, pA:cumplano, stapA:sta09, evipA:evi09, aS:cumpSiem, staaS:sta10, eviaS:evi10, de:cumpEl, stade:sta11, evide:evi11, dtf:cumpdTF, stadtf:sta12, evidtf:evi12, cld:cumpCd, stacld:sta13, evicld:evi13, phm:cumpHm, staphm:sta14, eviphm:evi14, phmt:cumpHmT, staphmt:sta15, eviphmt:evi15, tqA:cumpTnA, statqA:sta16, evitqA:evi16, dis:cumpdis, stadis:sta17, evidis:evi17, cIn:cumpIn, stacIn:sta18, evicIn:evi18, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1062,92 +1083,92 @@ $(document).ready(function(){
 		/* Act on the event */
 		cumActa = $("#cActa").text();
 		stActa = $("#estAct").val();
-		prActa = $("#porceAct").val();
+		/*prActa = $("#porceAct").val();*/
 		evActa = $("#eviAct").val();
 
 		cumPoder = $("#cPNot").text();
 		stPoder = $("#estPn").val();
-		prPoder = $("#porcePn").val();
+		/*prPoder = $("#porcePn").val();*/
 		evPoder = $("#eviPn").val();
 
 		cumAltaShcp = $("#altaSHCP").text();
 		stAltaSh = $("#estSHCP").val();
-		prAltaSh = $("#porceSHCP").val();
+		/*prAltaSh = $("#porceSHCP").val();*/
 		evAltaSh = $("#eviSHCP").val();
 
 		cumRfc = $("#RFCS").text();
 		strfc = $("#estSRFCS").val();
-		prrfc = $("#porceRFCS").val();
+		/*prrfc = $("#porceRFCS").val();*/
 		evrfc = $("#eviRFCS").val();
 
 		cumpl = $("#PL").text();
 		stpL = $("#estPL").val();
-		prpL = $("#porcePL").val();
+		/*prpL = $("#porcePL").val();*/
 		evpL = $("#eviPL").val();
 		
 		cumlfm = $("#LFM").text();
 		stlFm = $("#estLFM").val();
-		prlFm = $("#porceLFM").val();
+		/*prlFm = $("#porceLFM").val();*/
 		evlFm = $("#eviLFM").val();
 
 		cumdS = $("#dicSuelo").text();
 		stdS = $("#estdicS").val();
-		prdS = $("#porcedicS").val();
+		/*prdS = $("#porcedicS").val();*/
 		evdS = $("#evidicS").val();
 
 		cumimss = $("#oImss").text();
 		stimss = $("#estoIm").val();
-		primss = $("#porceoIm").val();
+		/*primss = $("#porceoIm").val();*/
 		evimss = $("#evidoIm").val();
 
 		cumplano = $("#planoA").text();
 		stplano = $("#estplano").val();
-		prplano = $("#porceplano").val();
+		/*prplano = $("#porceplano").val();*/
 		evplano = $("#evidplano").val();
 
 		cumpSiem = $("#aSiem").text();
 		stsiem = $("#estSiem").val();
-		prsiem = $("#porceSiem").val();
+		/*prsiem = $("#porceSiem").val();*/
 		evsiem = $("#evidSiem").val();
 
 		cumpEl = $("#dElec").text();
 		stEl = $("#estdElec").val();
-		prEl = $("#porcedElec").val();
+		/*prEl = $("#porcedElec").val();*/
 		evEl = $("#eviddElec").val();
 
 		cumpdTF = $("#dTfisica").text();
 		stTF = $("#estdTfi").val();
-		prTF = $("#porcedTfi").val();
+		/*prTF = $("#porcedTfi").val();*/
 		evTF = $("#eviddTfi").val();
 
 		cumpCd = $("#calDisp").text();
 		stCd = $("#estcalD").val();
-		prCd = $("#porcecalD").val();
+		/*prCd = $("#porcecalD").val();*/
 		evCd = $("#evidcalD").val();
 
 		cumpHm = $("#pHerm").text();
 		stHm = $("#estpHerm").val();
-		prHm = $("#porcepHerm").val();
+		/*prHm = $("#porcepHerm").val();*/
 		evHm = $("#evidpHerm").val();
 
 		cumpHmT = $("#pHermT").text();
 		stHt = $("#estpHt").val();
-		prHt = $("#porcepHt").val();
+		/*prHt = $("#porcepHt").val();*/
 		evHt = $("#evidpHt").val();
 
 		cumpTnA = $("#tanqueA").text();
 		stTnA = $("#estTanque").val();
-		prTnA = $("#porceTanque").val();
+		/*prTnA = $("#porceTanque").val();*/
 		evTnA = $("#evidTanque").val();
 
 		cumpdis = $("#dispensarios").text();
 		stdis = $("#estdisp").val();
-		prdis = $("#porcedisp").val();
+		/*prdis = $("#porcedisp").val();*/
 		evdis = $("#eviddisp").val();
 
 		cumpIn = $("#cIventarios").text();
 		stIn = $("#estCiv").val();
-		prIn = $("#porceCiv").val();
+		/*prIn = $("#porceCiv").val();*/
 		evIn = $("#evidCiv").val();
 		//alert("tomar los 18 valores: "+cumActa+" - "+cumPoder+" - "+cumAltaShcp+" - "+cumRfc+" - "+cumpl+" - "+cumlfm+" - "+cumdS+" - "+cumimss+" - "+cumplano+" - "+cumpSiem+" - "+cumpEl+" - "+cumpdTF+" - "+cumpCd+" - "+cumpHm+" - "+cumpHmT+" - "+cumpTnA+" - "+cumpdis+" - "+cumpIn);
 		cre = localStorage.getItem("PL");
@@ -1155,7 +1176,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3d",acta:cumActa, sacta:stActa, eacta:evActa, pacta:prActa, poder:cumPoder, spoder:stPoder, epoder:evPoder, ppoder:prPoder, alta:cumAltaShcp, salta:stAltaSh, palta:prAltaSh, ealta:evAltaSh, rfc:cumRfc, srfc:strfc, prfc:prrfc, erfc:evrfc, pl:cumpl, spl:stpL, epl:evpL, ppl:prpL, lfm:cumlfm, slfm:stlFm, plfm:prlFm, elfm:evlFm, ds:cumdS, sds:stdS, pds:prdS, eds:evdS, timss:cumimss, stimss:stimss, etimss:evimss, ptimss:primss, pA:cumplano, spA:stplano, epA:evplano, ppA:prplano, aS:cumpSiem, saS:stsiem, paS:prsiem, eaS:evsiem, de:cumpEl, sde:stEl, pde:prEl, ede:evEl, dtf:cumpdTF, sdtf:stTF, pdtf:prTF, edtf:evTF, cld:cumpCd, scld:stCd, ecld:evCd, pcld:prCd, phm:cumpHm, sphm:stHm, ephm:evHm, pphm:prHm, phmt:cumpHmT, sphmt:stHt, ephmt:evHt, pphmt:prHt, tqA:cumpTnA, stqA:stTnA, etqA:evTnA, ptqA:prTnA,  dis:cumpdis, sdis:stdis, edis:evdis, pdis:prdis, cIn:cumpIn, scIn:stIn, ecIn:prIn, pcIn:evIn, cre:cre },
+    		data: {opc:"upd3d",acta:cumActa, sacta:stActa, eacta:evActa, /*pacta:prActa,*/ poder:cumPoder, spoder:stPoder, epoder:evPoder, /*ppoder:prPoder,*/ alta:cumAltaShcp, salta:stAltaSh, /*palta:prAltaSh,*/ ealta:evAltaSh, rfc:cumRfc, srfc:strfc, /*prfc:prrfc,*/ erfc:evrfc, pl:cumpl, spl:stpL, epl:evpL, /*ppl:prpL,*/ lfm:cumlfm, slfm:stlFm, /*plfm:prlFm,*/ elfm:evlFm, ds:cumdS, sds:stdS, /*pds:prdS,*/ eds:evdS, timss:cumimss, stimss:stimss, etimss:evimss, /*ptimss:primss,*/ pA:cumplano, spA:stplano, epA:evplano, /*ppA:prplano,*/ aS:cumpSiem, saS:stsiem, /*paS:prsiem,*/ eaS:evsiem, de:cumpEl, sde:stEl, /*pde:prEl,*/ ede:evEl, dtf:cumpdTF, sdtf:stTF, /*pdtf:prTF,*/ edtf:evTF, cld:cumpCd, scld:stCd, ecld:evCd, /*pcld:prCd,*/ phm:cumpHm, sphm:stHm, ephm:evHm, /*pphm:prHm,*/ phmt:cumpHmT, sphmt:stHt, ephmt:evHt, /*pphmt:prHt,*/ tqA:cumpTnA, stqA:stTnA, etqA:evTnA, /*ptqA:prTnA,*/  dis:cumpdis, sdis:stdis, edis:evdis, /*pdis:prdis,*/ cIn:cumpIn, scIn:stIn, /*ecIn:prIn,*/ pcIn:evIn, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1166,6 +1187,17 @@ $(document).ready(function(){
 	//DOCUMENTACION ASEA
 	$("#btnasea").click(function() {
 		$("#asea").show();
+		$("#titasea").show();
+		$("#btnasea").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
+		/*BOTONES*/
+		$("#btnlegal").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"})
+		$("#btncre").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"})
+		$("#btnprofeco").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"})
+		$("#btnpc").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"})
+		$("#btnse").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"})
+		$("#btnstps").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"})
+		/*ROW*/
 		$("#pc").hide();
 		$("#profeco").hide();
 		$("#semt").hide();
@@ -1174,6 +1206,13 @@ $(document).ready(function(){
 		$("#legis").hide();
 		$("#cre").hide();
 		$("#se").hide();
+		/*instrucciones*/
+		$("#titdoc").hide();
+		$("#titcre").hide();
+		$("#titpro").hide();
+		$("#titpc").hide();
+		$("#titse").hide();
+		$("#titstps").hide();
 	});
 	$("#c005").click(function(){
 		//alert("entra");
@@ -1183,19 +1222,19 @@ $(document).ready(function(){
 		if(status005 == " - "){
 			//alert("Si");
 			$("#c005").text("Si");
-			$("#c005").addClass("active");
+			$("#c005").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump005 = "Si";
 		}if(status005 == "Si"){
 			//alert("No");
 			$("#c005").text("No");
-			$("#c005").addClass("success");
-			$("#c005").removeClass("active");
+			$("#c005").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#c005").removeClass("active");*/
 			cump005 = "No";
 		}if(status005 == "No"){
 			//alert("otra SI");
 			$("#c005").text("Si");
-			$("#c005").addClass("active");
-			$("#c005").removeClass("success");
+			$("#c005").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#c005").removeClass("success");*/
 			cump005 = "Si";
 		}
 		//console.log(cumActa);
@@ -1211,42 +1250,37 @@ $(document).ready(function(){
 		if(statusmia == " - "){
 			//alert("Si");
 			$("#cMia").text("Si");
-			$("#cMia").addClass("active");
+			$("#cMia").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			//alert("ESTADO DE IP: "+Pstatusip);
 			cumpmia = "Si";
 
 			if(Pstatusip == " - "){
 				$("#cIp").text("No");
-				$("#cIp").addClass("success");
-				$("#cIp").removeClass("active");
+				$("#cIp").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 				cumpip = "No";
 			}
 			
 		}if(statusmia == "Si"){
 			//alert("No");
 			$("#cMia").text("No");
-			$("#cMia").addClass("success");
-			$("#cMia").removeClass("active");
+			$("#cMia").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			cumpmia = "No";
 
 			if(Pstatusip == "No"){
 				$("#cIp").text("Si");
-				$("#cIp").addClass("active");
-				$("#cIp").removeClass("success");
+				$("#cIp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 				cumpip = "Si";
 			}
 			
 		}if(statusmia == "No"){
 			//alert("otra SI");
 			$("#cMia").text("Si");
-			$("#cMia").addClass("active");
-			$("#cMia").removeClass("success");
+			$("#cMia").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpmia = "Si";
 
 			if(Pstatusip == "Si"){
 				$("#cIp").text("No");
-				$("#cIp").addClass("success");
-				$("#cIp").removeClass("active");
+				$("#cIp").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 				cumpip = "No";
 			}
 			
@@ -1263,39 +1297,34 @@ $(document).ready(function(){
 		if(statusip == " - "){
 			//alert("Si");
 			$("#cIp").text("Si");
-			$("#cIp").addClass("active");
+			$("#cIp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpip = "Si";
 
 			if(Pstatusmia == " - "){
 				$("#cMia").text("No");
-				$("#cMia").addClass("success");
-				$("#cMia").removeClass("active");
+				$("#cMia").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 				cumpmia = "No";
 			}
 		}if(statusip == "Si"){
 			//alert("No");
 			$("#cIp").text("No");
-			$("#cIp").addClass("success");
-			$("#cIp").removeClass("active");
+			$("#cIp").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			cumpip = "No";
 
 			if(Pstatusmia == "No"){
 				$("#cMia").text("Si");
-				$("#cMia").addClass("active");
-				$("#cMia").removeClass("success");
+				$("#cMia").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 				cumpmia = "Si";
 			}
 		}if(statusip == "No"){
 			//alert("otra SI");
 			$("#cIp").text("Si");
-			$("#cIp").addClass("active");
-			$("#cIp").removeClass("success");
+			$("#cIp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpip = "Si";
 
 			if(Pstatusmia == "Si"){
 				$("#cMia").text("No");
-				$("#cMia").addClass("success");
-				$("#cMia").removeClass("active");
+				$("#cMia").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 				cumpmia = "No";
 			}
 		}
@@ -1310,19 +1339,17 @@ $(document).ready(function(){
 		if(statuslf == " - "){
 			//alert("Si");
 			$("#cLf").text("Si");
-			$("#cLf").addClass("active");
+			$("#cLf").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumplf = "Si";
 		}if(statuslf == "Si"){
 			//alert("No");
 			$("#cLf").text("No");
-			$("#cLf").addClass("success");
-			$("#cLf").removeClass("active");
+			$("#cLf").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			cumplf = "No";
 		}if(statuslf == "No"){
 			//alert("otra SI");
 			$("#cLf").text("Si");
-			$("#cLf").addClass("active");
-			$("#cLf").removeClass("success");
+			$("#cLf").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumplf = "Si";
 		}
 		//console.log(cumActa);
@@ -1336,19 +1363,17 @@ $(document).ready(function(){
 		if(statusgrp == " - "){
 			//alert("Si");
 			$("#cGrp").text("Si");
-			$("#cGrp").addClass("active");
+			$("#cGrp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpgrp = "Si";
 		}if(statusgrp == "Si"){
 			//alert("No");
 			$("#cGrp").text("No");
-			$("#cGrp").addClass("success");
-			$("#cGrp").removeClass("active");
+			$("#cGrp").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			cumpgrp = "No";
 		}if(statusgrp == "No"){
 			//alert("otra SI");
 			$("#cGrp").text("Si");
-			$("#cGrp").addClass("active");
-			$("#cGrp").removeClass("success");
+			$("#cGrp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpgrp = "Si";
 		}
 		//console.log(cumActa);
@@ -1362,19 +1387,17 @@ $(document).ready(function(){
 		if(statuscoa == " - "){
 			//alert("Si");
 			$("#cCoa").text("Si");
-			$("#cCoa").addClass("active");
+			$("#cCoa").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpcoa = "Si";
 		}if(statuscoa == "Si"){
 			//alert("No");
 			$("#cCoa").text("No");
-			$("#cCoa").addClass("success");
-			$("#cCoa").removeClass("active");
+			$("#cCoa").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			cumpcoa = "No";
 		}if(statuscoa == "No"){
 			//alert("otra SI");
 			$("#cCoa").text("Si");
-			$("#cCoa").addClass("active");
-			$("#cCoa").removeClass("success");
+			$("#cCoa").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpcoa = "Si";
 		}
 		//console.log(cumActa);
@@ -1382,27 +1405,27 @@ $(document).ready(function(){
 	});
 	$("#guardarDocASEA").click(function() {
 		A1sta = $("#estc005").val();
-		A1por = $("#porcec005").val();
+		/*A1por = $("#porcec005").val();*/
 		A1evi = $("#evidc005").val();
 
 		A2sta = $("#estcMia").val();
-		A2por = $("#porcecMia").val();
+		/*A2por = $("#porcecMia").val();*/
 		A2evi = $("#evidcMia").val();
 
 		A3sta = $("#estcIp").val();
-		A3por = $("#porcecIp").val();
+		/*A3por = $("#porcecIp").val();*/
 		A3evi = $("#evidcIp").val();
 
 		A4sta = $("#estcLf").val();
-		A4por = $("#porcecLf").val();
+		/*A4por = $("#porcecLf").val();*/
 		A4evi = $("#evidcLf").val();
 
 		A5sta = $("#estcGrp").val();
-		A5por = $("#porcecGrp").val();
+		/*A5por = $("#porcecGrp").val();*/
 		A5evi = $("#evidcGrp").val();
 
 		A6sta = $("#estcCoa").val();
-		A6por = $("#porcecCoa").val();
+		/*A6por = $("#porcecCoa").val();*/
 		A6evi = $("#evidcCoa").val();
 		/* Act on the event */
 		//alert("tomar los 6 valores"); 
@@ -1413,7 +1436,7 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3a",n005:cump005, sn005:A1sta, en005:A1evi, pn005:A1por, mia:cumpmia, smia:A2sta, emia:A2evi, pmia:A2por, ip:cumpip, sip:A3sta, eip:A3evi, pip:A3por, lf:cumplf, slf:A4sta, elf:A4evi, plf:A4por, grp:cumpgrp, sgrp:A5sta, egrp:A5evi, pgrp:A5por, coa:cumpcoa, scoa:A6sta, ecoa:A6evi, pcoa:A6por, cre:cre },
+    		data: {opc:"add3a",n005:cump005, sn005:A1sta, en005:A1evi, /*pn005:A1por, */mia:cumpmia, smia:A2sta, emia:A2evi, /*pmia:A2por,*/ ip:cumpip, sip:A3sta, eip:A3evi,/* pip:A3por,*/ lf:cumplf, slf:A4sta, elf:A4evi, /*plf:A4por,*/ grp:cumpgrp, sgrp:A5sta, egrp:A5evi, /*pgrp:A5por,*/ coa:cumpcoa, scoa:A6sta, ecoa:A6evi, /*pcoa:A6por,*/ cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1423,32 +1446,32 @@ $(document).ready(function(){
 		/* Act on the event */
 		cump005 = $("#c005").text();
 		st005 = $("#estc005").val();
-		p005 = $("#porcec005").val();
+		/*p005 = $("#porcec005").val();*/
 		ev005 = $("#evidc005").val();
 		
 		cumpmia = $("#cMia").text();
 		stmia = $("#estcMia").val();
-		prmia = $("#porcecMia").val();
+		/*prmia = $("#porcecMia").val();*/
 		evmia = $("#evidcMia").val();
 
 		cumpip = $("#cIp").text();
 		stip = $("#estcIp").val();
-		prip = $("#porcecIp").val();
+		/*prip = $("#porcecIp").val();*/
 		evip = $("#evidcIp").val();
 
 		cumplf = $("#cLf").text();
 		stlf = $("#estcLf").val();
-		prlf = $("#porcecLf").val();
+		/*prlf = $("#porcecLf").val();*/
 		evlf = $("#evidcLf").val();
 
 		cumpgrp = $("#cGrp").text();
 		stgrp = $("#estcGrp").val();
-		prgrp = $("#porcecGrp").val();
+		/*prgrp = $("#porcecGrp").val();*/
 		evgrp = $("#evidcGrp").val();
 
 		cumpcoa = $("#cCoa").text();
 		stcoa = $("#estcCoa").val();
-		prcoa = $("#porcecCoa").val();
+		/*prcoa = $("#porcecCoa").val();*/
 		evcoa = $("#evidcCoa").val();
 		
 		//alert("Cumplimiento text: "+cump005+" Status005VAL: "+st005+" porcentajeTEXT:"+p005+" evaluaconVAL: "+ev005);
@@ -1457,7 +1480,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3a",n005:cump005, sn005:st005, pn005:p005, en005:ev005, mia:cumpmia, smia:stmia, pmia:prmia, emia:evmia, ip:cumpip, sip:stip, pip:prip, eip:evip, lf:cumplf, slf:stlf, plf:prlf, elf:evlf, grp:cumpgrp, sgrp:stgrp, pgrp:prgrp, egrp:evgrp, coa:cumpcoa, scoa:stcoa, pcoa:prcoa, ecoa:evcoa, cre:cre },
+    		data: {opc:"upd3a",n005:cump005, sn005:st005, /*pn005:p005,*/ en005:ev005, mia:cumpmia, smia:stmia, /*pmia:prmia,*/ emia:evmia, ip:cumpip, sip:stip, /*pip:prip,*/ eip:evip, lf:cumplf, slf:stlf, /*plf:prlf,*/ elf:evlf, grp:cumpgrp, sgrp:stgrp, /*pgrp:prgrp,*/ egrp:evgrp, coa:cumpcoa, scoa:stcoa, /*pcoa:prcoa,*/ ecoa:evcoa, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1468,6 +1491,18 @@ $(document).ready(function(){
 	//DOCUMENTACION CRE
 	$("#btncre").click(function() {
 		$("#cre").show();
+		$("#titcre").show();
+		$("#btncre").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
+		/*botones*/
+		$("#btnlegal").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnasea").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnprofeco").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnpc").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnse").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnstps").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+
+		/*ROW*/
 		$("#pc").hide();
 		$("#semt").hide();
 		$("#profeco").hide();
@@ -1476,6 +1511,14 @@ $(document).ready(function(){
 		$("#legal").hide();
 		$("#legis").hide();
 		$("#se").hide();
+
+		/*Instrucciones*/
+		$("#titdoc").hide();
+		$("#titasea").hide();
+		$("#titpro").hide();
+		$("#titpc").hide();
+		$("#titse").hide();
+		$("#titstps").hide();
 	});
 	$("#rDiariov").click(function(){
 		//alert("entra");
@@ -1485,19 +1528,19 @@ $(document).ready(function(){
 		if(statusrdv == " - "){
 			//alert("Si");
 			$("#rDiariov").text("Si");
-			$("#rDiariov").addClass("active");
+			$("#rDiariov").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumprdv = "Si";
 		}if(statusrdv == "Si"){
 			//alert("No");
 			$("#rDiariov").text("No");
-			$("#rDiariov").addClass("success");
-			$("#rDiariov").removeClass("active");
+			$("#rDiariov").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#rDiariov").removeClass("active");*/
 			cumprdv = "No";
 		}if(statusrdv == "No"){
 			//alert("otra SI");
 			$("#rDiariov").text("Si");
-			$("#rDiariov").addClass("active");
-			$("#rDiariov").removeClass("success");
+			$("#rDiariov").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#rDiariov").removeClass("success");*/
 			cumprdv = "Si";
 		}
 		//console.log(cumActa);
@@ -1511,19 +1554,19 @@ $(document).ready(function(){
 		if(statusrdp == " - "){
 			//alert("Si");
 			$("#rDiariop").text("Si");
-			$("#rDiariop").addClass("active");
+			$("#rDiariop").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumprdp = "Si";
 		}if(statusrdp == "Si"){
 			//alert("No");
 			$("#rDiariop").text("No");
-			$("#rDiariop").addClass("success");
-			$("#rDiariop").removeClass("active");
+			$("#rDiariop").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#rDiariop").removeClass("active");*/
 			cumprdp = "No";
 		}if(statusrdp == "No"){
 			//alert("otra SI");
 			$("#rDiariop").text("Si");
-			$("#rDiariop").addClass("active");
-			$("#rDiariop").removeClass("success");
+			$("#rDiariop").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#rDiariop").removeClass("success");*/
 			cumprdp = "Si";
 		}
 		//console.log(cumActa);
@@ -1537,19 +1580,19 @@ $(document).ready(function(){
 		if(statuseta == " - "){
 			//alert("Si");
 			$("#cEstad").text("Si");
-			$("#cEstad").addClass("active");
+			$("#cEstad").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpesta = "Si";
 		}if(statuseta == "Si"){
 			//alert("No");
 			$("#cEstad").text("No");
-			$("#cEstad").addClass("success");
-			$("#cEstad").removeClass("active");
+			$("#cEstad").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#cEstad").removeClass("active");*/
 			cumpesta = "No";
 		}if(statuseta == "No"){
 			//alert("otra SI");
 			$("#cEstad").text("Si");
-			$("#cEstad").addClass("active");
-			$("#cEstad").removeClass("success");
+			$("#cEstad").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#cEstad").removeClass("success");*/
 			cumpesta = "Si";
 		}
 		//console.log(cumActa);
@@ -1563,19 +1606,19 @@ $(document).ready(function(){
 		if(status016 == " - "){
 			//alert("Si");
 			$("#016").text("Si");
-			$("#016").addClass("active");
+			$("#016").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump016 = "Si";
 		}if(status016 == "Si"){
 			//alert("No");
 			$("#016").text("No");
-			$("#016").addClass("success");
-			$("#016").removeClass("active");
+			$("#016").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#016").removeClass("active");*/
 			cump016 = "No";
 		}if(status016 == "No"){
 			//alert("otra SI");
 			$("#016").text("Si");
-			$("#016").addClass("active");
-			$("#016").removeClass("success");
+			$("#016").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#016").removeClass("success");*/
 			cump016 = "Si";
 		}
 		//console.log(cumActa);
@@ -1589,19 +1632,19 @@ $(document).ready(function(){
 		if(status0162017 == " - "){
 			//alert("Si");
 			$("#0162017").text("Si");
-			$("#0162017").addClass("active");
+			$("#0162017").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump0162017 = "Si";
 		}if(status0162017 == "Si"){
 			//alert("No");
 			$("#0162017").text("No");
-			$("#0162017").addClass("success");
-			$("#0162017").removeClass("active");
+			$("#0162017").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#0162017").removeClass("active");*/
 			cump0162017 = "No";
 		}if(status0162017 == "No"){
 			//alert("otra SI");
 			$("#0162017").text("Si");
-			$("#0162017").addClass("active");
-			$("#0162017").removeClass("success");
+			$("#0162017").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#0162017").removeClass("success");*/
 			cump0162017 = "Si";
 		}
 		//console.log(cumActa);
@@ -1615,19 +1658,19 @@ $(document).ready(function(){
 		if(statusrpag == " - "){
 			//alert("Si");
 			$("#rPsupervi").text("Si");
-			$("#rPsupervi").addClass("active");
+			$("#rPsupervi").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumprpag = "Si";
 		}if(statusrpag == "Si"){
 			//alert("No");
 			$("#rPsupervi").text("No");
-			$("#rPsupervi").addClass("success");
-			$("#rPsupervi").removeClass("active");
+			$("#rPsupervi").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#rPsupervi").removeClass("active");*/
 			cumprpag = "No";
 		}if(statusrpag == "No"){
 			//alert("otra SI");
 			$("#rPsupervi").text("Si");
-			$("#rPsupervi").addClass("active");
-			$("#rPsupervi").removeClass("success");
+			$("#rPsupervi").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#rPsupervi").removeClass("success");*/
 			cumprpag = "Si";
 		}
 		//console.log(cumActa);
@@ -1641,19 +1684,19 @@ $(document).ready(function(){
 		if(statuspAnual == " - "){
 			//alert("Si");
 			$("#polizAnual").text("Si");
-			$("#polizAnual").addClass("active");
+			$("#polizAnual").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpAnual = "Si";
 		}if(statuspAnual == "Si"){
 			//alert("No");
 			$("#polizAnual").text("No");
-			$("#polizAnual").addClass("success");
-			$("#polizAnual").removeClass("active");
+			$("#polizAnual").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#polizAnual").removeClass("active");*/
 			cumpAnual = "No";
 		}if(statuspAnual == "No"){
 			//alert("otra SI");
 			$("#polizAnual").text("Si");
-			$("#polizAnual").addClass("active");
-			$("#polizAnual").removeClass("success");
+			$("#polizAnual").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#polizAnual").removeClass("success");*/
 			cumpAnual = "Si";
 		}
 		//console.log(cumActa);
@@ -1667,19 +1710,19 @@ $(document).ready(function(){
 		if(statuspSg == " - "){
 			//alert("Si");
 			$("#polizaSg").text("Si");
-			$("#polizaSg").addClass("active");
+			$("#polizaSg").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpSg = "Si";
 		}if(statuspSg == "Si"){
 			//alert("No");
 			$("#polizaSg").text("No");
-			$("#polizaSg").addClass("success");
-			$("#polizaSg").removeClass("active");
+			$("#polizaSg").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#polizaSg").removeClass("active");*/
 			cumpSg = "No";
 		}if(statuspSg == "No"){
 			//alert("otra SI");
 			$("#polizaSg").text("Si");
-			$("#polizaSg").addClass("active");
-			$("#polizaSg").removeClass("success");
+			$("#polizaSg").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#polizaSg").removeClass("success");*/
 			cumpSg = "Si";
 		}
 		//console.log(cumActa);
@@ -1693,19 +1736,19 @@ $(document).ready(function(){
 		if(statusrQ == " - "){
 			//alert("Si");
 			$("#rQue").text("Si");
-			$("#rQue").addClass("active");
+			$("#rQue").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumprQ = "Si";
 		}if(statusrQ == "Si"){
 			//alert("No");
 			$("#rQue").text("No");
-			$("#rQue").addClass("success");
-			$("#rQue").removeClass("active");
+			$("#rQue").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#rQue").removeClass("active");*/
 			cumprQ = "No";
 		}if(statusrQ == "No"){
 			//alert("otra SI");
 			$("#rQue").text("Si");
-			$("#rQue").addClass("active");
-			$("#rQue").removeClass("success");
+			$("#rQue").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#rQue").removeClass("success");*/
 			cumprQ = "Si";
 		}
 		//console.log(cumActa);
@@ -1719,19 +1762,19 @@ $(document).ready(function(){
 		if(statusfPro == " - "){
 			//alert("Si");
 			$("#factProd").text("Si");
-			$("#factProd").addClass("active");
+			$("#factProd").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpfPr = "Si";
 		}if(statusfPro == "Si"){
 			//alert("No");
 			$("#factProd").text("No");
-			$("#factProd").addClass("success");
-			$("#factProd").removeClass("active");
+			$("#factProd").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#factProd").removeClass("active");*/
 			cumpfPr = "No";
 		}if(statusfPro == "No"){
 			//alert("otra SI");
 			$("#factProd").text("Si");
-			$("#factProd").addClass("active");
-			$("#factProd").removeClass("success");
+			$("#factProd").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#factProd").removeClass("success");*/
 			cumpfPr = "Si";
 		}
 		//console.log(cumActa);
@@ -1745,19 +1788,19 @@ $(document).ready(function(){
 		if(statusInc == " - "){
 			//alert("Si");
 			$("#incidentes").text("Si");
-			$("#incidentes").addClass("active");
+			$("#incidentes").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpInc = "Si";
 		}if(statusInc == "Si"){
 			//alert("No");
 			$("#incidentes").text("No");
-			$("#incidentes").addClass("success");
-			$("#incidentes").removeClass("active");
+			$("#incidentes").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#incidentes").removeClass("active");*/
 			cumpInc = "No";
 		}if(statusInc == "No"){
 			//alert("otra SI");
 			$("#incidentes").text("Si");
-			$("#incidentes").addClass("active");
-			$("#incidentes").removeClass("success");
+			$("#incidentes").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#incidentes").removeClass("success");*/
 			cumpInc = "Si";
 		}
 		//console.log(cumActa);
@@ -1771,19 +1814,19 @@ $(document).ready(function(){
 		if(statusAnIn == " - "){
 			//alert("Si");
 			$("#anInde").text("Si");
-			$("#anInde").addClass("active");
+			$("#anInde").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpAnIn = "Si";
 		}if(statusAnIn == "Si"){
 			//alert("No");
 			$("#anInde").text("No");
-			$("#anInde").addClass("success");
-			$("#anInde").removeClass("active");
+			$("#anInde").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#anInde").removeClass("active");*/
 			cumpAnIn = "No";
 		}if(statusAnIn == "No"){
 			//alert("otra SI");
 			$("#anInde").text("Si");
-			$("#anInde").addClass("active");
-			$("#anInde").removeClass("success");
+			$("#anInde").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#anInde").removeClass("success");*/
 			cumpAnIn = "Si";
 		}
 		//console.log(cumActa);
@@ -1793,52 +1836,52 @@ $(document).ready(function(){
 		/* Act on the event */
 		
 		Csta1 = $("#estRdia").val();
-		Cpor1 = $("#porceRdia").val();
+		/*Cpor1 = $("#porceRdia").val();*/
 		Cevi1 = $("#evidRdia").val();
 
 		Csta2 = $("#estRdiap").val();
-		Cpor2 = $("#porceRdiap").val();
+		/*Cpor2 = $("#porceRdiap").val();*/
 		Cevi2 = $("#evidRdiap").val();
 
 		Csta3 = $("#estcEs").val();
-		Cpor3 = $("#porcecEs").val();
+		/*Cpor3 = $("#porcecEs").val();*/
 		Cevi3 = $("#evidcEs").val();
 
 		Csta4 = $("#est016").val();
-		Cpor4 = $("#porce016").val();
+		/*Cpor4 = $("#porce016").val();*/
 		Cevi4 = $("#evid016").val();
 
 		Csta5 = $("#est0162017").val();
-		Cpor5 = $("#porce0162017").val();
+		/*Cpor5 = $("#porce0162017").val();*/
 		Cevi5 = $("#evid0162017").val();
 
 		Csta6 = $("#estrPs").val();
-		Cpor6 = $("#porcerPs").val();
+		/*Cpor6 = $("#porcerPs").val();*/
 		Cevi6 = $("#evidrPs").val();
 
 		Csta7 = $("#estPoliza").val();
 		Cevi7 = $("#evidPoliza").val();
-		Cpor7 = $("#porcePoliza").val();
+		/*Cpor7 = $("#porcePoliza").val();*/
 
 		Csta8 = $("#estPsg").val();
 		Cevi8 = $("#evidPsg").val();
-		Cpor8 = $("#porcePsg").val();
+		/*Cpor8 = $("#porcePsg").val();*/
 
 		Csta9 = $("#estrQ").val();
 		Cevi9 = $("#evidrQ").val();
-		Cpor9 = $("#porcerQ").val();
+		/*Cpor9 = $("#porcerQ").val();*/
 
 		Csta10 = $("#estFacP").val();
 		Cevi10 = $("#evidFacP").val();
-		Cpor10 = $("#porceFacP").val();
+		/*Cpor10 = $("#porceFacP").val();*/
 
 		Csta11 = $("#estInc").val();
 		Cevi11 = $("#evidInc").val();
-		Cpor11 = $("#porceInc").val();
+		/*Cpor11 = $("#porceInc").val();*/
 
 		Csta12 = $("#estAnI").val();
 		Cevi12 = $("#evidAnI").val();
-		Cpor12 = $("#porceAnI").val();
+		/*Cpor12 = $("#porceAnI").val();*/
 		//alert("Valores "+cumprdp+"evidencia 4 "+Cevi4+"porcenteja 9 "+Cpor9);
 		//alert("tomar los 12 valores: "+cumprdv+" DOS:"+" - "+cumprdp+" - "+cumpesta+" - "+cump016+" - "+cump0162017+" - "+cumprpag+" - "+cumpAnual+" - "+cumpSg+" - "+cumprQ+" - "+cumpfPr+" - "+cumpInc+" - "+cumpAnIn);
 		cre = localStorage.getItem("PL");
@@ -1846,7 +1889,7 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3c",rdv:cumprdv, srdv:Csta1, erdv:Cevi1, prdv:Cpor1, rdp:cumprdp, srdp:Csta2, erdp:Cevi2, prdp:Cpor2, sta:cumpesta, ssta:Csta3, esta:Cevi3, psta:Cpor3, cpet:cump016, scpet:Csta4, ecpet:Cevi4, pcpet:Cpor4, dcpet:cump0162017, sdcpet:Csta5, edcpet:Cevi5, pdcpet:Cpor5, sup:cumprpag, ssup:Csta6, esup:Cevi6, psup:Cpor6, cre:cre, panual:cumpAnual, spanual:Csta7, epanual:Cevi7, ppanual:Cpor7, pseg:cumpSg, spseg:Csta8, epseg:Cevi8, ppseg:Cpor8, repq:cumprQ, srepq:Csta9, erepq:Cevi9, prepq:Cpor9, proc:cumpfPr, sproc:Csta10, eproc:Cevi10, pproc:Cpor10, reme:cumpInc, sreme:Csta11, ereme:Cevi11, preme:Cpor11, anuncio:cumpAnIn, sanuncio:Csta12, eanuncio:Cevi12, panuncio:Cpor12 },
+    		data: {opc:"add3c",rdv:cumprdv, srdv:Csta1, erdv:Cevi1, /*prdv:Cpor1,*/ rdp:cumprdp, srdp:Csta2, erdp:Cevi2, /*prdp:Cpor2,*/ sta:cumpesta, ssta:Csta3, esta:Cevi3, /*psta:Cpor3,*/ cpet:cump016, scpet:Csta4, ecpet:Cevi4, /*pcpet:Cpor4,*/ dcpet:cump0162017, sdcpet:Csta5, edcpet:Cevi5, /*pdcpet:Cpor5,*/ sup:cumprpag, ssup:Csta6, esup:Cevi6, /*psup:Cpor6,*/ cre:cre, panual:cumpAnual, spanual:Csta7, epanual:Cevi7, /*ppanual:Cpor7,*/ pseg:cumpSg, spseg:Csta8, epseg:Cevi8, /*ppseg:Cpor8,*/ repq:cumprQ, srepq:Csta9, erepq:Cevi9, /*prepq:Cpor9,*/ proc:cumpfPr, sproc:Csta10, eproc:Cevi10, /*pproc:Cpor10,*/ reme:cumpInc, sreme:Csta11, ereme:Cevi11, /*preme:Cpor11,*/ anuncio:cumpAnIn, sanuncio:Csta12, eanuncio:Cevi12, /*panuncio:Cpor12*/ },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1857,69 +1900,69 @@ $(document).ready(function(){
 		cumprdv = $("#rDiariov").text();
 		stprdv = $("#estRdia").val();
 		evprdv = $("#evidRdia").val();
-		prprdv = $("#porceRdia").val();
+		/*prprdv = $("#porceRdia").val();*/
 
 		cumprdp = $("#rDiariop").text();
 		stprdp = $("#estRdiap").val();
 		evprdp = $("#evidRdiap").val();
-		prprdp = $("#porceRdiap").val();
+		/*prprdp = $("#porceRdiap").val();*/
 
 		cumpesta = $("#cEstad").text();
 		stesta = $("#estcEs").val();
 		evesta = $("#evidcEs").val();
-		presta = $("#porcecEs").val();
+		/*presta = $("#porcecEs").val();*/
 
 		cump016 = $("#016").text();
 		st016 = $("#est016").val();
 		ev016 = $("#porce016").val();
-		pr016 = $("#evid016").val();
+		/*pr016 = $("#evid016").val();*/
 
 		cump0162017 = $("#0162017").text();
 		st0162 = $("#est0162017").val();
 		ev0162 = $("#evid0162017").val();
-		pr0162 = $("#porce0162017").val();
+		/*pr0162 = $("#porce0162017").val();*/
 
 		cumprpag = $("#rPsupervi").text();
 		stpg = $("#estrPs").val();
 		evpg = $("#evidrPs").val();
-		prpg = $("#porcerPs").val();
+		/*prpg = $("#porcerPs").val();*/
 
 		cumpAnual = $("#polizAnual").text();
 		stanual = $("#estPoliza").val();
 		evanual = $("#evidPoliza").val();
-		pranual = $("#porcePoliza").val();
+		/*pranual = $("#porcePoliza").val();*/
 
 		cumpSg = $("#polizaSg").text();
 		stsg = $("#estPsg").val();
 		evsg = $("#evidPsg").val();
-		prsg = $("#porcePsg").val();
+		/*prsg = $("#porcePsg").val();*/
 
 		cumprQ = $("#rQue").text();
 		strq = $("#estrQ").val();
 		evrq = $("#evidrQ").val();
-		prrq = $("#porcerQ").val();
+		/*prrq = $("#porcerQ").val();*/
 
 		cumpfPr = $("#factProd").text();
 		stfp = $("#estFacP").val();
 		evfp = $("#evidFacP").val();
-		prfp = $("#porceFacP").val();
+		/*prfp = $("#porceFacP").val();*/
 
 		cumpInc = $("#incidentes").text();
 		stin = $("#estInc").val();
 		evin = $("#evidInc").val();
-		prin = $("#porceInc").val();
+		/*prin = $("#porceInc").val();*/
 
 		cumpAnIn = $("#anInde").text();
 		stani = $("#estAnI").val();
 		evani = $("#evidAnI ").val();
-		prani = $("#porceAnI").val();
+		/*prani = $("#porceAnI").val();*/
 		//alert("tomar los 12 valores: "+cumprdv+" DOS:"+" - "+cumprdp+" - "+cumpesta+" - "+cump016+" - "+cump0162017+" - "+cumprpag+" - "+cumpAnual+" - "+cumpSg+" - "+cumprQ+" - "+cumpfPr+" - "+cumpInc+" - "+cumpAnIn);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3c",rdv:cumprdv, srdv:stprdv, erdv:evprdv, prdv:prprdv, rdp:cumprdp, srdp:stprdp, erdp:evprdp, prdp:prprdp, sta:cumpesta, ssta:stesta, esta:evesta, psta:presta, cpet:cump016, scpet:st016, ecpet:pr016, pcept:ev016, dcpet:cump0162017, sdcpet:st0162, edcpet:ev0162, pdcpet:pr0162, sup:cumprpag, ssup:stpg, psup:prpg, esup:evpg, panual:cumpAnual, spanual:stanual, epanual:evanual, ppanual:pranual, pseg:cumpSg, spseg:stsg, ppseg:prsg, epseg:prsg, repq:cumprQ, srepq:strq, erepq:evrq, prepq:prrq, proc:cumpfPr, sproc:stfp, eproc:evfp, pproc:prfp, reme:cumpInc, sreme:stin, preme:prin, ereme:evin, anuncio:cumpAnIn, sanuncio:stani, panuncio:prani, eanuncio:evani, cre:cre,},
+    		data: {opc:"upd3c",rdv:cumprdv, srdv:stprdv, erdv:evprdv, /*prdv:prprdv,*/ rdp:cumprdp, srdp:stprdp, erdp:evprdp, /*prdp:prprdp,*/ sta:cumpesta, ssta:stesta, esta:evesta, /*psta:presta,*/ cpet:cump016, scpet:st016, ecpet:ev016, /*pcept:ev016,*/ dcpet:cump0162017, sdcpet:st0162, edcpet:ev0162, /*pdcpet:pr0162,*/ sup:cumprpag, ssup:stpg, /*psup:prpg,*/ esup:evpg, panual:cumpAnual, spanual:stanual, epanual:evanual, /*ppanual:pranual,*/ pseg:cumpSg, spseg:stsg, /*ppseg:prsg,*/ epseg:prsg, repq:cumprQ, srepq:strq, erepq:evrq, /*prepq:prrq,*/ proc:cumpfPr, sproc:stfp, eproc:evfp, /*pproc:prfp,*/ reme:cumpInc, sreme:stin, /*preme:prin,*/ ereme:evin, anuncio:cumpAnIn, sanuncio:stani, /*panuncio:prani,*/ eanuncio:evani, cre:cre,},
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1930,6 +1973,18 @@ $(document).ready(function(){
 	//DOCUMENTACION PROFECO
 	$("#btnprofeco").click(function() {
 		$("#profeco").show();
+		$("#titpro").show();
+		$("#btnprofeco").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
+		/*botones*/
+		$("#btnlegal").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnasea").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btncre").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnpc").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnse").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnstps").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+
+		/*row*/
 		$("#pc").hide();
 		$("#semt").hide();
 		$("#stps").hide();
@@ -1938,6 +1993,14 @@ $(document).ready(function(){
 		$("#legal").hide();
 		$("#legis").hide();
 		$("#se").hide();
+
+		/*instrucciones*/
+		$("#titdoc").hide();
+		$("#titasea").hide();
+		$("#titcre").hide();
+		$("#titpc").hide();
+		$("#titse").hide();
+		$("#titstps").hide();
 	});
 	$("#vPerdisp").click(function(){
 		//alert("entra");
@@ -1947,19 +2010,19 @@ $(document).ready(function(){
 		if(statusvDis == " - "){
 			//alert("Si");
 			$("#vPerdisp").text("Si");
-			$("#vPerdisp").addClass("active");
+			$("#vPerdisp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpvDis = "Si";
 		}if(statusvDis == "Si"){
 			//alert("No");
 			$("#vPerdisp").text("No");
-			$("#vPerdisp").addClass("success");
-			$("#vPerdisp").removeClass("active");
+			$("#vPerdisp").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#vPerdisp").removeClass("active");*/
 			cumpvDis = "No";
 		}if(statusvDis == "No"){
 			//alert("otra SI");
 			$("#vPerdisp").text("Si");
-			$("#vPerdisp").addClass("active");
-			$("#vPerdisp").removeClass("success");
+			$("#vPerdisp").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#vPerdisp").removeClass("success");*/
 			cumpvDis = "Si";
 		}
 		//console.log(cumActa);
@@ -1973,19 +2036,19 @@ $(document).ready(function(){
 		if(statusrCd == " - "){
 			//alert("Si");
 			$("#rControldis").text("Si");
-			$("#rControldis").addClass("active");
+			$("#rControldis").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumprCd = "Si";
 		}if(statusrCd == "Si"){
 			//alert("No");
 			$("#rControldis").text("No");
-			$("#rControldis").addClass("success");
-			$("#rControldis").removeClass("active");
+			$("#rControldis").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#rControldis").removeClass("active");*/
 			cumprCd = "No";
 		}if(statusrCd == "No"){
 			//alert("otra SI");
 			$("#rControldis").text("Si");
-			$("#rControldis").addClass("active");
-			$("#rControldis").removeClass("success");
+			$("#rControldis").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#rControldis").removeClass("success");*/
 			cumprCd = "Si";
 		}
 		//console.log(cumActa);
@@ -1996,11 +2059,11 @@ $(document).ready(function(){
 		//cumpvDis //verificacion de dispensario
 		//cumprCd //reporte a distancia
 		Psta1 = $("#estvPd").val();;
-		Ppor1 = $("#porcevPd").val();;
+		/*Ppor1 = $("#porcevPd").val();;*/
 		Pevi1 = $("#evidvPd").val();;
 
 		Psta2 = $("#estrCtd").val();;
-		Ppor2 = $("#porcerCtd").val();;
+		/*Ppor2 = $("#porcerCtd").val();;*/
 		Pevi2 = $("#evidrCtd").val();;
 
 		//alert("Primer valor "+cumpvDis+" DOS:"+cumprCd);
@@ -2010,7 +2073,7 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3pr",unoprofeco:cumpvDis, unoprofecos:Psta1, unoprofecop:Ppor1, unoprofecoe:Pevi1, dosprofeco:cumprCd, dosprofecos:Psta2, dosprofecop:Ppor2, dosprofecoe:Pevi2, cre:cre },
+    		data: {opc:"add3pr",unoprofeco:cumpvDis, unoprofecos:Psta1, /*unoprofecop:Ppor1,*/ unoprofecoe:Pevi1, dosprofeco:cumprCd, dosprofecos:Psta2, /*dosprofecop:Ppor2,*/ dosprofecoe:Pevi2, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2019,12 +2082,12 @@ $(document).ready(function(){
 	$("#actualizarDocP").click(function() {
 		cumppD = $("#vPerdisp").text();
 		stpD = $("#estvPd").val();
-		prpD = $("#porcevPd").val();
+		/*prpD = $("#porcevPd").val();*/
 		evpD = $("#evidvPd").val();
 
 		cumpcD = $("#rControldis").text();
 		stcD = $("#estrCtd").val();
-		prcD = $("#porcerCtd").val();
+		/*prcD = $("#porcerCtd").val();*/
 		evcD = $("#evidrCtd").val();
 
 		//alert("tomar los 2 valores: "+cumpvB+" DOS:"+cumpdL);
@@ -2033,7 +2096,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3pfc",unopfc:cumppD, supfc:stpD, pupfc:prpD, eupfc:evpD, dospfc:cumpcD, sdpfc:stcD, pdpfc:prcD, edpfc:evcD, cre:cre },
+    		data: {opc:"upd3pfc",unopfc:cumppD, supfc:stpD, /*pupfc:prpD,*/ eupfc:evpD, dospfc:cumpcD, sdpfc:stcD, /*pdpfc:prcD,*/ edpfc:evcD, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2044,6 +2107,18 @@ $(document).ready(function(){
 	//DOCUMENTACION PROTECCION CIVIL
 	$("#btnpc").click(function() {
 		$("#pc").show();
+		$("#titpc").show();
+		$("#btnpc").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
+		/*botones*/
+		$("#btnlegal").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnasea").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btncre").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnprofeco").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnse").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnstps").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+
+		/*row*/
 		$("#semt").hide();
 		$("#stps").hide();
 		$("#profeco").hide();
@@ -2052,6 +2127,14 @@ $(document).ready(function(){
 		$("#legal").hide();
 		$("#legis").hide();
 		$("#se").hide();
+
+		/*instrucciones*/
+		$("#titdoc").hide();
+		$("#titasea").hide();
+		$("#titcre").hide();
+		$("#titpro").hide();
+		$("#titse").hide();
+		$("#titstps").hide();
 	});
 	$("#vBueno").click(function(){
 		//alert("entra");
@@ -2061,18 +2144,18 @@ $(document).ready(function(){
 		if(statusvB == " - "){
 			//alert("Si");
 			$("#vBueno").text("Si");
-			$("#vBueno").addClass("active");
+			$("#vBueno").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpvB = "Si";
 		}if(statusvB == "Si"){
 			//alert("No");
 			$("#vBueno").text("No");
-			$("#vBueno").addClass("success");
+			$("#vBueno").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
 			$("#vBueno").removeClass("active");
 			cumpvB = "No";
 		}if(statusvB == "No"){
 			//alert("otra SI");
 			$("#vBueno").text("Si");
-			$("#vBueno").addClass("active");
+			$("#vBueno").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			$("#vBueno").removeClass("success");
 			cumpvB = "Si";
 		}
@@ -2087,19 +2170,19 @@ $(document).ready(function(){
 		if(statusdL == " - "){
 			//alert("Si");
 			$("#cdecla").text("Si");
-			$("#cdecla").addClass("active");
+			$("#cdecla").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpdL = "Si";
 		}if(statusdL == "Si"){
 			//alert("No");
 			$("#cdecla").text("No");
-			$("#cdecla").addClass("success");
-			$("#cdecla").removeClass("active");
+			$("#cdecla").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#cdecla").removeClass("active");*/
 			cumpdL = "No";
 		}if(statusdL == "No"){
 			//alert("otra SI");
 			$("#cdecla").text("Si");
-			$("#cdecla").addClass("active");
-			$("#cdecla").removeClass("success");
+			$("#cdecla").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#cdecla").removeClass("success");*/
 			cumpdL = "Si";
 		}
 		//console.log(cumActa);
@@ -2111,18 +2194,18 @@ $(document).ready(function(){
 		//cumpdL //autodeclaratoria
 		PCs1 = $("#estVb").val();;
 		PCe1 = $("#evidVb").val();;
-		PCp1 = $("#porceVb").val();;
+		/*PCp1 = $("#porceVb").val();;*/
 
 		PCs2 = $("#estCdc").val();;
 		PCe2 = $("#evidCdc").val();;
-		PCp2 = $("#porceCdc").val();;
+		/*PCp2 = $("#porceCdc").val();;*/
 		//alert("tomar valores: "+cumpvB+" Porcentaje uno:"+PCp1+" Evidencia dos:"+PCe2);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3pc",unopc:cumpvB, unopcs:PCs1, unopce:PCe1, unopcp:PCp1, dospc:cumpdL, dospcs:PCs2, dospce:PCe2, dospcp:PCp2, cre:cre },
+    		data: {opc:"add3pc",unopc:cumpvB, unopcs:PCs1, unopce:PCe1, /*unopcp:PCp1,*/ dospc:cumpdL, dospcs:PCs2, dospce:PCe2, /*dospcp:PCp2,*/ cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2132,12 +2215,12 @@ $(document).ready(function(){
 		/* Act on the event */
 		cumpvB = $("#vBueno").text();
 		stvB = $("#estVb").val();
-		prvB = $("#porceVb").val();
+		/*prvB = $("#porceVb").val();*/
 		evvB = $("#evidVb").val();
 
 		cumpdL = $("#cdecla").text();
 		stdL = $("#estCdc").val();
-		prdL = $("#porceCdc").val();
+		/*prdL = $("#porceCdc").val();*/
 		evdL = $("#evidCdc").val();
 		//alert("tomar los 2 valores: "+cumpvB+" DOS:"+cumpdL);
 		cre = localStorage.getItem("PL");
@@ -2145,7 +2228,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3pc",unopc:cumpvB, supc:stvB, pupc:prvB, eupc:evvB, dospc:cumpdL, sdpc:stdL, pdpc:prdL, edpc:evdL, cre:cre },
+    		data: {opc:"upd3pc",unopc:cumpvB, supc:stvB, /*pupc:prvB,*/ eupc:evvB, dospc:cumpdL, sdpc:stdL, /*pdpc:prdL,*/ edpc:evdL, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2155,7 +2238,19 @@ $(document).ready(function(){
 
 	//DOCUMENTACION DE SECRETARIA DE ECONOMIA
 	$("#btnse").click(function() {
+		$("#btnse").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
 		$("#se").show();
+		$("#titse").show();
+
+		/*botones*/
+		$("#btnlegal").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnasea").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btncre").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnprofeco").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnpc").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnstps").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+
+		/*row*/
 		$("#pc").hide();
 		$("#semt").hide();
 		$("#stps").hide();
@@ -2164,6 +2259,14 @@ $(document).ready(function(){
 		$("#asea").hide();
 		$("#legal").hide();
 		$("#legis").hide();
+
+		/*instrucciones*/
+		$("#titdoc").hide();
+		$("#titasea").hide();
+		$("#titcre").hide();
+		$("#titpro").hide();
+		$("#titpc").hide();
+		$("#titstps").hide();
 	});
 	$("#conNac").click(function(){
 		//alert("entra");
@@ -2173,19 +2276,19 @@ $(document).ready(function(){
 		if(statusconNac == " - "){
 			//alert("Si");
 			$("#conNac").text("Si");
-			$("#conNac").addClass("active");
+			$("#conNac").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cumpconN = "Si";
 		}if(statusconNac == "Si"){
 			//alert("No");
 			$("#conNac").text("No");
-			$("#conNac").addClass("success");
-			$("#conNac").removeClass("active");
+			$("#conNac").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#conNac").removeClass("active");*/
 			cumpconN = "No";
 		}if(statusconNac == "No"){
 			//alert("otra SI");
 			$("#conNac").text("Si");
-			$("#conNac").addClass("active");
-			$("#conNac").removeClass("success");
+			$("#conNac").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#conNac").removeClass("success");*/
 			cumpconN = "Si";
 		}
 		//console.log(cumActa);
@@ -2196,7 +2299,7 @@ $(document).ready(function(){
 		//cumpvB //visto bueno
 		//cumpdL //autodeclaratoria
 		contNS = $("#estconNac").val();
-		contNP = $("#porceconNac").val();
+		/*contNP = $("#porceconNac").val();*/
 		contNE = $("#evidconNac").val();
 
 		//alert("tomar el valor: "+cumpconN+"%"+contNP+"evi:"+contNE);
@@ -2205,7 +2308,7 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3se",unose:cumpconN, unoseS:contNS, unoseE:contNE, unoseP:contNP, cre:cre },
+    		data: {opc:"add3se",unose:cumpconN, unoseS:contNS, unoseE:contNE, /*unoseP:contNP,*/ cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2215,7 +2318,7 @@ $(document).ready(function(){
 		/* Act on the event */
 		cumpconN = $("#conNac").text();
 		sconN = $("#estconNac").val();
-		pconN = $("#porceconNac").val();
+		/*pconN = $("#porceconNac").val();*/
 		econN = $("#evidconNac").val();
 		//alert("tomar los 2 valores: "+cumpvB+" DOS:"+cumpdL);
 		cre = localStorage.getItem("PL");
@@ -2223,7 +2326,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3se",unose:cumpconN, suse:sconN, puse:pconN, euse:econN, cre:cre },
+    		data: {opc:"upd3se",unose:cumpconN, suse:sconN, /*puse:pconN,*/ euse:econN, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2235,6 +2338,18 @@ $(document).ready(function(){
 	//DOCUMENTACION STPS
 	$("#btnstps").click(function() {
 		$("#stps").show();
+		$("#titstps").show();
+		$("#btnstps").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
+		/*botones*/
+		$("#btnlegal").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnasea").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btncre").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnprofeco").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnpc").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+		$("#btnse").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
+
+		/*row*/
 		$("#semt").hide();
 		$("#pc").hide();
 		$("#profeco").hide();
@@ -2243,6 +2358,14 @@ $(document).ready(function(){
 		$("#legal").hide();
 		$("#legis").hide();
 		$("#se").hide();
+
+		/*instrucciones*/
+		$("#titdoc").hide();
+		$("#titasea").hide();
+		$("#titcre").hide();
+		$("#titpro").hide();
+		$("#titpc").hide();
+		$("#titse").hide();
 	});
 	$("#001stps").click(function(){
 		//alert("entra");
@@ -2252,19 +2375,19 @@ $(document).ready(function(){
 		if(status001s == " - "){
 			//alert("Si");
 			$("#001stps").text("Si");
-			$("#001stps").addClass("active");
+			$("#001stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump001s = "Si";
 		}if(status001s == "Si"){
 			//alert("No");
 			$("#001stps").text("No");
-			$("#001stps").addClass("success");
-			$("#001stps").removeClass("active");
+			$("#001stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#001stps").removeClass("active");*/
 			cump001s = "No";
 		}if(status001s == "No"){
 			//alert("otra SI");
 			$("#001stps").text("Si");
-			$("#001stps").addClass("active");
-			$("#001stps").removeClass("success");
+			$("#001stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#001stps").removeClass("success");*/
 			cump001s = "Si";
 		}
 		//console.log(cumActa);
@@ -2278,19 +2401,19 @@ $(document).ready(function(){
 		if(status002s == " - "){
 			//alert("Si");
 			$("#002stps").text("Si");
-			$("#002stps").addClass("active");
+			$("#002stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump002s = "Si";
 		}if(status002s == "Si"){
 			//alert("No");
 			$("#002stps").text("No");
-			$("#002stps").addClass("success");
-			$("#002stps").removeClass("active");
+			$("#002stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#002stps").removeClass("active");*/
 			cump002s = "No";
 		}if(status002s == "No"){
 			//alert("otra SI");
 			$("#002stps").text("Si");
-			$("#002stps").addClass("active");
-			$("#002stps").removeClass("success");
+			$("#002stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#002stps").removeClass("success");*/
 			cump002s = "Si";
 		}
 		//console.log(cumActa);
@@ -2304,19 +2427,19 @@ $(document).ready(function(){
 		if(status009s == " - "){
 			//alert("Si");
 			$("#009stps").text("Si");
-			$("#009stps").addClass("active");
+			$("#009stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump009s = "Si";
 		}if(status009s == "Si"){
 			//alert("No");
 			$("#009stps").text("No");
-			$("#009stps").addClass("success");
-			$("#009stps").removeClass("active");
+			$("#009stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#009stps").removeClass("active");*/
 			cump009s = "No";
 		}if(status009s == "No"){
 			//alert("otra SI");
 			$("#009stps").text("Si");
-			$("#009stps").addClass("active");
-			$("#009stps").removeClass("success");
+			$("#009stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#009stps").removeClass("success");*/
 			cump009s = "Si";
 		}
 		//console.log(cumActa);
@@ -2330,19 +2453,19 @@ $(document).ready(function(){
 		if(status010s == " - "){
 			//alert("Si");
 			$("#010stps").text("Si");
-			$("#010stps").addClass("active");
+			$("#010stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump010s = "Si";
 		}if(status010s == "Si"){
 			//alert("No");
 			$("#010stps").text("No");
-			$("#010stps").addClass("success");
-			$("#010stps").removeClass("active");
+			$("#010stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#010stps").removeClass("active");*/
 			cump010s = "No";
 		}if(status010s == "No"){
 			//alert("otra SI");
 			$("#010stps").text("Si");
-			$("#010stps").addClass("active");
-			$("#010stps").removeClass("success");
+			$("#010stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#010stps").removeClass("success");*/
 			cump010s = "Si";
 		}
 		//console.log(cumActa);
@@ -2356,19 +2479,19 @@ $(document).ready(function(){
 		if(status011s == " - "){
 			//alert("Si");
 			$("#011stps").text("Si");
-			$("#011stps").addClass("active");
+			$("#011stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump011s = "Si";
 		}if(status011s == "Si"){
 			//alert("No");
 			$("#011stps").text("No");
-			$("#011stps").addClass("success");
-			$("#011stps").removeClass("active");
+			$("#011stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#011stps").removeClass("active");*/
 			cump011s = "No";
 		}if(status011s == "No"){
 			//alert("otra SI");
 			$("#011stps").text("Si");
-			$("#011stps").addClass("active");
-			$("#011stps").removeClass("success");
+			$("#011stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#011stps").removeClass("success");*/
 			cump011s = "Si";
 		}
 		//console.log(cumActa);
@@ -2382,19 +2505,19 @@ $(document).ready(function(){
 		if(status017s == " - "){
 			//alert("Si");
 			$("#017stps").text("Si");
-			$("#017stps").addClass("active");
+			$("#017stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump017s= "Si";
 		}if(status017s == "Si"){
 			//alert("No");
 			$("#017stps").text("No");
-			$("#017stps").addClass("success");
-			$("#017stps").removeClass("active");
+			$("#017stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#017stps").removeClass("active");*/
 			cump017s = "No";
 		}if(status017s == "No"){
 			//alert("otra SI");
 			$("#017stps").text("Si");
-			$("#017stps").addClass("active");
-			$("#017stps").removeClass("success");
+			$("#017stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#017stps").removeClass("success");*/
 			cump017s = "Si";
 		}
 		//console.log(cumActa);
@@ -2408,19 +2531,19 @@ $(document).ready(function(){
 		if(status018s == " - "){
 			//alert("Si");
 			$("#018stps").text("Si");
-			$("#018stps").addClass("active");
+			$("#018stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump018s = "Si";
 		}if(status018s == "Si"){
 			//alert("No");
 			$("#018stps").text("No");
-			$("#018stps").addClass("success");
-			$("#018stps").removeClass("active");
+			$("#018stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#018stps").removeClass("active");*/
 			cump018s = "No";
 		}if(status018s == "No"){
 			//alert("otra SI");
 			$("#018stps").text("Si");
-			$("#018stps").addClass("active");
-			$("#018stps").removeClass("success");
+			$("#018stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#018stps").removeClass("success");*/
 			cump018s = "Si";
 		}
 		//console.log(cumActa);
@@ -2434,19 +2557,19 @@ $(document).ready(function(){
 		if(status019s == " - "){
 			//alert("Si");
 			$("#019stps").text("Si");
-			$("#019stps").addClass("active");
+			$("#019stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump019s = "Si";
 		}if(status019s == "Si"){
 			//alert("No");
 			$("#019stps").text("No");
-			$("#019stps").addClass("success");
-			$("#019stps").removeClass("active");
+			$("#019stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#019stps").removeClass("active");*/
 			cump019s = "No";
 		}if(status019s == "No"){
 			//alert("otra SI");
 			$("#019stps").text("Si");
-			$("#019stps").addClass("active");
-			$("#019stps").removeClass("success");
+			$("#019stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#019stps").removeClass("success");*/
 			cump019s = "Si";
 		}
 		//console.log(cumActa);
@@ -2460,19 +2583,19 @@ $(document).ready(function(){
 		if(status022s == " - "){
 			//alert("Si");
 			$("#022stps").text("Si");
-			$("#022stps").addClass("active");
+			$("#022stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump022s = "Si";
 		}if(status022s == "Si"){
 			//alert("No");
 			$("#022stps").text("No");
-			$("#022stps").addClass("success");
-			$("#022stps").removeClass("active");
+			$("#022stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#022stps").removeClass("active");*/
 			cump022s = "No";
 		}if(status022s == "No"){
 			//alert("otra SI");
 			$("#022stps").text("Si");
-			$("#022stps").addClass("active");
-			$("#022stps").removeClass("success");
+			$("#022stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#022stps").removeClass("success");*/
 			cump022s = "Si";
 		}
 		//console.log(cumActa);
@@ -2486,19 +2609,19 @@ $(document).ready(function(){
 		if(status024s == " - "){
 			//alert("Si");
 			$("#024stps").text("Si");
-			$("#024stps").addClass("active");
+			$("#024stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump024s = "Si";
 		}if(status024s == "Si"){
 			//alert("No");
 			$("#024stps").text("No");
-			$("#024stps").addClass("success");
-			$("#024stps").removeClass("active");
+			$("#024stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#024stps").removeClass("active");*/
 			cump024s = "No";
 		}if(status024s == "No"){
 			//alert("otra SI");
 			$("#024stps").text("Si");
-			$("#024stps").addClass("active");
-			$("#024stps").removeClass("success");
+			$("#024stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#024stps").removeClass("success");*/
 			cump024s = "Si";
 		}
 		//console.log(cumActa);
@@ -2512,19 +2635,19 @@ $(document).ready(function(){
 		if(status025s == " - "){
 			//alert("Si");
 			$("#025stps").text("Si");
-			$("#025stps").addClass("active");
+			$("#025stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump025s = "Si";
 		}if(status025s == "Si"){
 			//alert("No");
 			$("#025stps").text("No");
-			$("#025stps").addClass("success");
-			$("#025stps").removeClass("active");
+			$("#025stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#025stps").removeClass("active");*/
 			cump025s = "No";
 		}if(status025s == "No"){
 			//alert("otra SI");
 			$("#025stps").text("Si");
-			$("#025stps").addClass("active");
-			$("#025stps").removeClass("success");
+			$("#025stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#025stps").removeClass("success");*/
 			cump025s = "Si";
 		}
 		//console.log(cumActa);
@@ -2538,19 +2661,19 @@ $(document).ready(function(){
 		if(status026s == " - "){
 			//alert("Si");
 			$("#026stps").text("Si");
-			$("#026stps").addClass("active");
+			$("#026stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump026s = "Si";
 		}if(status026s == "Si"){
 			//alert("No");
 			$("#026stps").text("No");
-			$("#026stps").addClass("success");
-			$("#026stps").removeClass("active");
+			$("#026stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#026stps").removeClass("active");*/
 			cump026s = "No";
 		}if(status026s == "No"){
 			//alert("otra SI");
 			$("#026stps").text("Si");
-			$("#026stps").addClass("active");
-			$("#026stps").removeClass("success");
+			$("#026stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#026stps").removeClass("success");*/
 			cump026s = "Si";
 		}
 		//console.log(cumActa);
@@ -2564,19 +2687,19 @@ $(document).ready(function(){
 		if(status027s == " - "){
 			//alert("Si");
 			$("#027stps").text("Si");
-			$("#027stps").addClass("active");
+			$("#027stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump027s = "Si";
 		}if(status027s == "Si"){
 			//alert("No");
 			$("#027stps").text("No");
-			$("#027stps").addClass("success");
-			$("#027stps").removeClass("active");
+			$("#027stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#027stps").removeClass("active");*/
 			cump027s = "No";
 		}if(status027s == "No"){
 			//alert("otra SI");
 			$("#027stps").text("Si");
-			$("#027stps").addClass("active");
-			$("#027stps").removeClass("success");
+			$("#027stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#027stps").removeClass("success");*/
 			cump027s = "Si";
 		}
 		//console.log(cumActa);
@@ -2590,19 +2713,19 @@ $(document).ready(function(){
 		if(status029s == " - "){
 			//alert("Si");
 			$("#029stps").text("Si");
-			$("#029stps").addClass("active");
+			$("#029stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump029s = "Si";
 		}if(status029s == "Si"){
 			//alert("No");
 			$("#029stps").text("No");
-			$("#029stps").addClass("success");
-			$("#029stps").removeClass("active");
+			$("#029stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#029stps").removeClass("active");*/
 			cump029s = "No";
 		}if(status029s == "No"){
 			//alert("otra SI");
 			$("#029stps").text("Si");
-			$("#029stps").addClass("active");
-			$("#029stps").removeClass("success");
+			$("#029stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#029stps").removeClass("success");*/
 			cump029s = "Si";
 		}
 		//console.log(cumActa);
@@ -2616,20 +2739,46 @@ $(document).ready(function(){
 		if(status033s == " - "){
 			//alert("Si");
 			$("#033stps").text("Si");
-			$("#033stps").addClass("active");
+			$("#033stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
 			cump033s = "Si";
 		}if(status033s == "Si"){
 			//alert("No");
 			$("#033stps").text("No");
-			$("#033stps").addClass("success");
-			$("#033stps").removeClass("active");
+			$("#033stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#033stps").removeClass("active");*/
 			cump033s = "No";
 		}if(status033s == "No"){
 			//alert("otra SI");
 			$("#033stps").text("Si");
-			$("#033stps").addClass("active");
-			$("#033stps").removeClass("success");
+			$("#033stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#033stps").removeClass("success");*/
 			cump033s = "Si";
+		}
+		//console.log(cumActa);
+		//$("#cActa").val("Si");
+	});
+	$("#035stps").click(function(){
+		//alert("entra");
+		status033s = $("#035stps").text();
+		//alert("es: "+statusActa);
+
+		if(status033s == " - "){
+			//alert("Si");
+			$("#035stps").text("Si");
+			$("#035stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			cump035s = "Si";
+		}if(status033s == "Si"){
+			//alert("No");
+			$("#035stps").text("No");
+			$("#035stps").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			/*$("#033stps").removeClass("active");*/
+			cump035s = "No";
+		}if(status033s == "No"){
+			//alert("otra SI");
+			$("#035stps").text("Si");
+			$("#035stps").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			/*$("#033stps").removeClass("success");*/
+			cump035s = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
@@ -2638,63 +2787,66 @@ $(document).ready(function(){
 		/* Act on the event */
 		stps1s = $("#est001").val();
 		stps1e = $("#evid001").val();
-		stps1p = $("#porce001").val();
+		/*stps1p = $("#porce001").val();*/
 
 		stps2s = $("#est002").val();
 		stps2e = $("#evid002").val();
-		stps2p = $("#porce002").val();
+		/*stps2p = $("#porce002").val();*/
 
 		stps3s = $("#est009").val();
 		stps3e = $("#evid009").val();
-		stps3p = $("#porce009").val();
+		/*stps3p = $("#porce009").val();*/
 
 		stps4s = $("#est010").val();
 		stps4e = $("#evid010").val();
-		stps4p = $("#porce010").val();
+		/*stps4p = $("#porce010").val();*/
 
 		stps5s = $("#est011").val();
 		stps5e = $("#evid011").val();
-		stps5p = $("#porce011").val();
+		/*stps5p = $("#porce011").val();*/
 
 		stps6s = $("#est017").val();
 		stps6e = $("#evid017").val();
-		stps6p = $("#porce017").val();
+		/*stps6p = $("#porce017").val();*/
 
 		stps7s = $("#est018").val();
 		stps7e = $("#evid018").val();
-		stps7p = $("#porce018").val();
+		/*stps7p = $("#porce018").val();*/
 
 		stps8s = $("#est019").val();
 		stps8e = $("#evid019").val();
-		stps8p = $("#porce019").val();
+		/*stps8p = $("#porce019").val();*/
 
 		stps9s = $("#est022").val();
 		stps9e = $("#evid022").val();
-		stps9p = $("#porce022").val();
+		/*stps9p = $("#porce022").val();*/
 
 		stps10s = $("#est024").val();
 		stps10e = $("#evid024").val();
-		stps10p = $("#porce024").val();
+		/*stps10p = $("#porce024").val();*/
 
 		stps11s = $("#est025").val();
 		stps11e = $("#evid025").val();
-		stps11p = $("#porce025").val();
+		/*stps11p = $("#porce025").val();*/
 
 		stps12s = $("#est026").val();
 		stps12e = $("#evid026").val();
-		stps12p = $("#porce026").val();
+		/*stps12p = $("#porce026").val();*/
 
 		stps13s = $("#est027").val();
 		stps13e = $("#evid027").val();
-		stps13p = $("#porce027").val();
+		/*stps13p = $("#porce027").val();*/
 
 		stps14s = $("#est029").val();
 		stps14e = $("#evid029").val();
-		stps14p = $("#porce029").val();
+		/*stps14p = $("#porce029").val();*/
 
 		stps15s = $("#est033").val();
 		stps15e = $("#evid033").val();
-		stps15p = $("#porce033").val();
+		/*stps15p = $("#porce033").val();*/
+
+		stps16s = $("#est035").val();
+		stps16e = $("#evid035").val();
 		
 		//alert("tomar los valores 12: "+cump026s+" evidencia 10 "+stps10e+" porcentaje 5 "+stps5p+" status 15 "+stps15s);
 		cre = localStorage.getItem("PL");
@@ -2703,7 +2855,7 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3s",unos:cump001s, unosS:stps1s, unosE:stps1e, unosP:stps1p, doss:cump002s, dossS:stps2s, dossE:stps2e, dossP:stps2p, tress:cump009s, tressS:stps3s, tressE:stps3e, tressP:stps3p, cuatros:cump010s, cuatrosS:stps4s, cuatrosE:stps4e, cuatrosP:stps4p, cincos:cump011s, cincosS:stps5s, cincosE:stps5e, cincosP:stps5p, seiss:cump017s, seissS:stps6s, seissE:stps6e, seissP:stps6p, sietes:cump018s, sietesS:stps7s, sietesE:stps7e, sietesP:stps7p, ochos:cump019s, ochosS:stps8s, ochosE:stps8e, ochosP:stps8p, nueves:cump022s, nuevesS:stps9s, nuevesE:stps9e, nuevesP:stps9p, diezs:cump024s, diezsS:stps10s, diezsE:stps10e, diezsP:stps10p, onces:cump025s, oncesS:stps11s, oncesE:stps11e, oncesP:stps11p, doces:cump026s, docesS:stps12s, docesE:stps12e, docesP:stps12p, treces:cump027s, trecesS:stps13s, trecesE:stps13e, trecesP:stps13p, cators:cump029s, catorsS:stps14s, catorsE:stps14e, catorsP:stps14p, quins:cump033s, quinsS:stps15s, quinsE:stps15e, quinsP:stps15p, cre:cre },
+    		data: {opc:"add3s",unos:cump001s, unosS:stps1s, unosE:stps1e, /*unosP:stps1p,*/ doss:cump002s, dossS:stps2s, dossE:stps2e, /*dossP:stps2p,*/ tress:cump009s, tressS:stps3s, tressE:stps3e, /*tressP:stps3p,*/ cuatros:cump010s, cuatrosS:stps4s, cuatrosE:stps4e, /*cuatrosP:stps4p,*/ cincos:cump011s, cincosS:stps5s, cincosE:stps5e, /*cincosP:stps5p,*/ seiss:cump017s, seissS:stps6s, seissE:stps6e, /*seissP:stps6p,*/ sietes:cump018s, sietesS:stps7s, sietesE:stps7e, /*sietesP:stps7p,*/ ochos:cump019s, ochosS:stps8s, ochosE:stps8e, /*ochosP:stps8p,*/ nueves:cump022s, nuevesS:stps9s, nuevesE:stps9e, /*nuevesP:stps9p,*/ diezs:cump024s, diezsS:stps10s, diezsE:stps10e, /*diezsP:stps10p,*/ onces:cump025s, oncesS:stps11s, oncesE:stps11e, /*oncesP:stps11p,*/ doces:cump026s, docesS:stps12s, docesE:stps12e, /*docesP:stps12p,*/ treces:cump027s, trecesS:stps13s, trecesE:stps13e, /*trecesP:stps13p,*/ cators:cump029s, catorsS:stps14s, catorsE:stps14e, /*catorsP:stps14p,*/ quins:cump033s, quinsS:stps15s, quinsE:stps15e, /*quinsP:stps15p,*/ diecss:cump035s, diecssS:stps16s, diecssE:stps16e, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2715,84 +2867,89 @@ $(document).ready(function(){
 		cump001s = $("#001stps").text();
 		cump1st = $("#est001").val();
 		cump1ev = $("#evid001").val();
-		cump1pr = $("#porce001").val();
+		/*cump1pr = $("#porce001").val();*/
 
 		cump002s = $("#002stps").text();
 		cump2st = $("#est002").val();
 		cump2ev = $("#evid002").val();
-		cump2pr = $("#porce002").val();
+		/*cump2pr = $("#porce002").val();*/
 
 		cump009s = $("#009stps").text();
 		cump9st = $("#est009").val();
 		cump9ev = $("#evid009").val();
-		cump9pr = $("#porce009").val();
+		/*cump9pr = $("#porce009").val();*/
 
 		cump010s = $("#010stps").text();
 		cump10st = $("#est010").val();
 		cump10ev = $("#evid010").val();
-		cump10pr = $("#porce010").val();
+		/*cump10pr = $("#porce010").val();*/
 
 		cump011s = $("#011stps").text();
 		cump11st = $("#est011").val();
 		cump11ev = $("#evid011").val();
-		cump11pr = $("#porce011").val();
+		/*cump11pr = $("#porce011").val();*/
 
 		cump017s = $("#017stps").text();
 		cump17st = $("#est017").val();
 		cump17ev = $("#evid017").val();
-		cump17pr = $("#porce017").val();
+		/*cump17pr = $("#porce017").val();*/
 
 		cump018s = $("#018stps").text();
 		cump18st = $("#est018").val();
 		cump18ev = $("#evid018").val();
-		cump18pr = $("#porce018").val();
+		/*cump18pr = $("#porce018").val();*/
 
 		cump019s = $("#019stps").text();
 		cump19st = $("#est019").val();
 		cump19ev = $("#evid019").val();
-		cump19pr = $("#porce019").val();
+		/*cump19pr = $("#porce019").val();*/
 
 		cump022s = $("#022stps").text();
 		cump22st = $("#est022").val();
 		cump22ev = $("#evid022").val();
-		cump22pr = $("#porce022").val();
+		/*cump22pr = $("#porce022").val();*/
 
 		cump024s = $("#024stps").text();
 		cump24st = $("#est024").val();
 		cump24ev = $("#evid024").val();
-		cump24pr = $("#porce024").val();
+		/*cump24pr = $("#porce024").val();*/
 
 		cump025s = $("#025stps").text();
 		cump25st = $("#est025").val();
 		cump25ev = $("#evid025").val();
-		cump25pr = $("#porce025").val();
+		/*cump25pr = $("#porce025").val();*/
 
 		cump026s = $("#026stps").text();
 		cump26st = $("#est026").val();
 		cump26ev = $("#evid026").val();
-		cump26pr = $("#porce026").val();
+		/*cump26pr = $("#porce026").val();*/
 
 		cump027s = $("#027stps").text();
 		cump27st = $("#est027").val();
 		cump27ev = $("#evid027").val();
-		cump27pr = $("#porce027").val();
+		/*cump27pr = $("#porce027").val();*/
 
 		cump029s = $("#029stps").text();
 		cump29st = $("#est029").val();
 		cump29ev = $("#evid029").val();
-		cump29pr = $("#porce029").val();
+		/*cump29pr = $("#porce029").val();*/
 
 		cump033s = $("#033stps").text();
 		cump33st = $("#est033").val();
 		cump33ev = $("#evid033").val();
-		cump33pr = $("#porce033").val();
+		/*cump33pr = $("#porce033").val();*/
+
+		cump035s = $("#035stps").text();
+		cump35st = $("#est035").val();
+		cump35ev = $("#evid035").val();
+
 		//alert("tomar los 15 valores: "+cump001s+" - "+cump002s+" - "+cump009s+" - "+cump010s+" - "+cump011s+" - "+cump017s+" - "+cump018s+" - "+cump019s+" - "+cump022s+" - "+cump024s+" - "+cump025s+" - "+cump026s+" - "+cump027s+" - "+cump029s+" - "+cump033s);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3s",unos:cump001s, sunos:cump1st, eunos:cump1ev, punos:cump1pr, doss:cump002s, sdoss:cump2st, edoss:cump2ev, pdoss:cump2pr, tress:cump009s, stress:cump9st, etress:cump9ev, ptress:cump9pr, cuatros:cump010s, scuatros:cump10st, ecuatros:cump10ev, pcuatros:cump10pr, cincos:cump011s, scincos:cump11st, ecincos:cump11ev, pcincos:cump11pr, seiss:cump017s, sseiss:cump17st, pseiss:cump17pr, eseiss:cump17ev, sietes:cump018s, ssietes:cump18st, esietes:cump18ev, psietes:cump18pr, ochos:cump019s, sochos:cump19st, eochos:cump19ev, pochos:cump19pr, nueves:cump022s, snueves:cump22st, enueves:cump22ev, pnueves:cump22pr, diezs:cump024s, sdiezs:cump24st, ediezs:cump24ev, pdiezs:cump24pr, onces:cump025s, sonces:cump25st, eonces:cump25ev, ponces:cump25pr, doces:cump026s, sdoces:cump26st, edoces:cump26ev, pdoces:cump26pr, treces:cump027s, streces:cump27st, ptreces:cump27pr, etreces:cump27ev, cators:cump029s, scators:cump29st, ecators:cump29ev, pcators:cump29pr, quins:cump033s, squins:cump33st, pquins:cump33pr, equins:cump33ev, cre:cre },
+    		data: {opc:"upd3s",unos:cump001s, sunos:cump1st, eunos:cump1ev, /*punos:cump1pr,*/ doss:cump002s, sdoss:cump2st, edoss:cump2ev, /*pdoss:cump2pr,*/ tress:cump009s, stress:cump9st, etress:cump9ev, /*ptress:cump9pr,*/ cuatros:cump010s, scuatros:cump10st, ecuatros:cump10ev, /*pcuatros:cump10pr,*/ cincos:cump011s, scincos:cump11st, ecincos:cump11ev, /*pcincos:cump11pr,*/ seiss:cump017s, sseiss:cump17st, /*pseiss:cump17pr,*/ eseiss:cump17ev, sietes:cump018s, ssietes:cump18st, esietes:cump18ev, /*psietes:cump18pr,*/ ochos:cump019s, sochos:cump19st, eochos:cump19ev, /*pochos:cump19pr,*/ nueves:cump022s, snueves:cump22st, enueves:cump22ev, /*pnueves:cump22pr,*/ diezs:cump024s, sdiezs:cump24st, ediezs:cump24ev, /*pdiezs:cump24pr,*/ onces:cump025s, sonces:cump25st, eonces:cump25ev, /*ponces:cump25pr,*/ doces:cump026s, sdoces:cump26st, edoces:cump26ev, /*pdoces:cump26pr,*/ treces:cump027s, streces:cump27st, /*ptreces:cump27pr,*/ etreces:cump27ev, cators:cump029s, scators:cump29st, ecators:cump29ev, /*pcators:cump29pr,*/ quins:cump033s, squins:cump33st, /*pquins:cump33pr,*/ equins:cump33ev, disc:cump035s, sdisc:cump35st, edisc:cump35ev, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2946,11 +3103,21 @@ $(document).ready(function(){
 	/*MOVIMIENTO DE ETIQUETAS*/
 	$("#btncontrolr").click(function() {
 		$("#controlr").show('slow/400/fast');
+		$("#controlInstr").show('slow/400/fast');
+		$("#btncontrolr").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
 		$("#rbpo").hide();
+		$("#rbpoInstr").hide();
+		$("#btnrbpoc").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});
 	});
 	$("#btnrbpoc").click(function() {
 		$("#rbpo").show('slow/400/fast');
+		$("#rbpoInstr").show('slow/400/fast')
+		$("#btnrbpoc").css({"background":"rgb(254,174,0)", "color":"rgb(27,22,50)"});
+
 		$("#controlr").hide();
+		$("#controlInstr").hide();
+		$("#btncontrolr").css({"background":"rgb(27,22,50)", "color":"rgb(255,255,255)"});		
 	});
 
 	$("#guardarControl").click(function() {
@@ -2974,6 +3141,7 @@ $(document).ready(function(){
 
 	$("#guardarbpo").click(function() {
 		ar = $("#areaRbpo").val();
+		act = $("#actrbpo").val();
 		nS = $("#supRbpo").val();
 		nT = $("#nombreRbpo").val();
 		dA = $("#descA").val();
@@ -2987,11 +3155,15 @@ $(document).ready(function(){
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"addrbpo9", a:ar, n:nS, t:nT, d:dA, c:crti, ia:inAc, u:cus, o:obse, i:cre  },
+    		data: {opc:"addrbpo9", a:ar, ac:act, n:nS, t:nT, d:dA, c:crti, ia:inAc, u:cus, o:obse, i:cre  },
 		})
 		.done(function(msg) {
 			alert(msg);
 		})
+		//alert("se puede abrir una pagina nueva con el pdf");		
+	});
+	$("#pdfrbpo").click(function(){
+		window.open('php/documents/rbpodocument.php?x='+cre);
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 10*/
@@ -3144,6 +3316,9 @@ $(document).ready(function(){
 			alert(msg);
 		})		
 	});
+	$("#pdfcpersonal").click(function(){
+		window.open('php/documents/cambiopersonaX.php?x='+cre);
+	});
 
 	$("#guardarCTec").click(function() {
 		equipC = $("#equipoC").val();
@@ -3155,6 +3330,8 @@ $(document).ready(function(){
 
 		descC = $("#descrpC").val();
 		cre = localStorage.getItem("PL");
+
+		//alert(repM);
 		$.ajax({
 			url: 'php/insert.php',
 			method: 'POST',
@@ -3165,6 +3342,10 @@ $(document).ready(function(){
 			alert(msg);
 		})		
 	});
+	$("#pdfctecnico").click(function(){
+		window.open('php/documents/cambiotecnicoX.php?x='+cre);
+	});
+
 
 	$("#guardarOrdenTrabajo").click(function() {
 		fOrdTra = $("#fechaOT").val();
@@ -3198,6 +3379,9 @@ $(document).ready(function(){
 		.done(function(msg) {
 			alert(msg);
 		})
+	});
+	$("#pdfordenT").click(function(){
+		window.open('php/documents/ordenTrabajoX.php?x='+cre);
 	});
 
 	$("#btnGuardar01").click(function(event) {

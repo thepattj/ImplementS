@@ -85,9 +85,14 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacion">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -254,7 +259,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -263,142 +268,125 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Competencia, capacitación y entrenamiento</h2>
-                                        <p><span class="bread-ntd"><?php echo $id; ?></span></p>
+                                        <p><span class="bread-ntd"><?php /*echo $id;*/ ?></span></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                               <!--  <div class="breadcomb-report">
+                               <div class="breadcomb-report">
                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                               </div> -->
+                               </div> 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: white;">
-                        <div class="basic-tb-hd">
-                            <h2></h2>
-                            <p style="color: rgb(198,198,198);">Podras agregar cursos que han tomado los empleados para generar reportes de capacitación por cada empleado.</p>
-                        </div>
-                    </div>
-                    <!-- ALTA DE CURSOS -->
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-element-list" style="border: 1px solid black; border-radius: 35px;">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <div class="form-element-list" style="display:; border-radius: 35px;">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Competencia, capacitación y entrenamiento</h2>
+                                    <p><span class="bread-ntd"><?php echo $id; ?></span> </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            <div class="basic-tb-hd">
+                                <h2></h2>
+                                <p>Agregar cursos que han tomado los empleados</p>
+                            </div>
                             <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- TITULO -->
-                                    <H4> Cursos </H4>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- PRIMERELEMENT -->
-                                    
-                                         Nombre de Curso
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- PRIMERELEMENTINPUT -->
-                                    <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="cursoN">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="border: black 1px solid; border-radius: 35px;">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <H4> Cursos </H4>
                                     </div>
-                                </div>
-                                
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border: rgb(198,198,198) 1px solid;">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Nombre de Curso </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="cursoN"> </div>
+                                        </div>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- SEGUNDOELEMENT -->
-                                    
-                                         Nombre de instructor
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- SEGUNDOELEMENTINPUT -->
-                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="instrucN">
-                                    </div>
-                                </div>
-                                
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Nombre de instructor </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                             <div class="form-group nk-int-st"> <input type="text" class="form-control" id="instrucN"> </div>
+                                        </div>
 
-
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    
-                                         Fecha de inicio
-                                    
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <div class="fm-checkbox">
-                                        <label>
-                                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
-                                                <div class="input-group date nk-int-st">
-                                                    <span class="input-group-addon"></span>
-                                                    <input type="text" class="form-control" id="fechCurso" value="03/19/2018">
-                                                </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Fecha de inicio </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="fm-checkbox">
+                                                <label>
+                                                    <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
+                                                        <div class="input-group date nk-int-st">
+                                                            <span class="input-group-addon"></span>
+                                                            <input type="text" class="form-control" id="fechCurso" value="03/19/2018">
+                                                        </div>
+                                                    </div>
+                                                </label>
                                             </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                
+                                        </div>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    
-                                         Certificación/Capacitación/Acreditación
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                     <div class="form-group nk-int-st">
-                                        <input type="text" class="form-control" id="doCert" placeholder="Colocar el nombre de la acreditación">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> Certificación/Capacitación/Acreditación </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group nk-int-st"> <input type="text" class="form-control" id="doCert" placeholder="Colocar el nombre de la acreditación"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"></div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                        <button id="guardarCurso" class="btn btn-warning notika-btn-warning">Guardar</button>
                                     </div>
                                 </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="border: black 1px solid; border-radius: 35px;">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <h4> Agregar trabajadores a cursos </h4>
+                                    </div>
+                                    
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="fm-checkbox">
+                                            <label> Nombre de Curso </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="chosen-select-act fm-cmp-mg">
+                                            <select class="chosen" name="" id="numCurso">
+                                                <option id="" value="0" style="display: none;">Selecciona un curso</option>
+                                                <?php $qr = "SELECT idCurso as id, nombreCurso as nombre FROM curso WHERE idCESH = '".$id."'";
+                                                        $res = mysqli_query($con,$qr);
+                                                        while($row = $res->fetch_object()){ ?>
+                                                 <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>                                          
+                                                <?php } ?>
+                                            </select>
+                                         </div>   
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="fm-checkbox">
+                                            <label> Nombre de trabajador </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="chosen-select-act fm-cmp-mg">
+                                            <select class="chosen" name="" id="nombreTrabj">
+                                                <option id="" value="0" style="display: none;">Selecciona un nombre</option>
+                                                <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
+                                                    $resul = mysqli_query($con,$qri);
+                                                    while($row = $resul->fetch_object()){ ?>
+                                                <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>                <?php } ?>
+                                            </select>
+                                        </div>   
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
+                                        <button id="guardarCT" class="btn btn-warning notika-btn-warning">Cargar Trabajador</button>
+                                    </div>
+                                </div>                                  
                                 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarCurso" class="btn btn-warning notika-btn-warning">Guardar</button>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-element-list" style="border: 1px solid black; border-radius: 35px;">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <h4> Agregar trabajadores a cursos </h4>
-                                </div>
-                                
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="fm-checkbox">
-                                        <label> Nombre de Curso </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="numCurso">
-                                            <option id="" value="0" style="display: none;">Selecciona un curso</option>
-                                            <?php $qr = "SELECT idCurso as id, nombreCurso as nombre FROM curso WHERE idCESH = '".$id."'";
-                                                    $res = mysqli_query($con,$qr);
-                                                    while($row = $res->fetch_object()){ ?>
-                                             <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>                                          
-                                            <?php } ?>
-                                        </select>
-                                     </div>   
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="fm-checkbox">
-                                        <label> Nombre de trabajador </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="nombreTrabj">
-                                            <option id="" value="0" style="display: none;">Selecciona un nombre</option>
-                                            <?php $qri = "SELECT idTrab as id, nombre as NT, apellidoP as AP, apellidoM as AM FROM organigrama WHERE status = 'ACTIVO' AND idCESH = '".$id."'";
-                                                $resul = mysqli_query($con,$qri);
-                                                while($row = $resul->fetch_object()){ ?>
-                                            <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->NT)." ".($row->AP)." ".($row->AM);?> </option>                <?php } ?>
-                                        </select>
-                                    </div>   
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                                   
-                                    <button id="guardarCT" class="btn btn-warning notika-btn-warning">Cargar Trabajador</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <div class="col-lg-1"></div>
                 </div>
             </div>
         </div>
@@ -820,7 +808,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -831,7 +819,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
         ============================================ -->

@@ -806,8 +806,11 @@
                             </div>
 
                             <!-- ******************* CAMBIO DE PERSONAL *********************** -->
-                            <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
                             <div class="row" style="border: black 1px solid; display: none;" id="personal">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    
+                                </div>
+
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox"> <label> Nueva área </label> </div>
                                 </div>
@@ -878,14 +881,16 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <div class="col-lg-8 col-md-9 col-sm-9 col-xs-10"></div>
+                                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarCPersonal" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <button id="pdfcpersonal" class="btn btn-warning notika-btn-warning">Descargar</button>
                                 </div>
                             </div>
 
                             <!-- ******************* CAMBIOS TECNOLOGICOS *********************** -->
-                            <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
                             <div class="row" style="border: black 1px solid; display: none;" id="tecno">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox"> <label> Equipo </label> </div>
@@ -936,14 +941,16 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1">                                   
                                     <button id="guardarCTec" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <button id="pdfctecnico" class="btn btn-warning notika-btn-warning">Descargar</button>
                                 </div>
                             </div>
 
                             <!-- ******************* ORDEN DE TRABAJOS *********************** -->
-                            <!-- SE VAN AGREGAR ESTO  Elaborado Por   Encargado de la estación --- Revisado Por    Rep. Legal  --- Aprobado Por    Rep. Legal  --- Fecha de Publicación    00 de mes de año --- Fecha de Edición    00 de mes de año -->
                             <div class="row" style="border: black 1px solid; display: none;" id="ordent">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                             <div class="fm-checkbox"> <label> Fecha </label> </div>
@@ -964,7 +971,7 @@
                                             <div class="fm-checkbox"> <label> No. permiso </label> </div>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                            <?php $sql = "SELECT idOrdenT FROM dzordentr WHERE idCESH = '".$id."' ORDER BY idOrdenT DESC LIMIT 1";
+                                            <?php $sql = "SELECT numOrdenT FROM dzordentr WHERE idCESH = '".$id."' ORDER BY idOrdenT DESC LIMIT 1";
                                                   $resultado =mysqli_query($con, $sql);
                                                   if($resultado->num_rows > 0){
                                                     $fila1 = $resultado->fetch_assoc();
@@ -1343,9 +1350,12 @@
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                        <div class="col-lg-8 col-md-10 col-sm-10 col-xs-10"></div>
+                                        <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1">                                   
                                             <button id="guardarOrdenTrabajo" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <button id="pdfordenT" class="btn btn-warning notika-btn-warning">Descargar</button>
                                         </div>
                             </div>
 

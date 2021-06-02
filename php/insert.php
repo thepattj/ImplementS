@@ -2,6 +2,7 @@
 include 'conex.php';
 $con = Conectarse();
 
+
 $opcion=$_POST['opc'];
 
 if($opcion=="addSt"){
@@ -494,12 +495,12 @@ if($opcion=="addSt"){
 }if($opcion == "add10T"){
 	//echo "ENTRO";
 	$equipoCam = $_POST['ecam'];
-	$ResponsableT = $_POST['rm'];
+	$Responsablemto = $_POST['rm'];
 	$fechaT = $_POST['feCT'];
 	$descripCT = $_POST['descrp'];	
 	$id = $_POST['cre'];
 		
-	$sql = "INSERT INTO dzcambiot (equipo,descripcionC,fechaC,idCESH) VALUES ('".$equipoCam."','".$descripCT."','".$fechaT."','".$id."')";
+	$sql = "INSERT INTO dzcambiot (equipo,descripcionC,fechaC,idCESH,idTrab) VALUES ('".$equipoCam."','".$descripCT."','".$fechaT."','".$id."',".$Responsablemto.")";
 	
 	if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";
@@ -530,7 +531,7 @@ if($opcion=="addSt"){
 	//echo "esto sale de peligros: ".$peligros[0];
 	//echo "esto lo pega: ".$upeligros;
 		
-	$sql = "INSERT INTO dzordentr (fecha,ubicacion,detallesT,tipo,tipoT,horariof,horario,peligro,precaucion,areaT,nombreT,idCESH) VALUES ('".$fechaOrTra."','".$ubiTrab."','".$deTrab."','".$tpTb."','".$tipo."','".$horF."','".$horI."','".$upeligros."','".$uprecaucion."','".$areaTra."','".$perCom."','".$id."')";
+	$sql = "INSERT INTO dzordentr (fecha,ubicacion,detallesT,tipo,tipoT,horariof,horario,peligro,precaucion,areaT,nombreT,numOrdenT,idCESH) VALUES ('".$fechaOrTra."','".$ubiTrab."','".$deTrab."','".$tpTb."','".$tipo."','".$horF."','".$horI."','".$upeligros."','".$uprecaucion."','".$areaTra."','".$perCom."',".$noPermiso.",'".$id."')";
 	
 	if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";
@@ -558,6 +559,7 @@ if($opcion=="addSt"){
 }if($opcion == "addrbpo9"){
 	//echo "ENTRO";
 	$areaR = $_POST['a'];
+	$actividad = $_POST['ac'];
 	$super = $_POST['n'];
 	$trab = $_POST['t'];
 	$acti = $_POST['d'];	
@@ -567,7 +569,7 @@ if($opcion=="addSt"){
 	$obser = $_POST['o'];
 	$id = $_POST['i'];
 		
-	$sql = "INSERT INTO rbpo (area, nombreSupervisor,nombreTrabajador,descripcion,critica,incAcc,causa,obser,idCESH) VALUES ('".$areaR."','".$super."','".$trab."','".$acti."','".$crit."','".$inAc."','".$causas."','".$obser."','".$id."')";
+	$sql = "INSERT INTO rbpo (actividad, area, nombreSupervisor,nombreTrabajador,descripcion,critica,incAcc,causa,obser,idCESH) VALUES ('".$actividad."','".$areaR."','".$super."','".$trab."','".$acti."','".$crit."','".$inAc."','".$causas."','".$obser."','".$id."')";
 	
 	if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";

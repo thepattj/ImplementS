@@ -67,9 +67,14 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .notika-status-area{
+            font-family: 'Book Antiqua', 'Source Serif Variable';
+        }
+    </style>
 </head>
 
-<body id="nombreestacioncompleto">
+<body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -480,7 +485,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
+                    <!-- <div class="breadcomb-list">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
@@ -514,60 +519,69 @@
                                 
                             </div>                         
                         </div>
-                    </div>
-                                                         
-                    <!-- <div class="wizard-area">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    
-                                    </div>
+                    </div> -->
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="" style="display: ;">
+                        <div class="form-element-list">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="notika-icon notika-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Requisitos Legales</h2>
+                                    <p><span class="bread-ntd"><?php echo $cre; ?></span> </p>
                                 </div>
                             </div>
-                        </div>
-                    </div> -->
-
-                    <!-- DOCUMENTACION LEGAL -->
-                   <?php
-                        $sqldoc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadodoc =mysqli_query($con, $sqldoc);
-                        if($resultadodoc->num_rows > 0){
-                            $n = 0;
-                            while($filadoc = $resultadodoc->fetch_assoc()){
-                                $dcumpl = $filadoc['cumplimiento'];
-                                $dstatus = $filadoc['status'];
-                                $dporce = $filadoc['porcentaje'];
-                                $devid = $filadoc['evidencia'];
-
-                                $datos6 [$n] = $dcumpl;
-                                $datos6 [$n+18] = $dstatus;
-                                $datos6 [$n+36] = $dporce;
-                                $datos6 [$n+54] = $devid;
-                                $n++;
-                            }
-                        }else{  for ($i=0; $i<=71; $i++) { $datos6[$i] = "-"; } }
-                        //echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54];
-                        //echo $datos6[71];
-                    ?>
-                    <!-- DOCUMENTACION LEGAL -->
-                    
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="legal" style="display:block; border-color: rgb(0,0,0);">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos documentales de Estación de Servicio</h2>
-                                <p style="color: rgb(198,198,198);">Completa el formulario con la información que se te pide para tu control</p>
+                            <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
+                                <button id="btnlegal" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 31%;">Documentación Legal</button>
+                                <button id="btnasea" style="background: rgb(27,22,50); color: rgb(255,255,255); ">ASEA</button>
+                                <button id="btncre" style="background: rgb(27,22,50); color: rgb(255,255,255); ">CRE</button>
+                                <button id="btnprofeco" style="background: rgb(27,22,50); color: rgb(255,255,255); ">PROFECO</button>
+                                <button id="btnpc" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Protección Cívil</button>
+                                <button id="btnse" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Sec. Eco.</button>
+                                <button id="btnstps" style="background: rgb(27,22,50); color: rgb(255,255,255); ">STPS</button>
+                                <!-- <button id="btnevap" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Evaluación de Proveedor</button> -->
                             </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+
+                            <div class="basic-tb-hd" id="" style="display: ; margin-top: 5%;">      
+                                <h2 id="titdoc" style="display: ;">Requisitos documentales de Estación de Servicio:</h2>
+                                <h2 id="titasea" style="display: none;">Requisitos Documentales - Agencia de Seguridad, Energía y Ambiente:</h2>
+                                <h2 id="titcre" style="display: none;">Requisitos Documentales - Comisión Reguladora de Energía:</h2>
+                                <h2 id="titpro" style="display: none;">Requisitos Documentales - Procuraduría Federal del Consumidor:</h2>
+                                <h2 id="titpc" style="display: none;">Requisitos Documentales - Protección Civil:</h2>
+                                <h2 id="titse" style="display: none;">Requisitos Documentales - Secretaría de Economía:</h2>
+                                <h2 id="titstps" style="display: none;">Requisitos Documentales - Secretaría del Trabajo y Prevensión Social:</h2>
+                                <p>Completar el formulario con la información que se te pide para tu control.</p>
+                            </div>
+
+                            <!-- DOCUMENTACION LEGAL -->
+                            <div class="row" style="border: black 1px solid; display: ;" id="legal">
+                                <?php
+                                    $sqldoc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadodoc =mysqli_query($con, $sqldoc);
+                                    if($resultadodoc->num_rows > 0){
+                                        $n = 0;
+                                        while($filadoc = $resultadodoc->fetch_assoc()){
+                                            $dcumpl = $filadoc['cumplimiento'];
+                                            $dstatus = $filadoc['status'];
+                                            $dporce = $filadoc['porcentaje'];
+                                            $devid = $filadoc['evidencia'];
+
+                                            $datos6 [$n] = $dcumpl;
+                                            $datos6 [$n+18] = $dstatus;
+                                            $datos6 [$n+36] = $dporce;
+                                            $datos6 [$n+54] = $devid;
+                                            $n++;
+                                        }
+                                    }else{  for ($i=0; $i<=71; $i++) { $datos6[$i] = "-"; } }
+                                    //echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54];
+                                    //echo $datos6[71];
+                                ?>
+                                <div class="" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Documentos</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estatus </th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Documentos</th> <th>¿Cumple?</th> <th>Estatus </th> <!-- <th>Porcentaje</th> --> <th>No. Control</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -576,11 +590,11 @@
                                                 <td>1</td>
                                                 <td>Acta Constitutiva</td>
                                                 <?php if($datos6[0] == "Si"){  ?>
-                                                <td value="1" id="cActa" class="active">Si</td>
+                                                    <td value="1" id="cActa" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[0] == "No") { ?>
-                                                <td value="0" id="cActa" class="success">No</td>
+                                                    <td value="0" id="cActa" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[0] == "-") { ?>
-                                                <td value="" id="cActa"> - </td>
+                                                    <td value="" id="cActa" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -588,48 +602,48 @@
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Otorgada" selected style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;">En tramite</option>
+                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">Seguimiento</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[18] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Otorgada" selected style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;" selected>En tramite</option>
+                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">Seguimiento</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[18] == "Seguimiento"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="Otorgada" selected style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;">En tramite</option>
+                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[18] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Otorgada" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;">En tramite</option>
+                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }?>
-                                                    
+                                                    <?php }?>                                                    
                                                 </td>
-                                                <td> <?php if($datos6[36] != '-') { ?>
+                                                <!-- <td> <?php if($datos6[36] != '-') { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[36]; ?>" class="form-control" id="porceAct" placeholder="%"> </div> 
                                                       <?php } else {?> 
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceAct" placeholder="%"> </div> 
                                                      <?php } ?>
-                                                </td>
-                                                <td> <?php if($datos6[54] != '-') { ?>
+                                                </td> -->
+                                                <td>
+                                                    <?php if($datos6[54] != '-') { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[54]; ?>" class="form-control" id="eviAct" placeholder="No. de Acta"> </div>
                                                     <?php } else {?> 
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviAct" placeholder="No. de Acta"> </div> 
@@ -637,17 +651,17 @@
                                                 </td>
                                             </tr>
                                             <!-- VALORES QUE TIENEN PODER NOTARIAL -->
-                                            <tr style="background: rgb(198,198,198);">
+                                            <tr style="background: rgba(198,198,198,.5);">
                                                 <td>2</td>
                                                 <td>Poder Notarial</td>
                                                 <?php if($datos6[1] == "Si"){ ?>
-                                                <td value="1" id="cPNot" class="active">Si</td>
+                                                <td value="1" id="cPNot" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[1] == "No") { ?>
-                                                <td value="0" id="cPNot" class="success">No</td>
+                                                <td value="0" id="cPNot" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[1] == "-") { ?>
-                                                <td value="" id="cPNot"> - </td>
-                                                <?php } ?>
-                                                
+                                                <td value="" id="cPNot" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>      
+
                                                 <td>
                                                     <?php if($datos6[19] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
@@ -687,13 +701,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[37]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[37]; ?>" class="form-control" id="porcePn" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[37];*/ ?>" class="form-control" id="porcePn" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePn" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[55]!="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[55]; ?>" class="form-control" id="eviPn" placeholder="No. de Poder"> </div>
@@ -707,11 +721,11 @@
                                                 <td>3</td>
                                                 <td>Comprobante Original de alta ante hacienda</td>
                                                 <?php if($datos6[2] === "Si"){ ?>
-                                                <td value="1" id="altaSHCP" class="active">Si</td>
+                                                <td value="1" id="altaSHCP" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[2] === "No") { ?>
-                                                <td value="0" id="altaSHCP" class="success">No</td>
+                                                <td value="0" id="altaSHCP" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[2] === "-") { ?>
-                                                <td value="" id="altaSHCP"> - </td>
+                                                <td value="" id="altaSHCP" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -753,13 +767,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[38] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[38];?>" class="form-control" id="porceSHCP" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[38]*/;?>" class="form-control" id="porceSHCP" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceSHCP" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[56] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[56];?>" class="form-control" id="eviSHCP" placeholder="No. de tramite"> </div>
@@ -773,11 +787,11 @@
                                                 <td>4</td>
                                                 <td>R.F.C. Original</td>
                                                 <?php if($datos6[3] === "Si"){ ?>
-                                                <td value="1" id="RFCS" class="active">Si</td>
+                                                <td value="1" id="RFCS" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[3] === "No") { ?>
-                                                <td value="0" id="RFCS" class="success">No</td>
+                                                <td value="0" id="RFCS" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[3] === "-") { ?>
-                                                <td value="" id="RFCS"> - </td>
+                                                <td value="" id="RFCS" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -819,13 +833,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[39] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[39];?>" class="form-control" id="porceRFCS" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[39];*/ ?>" class="form-control" id="porceRFCS" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRFCS" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td>
+                                                    <?php } ?> 
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[57] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[57];?>" class="form-control" id="eviRFCS" placeholder="No. de tramite"> </div>
@@ -839,11 +853,11 @@
                                                 <td>5</td>
                                                 <td>Permiso de la comisión reguladora de Energía <b>(CRE)</b></td>
                                                 <?php if($datos6[4] == "Si"){ ?>
-                                                <td value="1" id="PL" class="active">Si</td>
+                                                <td value="1" id="PL" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[4] == "No") { ?>
-                                                <td value="0" id="PL" class="success">No</td>
+                                                <td value="0" id="PL" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[4] == "-") { ?>
-                                                <td value="" id="PL"> - </td>
+                                                <td value="" id="PL" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
@@ -883,17 +897,15 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } ?>
-                                                    
+                                                    <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[40] != '-') {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[40];?>" class="form-control" id="porcePL" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[40];*/ ?>" class="form-control" id="porcePL" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePL" placeholder="%"> </div>
-                                                    <?php } ?>
-
-                                                </td>
+                                                    <?php } ?> 
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[58] != '-') {?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[58];?>" class="form-control" id="eviPL" placeholder="No. de PL"> </div>
@@ -907,11 +919,11 @@
                                                 <td>6</td>
                                                 <td>Licencia de Funcionamiento (Municipal)</td>
                                                 <?php if($datos6[5] == "Si"){ ?>
-                                                <td value="1" id="LFM" class="active">Si</td>
+                                                <td value="1" id="LFM" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[5] == "No") { ?>
-                                                <td value="0" id="LFM" class="success">No</td>
+                                                <td value="0" id="LFM" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[5] == "-") { ?>
-                                                <td value="" id="LFM"> - </td>
+                                                <td value="" id="LFM" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -953,13 +965,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[41] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[41];?>" class="form-control" id="porceLFM" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[41];*/ ?>" class="form-control" id="porceLFM" placeholder="%"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceLFM" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[59] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[59];?>" class="form-control" id="eviLFM" placeholder="No. de Licencia"> </div>
@@ -973,11 +985,11 @@
                                                 <td>7</td>
                                                 <td>Dictamenten de uso de suelo / Factibilidad de uso de suelo</td>
                                                 <?php if($datos6[6] == "Si"){ ?>
-                                                <td value="1" id="dicSuelo" class="active">Si</td>
+                                                <td value="1" id="dicSuelo" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[6] == "No") { ?>
-                                                <td value="0" id="dicSuelo" class="success">No</td>
+                                                <td value="0" id="dicSuelo" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[6] == "-") { ?>
-                                                <td value="" id="dicSuelo"> - </td>
+                                                <td value="" id="dicSuelo" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1019,13 +1031,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[42]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[42];?>" class="form-control" id="porcedicS" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[42];*/ ?>" class="form-control" id="porcedicS" placeholder="%"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedicS" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[60]!="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[60];?>" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div>
@@ -1039,11 +1051,11 @@
                                                 <td>8</td>
                                                 <td>Tarjeta oficial de IMSS</td>
                                                 <?php if($datos6[7] == "Si"){ ?>
-                                                <td value="1" id="oImss" class="active">Si</td>
+                                                <td value="1" id="oImss" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[7] == "No") { ?>
-                                                <td value="0" id="oImss" class="success">No</td>
+                                                <td value="0" id="oImss" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[7] == "-") { ?>
-                                                <td value="" id="oImss"> - </td>
+                                                <td value="" id="oImss" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1085,13 +1097,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[43] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[43];?>" class="form-control" id="porceoIm" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[43];*/ ?>" class="form-control" id="porceoIm" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceoIm" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[61] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[61];?>" class="form-control" id="evidoIm" placeholder="No. de Licencia"> </div>
@@ -1105,11 +1117,11 @@
                                                 <td>9</td>
                                                 <td>Planos Arquitectonicos</td>
                                                 <?php if($datos6[8] == "Si"){ ?>
-                                                <td value="1" id="planoA" class="active">Si</td>
+                                                <td value="1" id="planoA" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[8] == "No") { ?>
-                                                <td value="0" id="planoA" class="success">No</td>
+                                                <td value="0" id="planoA" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[8] == "-") { ?>
-                                                <td value="" id="planoA"> - </td>
+                                                <td value="" id="planoA" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1151,13 +1163,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                               <!--  <td>
                                                     <?php if($datos6[44] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[44];?>" class="form-control" id="porceplano" placeholder="%"> </div> 
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[44];*/ ?>" class="form-control" id="porceplano" placeholder="%"> </div> 
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceplano" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[62] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[62];?>" class="form-control" id="evidplano" placeholder="No. de "> </div> 
@@ -1171,11 +1183,11 @@
                                                 <td>10</td>
                                                 <td><b>SIEM</b> (Sistema de Información Empresarial Mexicano)</td>
                                                 <?php if($datos6[9] == "Si"){ ?>
-                                                <td value="1" id="aSiem" class="active">Si</td>
+                                                <td value="1" id="aSiem" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[9] == "No") { ?>
-                                                <td value="0" id="aSiem" class="success">No</td>
+                                                <td value="0" id="aSiem" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[9] == "-") { ?>
-                                                <td value="" id="aSiem"> - </td>
+                                                <td value="" id="aSiem" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1217,13 +1229,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[45]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[45];?>" class="form-control" id="porceSiem" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[45];*/ ?>" class="form-control" id="porceSiem" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceSiem" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[63]!="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[63];?>" class="form-control" id="evidSiem" placeholder="Número"> </div>
@@ -1237,11 +1249,11 @@
                                                 <td>11</td>
                                                 <td>Dictámenes eléctricos</td>
                                                 <?php if($datos6[10] == "Si"){ ?>
-                                                <td value="1" id="dElec" class="active">Si</td>
+                                                <td value="1" id="dElec" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[10] == "No") { ?>
-                                                <td value="0" id="dElec" class="success">No</td>
+                                                <td value="0" id="dElec" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[10] == "-") { ?>
-                                                <td value="" id="dElec"> - </td>
+                                                <td value="" id="dElec" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1283,13 +1295,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[46]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[46];?>" class="form-control" id="porcedElec" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[46];*/ ?>" class="form-control" id="porcedElec" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedElec" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[64]!='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[64];?>" class="form-control" id="eviddElec" placeholder="Número"> </div>
@@ -1303,11 +1315,11 @@
                                                 <td>12</td>
                                                 <td>Dictámenes Tierras Fisicas y pararrayos</td>
                                                 <?php if($datos6[11] == "Si"){ ?>
-                                                <td value="1" id="dTfisica" class="active">Si</td>
+                                                <td value="1" id="dTfisica" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[11] == "No") { ?>
-                                                <td value="0" id="dTfisica" class="success">No</td>
+                                                <td value="0" id="dTfisica" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[11] == "-") { ?>
-                                                <td value="" id="dTfisica"> - </td>
+                                                <td value="" id="dTfisica" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1349,13 +1361,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[47] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[47];?>" class="form-control" id="porcedTfi" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[47];*/ ?>" class="form-control" id="porcedTfi" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedTfi" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[65] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[65];?>" class="form-control" id="eviddTfi" placeholder="Número"> </div>
@@ -1369,11 +1381,11 @@
                                                 <td>13</td>
                                                 <td>Calibración de dispensarios</td>
                                                 <?php if($datos6[12] == "Si"){ ?>
-                                                <td value="1" id="calDisp" class="active">Si</td>
+                                                <td value="1" id="calDisp" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[12] == "No") { ?>
-                                                <td value="0" id="calDisp" class="success">No</td>
+                                                <td value="0" id="calDisp" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[12] == "-") { ?>
-                                                <td value="" id="calDisp"> - </td>
+                                                <td value="" id="calDisp" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1415,13 +1427,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[48] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[48];?>" class="form-control" id="porcecalD" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[48];*/ ?>" class="form-control" id="porcecalD" placeholder="%"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecalD" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[66] != '-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[66];?>" class="form-control" id="evidcalD" placeholder="Número"> </div>
@@ -1435,11 +1447,11 @@
                                                 <td>14</td>
                                                 <td>Pruebas de Hermeticidad</td>
                                                 <?php if($datos6[13] == "Si"){ ?>
-                                                <td value="1" id="pHerm" class="active">Si</td>
+                                                <td value="1" id="pHerm" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[13] == "No") { ?>
-                                                <td value="0" id="pHerm" class="success">No</td>
+                                                <td value="0" id="pHerm" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[13] == "-") { ?>
-                                                <td value="" id="pHerm"> - </td>
+                                                <td value="" id="pHerm" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1481,13 +1493,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td> 
+                                                <!-- <td> 
                                                     <?php if($datos6[49] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[49];?>" class="form-control" id="porcepHerm" placeholder="%"> </div> 
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos[49];*/ ?>" class="form-control" id="porcepHerm" placeholder="%"> </div> 
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcepHerm" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[67] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[67];?>" class="form-control" id="evidpHerm" placeholder="Número"> </div>
@@ -1501,11 +1513,11 @@
                                                 <td>15</td>
                                                 <td>Pruebas de Hermeticidad a Tuberias</td>
                                                 <?php if($datos6[14] === "Si"){ ?>
-                                                <td value="1" id="pHermT" class="active">Si</td>
+                                                <td value="1" id="pHermT" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[14] === "No") { ?>
-                                                <td value="0" id="pHermT" class="success">No</td>
+                                                <td value="0" id="pHermT" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[14] === "-") { ?>
-                                                <td value="" id="pHermT"> - </td>
+                                                <td value="" id="pHermT" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1547,13 +1559,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td> 
+                                                <!-- <td> 
                                                     <?php if($datos6[50]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[50];?>" class="form-control" id="porcepHt" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[50];*/ ?>" class="form-control" id="porcepHt" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcepHt" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[68]!='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[68];?>" class="form-control" id="evidpHt" placeholder="Número"> </div>
@@ -1567,11 +1579,11 @@
                                                 <td>16</td>
                                                 <td>Ficha Técnica y manual de tanque de almacenamiento</td>
                                                 <?php if($datos6[15] === "Si"){ ?>
-                                                <td value="1" id="tanqueA" class="active">Si</td>
+                                                <td value="1" id="tanqueA" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[15] === "No") { ?>
-                                                <td value="0" id="tanqueA" class="success">No</td>
+                                                <td value="0" id="tanqueA" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[15] === "-") { ?>
-                                                <td value="" id="tanqueA"> - </td>
+                                                <td value="" id="tanqueA" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1613,13 +1625,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[51] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[51];?>" class="form-control" id="porceTanque" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[51];*/ ?>" class="form-control" id="porceTanque" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceTanque" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[69] != '-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[69];?>" class="form-control" id="evidTanque" placeholder="Número"> </div>
@@ -1633,11 +1645,11 @@
                                                 <td>17</td>
                                                 <td>Ficha técnica y manual de dispensarios</td>
                                                 <?php if($datos6[16] === "Si"){ ?>
-                                                    <td value="1" id="dispensarios" class="active">Si</td>
+                                                    <td value="1" id="dispensarios" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[16] === "No") { ?>
-                                                    <td value="0" id="dispensarios" class="success">No</td>
+                                                    <td value="0" id="dispensarios" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[16] === "-") { ?>
-                                                    <td value="" id="dispensarios"> - </td>
+                                                    <td value="" id="dispensarios" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1679,13 +1691,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[52] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[52]; ?>" class="form-control" id="porcedisp" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[52];*/ ?>" class="form-control" id="porcedisp" placeholder="%"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedisp" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[70] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[70]; ?>" class="form-control" id="eviddisp" placeholder="Número"> </div>
@@ -1699,11 +1711,11 @@
                                                 <td>18</td>
                                                 <td>Ficha técnica y manual de Control de inventarios</td>
                                                 <?php if($datos6[17] === "Si"){ ?>
-                                                <td value="1" id="cIventarios" class="active">Si</td>
+                                                <td value="1" id="cIventarios" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[17] === "No") { ?>
-                                                <td value="0" id="cIventarios" class="success">No</td>
+                                                <td value="0" id="cIventarios" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos6[17] === "-") { ?>
-                                                <td value="" id="cIventarios"> - </td>
+                                                <td value="" id="cIventarios" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -1745,13 +1757,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos6[53] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[53];?>" class="form-control" id="porceCiv" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[53];*/ ?>" class="form-control" id="porceCiv" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceCiv" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos6[71] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[71];?>" class="form-control" id="evidCiv" placeholder="Número"> </div>
@@ -1764,57 +1776,44 @@
                                     </table>
                                 </div>
                                 <?php if($datos6[71] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocEst" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ //echo "EL VALOR 71 ES: ".$datos6[71];?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
-                                    <button id="actualizarDocEst" class="btn btn-info notika-btn-info">Actualizar </button>                   
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <button id="actualizarDocEst" class="btn btn-danger notika-btn-danger">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>
-                        </div>
-                    </div>
-                    <!-- PHP DE DOCUMENTACION ASEA -->
-                    <?php
-                        $sqlasea = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'ASEA' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadoasea = mysqli_query($con, $sqlasea);
-                        if($resultadoasea->num_rows > 0){
-                            $j = 0;
-                            while($fila = $resultadoasea->fetch_assoc()){
-                                $acumpl = $fila['cumplimiento'];
-                                $astatus = $fila['status'];
-                                $aporce = $fila['porcentaje'];
-                                $aevid = $fila['evidencia'];
 
-                                $datos1 [$j] = $acumpl;
-                                $datos1 [$j+6] = $astatus;
-                                $datos1 [$j+12] = $aporce;
-                                $datos1 [$j+18] = $aevid;
-                                $j++;
-                            }
-                        }else{  for ($i=0; $i<=23; $i++) { $datos1[$i] = "-"; } }
-                        /*echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54];*/
-                    ?>
-                    
-                    <!-- DOCUMENTACION ASEA -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="asea" style="display:none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Agencia de Seguridad, Energía y Ambiente</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+                            <div class="row" style="border: black 1px solid; display: none;" id="asea">
+                                <?php
+                                    $sqlasea = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'ASEA' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadoasea = mysqli_query($con, $sqlasea);
+                                    if($resultadoasea->num_rows > 0){
+                                        $j = 0;
+                                        while($fila = $resultadoasea->fetch_assoc()){
+                                            $acumpl = $fila['cumplimiento'];
+                                            $astatus = $fila['status'];
+                                            $aporce = $fila['porcentaje'];
+                                            $aevid = $fila['evidencia'];
+
+                                            $datos1 [$j] = $acumpl;
+                                            $datos1 [$j+6] = $astatus;
+                                            $datos1 [$j+12] = $aporce;
+                                            $datos1 [$j+18] = $aevid;
+                                            $j++;
+                                        }
+                                    }else{  for ($i=0; $i<=23; $i++) { $datos1[$i] = "-"; } }
+                                    /*echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54];*/
+                                ?>
+                                <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
                                         <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Cumplimiento ASEA</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estauts</th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Cumplimiento ASEA</th> <th>¿Cumple?</th> <th>Estauts</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1823,11 +1822,11 @@
                                                 <td>1</td>
                                                 <td>NOM-005-ASEA-2016.</td>
                                                 <?php if($datos1[0] == "Si"){ ?>
-                                                <td value="1" id="c005" class="active">Si</td>
+                                                <td value="1" id="c005" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[0] == "No") { ?>
-                                                <td value="0" id="c005" class="success">No</td>
+                                                <td value="0" id="c005" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[0] == "-") { ?>
-                                                <td value="" id="c005"> - </td>
+                                                <td value="" id="c005" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?> 
 
                                                 <td>
@@ -1869,13 +1868,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos1[12] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[12]; ?>" class="form-control" id="porcec005" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[12];*/ ?>" class="form-control" id="porcec005" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcec005" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos1[18] != "-"){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[18]; ?>" class="form-control" id="evidc005" placeholder="Número de Dictamen"> </div>
@@ -1889,13 +1888,13 @@
                                                 <td>2</td>
                                                 <td>Manifiesto Impacto Ambiental (<b>MIA</b>)</td>
                                                 <?php if($datos1[1] == "Si"){ ?>
-                                                <td value="1" id="cMia" class="active">Si</td>
+                                                <td value="1" id="cMia" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[1] == "No") { ?>
-                                                <td value="0" id="cMia" class="success">No</td>
+                                                <td value="0" id="cMia" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[1] == "NA") { ?>
-                                                <td value="0" id="cMia" class="success">No</td>
+                                                <td value="0" id="cMia" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[1] == "-") { ?>
-                                                <td value="" id="cMia"> - </td>
+                                                <td value="" id="cMia" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -1951,13 +1950,13 @@
                                                         </div>
                                                     <?php } ?>                                                        
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos1[13] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[13]; ?>" class="form-control" id="porcecMia" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[13];*/ ?>" class="form-control" id="porcecMia" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecMia" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td> 
                                                     <?php if($datos1[19] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[19]; ?>" class="form-control" id="evidcMia" placeholder="Número de oficio"> </div>
@@ -1971,13 +1970,13 @@
                                                 <td>3</td>
                                                 <td>Informe Preventivo (<b>IP</b>)</td>
                                                 <?php if($datos1[2] == "Si"){ ?>
-                                                <td value="1" id="cIp" class="active">Si</td>
+                                                <td value="1" id="cIp" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[2] == "No") { ?>
-                                                <td value="0" id="cIp" class="success">No</td>
+                                                <td value="0" id="cIp" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[2] == "NA") { ?>
-                                                <td value="0" id="cIp" class="success">No</td>
+                                                <td value="0" id="cIp" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[2] == "-") { ?>
-                                                <td value="" id="cIp"> - </td>
+                                                <td value="" id="cIp" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2033,13 +2032,13 @@
                                                         </div>
                                                     <?php } ?>                                                            
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos1[14] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[14]; ?>" class="form-control" id="porcecIp" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[14];*/ ?>" class="form-control" id="porcecIp" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecIp" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos1[20] != "-") {?> 
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[20]; ?>" class="form-control" id="evidcIp" placeholder="Número de oficio"> </div>
@@ -2053,11 +2052,11 @@
                                                 <td>4</td>
                                                 <td>Licencia Ambiental Única (<b>LAU</b>) / Licencia de Funcionamiento(<b>LF</b>)</td>
                                                 <?php if($datos1[3] == "Si"){ ?>
-                                                <td value="1" id="cLf" class="active">Si</td>
+                                                <td value="1" id="cLf" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[3] == "No") { ?>
-                                                <td value="0" id="cLf" class="success">No</td>
+                                                <td value="0" id="cLf" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[3] == "-") { ?>
-                                                <td value="" id="cLf"> - </td>
+                                                <td value="" id="cLf" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2099,13 +2098,13 @@
                                                         </div>
                                                     <?php } ?>                                                        
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos1[15] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[15]; ?>" class="form-control" id="porcecLf" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[15];*/ ?>" class="form-control" id="porcecLf" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecLf" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos1[21] != '-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[21]; ?>" class="form-control" id="evidcLf" placeholder="Número de licencia de funcionamiento"> </div>
@@ -2119,11 +2118,11 @@
                                                 <td>5</td>
                                                 <td>Residuos Peligrosos (<b>RP</b>)</td>
                                                 <?php if($datos1[4] == "Si"){ ?>
-                                                <td value="1" id="cGrp" class="active">Si</td>
+                                                <td value="1" id="cGrp" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[4] == "No") { ?>
-                                                <td value="0" id="cGrp" class="success">No</td>
+                                                <td value="0" id="cGrp" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[4] == "-") { ?>
-                                                <td value="" id="cGrp"> - </td>
+                                                <td value="" id="cGrp" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2165,14 +2164,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos1[16] != '-') { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[16]; ?>" class="form-control" id="porcecGrp" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[16];*/ ?>" class="form-control" id="porcecGrp" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecGrp" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                    
-                                                </td>
+                                                    <?php } ?>                                                    
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos1[22] != '-') { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[22]; ?>" class="form-control" id="evidcGrp" placeholder="Número de registro"> </div>
@@ -2186,11 +2184,11 @@
                                                 <td>6</td>
                                                 <td>Cedula Operación Anual(<b>COA</b>)</td>
                                                 <?php if($datos1[5] == "Si"){ ?>
-                                                <td value="1" id="cCoa" class="active">Si</td>
+                                                <td value="1" id="cCoa" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[5] == "No") { ?>
-                                                <td value="0" id="cCoa" class="success">No</td>
+                                                <td value="0" id="cCoa" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos1[5] == "-") { ?>
-                                                <td value="" id="cCoa"> - </td>
+                                                <td value="" id="cCoa" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2232,13 +2230,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos1[17] != "-"){?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[17]; ?>" class="form-control" id="porcecCoa" placeholder="%"> </div>
+                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[17];*/ ?>" class="form-control" id="porcecCoa" placeholder="%"> </div>
                                                     <?php } else {?>
                                                     <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecCoa" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos1[23] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[23]; ?>" class="form-control" id="evidcCoa" placeholder="Número de bitacora"> </div>
@@ -2251,74 +2249,56 @@
                                     </table>
                                 </div>
                                 <?php if($datos1[23] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocASEA" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="actualizarDocASEA" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
-                                
                             </div>
-                        </div>
-                    </div>
 
+                            <div class="row" style="border: black 1px solid; display: none;" id="cre">
+                                <?php
+                                    $sqlcre = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'CRE' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadocre = mysqli_query($con, $sqlcre);
+                                    if($resultadocre->num_rows > 0){
+                                        $l = 0;
+                                        while($filacre = $resultadocre->fetch_assoc()){
+                                            $ccumpl = $filacre['cumplimiento'];
+                                            $cstatus = $filacre['status'];
+                                            $cporce = $filacre['porcentaje'];
+                                            $cevid = $filacre['evidencia'];
 
-                    <!-- DOCUMENTACION CRE -->
-                    <?php
-                        $sqlcre = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'CRE' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadocre = mysqli_query($con, $sqlcre);
-                        if($resultadocre->num_rows > 0){
-                            $l = 0;
-                            while($filacre = $resultadocre->fetch_assoc()){
-                                $ccumpl = $filacre['cumplimiento'];
-                                $cstatus = $filacre['status'];
-                                $cporce = $filacre['porcentaje'];
-                                $cevid = $filacre['evidencia'];
-
-                                $datos4 [$l] = $ccumpl;
-                                $datos4 [$l+12] = $cstatus;
-                                $datos4 [$l+24] = $cporce;
-                                $datos4 [$l+36] = $cevid;
-                                $l++;
-                            }
-                        }else{  for ($i=0; $i<=47; $i++) { $datos4[$i] = "-"; } }
-                        /*echo "cumplimiento: ".$datos4[0]." status1: ".$datos4[12]." porcentaje: ".$datos4[24]." evidencia: ".$datos4[36];*/
-                    ?>
-
-                    <!-- DOCUMENTACION CRE -->
-                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="cre" style="display:none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Comisión Reguladora de Energía</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+                                            $datos4 [$l] = $ccumpl;
+                                            $datos4 [$l+12] = $cstatus;
+                                            $datos4 [$l+24] = $cporce;
+                                            $datos4 [$l+36] = $cevid;
+                                            $l++;
+                                        }
+                                    }else{  for ($i=0; $i<=47; $i++) { $datos4[$i] = "-"; } }
+                                    /*echo "cumplimiento: ".$datos4[0]." status1: ".$datos4[12]." porcentaje: ".$datos4[24]." evidencia: ".$datos4[36];*/
+                                ?>
+                                <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
                                         <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Cumplimiento CRE</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estatus</th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Cumplimiento CRE</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
-                                            <!-- DATOS DE REPORTE DIARIO -->
                                             <tr>
                                                 <td>1</td>
                                                 <td>Reporte Diario (Volúmenes)</td>
                                                 <?php if($datos4[0] == "Si"){ ?>
-                                                    <td value="1" id="rDiariov" class="active">Si</td>
+                                                    <td value="1" id="rDiariov" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[0] == "No") { ?>
-                                                    <td value="0" id="rDiariov" class="success">No</td>
+                                                    <td value="0" id="rDiariov" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[0] == "-") { ?>
-                                                    <td value="" id="rDiariov"> - </td>
+                                                    <td value="" id="rDiariov" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?> 
 
                                                 <td>
@@ -2360,13 +2340,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[24] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[24];?>" class="form-control" id="porceRdia" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[24];*/ ?>" class="form-control" id="porceRdia" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRdia" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[36] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[36];?>" class="form-control" id="evidRdia" placeholder="Número"> </div>
@@ -2380,11 +2360,11 @@
                                                 <td>2</td>
                                                 <td>Reporte Diario (Precios)</td>
                                                 <?php if($datos4[1] == "Si"){ ?>
-                                                    <td value="1" id="rDiariop" class="active">Si</td>
+                                                    <td value="1" id="rDiariop" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[1] == "No") { ?>
-                                                    <td value="0" id="rDiariop" class="success">No</td>
+                                                    <td value="0" id="rDiariop" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[1] == "-") { ?>
-                                                    <td value="" id="rDiariop"> - </td>
+                                                    <td value="" id="rDiariop" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2426,13 +2406,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[25] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[25]; ?>" class="form-control" id="porceRdiap" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[25];*/ ?>" class="form-control" id="porceRdiap" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRdiap" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[37] != "-"){ ?> 
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[37]; ?>" class="form-control" id="evidRdiap" placeholder="Número"> </div>
@@ -2446,11 +2426,11 @@
                                                 <td>3</td>
                                                 <td>Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes</td>
                                                 <?php if($datos4[2] == "Si"){ ?>
-                                                <td value="1" id="cEstad" class="active">Si</td>
+                                                <td value="1" id="cEstad" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[2] == "No") { ?>
-                                                <td value="0" id="cEstad" class="success">No</td>
+                                                <td value="0" id="cEstad" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[2] == "-") { ?>
-                                                <td value="" id="cEstad"> - </td>
+                                                <td value="" id="cEstad" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2490,16 +2470,15 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } ?>
-                                                    
+                                                    <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[26] !='-'){?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[20]; ?>" class="form-control" id="porcecEs" placeholder="%"> </div>
+                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[20];*/ ?>" class="form-control" id="porcecEs" placeholder="%"> </div>
                                                     <?php } else {?>
                                                     <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecEs" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[38] != '-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[38]; ?>" class="form-control" id="evidcEs" placeholder="Número"> </div>
@@ -2513,11 +2492,11 @@
                                                 <td>4</td>
                                                 <td>Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
                                                 <?php if($datos4[3] == "Si"){ ?>
-                                                <td value="1" id="016" class="active">Si</td>
+                                                <td value="1" id="016" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[3] == "No") { ?>
-                                                <td value="0" id="016" class="success">No</td>
+                                                <td value="0" id="016" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[3] == "-") { ?>
-                                                <td value="" id="016"> - </td>
+                                                <td value="" id="016" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2559,13 +2538,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td> 
+                                                <!-- <td> 
                                                     <?php if($datos4[27] !="-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[27]; ?>" class="form-control" id="porce016" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[27];*/ ?>" class="form-control" id="porce016" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce016" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[39] !="-"){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[39];?>" class="form-control" id="evid016" placeholder="Número"> </div>
@@ -2579,11 +2558,11 @@
                                                 <td>5</td>
                                                 <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2017</b>)</td>
                                                 <?php if($datos4[4] == "Si"){ ?>
-                                                <td value="1" id="0162017" class="active">Si</td>
+                                                <td value="1" id="0162017" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[4] == "No") { ?>
-                                                <td value="0" id="0162017" class="success">No</td>
+                                                <td value="0" id="0162017" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[4] == "-") { ?>
-                                                <td value="" id="0162017"> - </td>
+                                                <td value="" id="0162017" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2625,13 +2604,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[28] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[28]; ?>" class="form-control" id="porce0162017" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[28];*/ ?>" class="form-control" id="porce0162017" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce0162017" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[40] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[40]; ?>" class="form-control" id="evid0162017" placeholder="Número"> </div>
@@ -2645,11 +2624,11 @@
                                                 <td>6</td>
                                                 <td>Reporte de Pagos Supervisión de permisos<br>(Derechos, Productos y Aprovechamiento)</td>
                                                 <?php if($datos4[5] == "Si"){ ?>
-                                                <td value="1" id="rPsupervi" class="active">Si</td>
+                                                <td value="1" id="rPsupervi" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[5] == "No") { ?>
-                                                <td value="0" id="rPsupervi" class="success">No</td>
+                                                <td value="0" id="rPsupervi" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[5] == "-") { ?>
-                                                <td value="" id="rPsupervi"> - </td>
+                                                <td value="" id="rPsupervi" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -2691,13 +2670,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[29] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[29]; ?>" class="form-control" id="porcerPs" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[29];*/ ?>" class="form-control" id="porcerPs" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerPs" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[41] != '-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[41]; ?>" class="form-control" id="evidrPs" placeholder="Número"> </div>
@@ -2711,11 +2690,11 @@
                                                 <td>7</td>
                                                 <td>Poliza anual vigente de seguro (Seguro)</td>
                                                 <?php if($datos4[6] == "Si"){ ?>
-                                                <td value="1" id="polizAnual" class="active">Si</td>
+                                                <td value="1" id="polizAnual" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[6] == "No") { ?>
-                                                <td value="0" id="polizAnual" class="success">No</td>
+                                                <td value="0" id="polizAnual" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[6] == "-") { ?>
-                                                <td value="" id="polizAnual"> - </td>
+                                                <td value="" id="polizAnual" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2757,13 +2736,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[30] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[30]; ?>" class="form-control" id="porcePoliza" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[30];*/ ?>" class="form-control" id="porcePoliza" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePoliza" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[42] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[42]; ?>" class="form-control" id="evidPoliza" placeholder="Número"> </div> 
@@ -2777,11 +2756,11 @@
                                                 <td>8</td>
                                                 <td>Poliza de seguro (Seguro)</td>
                                                 <?php if($datos4[7] == "Si"){ ?>
-                                                <td value="1" id="polizaSg" class="active">Si</td>
+                                                <td value="1" id="polizaSg" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[7] == "No") { ?>
-                                                <td value="0" id="polizaSg" class="success">No</td>
+                                                <td value="0" id="polizaSg" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[7] == "-") { ?>
-                                                <td value="" id="polizaSg"> - </td>
+                                                <td value="" id="polizaSg" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2823,13 +2802,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[31] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[31];?>" class="form-control" id="porcePsg" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[31];*/ ?>" class="form-control" id="porcePsg" placeholder="%"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePsg" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[43] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[43];?>" class="form-control" id="evidPsg" placeholder="Número"> </div>
@@ -2843,11 +2822,11 @@
                                                 <td>9</td>
                                                 <td>Reporte de Quejas</td>
                                                 <?php if($datos4[8] == "Si"){ ?>
-                                                    <td value="1" id="rQue" class="active">Si</td>
+                                                    <td value="1" id="rQue" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[8] == "No") { ?>
-                                                    <td value="0" id="rQue" class="success">No</td>
+                                                    <td value="0" id="rQue" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[8] == "-") { ?>
-                                                    <td value="" id="rQue"> - </td>
+                                                    <td value="" id="rQue" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -2889,13 +2868,13 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[32] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[32]; ?>" class="form-control" id="porcerQ" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[32];*/ ?>" class="form-control" id="porcerQ" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerQ" placeholder="%"> </div>
                                                     <?php }?> 
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[44] !='-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[44]; ?>" class="form-control" id="evidrQ" placeholder="Número"> </div>
@@ -2909,11 +2888,11 @@
                                                 <td>10</td>
                                                 <td>Procedencia del producto (facturas)</td>
                                                 <?php if($datos4[9] == "Si"){ ?>
-                                                    <td value="1" id="factProd" class="active">Si</td>
+                                                    <td value="1" id="factProd" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[9] == "No") { ?>
-                                                    <td value="0" id="factProd" class="success">No</td>
+                                                    <td value="0" id="factProd" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[9] == "-") { ?>
-                                                    <td value="" id="factProd"> - </td>
+                                                    <td value="" id="factProd" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -2955,13 +2934,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[33]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[33];?>" class="form-control" id="porceFacP" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[33];*/ ?>" class="form-control" id="porceFacP" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceFacP" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[45] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[45];?>" class="form-control" id="evidFacP" placeholder="Número"> </div>
@@ -2975,11 +2954,11 @@
                                                 <td>11</td>
                                                 <td>Reporte de inicidentes o emergencias</td>
                                                 <?php if($datos4[10] == "Si"){ ?>
-                                                    <td value="1" id="incidentes" class="active">Si</td>
+                                                    <td value="1" id="incidentes" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[10] == "No") { ?>
-                                                    <td value="0" id="incidentes" class="success">No</td>
+                                                    <td value="0" id="incidentes" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[10] == "-") { ?>
-                                                    <td value="" id="incidentes"> - </td>
+                                                    <td value="" id="incidentes" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -3021,13 +3000,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[34]!='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[34];?>" class="form-control" id="porceInc" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos[34];*/ ?>" class="form-control" id="porceInc" placeholder="%"> </div>
                                                     <?php  }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceInc" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[46]!='-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[46];?>" class="form-control" id="evidInc" placeholder="Número"> </div>
@@ -3041,11 +3020,11 @@
                                                 <td>12</td>
                                                 <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/20XX)</td>
                                                 <?php if($datos4[11] == "Si"){ ?>
-                                                <td value="1" id="anInde" class="active">Si</td>
+                                                <td value="1" id="anInde" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[11] == "No") { ?>
-                                                <td value="0" id="anInde" class="success">No</td>
+                                                <td value="0" id="anInde" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[11] == "-") { ?>
-                                                <td value="" id="anInde"> - </td>
+                                                <td value="" id="anInde" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -3087,13 +3066,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos4[33] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[33];?>" class="form-control" id="porceAnI" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[33];*/ ?>" class="form-control" id="porceAnI" placeholder="%"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceAnI" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos4[47] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[47];?>" class="form-control" id="evidAnI" placeholder="Número"> </div>
@@ -3106,59 +3085,44 @@
                                     </table>
                                 </div>
                                 <?php if($datos4[47] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDoCre" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="actualizarDoCre" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>
-                        </div>
-                    </div>
 
+                            <div class="row" style="border: black 1px solid; display: none;" id="profeco">
+                                <?php
+                                    $sqlprofe = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'PROFECO' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadoprofe = mysqli_query($con, $sqlprofe);
+                                    if($resultadoprofe->num_rows > 0){
+                                        $n = 0;
+                                        while($filadoc = $resultadoprofe->fetch_assoc()){
+                                            $pfdcumpl = $filadoc['cumplimiento'];
+                                            $pfstatus = $filadoc['status'];
+                                            $pfporce = $filadoc['porcentaje'];
+                                            $pfevid = $filadoc['evidencia'];
 
-                    <!-- PHP DE DOCUMENTACION PROFECO -->
-                    <?php
-                        $sqlprofe = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'PROFECO' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadoprofe = mysqli_query($con, $sqlprofe);
-                        if($resultadoprofe->num_rows > 0){
-                            $n = 0;
-                            while($filadoc = $resultadoprofe->fetch_assoc()){
-                                $pfdcumpl = $filadoc['cumplimiento'];
-                                $pfstatus = $filadoc['status'];
-                                $pfporce = $filadoc['porcentaje'];
-                                $pfevid = $filadoc['evidencia'];
-
-                                $datos2 [$n] = $pfdcumpl;
-                                $datos2 [$n+2] = $pfstatus;
-                                $datos2 [$n+4] = $pfporce;
-                                $datos2 [$n+6] = $pfevid;
-                                $n++;
-                            }
-                        }else{  for ($i=0; $i<=7; $i++) { $datos2[$i] = "-"; } }
-                        //echo "datos: ".$datos2." - ".$datos2[0];
-                    ?>
-
-                    <!-- DOCUMENTACION PROFECO -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="profeco" style="display:none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Procuraduría Federal del Consumidor</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+                                            $datos2 [$n] = $pfdcumpl;
+                                            $datos2 [$n+2] = $pfstatus;
+                                            $datos2 [$n+4] = $pfporce;
+                                            $datos2 [$n+6] = $pfevid;
+                                            $n++;
+                                        }
+                                    }else{  for ($i=0; $i<=7; $i++) { $datos2[$i] = "-"; } }
+                                    //echo "datos: ".$datos2." - ".$datos2[0];
+                                ?>
+                                <div class="bsc-tbl-cls" style="border-bottom: black 1px solid;">
                                     <table class="table table-cl">
                                         <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Cumplimiento PROFECO</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estatus</th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Cumplimiento PROFECO</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -3167,11 +3131,11 @@
                                                 <td>1</td>
                                                 <td>Verificación periódica de dispensarios </td>
                                                 <?php if($datos2[0] == "Si"){ ?>
-                                                <td value="1" id="vPerdisp" class="active">Si</td>
+                                                <td value="1" id="vPerdisp" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos2[0] == "No") { ?>
-                                                <td value="0" id="vPerdisp" class="success">No</td>
+                                                <td value="0" id="vPerdisp" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos2[0] == "-") {?>         
-                                                <td value="" id="vPerdisp" class=""> - </td>     
+                                                <td value="" id="vPerdisp" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                        
                                                 
                                                 <td>
@@ -3213,13 +3177,15 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td> <?php if($datos2[4] !='-'){ ?>
-                                                       <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[4]; ?>" class="form-control" id="porcevPd" placeholder="%"> </div>
+                                                <!-- <td> 
+                                                    <?php if($datos2[4] !='-'){ ?>
+                                                       <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos2[4];*/ ?>" class="form-control" id="porcevPd" placeholder="%"> </div>
                                                    <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcevPd" placeholder="%"> </div>
                                                    <?php } ?>
-                                                </td>
-                                                <td> <?php if($datos2[6] !='-'){ ?>
+                                                </td> -->
+                                                <td> 
+                                                    <?php if($datos2[6] !='-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[6];?>" class="form-control" id="evidvPd" placeholder="Número"> </div> 
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidvPd" placeholder="Número"> </div> 
@@ -3231,11 +3197,11 @@
                                                 <td>2</td>
                                                 <td>Reporte de control a distancia </td>
                                                 <?php if($datos2[1] == "Si"){ ?>
-                                                <td value="1" id="rControldis" class="active">Si</td>
+                                                <td value="1" id="rControldis" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos2[1] == "No") { ?>
-                                                <td value="0" id="rControldis" class="success">No</td>
+                                                <td value="0" id="rControldis" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos2[1] == "-") {?>   
-                                                <td value="" id="rControldis" class=""> - </td>    
+                                                <td value="" id="rControldis" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                            
                                                 
                                                 <td>
@@ -3277,76 +3243,64 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td> <?php if($datos2[5] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php $datos2[5];?>" class="form-control" id="porcerCtd" placeholder="%"> </div>
+                                                <!-- <td>
+                                                    <?php if($datos2[5] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*$datos2[5];*/ ?>" class="form-control" id="porcerCtd" placeholder="%"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerCtd" placeholder="%"> </div>
                                                     <?php } ?>    
-                                                 </td>
-                                                <td> <?php if($datos2[7] !='-'){ ?>
+                                                 </td> -->
+                                                <td>
+                                                    <?php if($datos2[7] !='-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php $datos2[7];?>" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
-                                                    <?php } ?>    
+                                                    <?php } ?> 
+                                                </td>   
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <?php if($datos2[7] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="actualizarDocP" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>
-                        </div>
-                    </div>
 
+                            <div class="row" style="border: black 1px solid; display: none;" id="pc">
+                                <?php
+                                    $sqlpc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Protección Civil' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadopc = mysqli_query($con, $sqlpc);
+                                    if($resultadopc->num_rows > 0){
+                                        $k = 0;
+                                        //echo "Si encuentra algo";
+                                        while($filapc = $resultadopc->fetch_assoc()){
+                                            $pcumpl = $filapc['cumplimiento'];
+                                            $pcstatus = $filapc['status'];
+                                            $pcporce = $filapc['porcentaje'];
+                                            $pcevid = $filapc['evidencia'];
 
-                    <!-- PHP DE DOCUMENTACION PROTECCION CIVIL -->
-                    <?php
-                        $sqlpc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Protección Civil' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadopc = mysqli_query($con, $sqlpc);
-                        if($resultadopc->num_rows > 0){
-                            $k = 0;
-                            //echo "Si encuentra algo";
-                            while($filapc = $resultadopc->fetch_assoc()){
-                                $pcumpl = $filapc['cumplimiento'];
-                                $pcstatus = $filapc['status'];
-                                $pcporce = $filapc['porcentaje'];
-                                $pcevid = $filapc['evidencia'];
-
-                                $datos3 [$k] = $pcumpl;
-                                $datos3 [$k+2] = $pcstatus;
-                                $datos3 [$k+4] = $pcporce;
-                                $datos3 [$k+6] = $pcevid;
-                                $k++;
-                            }
-                        }else{  for ($i=0; $i<=7; $i++) { $datos3[$i] = "-"; } }
-                        //echo "SQL".$sqlpc." : cumplimiento".$datos3[0]." - ".$datos3[1];
-                    ?>
-
-                    <!-- DOCUMENTACION PROTECCION CIVIL -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="pc" style="display:none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Protección Civil</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+                                            $datos3 [$k] = $pcumpl;
+                                            $datos3 [$k+2] = $pcstatus;
+                                            $datos3 [$k+4] = $pcporce;
+                                            $datos3 [$k+6] = $pcevid;
+                                            $k++;
+                                        }
+                                    }else{  for ($i=0; $i<=7; $i++) { $datos3[$i] = "-"; } }
+                                    //echo "SQL".$sqlpc." : cumplimiento".$datos3[0]." - ".$datos3[1];
+                                ?>
+                                <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
                                         <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Cumplimiento Protección Civil</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estatus</th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Cumplimiento Protección Civil</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -3355,14 +3309,15 @@
                                                 <td>1</td>
                                                 <td>Visto Bueno</td>
                                                 <?php if($datos3[0] == "Si"){ ?>
-                                                <td value="1" id="vBueno" class="active">Si</td>
+                                                <td value="1" id="vBueno" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos3[0] == "No") { ?>
-                                                <td value="0" id="vBueno" class="success">No</td>
+                                                <td value="0" id="vBueno" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos3[0] == "-") { ?>
-                                                <td value="" id="vBueno"> - </td>
+                                                <td value="" id="vBueno" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
-                                                <td> <?php if($datos3[2] == "Otorgada") { ?>
+                                                <td>
+                                                    <?php if($datos3[2] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estVb">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3400,13 +3355,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos3[4] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[4]; ?>" class="form-control" id="porceVb" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos3[4];*/ ?>" class="form-control" id="porceVb" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceVb" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos3[6] != "-"){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[6]; ?>" class="form-control" id="evidVb" placeholder="Número"> </div>
@@ -3420,11 +3375,11 @@
                                                 <td>2</td>
                                                 <td>Auto declaratoria</td>
                                                 <?php if($datos3[1] == "Si"){ ?>
-                                                <td value="1" id="cdecla" class="active">Si</td>
+                                                <td value="1" id="cdecla" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos3[1] == "No") { ?>
-                                                <td value="0" id="cdecla" class="success">No</td>
+                                                <td value="0" id="cdecla" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos3[1] == "-") { ?>
-                                                <td value="" id="cdecla"> - </td>
+                                                <td value="" id="cdecla" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td> 
@@ -3466,13 +3421,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos3[5] != "-"){ ?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[5]; ?>" class="form-control" id="porceCdc" placeholder="%"> </div>
+                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos3[5];*/ ?>" class="form-control" id="porceCdc" placeholder="%"> </div>
                                                     <?php } else {?>
                                                     <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceCdc" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos3[7] != "-"){?>
                                                     <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[7]; ?>" class="form-control" id="evidCdc" placeholder="Número"> </div>
@@ -3485,57 +3440,43 @@
                                     </table>
                                 </div>
                                 <?php if($datos3[7] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocPc" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="actualizarDocPc" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- DOCUMENTACION secretaria de ECONOMIA -->
-                    <?php
-                        $sqlse = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Sec. Economia' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadose = mysqli_query($con, $sqlse);
-                        if($resultadose->num_rows > 0){
-                            $l = 0;
-                            while($filase = $resultadose->fetch_assoc()){
-                                $secumpl = $filase['cumplimiento'];
-                                $sestatus = $filase['status'];
-                                $seporce = $filase['porcentaje'];
-                                $seevid = $filase['evidencia'];
+                            <div class="row" style="border: black 1px solid; display: none;" id="se">
+                                <?php
+                                    $sqlse = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Sec. Economia' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadose = mysqli_query($con, $sqlse);
+                                    if($resultadose->num_rows > 0){
+                                        $l = 0;
+                                        while($filase = $resultadose->fetch_assoc()){
+                                            $secumpl = $filase['cumplimiento'];
+                                            $sestatus = $filase['status'];
+                                            $seporce = $filase['porcentaje'];
+                                            $seevid = $filase['evidencia'];
 
-                                $datos7 [$l] = $secumpl;
-                                $datos7 [$l+1] = $sestatus;
-                                $datos7 [$l+2] = $seporce;
-                                $datos7 [$l+3] = $seevid;
-                                $l++;
-                            }
-                        }else{  for ($i=0; $i<=3; $i++) { $datos7[$i] = "-"; } }
-                    ?>
-
-                    <!-- DOCUMENTACION secretaria de ECONOMIA -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="se" style="display:none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Secretaría de Economía</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+                                            $datos7 [$l] = $secumpl;
+                                            $datos7 [$l+1] = $sestatus;
+                                            $datos7 [$l+2] = $seporce;
+                                            $datos7 [$l+3] = $seevid;
+                                            $l++;
+                                        }
+                                    }else{  for ($i=0; $i<=3; $i++) { $datos7[$i] = "-"; } }
+                                ?>
+                                <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
                                         <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Cumplimiento Secretaría de Economía</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estatus</th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Cumplimiento Secretaría de Economía</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -3543,11 +3484,11 @@
                                                 <td>1</td>
                                                 <td>Informe de Contenido Nacional (Permisos)</td>
                                                 <?php if($datos7[0] == "Si"){ ?>
-                                                <td value="1" id="conNac" class="active">Si</td>
+                                                <td value="1" id="conNac"  class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos7[0] == "No") { ?>
-                                                <td value="0" id="conNac" class="success">No</td>
+                                                <td value="0" id="conNac" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos7[0] == "-") { ?>
-                                                <td value="" id="conNac"> - </td>
+                                                <td value="" id="conNac" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -3589,13 +3530,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos7[2] != '-') {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos7[2];?>" class="form-control" id="porceconNac" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos7[2];*/ ?>" class="form-control" id="porceconNac" placeholder="%"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceconNac" placeholder="%"> </div>
                                                     <?php } ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos7[3] != '-') {?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos7[3];?>" class="form-control" id="evidconNac" placeholder="Número"> </div>
@@ -3608,58 +3549,44 @@
                                     </table>
                                 </div>
                                 <?php if($datos7[3] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocSe" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="actualizarDocSe" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- DOCUMENTACION STPS -->
-                    <?php
-                        $sqlstps = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'STPS' AND idCESH = '".$cre."' ORDER BY num ASC";
-                        $resultadostps = mysqli_query($con, $sqlstps);
-                        if($resultadostps->num_rows > 0){
-                            $m = 0;
-                            while($filastps = $resultadostps->fetch_assoc()){
-                                $stpscumpl = $filastps['cumplimiento'];
-                                $stpsstatus = $filastps['status'];
-                                $stpsporce = $filastps['porcentaje'];
-                                $stpsevid = $filastps['evidencia'];
+                            <div class="row" style="border: black 1px solid; display: none;" id="stps">
+                                <?php
+                                    $sqlstps = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'STPS' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $resultadostps = mysqli_query($con, $sqlstps);
+                                    if($resultadostps->num_rows > 0){
+                                        $m = 0;
+                                        while($filastps = $resultadostps->fetch_assoc()){
+                                            $stpscumpl = $filastps['cumplimiento'];
+                                            $stpsstatus = $filastps['status'];
+                                            $stpsporce = $filastps['porcentaje'];
+                                            $stpsevid = $filastps['evidencia'];
 
-                                $datos5 [$m] = $stpscumpl;
-                                $datos5 [$m+1] = $stpsstatus;
-                                $datos5 [$m+2] = $stpsporce;
-                                $datos5 [$m+3] = $stpsevid;
-                                $m++;
-                            }
-                        }else{  for ($i=0; $i<=59; $i++) { $datos5[$i] = "-"; } }
+                                            $datos5 [$m] = $stpscumpl;
+                                            $datos5 [$m+1] = $stpsstatus;
+                                            $datos5 [$m+2] = $stpsporce;
+                                            $datos5 [$m+3] = $stpsevid;
+                                            $m++;
+                                        }
+                                    }else{  for ($i=0; $i<=59; $i++) { $datos5[$i] = "-"; } }
 
-                    ?>
-
-                    <!-- DOCUMENTACION STPS -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="stps" style="display:none;">
-                        <div class="form-element-list">
-                            <div class="basic-tb-hd">
-                                <h2>Requisitos Documentales - Secretaría del Trabajo y Prevensión Social</h2>
-                                <p>Completa el formulario con la información que se te pide para tu control</p>
-                            </div>
-                            <div class="row">
-                                <div class="bsc-tbl-cls">
+                                ?>
+                                <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
                                         <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Cumplimiento STPS</th>
-                                                <th>¿Cumple?</th>
-                                                <th>Estatus </th>
-                                                <th>Porcentaje</th>
-                                                <th>Evidencia</th>
+                                                <th>#</th> <th>Cumplimiento STPS</th> <th>¿Cumple?</th> <th>Estatus </th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -3667,11 +3594,11 @@
                                                 <td>1</td>
                                                 <td>Edificios, locales, instalaciones y áreas en los centros de trabajo<br><b>NOM-001-STPS-2008.</b></td>
                                                 <?php if($datos5[0] == "Si"){ ?>
-                                                    <td value="1" id="001stps" class="active">Si</td>
+                                                    <td value="1" id="001stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[0] == "No") { ?>
-                                                    <td value="0" id="001stps" class="success">No</td>
+                                                    <td value="0" id="001stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[0] == "-") { ?>
-                                                    <td value="" id="001stps"> - </td>
+                                                    <td value="" id="001stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
                                                     <?php if($datos5[15]=="Otorgada"){?>
@@ -3712,13 +3639,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[30]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[30];?>" class="form-control" id="porce001" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[30];*/ ?>" class="form-control" id="porce001" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce001" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[45]!="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[45];?>" class="form-control" id="evid001" placeholder="Número"> </div>
@@ -3731,11 +3658,11 @@
                                                 <td>2</td>
                                                 <td>Condiciones de seguridad-Prevención y protección contra incendios en los centros de trabajo<br><b>NOM-002-STPS-2010.</b></td>
                                                 <?php if($datos5[1] == "Si"){ ?>
-                                                <td value="1" id="002stps" class="active">Si</td>
+                                                <td value="1" id="002stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[1] == "No") { ?>
-                                                <td value="0" id="002stps" class="success">No</td>
+                                                <td value="0" id="002stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[1] == "-") { ?>
-                                                <td value="" id="002stps"> - </td>
+                                                <td value="" id="002stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
@@ -3775,16 +3702,15 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }?>
-                                                    
+                                                    <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[31]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[31];?>" class="form-control" id="porce002" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[31];*/ ?>" class="form-control" id="porce002" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce002" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[46]!='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[46];?>" class="form-control" id="evid002" placeholder="Número"> </div>
@@ -3797,11 +3723,11 @@
                                                 <td>3</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en altura<br><b>NOM-009-STPS-2011.</b></td>
                                                 <?php if($datos5[2] == "Si"){ ?>
-                                                    <td value="1" id="009stps" class="active">Si</td>
+                                                    <td value="1" id="009stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[2] == "No") { ?>
-                                                    <td value="0" id="009stps" class="success">No</td>
+                                                    <td value="0" id="009stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[2] == "-") { ?>
-                                                    <td value="" id="009stps"> - </td>
+                                                    <td value="" id="009stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
                                                     <?php if($datos5[17] == "Otorgada"){?>
@@ -3842,13 +3768,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[32] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce009" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce009" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[47] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid009" placeholder="Número"> </div>
@@ -3861,11 +3787,11 @@
                                                 <td>4</td>
                                                 <td>Evaluación de sustancias química<br><b>NOM-010-STPS-2014.</b></td>
                                                 <?php if($datos5[3] == "Si"){ ?>
-                                                    <td value="1" id="010stps" class="active">Si</td>
+                                                    <td value="1" id="010stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[3] == "No") { ?>
-                                                    <td value="0" id="010stps" class="success">No</td>
+                                                    <td value="0" id="010stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[3] == "-") { ?>
-                                                    <td value="" id="010stps"> - </td>
+                                                    <td value="" id="010stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
                                                     <?php if($datos5[18] == "Otorgada"){?>
@@ -3906,13 +3832,13 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[33] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[33];?>" class="form-control" id="porce010" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[33];*/ ?>" class="form-control" id="porce010" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce010" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[48] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[48];?>" class="form-control" id="evid010" placeholder="Número"> </div>
@@ -3925,11 +3851,11 @@
                                                 <td>5</td>
                                                 <td>Evaluación de ruido<br><b>NOM-011-STPS-2001</b></td>
                                                 <?php if($datos5[4] == "Si"){ ?>
-                                                    <td value="1" id="011stps" class="active">Si</td>
+                                                    <td value="1" id="011stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[4] == "No") { ?>
-                                                    <td value="0" id="011stps" class="success">No</td>
+                                                    <td value="0" id="011stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[4] == "-") { ?>
-                                                    <td value="" id="011stps"> - </td>
+                                                    <td value="" id="011stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
                                                     <?php if($datos5[19] =="Otorgada"){?>
@@ -3970,13 +3896,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[34] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[34];?>" class="form-control" id="porce011" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[34];*/ ?>" class="form-control" id="porce011" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce011" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td> 
                                                     <?php if($datos5[49] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[49];?>" class="form-control" id="evid011" placeholder="Número"> </div>
@@ -3989,11 +3915,11 @@
                                                 <td>6</td>
                                                 <td>Equipo de protección personal-Selección, uso y manejo en los centros de trabajo<br><b>NOM-017-STPS-2008.</b></td>
                                                 <?php if($datos5[5] == "Si"){ ?>
-                                                    <td value="1" id="017stps" class="active">Si</td>
+                                                    <td value="1" id="017stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[5] == "No") { ?>
-                                                    <td value="0" id="017stps" class="success">No</td>
+                                                    <td value="0" id="017stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[5] == "-") { ?>
-                                                    <td value="" id="017stps"> - </td>
+                                                    <td value="" id="017stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
@@ -4035,13 +3961,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[35] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[35];?>" class="form-control" id="porce017" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[35];*/ ?>" class="form-control" id="porce017" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce017" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[50] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[50];?>" class="form-control" id="evid017" placeholder="Número"> </div>
@@ -4054,11 +3980,11 @@
                                                 <td>7</td>
                                                 <td>Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo<br><b>NOM-018-STPS-2015.</b></td>
                                                 <?php if($datos5[6] == "Si"){ ?>
-                                                    <td value="1" id="018stps" class="active">Si</td>
+                                                    <td value="1" id="018stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[6] == "No") { ?>
-                                                    <td value="0" id="018stps" class="success">No</td>
+                                                    <td value="0" id="018stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[6] == "-") { ?>
-                                                    <td value="" id="018stps"> - </td>
+                                                    <td value="" id="018stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
                                                     <?php if($datos5[21] == "Otorgada"){?>
@@ -4099,13 +4025,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[36] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[36];?>" class="form-control" id="porce018" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[36];*/ ?>" class="form-control" id="porce018" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce018" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td> 
                                                     <?php if($datos5[51] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[51];?>" class="form-control" id="evid018" placeholder="Número"> </div>
@@ -4118,11 +4044,11 @@
                                                 <td>8</td>
                                                 <td>Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene<br><b>NOM-019-STPS-2011.</b></td>
                                                 <?php if($datos5[7] == "Si"){ ?>
-                                                <td value="1" id="019stps" class="active">Si</td>
+                                                <td value="1" id="019stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[7] == "No") { ?>
-                                                <td value="0" id="019stps" class="success">No</td>
+                                                <td value="0" id="019stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[7] == "-") { ?>
-                                                <td value="" id="019stps"> - </td>
+                                                <td value="" id="019stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -4162,16 +4088,15 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } ?>
-                                                    
+                                                    <?php } ?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[37] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[37];?>" class="form-control" id="porce019" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[37];*/ ?>" class="form-control" id="porce019" placeholder="%"> </div>
                                                     <?php }else{?>
                                                          <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce019" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[52] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[52];?>" class="form-control" id="evid019" placeholder="Número"> </div>
@@ -4184,11 +4109,11 @@
                                                 <td>9</td>
                                                 <td>Evaluación de electricidad estática en los centros de trabajo<br><b>NOM-022-STPS-2008</b></td>
                                                 <?php if($datos5[8] == "Si"){ ?>
-                                                <td value="1" id="022stps" class="active">Si</td>
+                                                <td value="1" id="022stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[8] == "No") { ?>
-                                                <td value="0" id="022stps" class="success">No</td>
+                                                <td value="0" id="022stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[8] == "-") { ?>
-                                                <td value="" id="022stps"> - </td>
+                                                <td value="" id="022stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
@@ -4230,13 +4155,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[38] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[38];?>" class="form-control" id="porce022" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce022" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[53] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[53];?>" class="form-control" id="evid022" placeholder="Número"> </div>
@@ -4249,11 +4174,11 @@
                                                 <td>10</td>
                                                 <td>Condiciones de seguridad e higiene en los centros de trabajo<br><b>NOM-024-STPS-2015</b></td>
                                                 <?php if($datos5[9] == "Si"){ ?>
-                                                <td value="1" id="024stps" class="active">Si</td>
+                                                <td value="1" id="024stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[9] == "No") { ?>
-                                                <td value="0" id="024stps" class="success">No</td>
+                                                <td value="0" id="024stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[9] == "-") { ?>
-                                                <td value="" id="024stps"> - </td>
+                                                <td value="" id="024stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?> 
 
                                                 <td>
@@ -4295,13 +4220,13 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[39] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[39];?>" class="form-control" id="porce024" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[39];*/ ?>" class="form-control" id="porce024" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce024" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[54] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[54];?>" class="form-control" id="evid024" placeholder="Número"> </div>
@@ -4314,11 +4239,11 @@
                                                 <td>11</td>
                                                 <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
                                                 <?php if($datos5[10] == "Si"){ ?>
-                                                <td value="1" id="025stps" class="active">Si</td>
+                                                <td value="1" id="025stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[10] == "No") { ?>
-                                                <td value="0" id="025stps" class="success">No</td>
+                                                <td value="0" id="025stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[10] == "-") { ?>
-                                                <td value="" id="025stps"> - </td>
+                                                <td value="" id="025stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
@@ -4359,15 +4284,14 @@
                                                             </select>
                                                         </div>
                                                     <?php }?>
-                                                    
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[40]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[40];?>" class="form-control" id="porce025" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[40];*/ ?>" class="form-control" id="porce025" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce025" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[55]!="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[55];?>" class="form-control" id="evid025" placeholder="Número"> </div>
@@ -4380,11 +4304,11 @@
                                                 <td>12</td>
                                                 <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
                                                 <?php if($datos5[11] == "Si"){ ?>
-                                                    <td value="1" id="026stps" class="active">Si</td>
+                                                    <td value="1" id="026stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[11] == "No") { ?>
-                                                    <td value="0" id="026stps" class="success">No</td>
+                                                    <td value="0" id="026stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[11] == "-") { ?>
-                                                    <td value="" id="026stps"> - </td>
+                                                    <td value="" id="026stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
                                                     <?php if($datos5[26] == "Otorgada"){?>
@@ -4423,16 +4347,15 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }?>
-                                                
+                                                    <?php }?>                                                
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[41] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[41];?>" class="form-control" id="porce026" placeholder="%"> </div> 
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[41];*/ ?>" class="form-control" id="porce026" placeholder="%"> </div> 
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce026" placeholder="%"> </div> 
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[56] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[56];?>" class="form-control" id="evid026" placeholder="Número"> </div>
@@ -4445,11 +4368,11 @@
                                                 <td>13</td>
                                                 <td>Actividades de soldadura y corte-Condiciones de seguridad e higiene<br><b>NOM-027-STPS-2008.</b></td>
                                                 <?php if($datos5[12] == "Si"){ ?>
-                                                <td value="1" id="027stps" class="active">Si</td>
+                                                <td value="1" id="027stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[12] == "No") { ?>
-                                                <td value="0" id="027stps" class="success">No</td>
+                                                <td value="0" id="027stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[12] == "-") { ?>
-                                                <td value="" id="027stps"> - </td>
+                                                <td value="" id="027stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                
                                                 <td>
@@ -4491,13 +4414,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[42] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[42];?>" class="form-control" id="porce027" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[42];*/ ?>" class="form-control" id="porce027" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce027" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[57] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[57];?>" class="form-control" id="evid027" placeholder="Número"> </div>
@@ -4510,11 +4433,11 @@
                                                 <td>14</td>
                                                 <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
                                                 <?php if($datos5[13] == "Si"){ ?>
-                                                <td value="1" id="029stps" class="active">Si</td>
+                                                <td value="1" id="029stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[13] == "No") { ?>
-                                                <td value="0" id="029stps" class="success">No</td>
+                                                <td value="0" id="029stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[13] == "-") { ?>
-                                                <td value="" id="029stps"> - </td>
+                                                <td value="" id="029stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
@@ -4556,13 +4479,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[43] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[43];?>" class="form-control" id="porce029" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[43];*/ ?>" class="form-control" id="porce029" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce029" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[58] != "-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" valeu="<?php echo $datos5[58];?>" class="form-control" id="evid029" placeholder="Número"> </div>
@@ -4575,11 +4498,11 @@
                                                 <td>15</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en espacios confinados<br><b>NOM-033-STPS-2015.</b></td>
                                                 <?php if($datos5[14] == "Si"){ ?>
-                                                    <td value="1" id="033stps" class="active">Si</td>
+                                                    <td value="1" id="033stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[14] == "No") { ?>
-                                                    <td value="0" id="033stps" class="success">No</td>
+                                                    <td value="0" id="033stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos5[14] == "-") { ?>
-                                                    <td value="" id="033stps"> - </td>
+                                                    <td value="" id="033stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
@@ -4621,13 +4544,13 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <?php if($datos5[44] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[44];?>" class="form-control" id="porce033" placeholder="%"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[44];*/ ?>" class="form-control" id="porce033" placeholder="%"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce033" placeholder="%"> </div>
                                                     <?php }?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php if($datos5[59] !="-"){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[59];?>" class="form-control" id="evid033" placeholder="Número"> </div>
@@ -4636,22 +4559,89 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>Factores de riesgo psicosocial en el trabajo-Identificación, análisis y prevención<br><b>NOM-035-STPS-2018.</b></td>
+                                                <?php if($datos5[14] == "Si"){ ?>
+                                                    <td value="1" id="035stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[14] == "No") { ?>
+                                                    <td value="0" id="035stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[14] == "-") { ?>
+                                                    <td value="" id="035stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+
+                                                <td>
+                                                    <?php if($datos5[29]=="Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[29]=="Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[29]=="Seguimiento"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[29]=="-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <!-- <td>
+                                                    <?php if($datos5[44] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[44];*/ ?>" class="form-control" id="porce033" placeholder="%"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce033" placeholder="%"> </div>
+                                                    <?php }?>
+                                                </td> -->
+                                                <td>
+                                                    <?php if($datos5[59] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[59];?>" class="form-control" id="evid035" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid035" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <?php if($datos5[59] == "-"){?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocstp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
                                 </div>
                                 <?php }else{ ?>
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="actualizarDocstp" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
-                                <?php } ?>
+                                <?php } ?>                                
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-lg-1"></div>
                 </div>
             </div>
         </div>
@@ -5073,7 +5063,7 @@
     </div> -->
     <!-- End Realtime sts area-->
     <!-- Start Footer area-->
-    <div class="footer-copyright-area">
+    <!-- <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -5084,7 +5074,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Footer area-->
     <!-- jquery
 		============================================ -->
