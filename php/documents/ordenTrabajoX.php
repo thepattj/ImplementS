@@ -67,7 +67,7 @@
                                         <td colspan="2">Sistema de Administración de Seguridad Industrial Seguridad Operativa y Protección al Medio Ambiente</td>            
                                     </tr>
                                     <tr> <td colspan="2">E0 ESTACION</td> </tr>
-                                    <tr> <td>Orden de Trabajo</td> <td> SASISOPA-ESTADO-E0-10-FM-01</td> </tr>
+                                    <tr> <td>Orden de Trabajo</td> <td> SASISOPA-'.$abr.'-'.$nosa.'-10-FM-01</td> </tr>
                                 </table>
 
                                 <table width="2560" style="margin-top: 2%; margin-left:10%;">        
