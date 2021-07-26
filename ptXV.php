@@ -851,7 +851,7 @@
                                         }
                                     }
                                     ?>
-                                    <div class="form-group nk-int-st"> <input type="text" id="noaud" disabled class="form-control" placeholder="<?php echo $numAudi; ?> "> </div>
+                                    <div class="form-group nk-int-st"> <input type="text" id="noaud" disabled class="form-control" placeholder="<?php echo $numAudi; ?>" value="<?php echo $numAudi; ?>"> </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-checkbox"> <label> Tipo de Auditoria </label></div>

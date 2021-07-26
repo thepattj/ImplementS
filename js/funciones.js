@@ -3638,6 +3638,7 @@ $(document).ready(function(){
 			alert(msg);
 			//alert("Datos Insertados correctamente, ahora agrega las actividades.");
 		})
+		location.reload();
 	});
     $("#guardartrab").click(function(){
     	n = $("#nameT").val();
@@ -3662,6 +3663,8 @@ $(document).ready(function(){
     	sH = $("#estHerr").val();
     	eP = $("#epp").val();
     	idT = localStorage.getItem("TrabC");
+
+    	//alert (idT);
     	$.ajax({
     		url: 'php/insert.php',
     		method: 'POST',
@@ -3699,7 +3702,42 @@ $(document).ready(function(){
 			.done(function(msg){
 				alert(msg);
 			});		
+
+		location.reload;
 	});
+
+	$("#btnGuardarSimulacro").click(function(){
+		cre = localStorage.getItem("PL");
+		sepador = "/";
+		sid = cre.split(sepador);
+		id = sid[0]+sid[1];
+		
+		$("#icspre").val(cre)
+		$("#crespre").val(id);
+		$("#opc[name=opcspre]").val("simulacro");
+		//doce = $("#icpre").val(cre);
+
+		//alert(doce);
+
+		valores = new FormData($("#enviarSimP")[0]);
+		//valores.append("opc",opc,"cre", id);
+		$.ajax({
+				//data:{opc:"pol", cre:id},
+				data: valores,
+				url:'php/upload.php',
+				method:'POST',
+				dataType:'html',
+				contentType: false,
+				processData: false,
+				
+			})
+			.done(function(msg){
+				alert(msg);
+			});		
+
+		location.reload;
+	});
+
 
 	/*PUNTO 14*/
 	$("#guardarSolicitud").click(function() {
@@ -3788,8 +3826,9 @@ $(document).ready(function(){
 
 	$("#guardaractaudi").click(function() {
 		//alert("actAuditoria");
-		pro = $("#procact").val();
+		pro = $("#actividadpau").val();
 		aud = $("#auditor").val();
+
 		idaud = localStorage.getItem("RepA");
 
 		$.ajax({
@@ -3811,11 +3850,13 @@ $(document).ready(function(){
 		conc = $("#conclu").val();
 		reco = $("#recom").val();
 
+		//alert(no);
+
 		$.ajax({
 			url: 'php/insert.php',
 			method: 'POST',
 			dataType: 'html',
-			data: {opc:"addrep15",id:no, cre:pl, elaborado:elab, hallazgo:halla, conclusion:conc, recomendacion:reco },
+			data: {opc:"addrep15",noaud:no, cre:pl, elaborado:elab, hallazgo:halla, conclusion:conc, recomendacion:reco },
 		})
 		.done(function(msg) {
 			alert(msg);

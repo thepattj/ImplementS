@@ -172,6 +172,43 @@
 			echo "Revisa el formato de tu archivo";
 		}
 	}
+	/*INSERT Y UPLOAD DE simulacrospre*/
+	if(isset($_POST['opcspre'])){
+		$cesh = $_POST['icspre'];
+		$id = $_POST['crespre'];
+		$tipoS = $_POST['qsimulacro'];
+		$fechaS = $_POST['fechadivpre'];
+		$pfechaS = explode("/", $fechaS);
+		$fechaS = $pfechaS[2]."-".$pfechaS[0]."-".$pfechaS[1];
+		//echo "entro - ".$id. " - ".$cesh;
+		$infosimulacro = $_FILES["archivosimu"];
+		/*foreach ($pre as $key => $value) {
+			echo $key.' '.$value.'->';
+		}*/
+
+		$micarpeta = '../documents/Punto13/'.$id;
+		//echo $micarpeta;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($infosimulacro["type"] == "application/pdf"){
+			$nom_encriptado = md5($infosimulacro["tmp_name"]).".pdf";
+
+			$ruta = "../documents/Punto13/".$id."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($infosimulacro["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO pre (informeSimulacro, idCESH, tipoSimulacro, fechaSimulacro) VALUES ('".$ruta."','".$cesh."','".$tipoS."','".$fechaS."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Correcta de informe";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
+	}
 	/*INSERT Y UPLOAD DE PUNTO 10 BT-01*/
 	if(isset($_POST['idbt01'])){
 		if(isset($_POST['idActualiza01'])){
@@ -250,7 +287,7 @@
 				$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaInicio,fechaFin,estatus,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -340,7 +377,7 @@
 				$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaInicio,fechaFin,estatus,idCESH) VALUES ('bt-02','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -429,7 +466,7 @@
 				$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaInicio,fechaFin,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -520,7 +557,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','".$fFecha."','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -611,7 +648,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,estatus,idCESH) VALUES ('bt-02 Diario','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -699,7 +736,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,estatus,idCESH) VALUES ('bt-02 Mensual','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -787,7 +824,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,estatus,idCESH) VALUES ('bt-02 Trimestral','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -963,7 +1000,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,estatus,idCESH) VALUES ('bt-02 Semestral','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -1049,7 +1086,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,status,idCESH) VALUES ('bt-02 Anual','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -1134,7 +1171,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,estatus,idCESH) VALUES ('bt-02 Quinquenal','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}
@@ -1221,7 +1258,7 @@
 				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,fechaF,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
 				//echo $sql;
 				if(mysqli_query($con,$sql)){
-					echo "Insert Correct";
+					echo "Carga Completa";
 				}else{
 					echo "Error:".mysqli_error($con);
 				}

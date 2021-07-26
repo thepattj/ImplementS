@@ -344,10 +344,14 @@
                       <!-- <button type="button" class="btn btn-primary"><a href="documents/Punto16/16-FM.zip" class="nounderline" >Descargar</a></button> -->
                   <select id="qsimulacro" name="qsimulacro">
                     <option style="display: none;" value="0"> Selecciona una opción</option>
+                    <option value="macro">Macro simulacro</option>
+                    <option value="primeros">Primeros Auxilios</option>
                     <option value="inmueble">Evaluación de inmuebles</option>
                     <option value="incendio">Conato de incendio</option>
+                    <option value="sismo">Sismo</option>
                     <option value="colision">Colisión en la estación de servicio</option>
                     <option value="derrame">Emergencia derrame de hidrocarburos</option>
+                    <option value="inundación">Inundación</option>
                     <option value="lesionado">Rescate de lesionado</option>
                   </select>
                   <p>Fecha de realización</p>
@@ -363,8 +367,17 @@
                     </div>
                   <p>Agrega el informe del simulacro (.pdf)</p>
                   <input type="file" class="form-control" name="archivosimu" id="archivosimu">
+                  <input style="display:none;" type="input" class="form-control" placeholder="" id="crespre" name="crespre">
+                <input style="display:none;" type="input" class="form-control" placeholder="" id="icspre" name="icspre">
+                <input style="display:none;" type="input" class="form-control" placeholder="" id="opcspre" name="opcspre">
                 </div>
               </form>
+            </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-warning" id="btnGuardarSimulacro">Guardar</button>
+        </div>
 
           <?php }else{ ?>
             <form name="enviarPRE" id="enviarPRE" enctype="multipart/form-data" method="post">
@@ -376,50 +389,49 @@
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="oppre">
               </div>
              </form>
-          <?php } ?>
-
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           <button type="button" class="btn btn-warning" id="btnGuardarPRE">Guardar</button>
         </div>
+          <?php } ?>
+
+        
       </div>
     </div>
   </div>
   <!-- MODAL DE PUNTO16 NO SIRVE -->
-  <div class="modal fade" id="modalpt16"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
+  <div class="modal fade" id="modalpt16" role="dialog">
+    <div class="modal-dialog modals-default">
+      <div class="modal-content" style="border-radius: 35px;">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Punto 16 - Investigación de Incidentes y accidentes</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <button type="button" class="close" data-dismiss="modal" style="background: #d58512;"> X </button>
         </div>
         <div class="modal-body">
-          <p>¿Haz tenido algún accidente o incidente en tu ES? </p>
-          <select id="qincident" name="qincident">
-              <option style="display: none;" value="0"> Selecciona una opción</option>
-              <option value="1">SI</option>
-              <option value="2">NO</option>
-          </select>
-        </div>
-        <div class="modal-body" id="descarga1" style="display: none;">
-          <p>Tipo de Incidente</p>
-          <select id="tipinc" name="tipinc">
-              <option style="display: none;" value="0"> Selecciona una opción</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-          </select>
-          <p>Descarga estos formatos y acompletalos</p>
-          <button id="tipo1" style="display: none;" type="button" class="btn btn-primary"><a href="documents/Punto16/t1.zip" class="nounderline" >Descargar</a></button>
-          <button id="tipo2" style="display: none;" type="button" class="btn btn-primary"><a href="documents/Punto16/t2.zip" class="nounderline" >Descargar</a></button>
-          <button id="tipo3" style="display: none;" type="button" class="btn btn-primary"><a href="documents/Punto16/t3.zip" class="nounderline" >Descargar</a></button>
+          <h2>Punto 16 - Investigación de Incidentes y accidentes</h2>
+          <p></p>
+          <p></p>
+            
+            <div class="modal-body">
+                <p>¿Haz tenido algún accidente o incidente en tu ES?</p>
+                <p>Tipo de Incidente</p>
+                    <select id="tipinc" name="tipinc">
+                        <option style="display: none;" value="0"> Selecciona una opción</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                
+                <p>Descarga estos formatos y acompletalos</p>
+                <button id="tipo1" style="display: none; background: #FF5722;" type="button" class="btn "><a href="documents/Punto16/t1.zip" style="color: white; " >Descargar</a></button>
+                <button id="tipo2" style="display: none; background: #FF5722;" type="button" class="btn "><a href="documents/Punto16/t2.zip" style="color: white; " >Descargar</a></button>
+                <button id="tipo3" style="display: none; background: #FF5722;" type="button" class="btn "><a href="documents/Punto16/t3.zip" style="color: white; " >Descargar</a></button>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" id="btnGuardar16">Guardar</button>
+          <button type="button" class="btn btn-warning" id="btnGuardar16">Guardar</button>
         </div>
       </div>
     </div>

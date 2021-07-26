@@ -87,16 +87,16 @@ if($opcion=="addSt"){
 	$uno = $_POST['unoprofeco'];
 	$suno = $_POST['unoprofecos'];
 	$euno = $_POST['unoprofecoe'];
-	$puno = $_POST['unoprofecop'];
+	//$puno = $_POST['unoprofecop'];
 
 	$dos = $_POST['dosprofeco'];
 	$sdos = $_POST['dosprofecos'];
 	$edos = $_POST['dosprofecoe'];
-	$pdos = $_POST['dosprofecop'];
+	//$pdos = $_POST['dosprofecop'];
 
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('PROFECO',1,'".$cre."','".$uno."',".$puno.",'".$euno."','".$suno."'), ('PROFECO',2,'".$cre."','".$dos."',".$pdos.",'".$edos."','".$sdos."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('PROFECO',1,'".$cre."','".$uno."','".$euno."','".$suno."'), ('PROFECO',2,'".$cre."','".$dos."','".$edos."','".$sdos."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
@@ -107,14 +107,14 @@ if($opcion=="addSt"){
 	$uno = $_POST['unopc'];
 	$unoS = $_POST['unopcs'];
 	$unoE = $_POST['unopce'];
-	$unoP = $_POST['unopcp'];
+	//$unoP = $_POST['unopcp'];
 	$dos = $_POST['dospc'];
 	$dosS = $_POST['dospcs'];
 	$dosE = $_POST['dospce'];
-	$dosP = $_POST['dospcp'];
+	//$dosP = $_POST['dospcp'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('Protección Civil',1,'".$cre."','".$uno."',".$unoP.",'".$unoE."','".$unoS."'), ('Protección Civil',2,'".$cre."','".$dos."',".$dosP.",'".$dosE."','".$dosS."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('Protección Civil',1,'".$cre."','".$uno."','".$unoE."','".$unoS."'), ('Protección Civil',2,'".$cre."','".$dos."','".$dosE."','".$dosS."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Complete.";
 	}else{
@@ -125,10 +125,10 @@ if($opcion=="addSt"){
 	$solo = $_POST['unose'];
 	$soloS = $_POST['unoseS'];
 	$soloE = $_POST['unoseE'];
-	$soloP = $_POST['unoseP'];
+	//$soloP = $_POST['unoseP'];
 
 	$cre = $_POST['cre'];
-	$sqlcompleto = "INSERT INTO documento (tipo,num,idCESH,cumplimiento,porcentaje,evidencia,status) VALUES ('Sec. Economia',1,'".$cre."','".$solo."',".$soloP.",'".$soloE."','".$soloS."')";
+	$sqlcompleto = "INSERT INTO documento (tipo,num,idCESH,cumplimiento,evidencia,status) VALUES ('Sec. Economia',1,'".$cre."','".$solo."','".$soloE."','".$soloS."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
@@ -138,31 +138,31 @@ if($opcion=="addSt"){
 }/*DATOS DE REQUISITOS DE ASEA*/ if($opcion == "add3a"){
 	$n005 = $_POST['n005'];
 	$sn005 = $_POST['sn005'];
-	$pn005 = $_POST['pn005'];
+	//$pn005 = $_POST['pn005'];
 	$en005 = $_POST['en005'];
 	$mia = $_POST['mia'];
 	$smia = $_POST['smia'];
-	$pmia = $_POST['pmia'];
+	//$pmia = $_POST['pmia'];
 	$emia = $_POST['emia'];
 	$ip = $_POST['ip'];
 	$sip = $_POST['sip'];
-	$pip = $_POST['pip'];
+	//$pip = $_POST['pip'];
 	$eip = $_POST['eip'];
 	$lf = $_POST['lf'];
 	$slf = $_POST['slf'];
-	$plf = $_POST['plf'];
+	//$plf = $_POST['plf'];
 	$elf = $_POST['elf'];
 	$grp = $_POST['grp'];
 	$sgrp = $_POST['sgrp'];
-	$pgrp = $_POST['pgrp'];
+	//$pgrp = $_POST['pgrp'];
 	$egrp = $_POST['egrp'];
 	$coa = $_POST['coa'];
 	$scoa = $_POST['scoa'];
-	$pcoa = $_POST['pcoa'];
+	//$pcoa = $_POST['pcoa'];
 	$ecoa = $_POST['ecoa'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('ASEA',1,'".$cre."','".$n005."',".$pn005.",'".$en005."','".$sn005."'), ('ASEA',2,'".$cre."','".$mia."',".$pmia.",'".$emia."','".$smia."'), ('ASEA',3,'".$cre."','".$ip."',".$pip.",'".$eip."','".$sip."'), ('ASEA',4,'".$cre."','".$lf."',".$plf.",'".$elf."','".$slf."'), ('ASEA',5,'".$cre."','".$grp."',".$pgrp.",'".$egrp."','".$sgrp."'), ('ASEA',6,'".$cre."','".$coa."',".$pcoa.",'".$ecoa."','".$scoa."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('ASEA',1,'".$cre."','".$n005."','".$en005."','".$sn005."'), ('ASEA',2,'".$cre."','".$mia."','".$emia."','".$smia."'), ('ASEA',3,'".$cre."','".$ip."','".$eip."','".$sip."'), ('ASEA',4,'".$cre."','".$lf."','".$elf."','".$slf."'), ('ASEA',5,'".$cre."','".$grp."','".$egrp."','".$sgrp."'), ('ASEA',6,'".$cre."','".$coa."','".$ecoa."','".$scoa."')";
 	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
@@ -174,54 +174,54 @@ if($opcion=="addSt"){
 	$rdv = $_POST['rdv'];
 	$srdv = $_POST['srdv'];
 	$erdv = $_POST['erdv'];
-	$prdv = $_POST['prdv'];
+	//$prdv = $_POST['prdv'];
 	$rdp = $_POST['rdp'];
 	$srdp = $_POST['srdp'];
 	$erdp = $_POST['erdp'];
-	$prdp = $_POST['prdp'];
+	//$prdp = $_POST['prdp'];
 	$sta = $_POST['sta'];
 	$ssta = $_POST['ssta'];
 	$esta = $_POST['esta'];
-	$psta = $_POST['psta'];
+	//$psta = $_POST['psta'];
 	$cpet = $_POST['cpet'];
 	$scpet = $_POST['scpet'];
 	$ecpet = $_POST['ecpet'];
-	$pcpet = $_POST['pcpet'];
+	//$pcpet = $_POST['pcpet'];
 	$dcpet = $_POST['dcpet'];
 	$sdcpet = $_POST['sdcpet'];
 	$edcpet = $_POST['edcpet'];
-	$pdcpet = $_POST['pdcpet'];
+	//$pdcpet = $_POST['pdcpet'];
 	$panual = $_POST['panual'];
 	$spanual = $_POST['spanual'];
 	$epanual = $_POST['epanual'];
-	$ppanual = $_POST['ppanual'];
+	//$ppanual = $_POST['ppanual'];
 	$pseg = $_POST['pseg'];
 	$spseg = $_POST['spseg'];
 	$epseg = $_POST['epseg'];
-	$ppseg = $_POST['ppseg'];
+	//$ppseg = $_POST['ppseg'];
 	$repq = $_POST['repq'];
 	$srepq = $_POST['srepq'];
 	$erepq = $_POST['erepq'];
-	$prepq = $_POST['prepq'];
+	//$prepq = $_POST['prepq'];
 	$proc = $_POST['proc'];
 	$sproc = $_POST['sproc'];
 	$eproc = $_POST['eproc'];
-	$pproc = $_POST['pproc'];
+	//$pproc = $_POST['pproc'];
 	$reme = $_POST['reme'];
 	$sreme = $_POST['sreme'];
 	$ereme = $_POST['ereme'];
-	$preme = $_POST['preme'];
+	//$preme = $_POST['preme'];
 	$anuncio = $_POST['anuncio'];
 	$sanuncio = $_POST['sanuncio'];
 	$eanuncio = $_POST['eanuncio'];
-	$panunci = $_POST['panuncio'];
+	//$panunci = $_POST['panuncio'];
 	$sup = $_POST['sup'];
 	$ssup = $_POST['ssup'];
 	$esup = $_POST['esup'];
-	$psup = $_POST['psup'];
+	//$psup = $_POST['psup'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('CRE',1,'".$cre."','".$rdv."',".$prdv.",'".$erdv."','".$srdv."'), ('CRE',2,'".$cre."','".$rdp."',".$prdp.",'".$erdp."','".$srdp."'), ('CRE',3,'".$cre."','".$sta."',".$psta.",'".$esta."','".$ssta."'), ('CRE',4,'".$cre."','".$cpet."',".$pcpet.",'".$ecpet."','".$scpet."'), ('CRE',5,'".$cre."','".$dcpet."',".$pdcpet.",'".$edcpet."','".$sdcpet."'), ('CRE',6,'".$cre."','".$sup."',".$psup.",'".$esup."','".$ssup."'), ('CRE',7,'".$cre."','".$panual."',".$ppanual.",'".$epanual."','".$spanual."'), ('CRE',8,'".$cre."','".$pseg."',".$ppseg.",'".$epseg."','".$spseg."'), ('CRE',9,'".$cre."','".$repq."',".$prepq.",'".$erepq."','".$srepq."'), ('CRE',10,'".$cre."','".$proc."',".$pproc.",'".$eproc."','".$sproc."'), ('CRE',11,'".$cre."','".$reme."',".$preme.",'".$ereme."','".$sreme."'), ('CRE',12,'".$cre."','".$anuncio."',".$panunci.",'".$eanuncio."','".$sanuncio."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('CRE',1,'".$cre."','".$rdv."','".$erdv."','".$srdv."'), ('CRE',2,'".$cre."','".$rdp."','".$erdp."','".$srdp."'), ('CRE',3,'".$cre."','".$sta."','".$esta."','".$ssta."'), ('CRE',4,'".$cre."','".$cpet."','".$ecpet."','".$scpet."'), ('CRE',5,'".$cre."','".$dcpet."','".$edcpet."','".$sdcpet."'), ('CRE',6,'".$cre."','".$sup."','".$esup."','".$ssup."'), ('CRE',7,'".$cre."','".$panual."','".$epanual."','".$spanual."'), ('CRE',8,'".$cre."','".$pseg."','".$epseg."','".$spseg."'), ('CRE',9,'".$cre."','".$repq."','".$erepq."','".$srepq."'), ('CRE',10,'".$cre."','".$proc."','".$eproc."','".$sproc."'), ('CRE',11,'".$cre."','".$reme."','".$ereme."','".$sreme."'), ('CRE',12,'".$cre."','".$anuncio."','".$eanuncio."','".$sanuncio."')";
 	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
@@ -232,66 +232,66 @@ if($opcion=="addSt"){
 	$cump001s = $_POST['unos'];
 	$scump001s = $_POST['unosS'];
 	$ecump001s = $_POST['unosE'];
-	$pcump001s = $_POST['unosP'];
+	//$pcump001s = $_POST['unosP'];
 	$cump002s = $_POST['doss'];
 	$scump002s = $_POST['dossS'];
 	$ecump002s = $_POST['dossE'];
-	$pcump002s = $_POST['dossP'];
+	//$pcump002s = $_POST['dossP'];
 	$cump009s = $_POST['tress'];
 	$scump009s = $_POST['tressS'];
 	$ecump009s = $_POST['tressE'];
-	$pcump009s = $_POST['tressP'];
+	//$pcump009s = $_POST['tressP'];
 	$cump010s = $_POST['cuatros'];
 	$scump010s = $_POST['cuatrosS'];
 	$ecump010s = $_POST['cuatrosE'];
-	$pcump010s = $_POST['cuatrosP'];
+	//$pcump010s = $_POST['cuatrosP'];
 	$cump011s = $_POST['cincos'];
 	$scump011s = $_POST['cincosS'];
 	$ecump011s = $_POST['cincosE'];
-	$pcump011s = $_POST['cincosP'];
+	//$pcump011s = $_POST['cincosP'];
 	$cump017s = $_POST['seiss'];
 	$scump017s = $_POST['seissS'];
 	$ecump017s = $_POST['seissE'];
-	$pcump017s = $_POST['seissP'];
+	//$pcump017s = $_POST['seissP'];
 	$cump018s = $_POST['sietes'];
 	$scump018s = $_POST['sietesS'];
 	$ecump018s = $_POST['sietesE'];
-	$pcump018s = $_POST['sietesP'];
+	//$pcump018s = $_POST['sietesP'];
 	$cump019s = $_POST['ochos'];
 	$scump019s = $_POST['ochosS'];
 	$ecump019s = $_POST['ochosE'];
-	$pcump019s = $_POST['ochosP'];
+	//$pcump019s = $_POST['ochosP'];
 	$cump022s = $_POST['nueves'];
 	$scump022s = $_POST['nuevesS'];
 	$ecump022s = $_POST['nuevesE'];
-	$pcump022s = $_POST['nuevesP'];
+	//$pcump022s = $_POST['nuevesP'];
 	$cump024s = $_POST['diezs'];
 	$scump024s = $_POST['diezsS'];
 	$ecump024s = $_POST['diezsE'];
-	$pcump024s = $_POST['diezsP'];
+	//$pcump024s = $_POST['diezsP'];
 	$cump025s = $_POST['onces'];
 	$scump025s = $_POST['oncesS'];
 	$ecump025s = $_POST['oncesE'];
-	$pcump025s = $_POST['oncesP'];
+	//$pcump025s = $_POST['oncesP'];
 	$cump026s = $_POST['doces'];
 	$scump026s = $_POST['docesS'];
 	$ecump026s = $_POST['docesE'];
-	$pcump026s = $_POST['docesP'];
+	//$pcump026s = $_POST['docesP'];
 	$cump027s = $_POST['treces'];
 	$scump027s = $_POST['trecesS'];
 	$ecump027s = $_POST['trecesE'];
-	$pcump027s = $_POST['trecesP'];
+	//$pcump027s = $_POST['trecesP'];
 	$cump029s = $_POST['cators'];
 	$scump029s = $_POST['catorsS'];
 	$ecump029s = $_POST['catorsE'];
-	$pcump029s = $_POST['catorsP'];
+	//$pcump029s = $_POST['catorsP'];
 	$cump033s = $_POST['quins'];
 	$scump033s = $_POST['quinsS'];
 	$ecump033s = $_POST['quinsE'];
-	$pcump033s = $_POST['quinsP'];
+	//$pcump033s = $_POST['quinsP'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('STPS',1,'".$cre."','".$cump001s."',".$pcump001s.",'".$ecump001s."','".$scump001s."'), ('STPS',2,'".$cre."','".$cump002s."',".$pcump002s.",'".$ecump002s."','".$scump002s."'), ('STPS',3,'".$cre."','".$cump009s."',".$pcump009s.",'".$ecump009s."','".$scump009s."'), ('STPS',4,'".$cre."','".$cump010s."',".$pcump010s.",'".$ecump010s."','".$scump010s."'), ('STPS',5,'".$cre."','".$cump011s."',".$pcump011s.",'".$ecump011s."','".$scump011s."'), ('STPS',6,'".$cre."','".$cump017s."',".$pcump017s.",'".$ecump017s."','".$scump017s."'), ('STPS',7,'".$cre."','".$cump018s."',".$pcump018s.",'".$ecump018s."','".$scump018s."'), ('STPS',8,'".$cre."','".$cump019s."',".$pcump019s.",'".$ecump019s."','".$scump019s."'), ('STPS',9,'".$cre."','".$cump022s."',".$pcump022s.",'".$ecump022s."','".$scump022s."'), ('STPS',10,'".$cre."','".$cump024s."',".$pcump024s.",'".$ecump024s."','".$scump024s."'), ('STPS',11,'".$cre."','".$cump025s."',".$pcump025s.",'".$ecump025s."','".$scump025s."'), ('STPS',12,'".$cre."','".$cump026s."',".$pcump026s.",'".$ecump026s."','".$scump026s."'), ('STPS',13,'".$cre."','".$cump027s."',".$pcump027s.",'".$ecump027s."','".$scump027s."'), ('STPS',14,'".$cre."','".$cump029s."',".$pcump029s.",'".$ecump029s."','".$scump029s."'), ('STPS',15,'".$cre."','".$cump033s."',".$pcump033s.",'".$ecump033s."','".$scump033s."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('STPS',1,'".$cre."','".$cump001s."','".$ecump001s."','".$scump001s."'), ('STPS',2,'".$cre."','".$cump002s."','".$ecump002s."','".$scump002s."'), ('STPS',3,'".$cre."','".$cump009s."','".$ecump009s."','".$scump009s."'), ('STPS',4,'".$cre."','".$cump010s."','".$ecump010s."','".$scump010s."'), ('STPS',5,'".$cre."','".$cump011s."','".$ecump011s."','".$scump011s."'), ('STPS',6,'".$cre."','".$cump017s."','".$ecump017s."','".$scump017s."'), ('STPS',7,'".$cre."','".$cump018s."','".$ecump018s."','".$scump018s."'), ('STPS',8,'".$cre."','".$cump019s."','".$ecump019s."','".$scump019s."'), ('STPS',9,'".$cre."','".$cump022s."','".$ecump022s."','".$scump022s."'), ('STPS',10,'".$cre."','".$cump024s."','".$ecump024s."','".$scump024s."'), ('STPS',11,'".$cre."','".$cump025s."','".$ecump025s."','".$scump025s."'), ('STPS',12,'".$cre."','".$cump026s."','".$ecump026s."','".$scump026s."'), ('STPS',13,'".$cre."','".$cump027s."','".$ecump027s."','".$scump027s."'), ('STPS',14,'".$cre."','".$cump029s."','".$ecump029s."','".$scump029s."'), ('STPS',15,'".$cre."','".$cump033s."','".$ecump033s."','".$scump033s."')";
 	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
@@ -302,79 +302,79 @@ if($opcion=="addSt"){
 	
 	$act = $_POST['acta'];
 	$sact = $_POST['staacta'];
-	$pact = $_POST['poracta'];
+	//$pact = $_POST['poracta'];
 	$eact = $_POST['eviacta'];
 	$pNot = $_POST['poder'];
 	$spNot = $_POST['stapoder'];
-	$ppNot = $_POST['porpoder'];
+	//$ppNot = $_POST['porpoder'];
 	$epNot = $_POST['evipoder'];
 	$aShcp = $_POST['alta'];
 	$saShcp = $_POST['staalta'];
-	$paShcp = $_POST['poralta'];
+	//$paShcp = $_POST['poralta'];
 	$eaShcp = $_POST['evialta'];
 	$rfcEst = $_POST['rfc'];
 	$srfcE = $_POST['starfc'];
-	$prfcE = $_POST['porrfc'];
+	//$prfcE = $_POST['porrfc'];
 	$erfcE = $_POST['evirfc'];
 	$pCre = $_POST['pl'];
 	$spCre = $_POST['stapl'];
-	$ppCre = $_POST['porpl'];
+	//$ppCre = $_POST['porpl'];
 	$epCre = $_POST['evipl'];
 	$licf = $_POST['lfm'];
 	$slicf = $_POST['stalfm'];
-	$plicf = $_POST['porlfm'];
+	//$plicf = $_POST['porlfm'];
 	$elicf = $_POST['evilfm'];
 	$dicS = $_POST['ds'];
 	$sdicS = $_POST['stads'];
-	$pdicS = $_POST['pords'];
+	//$pdicS = $_POST['pords'];
 	$edicS = $_POST['evids'];
 	$imss = $_POST['timss'];
 	$simss = $_POST['statim'];
-	$pimss = $_POST['portim'];
+	//$pimss = $_POST['portim'];
 	$eimss = $_POST['evitim'];
 	$Plano = $_POST['pA'];
 	$sPlano = $_POST['stapA'];
-	$pPlano = $_POST['porpA'];
+	//$pPlano = $_POST['porpA'];
 	$ePlano = $_POST['evipA'];
 	$siem = $_POST['aS'];
 	$ssiem = $_POST['staaS'];
-	$psiem = $_POST['poraS'];
+	//$psiem = $_POST['poraS'];
 	$esiem = $_POST['eviaS'];
 	$elct = $_POST['de'];
 	$slect = $_POST['stade'];
-	$plect = $_POST['porde'];
+	//$plect = $_POST['porde'];
 	$eelect = $_POST['evide'];
 	$tierra = $_POST['dtf'];
 	$stierra = $_POST['stadtf'];
-	$ptierra = $_POST['pordtf'];
+	//$ptierra = $_POST['pordtf'];
 	$etierra = $_POST['evidtf'];
 	$caldis = $_POST['cld'];
 	$scaldis = $_POST['stacld'];
-	$pcaldis = $_POST['porcld'];
+	//$pcaldis = $_POST['porcld'];
 	$ecaldis = $_POST['evicld'];
 	$herme = $_POST['phm'];
 	$sherme = $_POST['staphm'];
-	$pherme = $_POST['porphm'];
+	//$pherme = $_POST['porphm'];
 	$eherme = $_POST['eviphm'];
 	$hermeT = $_POST['phmt'];
 	$shermeT = $_POST['staphmt'];
-	$phermeT = $_POST['porphmt'];
+	//$phermeT = $_POST['porphmt'];
 	$ehermeT = $_POST['eviphmt'];
 	$tanque = $_POST['tqA'];
 	$stanque = $_POST['statqA'];
-	$ptanque = $_POST['portqA'];
+	//$ptanque = $_POST['portqA'];
 	$etanque = $_POST['evitqA'];
 	$fdis = $_POST['dis'];
 	$sfdis = $_POST['stadis'];
-	$pfdis = $_POST['pordis'];
+	//$pfdis = $_POST['pordis'];
 	$efdis = $_POST['evidis'];
 	$inv = $_POST['cIn'];
 	$sinv = $_POST['stacIn'];
-	$pinv = $_POST['porcIn'];
+	//$pinv = $_POST['porcIn'];
 	$einv = $_POST['evicIn'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, porcentaje, evidencia, status) VALUES ('Documentación',1,'".$cre."','".$act."',".$pact.",'".$eact."','".$sact."'), ('Documentación',2,'".$cre."','".$pNot."',".$ppNot.",'".$epNot."','".$spNot."'), ('Documentación',3,'".$cre."','".$aShcp."',".$paShcp.",'".$eaShcp."','".$saShcp."'), ('Documentación',4,'".$cre."','".$rfcEst."',".$prfcE.",'".$erfcE."','".$srfcE."'), ('Documentación',5,'".$cre."','".$pCre."',".$ppCre.",'".$epCre."','".$spCre."'), ('Documentación',6,'".$cre."','".$licf."',".$plicf.",'".$elicf."','".$slicf."'), ('Documentación',7,'".$cre."','".$dicS."',".$pdicS.",'".$edicS."','".$sdicS."'), ('Documentación',8,'".$cre."','".$imss."',".$pimss.",'".$eimss."','".$simss."'), ('Documentación',9,'".$cre."','".$Plano."',".$pPlano.",'".$ePlano."','".$sPlano."'), ('Documentación',10,'".$cre."','".$siem."',".$psiem.",'".$esiem."','".$ssiem."'), ('Documentación',11,'".$cre."','".$elct."',".$plect.",'".$eelect."','".$slect."'), ('Documentación',12,'".$cre."','".$tierra."',".$ptierra.",'".$etierra."','".$stierra."'), ('Documentación',13,'".$cre."','".$caldis."',".$pcaldis.",'".$ecaldis."','".$scaldis."'), ('Documentación',14,'".$cre."','".$herme."',".$pherme.",'".$eherme."','".$sherme."'), ('Documentación',15,'".$cre."','".$hermeT."',".$phermeT.",'".$ehermeT."','".$shermeT."'), ('Documentación',16,'".$cre."','".$tanque."',".$ptanque.",'".$etanque."','".$stanque."'), ('Documentación',17,'".$cre."','".$fdis."',".$pfdis.",'".$efdis."','".$sfdis."'), ('Documentación',18,'".$cre."','".$inv."',".$pinv.",'".$einv."','".$sinv."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('Documentación',1,'".$cre."','".$act."','".$eact."','".$sact."'), ('Documentación',2,'".$cre."','".$pNot."','".$epNot."','".$spNot."'), ('Documentación',3,'".$cre."','".$aShcp."','".$eaShcp."','".$saShcp."'), ('Documentación',4,'".$cre."','".$rfcEst."','".$erfcE."','".$srfcE."'), ('Documentación',5,'".$cre."','".$pCre."','".$epCre."','".$spCre."'), ('Documentación',6,'".$cre."','".$licf."','".$elicf."','".$slicf."'), ('Documentación',7,'".$cre."','".$dicS."','".$edicS."','".$sdicS."'), ('Documentación',8,'".$cre."','".$imss."','".$eimss."','".$simss."'), ('Documentación',9,'".$cre."','".$Plano."','".$ePlano."','".$sPlano."'), ('Documentación',10,'".$cre."','".$siem."','".$esiem."','".$ssiem."'), ('Documentación',11,'".$cre."','".$elct."','".$eelect."','".$slect."'), ('Documentación',12,'".$cre."','".$tierra."','".$etierra."','".$stierra."'), ('Documentación',13,'".$cre."','".$caldis."','".$ecaldis."','".$scaldis."'), ('Documentación',14,'".$cre."','".$herme."','".$eherme."','".$sherme."'), ('Documentación',15,'".$cre."','".$hermeT."','".$ehermeT."','".$shermeT."'), ('Documentación',16,'".$cre."','".$tanque."','".$etanque."','".$stanque."'), ('Documentación',17,'".$cre."','".$fdis."','".$efdis."','".$sfdis."'), ('Documentación',18,'".$cre."','".$inv."','".$einv."','".$sinv."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
@@ -621,7 +621,7 @@ if($opcion=="addSt"){
 	$nHrr = $_POST['nombH'];
 	$sHrr = $_POST['estH'];
 	$EPP = $_POST['PP'];
-	$idTj = $_POST['nuT'];	
+	$idTj = $_POST['numT'];	
 	
 	$sql = "INSERT INTO dcherramienta (herramienta,estadoH,EPP,idTra) VALUES ('".$nHrr."','".$sHrr."','".$EPP."',".$idTj.")";
 
@@ -700,7 +700,7 @@ if($opcion=="addSt"){
 	//echo $sql;
 }if($opcion == "addrep15"){
 	//echo "ENTRO";
-	$id = $_POST['id'];
+	$id = $_POST['noaud'];
 	$pl = $_POST['cre'];
 	$ela = $_POST['elaborado'];
 	$hll = $_POST['hallazgo'];
@@ -718,6 +718,7 @@ if($opcion=="addSt"){
 		echo "Carga Correcta";
 	}else{
 		echo "Error:".mysqli_error($con);
+		//echo $sql;
 	}
 	//echo $sql;
 }if($opcion == "add16"){
