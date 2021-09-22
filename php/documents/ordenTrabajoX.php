@@ -130,7 +130,7 @@
                                         <td colspan="2"> </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" style="background-color: #F0F0F0;">Firma del Ejucantante</td>
+                                        <td colspan="2" style="background-color: #F0F0F0;">Firma del Ejecutante</td>
                                         <td colspan="2"> </td>
                                     </tr>
                                 </table>

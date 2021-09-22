@@ -49,6 +49,13 @@ $(document).ready(function(){
 		} else { alert("no trae nada.")}
 	});
 
+	/*CERRAR SESION*/
+	$("#adios").click(function(){
+		//alert("funciona");
+		sessionStorage.clear();
+		window.open('index.php', '_self');
+	});
+
 	//USUARIO SASISOPA
 	/*MUESTRA LOS MENUS DE ESTACIONES*/
 	$("#btnstasasi").click(function(){
@@ -3768,6 +3775,10 @@ $(document).ready(function(){
 		})
 	});
 
+	$("#pdf14").click(function(){
+		window.open('php/documents/hallazgo14.php?x='+cre);
+	});
+
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 15*/
 	$("#btnaudi").click(function() {
 		$("#audi").show('slow/400/fast');
@@ -3794,6 +3805,7 @@ $(document).ready(function(){
 		al = $("#al").val();
 		a1 = $("#a1").val();
 		a2 = $("#a2").val();
+		per = $("#periodo").val();
 
 		$('#criterio option:selected').each(function(){
 			cri = $(this).text();
@@ -3805,12 +3817,13 @@ $(document).ready(function(){
 			obj = $(this).text();
 		});
 		localStorage.setItem("taud",tipo);
+		cre = localStorage.getItem("PL");
 
 		$.ajax({
 			url: 'php/insert.php',
 			method: 'POST',
 			dataType: 'html',
-			data: {opc:"add15",alca:alc, crit:cri, tip:tipo, obje:obj, ali:al, au1:a1, au2:a2},
+			data: {opc:"add15",alca:alc, crit:cri, tip:tipo, obje:obj, ali:al, au1:a1, au2:a2, periodo:per, cre:cre},
 		})
 		.done(function(msg) {
 			//alert(msg);
@@ -3818,7 +3831,7 @@ $(document).ready(function(){
 				datosa = msg.split("-");
 				alert("Datos Insertados correctamente, ahora agrega las actividades.");
 				$("#auditorias").text("No. Reporte: "+datosa[0]+" - "+datosa[1]);
-				//$("#idauditoria").text(razon);
+				$("#idauditoria").text(razon);
 				localStorage.setItem("RepA",datosa[0]);
 			}
 		})
@@ -3841,6 +3854,11 @@ $(document).ready(function(){
 			alert(msg);
 		})
 	});
+	$("#pdfpAuditoria").click(function(){
+		cre = localStorage.getItem("PL");
+		window.open('php/documents/planAuditoria.php?x='+cre);
+	});
+
 
 	$("#guardarrepaud").click(function() {
 		no = $("#noaud").val();

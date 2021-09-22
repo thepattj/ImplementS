@@ -785,7 +785,7 @@
                                     <button id="guardarbpo" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
-                                    <button id="pdfrbpo" class="btn btn-warning notika-btn-warning">Descargar</button>
+                                    <button id="pdfrbpo" style="background: #FF5722; color:white; " class="btn btn-deeporange ">Descargar</button>
                                 </div>
                             </div>
 
@@ -865,9 +865,12 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                                 
-                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                             
+                                <div class="col-lg-8 col-md-9 col-sm-9 col-xs-9"></div>
+                                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1">                             
                                     <button id="guardarControl" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="pdfcontrolrbpo" style="background: #FF5722; color:white;" class="btn btn-deeporange ">Descargar</button>
                                 </div>
                             </div>
                             

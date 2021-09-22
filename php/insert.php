@@ -654,6 +654,8 @@ if($opcion=="addSt"){
 }if($opcion == "add15"){
 	//echo "ENTRO";
 	$alcance = $_POST['alca'];
+	$i = $_POST['cre'];
+	$per = $_POST['periodo'];
 	$criterios = $_POST['crit'];
 	$t = $_POST['tip'];
 	$ob = $_POST['obje'];
@@ -661,7 +663,7 @@ if($opcion=="addSt"){
 	$aud1 = $_POST['au1'];
 	$aud2 = $_POST['au2'];	
 	
-	$sql = "INSERT INTO auditoria (alcance,criterioAud,tipoA,objetivos,auditorLider,auditor1,auditor2) VALUES ('".$alcance."','".$criterios."','".$t."','".$ob."','".$auditor."','".$aud1."','".$aud2."')";
+	$sql = "INSERT INTO auditoria (alcance,criterioAud,tipoA,objetivos,auditorLider,auditor1,auditor2,periodo,idCESH) VALUES ('".$alcance."','".$criterios."','".$t."','".$ob."','".$auditor."','".$aud1."','".$aud2."','".$per."','".$i."')";
 
 	if(mysqli_query($con,$sql)){
 		//echo "Carga Correcta";

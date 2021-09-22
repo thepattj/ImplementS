@@ -1811,7 +1811,7 @@
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th> <th>Cumplimiento ASEA</th> <th>¿Cumple?</th> <th>Estauts</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
@@ -1820,7 +1820,7 @@
                                             <!-- DATOS DE NOM-005 -->
                                             <tr>
                                                 <td>1</td>
-                                                <td>NOM-005-ASEA-2016.</td>
+                                                <td>Dictamen de NOM-005-ASEA-2016.</td>
                                                 <?php if($datos1[0] == "Si"){ ?>
                                                 <td value="1" id="c005" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[0] == "No") { ?>
@@ -2116,7 +2116,7 @@
                                             <!-- DATOS DE RGRP -->
                                             <tr>
                                                 <td>5</td>
-                                                <td>Residuos Peligrosos (<b>RP</b>)</td>
+                                                <td>Registro de Generador de Residuos Peligrosos (<b>GRP</b>)</td>
                                                 <?php if($datos1[4] == "Si"){ ?>
                                                 <td value="1" id="cGrp" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos1[4] == "No") { ?>
@@ -2284,7 +2284,7 @@
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th> <th>Cumplimiento CRE</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
@@ -3120,7 +3120,7 @@
                                 ?>
                                 <div class="bsc-tbl-cls" style="border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th> <th>Cumplimiento PROFECO</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
@@ -3298,7 +3298,7 @@
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th> <th>Cumplimiento Protección Civil</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
@@ -3474,7 +3474,7 @@
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th> <th>Cumplimiento Secretaría de Economía</th> <th>¿Cumple?</th> <th>Estatus</th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>
@@ -3584,7 +3584,7 @@
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
-                                        <thead style="background: rgb(102,103,102); color: rgb(0,0,0);">
+                                        <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
                                             <tr>
                                                 <th>#</th> <th>Cumplimiento STPS</th> <th>¿Cumple?</th> <th>Estatus </th> <!-- <th>Porcentaje</th> --> <th>Evidencia</th>
                                             </tr>

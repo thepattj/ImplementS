@@ -692,11 +692,13 @@
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" id="areaTrab14">
                                             <option value="0" style="display:none;">Selecciona una opción</option>
-                                            <option value="Dispensario">Dispensario</option>
-                                            <option value="Tanques">Tanques</option>
-                                            <option value="Techos, faldones, anuncio independiente">Techos, faldones, anuncio independiente</option>
-                                            <option value="Cuarto Electrico">Cuarto Eléctrico</option>
-                                            <option value="Cuarto de Maquinas">Cuarto de Maquinas</option>
+                                            <option value="Quejas Clientes">Quejas de los Clientes </option>
+                                            <option value="A. Internas">Auditorías Internas </option>
+                                            <option value="A. Externas">Auditorías Externas</option>
+                                            <option value="Indicadores">Evaluación de indicadores </option>
+                                            <option value="Incumplimiento SASISOPA">Incumplimiento de Desempeño del SASISOPA</option>
+                                            <option value="Incumplimiento req. Legales">Incumplimiento de requisitos legales </option>
+                                            <option value="Comunicación">Comunicación Externa</option>
                                             <option value="Otro">Otro</option>
 
                                         </select>
@@ -794,9 +796,12 @@
                                </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-                               <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
+                                <div class="col-lg-2 col-md-1 col-sm-1 col-xs-1">                                   
                                     <button id="guardarSolicitud" class="btn btn-warning notika-btn-warning">Guardar</button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
+                                    <button id="pdf14" style="background: #FF5722; color:white; " class="btn btn-deeporange">Descargar</button>
                                 </div>
                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    

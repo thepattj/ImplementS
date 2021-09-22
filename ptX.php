@@ -689,8 +689,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
-                                <button id="btnNper" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 13%;">Alta de ingreso</button>
-                                <button id="btnper" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Cambio de personal</button>
+                                <button id="btnNper" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 13%;">Alta de personal</button>
+                                <button id="btnper" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Cambio personal</button>
                                 <button id="btntec" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Cambio técnologico</button>
                                 <button id="btnorden" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Orden de trabajo</button>
                                 <button id="btnbitacora" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Carga de bitacora</button>
@@ -886,7 +886,7 @@
                                     <button id="guardarCPersonal" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <button id="pdfcpersonal" class="btn btn-warning notika-btn-warning">Descargar</button>
+                                    <button id="pdfcpersonal" style="background: #FF5722; color:white;" class="btn btn-deeporange ">Descargar</button>
                                 </div>
                             </div>
 
@@ -946,7 +946,7 @@
                                     <button id="guardarCTec" class="btn btn-warning notika-btn-warning">Guardar</button>
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <button id="pdfctecnico" class="btn btn-warning notika-btn-warning">Descargar</button>
+                                    <button id="pdfctecnico" style="background: #FF5722; color:white;" class="btn btn-deeporange ">Descargar</button>
                                 </div>
                             </div>
 
@@ -1355,7 +1355,7 @@
                                             <button id="guardarOrdenTrabajo" class="btn btn-warning notika-btn-warning">Guardar</button>
                                         </div>
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                            <button id="pdfordenT" class="btn btn-warning notika-btn-warning">Descargar</button>
+                                            <button id="pdfordenT" style="background: #FF5722; color:white;" class="btn btn-deeporange">Descargar</button>
                                         </div>
                             </div>
 

@@ -907,7 +907,7 @@
                                                 <?php } ?>
                                                 <td><input type="text" name=""></td>
                                             </tr>
-                                            <!-- VALORES DE HERMITICIDAD A TUBERIAS -->
+                                            <!-- VALORES DE 15 -->
                                             <tr>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;">15.</td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;">Auditorías</td>
@@ -957,7 +957,8 @@
                                                 $s="";
                                                 $r="";
                                                 /*if(){*/ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
+                                                    <!-- <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td> -->
+                                                     <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
                                                 <?php /*}else{*/ ?>
                                                     <!-- <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td> -->
                                                 <?php /*}*/ ?>
