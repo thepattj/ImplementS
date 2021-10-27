@@ -21,6 +21,8 @@ if($opcion=="user"){
 		}				
 	}
 
+	//echo $tipo;
+
 	if ($tipo == "estacion"){
 
 		$sql2 = "SELECT idCESH FROM completocesh WHERE idUsuario = ".$idU;
@@ -33,8 +35,9 @@ if($opcion=="user"){
 			}				
 		}
 
-
+		//echo $idSta;
 		$sql3 = "SELECT NoEst as no, razonSocial as RS FROM cesh WHERE idCESH = '".$idSta."' AND estatus = 'ACTIVADO'";
+		//echo $sql3;
 		$resu =mysqli_query($con, $sql3);
 		if($resu->num_rows > 0){
 			//echo "entro a IF de resultado";
@@ -45,7 +48,6 @@ if($opcion=="user"){
 			}
 			echo $tipo.",".$idU.",".$NES.",".$idSta.",".$rs;
 		}else{ echo "Hablar con un Asesor de Energas.";}
-
 		
 	}else{ echo $tipo; }
 }

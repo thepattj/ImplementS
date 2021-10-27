@@ -474,13 +474,18 @@
                                                     <option value="RepresentanteT">Representante Técnico</option>
                                                     <option value="Administrativos">Administrativos</option>
                                                     <option value="Despachador">Despachador</option>
-                                                    <option value="Intendente">Intendente</option>
+                                                    <option value="Intendente/Mantenimiento">Intendente/Mantimiento</option>
+                                                    <option value="Seguridad">Seguridad</option>
+                                                    <option value="Seguridad">Otro</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <p style="font-size: .8em;">Nota: Al seleccionar Otro y/o Seguridad, debera de realizar la estación de servicio su Descripción de puesto ya que en SASISOPA no contempla de dicho puesto dentro de las áreas del organigrama </p>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                    </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">                                   
                                         <button id="guardarU" class="btn btn-warning notika-btn-warning">Guardar</button>
                                         <!-- <button id="cargaO" data-toggle="modal" data-target="#modalorg" class="btn btn-primary notika-btn-primary">Organigrama</button> -->

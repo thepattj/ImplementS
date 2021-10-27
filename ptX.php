@@ -1386,25 +1386,32 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="idbt01" name="idbt01"> </div>
                                     </div>
-                                    <?php 
-                                        $sqlprueba = "SELECT idBitacoras as id FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBitacoras DESC LIMIT 1";
-                                        $result =mysqli_query($con, $sqlprueba);
-                                        if($result->num_rows > 0){ 
-                                            $fila1 = $result->fetch_assoc();
-                                            $datos1 = implode("", $fila1);
-                                            //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos1;*/ ?>" placeholder="" id="idActualiza01" name="idActualiza01">
-                                            </div>
-                                        </div> -->
-                                        
-                                    </form>
-                                    <?php }else{ ?>
-                                    </form>
-                                    <?php } ?>
+                                </form>
+                                    
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                         <button type="button" class="btn btn-warning" id="btnGuardar01">Guardar</button>
+                                    </div>
+                                    <?php
+                                        $sqlbt1 = "SELECT count(descripcion) AS cuenta FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resulcbt1 = mysqli_query($con, $sqlbt1);
+                                        if($resulcbt1->num_rows > 0){
+                                            while($arrbt1 = $resulcbt1->fetch_assoc()){
+                                                $cuentabt1 = $arrbt1['cuenta'];
+                                            }
+                                        }else { $cuentabt1 = "No existe carga"; }
+
+                                        $sqlbt1f = "SELECT fechaInicio FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resulfbt1 = mysqli_query($con, $sqlbt1f);
+                                        if($resulfbt1->num_rows > 0){
+                                            while($arrbt1f = $resulfbt1->fetch_assoc()){
+                                                $fechabt1 = $arrbt1f['fechaInicio'];
+                                            }
+                                        }else { $fechabt1 = "No existe carga"; }
+                                    ?>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $cuentabt1; ?></p></div>
+                                        <div class="col-lg-4"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $fechabt1; ?> </p></div>
+                                        <div class="col-lg-4"></div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
@@ -1449,6 +1456,28 @@
                                     <?php } ?>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                         <button type="button" class="btn btn-warning" id="btnGuardar02">Guardar</button>
+                                    </div>
+                                    <?php
+                                        $sqlbt2 = "SELECT count(descripcion) AS cuenta FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-02' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resulcbt2 = mysqli_query($con, $sqlbt2);
+                                        if($resulcbt2->num_rows > 0){
+                                            while($arrbt2 = $resulcbt2->fetch_assoc()){
+                                                $cuentabt2 = $arrbt2['cuenta'];
+                                            }
+                                        }else { $cuentabt2 = "No existe carga"; }
+
+                                        $sqlbt2f = "SELECT fechaInicio FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-02' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resulfbt2 = mysqli_query($con, $sqlbt2f);
+                                        if($resulfbt2->num_rows > 0){
+                                            while($arrbt2f = $resulfbt2->fetch_assoc()){
+                                                $fechabt2 = $arrbt2f['fechaInicio'];
+                                            }
+                                        }else { $fechabt2 = "No existe carga"; }
+                                    ?>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados:</i> <?php echo $cuentabt2; ?> </p></div>
+                                        <div class="col-lg-4"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado:</i> <?php echo $fechabt2; ?> </p></div>
+                                        <div class="col-lg-4"></div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                         
@@ -1503,6 +1532,28 @@
                                     <?php } ?>
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                         <button type="button" class="btn btn-warning" id="btnGuardar03">Guardar</button>
+                                    </div>
+                                    <?php
+                                        $sqlbt3 = "SELECT count(descripcion) AS cuenta FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resulcbt3 = mysqli_query($con, $sqlbt3);
+                                        if($resulcbt3->num_rows > 0){
+                                            while($arrbt3 = $resulcbt3->fetch_assoc()){
+                                                $cuentabt3 = $arrbt3['cuenta'];
+                                            }
+                                        }else { $cuentabt3 = "No existe carga"; }
+
+                                        $sqlbt3f = "SELECT fechaInicio FROM dzbitacora WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBitacoras DESC LIMIT 1";
+                                        $resulfbt3 = mysqli_query($con, $sqlbt3f);
+                                        if($resulfbt3->num_rows > 0){
+                                            while($arrbt3f = $resulfbt3->fetch_assoc()){
+                                                $fechabt3 = $arrbt3f['fechaInicio'];
+                                            }
+                                        }else { $fechabt3 = "No existe carga"; }
+                                    ?>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados:</i> <?php echo $cuentabt3; ?> </p></div>
+                                        <div class="col-lg-4"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado:</i> <?php echo $fechabt3; ?> </p></div>
+                                        <div class="col-lg-4"></div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                             </div>

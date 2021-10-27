@@ -1783,7 +1783,7 @@
                                 <?php }else{ //echo "EL VALOR 71 ES: ".$datos6[71];?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <button id="actualizarDocEst" class="btn btn-danger notika-btn-danger">Actualizar </button>                   
+                                    <button id="actualizarDocEst" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                                 <?php } ?>
                             </div>

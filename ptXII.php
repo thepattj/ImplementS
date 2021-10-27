@@ -688,7 +688,7 @@
                             </div>
                             <div class="col-lg-12 col-md-3 col-sm-3 col-xs-3">
                                 <button id="btnaddp" style="background: rgb(254,174,0); color: rgb(27,22,50); margin-left: 47%;">Agregar Proveedor</button>
-                                <button id="btnhepp" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Listado de herrmaientas</button>
+                                <button id="btnhepp" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Listado de herramientas</button>
                                 <!-- <button id="btnevap" style="background: rgb(27,22,50); color: rgb(255,255,255); ">Evaluación de Proveedor</button> -->
                             </div>
                             <div class="basic-tb-hd" id="proInstr" style="display: ;">
@@ -700,85 +700,115 @@
                                 <p>Completar el siguiente formulario para dar de alta herramientas y su Equipo de protección personal(EPP) a utilizar.</p>
                             </div>
 
-                           <div class="row" style="border: black 1px solid; display:;" id="agregarP">
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox"><label> Razón Social (contratista/proveedor) </label></div>
-                               </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                   <div class="form-group nk-int-st"><input class="form-control" type="text" id="razonP" placeholder="Nombre completo" ></div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                            <div class="row" style="border: black 1px solid; display:;" id="agregarP">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"><label> Razón Social (contratista/proveedor) </label></div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><input class="form-control" type="text" id="razonP" placeholder="Nombre completo" ></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                    
                    
                                
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox"> <label> Descripción de Servicio </label></div>
-                               </div>
-                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                   <div class="form-group nk-int-st"><input type="text" class="form-control" id="descripcionS" placeholder=""></div>
-                               </div>                  
-                   
-                               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                   <div class="fm-checkbox"><label> Método de Evaluación </label></div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st"><input type="text" class="form-control" id="metodoE" placeholder="Examen, Pruebas de servicio"></div>
-                               </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Descripción de Servicio </label></div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="descripcionS" placeholder=""></div>
+                                </div>
 
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox"> <label> Calificación </label></div>
-                               </div>
-                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                   <div class="form-group nk-int-st"><input type="number" class="form-control" id="calificacionE" placeholder="1 al 10"></div>
-                               </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Dirección </label></div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="dirc" placeholder=""></div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"><label> Teléfono </label></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="tel"></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox"> <label> Correo </label></div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="correors"></div>
+                                </div>             
+                   
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"><label> Método de Evaluación </label></div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="metodoE" placeholder="Examen, Pruebas de servicio"></div>
+                                </div>
+
                                
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarprove" class="btn btn-warning notika-btn-warning">Guardar</button> 
                                 </div>
-                           </div>
-                           <div class="row" style="border: black 1px solid; display:none;" id="herramientE">
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox"> <label> Nombre del Trabajador </label> </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st"><input type="text" class="form-control" id="nameT"></div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox"> <label> Empresa </label> </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="chosen-select-act fm-cmp-mg">
-                                    <select class="chosen" name="" id="nombreEmpresa">
-                                        <option id="" value="0" style="display: none;">Selecciona la Empresa</option>
-                                        <?php $qri = "SELECT idProvedor as id, razonSocial as nombre FROM dcproveedor";
-                                              $resul = mysqli_query($con,$qri);
-                                              while($row = $resul->fetch_object()){ ?>
-                                        <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>
-
-                                        <?php } ?>
-                                    </select>
+                            </div>
+                            <div class="row" style="border: black 1px solid; display:none;" id="herramientE">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Nombre del Trabajador </label> </div>
                                 </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                   
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox"> <label> Categoría </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="catT" placeholder="Servicios, Mecánica, etc.">
-                                   </div>
-                               </div>                    
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Fecha (Inicio de trabajo) </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="nameT"></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Empresa </label> </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="nombreEmpresa">
+                                            <option id="" value="0" style="display: none;">Selecciona la Empresa</option>
+                                            <?php $qri = "SELECT idProvedor as id, razonSocial as nombre FROM dcproveedor";
+                                                $resul = mysqli_query($con,$qri);
+                                                while($row = $resul->fetch_object()){ ?>
+                                            <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>
+
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Categoría </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st">
+                                         <input type="text" class="form-control" id="catT" placeholder="Servicios, Mecánica, etc.">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Normativa de STPS </label> </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="normas">
+                                            <option id="" value="0" style="display: none;">Selecciona la NOM</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                         <label> Fecha (Inicio de trabajo) </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
                                         <label>
                                             <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                                                 <div class="input-group date nk-int-st">
@@ -788,7 +818,27 @@
                                             </div>
                                         </label>
                                     </div>
-                               </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="fm-checkbox">
+                                         <label> Duración de Trabajo </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <div class="form-group nk-int-st">
+                                         <input type="text" class="form-control" id="durT" placeholder="horas, dias, meses y/o años">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox"> <label> Calficación de Trabajo/Servicio </label> </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group nk-int-st"><input type="text" class="form-control" id="calT"></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+
                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button id="guardartrab" class="btn btn-warning notika-btn-warning">Guardar</button> 
@@ -803,52 +853,53 @@
                                 </div>
                    
                                
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Nombre(s) de Herramienta(s) </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="nomHerr" placeholder="Debera esta divido por una coma(,) cada herramienta">
-                                   </div>
-                               </div>       
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label> Categoria </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label> Nombre </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="fm-checkbox">
+                                        <label> Estado de Herramienta </label>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
-
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Estado de Herramienta </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                   <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen"  name="" id="estHerr">
-                                            <option value="">Selecciona una Opción</option>
-                                            <option value="Excelente">Excelente</option>
-                                            <option value="Bueno">Bueno</option>
-                                            <option value="Malo">Malo</option>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="cat">
+                                            <option id="" value="0" style="display: none;">Selecciona la Categoria</option>
+                                            <option value="EPP">EPP</option>
+                                            <option value="Herramienta">Herramienta</option>
                                         </select>
                                     </div>
-                               </div>
-                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                   
-                               
-                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                   <div class="fm-checkbox">
-                                       <label> Equipo de protección (EPP) </label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="form-group nk-int-st">
-                                       <input type="text" class="form-control" id="epp" placeholder="Debera esta divido por una coma(,) cada equipo">
+                                       <input type="text" class="form-control" id="nombreHE">
                                    </div>
-                               </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="chosen-select-act fm-cmp-mg">
+                                        <select class="chosen" name="" id="statHE">
+                                            <option id="" value="0" style="display: none;">Selecciona la Estado</option>
+                                            <option value="Bueno">Bueno</option>
+                                            <option value="Defectuoso">Defectuoso</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                               
                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">                                
                                     <button id="guardarH" class="btn btn-warning notika-btn-warning">Guardar</button> 
                                </div>
-                           </div>
+                            </div>
                        </div>
                    </div>
                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>                    

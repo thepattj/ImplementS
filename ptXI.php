@@ -663,8 +663,8 @@
                         </div>
                     </div> -->
 
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="bit" style="">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-8 col-sm-8 col-xs-8" id="bit" style="">
                         <div class="form-element-list">
                             <div class="breadcomb-wp">
                                 <div class="breadcomb-icon">
@@ -705,24 +705,31 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> <!-- NO SE VE -->
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt01" name="id11bt01"> </div>
                                     </div> 
-                                <?php 
-                                    $sql1 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBit DESC LIMIT 1";
-                                    $res1 =mysqli_query($con, $sql1);
-                                    if($res1->num_rows > 0){ 
-                                        $fila1 = $res1->fetch_assoc();
-                                        $datos1 = implode("", $fila1);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos1;*/ ?>" placeholder="" id="idActualiza11bt01" name="idActualiza11bt01">
-                                            </div>
-                                        </div>  --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->                                  
                                 </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar11bt01">Guardar</button>
+                                </div>
+                                <?php
+                                    $sqlmon = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY idBit DESC LIMIT 1";
+                                        $resulmon = mysqli_query($con, $sqlmon);
+                                        if($resulmon->num_rows > 0){
+                                            while($arrmon = $resulmon->fetch_assoc()){
+                                                $monitoreoC = $arrmon['cuenta'];
+                                            }
+                                        }else { $monitoreoC = "No existe carga"; }
+
+                                    $sqlmonf = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-01' ORDER BY fechaI DESC LIMIT 1";
+                                        $resulmonf = mysqli_query($con, $sqlmonf);
+                                        if($resulmonf->num_rows > 0){
+                                            while($arrmonf = $resulmonf->fetch_assoc()){
+                                                $monitoreoF = $arrmonf['fechaI'];
+                                            }
+                                        }else { $monitoreoF = "No existe carga"; }  
+                                ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $monitoreoC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $monitoreoF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE PRIMER BITACORA -->
 
@@ -752,25 +759,31 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02" name="id11bt02"> </div>
                                     </div>
-                                <?php 
-                                    $sql2 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Diario' ORDER BY idBit DESC LIMIT 1";
-                                    $res2 =mysqli_query($con, $sql2);
-                                    if($res2->num_rows > 0){ 
-                                        $fila2 = $res2->fetch_assoc();
-                                        $datos2 = implode("", $fila2);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos2;*/ ?>" placeholder="" id="idActualiza11bt02" name="idActualiza11bt02">
-                                            </div>
-                                        </div --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
                                 </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
+                                <?php
+                                    $sqllimpieza = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Diario' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimpieza = mysqli_query($con, $sqllimpieza);
+                                    if($resulimpieza->num_rows > 0){
+                                        while($arrlimp = $resulimpieza->fetch_assoc()){
+                                            $limpiezaC = $arrlimp['cuenta'];
+                                        }
+                                    }else { $limpiezaC = "No existe carga"; }
 
+                                    $sqllimpF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Diario' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimpF = mysqli_query($con, $sqllimpF);
+                                    if($reslimpF->num_rows > 0){
+                                        while($arrlimF = $reslimpF->fetch_assoc()){
+                                            $limpiezaF = $arrlimF['fechaI'];
+                                        }
+                                    }else { $limpiezaF = "No existe carga"; }
+                                ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar11bt02">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezaC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezaF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div><!-- TERMINA CARGA DE SEGUNDA BITACORA -->
 
@@ -803,25 +816,32 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02m" name="id11bt02m"> </div>
                                     </div>
+                                </form>
+                                <?php
+                                    $sqlimpm = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Mensual' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimpm = mysqli_query($con, $sqlimpm);
+                                    if($resulimpm->num_rows > 0){
+                                        while($arrlimpm = $resulimpm->fetch_assoc()){
+                                            $limpiezamC = $arrlimpm['cuenta'];
+                                        }
+                                    }else { $limpiezamC = "No existe carga"; }
 
-                                <?php 
-                                    $sql3 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Mensual' ORDER BY idBit DESC LIMIT 1";
-                                    $res3 =mysqli_query($con, $sql3);
-                                    if($res3->num_rows > 0){ 
-                                        $fila3 = $res3->fetch_assoc();
-                                        $datos3 = implode("", $fila3);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos3;*/ ?>" placeholder="" id="idActualiza11bt02m" name="idActualiza11bt02m">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
-                                </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
+                                    $sqlimpmF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Mensual' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimpmF = mysqli_query($con, $sqlimpmF);
+                                    if($reslimpmF->num_rows > 0){
+                                        while($arrlimpmF = $reslimpmF->fetch_assoc()){
+                                            $limpiezamF = $arrlimpmF['fechaI'];
+                                        }
+                                    }else { $limpiezamF = "No existe carga"; }
+                                ?>
+
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar02m">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezamC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezamF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE TERCERA BITACORA -->
 
@@ -850,27 +870,33 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02t" name="id11bt02t"> </div>
                                     </div>
+                                </form>
+                                <?php
+                                    $sqlimpt = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Trimestral' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimpt = mysqli_query($con, $sqlimpt);
+                                    if($resulimpt->num_rows > 0){
+                                        while($arrlimpt = $resulimpt->fetch_assoc()){
+                                            $limpiezatC = $arrlimpt['cuenta'];
+                                        }
+                                    }else { $limpiezatC = "No existe carga"; }
 
-                                <?php 
-                                    $sql4 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Trimestral' ORDER BY idBit DESC LIMIT 1";
-                                    $res4 =mysqli_query($con, $sql4);
-                                    if($res4->num_rows > 0){ 
-                                        $fila4 = $res4->fetch_assoc();
-                                        $datos4 = implode("", $fila4);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos4;*/ ?>" placeholder="" id="idActualiza11bt02t" name="idActualiza11bt02t">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
-                                </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
+                                    $sqlimptF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Trimestral' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimptF = mysqli_query($con, $sqlimptF);
+                                    if($reslimptF->num_rows > 0){
+                                        while($arrlimptF = $reslimptF->fetch_assoc()){
+                                            $limpiezatF = $arrlimptF['fechaI'];
+                                        }
+                                    }else { $limpiezatF = "No existe carga"; }
+                                ?>
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03t">Guardar</button>
-                                </div>                                
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezatC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezatF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE CUARTA BITACORA -->
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA CARGA DE QUINTA BITACORA -->
@@ -903,26 +929,33 @@
                                            <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02c" name="id11bt02c">
                                         </div>
                                     </div>
+                                </form>
+                                <?php
+                                    $sqlimpct = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Cuatrimestral' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimpct = mysqli_query($con, $sqlimpct);
+                                    if($resulimpct->num_rows > 0){
+                                        while($arrlimpct = $resulimpct->fetch_assoc()){
+                                            $limpiezactC = $arrlimpct['cuenta'];
+                                        }
+                                    }else { $limpiezactC = "No existe carga"; }
 
-                                <?php 
-                                    $sql5 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Cuatrimestral' ORDER BY idBit DESC LIMIT 1";
-                                    $res5 =mysqli_query($con, $sql5);
-                                    if($res5->num_rows > 0){ 
-                                        $fila5 = $res5->fetch_assoc();
-                                        $datos5 = implode("", $fila5);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos5;*/ ?>" placeholder="" id="idActualiza11bt02c" name="idActualiza11bt02c">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
-                                </form>
-                                <?php  }else{ ?>
-                                </form>
-                                <?php } ?>
+                                    $sqlimpctF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Cuatrimestral' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimpctF = mysqli_query($con, $sqlimpctF);
+                                    if($reslimpctF->num_rows > 0){
+                                        while($arrlimpctF = $reslimpctF->fetch_assoc()){
+                                            $limpiezactF = $arrlimpctF['fechaI'];
+                                        }
+                                    }else { $limpiezactF = "No existe carga"; }
+                                ?>
+
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03c">Guardar</button>
-                                </div>                                
+                                </div>        
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezatC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezactF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
+                                </div>                        
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA DE QUINTA BITACORA -->
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA CARGA DE L SEXTA -->
@@ -953,27 +986,35 @@
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02s" name="id11bt02s"> </div>
-                                    </div>
-                                    
-                                <?php 
-                                    $sql6 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Semestral' ORDER BY idBit DESC LIMIT 1";
-                                    $res6 =mysqli_query($con, $sql6);
-                                    if($res6->num_rows > 0){ 
-                                        $fila6 = $res6->fetch_assoc();
-                                        $datos6 = implode("", $fila6);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos6;*/ ?>" placeholder="" id="idActualiza11bt02s" name="idActualiza11bt02s">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
+                                    </div>                                    
                                 </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
+                                <?php
+                                    $sqlimps = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Semestral' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimps = mysqli_query($con, $sqlimps);
+                                    if($resulimps->num_rows > 0){
+                                        while($arrlimps = $resulimps->fetch_assoc()){
+                                            $limpiezasC = $arrlimps['cuenta'];
+                                        }
+                                    }else { $limpiezasC = "No existe carga"; }
+
+                                    $sqlimpsF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Semestral' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimpsF = mysqli_query($con, $sqlimpsF);
+                                    if($reslimpsF->num_rows > 0){
+                                        while($arrlimpsF = $reslimpsF->fetch_assoc()){
+                                            $limpiezasF = $arrlimpsF['fechaI'];
+                                        }
+                                    }else { $limpiezasF = "No existe carga"; }
+                                ?>
+
+
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03s">Guardar</button>
-                                </div>                                
+                                </div>    
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezasC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezasF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
+                                </div>                            
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA CARGA SEXTA BITACORA -->
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA SEPTIMA BITACORA -->
@@ -1005,26 +1046,33 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02a" name="id11bt02a"> </div>
                                     </div>
-                               <?php 
-                                    $sql7 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Anual' ORDER BY idBit DESC LIMIT 1";
-                                    $res7 =mysqli_query($con, $sql7);
-                                    if($res7->num_rows > 0){ 
-                                        $fila7 = $res7->fetch_assoc();
-                                        $datos7 = implode("", $fila7);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos7;*/ ?>" placeholder="" id="idActualiza11bt02a" name="idActualiza11bt02a">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
                                 </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
 
+                                <?php
+                                    $sqlimpA = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Anual' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimpA = mysqli_query($con, $sqlimpA);
+                                    if($resulimpA->num_rows > 0){
+                                        while($arrlimpA = $resulimpA->fetch_assoc()){
+                                            $limpiezaAC = $arrlimpA['cuenta'];
+                                        }
+                                    }else { $limpiezaAC = "No existe carga"; }
+
+                                    $sqlimpAF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Anual' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimpAF = mysqli_query($con, $sqlimpAF);
+                                    if($reslimpAF->num_rows > 0){
+                                        while($arrlimpAF = $reslimpAF->fetch_assoc()){
+                                            $limpiezaAF = $arrlimpAF['fechaI'];
+                                        }
+                                    }else { $limpiezaAF = "No existe carga"; }
+                                ?>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03a">Guardar</button>
-                                </div>                                
+                                </div>                     
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezaAC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezaAF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
+                                </div>           
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA SEPTIMA CARGA -->
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <!-- INICIA OCTAVA CARGA -->
@@ -1056,28 +1104,34 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt02q" name="id11bt02q"> </div>
                                     </div>
-                                    
-                                    <?php 
-                                        $sql8 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Quinquenal' ORDER BY idBit DESC LIMIT 1";
-                                        $res8 =mysqli_query($con, $sql8);
-                                        if($res8->num_rows > 0){ 
-                                        $fila8 = $res8->fetch_assoc();
-                                        $datos8 = implode("", $fila8);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos8;*/ ?>" placeholder="" id="idActualiza11bt02q" name="idActualiza11bt02q">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
-                                    </form>
-                                    <?php }else{ ?>
-                                    </form>
-                                    <?php } ?>
+                                </form>
+                                <?php
+                                    $sqlimpQ = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Quinquenal' ORDER BY idBit DESC LIMIT 1";
+                                    $resulimpQ = mysqli_query($con, $sqlimpQ);
+                                    if($resulimpQ->num_rows > 0){
+                                        while($arrlimpQ = $resulimpQ->fetch_assoc()){
+                                            $limpiezaQC = $arrlimpQ['cuenta'];
+                                        }
+                                    }else { $limpiezaQC = "No existe carga"; }
+
+                                    $sqlimpQF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-02 Quinquenal' ORDER BY fechaI DESC LIMIT 1";
+                                    $reslimpQF = mysqli_query($con, $sqlimpQF);
+                                    if($reslimpQF->num_rows > 0){
+                                        while($arrlimpQF = $reslimpQF->fetch_assoc()){
+                                            $limpiezaQF = $arrlimpQF['fechaI'];
+                                        }
+                                    }else { $limpiezaQF = "No existe carga"; }
+                                ?>
                                 
 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar03q">Guardar</button>
-                                </div>                                
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $limpiezaAC; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $limpiezaAF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA DE OCTAVA -->
 
 
@@ -1110,31 +1164,38 @@
                                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                         <div class="form-group nk-int-st"> <input style="display:none;" type="input" class="form-control" placeholder="" id="id11bt03" name="id11bt03"> </div>
                                     </div>
-                                <?php 
-                                    $sql9 = "SELECT idBit as id FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBit DESC LIMIT 1";
-                                    $res9 =mysqli_query($con, $sql9);
-                                    if($res9->num_rows > 0){ 
-                                        $fila9 = $res9->fetch_assoc();
-                                        $datos9 = implode("", $fila9);
-                                        //echo $datos1; ?>
-                                        <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group nk-int-st">
-                                               <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos9;*/ ?>" placeholder="" id="idActualiza11bt03" name="idActualiza11bt03">
-                                            </div>
-                                        </div> --> <!-- ESTA PARTE ESTA MAL YA QUE NO SE SABE CUANDO VA ACTUALIZAR Y CUANDO NO. -->
                                 </form>
-                                <?php }else{ ?>
-                                </form>
-                                <?php } ?>
+                                <?php
+                                    $sqlpruebas = "SELECT count(descripcion) AS cuenta FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY idBit DESC LIMIT 1";
+                                    $resulpruebas = mysqli_query($con, $sqlpruebas);
+                                    if($resulpruebas->num_rows > 0){
+                                        while($arrpruebas = $resulpruebas->fetch_assoc()){
+                                            $PruebasHFD = $arrpruebas['cuenta'];
+                                        }
+                                    }else { $PruebasHFD = "No existe carga"; }
+
+                                    $sqlpruebasF = "SELECT fechaI FROM bitacoras WHERE idCESH = '".$id."' AND descripcion = 'bt-03' ORDER BY fechaI DESC LIMIT 1";
+                                    $respruebasF = mysqli_query($con, $sqlpruebasF);
+                                    if($respruebasF->num_rows > 0){
+                                        while($arrpruebasF = $respruebasF->fetch_assoc()){
+                                            $PruebasHFDF = $arrpruebasF['fechaI'];
+                                        }
+                                    }else { $PruebasHFDF = "No existe carga"; }
+                                ?>
                                 
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <button type="button" class="btn btn-warning" id="btnGuardar04">Guardar</button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-4"><p style="font-size: .8em;"><i>Cantidad de archivos cargados: </i> <?php echo $PruebasHFD; ?></p></div>
+                                    <div class="col-lg-6"><p style="font-size: .8em;"><i>Fecha de ultimo archivo cargado: </i> <?php echo $PruebasHFDF; ?> </p></div>
+                                    <div class="col-lg-2"></div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div> <!-- TERMINA NOVENA -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2"></div>
+                    <div class="col-lg-1"></div>
                     
                 </div>
             </div>

@@ -110,6 +110,18 @@
             </div>
             <div class="modal-body">
               <h2>Punto 1 - Política</h2>
+              <?php
+                $sqlcpolitica = "SELECT idCESH, fechaD FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
+                $revisiP1 = mysqli_query($con, $sqlcpolitica);
+                if($revisiP1->num_rows > 0){
+                  while($fil=$revisiP1->fetch_assoc()){
+                    //$salida = $fila['PrecioIgu'];
+                    $fechaI = $fil['fechaD'];
+                  } ?>
+              <h1 style="color: rgb(254,174,0);">El punto esta implementado</h1>
+              <h2>Fecha de Carga: <?php echo $fechaI; ?> </h2>
+            </div>
+              <?php } else {?>
               <p>Complementar la información de la implementación del punto.</p>
               <form name="politicaenviar" id="enviarP" enctype="multipart/form-data" method="post" >
                 <p>Describe la forma de divulgación de la política </p>
@@ -139,6 +151,7 @@
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-warning" id="btnGuardarP">Guardar</button>
             </div>
+              <?php } ?>
           </div>
         </div>
       </div>
@@ -150,26 +163,33 @@
               <button type="button" class="close" data-dismiss="modal" style="background: #d58512;"> X </button>
             </div>
             <div class="modal-body">
-              <h2>Punto 2 - Análisis de Riesgo y evaluación de impactos ambientales</h2>
+              <h2>Punto 2 - Identificación de Peligros y Aspecto Ambientales, Análisis de riesgo y Evaluación de Aspectos Ambientales</h2>
+              <?php
+                $sqlevaluacion = "SELECT idCESH, fechaD FROM ar WHERE idCESH = '".$id."' AND estatus = 'P' ORDER BY idAR DESC LIMIT 1";
+                $resultadoar = mysqli_query($con, $sqlevaluacion);
+                  if($resultadoar->num_rows > 0){ 
+                    while($ari=$resultadoar->fetch_assoc()){
+                      //$salida = $fila['PrecioIgu'];
+                      $fechaIar = $ari['fechaD'];
+                    } ?>
+              <h1 style="color: rgb(254,174,0);">El punto esta implementado</h1>
+              <h2>Fecha de Carga: <?php echo $fechaIar; ?> </h2>
+            </div>
+              <?php }else{ ?>
               <p>Complementar la información de la implementación del punto.</p>
               <form name="arenviar" id="enviarAR" enctype="multipart/form-data" method="post">
-                <p>Escribe la forma de divulgación del Análisis de Riesgo </p>
+                <p>¿Que documento(s) de evaluación estas cargando?</p>
                 <div class="form-group nk-int-st">
-                  <input type="text" class="form-control" placeholder="Indica si se uso lona, cartas, en televisión y/o reunión." id="dvlar" name="dvlar">
+                  <input type="text" class="form-control" placeholder="Evaluación de Aspectos Ambientales / Análisis de riesgos" id="dvlar" name="dvlar">
                 </div>
 
-                <p>Agregar pruebas de divulgacion (.zip, .pdf)</p>
+                <p>Carga la evaluación (.zip, .pdf)</p>
                 <input type="file" class="form-control" placeholder="" id="archivoAR" name="archivoAR">
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="crear" name="crear">
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="icar" name="icar">
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcar">
 
-
-                <!-- <p>Carga el resultado de la evaluación de analisis de riesgo y aspectos ambientales.</p>
-                <input type="file" class="form-control" placeholder="" id="archivoAR" name="archivorelsult"> -->
-                  
-                <!-- <input type="file" class="form-control" placeholder="col-lg-4" id="archviopol" name="archviopol"> -->
-                <p>Fecha de cumplimiento</p>        
+                <p>Fecha de evaluación</p>        
                 <div class="fm-checkbox">
                   <label>
                     <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
@@ -186,6 +206,7 @@
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-warning" id="btnGuardarAR">Guardar</button>
             </div>
+              <?php } ?>
           </div>
         </div>
       </div>
@@ -204,7 +225,7 @@
               <div class="chosen-select-act fm-cmp-mg">
                 <select class="chosen" name="" id="objetivopt4">
                   <option value="0" style="display: none;">Selecciona un objetivo</option>
-                  <?php $qri = "SELECT idCobj as id, descripcion as objetivo FROM cobjetivo";
+                  <?php $qri = "SELECT idCobj as id, descripcion as objetivo FROM cobjetivo WHERE idCobj NOT IN (SELECT obj FROM objetivo WHERE idCESH = '".$id."')";
                         $res = mysqli_query($con, $qri);
                         while($row = $res->fetch_object()){ ?>
                   <option value="<?php echo ($row->id); ?>"> <?php echo ($row->objetivo); ?> </option>
@@ -584,16 +605,20 @@
                   $sql = "SELECT idCESH FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado = mysqli_query($con, $sql);
                   if($resultado->num_rows > 0){ ?>
+                    
                     <img src="images/dispensarioL.png" style="width: 5%; margin-left: 1.5%;">
                   <?php } else {?>
+                    
                     <img src="images/dispensario.png" style="width: 5%; margin-left: 1.5%;">
                   <?php } 
                   /*IMAGEN DEL PUNTO 2*/
                   $sql1 = "SELECT idCESH FROM ar WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado1 = mysqli_query($con, $sql1);
                   if($resultado1->num_rows > 0){ ?>
+                    
                     <img src="images/dispensarioL.png" style="width: 5%;">
                 <?php } else { ?>
+                    
                     <img src="images/dispensario.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 3*/

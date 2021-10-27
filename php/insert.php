@@ -582,9 +582,12 @@ if($opcion=="addSt"){
 	$PLid = $_POST['cre'];
 	$nombreRS = $_POST['rs'];
 	$servicioP = $_POST['s'];
+	$direccionrs = $_POST['d'];
+	$telefonors = $_POST['t'];
+	$correo12rs = $_POST['c'];
 	$meteva = $_POST['metodo'];
 	
-	$sql = "INSERT INTO dcproveedor (razonSocial,deServicio,evaluacion,idCESH) VALUES ('".$nombreRS."','".$servicioP."','".$meteva."','".$PLid."')";
+	$sql = "INSERT INTO dcproveedor (razonSocial,deServicio,direccionServicio,telefonoServicio,correoServicio,evaluacion,idCESH) VALUES ('".$nombreRS."','".$servicioP."','".$direccionrs."','".$telefonors."','".$correo12rs."','".$meteva."','".$PLid."')";
 
 	if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";
@@ -597,9 +600,10 @@ if($opcion=="addSt"){
 	$PLid = $_POST['cre'];
 	$idRS = $_POST['nomE'];
 	$trabaj = $_POST['nomb'];
+	$calif = $_POST['cT'];
 	
 	
-	$sql = "INSERT INTO dctraex (nombre,idProvedor,idCESH) VALUES ('".$trabaj."',".$idRS.",'".$PLid."')";
+	$sql = "INSERT INTO dctraex (nombre,calificacion,idProvedor,idCESH) VALUES ('".$trabaj."','".$calif."',".$idRS.",'".$PLid."')";
 
 	if(mysqli_query($con,$sql)){
 		//echo "Carga Correcta";
@@ -618,12 +622,16 @@ if($opcion=="addSt"){
 	//echo $sql;
 }if($opcion == "addh12"){
 	//echo "ENTRO";
-	$nHrr = $_POST['nombH'];
-	$sHrr = $_POST['estH'];
-	$EPP = $_POST['PP'];
-	$idTj = $_POST['numT'];	
-	
-	$sql = "INSERT INTO dcherramienta (herramienta,estadoH,EPP,idTra) VALUES ('".$nHrr."','".$sHrr."','".$EPP."',".$idTj.")";
+	$categoriaE = $_POST['catPH'];
+	$statusHE = $_POST['estH'];
+	$nombreH = $_POST['nombH'];
+	$idTj = $_POST['numT'];
+
+	if($categoriaE == "EPP"){
+		$sql = "INSERT INTO dcherramienta (estadoH,EPP,idTra) VALUES ('".$statusHE."','".$nombreH."',".$idTj.")";
+	}if($categoriaE == "Herramienta"){
+		$sql = "INSERT INTO dcherramienta (herramienta,estadoH,idTra) VALUES ('".$nombreH."','".$statusHE."',".$idTj.")";
+	}	
 
 	if(mysqli_query($con,$sql)){
 		echo "Carga Correcta";

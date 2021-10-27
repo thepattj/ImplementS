@@ -41,7 +41,8 @@ $(document).ready(function(){
 						window.location.href = "inicio.php?ty="+a[0]+"&x="+a[3];
 						localStorage.setItem("NES",a[2]);
 						localStorage.setItem("PL",a[3]);
-						localStorage.setItem("RS",a[4]+a[5]);
+						localStorage.setItem("RS",a[4]);	
+						
 					}
 				}
 				//window.open('inicio.php');
@@ -464,7 +465,10 @@ $(document).ready(function(){
 			.done(function(msg){
 				alert(msg);
 			});
-		location.reload();
+		setTimeout(function(){
+			location.reload();
+			//alert("recargar");
+		}, 5000);		
 	});
 	/*Accion de modal AR - PUNTO 2*/
 	$("#btnGuardarAR").click(function(){
@@ -490,7 +494,10 @@ $(document).ready(function(){
 			.done(function(msg){
 				alert(msg);
 			});
-		location.reload();
+		setTimeout(function(){
+			location.reload();
+			//alert("recargar");
+		}, 5000);
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 3*/
@@ -582,6 +589,7 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});
+	/*BOTON ALTARFC CUMPLE*/
 	$("#altaSHCP").click(function(){
 		//alert("entra");
 		statusAltaS = $("#altaSHCP").text();
@@ -999,83 +1007,62 @@ $(document).ready(function(){
 		//$("#cActa").val("Si");
 	});
 	$("#guardarDocEst").click(function() {
-		/* Act on the event */
-		//alert("tomar los 18 valores");
-		//alert("tomar los 18 valores: "+cumActa+" - "+cumPoder+" - "+cumAltaShcp+" - "+cumRfc+" - "+cumpl+" - "+cumlfm+" - "+cumdS+" - "+cumimss+" - "+cumplano+" - "+cumpSiem+" - "+cumpEl+" - "+cumpdTF+" - "+cumpCd+" - "+cumpHm+" - "+cumpHmT+" - "+cumpTnA+" - "+cumpdis+" - "+cumpIn);
+		
 		sta01 = $("#estAct").val();
-		/*por01 = $("#porceAct").val();*/
 		evi01 = $("#eviAct").val();
 
 		sta02 = $("#estPn").val();
-		/*por02 = $("#porcePn").val();*/
 		evi02 = $("#eviPn").val();
 
 		sta03 = $("#estSHCP").val();
-		/*por03 = $("#porceSHCP").val();*/
 		evi03 = $("#eviSHCP").val();
 
 		sta04 = $("#estSRFCS").val();
-		/*por04 = $("#porceRFCS").val();*/
 		evi04 = $("#eviRFCS").val();
 
 		sta05 = $("#estPL").val();
-		/*por05 = $("#porcePL").val();*/
 		evi05 = $("#eviPL").val();
 
 		sta06 = $("#estLFM").val();
-		/*por06 = $("#porceLFM").val();*/
 		evi06 = $("#eviLFM").val();
 
 		sta07 = $("#estdicS").val();
-		/*por07 = $("#porcedicS").val();*/
 		evi07 = $("#evidicS").val();
 
 		sta08 = $("#estoIm").val();
-		/*por08 = $("#porceoIm").val();*/
 		evi08 = $("#evidoIm").val();
 
 		sta09 = $("#estplano").val();
-		/*por09 = $("#porceplano").val();*/
 		evi09 = $("#evidplano").val();
 
 		sta10 = $("#estSiem").val();
-		/*por10 = $("#porceSiem").val();*/
 		evi10 = $("#evidSiem").val();
 
 		sta11 = $("#estdElec").val();
-		/*por11 = $("#porcedElec").val();*/
 		evi11 = $("#eviddElec").val();
 
 		sta12 = $("#estdTfi").val();
-		/*por12 = $("#porcedTfi").val();*/
 		evi12 = $("#eviddTfi").val();
 
 		sta13 = $("#estcalD").val();
-		/*por13 = $("#porcecalD").val();*/
 		evi13 = $("#evidcalD").val();
 
 		sta14 = $("#estpHerm").val();
-		/*por14 = $("#porcepHerm").val();*/
 		evi14 = $("#evidpHerm").val();
 
 		sta15 = $("#estpHt").val();
-		/*por15 = $("#porcepHt").val();*/
 		evi15 = $("#evidpHt").val();
 
 		sta16 = $("#estTanque").val();
-		/*por16 = $("#porceTanque").val();*/
 		evi16 = $("#evidTanque").val();
 
 		sta17 = $("#estdisp").val();
-		/*por17 = $("#porcedisp").val();*/
 		evi17 = $("#eviddisp").val();
 
 		sta18 = $("#estCiv").val();
-		/*por18 = $("#porceCiv").val();*/
 		evi18 = $("#evidCiv").val();
-
 		cre = localStorage.getItem("PL");
-		//alert("LOS VALORES DEL PRIMER ELEMENTO LEGALES:"+sta01+"-"+por01+"-"+evi01);
+		alert("Los valores de documentos legales a cargar son: Acta Constitutiva: "+cumActa+" evidencia: "+evi01+"\n Poder Notarial: "+cumPoder+" evidencia: "+evi02);
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
@@ -3170,7 +3157,10 @@ $(document).ready(function(){
 		//alert("se puede abrir una pagina nueva con el pdf");		
 	});
 	$("#pdfrbpo").click(function(){
-		window.open('php/documents/rbpodocument.php?x='+cre);
+		window.open('php/documents/rbpo.php?x='+cre);
+	});
+	$("#pdfcontrolrbpo").click(function(){
+		window.open('php/documents/controlrbpo.php?x='+cre);
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 10*/
@@ -3406,7 +3396,7 @@ $(document).ready(function(){
 		})
 		.done(function(msg) {
 			alert(msg);
-			localion.reload();
+			//localion.reload();
 		})		
 	});
 
@@ -3425,7 +3415,7 @@ $(document).ready(function(){
 		})
 		.done(function(msg) {
 			alert(msg);
-			location.reload();
+			//location.reload();
 		})
 	});
 	$("#btnGuardar03").click(function(event) {
@@ -3443,7 +3433,7 @@ $(document).ready(function(){
 		})
 		.done(function(msg) {
 			alert(msg);
-			location.reload();
+			//location.reload();
 		})
 	});
 
@@ -3633,29 +3623,41 @@ $(document).ready(function(){
 	$("#guardarprove").click(function() {
 		razon = $("#razonP").val();
 		serv = $("#descripcionS").val();
+		adrs = $("#dirc").val();
+		phoners = $("#tel").val();
+		mailrs = $("#correors").val();
 		e = $("#metodoE").val();
 		cre = localStorage.getItem('PL')
 		$.ajax({
 			url: 'php/insert.php',
 			method: 'POST',
 			dataType: 'html',
-			data: {opc:"add12",rs:razon, s:serv, metodo:e, cre:cre},
+			data: {opc:"add12",rs:razon, s:serv, d:adrs, t:phoners, c:mailrs, metodo:e, cre:cre},
 		})
 		.done(function(msg) {
 			alert(msg);
 			//alert("Datos Insertados correctamente, ahora agrega las actividades.");
 		})
-		location.reload();
+		setTimeout(function(){
+			location.reload();
+			//alert("recargar");
+		}, 5000);	
 	});
     $("#guardartrab").click(function(){
     	n = $("#nameT").val();
     	nE = $("#nombreEmpresa").val();
+    	catrab = $("#catT").val();
+    	noms = $("#normas").val();
+    	fechatrab = $("#fechaT").val();
+    	durtrab = $("#durT").val();
+    	caltrab = $("#calT").val();
+
     	idS = localStorage.getItem("PL");
     	$.ajax({
     		url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"addt12",nomb:n,nomE:nE, cre:idS },
+    		data: {opc:"addt12",nomb:n,nomE:nE, cT:caltrab, cre:idS },
     	})
     	.done(function(msg) {
     		//alert(msg);
@@ -3666,9 +3668,10 @@ $(document).ready(function(){
     	})
     });
     $("#guardarH").click(function() {
-    	nH = $("#nomHerr").val();
-    	sH = $("#estHerr").val();
-    	eP = $("#epp").val();
+    	//alert("SI FUNCIONA");
+    	catHE = $("#cat").val();
+    	sH = $("#statHE").val();
+    	Neh = $("#nombreHE").val();
     	idT = localStorage.getItem("TrabC");
 
     	//alert (idT);
@@ -3676,7 +3679,7 @@ $(document).ready(function(){
     		url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"addh12",nombH:nH, estH:sH, PP:eP, numT:idT },
+    		data: {opc:"addh12",nombH:Neh, estH:sH, catPH:catHE, numT:idT },
     	})
     	.done(function(msg) {
     		alert(msg);    		
