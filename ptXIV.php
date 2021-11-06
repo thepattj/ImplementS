@@ -105,7 +105,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: center;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
         </div>
               <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 14 </H1></div>

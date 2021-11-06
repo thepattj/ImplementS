@@ -34,33 +34,31 @@ if($opcion=="upSt"){
 if($opcion == "upd3a"){ #UPDATE PARA DOCUMENTACION DE LA ASEA
 	$n005 = $_POST['n005'];
 	$sn005 = $_POST['sn005'];
-	//$pn005 = $_POST['pn005'];
 	$en005 = $_POST['en005'];
 
 	$mia = $_POST['mia'];
 	$smia = $_POST['smia'];
-	//$pmia = $_POST['pmia'];
 	$emia = $_POST['emia'];
 
 	$ip = $_POST['ip'];
 	$sip = $_POST['sip'];
-	//$pip = $_POST['pip'];
 	$eip = $_POST['eip'];
 
 	$lf = $_POST['lf'];
 	$slf = $_POST['slf'];
-	//$plf = $_POST['plf'];
 	$elf = $_POST['elf'];
 
 	$grp = $_POST['grp'];
 	$sgrp = $_POST['sgrp'];
-	//$pgrp = $_POST['pgrp'];
 	$egrp = $_POST['egrp'];
 
 	$coa = $_POST['coa'];
 	$scoa = $_POST['scoa'];
-	//$pcoa = $_POST['pcoa'];
 	$ecoa = $_POST['ecoa'];
+
+	$poliza = $_POST['poliza'];
+	$spoliza = $_POST['spoliza'];
+	$epoliza = $_POST['epoliza'];
 
 	$cre = $_POST['cre'];
 
@@ -72,6 +70,7 @@ if($opcion == "upd3a"){ #UPDATE PARA DOCUMENTACION DE LA ASEA
 	$sqllf = "UPDATE documento SET cumplimiento='".$lf."', evidencia='".$elf."', status='".$slf."' WHERE tipo = 'ASEA' AND num = 4";
 	$sqlgrp = "UPDATE documento SET cumplimiento='".$grp."', evidencia='".$egrp."', status='".$sgrp."' WHERE tipo = 'ASEA' AND num = 5";
 	$sqlcoa = "UPDATE documento SET cumplimiento='".$coa."', evidencia='".$ecoa."', status='".$scoa."' WHERE tipo = 'ASEA' AND num = 6";
+	$sqlpoliza = "UPDATE documento SET cumplimiento='".$poliza."', evidencia='".$epoliza."', status='".$spoliza."' WHERE tipo = 'ASEA' AND num = 7";
 		
 	mysqli_query($con,$sql005);
 	mysqli_query($con,$sqlmia);

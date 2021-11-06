@@ -87,7 +87,7 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: right;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><h4 id="dataRS" style="color:white; background:rgb(102,103,102); border-radius: 35px; text-align: center;"> Nombre de Usuario </h4> </div> <!-- CAMBIAR A UN BUTTON -->
         </div>
               <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="background: while;"><img src="">A1</div> -->
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="background:rgb(102,103,102); border-bottom-right-radius: 50px;"><H1 id="usuario" style="color:white; "> Punto 3 </H1></div>
@@ -551,30 +551,30 @@
                                 <h2 id="titpc" style="display: none;">Requisitos Documentales - Protección Civil:</h2>
                                 <h2 id="titse" style="display: none;">Requisitos Documentales - Secretaría de Economía:</h2>
                                 <h2 id="titstps" style="display: none;">Requisitos Documentales - Secretaría del Trabajo y Prevensión Social:</h2>
-                                <p>Completar el formulario con la información que se te pide para tu control.</p>
+                                <p>Completar el formulario con la información que se te pide para tu control.<br><b>NOTA: Debes de responder todo el formulario no importa que el documento no lo encuentres en tu estación.</b> De lo contrario no se guardara la información</p>
                             </div>
 
                             <!-- DOCUMENTACION LEGAL -->
                             <div class="row" style="border: black 1px solid; display: ;" id="legal">
                                 <?php
-                                    $sqldoc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqldoc = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadodoc =mysqli_query($con, $sqldoc);
                                     if($resultadodoc->num_rows > 0){
                                         $n = 0;
                                         while($filadoc = $resultadodoc->fetch_assoc()){
                                             $dcumpl = $filadoc['cumplimiento'];
                                             $dstatus = $filadoc['status'];
-                                            $dporce = $filadoc['porcentaje'];
+                                            //$dporce = $filadoc['porcentaje'];
                                             $devid = $filadoc['evidencia'];
 
                                             $datos6 [$n] = $dcumpl;
                                             $datos6 [$n+18] = $dstatus;
-                                            $datos6 [$n+36] = $dporce;
-                                            $datos6 [$n+54] = $devid;
+                                            $datos6 [$n+36] = $devid;
+                                            //  $datos6 [$n+54] = $devid;
                                             $n++;
                                         }
                                     }else{  for ($i=0; $i<=71; $i++) { $datos6[$i] = "-"; } }
-                                    //echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54];
+                                    //echo "cumplimiento: ".$datos6[13]." status1: ".$datos6[31]." evidencia: ".$datos6[49];
                                     //echo $datos6[71];
                                 ?>
                                 <div class="" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
@@ -636,15 +636,9 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td> <?php if($datos6[36] != '-') { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[36]; ?>" class="form-control" id="porceAct" placeholder="%"> </div> 
-                                                      <?php } else {?> 
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceAct" placeholder="%"> </div> 
-                                                     <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[54] != '-') { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[54]; ?>" class="form-control" id="eviAct" placeholder="No. de Acta"> </div>
+                                                    <?php if($datos6[36] != '-') { ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[36]; ?>" class="form-control" id="eviAct" placeholder="No. de Acta"> </div>
                                                     <?php } else {?> 
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviAct" placeholder="No. de Acta"> </div> 
                                                     <?php } ?>
@@ -701,16 +695,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[37]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[37];*/ ?>" class="form-control" id="porcePn" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePn" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[55]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[55]; ?>" class="form-control" id="eviPn" placeholder="No. de Poder"> </div>
+                                                    <?php if($datos6[37]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[37]; ?>" class="form-control" id="eviPn" placeholder="No. de Poder"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviPn" placeholder="No. de Poder"> </div>
                                                     <?php }?>
@@ -767,16 +754,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[38] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[38]*/;?>" class="form-control" id="porceSHCP" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceSHCP" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[56] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[56];?>" class="form-control" id="eviSHCP" placeholder="No. de tramite"> </div>
+                                                    <?php if($datos6[38] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[38];?>" class="form-control" id="eviSHCP" placeholder="No. de tramite"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviSHCP" placeholder="No. de tramite"> </div>
                                                     <?php } ?>
@@ -833,16 +813,9 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[39] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[39];*/ ?>" class="form-control" id="porceRFCS" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRFCS" placeholder="%"> </div>
-                                                    <?php } ?> 
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[57] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[57];?>" class="form-control" id="eviRFCS" placeholder="No. de tramite"> </div>
+                                                    <?php if($datos6[39] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[39];?>" class="form-control" id="eviRFCS" placeholder="No. de tramite"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviRFCS" placeholder="No. de tramite"> </div>
                                                     <?php } ?>
@@ -899,16 +872,9 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[40] != '-') {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[40];*/ ?>" class="form-control" id="porcePL" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePL" placeholder="%"> </div>
-                                                    <?php } ?> 
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[58] != '-') {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[58];?>" class="form-control" id="eviPL" placeholder="No. de PL"> </div>
+                                                    <?php if($datos6[40] != '-') {?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[40];?>" class="form-control" id="eviPL" placeholder="No. de PL"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviPL" placeholder="No. de PL"> </div>
                                                     <?php } ?>
@@ -965,16 +931,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[41] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[41];*/ ?>" class="form-control" id="porceLFM" placeholder="%"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceLFM" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[59] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[59];?>" class="form-control" id="eviLFM" placeholder="No. de Licencia"> </div>
+                                                    <?php if($datos6[41] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[41];?>" class="form-control" id="eviLFM" placeholder="No. de Licencia"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviLFM" placeholder="No. de Licencia"> </div>
                                                     <?php }?>
@@ -1031,16 +990,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[42]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[42];*/ ?>" class="form-control" id="porcedicS" placeholder="%"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedicS" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[60]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[60];?>" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div>
+                                                    <?php if($datos6[42]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[42];?>" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div>
                                                     <?php } ?>
@@ -1097,16 +1049,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[43] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[43];*/ ?>" class="form-control" id="porceoIm" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceoIm" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[61] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[61];?>" class="form-control" id="evidoIm" placeholder="No. de Licencia"> </div>
+                                                    <?php if($datos6[43] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[43];?>" class="form-control" id="evidoIm" placeholder="No. de Licencia"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidoIm" placeholder="No. de Licencia"> </div>
                                                     <?php }?>
@@ -1163,16 +1108,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                               <!--  <td>
-                                                    <?php if($datos6[44] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[44];*/ ?>" class="form-control" id="porceplano" placeholder="%"> </div> 
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceplano" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[62] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[62];?>" class="form-control" id="evidplano" placeholder="No. de "> </div> 
+                                                    <?php if($datos6[44] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[44];?>" class="form-control" id="evidplano" placeholder="No. de "> </div> 
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidplano" placeholder="No. de "> </div> 
                                                     <?php }?>
@@ -1229,16 +1167,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[45]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[45];*/ ?>" class="form-control" id="porceSiem" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceSiem" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[63]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[63];?>" class="form-control" id="evidSiem" placeholder="Número"> </div>
+                                                    <?php if($datos6[45]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[45];?>" class="form-control" id="evidSiem" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidSiem" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1295,16 +1226,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[46]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[46];*/ ?>" class="form-control" id="porcedElec" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedElec" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[64]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[64];?>" class="form-control" id="eviddElec" placeholder="Número"> </div>
+                                                    <?php if($datos6[46]!='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[46];?>" class="form-control" id="eviddElec" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviddElec" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1361,16 +1285,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[47] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[47];*/ ?>" class="form-control" id="porcedTfi" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedTfi" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[65] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[65];?>" class="form-control" id="eviddTfi" placeholder="Número"> </div>
+                                                    <?php if($datos6[47] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[47];?>" class="form-control" id="eviddTfi" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviddTfi" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1427,16 +1344,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[48] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[48];*/ ?>" class="form-control" id="porcecalD" placeholder="%"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecalD" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[66] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[66];?>" class="form-control" id="evidcalD" placeholder="Número"> </div>
+                                                    <?php if($datos6[48] != '-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[48];?>" class="form-control" id="evidcalD" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcalD" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1493,16 +1403,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td> 
-                                                    <?php if($datos6[49] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos[49];*/ ?>" class="form-control" id="porcepHerm" placeholder="%"> </div> 
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcepHerm" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[67] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[67];?>" class="form-control" id="evidpHerm" placeholder="Número"> </div>
+                                                    <?php if($datos6[49] !=''){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[49];?>" class="form-control" id="evidpHerm" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidpHerm" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1559,16 +1462,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td> 
-                                                    <?php if($datos6[50]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[50];*/ ?>" class="form-control" id="porcepHt" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcepHt" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[68]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[68];?>" class="form-control" id="evidpHt" placeholder="Número"> </div>
+                                                    <?php if($datos6[50]!='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[50];?>" class="form-control" id="evidpHt" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidpHt" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1625,16 +1521,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[51] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[51];*/ ?>" class="form-control" id="porceTanque" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceTanque" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[69] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[69];?>" class="form-control" id="evidTanque" placeholder="Número"> </div>
+                                                    <?php if($datos6[51] != '-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[51];?>" class="form-control" id="evidTanque" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidTanque" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1691,16 +1580,9 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[52] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[52];*/ ?>" class="form-control" id="porcedisp" placeholder="%"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcedisp" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[70] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[70]; ?>" class="form-control" id="eviddisp" placeholder="Número"> </div>
+                                                    <?php if($datos6[52] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[52]; ?>" class="form-control" id="eviddisp" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="eviddisp" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1757,16 +1639,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos6[53] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos6[53];*/ ?>" class="form-control" id="porceCiv" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceCiv" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos6[71] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[71];?>" class="form-control" id="evidCiv" placeholder="Número"> </div>
+                                                    <?php if($datos6[53] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[53];?>" class="form-control" id="evidCiv" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidCiv" placeholder="Número"> </div>
                                                     <?php }?>
@@ -1775,7 +1650,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos6[71] == "-"){?>
+                                <?php if($datos6[53] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocEst" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -1790,23 +1665,23 @@
 
                             <div class="row" style="border: black 1px solid; display: none;" id="asea">
                                 <?php
-                                    $sqlasea = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'ASEA' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqlasea = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'ASEA' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadoasea = mysqli_query($con, $sqlasea);
                                     if($resultadoasea->num_rows > 0){
                                         $j = 0;
                                         while($fila = $resultadoasea->fetch_assoc()){
                                             $acumpl = $fila['cumplimiento'];
                                             $astatus = $fila['status'];
-                                            $aporce = $fila['porcentaje'];
+                                            //$aporce = $fila['porcentaje'];
                                             $aevid = $fila['evidencia'];
 
                                             $datos1 [$j] = $acumpl;
-                                            $datos1 [$j+6] = $astatus;
-                                            $datos1 [$j+12] = $aporce;
-                                            $datos1 [$j+18] = $aevid;
+                                            $datos1 [$j+7] = $astatus;
+                                            //$datos1 [$j+12] = $aporce;
+                                            $datos1 [$j+14] = $aevid;
                                             $j++;
                                         }
-                                    }else{  for ($i=0; $i<=23; $i++) { $datos1[$i] = "-"; } }
+                                    }else{  for ($i=0; $i<=20; $i++) { $datos1[$i] = "-"; } }
                                     /*echo "cumplimiento: ".$datos6[0]." status1: ".$datos6[18]." porcentaje: ".$datos6[36]." evidencia: ".$datos6[54];*/
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
@@ -1830,7 +1705,7 @@
                                                 <?php } ?> 
 
                                                 <td>
-                                                    <?php if($datos1[6] == "Otorgada") {?>
+                                                    <?php if($datos1[7] == "Otorgada") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
                                                                 <option value="Selecciona" style="display: none;">Selecciona una opción</option>
@@ -1839,7 +1714,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[6] == "Tramite") {?>
+                                                    <?php } if($datos1[7] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
                                                                 <option value="Selecciona" style="display: none;">Selecciona una opción</option>
@@ -1848,7 +1723,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[6] == "Seguimiento") {?>
+                                                    <?php } if($datos1[7] == "Seguimiento") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
                                                                 <option value="Selecciona" style="display: none;">Selecciona una opción</option>
@@ -1857,7 +1732,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[6] == "-") {?>
+                                                    <?php } if($datos1[7] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
                                                                 <option value="Selecciona" style="display: none;">Selecciona una opción</option>
@@ -1868,16 +1743,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos1[12] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[12];*/ ?>" class="form-control" id="porcec005" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcec005" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos1[18] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[18]; ?>" class="form-control" id="evidc005" placeholder="Número de Dictamen"> </div>
+                                                    <?php if($datos1[14] != "-"){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[14]; ?>" class="form-control" id="evidc005" placeholder="Número de Dictamen"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidc005" placeholder="Número de Dictamen"> </div>
                                                     <?php } ?>
@@ -1898,7 +1766,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if ($datos1[7] == "Otorgada") { ?>
+                                                    <?php if ($datos1[8] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -1908,7 +1776,7 @@
                                                                 <option value="NoAplica">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos1[7] == "Tramite") { ?>
+                                                    <?php } if ($datos1[8] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -1918,7 +1786,7 @@
                                                                 <option value="NoAplica">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos1[7] == "Seguimiento") { ?>
+                                                    <?php } if ($datos1[8] == "Seguimiento") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -1928,7 +1796,7 @@
                                                                 <option value="NoAplica">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos1[7] == "NoAplica") { ?>
+                                                    <?php } if ($datos1[8] == "NoAplica") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -1938,7 +1806,7 @@
                                                                 <option value="NoAplica" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos1[7] == "-") { ?>
+                                                    <?php } if ($datos1[8] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -1950,16 +1818,9 @@
                                                         </div>
                                                     <?php } ?>                                                        
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos1[13] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[13];*/ ?>" class="form-control" id="porcecMia" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecMia" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td> 
-                                                    <?php if($datos1[19] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[19]; ?>" class="form-control" id="evidcMia" placeholder="Número de oficio"> </div>
+                                                    <?php if($datos1[15] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[15]; ?>" class="form-control" id="evidcMia" placeholder="Número de oficio"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcMia" placeholder="Número de oficio"> </div> 
                                                     <?php } ?>
@@ -1980,7 +1841,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos1[8] == "Otorgada") { ?>
+                                                    <?php if($datos1[9] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -1990,7 +1851,7 @@
                                                                 <option value="NoAplica">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[8] == "Tramite") { ?>
+                                                    <?php } if($datos1[9] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2000,7 +1861,7 @@
                                                                 <option value="NoAplica">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[8] == "Seguimiento") { ?>
+                                                    <?php } if($datos1[9] == "Seguimiento") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2010,7 +1871,7 @@
                                                                 <option value="NoAplica">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[8] == "NoAplica") { ?>
+                                                    <?php } if($datos1[9] == "NoAplica") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2020,7 +1881,7 @@
                                                                 <option value="NoAplica" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[8] == "-") { ?>
+                                                    <?php } if($datos1[9] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2032,16 +1893,9 @@
                                                         </div>
                                                     <?php } ?>                                                            
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos1[14] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[14];*/ ?>" class="form-control" id="porcecIp" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecIp" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos1[20] != "-") {?> 
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[20]; ?>" class="form-control" id="evidcIp" placeholder="Número de oficio"> </div>
+                                                    <?php if($datos1[16] != "-") {?> 
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[16]; ?>" class="form-control" id="evidcIp" placeholder="Número de oficio"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcIp" placeholder="Número de oficio"> </div>
                                                     <?php } ?>
@@ -2060,7 +1914,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos1[9] == "Otorgada") { ?>
+                                                    <?php if($datos1[10] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2069,7 +1923,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[9] == "Tramite") { ?>
+                                                    <?php } if($datos1[10] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2078,7 +1932,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[9] == "Seguimiento") { ?>
+                                                    <?php } if($datos1[10] == "Seguimiento") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2087,7 +1941,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[9] == "-") { ?>
+                                                    <?php } if($datos1[10] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2098,16 +1952,9 @@
                                                         </div>
                                                     <?php } ?>                                                        
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos1[15] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[15];*/ ?>" class="form-control" id="porcecLf" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecLf" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos1[21] != '-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[21]; ?>" class="form-control" id="evidcLf" placeholder="Número de licencia de funcionamiento"> </div>
+                                                    <?php if($datos1[17] != '-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[17]; ?>" class="form-control" id="evidcLf" placeholder="Número de licencia de funcionamiento"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcLf" placeholder="Número de licencia de funcionamiento"> </div>
                                                     <?php } ?>
@@ -2126,7 +1973,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos1[10] == "Otorgada"){?>
+                                                    <?php if($datos1[11] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2135,7 +1982,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[10] == "Tramite") {?>
+                                                    <?php } if($datos1[11] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2144,7 +1991,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[10] == "Seguimiento") {?>
+                                                    <?php } if($datos1[11] == "Seguimiento") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2153,7 +2000,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[10] == "-") {?>
+                                                    <?php } if($datos1[11] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -2164,16 +2011,9 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos1[16] != '-') { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[16];*/ ?>" class="form-control" id="porcecGrp" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecGrp" placeholder="%"> </div>
-                                                    <?php } ?>                                                    
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos1[22] != '-') { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[22]; ?>" class="form-control" id="evidcGrp" placeholder="Número de registro"> </div>
+                                                    <?php if($datos1[18] != '-') { ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[18]; ?>" class="form-control" id="evidcGrp" placeholder="Número de registro"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcGrp" placeholder="Número de registro"> </div>
                                                     <?php } ?>
@@ -2192,7 +2032,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos1[11] == "Otorgada") {?>
+                                                    <?php if($datos1[12] == "Otorgada") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2201,7 +2041,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[11] == "Tramite") {?>
+                                                    <?php } if($datos1[12] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2210,7 +2050,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[11] == "Seguimiento") {?>
+                                                    <?php } if($datos1[12] == "Seguimiento") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2219,7 +2059,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[11] == "-") {?>
+                                                    <?php } if($datos1[12] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2230,25 +2070,77 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos1[17] != "-"){?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos1[17];*/ ?>" class="form-control" id="porcecCoa" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecCoa" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos1[23] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[23]; ?>" class="form-control" id="evidcCoa" placeholder="Número de bitacora"> </div>
+                                                    <?php if($datos1[19] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[19]; ?>" class="form-control" id="evidcCoa" placeholder="Número de bitacora"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcCoa" placeholder="Número de bitacora"> </div>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                            <!-- DATOS POLIZA DE SEGURO -->
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Registro de polizas Contratadas</td>
+                                                <?php if($datos1[6] == "Si"){ ?>
+                                                <td value="1" id="cPoliza" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos1[6] == "No") { ?>
+                                                <td value="0" id="cPoliza" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos1[6] == "-") { ?>
+                                                <td value="" id="cPoliza" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                                
+                                                
+                                                <td>
+                                                    <?php if($datos1[13] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcPol">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos1[13] == "Tramite") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcPol">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos1[13] == "Seguimiento") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcPol">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos1[13] == "-") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcPol">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } ?>                                                    
+                                                </td>
+                                                <td>
+                                                    <?php if($datos1[20] != '-') { ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos1[20]; ?>" class="form-control" id="evidcPol" placeholder="Número de registro"> </div>
+                                                    <?php } else { ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcPol" placeholder="Número de registro"> </div>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos1[23] == "-"){?>
+                                <?php if($datos1[20] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocASEA" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -2263,23 +2155,23 @@
 
                             <div class="row" style="border: black 1px solid; display: none;" id="cre">
                                 <?php
-                                    $sqlcre = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'CRE' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqlcre = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'CRE' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadocre = mysqli_query($con, $sqlcre);
                                     if($resultadocre->num_rows > 0){
                                         $l = 0;
                                         while($filacre = $resultadocre->fetch_assoc()){
                                             $ccumpl = $filacre['cumplimiento'];
                                             $cstatus = $filacre['status'];
-                                            $cporce = $filacre['porcentaje'];
+                                            //$cporce = $filacre['porcentaje'];
                                             $cevid = $filacre['evidencia'];
 
                                             $datos4 [$l] = $ccumpl;
-                                            $datos4 [$l+12] = $cstatus;
-                                            $datos4 [$l+24] = $cporce;
-                                            $datos4 [$l+36] = $cevid;
+                                            $datos4 [$l+10] = $cstatus;
+                                            //$datos4 [$l+24] = $cporce;
+                                            $datos4 [$l+20] = $cevid;
                                             $l++;
                                         }
-                                    }else{  for ($i=0; $i<=47; $i++) { $datos4[$i] = "-"; } }
+                                    }else{  for ($i=0; $i<=29; $i++) { $datos4[$i] = "-"; } }
                                     /*echo "cumplimiento: ".$datos4[0]." status1: ".$datos4[12]." porcentaje: ".$datos4[24]." evidencia: ".$datos4[36];*/
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
@@ -2302,7 +2194,7 @@
                                                 <?php } ?> 
 
                                                 <td>
-                                                    <?php if($datos4[12] == "Otorgada"){?>
+                                                    <?php if($datos4[10] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2311,7 +2203,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[12] == "Tramite"){?>
+                                                    <?php }if($datos4[10] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2320,7 +2212,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[12] == "Seguimiento"){?>
+                                                    <?php }if($datos4[10] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2329,7 +2221,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[12] == "-"){?>
+                                                    <?php }if($datos4[10] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2340,16 +2232,9 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[24] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[24];*/ ?>" class="form-control" id="porceRdia" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRdia" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[36] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[36];?>" class="form-control" id="evidRdia" placeholder="Número"> </div>
+                                                    <?php if($datos4[20] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[20];?>" class="form-control" id="evidRdia" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidRdia" placeholder="Número"> </div>
                                                     <?php }?>
@@ -2358,7 +2243,7 @@
                                             <!-- DATOS DE REPORTE DE PRECIOS -->
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>2</td>
-                                                <td>Reporte Diario (Precios)</td>
+                                                <td>Reporte Precios</td>
                                                 <?php if($datos4[1] == "Si"){ ?>
                                                     <td value="1" id="rDiariop" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[1] == "No") { ?>
@@ -2368,7 +2253,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[13] == "Otorgada"){?>
+                                                    <?php if($datos4[11] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2377,7 +2262,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[13] == "Tramite") {?>
+                                                    <?php } if($datos4[11] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2386,7 +2271,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[13] == "Segumiento") {?>
+                                                    <?php } if($datos4[11] == "Segumiento") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2395,7 +2280,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[13] == "-") {?>
+                                                    <?php } if($datos4[11] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2406,35 +2291,28 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[25] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[25];*/ ?>" class="form-control" id="porceRdiap" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceRdiap" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[37] != "-"){ ?> 
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[37]; ?>" class="form-control" id="evidRdiap" placeholder="Número"> </div>
+                                                    <?php if($datos4[21] != "-"){ ?> 
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[21]; ?>" class="form-control" id="evidRdiap" placeholder="Número"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidRdiap" placeholder="Número"> </div>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
                                             <!-- ESTADISITCAS DE VARIOS -->
-                                            <tr>
+                                            <!-- <tr>
                                                 <td>3</td>
                                                 <td>Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes</td>
-                                                <?php if($datos4[2] == "Si"){ ?>
+                                                
                                                 <td value="1" id="cEstad" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[2] == "No") { ?>
+                                                
                                                 <td value="0" id="cEstad" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[2] == "-") { ?>
+                                                
                                                 <td value="" id="cEstad" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>                                                
+                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[14] == "Otorgada"){ ?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcEs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2443,7 +2321,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[14] == "Tramite"){ ?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcEs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2452,7 +2330,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[14] == "Seguimiento"){ ?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcEs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2461,7 +2339,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[14] == "-"){ ?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcEs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2470,37 +2348,37 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } ?>                                                    
+                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[26] !='-'){?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[20];*/ ?>" class="form-control" id="porcecEs" placeholder="%"> </div>
-                                                    <?php } else {?>
+                                                <td>
+                                                    
+                                                    <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porcecEs" placeholder="%"> </div>
+                                                    
                                                     <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecEs" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
-                                                <td>
-                                                    <?php if($datos4[38] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[38]; ?>" class="form-control" id="evidcEs" placeholder="Número"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcEs" placeholder="Número"> </div>
-                                                    <?php } ?>
+                                                    
                                                 </td>
-                                            </tr>
+                                                <td>
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="evidcEs" placeholder="Número"> </div>
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcEs" placeholder="Número"> </div>
+                                                    
+                                                </td>
+                                            </tr> -->
                                             <!-- DATO DE NOM 016 -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>4</td>
-                                                <td>Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
-                                                <?php if($datos4[3] == "Si"){ ?>
+                                            <!-- <tr style="background: rgb(198,198,198);">
+                                                <td>3</td>
+                                                <td>Calidad de petrolíferos<br>(<b>NOM-016-CRE-2016</b>)</td>
+                                                
                                                 <td value="1" id="016" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[3] == "No") { ?>
+                                                
                                                 <td value="0" id="016" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[3] == "-") { ?>
+                                                
                                                 <td value="" id="016" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>                                                
+                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[15] == "Otorgada"){ ?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2509,7 +2387,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[15] == "Tramite"){?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2518,7 +2396,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[15] == "Seguimiento"){?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2527,7 +2405,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[15] == "-"){?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2536,37 +2414,37 @@
                                                                 <option value="Seguimiento" >Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }?>                                                    
+                                                    
                                                 </td>
-                                                <!-- <td> 
-                                                    <?php if($datos4[27] !="-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[27];*/ ?>" class="form-control" id="porce016" placeholder="%"> </div>
-                                                    <?php } else { ?>
+                                                <td> 
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porce016" placeholder="%"> </div>
+
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce016" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
-                                                <td>
-                                                    <?php if($datos4[39] !="-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[39];?>" class="form-control" id="evid016" placeholder="Número"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid016" placeholder="Número"> </div>
-                                                    <?php } ?>
+                                                    
                                                 </td>
-                                            </tr>
+                                                <td>
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="evid016" placeholder="Número"> </div>
+
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid016" placeholder="Número"> </div>
+                                                    
+                                                </td>
+                                            </tr> -->
                                             <!-- DICTAMEN DE LA 16 -->
                                             <tr>
-                                                <td>5</td>
-                                                <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2017</b>)</td>
-                                                <?php if($datos4[4] == "Si"){ ?>
+                                                <td>3</td>
+                                                <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
+                                                <?php if($datos4[2] == "Si"){ ?>
                                                 <td value="1" id="0162017" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[4] == "No") { ?>
+                                                <?php } if($datos4[2] == "No") { ?>
                                                 <td value="0" id="0162017" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[4] == "-") { ?>
+                                                <?php } if($datos4[2] == "-") { ?>
                                                 <td value="" id="0162017" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[16] == "Otorgada"){?>
+                                                    <?php if($datos4[12] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est0162017">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2575,7 +2453,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[16] == "Tramite"){?>
+                                                    <?php }if($datos4[12] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est0162017">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2584,7 +2462,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[16] == "Seguimiento"){?>
+                                                    <?php }if($datos4[12] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est0162017">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2593,7 +2471,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[16] == "-"){?>
+                                                    <?php }if($datos4[12] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est0162017">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2604,16 +2482,9 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[28] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[28];*/ ?>" class="form-control" id="porce0162017" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce0162017" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[40] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[40]; ?>" class="form-control" id="evid0162017" placeholder="Número"> </div>
+                                                    <?php if($datos4[22] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[22]; ?>" class="form-control" id="evid0162017" placeholder="Número"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid0162017" placeholder="Número"> </div>
                                                     <?php } ?>
@@ -2621,18 +2492,18 @@
                                             </tr>
                                             <!-- PAGO DE SUPERVISION -->
                                             <tr style="background: rgb(198,198,198);">
-                                                <td>6</td>
+                                                <td>4</td>
                                                 <td>Reporte de Pagos Supervisión de permisos<br>(Derechos, Productos y Aprovechamiento)</td>
-                                                <?php if($datos4[5] == "Si"){ ?>
+                                                <?php if($datos4[3] == "Si"){ ?>
                                                 <td value="1" id="rPsupervi" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[5] == "No") { ?>
+                                                <?php } if($datos4[3] == "No") { ?>
                                                 <td value="0" id="rPsupervi" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[5] == "-") { ?>
+                                                <?php } if($datos4[3] == "-") { ?>
                                                 <td value="" id="rPsupervi" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
-                                                    <?php if($datos4[17] == "Otorgada"){ ?>
+                                                    <?php if($datos4[13] == "Otorgada"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2641,7 +2512,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[17] == "Tramite"){ ?>
+                                                    <?php }if($datos4[13] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2650,7 +2521,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[17] == "Seguimiento"){ ?>
+                                                    <?php }if($datos4[13] == "Seguimiento"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2659,7 +2530,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[17] == '-'){ ?>
+                                                    <?php }if($datos4[13] == '-'){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2670,16 +2541,9 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[29] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[29];*/ ?>" class="form-control" id="porcerPs" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerPs" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[41] != '-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[41]; ?>" class="form-control" id="evidrPs" placeholder="Número"> </div>
+                                                    <?php if($datos4[23] != '-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[23]; ?>" class="form-control" id="evidrPs" placeholder="Número"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrPs" placeholder="Número"> </div>
                                                     <?php } ?>
@@ -2687,18 +2551,18 @@
                                             </tr>
                                             <!-- POLIZA SEGURO -->
                                             <tr>
-                                                <td>7</td>
+                                                <td>5</td>
                                                 <td>Poliza anual vigente de seguro (Seguro)</td>
-                                                <?php if($datos4[6] == "Si"){ ?>
+                                                <?php if($datos4[4] == "Si"){ ?>
                                                 <td value="1" id="polizAnual" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[6] == "No") { ?>
+                                                <?php } if($datos4[4] == "No") { ?>
                                                 <td value="0" id="polizAnual" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[6] == "-") { ?>
+                                                <?php } if($datos4[4] == "-") { ?>
                                                 <td value="" id="polizAnual" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[18] == "Otorgada"){?>
+                                                    <?php if($datos4[14] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2707,7 +2571,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[18] == "Tramite"){?>
+                                                    <?php }if($datos4[14] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2716,7 +2580,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[18] == "Seguimiento"){?>
+                                                    <?php }if($datos4[14] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2725,7 +2589,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[18] == '-'){ ?>
+                                                    <?php }if($datos4[14] == '-'){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2736,35 +2600,28 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[30] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[30];*/ ?>" class="form-control" id="porcePoliza" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePoliza" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[42] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[42]; ?>" class="form-control" id="evidPoliza" placeholder="Número"> </div> 
+                                                    <?php if($datos4[24] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[24]; ?>" class="form-control" id="evidPoliza" placeholder="Número"> </div> 
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidPoliza" placeholder="Número"> </div> 
                                                     <?php } ?>
                                                 </td>
                                             </tr>
                                             <!-- POLIZA -->
-                                            <tr style="background: rgb(198,198,198);">
+                                            <!-- <tr style="background: rgb(198,198,198);">
                                                 <td>8</td>
                                                 <td>Poliza de seguro (Seguro)</td>
-                                                <?php if($datos4[7] == "Si"){ ?>
+                                                
                                                 <td value="1" id="polizaSg" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[7] == "No") { ?>
+                                                
                                                 <td value="0" id="polizaSg" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[7] == "-") { ?>
+                                                
                                                 <td value="" id="polizaSg" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>                                                
+                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[19] == "Otorgada"){?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPsg">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2773,7 +2630,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[19] == "Tramite"){?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPsg">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2782,7 +2639,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[19] == "Seguimiento"){?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPsg">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2791,7 +2648,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[19] == '-'){ ?>
+                                                    
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPsg">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2800,37 +2657,37 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php } ?>
+                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[31] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[31];*/ ?>" class="form-control" id="porcePsg" placeholder="%"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePsg" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[43] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[43];?>" class="form-control" id="evidPsg" placeholder="Número"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidPsg" placeholder="Número"> </div>
-                                                    <?php } ?>
+                                                
+                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porcePsg" placeholder="%"> </div>
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePsg" placeholder="%"> </div>
+                                                    
                                                 </td>
-                                            </tr>
+                                                <td>
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="evidPsg" placeholder="Número"> </div>
+                                                    
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidPsg" placeholder="Número"> </div>
+                                                    
+                                                </td>
+                                            </tr> -->
                                             <!-- REPORTE DE QUEJAS -->
-                                            <tr>
-                                                <td>9</td>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>6</td>
                                                 <td>Reporte de Quejas</td>
-                                                <?php if($datos4[8] == "Si"){ ?>
+                                                <?php if($datos4[5] == "Si"){ ?>
                                                     <td value="1" id="rQue" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[8] == "No") { ?>
+                                                <?php } if($datos4[5] == "No") { ?>
                                                     <td value="0" id="rQue" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[8] == "-") { ?>
+                                                <?php } if($datos4[5] == "-") { ?>
                                                     <td value="" id="rQue" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[20] == "Otorgada"){?>
+                                                    <?php if($datos4[15] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2839,7 +2696,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[20] == "Tramite"){?>
+                                                    <?php }if($datos4[15] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2848,7 +2705,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[20] == "Seguimiento"){?>
+                                                    <?php }if($datos4[15] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2857,7 +2714,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[20] == '-'){ ?>
+                                                    <?php }if($datos4[15] == '-'){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2868,35 +2725,28 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[32] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[32];*/ ?>" class="form-control" id="porcerQ" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerQ" placeholder="%"> </div>
-                                                    <?php }?> 
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[44] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[44]; ?>" class="form-control" id="evidrQ" placeholder="Número"> </div>
+                                                    <?php if($datos4[25] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[25]; ?>" class="form-control" id="evidrQ" placeholder="Número"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrQ" placeholder="Número"> </div>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
                                             <!-- FACTURAS DE PROCEDENCIA -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>10</td>
+                                            <tr>
+                                                <td>7</td>
                                                 <td>Procedencia del producto (facturas)</td>
-                                                <?php if($datos4[9] == "Si"){ ?>
+                                                <?php if($datos4[6] == "Si"){ ?>
                                                     <td value="1" id="factProd" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[9] == "No") { ?>
+                                                <?php } if($datos4[6] == "No") { ?>
                                                     <td value="0" id="factProd" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[9] == "-") { ?>
+                                                <?php } if($datos4[6] == "-") { ?>
                                                     <td value="" id="factProd" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
-                                                    <?php if($datos4[21]=="Otorgada"){?>
+                                                    <?php if($datos4[16]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2905,7 +2755,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[21]=="Tramite"){?>
+                                                    <?php }if($datos4[16]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2914,7 +2764,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[21]=="Seguimiento"){?>
+                                                    <?php }if($datos4[16]=="Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2923,7 +2773,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[21]=="-"){?>
+                                                    <?php }if($datos4[16]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2934,35 +2784,28 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[33]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[33];*/ ?>" class="form-control" id="porceFacP" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceFacP" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[45] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[45];?>" class="form-control" id="evidFacP" placeholder="Número"> </div>
+                                                    <?php if($datos4[26] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[26];?>" class="form-control" id="evidFacP" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidFacP" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
                                             </tr>
                                             <!-- REPORTE DE INCIDENTES -->
-                                            <tr>
-                                                <td>11</td>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>8</td>
                                                 <td>Reporte de inicidentes o emergencias</td>
-                                                <?php if($datos4[10] == "Si"){ ?>
+                                                <?php if($datos4[7] == "Si"){ ?>
                                                     <td value="1" id="incidentes" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[10] == "No") { ?>
+                                                <?php } if($datos4[7] == "No") { ?>
                                                     <td value="0" id="incidentes" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[10] == "-") { ?>
+                                                <?php } if($datos4[7] == "-") { ?>
                                                     <td value="" id="incidentes" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos4[22]=="Otorgada"){?>
+                                                    <?php if($datos4[17]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2971,7 +2814,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[22]=="Tramite"){?>
+                                                    <?php }if($datos4[17]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2980,7 +2823,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[22]=="Seguimiento"){?>
+                                                    <?php }if($datos4[17]=="Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -2989,7 +2832,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[22]=="-"){?>
+                                                    <?php }if($datos4[17]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -3000,35 +2843,28 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[34]!='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos[34];*/ ?>" class="form-control" id="porceInc" placeholder="%"> </div>
-                                                    <?php  }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceInc" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[46]!='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[46];?>" class="form-control" id="evidInc" placeholder="Número"> </div>
+                                                    <?php if($datos4[27]!='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[27];?>" class="form-control" id="evidInc" placeholder="Número"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidInc" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
                                             </tr>
                                             <!-- ANUNCIO PL -->
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>12</td>
-                                                <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/20XX)</td>
-                                                <?php if($datos4[11] == "Si"){ ?>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Anuncio Independiente<br>(número de permiso CRE PL/XX/EXP/ES/20XX)</td>
+                                                <?php if($datos4[8] == "Si"){ ?>
                                                 <td value="1" id="anInde" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos4[11] == "No") { ?>
+                                                <?php } if($datos4[8] == "No") { ?>
                                                 <td value="0" id="anInde" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos4[11] == "-") { ?>
+                                                <?php } if($datos4[8] == "-") { ?>
                                                 <td value="" id="anInde" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
-                                                    <?php if($datos4[23] == "Otorgada"){ ?>
+                                                    <?php if($datos4[18] == "Otorgada"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -3037,7 +2873,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[23] == "Tramite"){ ?>
+                                                    <?php }if($datos4[18] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -3046,7 +2882,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[23] == "Seguimiento"){ ?>
+                                                    <?php }if($datos4[18] == "Seguimiento"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -3055,7 +2891,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[23] == "-"){ ?>
+                                                    <?php }if($datos4[18] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
@@ -3066,25 +2902,77 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos4[33] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos4[33];*/ ?>" class="form-control" id="porceAnI" placeholder="%"> </div>
-                                                    <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceAnI" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos4[47] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[47];?>" class="form-control" id="evidAnI" placeholder="Número"> </div>
+                                                    <?php if($datos4[28] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[28];?>" class="form-control" id="evidAnI" placeholder="Número"> </div>
                                                     <?php }else{ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidAnI" placeholder="Número"> </div>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
+                                            <!-- SGM -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>10</td>
+                                                <td>Sistema de Gestión de las mediciones</td>
+                                                <?php if($datos4[9] == "Si"){ ?>
+                                                    <td value="1" id="sgm" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos4[9] == "No") { ?>
+                                                    <td value="0" id="sgm" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos4[9] == "-") { ?>
+                                                    <td value="" id="sgm" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                                
+                                                
+                                                <td>
+                                                    <?php if($datos4[19]=="Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" name="" id="estSgm">
+                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos4[19]=="Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" name="" id="estSgm">
+                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos4[19]=="Seguimiento"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" name="" id="estSgm">
+                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos4[19]=="-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" name="" id="estSgm">
+                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos4[29]!='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[29];?>" class="form-control" id="evidSgm" placeholder="Número"> </div>
+                                                    <?php }else{ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidSgm" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos4[47] == "-"){?>
+                                <?php if($datos4[29] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDoCre" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -3099,24 +2987,24 @@
 
                             <div class="row" style="border: black 1px solid; display: none;" id="profeco">
                                 <?php
-                                    $sqlprofe = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'PROFECO' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqlprofe = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'PROFECO' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadoprofe = mysqli_query($con, $sqlprofe);
                                     if($resultadoprofe->num_rows > 0){
                                         $n = 0;
                                         while($filadoc = $resultadoprofe->fetch_assoc()){
                                             $pfdcumpl = $filadoc['cumplimiento'];
                                             $pfstatus = $filadoc['status'];
-                                            $pfporce = $filadoc['porcentaje'];
+                                            
                                             $pfevid = $filadoc['evidencia'];
 
                                             $datos2 [$n] = $pfdcumpl;
                                             $datos2 [$n+2] = $pfstatus;
-                                            $datos2 [$n+4] = $pfporce;
-                                            $datos2 [$n+6] = $pfevid;
+                                            
+                                            $datos2 [$n+4] = $pfevid;
                                             $n++;
                                         }
-                                    }else{  for ($i=0; $i<=7; $i++) { $datos2[$i] = "-"; } }
-                                    //echo "datos: ".$datos2." - ".$datos2[0];
+                                    }else{  for ($i=0; $i<=5; $i++) { $datos2[$i] = "-"; } }
+                                    //echo "datos: - ".$datos2[5];
                                 ?>
                                 <div class="bsc-tbl-cls" style="border-bottom: black 1px solid;">
                                     <table class="table table-cl">
@@ -3185,8 +3073,8 @@
                                                    <?php } ?>
                                                 </td> -->
                                                 <td> 
-                                                    <?php if($datos2[6] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[6];?>" class="form-control" id="evidvPd" placeholder="Número"> </div> 
+                                                    <?php if($datos2[4] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[4];?>" class="form-control" id="evidvPd" placeholder="Número"> </div> 
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidvPd" placeholder="Número"> </div> 
                                                     <?php } ?>
@@ -3251,8 +3139,8 @@
                                                     <?php } ?>    
                                                  </td> -->
                                                 <td>
-                                                    <?php if($datos2[7] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php $datos2[7];?>" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
+                                                    <?php if($datos2[5] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[5];?>" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
                                                     <?php } ?> 
@@ -3261,7 +3149,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos2[7] == "-"){?>
+                                <?php if($datos2[5] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -3563,24 +3451,24 @@
 
                             <div class="row" style="border: black 1px solid; display: none;" id="stps">
                                 <?php
-                                    $sqlstps = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'STPS' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqlstps = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'STPS' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadostps = mysqli_query($con, $sqlstps);
                                     if($resultadostps->num_rows > 0){
                                         $m = 0;
                                         while($filastps = $resultadostps->fetch_assoc()){
                                             $stpscumpl = $filastps['cumplimiento'];
                                             $stpsstatus = $filastps['status'];
-                                            $stpsporce = $filastps['porcentaje'];
+                                            //$stpsporce = $filastps['porcentaje'];
                                             $stpsevid = $filastps['evidencia'];
 
                                             $datos5 [$m] = $stpscumpl;
-                                            $datos5 [$m+1] = $stpsstatus;
-                                            $datos5 [$m+2] = $stpsporce;
-                                            $datos5 [$m+3] = $stpsevid;
+                                            $datos5 [$m+16] = $stpsstatus;
+                                            //$datos5 [$m+2] = $stpsporce;
+                                            $datos5 [$m+32] = $stpsevid;
                                             $m++;
                                         }
-                                    }else{  for ($i=0; $i<=59; $i++) { $datos5[$i] = "-"; } }
-
+                                    }else{  for ($i=0; $i<=47; $i++) { $datos5[$i] = "-"; } }
+                                    //echo "cumplimiento: ".$datos5[13]." estatus: ".$datos5[29]." evidencia: ".$datos5[45];
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
@@ -3601,7 +3489,7 @@
                                                     <td value="" id="001stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[15]=="Otorgada"){?>
+                                                    <?php if($datos5[16]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3610,7 +3498,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[15]=="Tramite"){ ?>
+                                                    <?php }if($datos5[16]=="Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3619,7 +3507,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[15]=="Seguimiento"){ ?>
+                                                    <?php }if($datos5[16]=="Seguimiento"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3628,7 +3516,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[15]=="-"){ ?>
+                                                    <?php }if($datos5[16]=="-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3639,16 +3527,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[30]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[30];*/ ?>" class="form-control" id="porce001" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce001" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[45]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[45];?>" class="form-control" id="evid001" placeholder="Número"> </div>
+                                                    <?php if($datos5[32]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[32];?>" class="form-control" id="evid001" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid001" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3666,7 +3547,7 @@
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[16] == "Otorgada"){?>
+                                                    <?php if($datos5[17] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3675,7 +3556,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[16] == "Tramite"){?>
+                                                    <?php }if($datos5[17] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3684,7 +3565,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[16] == "Seguimiento"){?>
+                                                    <?php }if($datos5[17] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3693,7 +3574,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[16] == "-"){?>
+                                                    <?php }if($datos5[17] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3704,16 +3585,9 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[31]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[31];*/ ?>" class="form-control" id="porce002" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce002" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[46]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[46];?>" class="form-control" id="evid002" placeholder="Número"> </div>
+                                                    <?php if($datos5[33]!='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[33];?>" class="form-control" id="evid002" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid002" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3730,7 +3604,7 @@
                                                     <td value="" id="009stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[17] == "Otorgada"){?>
+                                                    <?php if($datos5[18] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3739,7 +3613,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[17] == "Tramite"){?>
+                                                    <?php }if($datos5[18] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3748,7 +3622,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[17] == "Seguimiento"){?>
+                                                    <?php }if($datos5[18] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3757,7 +3631,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[17] == "-"){?>
+                                                    <?php }if($datos5[18] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3768,16 +3642,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[32] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce009" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce009" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[47] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid009" placeholder="Número"> </div>
+                                                    <?php if($datos5[34] !=""){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[34];?>" class="form-control" id="evid009" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid009" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3794,34 +3661,34 @@
                                                     <td value="" id="010stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[18] == "Otorgada"){?>
+                                                    <?php if($datos5[19] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est010">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[19] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est010">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[19] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est010">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[18] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est010">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[18] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est010">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[18] == "-"){?>
+                                                    <?php }if($datos5[19] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est010">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3832,16 +3699,9 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[33] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[33];*/ ?>" class="form-control" id="porce010" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce010" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[48] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[48];?>" class="form-control" id="evid010" placeholder="Número"> </div>
+                                                    <?php if($datos5[35] !=""){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[35];?>" class="form-control" id="evid010" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid010" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3858,7 +3718,7 @@
                                                     <td value="" id="011stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[19] =="Otorgada"){?>
+                                                    <?php if($datos5[20] =="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3867,7 +3727,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[19] =="Tramite"){?>
+                                                    <?php }if($datos5[20] =="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3876,7 +3736,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[19] =="Seguimiento"){?>
+                                                    <?php }if($datos5[20] =="Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3885,7 +3745,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[19] =="-"){?>
+                                                    <?php }if($datos5[20] =="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3896,16 +3756,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[34] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[34];*/ ?>" class="form-control" id="porce011" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce011" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td> 
-                                                    <?php if($datos5[49] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[49];?>" class="form-control" id="evid011" placeholder="Número"> </div>
+                                                    <?php if($datos5[36] !=""){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[36];?>" class="form-control" id="evid011" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid011" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3923,7 +3776,7 @@
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[20] == "Otorgada"){?>
+                                                    <?php if($datos5[21] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3932,7 +3785,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[20] == "Tramite"){?>
+                                                    <?php }if($datos5[21] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3941,7 +3794,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[20] == "Seguimiento"){?>
+                                                    <?php }if($datos5[21] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3950,7 +3803,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[20] == "-"){?>
+                                                    <?php }if($datos5[21] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3961,16 +3814,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[35] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[35];*/ ?>" class="form-control" id="porce017" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce017" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[50] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[50];?>" class="form-control" id="evid017" placeholder="Número"> </div>
+                                                    <?php if($datos5[37] !=""){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[37];?>" class="form-control" id="evid017" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid017" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3987,7 +3833,7 @@
                                                     <td value="" id="018stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[21] == "Otorgada"){?>
+                                                    <?php if($datos5[22] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -3996,7 +3842,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[21] == "Tramite"){?>
+                                                    <?php }if($datos5[22] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4005,7 +3851,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[21] == "Seguimiento"){?>
+                                                    <?php }if($datos5[22] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4014,7 +3860,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[21] == "-"){?>
+                                                    <?php }if($datos5[22] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4025,16 +3871,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[36] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[36];*/ ?>" class="form-control" id="porce018" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce018" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td> 
-                                                    <?php if($datos5[51] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[51];?>" class="form-control" id="evid018" placeholder="Número"> </div>
+                                                    <?php if($datos5[38] !=''){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[38];?>" class="form-control" id="evid018" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid018" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4052,7 +3891,7 @@
                                                 <?php } ?>
                                                 
                                                 <td>
-                                                    <?php if($datos5[22] == "Otorgada"){?>
+                                                    <?php if($datos5[23] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4061,7 +3900,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[22] == "Tramite"){?>
+                                                    <?php }if($datos5[23] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4070,7 +3909,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[22] == "Seguimiento"){?>
+                                                    <?php }if($datos5[23] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4079,7 +3918,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[22] == "-"){?>
+                                                    <?php }if($datos5[23] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4090,16 +3929,9 @@
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[37] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[37];*/ ?>" class="form-control" id="porce019" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce019" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[52] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[52];?>" class="form-control" id="evid019" placeholder="Número"> </div>
+                                                    <?php if($datos5[39] !=''){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[39];?>" class="form-control" id="evid019" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid019" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4117,7 +3949,7 @@
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos5[23]=="Otorgada"){?>
+                                                    <?php if($datos5[24]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est022">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4126,7 +3958,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[23]=="Tramite"){?>
+                                                    <?php }if($datos5[24]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est022">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4135,7 +3967,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[23]=="Seguimiento"){?>
+                                                    <?php }if($datos5[24]=="Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est022">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4144,7 +3976,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[23]=="-"){?>
+                                                    <?php }if($datos5[24]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est022">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4155,16 +3987,9 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[38] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[38];?>" class="form-control" id="porce022" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce022" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[53] !='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos[53];?>" class="form-control" id="evid022" placeholder="Número"> </div>
+                                                    <?php if($datos5[40] !=''){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[40];?>" class="form-control" id="evid022" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid022" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4182,7 +4007,7 @@
                                                 <?php } ?> 
 
                                                 <td>
-                                                    <?php if($datos5[24]== "Otorgada"){?>
+                                                    <?php if($datos5[25]== "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est024">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4191,7 +4016,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[24] == "Tramite"){?>
+                                                    <?php }if($datos5[25] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est024">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4200,7 +4025,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[24] == "Seguimiento"){?>
+                                                    <?php }if($datos5[25] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est024">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4209,7 +4034,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[24] == "-"){?>
+                                                    <?php }if($datos5[25] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est024">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4220,16 +4045,9 @@
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[39] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[39];*/ ?>" class="form-control" id="porce024" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce024" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[54] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[54];?>" class="form-control" id="evid024" placeholder="Número"> </div>
+                                                    <?php if($datos5[41] !=""){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[41];?>" class="form-control" id="evid024" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid024" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4247,34 +4065,34 @@
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[25] == "Otorgada"){?>
+                                                    <?php if($datos5[26] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est025">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[26] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est025">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[26] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est025">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[25] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est025">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[25] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est025">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[25] == "-"){?>
+                                                    <?php }if($datos5[26] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est025">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4285,16 +4103,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[40]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[40];*/ ?>" class="form-control" id="porce025" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce025" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[55]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[55];?>" class="form-control" id="evid025" placeholder="Número"> </div>
+                                                    <?php if($datos5[42] !=""){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[42];?>" class="form-control" id="evid025" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid025" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4311,7 +4122,7 @@
                                                     <td value="" id="026stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[26] == "Otorgada"){?>
+                                                    <?php if($datos5[27] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est026">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4320,7 +4131,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[26] == "Tramite"){?>
+                                                    <?php }if($datos5[27] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est026">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4329,7 +4140,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[26] == "Seguimiento"){?>
+                                                    <?php }if($datos5[27] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est026">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4338,7 +4149,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[26] == "-"){?>
+                                                    <?php }if($datos5[27] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est026">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4349,16 +4160,9 @@
                                                         </div>
                                                     <?php }?>                                                
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[41] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[41];*/ ?>" class="form-control" id="porce026" placeholder="%"> </div> 
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce026" placeholder="%"> </div> 
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[56] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[56];?>" class="form-control" id="evid026" placeholder="Número"> </div>
+                                                    <?php if($datos5[43] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[43];?>" class="form-control" id="evid026" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid026" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4376,7 +4180,7 @@
                                                 <?php } ?>
                                                
                                                 <td>
-                                                    <?php if($datos5[27] == "Otorgada"){?>
+                                                    <?php if($datos5[28] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est027">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4385,7 +4189,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[27] == "Tramite"){?>
+                                                    <?php }if($datos5[28] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est027">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4394,7 +4198,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[27] == "Seguimiento"){?>
+                                                    <?php }if($datos5[28] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est027">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4403,7 +4207,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[27] == "-"){?>
+                                                    <?php }if($datos5[28] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est027">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4414,16 +4218,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[42] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[42];*/ ?>" class="form-control" id="porce027" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce027" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[57] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[57];?>" class="form-control" id="evid027" placeholder="Número"> </div>
+                                                    <?php if($datos5[44] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[44];?>" class="form-control" id="evid027" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid027" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4441,7 +4238,7 @@
                                                 <?php } ?>
                                                 
                                                 <td>
-                                                    <?php if($datos5[28] == "Otorgada"){?>
+                                                    <?php if($datos5[29] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est029">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4450,7 +4247,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[28] == "Tramite"){?>
+                                                    <?php }if($datos5[29] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est029">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4459,7 +4256,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[28] == "Seguimiento"){?>
+                                                    <?php }if($datos5[29] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est029">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4468,7 +4265,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[28] == "-"){?>
+                                                    <?php }if($datos5[29] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est029">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4479,16 +4276,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[43] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[43];*/ ?>" class="form-control" id="porce029" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce029" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[58] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" valeu="<?php echo $datos5[58];?>" class="form-control" id="evid029" placeholder="Número"> </div>
+                                                    <?php if($datos5[45] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[45];?>" class="form-control" id="evid029" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid029" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4506,7 +4296,7 @@
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[29]=="Otorgada"){?>
+                                                    <?php if($datos5[30]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est033">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4515,7 +4305,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29]=="Tramite"){?>
+                                                    <?php }if($datos5[30]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est033">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4524,7 +4314,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29]=="Seguimiento"){?>
+                                                    <?php }if($datos5[30]=="Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est033">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4533,7 +4323,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29]=="-"){?>
+                                                    <?php }if($datos5[30]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est033">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4544,34 +4334,27 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[44] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[44];*/ ?>" class="form-control" id="porce033" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce033" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[59] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[59];?>" class="form-control" id="evid033" placeholder="Número"> </div>
+                                                    <?php if($datos5[46] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[46];?>" class="form-control" id="evid033" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid033" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background: rgb(198,198,198);">
                                                 <td>16</td>
                                                 <td>Factores de riesgo psicosocial en el trabajo-Identificación, análisis y prevención<br><b>NOM-035-STPS-2018.</b></td>
-                                                <?php if($datos5[14] == "Si"){ ?>
+                                                <?php if($datos5[15] == "Si"){ ?>
                                                     <td value="1" id="035stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[14] == "No") { ?>
+                                                <?php } if($datos5[15] == "No") { ?>
                                                     <td value="0" id="035stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[14] == "-") { ?>
+                                                <?php } if($datos5[15] == "-") { ?>
                                                     <td value="" id="035stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[29]=="Otorgada"){?>
+                                                    <?php if($datos5[31]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est035">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4580,7 +4363,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29]=="Tramite"){?>
+                                                    <?php }if($datos5[31]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est035">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4589,7 +4372,7 @@
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29]=="Seguimiento"){?>
+                                                    <?php }if($datos5[31]=="Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est035">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4598,7 +4381,7 @@
                                                                 <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29]=="-"){?>
+                                                    <?php }if($datos5[31]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est035">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
@@ -4609,16 +4392,9 @@
                                                         </div>
                                                     <?php }?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos5[44] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos5[44];*/ ?>" class="form-control" id="porce033" placeholder="%"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce033" placeholder="%"> </div>
-                                                    <?php }?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos5[59] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[59];?>" class="form-control" id="evid035" placeholder="Número"> </div>
+                                                    <?php if($datos5[47] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[47];?>" class="form-control" id="evid035" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid035" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4627,7 +4403,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos5[59] == "-"){?>
+                                <?php if($datos5[47] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocstp" class="btn btn-warning notika-btn-warning">Guardar</button>                   

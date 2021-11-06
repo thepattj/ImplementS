@@ -243,7 +243,7 @@
 			//echo $ruta;
 			move_uploaded_file($bt01["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','P','".$cre."')";
+			$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaInicio,estatus,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','P','".$cre."')";
 				//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Carga Completa";
@@ -259,7 +259,7 @@
 		
 		$fecha = $_POST['datebt02'];
 		$cre = $_POST['idbt02'];
-		//echo "entro - ".$fecha." - ".$cre;
+		//echo "DATO-".$cre;
 		$pfecha = explode("/", $fecha);
 		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
 		$bt02 = $_FILES["archivobt02"];
@@ -279,7 +279,7 @@
 			$ruta = "../documents/Punto10/".$id."/".$nom_encriptado;
 			//echo $ruta;
 			move_uploaded_file($bt02["tmp_name"], $ruta);
-			$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02','".$ruta."','".$nfecha."','P','".$cre."')";
+			$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaInicio,estatus,idCESH) VALUES ('bt-02','".$ruta."','".$nfecha."','P','".$cre."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Carga Completa";
@@ -319,7 +319,7 @@
 			//echo $ruta;
 			move_uploaded_file($bt03["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','P','".$cre."')";
+			$sql = "INSERT INTO dzbitacora (descripcion,direccion,fechaInicio,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','P','".$cre."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Carga Completa";
@@ -333,794 +333,352 @@
 
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-01*/
 	if(isset($_POST['id11bt01'])){
-		/*if (isset($_POST['idActualiza11bt01'])) {
-			//echo "actualiza";
-			$idActualiza1101 = $_POST['idActualiza11bt01'];
-			$fecha = $_POST['date11bt01'];
-			$cre = $_POST['id11bt01'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt1"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','".$fFecha."','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1101."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		} else{*/
-			//echo "guarda";
-			$fecha = $_POST['date11bt01'];
-			$cre = $_POST['id11bt01'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt1"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		//}
+		//echo "guarda";
+		$fecha = $_POST['date11bt01'];
+		$cre = $_POST['id11bt01'];
 		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
+
+		$bt = $_FILES["archivo11bt1"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
+		//}
+
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-01','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 DIARIO*/
 	if(isset($_POST['id11bt02'])){
-		/*if (isset($_POST['idActualiza11bt02'])) {			
-			//echo "actualiza";
-			$idActualiza1102 = $_POST['idActualiza11bt02'];
-			$fecha = $_POST['date11bt02'];
-			$cre = $_POST['id11bt02'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt2"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
+		$fecha = $_POST['date11bt02'];
+		$cre = $_POST['id11bt02'];
 		
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Diario','".$ruta."','".$nfecha."','".$fFecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt02'];
-			$cre = $_POST['id11bt02'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt2"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
+		$bt = $_FILES["archivo11bt2"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
+		//}
 		
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
 
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Diario','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Diario','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
 			}else{
-				echo "Revisa el formato de tu archivo";
+				echo "Error:".mysqli_error($con);
 			}
-		//}		
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}		
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 MENSUAL*/
 	if(isset($_POST['id11bt02m'])){
-		/*if (isset($_POST['idActualiza11bt02m'])) {
-			//echo "actualiza";
-			$idActualiza1102m = $_POST['idActualiza11bt02m'];
-			$fecha = $_POST['date11bt02m'];
-			$cre = $_POST['id11bt02m'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
+		$fecha = $_POST['date11bt02m'];
+		$cre = $_POST['id11bt02m'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 
-			$bt = $_FILES["archivo11bt2m"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Mensual','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102m."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt02m'];
-			$cre = $_POST['id11bt02m'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt2m"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Mensual','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$bt = $_FILES["archivo11bt2m"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Mensual','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 TRIMESTRAL*/
 	if(isset($_POST['id11bt02t'])){
-		/*if (isset($_POST['idActualiza11bt02t'])) {
-			//echo "actualiza";
-			$idActualiza1102t = $_POST['idActualiza11bt02t'];
-			$fecha = $_POST['date11bt02t'];
-			$cre = $_POST['id11bt02t'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt2t"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+3;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Trimestral','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102t."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt02t'];
-			$cre = $_POST['id11bt02t'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt2t"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-			$mesfin = $mes+3;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Trimestral','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$fecha = $_POST['date11bt02t'];
+		$cre = $_POST['id11bt02t'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
+		
+		$bt = $_FILES["archivo11bt2t"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Trimestral','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 CUATRIMESTRAL*/
 	if(isset($_POST['id11bt02c'])){
-		/*if (isset($_POST['idActualiza11bt02c'])) {
-			//echo "ACTUALIZA";
-			$idActualiza1102c = $_POST['idActualiza11bt02c'];
-			$fecha = $_POST['date11bt02c'];
-			$cre = $_POST['id11bt02c'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
+		$fecha = $_POST['date11bt02c'];
+		$cre = $_POST['id11bt02c'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 
-			$bt = $_FILES["archivo11bt2c"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+4;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Cuatrimestral','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102c."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-			$idActualiza1102c= $_POST['idActualiza11bt02c'];
-		}else{*/
-			$fecha = $_POST['date11bt02c'];
-			$cre = $_POST['id11bt02c'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt2c"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-			$mesfin = $mes+4;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Cuatrimestral','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Correcta";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$bt = $_FILES["archivo11bt2c"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+        	$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Cuatrimestral','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Correcta";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 SEMESTRAL*/
 	if(isset($_POST['id11bt02s'])){
-		/*if (isset($_POST['idActualiza11bt02s'])) {
-			$idActualiza1102s = $_POST['idActualiza11bt02s'];
-			$fecha = $_POST['date11bt02s'];
-			$cre = $_POST['id11bt02s'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
+		$fecha = $_POST['date11bt02s'];
+		$cre = $_POST['id11bt02s'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 
-			$bt = $_FILES["archivo11bt02s"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+6;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Semestral','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102s."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt02s'];
-			$cre = $_POST['id11bt02s'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt02s"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-			$mesfin = $mes+6;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Semestral','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$bt = $_FILES["archivo11bt02s"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Semestral','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 ANUAL*/
 	if(isset($_POST['id11bt02a'])){
-		/*if (isset($_POST['idActualiza11bt02a'])) {
-			//echo "Actualiza";\
-			$idActualiza1102a = $_POST['idActualiza11bt02a'];
-			$fecha = $_POST['date11bt02a'];
-			$cre = $_POST['id11bt02a'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
+		$fecha = $_POST['date11bt02a'];
+		$cre = $_POST['id11bt02a'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 
-			$bt = $_FILES["archivo11bt02a"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$afin = $a+1;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $afin."-".$mes."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Anual','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102a."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt02a'];
-			$cre = $_POST['id11bt02a'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt02a"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$afin = $a+1;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $afin."-".$mes."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Anual','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$bt = $_FILES["archivo11bt02a"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+			
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Anual','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-02 QUIN*/
 	if(isset($_POST['id11bt02q'])){
-		/*if (isset($_POST['idActualiza11bt02q'])) {
-			$idActualiza1102q = $_POST['idActualiza11bt02q'];
-			$fecha = $_POST['date11bt02q'];
-			$cre = $_POST['id11bt02q'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
+		$fecha = $_POST['date11bt02q'];
+		$cre = $_POST['id11bt02q'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 			
-			$bt = $_FILES["archivo11bt02q"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$afin = $a+5;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $afin."-".$mes."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Quinquenal','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1102q."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt02q'];
-			$cre = $_POST['id11bt02q'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-			
-			$bt = $_FILES["archivo11bt02q"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-			$afin = $a+5;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $afin."-".$mes."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Quinquenal','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$bt = $_FILES["archivo11bt02q"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+		
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-02 Quinquenal','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 	/*INSERT Y UPLOAD DE PUNTO 11 BT-03*/
 	if(isset($_POST['id11bt03'])){
-		/*if (isset($_POST['idActualiza11bt03'])) {
-			$idActualiza1103 = $_POST['idActualiza11bt03'];
-			$fecha = $_POST['date11bt03'];
-			$cre = $_POST['id11bt03'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
+		$fecha = $_POST['date11bt03'];
+		$cre = $_POST['id11bt03'];
+		
+		$pfecha = explode("/", $fecha);
+		$nfecha = $pfecha[2]."-".$pfecha[0]."-".$pfecha[1];
+		//echo "entro - ".$nfecha." - ".$cre;
 
-			$bt = $_FILES["archivo11bt03"];
-			//foreach ($bt as $key => $value) {
-				//echo $key.' '.$value.'->';
-			//}
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					$sqlU11 = "UPDATE bitacoras SET estatus = 'A' WHERE idBit = '".$idActualiza1103."'";
-					mysqli_query($con,$sqlU11);
-					echo "Insert Success";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
-		}else{*/
-			$fecha = $_POST['date11bt03'];
-			$cre = $_POST['id11bt03'];
-			list($mes,$dia,$a) = split('[/.-]',$fecha);
-			$nfecha = $a."-".$mes."-".$dia;
-			//echo "entro - ".$nfecha." - ".$cre;
-
-			$bt = $_FILES["archivo11bt03"];
-			/*foreach ($bt as $key => $value) {
-				echo $key.' '.$value.'->';
-			}*/
-			$mesfin = $mes+1;
-			$mesfin = "0".$mesfin;
-			//echo "ultimo".$mesfin;
-			$partes = explode("/", $cre);
-			$id = $partes[0].$partes[1];
-			$fFecha = $a."-".$mesfin."-".$dia;
-			//echo $nfecha."-Nueva fecha: ".$fFecha;
-			
-			$micarpeta = '../documents/Punto11/'.$id;
-			if(!file_exists($micarpeta)){
-				mkdir($micarpeta, 0777, true);
-			}
-			if($bt["type"] == "application/pdf"){
-				$nom_encriptado = md5($bt["tmp_name"]).".pdf";
-
-				$ruta = $micarpeta."/".$nom_encriptado;
-				//echo $ruta;
-				move_uploaded_file($bt["tmp_name"], $ruta);
-
-				$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','P','".$cre."')";
-				//echo $sql;
-				if(mysqli_query($con,$sql)){
-					echo "Carga Completa";
-				}else{
-					echo "Error:".mysqli_error($con);
-				}
-			}else{
-				echo "Revisa el formato de tu archivo";
-			}
+		$bt = $_FILES["archivo11bt03"];
+		//foreach ($bt as $key => $value) {
+			//echo $key.' '.$value.'->';
 		//}
+		
+		// se borro la parte de la fecha fin $mesfin = $mes+1; $mesfin = "0".$mesfin;  $fFecha = $a."-".$mesfin."-".$dia;
+		$partes = explode("/", $cre);
+		$id = $partes[0].$partes[1];
+			
+		$micarpeta = '../documents/Punto11/'.$id;
+		if(!file_exists($micarpeta)){
+			mkdir($micarpeta, 0777, true);
+		}
+		if($bt["type"] == "application/pdf"){
+			$nom_encriptado = md5($bt["tmp_name"]).".pdf";
+			$ruta = $micarpeta."/".$nom_encriptado;
+			//echo $ruta;
+			move_uploaded_file($bt["tmp_name"], $ruta);
+
+			$sql = "INSERT INTO bitacoras (descripcion,direccion,fechaI,estatus,idCESH) VALUES ('bt-03','".$ruta."','".$nfecha."','P','".$cre."')";
+			//echo $sql;
+			if(mysqli_query($con,$sql)){
+				echo "Carga Completa";
+			}else{
+				echo "Error:".mysqli_error($con);
+			}
+		}else{
+			echo "Revisa el formato de tu archivo";
+		}
 	}
 ?>

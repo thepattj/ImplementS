@@ -138,31 +138,35 @@ if($opcion=="addSt"){
 }/*DATOS DE REQUISITOS DE ASEA*/ if($opcion == "add3a"){
 	$n005 = $_POST['n005'];
 	$sn005 = $_POST['sn005'];
-	//$pn005 = $_POST['pn005'];
 	$en005 = $_POST['en005'];
+
 	$mia = $_POST['mia'];
 	$smia = $_POST['smia'];
-	//$pmia = $_POST['pmia'];
 	$emia = $_POST['emia'];
+
 	$ip = $_POST['ip'];
 	$sip = $_POST['sip'];
-	//$pip = $_POST['pip'];
 	$eip = $_POST['eip'];
+
 	$lf = $_POST['lf'];
 	$slf = $_POST['slf'];
-	//$plf = $_POST['plf'];
 	$elf = $_POST['elf'];
+
 	$grp = $_POST['grp'];
 	$sgrp = $_POST['sgrp'];
-	//$pgrp = $_POST['pgrp'];
 	$egrp = $_POST['egrp'];
+
 	$coa = $_POST['coa'];
 	$scoa = $_POST['scoa'];
-	//$pcoa = $_POST['pcoa'];
 	$ecoa = $_POST['ecoa'];
+
+	$poliza = $_POST['poliza'];
+	$spol = $_POST['spoliza'];
+	$epol = $_POST['epoliza'];
+
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('ASEA',1,'".$cre."','".$n005."','".$en005."','".$sn005."'), ('ASEA',2,'".$cre."','".$mia."','".$emia."','".$smia."'), ('ASEA',3,'".$cre."','".$ip."','".$eip."','".$sip."'), ('ASEA',4,'".$cre."','".$lf."','".$elf."','".$slf."'), ('ASEA',5,'".$cre."','".$grp."','".$egrp."','".$sgrp."'), ('ASEA',6,'".$cre."','".$coa."','".$ecoa."','".$scoa."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('ASEA',1,'".$cre."','".$n005."','".$en005."','".$sn005."'), ('ASEA',2,'".$cre."','".$mia."','".$emia."','".$smia."'), ('ASEA',3,'".$cre."','".$ip."','".$eip."','".$sip."'), ('ASEA',4,'".$cre."','".$lf."','".$elf."','".$slf."'), ('ASEA',5,'".$cre."','".$grp."','".$egrp."','".$sgrp."'), ('ASEA',6,'".$cre."','".$coa."','".$ecoa."','".$scoa."'), ('ASEA',7,'".$cre."','".$poliza."','".$epol."','".$spol."')";
 	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";

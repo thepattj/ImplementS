@@ -1062,7 +1062,16 @@ $(document).ready(function(){
 		sta18 = $("#estCiv").val();
 		evi18 = $("#evidCiv").val();
 		cre = localStorage.getItem("PL");
-		alert("Los valores de documentos legales a cargar son: Acta Constitutiva: "+cumActa+" evidencia: "+evi01+"\n Poder Notarial: "+cumPoder+" evidencia: "+evi02);
+
+		alert("Los valores de Documentos legales a cargar son:\n Acta Constitutiva: "+cumActa+" evidencia: "+evi01+
+			"\n Poder Notarial: "+cumPoder+" evidencia: "+evi02+"\n Comprobante Original de RFC: "+cumAltaShcp+" evidencia: "+evi03+
+			"\n R.F.C.: "+cumRfc+" evidencia: "+evi04+"\n Permiso CRE: "+cumpl+" evidencia: "+evi05+
+			"\n Licencia de funcionamiento municipal: "+cumlfm+" evidencia: "+evi06+"\n Dictamen de uso de Suelo: "+cumdS+" evidencia: "+evi07+
+			"\n Tarjeta IMSS: "+cumimss+" evidencia: "+evi08+"\n Planos: "+cumplano+" evidencia: "+evi09+"\n Alta SIEM: "+cumpSiem+" evidencia: "+evi10+
+			" \n Dictamen eléctrico: "+cumpEl+" evidencia: "+evi11+"\nDictamen tierras Fisicas: "+cumpdTF+" evidencia: "+evi12+
+			"\nCalibración de dispensarios: "+cumpCd+" evidencia: "+evi13+"\nPruebas de Hermeticidad: "+cumpHm+" evidencia: "+evi14+
+			"\nPruebas de Hermeticidad de tuberías: "+cumpHmT+" evidencia: "+evi15+"\nFicha y Manual de tanque: "+cumpTnA+" evidencia: "+evi16+
+			"\nFicha y Manual de dispensarios: "+cumpdis+" evidencia: "+evi17+"\nFicha y Manual de control de inventarios: "+cumpIn+" evidencia: "+evi18);
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
@@ -1397,40 +1406,64 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});
+	$("#cPoliza").click(function(){
+		//alert("entra");
+		statuspoliza = $("#cPoliza").text();
+		//alert("es: "+statusActa);
+
+		if(statuspoliza == " - "){
+			//alert("Si");
+			$("#cPoliza").text("Si");
+			$("#cPoliza").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			cumpoliza = "Si";
+		}if(statuspoliza == "Si"){
+			//alert("No");
+			$("#cPoliza").text("No");
+			$("#cPoliza").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			cumpoliza = "No";
+		}if(statuspoliza == "No"){
+			//alert("otra SI");
+			$("#cPoliza").text("Si");
+			$("#cPoliza").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			cumpoliza = "Si";
+		}
+		//console.log(cumActa);
+		//$("#cActa").val("Si");
+	});
 	$("#guardarDocASEA").click(function() {
 		A1sta = $("#estc005").val();
-		/*A1por = $("#porcec005").val();*/
 		A1evi = $("#evidc005").val();
 
 		A2sta = $("#estcMia").val();
-		/*A2por = $("#porcecMia").val();*/
 		A2evi = $("#evidcMia").val();
 
 		A3sta = $("#estcIp").val();
-		/*A3por = $("#porcecIp").val();*/
 		A3evi = $("#evidcIp").val();
 
 		A4sta = $("#estcLf").val();
-		/*A4por = $("#porcecLf").val();*/
 		A4evi = $("#evidcLf").val();
 
 		A5sta = $("#estcGrp").val();
-		/*A5por = $("#porcecGrp").val();*/
 		A5evi = $("#evidcGrp").val();
 
 		A6sta = $("#estcCoa").val();
-		/*A6por = $("#porcecCoa").val();*/
 		A6evi = $("#evidcCoa").val();
-		/* Act on the event */
-		//alert("tomar los 6 valores"); 
-		//cump005 nom005 Cumpmia  MIA cumpip IP cumplf LF cumpgrp GRP cumpcoa COA
-		//alert("tomar los 2 valores: "+cump005+" - % No. 1 "+A1por+" DOS:"+" - "+cumpmia+" la evidencia 5"+A5evi+" - "+cumpip+" - "+cumplf+" - "+cumpgrp+" - "+cumpcoa);
+
+		A7sta = $("#estcPol").val();
+		A7evi = $("#evidcPol").val();
+		
+		alert("Los valores de Obligaciones de ASEA son:\n Dictamen de NOM-005: "+cump005+" evidencia: "+A1evi+
+			"\n Manifiesto Ambiental: "+cumpmia+" evidencia: "+A2evi+"\n o Informe Preventivo: "+cumpip+" evidencia: "+A3evi+
+			"\n Licencia Ambiental (LAU) o Licencia de funcionamiento (LF): "+cumplf+" evidencia: "+A4evi+
+			"\n Registro de generador de Residuos (GRP): "+cumpgrp+" evidencia: "+A5evi+
+			"\n COA: "+cumpcoa+" evidencia: "+A6evi+"\n Registro de polizas: "+cumpoliza+" evidencia: "+A7evi);
+
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3a",n005:cump005, sn005:A1sta, en005:A1evi, /*pn005:A1por, */mia:cumpmia, smia:A2sta, emia:A2evi, /*pmia:A2por,*/ ip:cumpip, sip:A3sta, eip:A3evi,/* pip:A3por,*/ lf:cumplf, slf:A4sta, elf:A4evi, /*plf:A4por,*/ grp:cumpgrp, sgrp:A5sta, egrp:A5evi, /*pgrp:A5por,*/ coa:cumpcoa, scoa:A6sta, ecoa:A6evi, /*pcoa:A6por,*/ cre:cre },
+    		data: {opc:"add3a",n005:cump005,sn005:A1sta,en005:A1evi,mia:cumpmia,smia:A2sta,emia:A2evi,ip:cumpip,sip:A3sta,eip:A3evi,lf:cumplf,slf:A4sta,elf:A4evi,grp:cumpgrp,sgrp:A5sta,egrp:A5evi,coa:cumpcoa,scoa:A6sta,ecoa:A6evi,poliza:cumpoliza,spoliza:A7sta,epoliza:A7evi,cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1440,33 +1473,31 @@ $(document).ready(function(){
 		/* Act on the event */
 		cump005 = $("#c005").text();
 		st005 = $("#estc005").val();
-		/*p005 = $("#porcec005").val();*/
 		ev005 = $("#evidc005").val();
 		
 		cumpmia = $("#cMia").text();
 		stmia = $("#estcMia").val();
-		/*prmia = $("#porcecMia").val();*/
 		evmia = $("#evidcMia").val();
 
 		cumpip = $("#cIp").text();
 		stip = $("#estcIp").val();
-		/*prip = $("#porcecIp").val();*/
 		evip = $("#evidcIp").val();
 
 		cumplf = $("#cLf").text();
 		stlf = $("#estcLf").val();
-		/*prlf = $("#porcecLf").val();*/
 		evlf = $("#evidcLf").val();
 
 		cumpgrp = $("#cGrp").text();
 		stgrp = $("#estcGrp").val();
-		/*prgrp = $("#porcecGrp").val();*/
 		evgrp = $("#evidcGrp").val();
 
 		cumpcoa = $("#cCoa").text();
 		stcoa = $("#estcCoa").val();
-		/*prcoa = $("#porcecCoa").val();*/
 		evcoa = $("#evidcCoa").val();
+
+		cumpPoliza = $("#cPoliza").text();
+		stpoliza = $("#estcPol").val();
+		evpoliza = $("#evidcPol").val();
 		
 		//alert("Cumplimiento text: "+cump005+" Status005VAL: "+st005+" porcentajeTEXT:"+p005+" evaluaconVAL: "+ev005);
 		cre = localStorage.getItem("PL");
@@ -1474,7 +1505,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3a",n005:cump005, sn005:st005, /*pn005:p005,*/ en005:ev005, mia:cumpmia, smia:stmia, /*pmia:prmia,*/ emia:evmia, ip:cumpip, sip:stip, /*pip:prip,*/ eip:evip, lf:cumplf, slf:stlf, /*plf:prlf,*/ elf:evlf, grp:cumpgrp, sgrp:stgrp, /*pgrp:prgrp,*/ egrp:evgrp, coa:cumpcoa, scoa:stcoa, /*pcoa:prcoa,*/ ecoa:evcoa, cre:cre },
+    		data: {opc:"upd3a",n005:cump005,sn005:st005,en005:ev005, mia:cumpmia,smia:stmia,emia:evmia,ip:cumpip,sip:stip,eip:evip,lf:cumplf, slf:stlf,elf:evlf,grp:cumpgrp,sgrp:stgrp,egrp:evgrp,coa:cumpcoa,scoa:stcoa,ecoa:evcoa,poliza:cumpPoliza,spoliza:stpoliza,epoliza:evpoliza,cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1566,7 +1597,7 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});
-	$("#cEstad").click(function(){
+	/*$("#cEstad").click(function(){
 		//alert("entra");
 		statuseta = $("#cEstad").text();
 		//alert("es: "+statusActa);
@@ -1580,19 +1611,19 @@ $(document).ready(function(){
 			//alert("No");
 			$("#cEstad").text("No");
 			$("#cEstad").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
-			/*$("#cEstad").removeClass("active");*/
+			/*$("#cEstad").removeClass("active");
 			cumpesta = "No";
 		}if(statuseta == "No"){
 			//alert("otra SI");
 			$("#cEstad").text("Si");
 			$("#cEstad").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
-			/*$("#cEstad").removeClass("success");*/
+			/*$("#cEstad").removeClass("success");
 			cumpesta = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
-	});
-	$("#016").click(function(){
+	});*/
+	/*$("#016").click(function(){
 		//alert("entra");
 		status016 = $("#016").text();
 		//alert("es: "+statusActa);
@@ -1606,18 +1637,18 @@ $(document).ready(function(){
 			//alert("No");
 			$("#016").text("No");
 			$("#016").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
-			/*$("#016").removeClass("active");*/
+			/*$("#016").removeClass("active");
 			cump016 = "No";
 		}if(status016 == "No"){
 			//alert("otra SI");
 			$("#016").text("Si");
 			$("#016").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
-			/*$("#016").removeClass("success");*/
+			/*$("#016").removeClass("success");
 			cump016 = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
-	});
+	});*/
 	$("#0162017").click(function(){
 		//alert("entra");
 		status0162017 = $("#0162017").text();
@@ -1696,7 +1727,7 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});
-	$("#polizaSg").click(function(){
+	/*$("#polizaSg").click(function(){
 		//alert("entra");
 		statuspSg = $("#polizaSg").text();
 		//alert("es: "+statusActa);
@@ -1710,18 +1741,18 @@ $(document).ready(function(){
 			//alert("No");
 			$("#polizaSg").text("No");
 			$("#polizaSg").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
-			/*$("#polizaSg").removeClass("active");*/
+			/*$("#polizaSg").removeClass("active");
 			cumpSg = "No";
 		}if(statuspSg == "No"){
 			//alert("otra SI");
 			$("#polizaSg").text("Si");
 			$("#polizaSg").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
-			/*$("#polizaSg").removeClass("success");*/
+			/*$("#polizaSg").removeClass("success");
 			cumpSg = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
-	});
+	});*/
 	$("#rQue").click(function(){
 		//alert("entra");
 		statusrQ = $("#rQue").text();
@@ -1826,58 +1857,83 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});
+	$("#sgm").click(function(){
+		//alert("entra");
+		statuSgm = $("#sgm").text();
+		//alert("es: "+statusActa);
+
+		if(statuSgm == " - "){
+			//alert("Si");
+			$("#sgm").text("Si");
+			$("#sgm").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			cumpSg = "Si";
+		}if(statuSgm == "Si"){
+			//alert("No");
+			$("#sgm").text("No");
+			$("#sgm").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
+			//$("#polizaSg").removeClass("active");
+			//cumpSg = "No";
+		}if(statuSgm == "No"){
+			//alert("otra SI");
+			$("#sgm").text("Si");
+			$("#sgm").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
+			//$("#polizaSg").removeClass("success");
+			//cumpSg = "Si";
+		}
+		//console.log(cumActa);
+		//$("#cActa").val("Si");
+	});
+
 	$("#guardarDoCre").click(function() {
 		/* Act on the event */
 		
 		Csta1 = $("#estRdia").val();
-		/*Cpor1 = $("#porceRdia").val();*/
 		Cevi1 = $("#evidRdia").val();
 
 		Csta2 = $("#estRdiap").val();
-		/*Cpor2 = $("#porceRdiap").val();*/
 		Cevi2 = $("#evidRdiap").val();
 
-		Csta3 = $("#estcEs").val();
-		/*Cpor3 = $("#porcecEs").val();*/
+		/*Csta3 = $("#estcEs").val();
 		Cevi3 = $("#evidcEs").val();
 
 		Csta4 = $("#est016").val();
-		/*Cpor4 = $("#porce016").val();*/
-		Cevi4 = $("#evid016").val();
+		Cevi4 = $("#evid016").val();*/
 
 		Csta5 = $("#est0162017").val();
-		/*Cpor5 = $("#porce0162017").val();*/
 		Cevi5 = $("#evid0162017").val();
 
 		Csta6 = $("#estrPs").val();
-		/*Cpor6 = $("#porcerPs").val();*/
 		Cevi6 = $("#evidrPs").val();
 
 		Csta7 = $("#estPoliza").val();
 		Cevi7 = $("#evidPoliza").val();
-		/*Cpor7 = $("#porcePoliza").val();*/
 
-		Csta8 = $("#estPsg").val();
-		Cevi8 = $("#evidPsg").val();
-		/*Cpor8 = $("#porcePsg").val();*/
+		/*Csta8 = $("#estPsg").val();
+		Cevi8 = $("#evidPsg").val();*/
 
 		Csta9 = $("#estrQ").val();
 		Cevi9 = $("#evidrQ").val();
-		/*Cpor9 = $("#porcerQ").val();*/
 
 		Csta10 = $("#estFacP").val();
 		Cevi10 = $("#evidFacP").val();
-		/*Cpor10 = $("#porceFacP").val();*/
 
 		Csta11 = $("#estInc").val();
 		Cevi11 = $("#evidInc").val();
-		/*Cpor11 = $("#porceInc").val();*/
 
 		Csta12 = $("#estAnI").val();
 		Cevi12 = $("#evidAnI").val();
-		/*Cpor12 = $("#porceAnI").val();*/
-		//alert("Valores "+cumprdp+"evidencia 4 "+Cevi4+"porcenteja 9 "+Cpor9);
-		//alert("tomar los 12 valores: "+cumprdv+" DOS:"+" - "+cumprdp+" - "+cumpesta+" - "+cump016+" - "+cump0162017+" - "+cumprpag+" - "+cumpAnual+" - "+cumpSg+" - "+cumprQ+" - "+cumpfPr+" - "+cumpInc+" - "+cumpAnIn);
+
+		Csta8 = $("#estSgm").val();
+		Csta8 = $("#evidSgm").val();
+
+		
+		alert("Los valores de obligaciones CRE:\n Reporte de Volumetricos: "+cumActa+" evidencia: "+evi01+
+			"\n Reporte de Precios: "+cumPoder+" evidencia: "+evi02+"\n Dictamen NOM-016-CRE-2017 "+cumAltaShcp+" evidencia: "+evi03+
+			"\n Pagos de supervisión: "+cumRfc+" evidencia: "+evi04+"\n Poliza anual (reporte anual): "+cumpl+" evidencia: "+evi05+
+			"\n Reporte de quejas: "+cumlfm+" evidencia: "+evi06+"\n Procedencias de quejas: "+cumdS+" evidencia: "+evi07+
+			"\n Reporte de incedentes: "+cumimss+" evidencia: "+evi08+"\n Anuncio Independiente: "+cumplano+" evidencia: "+evi09+
+			"\n SGM: "+cumpSiem+" evidencia: "+evi10);
+
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
