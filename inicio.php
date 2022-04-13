@@ -164,23 +164,20 @@
             </div>
             <div class="modal-body">
               <h2>Punto 2 - Identificación de Peligros y Aspecto Ambientales, Análisis de riesgo y Evaluación de Aspectos Ambientales</h2>
-              <?php
-                $sqlevaluacion = "SELECT idCESH, fechaD FROM ar WHERE idCESH = '".$id."' AND estatus = 'P' ORDER BY idAR DESC LIMIT 1";
-                $resultadoar = mysqli_query($con, $sqlevaluacion);
-                  if($resultadoar->num_rows > 0){ 
-                    while($ari=$resultadoar->fetch_assoc()){
-                      //$salida = $fila['PrecioIgu'];
-                      $fechaIar = $ari['fechaD'];
-                    } ?>
-              <h1 style="color: rgb(254,174,0);">El punto esta implementado</h1>
-              <h2>Fecha de Carga: <?php echo $fechaIar; ?> </h2>
-            </div>
-              <?php }else{ ?>
+              
               <p>Complementar la información de la implementación del punto.</p>
               <form name="arenviar" id="enviarAR" enctype="multipart/form-data" method="post">
                 <p>¿Que documento(s) de evaluación estas cargando?</p>
-                <div class="form-group nk-int-st">
+                <!-- <div class="form-group nk-int-st">
                   <input type="text" class="form-control" placeholder="Evaluación de Aspectos Ambientales / Análisis de riesgos" id="dvlar" name="dvlar">
+                </div> -->
+                <div class="chosen-select-act fm-cmp-mg">
+                    <select class="chosen" id="dvlar" name="dvlar">
+                      <option value="0" style="display: none;">Selecciona una opción</option>
+                      <option value="AR" selected>Análisis de riesgos</option>
+                      <option value="AA">Evaluación de Aspectos Ambientales</option>
+                      <option value="AA/AR">Las dos evaluaciones</option>
+                    </select>
                 </div>
 
                 <p>Carga la evaluación (.zip, .pdf)</p>
@@ -188,6 +185,15 @@
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="crear" name="crear">
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="icar" name="icar">
                 <input style="display:none;" type="input" class="form-control" placeholder="" id="opc" name="opcar">
+                <?php $tiponombre = "SELECT tipoD, fechaD FROM ar WHERE idCESH = '".$id."' ORDER BY fechaD DESC LIMIT 1";
+                      $resultnombre = mysqli_query($con, $tiponombre);
+                      if($resultnombre->num_rows > 0){
+                        while($fila=$resultnombre->fetch_assoc()){
+                          $tipoR = $fila['tipoD'];
+                          $fechaR = $fila['fechaD'];
+                        }
+                      } ?>
+                <p>Tu ulitmo archivo cargado fue: <b><?php echo $tipoR."</b> Cargado el: <b>".$fechaR; ?></b></p>
 
                 <p>Fecha de evaluación</p>        
                 <div class="fm-checkbox">
@@ -195,7 +201,7 @@
                     <div class="form-group nk-datapk-ctm form-elet-mg" id="data_1">
                       <div class="input-group date nk-int-st">
                         <span class="input-group-addon"></span>
-                        <input type="text" class="form-control" id="fechardiv" name="fechardiv" value="03/19/2020">
+                        <input type="text" class="form-control" id="fechardiv" name="fechardiv" value="01/01/2022">
                       </div>
                     </div>
                   </label>
@@ -206,7 +212,7 @@
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-warning" id="btnGuardarAR">Guardar</button>
             </div>
-              <?php } ?>
+              
           </div>
         </div>
       </div>
@@ -221,10 +227,10 @@
               <h2>Punto 4 - Objetivo, metas e indicadores</h2>
               <p>Cargar la prueba documental del cumplimento del objetivo, meta o indicador. </p>
 
-              <p>Selecciona el objetivo</p>
+              <p>Selecciona la meta</p>
               <div class="chosen-select-act fm-cmp-mg">
                 <select class="chosen" name="" id="objetivopt4">
-                  <option value="0" style="display: none;">Selecciona un objetivo</option>
+                  <option value="0" style="display: none;">Selecciona una meta</option>
                   <?php $qri = "SELECT idCobj as id, descripcion as objetivo FROM cobjetivo WHERE idCobj NOT IN (SELECT obj FROM objetivo WHERE idCESH = '".$id."')";
                         $res = mysqli_query($con, $qri);
                         while($row = $res->fetch_object()){ ?>
@@ -279,7 +285,7 @@
               <h2>Punto 7 - Comunicación, Participación y Consulta</h2>
               <p></p>
 
-              <?php $mhoy = date("F"); if($mhoy == "August"){ $mhoy = "Agosto";} if($mhoy == "January"){ $mhoy = "Enero";} if($mhoy == "February"){ $mhoy = "Febrero";}if($mhoy == "March"){ $mhoy = "Marzo";} if($mhoy == "April"){ $mhoy = "Abril";} if($mhoy == "May"){ $mhoy = "Mayo";} if($mhoy == "June"){ $mhoy = "Junio";} if($mhoy == "July"){ $mhoy = "Julio";} if($mhoy == "September"){ $mhoy = "Septiembre";} if($mhoy == "October"){ $mhoy = "Octubre";} if($mhoy == "November"){ $mhoy = "Noviembre";} if($mhoy == "Decenmber"){ $mhoy = "Diciembre";} ?>
+              <?php $mhoy = date("F"); if($mhoy == "August"){ $mhoy = "Agosto";} if($mhoy == "January"){ $mhoy = "Enero";} if($mhoy == "February"){ $mhoy = "Febrero";}if($mhoy == "March"){ $mhoy = "Marzo";} if($mhoy == "April"){ $mhoy = "Abril";} if($mhoy == "May"){ $mhoy = "Mayo";} if($mhoy == "June"){ $mhoy = "Junio";} if($mhoy == "July"){ $mhoy = "Julio";} if($mhoy == "September"){ $mhoy = "Septiembre";} if($mhoy == "October"){ $mhoy = "Octubre";} if($mhoy == "November"){ $mhoy = "Noviembre";} if($mhoy == "December"){ $mhoy = "Diciembre";} ?>
 
               <form name="enviarsq" id="enviarsq" enctype="multipart/form-data" method="post">
                 <div class="modal-body" style="display: ;">
@@ -421,7 +427,7 @@
           </div>
         </div>
       </div>
-      <!-- MODAL DE PUNTO16 NO SIRVE -->
+      <!-- MODAL DE PUNTO16 -->
       <div class="modal fade" id="modalpt16" role="dialog">
         <div class="modal-dialog modals-default">
           <div class="modal-content" style="border-radius: 35px;">
@@ -459,6 +465,74 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-warning" id="btnGuardar16">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL DE PUNTO18 NO SIRVE -->
+      <div class="modal fade" id="modalpt18" role="dialog">
+        <div class="modal-dialog modals-default">
+          <div class="modal-content" style="border-radius: 35px;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" style="background: #d58512;"> X </button>
+            </div>
+            <div class="modal-body">
+              <h2>Punto 18 - Informes de desempeño</h2>
+              <p></p>
+              <p></p>
+                
+                <div class="modal-body">
+                  <table class="table table-sc-ex">
+                    <thead style="background: rgb(198,198,198); color: rgb(0,0,0);">
+                      <tr>
+                        <th style="border-right: 1px solid black; border-top:1px solid black; border-left:1px solid black;">#</th>
+                        <th style="border-right: 1px solid black; border-top:1px solid black; border-left:1px solid black;">Reporte</th>
+                        <th style="border-right: 1px solid black; border-top:1px solid black; border-left:1px solid black;">Fecha</th>
+                        <th style="border-right: 1px solid black; border-top:1px solid black; border-left:1px solid black;">Estatus</th>
+                        <th style="border-right: 1px solid black; border-top:1px solid black; border-left:1px solid black;">Comentarios</th>
+                        <th style="border-right: 1px solid black; border-top:1px solid black; border-left:1px solid black;">Descarga</th>
+                      </tr>
+                    </thead>
+                    <tbody id="reportes18" style="border:1px solid black;">
+                      <?php $pr18 = "SELECT tiporeporte, fechaIngreso, estatus, comentarios, linkD FROM informe WHERE idCESH = '".$id."'";
+                            $respt18 = mysqli_query($con, $pr18);
+                            if($respt18->num_rows > 0){ 
+                              $cont18 = 1;
+                              while($fpt18 = $respt18->fetch_assoc()){
+                                if($cont18%2==0){ ?>
+                                    <tr style="background: rgb(198,198,198);"> 
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $cont18; ?>  </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['tiporeporte']; ?></td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['fechaIngreso']; ?> </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['estatus']; ?> </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['comentarios']; ?> </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <a href=" <?php echo $fpt18['linkD']?>">Descargar informe</a> </td>
+                                    </tr>
+                      <?php     }else{ ?>
+                                    <tr> 
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $cont18; ?>  </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['tiporeporte']; ?></td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['fechaIngreso']; ?> </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['estatus']; ?> </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <?php echo $fpt18['comentarios']; ?> </td>
+                                      <td style="border-right: 1px solid black; border-left: 1px solid black;"> <a href=" <?php echo $fpt18['linkD']?>">Descargar informe</a> </td>
+                                    </tr>
+                      <?php     }
+                              }
+                            } else {?>
+                              <tr> 
+                                <td style="border: 1px solid black;"> NO HAY NINGUN TRBAJADOR DADO DE ALTA </td>
+                              </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <!-- <button type="button" class="btn btn-warning" id="btnGuardar16">Guardar</button> -->
             </div>
           </div>
         </div>
@@ -579,24 +653,23 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt17">
                       <img src="images/Punto-17.png" style="width:; position: relative; margin-left: 5%;" alt>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt18" data-toggle="modal" data-target="">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="pt18" data-toggle="modal" data-target="#modalpt18">
                       <img src="images/Punto-18.png" style="width:; position: relative; margin-left: 5%;" alt>
                     </div>
                   </div>
                 </div>
-
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="">
               <img id="btnadelante" src="images/flecha-der.png" style="width: 38%; position: relative; margin-left: 40%; margin-top: 35%; padding-bottom: 30%;" alt>
             </div>
 
-            <div class="col-lg-12 col-md-2 col-sm-2 col-xs-2">
+            <!-- <div class="col-lg-12 col-md-2 col-sm-2 col-xs-2"> -->
         </div>
     </div>
     <!-- End Sale Statistic area-->
     <!-- Start Email Statistic area-->
-    <div class="notika-email-post-area" style="padding-top: 19.9%;">
+    <div class="notika-email-post-area" style="padding-top: 19.9%; margin-left: 3%;">
         <div class="container">
             <div class="row">
                <div class="typography-heading typography-mgn"   style="background: rgba(255, 255, 255, .1);">
@@ -604,70 +677,66 @@
                 <?php 
                   $sql = "SELECT idCESH FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado = mysqli_query($con, $sql);
-                  if($resultado->num_rows > 0){ ?>
-                    
-                    <img src="images/dispensarioL.png" style="width: 5%; margin-left: 1.5%;">
-                  <?php } else {?>
-                    
-                    <img src="images/dispensario.png" style="width: 5%; margin-left: 1.5%;">
+                  if($resultado->num_rows > 0){ ?>                    
+                    <img src="images/dispensarios/D-1-R.png" style="width: 5%; margin-left: 1.5%;">
+                  <?php } else {?>                    
+                    <img src="images/dispensarios/D-1.png" style="width: 5%; margin-left: 1.5%;">
                   <?php } 
                   /*IMAGEN DEL PUNTO 2*/
                   $sql1 = "SELECT idCESH FROM ar WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado1 = mysqli_query($con, $sql1);
-                  if($resultado1->num_rows > 0){ ?>
-                    
-                    <img src="images/dispensarioL.png" style="width: 5%;">
-                <?php } else { ?>
-                    
-                    <img src="images/dispensario.png" style="width: 5%;">
+                  if($resultado1->num_rows > 0){ ?>                    
+                    <img src="images/dispensarios/D-2-R.png" style="width: 5%;">
+                <?php } else { ?>                    
+                    <img src="images/dispensarios/D-2.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 3*/
                   $sql2 = "SELECT idCESH FROM documento WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado2 = mysqli_query($con, $sql2);
                   if($resultado2->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-3-R.png" style="width: 5%;">
                 <?php } else {?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-3.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 4*/
                   $sql3 = "SELECT idCESH FROM objetivo WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado3 = mysqli_query($con, $sql3);
                   if($resultado3->num_rows > 0){?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-4-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-4.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 5*/
                   $sql4 = "SELECT idCESH FROM organigrama WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado4 = mysqli_query($con, $sql4);
                   if($resultado4->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-5-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-5.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 6*/
                   $sql5 = "SELECT idCESH FROM curso WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado5 = mysqli_query($con, $sql5);
                   if($resultado5->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-6-R.png" style="width: 5%;">
                 <?php } else {?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-6.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 7*/
                   $sql6 = "SELECT idCESH FROM sugque WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado6 = mysqli_query($con, $sql6);
                   if($resultado6->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-7-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-7.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 8*/
                   $sql7 = "SELECT idCESH FROM control WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado7 = mysqli_query($con, $sql7);
                   if($resultado7->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-8-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-8.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 9*/
                   $sql8 = "SELECT idCESH FROM rbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
@@ -675,9 +744,9 @@
                   $resultado8 = mysqli_query($con, $sql8);
                   $resultado9 = mysqli_query($con, $sql08);
                   if($resultado8->num_rows > 0) { ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-9-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-9.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 10*/
                   $sql9 = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."' GROUP BY idCESH";
@@ -690,9 +759,9 @@
                   $resultado11 = mysqli_query($con, $sql11); //CAMBIO TECNOLOGICO
                   $resultado011 = mysqli_query($con, $sql12); //ORDEN DE TRABAJO
                   if($resultado10->num_rows > 0) { ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-10-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-10.png" style="width: 5%;">
                 <?php } 
                   /*if($resultado010->num_rows > 0){}
                     if($resultado11->num_rows > 0){}
@@ -701,9 +770,9 @@
                   $sql13 = "SELECT idCESH FROM bitacoras WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado12 = mysqli_query($con, $sql13);
                   if($resultado12->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-11-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-11.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 12*/
                   $sql14 = "SELECT idCESH FROM dcproveedor WHERE idCESH = '".$id."' GROUP BY idCESH";
@@ -711,55 +780,59 @@
                   $resultado012 = mysqli_query($con, $sql14);
                   $resultado13 = mysqli_query($con, $sql15);
                   if($resultado012->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-12-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-12.png" style="width: 5%;">
                 <?php }
                   /*if($resultado13->num_rows > 0){}*/
                   /*IMAGEN DEL PUNTO 13*/
                   $sql16 = "SELECT idCESH FROM pre WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado014 = mysqli_query($con, $sql16);
                   if($resultado014->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-13-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-13.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 14*/
                   $sql17 = "SELECT idCESH FROM monverif WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado15 = mysqli_query($con, $sql17);
                   if($resultado15->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-14-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-14.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 15*/
                   $sql18 = "SELECT idCESH FROM reportea WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado015 = mysqli_query($con, $sql18);
                   if($resultado015->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-15-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-15.png" style="width: 5%;">
                 <?php }
                   /*IMAGEN DEL PUNTO 16*/
                   $sql19 ="SELECT idCESH FROM incidentes WHERE idCESH = '".$id."' GROUP BY idCESH";
                   $resultado16 = mysqli_query($con, $sql19);
                   if($resultado16->num_rows > 0){ ?>
-                    <img src="images/dispensarioL.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-16-R.png" style="width: 5%;">
                 <?php }else{ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
+                    <img src="images/dispensarios/D-16.png" style="width: 5%;">
                 <?php } 
                   /*IMAGEN DEL PUNTO 17*/
-                  /*if(){*/ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
-                <?php /*}else{*/ ?>
-                    <!-- <img src="images/dispensarioL.png" style="width: 5%;"> -->
-                <?php /*}*/ 
+                  $sql20 = "SELECT idCESH FROM revision WHERE idCESH = '".$id."' GROUP BY idCESH";
+                  $resultado17 = mysqli_query($con, $sql20);
+                  if($resultado17->num_rows > 0){ ?>
+                    <img src="images/dispensarios/D-17-R.png" style="width: 5%;">
+                <?php }else{ ?>
+                    <img src="images/dispensarios/D-17.png" style="width: 5%;">
+                <?php }
                   /*IMAGEN DEL PUNTO 18*/
-                  /*if(){*/ ?>
-                    <img src="images/dispensario.png" style="width: 5%;">
-                <?php /*}else{*/ ?>
-                    <!-- <img src="images/dispensarioL.png" style="width: 5%;"> -->
-                <?php /*}*/ ?>
+                  $sql21 = "SELECT idCESH FROM informe WHERE idCESH = '".$id."' GROUP BY idCESH";
+                  $resultado18 =  mysqli_query($con, $sql21);
+                  if($resultado18->num_rows > 0){ ?>
+                    <img src="images/dispensarios/D-18-R.png" style="width: 5%;">
+                <?php }else{ ?>
+                    <img src="images/dispensarios/D-18.png" style="width: 5%;">
+                <?php }?>
             </div>
           </div>
         </div>

@@ -164,7 +164,7 @@
 			//echo $ruta;
 			move_uploaded_file($pre["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO pre (direccion,idCESH) VALUES ('".$ruta."','".$cesh."')";
+			$sql = "INSERT INTO pre (direccion, tipo, idCESH) VALUES ('".$ruta."', 'acuse', '".$cesh."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Carga Correcta";
@@ -201,7 +201,7 @@
 			//echo $ruta;
 			move_uploaded_file($infosimulacro["tmp_name"], $ruta);
 
-			$sql = "INSERT INTO pre (informeSimulacro, idCESH, tipoSimulacro, fechaSimulacro) VALUES ('".$ruta."','".$cesh."','".$tipoS."','".$fechaS."')";
+			$sql = "INSERT INTO pre (tipo, informeSimulacro, idCESH, tipoSimulacro, fechaSimulacro) VALUES ('reporte', '".$ruta."','".$cesh."','".$tipoS."','".$fechaS."')";
 			//echo $sql;
 			if(mysqli_query($con,$sql)){
 				echo "Carga Correcta de informe";

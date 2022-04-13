@@ -1,8 +1,8 @@
 <?php
 	function Conectarse() {
 		$host="localhost";
-		$user="energas2_root"; 
-		$pass="gC),e}FZnEpP";
+		$user="energas2_energas"; 
+		$pass="e?ox=,s;=YWu";
 		$database="energas2_implement";
 
 		$link = new mysqli($host, $user, $pass, $database);

@@ -678,294 +678,302 @@
                                 <!-- <h2>Revisión de desempeño</h2> -->
                                 <p>En la siguiente tabla veras los estatus de tus avances por punto, al finalizar la tabla encontraras un espacio para que puedas anexar tus conclusiones de la evaluación que le das a tus cumplimientos.</p>
                             </div>
-                                
+                            <?php
+                                    $sqlrevision = "SELECT meta, observacion, feedback, fechaRevision, estatus FROM revision WHERE idCESH = '".$id."' ORDER BY meta ASC";
+                                    $resultadorevision = mysqli_query($con, $sqlrevision);
+                                    if($resultadorevision->num_rows > 0){
+                                        $m = 0;
+                                        while($filas17 = $resultadorevision->fetch_assoc()){
+                                            $meta17 = $filas17['meta'];
+                                            $obs17 = $filas17['observacion'];
+                                            $fee17 = $filas17['feedback'];
+                                            $fer17 = $filas17['fechaRevision'];
+                                            $sta17 = $filas17['estatus'];
+
+                                            $datos17[$m] = $meta17;
+                                            $datos17[$m+18] = $obs17;
+                                            $datos17[$m+36] = $fee17;
+                                            $datos17[$m+54] = $fer17;
+                                            $datos17[$m+72] = $sta17;
+                                            $m++;
+                                        }
+                                    }else{  for ($i=0; $i<=89; $i++) { $datos17[$i] = "-"; } }
+                                    //echo "cumplimiento: ".$datos5[15]." estatus: ".$datos5[31]." evidencia: ".$datos5[45];
+                                ?>    
                             <!-- TABLA DE ESTATUS -->
                             <div class="row" style="boder: black 1px solid">
-                                <div class="" style="overflow: auto; width: 80%; height: 250px; margin-left: 10%;"> <!-- AQUI AGREGUE EL SCROLL -->
+                                <div class="" style="overflow: auto; width: 88%; height: 250px; margin-left: 6%;"> <!-- AQUI AGREGUE EL SCROLL -->
                                     <table class="table table-cl">
                                         <thead style="background: rgb(198,198,198);">
                                             <tr>
                                                 <th>Punto</th>
-                                                <th>Concepto</th>
-                                                <th colspan="2">Estatus</th>
-                                                <!-- <th></th> -->
-                                                <!-- <th>No disponible</th> -->
-                                                <th>Observación</th>
+                                                <th>Estatus</th>
+                                                <th style="width: 100px;">Fecha de Revisión</th>
+                                                <th>Observaciones</th>
+                                                <th>Comentarios</th>
+                                                <!-- <th>Descargas</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
                                            <!-- VALORES QUE SE TIENEN DE 1 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">1.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Política</td>
-                                                <?php 
-                                                $sql = "SELECT idCESH FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado = mysqli_query($con, $sql);
-                                                if($resultado->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
-                                                <?php } else {?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[0]; ?> Política</td>
+                                                <?php
+                                                    if($datos17[72] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[72]; ?></td>
+                                                <?php
+                                                    } if($datos17[72] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[72]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[54]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[18]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[36]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES QUE DE 2-->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">2.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Identificación de peligros y aspectos ambientales, Análisis de riesgo y evaluación de impactos ambientales</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[1]; ?> Identificación de peligros y aspectos ambientales, Análisis de riesgo y evaluación de impactos ambientales</td>
                                                 <?php
-                                                $sql1 = "SELECT idCESH FROM ar WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado1 = mysqli_query($con, $sql1);
-                                                if($resultado1->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
-                                                <?php } else { ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[73] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[73]; ?></td>
+                                                <?php
+                                                    } if($datos17[73] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[73]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[55]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[19]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[37]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 3 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">3.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Requisitos Legales</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[2]; ?>. Requisitos Legales</td>
                                                 <?php
-                                                $sql2 = "SELECT idCESH FROM documento WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado2 = mysqli_query($con, $sql2);
-                                                if($resultado2->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
-                                                <?php } else {?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[74] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[74]; ?></td>
+                                                <?php
+                                                    } if($datos17[74] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[74]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>                                               
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[56]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[20]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[38]; ?>"> </td>                                              
                                             </tr>
                                             <!-- VALORES DE 4 -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">4.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Objetivos, Metas e indicadores</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[3]; ?> Objetivos, Metas e indicadores</td>
                                                 <?php
-                                                $sql3 = "SELECT idCESH FROM objetivo WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado3 = mysqli_query($con, $sql3);
-                                                if($resultado3->num_rows > 0){?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>    
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[75] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[75]; ?></td>
+                                                <?php
+                                                    } if($datos17[75] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[75]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[57]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[21]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[39]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 5 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">5.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Funciones, Responsabilidades y Autoridad</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[4]; ?> Funciones, Responsabilidades y Autoridad</td>
                                                 <?php
-                                                $sql4 = "SELECT idCESH FROM organigrama WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado4 = mysqli_query($con, $sql4);
-                                                if($resultado4->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[76] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[76]; ?></td>
+                                                <?php
+                                                    } if($datos17[76] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[76]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[58]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[22]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[40]; ?>"> </td>
                                             </tr>
                                              <!-- VALORES DE 6 -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">6. </td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Competencia del personal, capacitación y entrenamiento</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[5]; ?>. Competencia del personal, capacitación y entrenamiento</td>
                                                 <?php
-                                                $sql5 = "SELECT idCESH FROM curso WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado5 = mysqli_query($con, $sql5);
-                                                if($resultado5->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php } else {?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[77] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[77]; ?></td>
+                                                <?php
+                                                    } if($datos17[77] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[77]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[59]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[23]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[41]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 7 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">7.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Comunicación, Participación y Consulta</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[6]; ?> Comunicación, Participación y Consulta</td>
                                                 <?php
-                                                $sql6 = "SELECT idCESH FROM sugque WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado6 = mysqli_query($con, $sql6);
-                                                if($resultado6->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
-                                                <?php }?>
-                                                <td><input type="text" name=""></td>
+                                                    if($datos17[78] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[78]; ?></td>
+                                                <?php
+                                                    } if($datos17[78] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[78]; ?></td>
+                                                <?php } ?>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[60]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[24]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[42]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 8 -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">8.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Control de documentos y registros</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[7]; ?> Control de documentos y registros</td>
                                                 <?php
-                                                $sql7 = "SELECT idCESH FROM control WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado7 = mysqli_query($con, $sql7);
-                                                if($resultado7->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[79] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[79]; ?></td>
+                                                <?php
+                                                    } if($datos17[79] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[79]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[61]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[25]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[43]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 9 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">9.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Mejores prácticas y estándares</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[8]; ?> Mejores prácticas y estándares</td>
                                                 <?php
-                                                $sql8 = "SELECT idCESH FROM rbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $sql08 = "SELECT idCESH FROM controlrbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado8 = mysqli_query($con, $sql8);
-                                                $resultado9 = mysqli_query($con, $sql08);
-                                                if($resultado8->num_rows > 0) { ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
-                                                <?php }
-                                                //if($resultado9->num_rows > 0){} ?>
-                                                <td><input type="text" name=""></td>
+                                                    if($datos17[80] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[80]; ?></td>
+                                                <?php
+                                                    } if($datos17[80] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[80]; ?></td>
+                                                <?php } ?>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[62]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[26]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[44]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 10 -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">10.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Control de actividades y procesos</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[9]; ?> Control de actividades y procesos</td>
                                                 <?php
-                                                $sql9 = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $sql10 = "SELECT idCESH FROM dzcambiop WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $sql11 = "SELECT idCESH FROM dzcambiot WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $sql12 = "SELECT idCESH FROM dzordentr WHERE idCESH = '".$id."' GROUP BY idCESH";
-
-                                                $resultado10 = mysqli_query($con, $sql9);
-                                                $resultado010 = mysqli_query($con, $sql10);
-                                                $resultado11 = mysqli_query($con, $sql11);
-                                                $resultado011 = mysqli_query($con, $sql12);
-                                                if($resultado10->num_rows > 0) { ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
-                                                <?php } 
-                                                /*if($resultado010->num_rows > 0){}
-                                                if($resultado11->num_rows > 0){}
-                                                if($resultado011->num_rows > 0){}*/?>
-                                                <td><input type="text" name=""></td>
+                                                    if($datos17[81] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[81]; ?></td>
+                                                <?php
+                                                    } if($datos17[81] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[81]; ?></td>
+                                                <?php } ?>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[63]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[27]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[45]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE  11-->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">11.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Integridad mécanica y aseguramiento de la calidad</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[10]; ?> Integridad mécanica y aseguramiento de la calidad</td>
                                                 <?php
-                                                $sql13 = "SELECT idCESH FROM bitacoras WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado12 = mysqli_query($con, $sql13);
-                                                if($resultado12->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[82] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[82]; ?></td>
+                                                <?php
+                                                    } if($datos17[82] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[82]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[64]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[28]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[46]; ?>"> </td>
                                             </tr>
                                             <!-- VALOR DE 12 -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">12.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;"> Seguridad de contratistas</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[11]; ?> Seguridad de contratistas</td>
                                                 <?php
-                                                $sql14 = "SELECT idCESH FROM dcproveedor WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $sql15 = "SELECT idCESH FROM dctraex WHERE idCESH = '".$id."' GROUP BY idCESH";
-
-                                                $resultado012 = mysqli_query($con, $sql14);
-                                                $resultado13 = mysqli_query($con, $sql15);
-                                                if($resultado012->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
-                                                <?php }
-                                                /*if($resultado13->num_rows > 0){}*/ ?>
-                                                <td><input type="text" name=""></td>
+                                                    if($datos17[83] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[83]; ?></td>
+                                                <?php
+                                                    } if($datos17[83] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[83]; ?></td>
+                                                <?php } ?>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[65]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[29]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[47]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 13 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">13.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Protocolo de respuesta a Emergencias / Preparación y respuesta a Emergencias </td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[12]; ?> Protocolo de respuesta a Emergencias / Preparación y respuesta a Emergencias</td>
                                                 <?php
-                                                $sql16 = "SELECT idCESH FROM pre WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado014 = mysqli_query($con, $sql16);
-                                                if($resultado014->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[84] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[84]; ?></td>
+                                                <?php
+                                                    } if($datos17[84] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[84]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[66]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[30]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[48]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 14 -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">14.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Monitoreo, Verificación y Evaluación</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[13]; ?> Monitoreo, Verificación y Evaluación</td>
                                                 <?php
-                                                $sql17 = "SELECT idCESH FROM monverif WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado15 = mysqli_query($con, $sql17);
-                                                if($resultado15->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[85] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[85]; ?></td>
+                                                <?php
+                                                    } if($datos17[85] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[85]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[67]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[31]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[49]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 15 -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">15.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Auditorías</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[14]; ?> Auditorías</td>
                                                 <?php
-                                                $sql18 = "SELECT idCESH FROM reportea WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado015 = mysqli_query($con, $sql18);
-                                                if($resultado015->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[86] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[86]; ?></td>
+                                                <?php
+                                                    } if($datos17[86] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[86]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[68]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[32]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[50]; ?>"> </td>
                                             </tr>
                                              <!-- DATOS DE TANQUE DE ALMACENAMIENTO -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">16.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Investigación de incidentes y accidentes</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[15]; ?> Investigación de incidentes y accidentes</td>
                                                 <?php
-                                                $sql19 ="SELECT idCESH FROM incidentes WHERE idCESH = '".$id."' GROUP BY idCESH";
-                                                $resultado16 = mysqli_query($con, $sql19);
-                                                if($resultado16->num_rows > 0){ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php }else{ ?>
-                                                    <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
+                                                    if($datos17[87] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[87]; ?></td>
+                                                <?php
+                                                    } if($datos17[87] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[87]; ?></td>
                                                 <?php } ?>
-                                                <td><input type="text" name=""></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[69]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[33]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[51]; ?>"> </td>
                                             </tr>
                                              <!-- DATOS DE DISPENSARIOS -->
                                             <tr>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">17.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Revisión de resultados</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[16]; ?> Revisión de resultados</td>
                                                 <?php
-                                                $s="";
-                                                $r="";
-                                                /*if(){*/ ?>
-                                                    <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td>
-                                                <?php /*}else{*/ ?>
-                                                    <!-- <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td> -->
-                                                <?php /*}*/ ?>
-                                                <td><input type="text" name=""></td>
+                                                    if($datos17[88] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[88]; ?></td>
+                                                <?php
+                                                    } if($datos17[88] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[88]; ?></td>
+                                                <?php } ?>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[70]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[34]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[52]; ?>"> </td>
                                             </tr>
                                             <!-- DATOS DE CONTROL DE INVENTARIOS -->
                                             <tr style="background: rgba(198,198,198,.4);">
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">18.</td>
-                                                <td style="border-right: rgb(198,198,198) 1px solid;">Informes de desempeño</td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[17]; ?> Informes de desempeño</td>
                                                 <?php
-                                                $s="";
-                                                $r="";
-                                                /*if(){*/ ?>
-                                                    <!-- <td colspan="2" style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;">Completo</td> -->
-                                                     <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td>
-                                                <?php /*}else{*/ ?>
-                                                    <!-- <td colspan="2" style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color:white;">En tramite</td> -->
-                                                <?php /*}*/ ?>
-                                                <td><input type="text" name=""></td>
+                                                    if($datos17[89] == "Concluido"){ ?>
+                                                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[89]; ?></td>
+                                                <?php
+                                                    } if($datos17[89] == "No Concluido"){ ?>
+                                                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"><?php echo $datos17[89]; ?></td>
+                                                <?php } ?>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[71]; ?></td>
+                                                <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[35]; ?></td>
+                                                <td> <input type="text" name="" value="<?php echo $datos17[52]; ?>"> </td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <button id="actualizarpt17" class="btn btn-info notika-btn-info">Actualizar </button>                   
                                 </div>
                             </div>
                         </div>

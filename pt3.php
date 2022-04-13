@@ -2172,7 +2172,7 @@
                                             $l++;
                                         }
                                     }else{  for ($i=0; $i<=29; $i++) { $datos4[$i] = "-"; } }
-                                    /*echo "cumplimiento: ".$datos4[0]." status1: ".$datos4[12]." porcentaje: ".$datos4[24]." evidencia: ".$datos4[36];*/
+                                    /*echo "cre 4 cumplimiento: ".$datos4[3]." status1: ".$datos4[13]." evidencia: ".$datos4[23];*/
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
@@ -2436,17 +2436,17 @@
                                                 <td>3</td>
                                                 <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
                                                 <?php if($datos4[2] == "Si"){ ?>
-                                                <td value="1" id="0162017" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <td value="1" id="016" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[2] == "No") { ?>
-                                                <td value="0" id="0162017" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <td value="0" id="016" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
                                                 <?php } if($datos4[2] == "-") { ?>
-                                                <td value="" id="0162017" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <td value="" id="016" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
                                                     <?php if($datos4[12] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est0162017">
+                                                            <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada" selected>Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
@@ -2455,7 +2455,7 @@
                                                         </div>
                                                     <?php }if($datos4[12] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est0162017">
+                                                            <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite" selected>En tramite</option>
@@ -2464,7 +2464,7 @@
                                                         </div>
                                                     <?php }if($datos4[12] == "Seguimiento"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est0162017">
+                                                            <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
@@ -2473,7 +2473,7 @@
                                                         </div>
                                                     <?php }if($datos4[12] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est0162017">
+                                                            <select class="chosen" name="" id="est016">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
@@ -2484,9 +2484,9 @@
                                                 </td>
                                                 <td>
                                                     <?php if($datos4[22] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[22]; ?>" class="form-control" id="evid0162017" placeholder="Número"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos4[22]; ?>" class="form-control" id="evid016" placeholder="Número"> </div>
                                                     <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid0162017" placeholder="Número"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid016" placeholder="Número"> </div>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
@@ -2507,7 +2507,7 @@
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
@@ -2517,7 +2517,7 @@
                                                             <select class="chosen" name="" id="estrPs">
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Tramite" selected>En tramite</option>
                                                                 <option value="Seguimiento">Seguimiento</option>
                                                             </select>
                                                         </div>
@@ -2527,7 +2527,7 @@
                                                                 <option id="" value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[13] == '-'){ ?>
@@ -3065,13 +3065,6 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td> 
-                                                    <?php if($datos2[4] !='-'){ ?>
-                                                       <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos2[4];*/ ?>" class="form-control" id="porcevPd" placeholder="%"> </div>
-                                                   <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcevPd" placeholder="%"> </div>
-                                                   <?php } ?>
-                                                </td> -->
                                                 <td> 
                                                     <?php if($datos2[4] !='-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[4];?>" class="form-control" id="evidvPd" placeholder="Número"> </div> 
@@ -3131,13 +3124,6 @@
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos2[5] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*$datos2[5];*/ ?>" class="form-control" id="porcerCtd" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcerCtd" placeholder="%"> </div>
-                                                    <?php } ?>    
-                                                 </td> -->
                                                 <td>
                                                     <?php if($datos2[5] !='-'){ ?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[5];?>" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
@@ -3468,7 +3454,7 @@
                                             $m++;
                                         }
                                     }else{  for ($i=0; $i<=47; $i++) { $datos5[$i] = "-"; } }
-                                    //echo "cumplimiento: ".$datos5[13]." estatus: ".$datos5[29]." evidencia: ".$datos5[45];
+                                    //echo "cumplimiento: ".$datos5[15]." estatus: ".$datos5[31]." evidencia: ".$datos5[45];
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
                                     <table class="table table-cl">
@@ -3595,6 +3581,178 @@
                                             </tr>
                                             <tr>
                                                 <td>3</td>
+                                                <td>Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo que se utilice en los centros de trabajo<br><b>NOM-004-STPS-1999.</b></td>
+                                                <?php if($datos5[1] == "Si"){ ?>
+                                                    <td value="1" id="004stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[1] == "No") { ?>
+                                                    <td value="0" id="004stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[1] == "-") { ?>
+                                                    <td value="" id="004stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                                
+                                                <td>
+                                                    <?php if($datos5[1]=="Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est004">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1]=="Tramite"){ ?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est004">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1]=="Seguimiento"){ ?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est004">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1]=="-"){ ?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est004">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[1]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid004" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid004" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>4</td>
+                                                <td>Relativa a las condiciones de seguridad e higiene en los centros de trabajo para el manejo, transporte y almacenamiento de sustancias químicas peligrosas<br><b>NOM-005-STPS-1998.</b></td>
+                                                <?php if($datos5[1] == "Si"){ ?>
+                                                <td value="1" id="005stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[1] == "No") { ?>
+                                                <td value="0" id="005stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[1] == "-") { ?>
+                                                <td value="" id="005stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+
+                                                <td>
+                                                    <?php if($datos5[1] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est005">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est005">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1] == "Seguimiento"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est005">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1] == "-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est005">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>                                                    
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[1]!='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid005" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid005" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Manejo y almacenamiento de materiales-Condiciones de seguridad y salud en el trabajo<br><b>NOM-006-STPS-2014.</b></td>
+                                                <?php if($datos5[1] == "Si"){ ?>
+                                                    <td value="1" id="006stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[1] == "No") { ?>
+                                                    <td value="0" id="006stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[1] == "-") { ?>
+                                                    <td value="" id="006stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                                
+                                                <td>
+                                                    <?php if($datos5[1]=="Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est006">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1]=="Tramite"){ ?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est006">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1]=="Seguimiento"){ ?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est006">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1]=="-"){ ?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est006">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[1]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid006" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid006" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>6</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en altura<br><b>NOM-009-STPS-2011.</b></td>
                                                 <?php if($datos5[2] == "Si"){ ?>
                                                     <td value="1" id="009stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -3650,8 +3808,8 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>4</td>
+                                            <!-- <tr>
+                                                <td>7</td>
                                                 <td>Evaluación de sustancias química<br><b>NOM-010-STPS-2014.</b></td>
                                                 <?php if($datos5[3] == "Si"){ ?>
                                                     <td value="1" id="010stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -3706,9 +3864,9 @@
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid010" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                             <tr>
-                                                <td>5</td>
+                                                <td>7</td>
                                                 <td>Evaluación de ruido<br><b>NOM-011-STPS-2001</b></td>
                                                 <?php if($datos5[4] == "Si"){ ?>
                                                     <td value="1" id="011stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -3765,7 +3923,7 @@
                                                 </td>
                                             </tr>
                                             <tr style="background: rgb(198,198,198);">
-                                                <td>6</td>
+                                                <td>8</td>
                                                 <td>Equipo de protección personal-Selección, uso y manejo en los centros de trabajo<br><b>NOM-017-STPS-2008.</b></td>
                                                 <?php if($datos5[5] == "Si"){ ?>
                                                     <td value="1" id="017stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -3823,7 +3981,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>7</td>
+                                                <td>9</td>
                                                 <td>Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo<br><b>NOM-018-STPS-2015.</b></td>
                                                 <?php if($datos5[6] == "Si"){ ?>
                                                     <td value="1" id="018stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -3880,7 +4038,7 @@
                                                 </td>
                                             </tr>
                                             <tr style="background: rgb(198,198,198);">
-                                                <td>8</td>
+                                                <td>10</td>
                                                 <td>Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene<br><b>NOM-019-STPS-2011.</b></td>
                                                 <?php if($datos5[7] == "Si"){ ?>
                                                 <td value="1" id="019stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -3938,8 +4096,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>9</td>
-                                                <td>Evaluación de electricidad estática en los centros de trabajo<br><b>NOM-022-STPS-2008</b></td>
+                                                <td>11</td>
+                                                <td>Recipientes sujetos a presión, recipientes criogénicos, y generadores de vapor o calderas<br><b>NOM-020-STPS-2011</b></td>
                                                 <?php if($datos5[8] == "Si"){ ?>
                                                 <td value="1" id="022stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[8] == "No") { ?>
@@ -3996,66 +4154,8 @@
                                                 </td>
                                             </tr>
                                             <tr style="background: rgb(198,198,198);">
-                                                <td>10</td>
-                                                <td>Condiciones de seguridad e higiene en los centros de trabajo<br><b>NOM-024-STPS-2015</b></td>
-                                                <?php if($datos5[9] == "Si"){ ?>
-                                                <td value="1" id="024stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[9] == "No") { ?>
-                                                <td value="0" id="024stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[9] == "-") { ?>
-                                                <td value="" id="024stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?> 
-
-                                                <td>
-                                                    <?php if($datos5[25]== "Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est024">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[25] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est024">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[25] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est024">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[25] == "-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est024">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>                                                    
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[41] !=""){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[41];?>" class="form-control" id="evid024" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid024" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>11</td>
-                                                <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
+                                                <td>12</td>
+                                                <td>Evaluación de electricidad estática en los centros de trabajo<br><b>NOM-022-STPS-2008</b></td>
                                                 <?php if($datos5[10] == "Si"){ ?>
                                                 <td value="1" id="025stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[10] == "No") { ?>
@@ -4111,9 +4211,9 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>12</td>
-                                                <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
+                                            <tr >
+                                                <td>13</td>
+                                                <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
                                                 <?php if($datos5[11] == "Si"){ ?>
                                                     <td value="1" id="026stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[11] == "No") { ?>
@@ -4168,9 +4268,9 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>13</td>
-                                                <td>Actividades de soldadura y corte-Condiciones de seguridad e higiene<br><b>NOM-027-STPS-2008.</b></td>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>14</td>
+                                                <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
                                                 <?php if($datos5[12] == "Si"){ ?>
                                                 <td value="1" id="027stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos5[12] == "No") { ?>
@@ -4226,8 +4326,8 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>14</td>
+                                            <!--<tr >
+                                                <td>17</td>
                                                 <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
                                                 <?php if($datos5[13] == "Si"){ ?>
                                                 <td value="1" id="029stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -4283,9 +4383,67 @@
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid029" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                             <tr>
                                                 <td>15</td>
+                                                <td>Servicios preventivos de seguridad y salud en el trabajo<br><b>NOM-030-STPS-2009.</b></td>
+                                                <?php if($datos5[1] == "Si"){ ?>
+                                                <td value="1" id="030stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[12] == "No") { ?>
+                                                <td value="0" id="030stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[12] == "-") { ?>
+                                                <td value="" id="030stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+                                               
+                                                <td>
+                                                    <?php if($datos5[1] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada" selected>Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite" selected>En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1] == "Seguimiento"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[1] == "-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none;">Selecciona una opción</option>
+                                                                <option value="Otorgada">Otorgada</option>
+                                                                <option value="Tramite">En tramite</option>
+                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[1] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid030" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid030" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>16</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en espacios confinados<br><b>NOM-033-STPS-2015.</b></td>
                                                 <?php if($datos5[14] == "Si"){ ?>
                                                     <td value="1" id="033stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
@@ -4342,8 +4500,8 @@
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>16</td>
+                                            <tr>
+                                                <td>17</td>
                                                 <td>Factores de riesgo psicosocial en el trabajo-Identificación, análisis y prevención<br><b>NOM-035-STPS-2018.</b></td>
                                                 <?php if($datos5[15] == "Si"){ ?>
                                                     <td value="1" id="035stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>

@@ -30,12 +30,12 @@ $(document).ready(function(){
 					alert("Error en datos favor de validar");
 					}if(a[0] == "Admin"){
 						alert("Entra a Admin, respuesta:"+a[0]);
-						window.location.href = "inicio.php?ty="+a[0]+"&x=";
+						window.location.href = "inicioadmin.php?ty="+a[0]+"&x=";
 					}if(a[0] == "sasisopa"){
 						//alert("Entra a SASISOPA");
-						window.location.href = "inicio.php?ty="+a[0]+"&x=";
+						window.location.href = "inicioadmin.php?ty="+a[0]+"&x=";
 					}if (a[0] == "RL") {
-						//alert("RL");
+						window.location.href = "inicioadminC.php?ty="+a[0]+"&x=";
 					}if(a[0] == "estacion"){
 						alert("Ingreso exitoso"); //aqui hay que ver si se puede cambiar por un MODAL
 						window.location.href = "inicio.php?ty="+a[0]+"&x="+a[3];
@@ -58,50 +58,63 @@ $(document).ready(function(){
 	});
 
 	//USUARIO SASISOPA
-	/*MUESTRA LOS MENUS DE ESTACIONES*/
-	$("#btnstasasi").click(function(){
-		$("#spaesta").show('slow/400/fast');
-		$("#btnaddst").show('slow/400/fast');
-		$("#btnupdst").show('slow/400/fast');
-		$("#btnAdu").show('slow/400/fast');
+	/*MUESTRA FORMULARO DE AGREGAR*/
+	$("#addstajs").click(function(){
+		$("#agregarNew").show('slow/400/fast');
+		$("#btnGuardarEstacion").show('slow/400/fast');
 
-		$("#btnsas").hide('slow/400/fast');
-		$("#btnbl").hide('slow/400/fast');
+		$("#actualizaRw").hide('slow/400/fast');
+		$("#btnActualizarEstacion").hide('slow/400/fast');
+		$("#borrarDe").hide('slow/400/fast');
+		$("#btnDesactivarEstacion").hide('slow/400/fast');
 	});
-	/*MUESTRA LOS MENUS DE BLOQ Y IMPLEMENTACION*/
-	$("#btnsasisasi").click(function(){
-		$("#spaesta").show('slow/400/fast');
-		$("#btnsas").show('slow/400/fast');
-		$("#btnbl").show('slow/400/fast');
-		$("#btnaddst").hide('slow/400/fast');
-		$("#btnupdst").hide('slow/400/fast');
-		$("#btnAdu").hide('slow/400/fast');		
+	/*MUESTRA FORMULARIO DE ACTUALIZAR*/
+	$("#upstajs").click(function(){
+		$("#actualizaRw").show('slow/400/fast');
+		$("#btnActualizarEstacion").show('slow/400/fast');
+
+		$("#agregarNew").hide('slow/400/fast');
+		$("#btnGuardarEstacion").hide('slow/400/fast');
+		$("#borrarDe").hide('slow/400/fast');
+		$("#btnDesactivarEstacion").hide('slow/400/fast');
+	});
+	/*MUESTRA FORMULARIO DE DESACTIVAR*/
+	$("#delstajs").click(function(){
+		$("#borrarDe").show('slow/400/fast');
+		$("#btnDesactivarEstacion").show('slow/400/fast');
+
+		$("#agregarNew").hide('slow/400/fast');
+		$("#btnGuardarEstacion").hide('slow/400/fast');
+		$("#actualizaRw").hide('slow/400/fast');
+		$("#btnActualizarEstacion").hide('slow/400/fast');
 	});
 	/*AGREGA UNA ESTACION A LA BASE DE DATOS*/
 	$("#btnGuardarEstacion").click(function() {
-		razonSocial = $('#RS').val();
-		cre = $('#PL').val();
-		noEst = $('#idStation').val();
-		fran = $('#franq').val();
-		dFiscal = $('#dirFis').val();
-		rfcEst = $('#rfcStation').val();
-		uEst = $('#ubiStation').val();
-		tEst = $('#telStation').val();
-		cEst = $('#correoASEA').val();
-		rL = $('#nameRL').val();
-		rfcR = $('#rfcRL').val();
-		curpR = $('#curpRL').val();
-		estadoS = $('#estadoStation').val();
-		NumAuto = $('#sasiAutori').val();
+		razonSocial = $('#staRs').val();
+		cre = $('#staCre').val();
+		noEst = $('#staNo').val();
+		tipo = $('#staTipo').val();
+		fran = $('#staFra').val();
+		/*dFiscal = $('#dirFis').val();*/
+		rfcEst = $('#starfc').val();
+		uEst = $('#staUb').val();
+		//tEst = $('#staTel').val();
+		//cEst = $('#stacor').val();
+		//rL = $('#staRl').val();
+		//rfcR = $('#rfcRL').val();
+		//curpR = $('#curpRL').val();
+		estadoS = $('#staEst').val();
+		municipioS = $('#staMun').val();
+		//NumAuto = $('#staAut').val();
 		fecA = $('#fechaAut').val();
 		sep = "/";
 		fechaAut = fecA.split(sep);
 		fechaAut = fechaAut[2]+"-"+fechaAut[0]+"-"+fechaAut[1];
 
-		if((razonSocial != "") && (cre !="") && (noEst !="") && (fran !="") && (dFiscal !="") && (rfcEst !="") && (uEst !="") && (tEst !="") && (cEst !="") && (rL !="") && (rfcR !="") && (curpR !="") && (estadoS !="")&&(NumAuto !="") && (fechaAut !="") ){
+		if((razonSocial != "") && (cre !="") && (noEst !="") && (fran !="") && (tipo !="") && (rfcEst !="") && (uEst !="") && (estadoS !="") && (municipioS !="") && (fechaAut !="") ){
 			//alert("traen valores");
-			//alert(razonSocial+cre+noEst+fran+dFiscal+rfcEst+uEst+tEst+cEst+rL+rfcR+curpR+estadoS);
-			$.ajax({
+			//alert(razonSocial+cre+noEst+fran+tipo+rfcEst+uEst+fechaAut+municipioS+estadoS);
+			/*$.ajax({
 				url:'php/insert.php',
 				method:'POST',
 				dataType:'html',
@@ -124,7 +137,7 @@ $(document).ready(function(){
 				}else{
 					alert(msg);
 				}
-			});	
+			});	*/
 		} else { alert("no trae nada.")}
 	});
 	
@@ -230,10 +243,38 @@ $(document).ready(function(){
 		})*/
 	});
 
-	/*ABRIR PAGINA PARA PODER BLOQUEAR*/
-	$("#btnsas").click(function() {
-		/* Act on the event */
-		window.open('bloqPts.php', '_self');
+	/*DESACTIVA UNA INSTALACION*/
+	$("#btnDesactivarEstacion").click(function() {
+		pCre = $('#staDel').val();
+
+		alert(pCre);
+		if(pCRE != ""){
+		/*$.ajax({
+				url:'php/insert.php',
+				method:'POST',
+				dataType:'html',
+				data:{opc:"addSt", razonSocial:razonSocial, PL:cre, idCESH:noEst, franquicia:fran, direccionFiscal:dFiscal, rfc:rfcEst, ubicacion:uEst, telefono:tEst, correo:cEst, rl:rL, rfcRl:rfcR, curpRl:curpR, idEstado:estadoS, nAut:NumAuto, fAut:fechaAut},
+			})
+			.done(function(msg){
+				if(msg == 1){
+					//alert("YA QUEDO! ENTONCES HAY QUE DARLE LA CONTRASEÑA AQUI!");
+					sepador = "/";
+					a = cre.split(sepador,2);
+					console.log(a);
+					pw = a[0]+a[1];
+					//console.log("esta es la contraseña"+pw);
+					localStorage.setItem("U",rfcEst);
+					localStorage.setItem("W",pw);
+					localStorage.setItem("S",noEst);
+					localStorage.setItem("cesh",cre);
+					$('#userentry').text(rfcEst);
+					$('#pssentry').text(pw);
+				}else{
+					alert(msg);
+				}
+			});	*/
+		}
+
 	});
 
 
@@ -1623,7 +1664,7 @@ $(document).ready(function(){
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
 	});*/
-	/*$("#016").click(function(){
+	$("#016").click(function(){
 		//alert("entra");
 		status016 = $("#016").text();
 		//alert("es: "+statusActa);
@@ -1637,19 +1678,19 @@ $(document).ready(function(){
 			//alert("No");
 			$("#016").text("No");
 			$("#016").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
-			/*$("#016").removeClass("active");
+			//$("#016").removeClass("active");
 			cump016 = "No";
 		}if(status016 == "No"){
 			//alert("otra SI");
 			$("#016").text("Si");
 			$("#016").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
-			/*$("#016").removeClass("success");
+			//$("#016").removeClass("success");
 			cump016 = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
-	});*/
-	$("#0162017").click(function(){
+	});
+	/*$("#0162017").click(function(){
 		//alert("entra");
 		status0162017 = $("#0162017").text();
 		//alert("es: "+statusActa);
@@ -1663,18 +1704,18 @@ $(document).ready(function(){
 			//alert("No");
 			$("#0162017").text("No");
 			$("#0162017").css({"background":"rgb(27,22,50)","color":"rgb(255,255,255)"});
-			/*$("#0162017").removeClass("active");*/
+			//$("#0162017").removeClass("active");
 			cump0162017 = "No";
 		}if(status0162017 == "No"){
 			//alert("otra SI");
 			$("#0162017").text("Si");
 			$("#0162017").css({"background":"rgb(254,174,0)","color":"rgb(0,0,0)"});
-			/*$("#0162017").removeClass("success");*/
+			//$("#0162017").removeClass("success");
 			cump0162017 = "Si";
 		}
 		//console.log(cumActa);
 		//$("#cActa").val("Si");
-	});
+	});*/
 	$("#rPsupervi").click(function(){
 		//alert("entra");
 		statusrpag = $("#rPsupervi").text();
@@ -1894,13 +1935,13 @@ $(document).ready(function(){
 		Cevi2 = $("#evidRdiap").val();
 
 		/*Csta3 = $("#estcEs").val();
-		Cevi3 = $("#evidcEs").val();
+		Cevi3 = $("#evidcEs").val();*/
 
 		Csta4 = $("#est016").val();
-		Cevi4 = $("#evid016").val();*/
+		Cevi4 = $("#evid016").val();
 
-		Csta5 = $("#est0162017").val();
-		Cevi5 = $("#evid0162017").val();
+		/*Csta5 = $("#est0162017").val();
+		Cevi5 = $("#evid0162017").val();*/
 
 		Csta6 = $("#estrPs").val();
 		Cevi6 = $("#evidrPs").val();
@@ -1924,22 +1965,22 @@ $(document).ready(function(){
 		Cevi12 = $("#evidAnI").val();
 
 		Csta8 = $("#estSgm").val();
-		Csta8 = $("#evidSgm").val();
+		Cevi8 = $("#evidSgm").val();
 
 		
-		alert("Los valores de obligaciones CRE:\n Reporte de Volumetricos: "+cumActa+" evidencia: "+evi01+
-			"\n Reporte de Precios: "+cumPoder+" evidencia: "+evi02+"\n Dictamen NOM-016-CRE-2017 "+cumAltaShcp+" evidencia: "+evi03+
-			"\n Pagos de supervisión: "+cumRfc+" evidencia: "+evi04+"\n Poliza anual (reporte anual): "+cumpl+" evidencia: "+evi05+
-			"\n Reporte de quejas: "+cumlfm+" evidencia: "+evi06+"\n Procedencias de quejas: "+cumdS+" evidencia: "+evi07+
-			"\n Reporte de incedentes: "+cumimss+" evidencia: "+evi08+"\n Anuncio Independiente: "+cumplano+" evidencia: "+evi09+
-			"\n SGM: "+cumpSiem+" evidencia: "+evi10);
+		alert("Los valores de obligaciones CRE:\n Reporte de Volumetricos: "+cumprdp+" evidencia: "+Cevi1+
+			"\n Reporte de Precios: "+cumprdp+" evidencia: "+Cevi2+"\n Dictamen NOM-016-CRE-2017 "+cump016+" evidencia: "+Cevi4+
+			"\n Pagos de supervisión: "+cumprpag+" evidencia: "+Cevi6+"\n Poliza anual (reporte anual): "+cumpAnual+" evidencia: "+Cevi7+
+			"\n Reporte de quejas: "+cumprQ+" evidencia: "+Cevi9+"\n Procedencia del producto: "+cumpfPr+" evidencia: "+Cevi10+
+			"\n Reporte de incedentes: "+cumpInc+" evidencia: "+Cevi11+"\n Anuncio Independiente: "+cumpAnIn+" evidencia: "+Cevi12+
+			"\n SGM: "+cumpSg+" evidencia: "+Cevi8);
 
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3c",rdv:cumprdv, srdv:Csta1, erdv:Cevi1, /*prdv:Cpor1,*/ rdp:cumprdp, srdp:Csta2, erdp:Cevi2, /*prdp:Cpor2,*/ sta:cumpesta, ssta:Csta3, esta:Cevi3, /*psta:Cpor3,*/ cpet:cump016, scpet:Csta4, ecpet:Cevi4, /*pcpet:Cpor4,*/ dcpet:cump0162017, sdcpet:Csta5, edcpet:Cevi5, /*pdcpet:Cpor5,*/ sup:cumprpag, ssup:Csta6, esup:Cevi6, /*psup:Cpor6,*/ cre:cre, panual:cumpAnual, spanual:Csta7, epanual:Cevi7, /*ppanual:Cpor7,*/ pseg:cumpSg, spseg:Csta8, epseg:Cevi8, /*ppseg:Cpor8,*/ repq:cumprQ, srepq:Csta9, erepq:Cevi9, /*prepq:Cpor9,*/ proc:cumpfPr, sproc:Csta10, eproc:Cevi10, /*pproc:Cpor10,*/ reme:cumpInc, sreme:Csta11, ereme:Cevi11, /*preme:Cpor11,*/ anuncio:cumpAnIn, sanuncio:Csta12, eanuncio:Cevi12, /*panuncio:Cpor12*/ },
+    		data: {opc:"add3c",rdv:cumprdv, srdv:Csta1, erdv:Cevi1, rdp:cumprdp, srdp:Csta2, erdp:Cevi2, dcpet:cump016, sdcpet:Csta4, edcpet:Cevi4, sup:cumprpag, ssup:Csta6, esup:Cevi6, cre:cre, panual:cumpAnual, spanual:Csta7, epanual:Cevi7, repq:cumprQ, srepq:Csta9, erepq:Cevi9, proc:cumpfPr, sproc:Csta10, eproc:Cevi10, reme:cumpInc, sreme:Csta11, ereme:Cevi11, anuncio:cumpAnIn, sanuncio:Csta12, eanuncio:Cevi12, sistgm:cumpSg, stgm:Csta8, estgm:Cevi8},
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -1957,19 +1998,19 @@ $(document).ready(function(){
 		evprdp = $("#evidRdiap").val();
 		/*prprdp = $("#porceRdiap").val();*/
 
-		cumpesta = $("#cEstad").text();
+		/*cumpesta = $("#cEstad").text();
 		stesta = $("#estcEs").val();
-		evesta = $("#evidcEs").val();
+		evesta = $("#evidcEs").val();*/
 		/*presta = $("#porcecEs").val();*/
 
 		cump016 = $("#016").text();
 		st016 = $("#est016").val();
-		ev016 = $("#porce016").val();
+		ev016 = $("#evid016").val();
 		/*pr016 = $("#evid016").val();*/
 
-		cump0162017 = $("#0162017").text();
+		/*cump0162017 = $("#0162017").text();
 		st0162 = $("#est0162017").val();
-		ev0162 = $("#evid0162017").val();
+		ev0162 = $("#evid0162017").val();*/
 		/*pr0162 = $("#porce0162017").val();*/
 
 		cumprpag = $("#rPsupervi").text();
@@ -1982,9 +2023,9 @@ $(document).ready(function(){
 		evanual = $("#evidPoliza").val();
 		/*pranual = $("#porcePoliza").val();*/
 
-		cumpSg = $("#polizaSg").text();
+		/*cumpSg = $("#polizaSg").text();
 		stsg = $("#estPsg").val();
-		evsg = $("#evidPsg").val();
+		evsg = $("#evidPsg").val();*/
 		/*prsg = $("#porcePsg").val();*/
 
 		cumprQ = $("#rQue").text();
@@ -2005,6 +2046,10 @@ $(document).ready(function(){
 		cumpAnIn = $("#anInde").text();
 		stani = $("#estAnI").val();
 		evani = $("#evidAnI ").val();
+
+		Csta8 = $("#estSgm").val();
+		Cevi8 = $("#evidSgm").val();
+		cumpSg = $("#sgm").text();
 		/*prani = $("#porceAnI").val();*/
 		//alert("tomar los 12 valores: "+cumprdv+" DOS:"+" - "+cumprdp+" - "+cumpesta+" - "+cump016+" - "+cump0162017+" - "+cumprpag+" - "+cumpAnual+" - "+cumpSg+" - "+cumprQ+" - "+cumpfPr+" - "+cumpInc+" - "+cumpAnIn);
 		cre = localStorage.getItem("PL");
@@ -2012,7 +2057,7 @@ $(document).ready(function(){
 			url: 'php/update.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"upd3c",rdv:cumprdv, srdv:stprdv, erdv:evprdv, /*prdv:prprdv,*/ rdp:cumprdp, srdp:stprdp, erdp:evprdp, /*prdp:prprdp,*/ sta:cumpesta, ssta:stesta, esta:evesta, /*psta:presta,*/ cpet:cump016, scpet:st016, ecpet:ev016, /*pcept:ev016,*/ dcpet:cump0162017, sdcpet:st0162, edcpet:ev0162, /*pdcpet:pr0162,*/ sup:cumprpag, ssup:stpg, /*psup:prpg,*/ esup:evpg, panual:cumpAnual, spanual:stanual, epanual:evanual, /*ppanual:pranual,*/ pseg:cumpSg, spseg:stsg, /*ppseg:prsg,*/ epseg:prsg, repq:cumprQ, srepq:strq, erepq:evrq, /*prepq:prrq,*/ proc:cumpfPr, sproc:stfp, eproc:evfp, /*pproc:prfp,*/ reme:cumpInc, sreme:stin, /*preme:prin,*/ ereme:evin, anuncio:cumpAnIn, sanuncio:stani, /*panuncio:prani,*/ eanuncio:evani, cre:cre,},
+    		data: {opc:"upd3c",rdv:cumprdv, srdv:stprdv, erdv:evprdv, rdp:cumprdp, srdp:stprdp, erdp:evprdp, cpet:cump016, scpet:st016, ecpet:ev016, sup:cumprpag, ssup:stpg, esup:evpg, panual:cumpAnual, spanual:stanual, epanual:evanual, repq:cumprQ, srepq:strq, erepq:evrq, proc:cumpfPr, sproc:stfp, eproc:evfp, reme:cumpInc, sreme:stin, ereme:evin, anuncio:cumpAnIn, sanuncio:stani, eanuncio:evani, sistgm:cumpSg, stgm:Csta8, estgm:Cevi8, cre:cre,},
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2116,14 +2161,15 @@ $(document).ready(function(){
 		/*Ppor2 = $("#porcerCtd").val();;*/
 		Pevi2 = $("#evidrCtd").val();;
 
-		//alert("Primer valor "+cumpvDis+" DOS:"+cumprCd);
-		//alert("Primer valor "+cumpvDis+" estatus1:"+Psta1+" porcentaje2:"+Ppor2);
+		alert("Los valores de obligaciones PROFECO:\n Verificación Dispensarios: "+cumpvDis+" evidencia: "+Pevi1+
+			"\n Rep. Control a distancia: "+cumprCd+" evidencia: "+Pevi2);
+		
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3pr",unoprofeco:cumpvDis, unoprofecos:Psta1, /*unoprofecop:Ppor1,*/ unoprofecoe:Pevi1, dosprofeco:cumprCd, dosprofecos:Psta2, /*dosprofecop:Ppor2,*/ dosprofecoe:Pevi2, cre:cre },
+    		data: {opc:"add3pr",unoprofeco:cumpvDis, unoprofecos:Psta1,unoprofecoe:Pevi1, dosprofeco:cumprCd, dosprofecos:Psta2, dosprofecoe:Pevi2, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2249,13 +2295,14 @@ $(document).ready(function(){
 		PCs2 = $("#estCdc").val();;
 		PCe2 = $("#evidCdc").val();;
 		/*PCp2 = $("#porceCdc").val();;*/
-		//alert("tomar valores: "+cumpvB+" Porcentaje uno:"+PCp1+" Evidencia dos:"+PCe2);
+		alert("Los valores de obligaciones Protección Civil:\n Visto Bueno: "+cumpvB+" evidencia: "+PCe1+
+			"\n Auto declaratoria: "+cumpdL+" evidencia: "+PCe2);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
     		method: 'POST',
     		dataType: 'html',
-    		data: {opc:"add3pc",unopc:cumpvB, unopcs:PCs1, unopce:PCe1, /*unopcp:PCp1,*/ dospc:cumpdL, dospcs:PCs2, dospce:PCe2, /*dospcp:PCp2,*/ cre:cre },
+    		data: {opc:"add3pc",unopc:cumpvB, unopcs:PCs1, unopce:PCe1, dospc:cumpdL, dospcs:PCs2, dospce:PCe2, cre:cre },
 		})
 		.done(function(msg) {
 			alert(msg);
@@ -2352,7 +2399,8 @@ $(document).ready(function(){
 		/*contNP = $("#porceconNac").val();*/
 		contNE = $("#evidconNac").val();
 
-		//alert("tomar el valor: "+cumpconN+"%"+contNP+"evi:"+contNE);
+		alert("Los valores de obligaciones Secretaría de Economía:\n Contenido Nacional: "+cumpconN+" evidencia: "+contNE);
+			//alert("tomar el valor: "+cumpconN+"%"+contNP+"evi:"+contNE);
 		cre = localStorage.getItem("PL");
 		$.ajax({
 			url: 'php/insert.php',
@@ -2899,6 +2947,14 @@ $(document).ready(function(){
 		stps16e = $("#evid035").val();
 		
 		//alert("tomar los valores 12: "+cump026s+" evidencia 10 "+stps10e+" porcentaje 5 "+stps5p+" status 15 "+stps15s);
+		alert("Los valores de Obligaciones STPS: \n NOM-001-STPS-2008: "+cump001s+" evidencia: "+stps1e+"\n NOM-002-STPS-2010: "+cump002s+" evidencia: "+stps2e+
+			"\n NOM-009-STPS-2011: "+cump009s+" evidencia: "+stps3e+"\n NOM-010-STPS-2014: "+cump010s+" evidencia: "+stps4e+
+			"\n NOM-011-STPS-2001: "+cump011s+" evidencia: "+stps5e+"\n NOM-017-STPS-2008: "+cump017s+" evidencia: "+stps6e+
+			"\n NOM-018-STPS-2015: "+cump018s+" evidencia: "+stps7e+"\n NOM-019-STPS-2011: "+cump019s+" evidencia: "+stps8e+
+			"\n NOM-022-STPS-2008: "+cump022s+" evidencia: "+stps9e+"\n NOM-024-STPS-2015: "+cump024s+" evidencia: "+stps10e+
+			"\n NOM-025-STPS-2008: "+cump025s+" evidencia: "+stps11e+"\n NOM-026-STPS-2008: "+cump026s+" evidencia: "+stps12e+
+			"\n NOM-027-STPS-2008: "+cump027s+" evidencia: "+stps13e+"\n NOM-029-STPS-2011: "+cump029s+" evidencia: "+stps14e+
+			"\n NOM-033-STPS-2015: "+cump033s+" evidencia: "+stps15e+"\n NOM-035-STPS-2018: "+cump035s+" evidencia: "+stps16e);
 		cre = localStorage.getItem("PL");
 		
 		$.ajax({

@@ -767,7 +767,7 @@
                                     <div class="chosen-select-act fm-cmp-mg">
                                         <select class="chosen" name="" id="nombreEmpresa">
                                             <option id="" value="0" style="display: none;">Selecciona la Empresa</option>
-                                            <?php $qri = "SELECT idProvedor as id, razonSocial as nombre FROM dcproveedor";
+                                            <?php $qri = "SELECT idProvedor as id, razonSocial as nombre FROM dcproveedor WHERE idCESH = '".$id."'";
                                                 $resul = mysqli_query($con,$qri);
                                                 while($row = $resul->fetch_object()){ ?>
                                             <option value="<?php echo $row->id; $value = $row->id;?>"><?php echo ($row->nombre);?> </option>
@@ -790,7 +790,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <div class="fm-checkbox"> <label> Normativa de STPS </label> </div>
+                                    <div class="fm-checkbox"> <label> Normativa </label> </div>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <div class="chosen-select-act fm-cmp-mg">

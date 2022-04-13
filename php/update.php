@@ -154,9 +154,9 @@ if($opcion == "upd3c"){ #UPDATE PARA DOCUMENTACION DE CRE
 	$erdp = $_POST['erdp'];
 	//$prdp = $_POST['prdp'];
 
-	$sta = $_POST['sta'];
+	/*$sta = $_POST['sta'];
 	$ssta = $_POST['ssta'];
-	$esta = $_POST['esta'];
+	$esta = $_POST['esta'];*/
 	//$psta = $_POST['psta'];
 
 	$cpet = $_POST['cpet'];
@@ -164,9 +164,9 @@ if($opcion == "upd3c"){ #UPDATE PARA DOCUMENTACION DE CRE
 	$ecpet = $_POST['ecpet'];
 	//$pcpet = $_POST['pcept'];
 
-	$dcpet = $_POST['dcpet'];
+	/*$dcpet = $_POST['dcpet'];
 	$sdcpet = $_POST['sdcpet'];
-	$edcpet = $_POST['edcpet'];
+	$edcpet = $_POST['edcpet'];*/
 	//$pdcpet = $_POST['pdcpet'];
 
 	$panual = $_POST['panual'];
@@ -174,9 +174,9 @@ if($opcion == "upd3c"){ #UPDATE PARA DOCUMENTACION DE CRE
 	$epanual = $_POST['epanual'];
 	//$ppanual = $_POST['ppanual'];
 
-	$pseg = $_POST['pseg'];
+	/*$pseg = $_POST['pseg'];
 	$spseg = $_POST['spseg'];
-	$epseg = $_POST['epseg'];
+	$epseg = $_POST['epseg'];*/
 	//$ppseg = $_POST['ppseg'];
 
 	$repq = $_POST['repq'];
@@ -202,6 +202,10 @@ if($opcion == "upd3c"){ #UPDATE PARA DOCUMENTACION DE CRE
 	$sup = $_POST['sup'];
 	$ssup = $_POST['ssup'];
 	$esup = $_POST['esup'];
+
+	$sgm = $_POST['sistgm'];
+	$ssgm = $_POST['stgm'];
+	$esgm = $_POST['estgm'];
 	//$psup = $_POST['psup'];
 
 	$cre = $_POST['cre'];
@@ -221,30 +225,32 @@ if($opcion == "upd3c"){ #UPDATE PARA DOCUMENTACION DE CRE
 
 	$sqlrdv = "UPDATE documento SET cumplimiento='".$rdv."', evidencia='".$erdv."', status='".$srdv."' WHERE tipo = 'CRE' AND num = 1";
 	$sqlrdp = "UPDATE documento SET cumplimiento='".$rdp."', evidencia='".$erdp."', status='".$srdp."' WHERE tipo = 'CRE' AND num = 2";
-	$sqlsta = "UPDATE documento SET cumplimiento='".$sta."', evidencia='".$esta."', status='".$ssta."' WHERE tipo = 'CRE' AND num = 3";
-	$sqlcpet = "UPDATE documento SET cumplimiento='".$cpet."', evidencia='".$ecpet."', status='".$scpet."' WHERE tipo = 'CRE' AND num = 4";
-	$sqldcpet = "UPDATE documento SET cumplimiento='".$dcpet."', evidencia='".$edcpet."', status='".$sdcpet."' WHERE tipo = 'CRE' AND num = 5";
-	$sqlsup = "UPDATE documento SET cumplimiento='".$sup."', evidencia='".$esup."', status='".$ssup."' WHERE tipo = 'CRE' AND num = 6";
-	$sqlpanual = "UPDATE documento SET cumplimiento='".$panual."', evidencia='".$epanual."', status='".$spanual."' WHERE tipo = 'CRE' AND num = 7";
-	$sqlpseg = "UPDATE documento SET cumplimiento='".$pseg."', evidencia='".$epseg."', status='".$spseg."' WHERE tipo = 'CRE' AND num = 8";
-	$sqlrepq = "UPDATE documento SET cumplimiento='".$repq."', evidencia='".$erepq."', status='".$srepq."' WHERE tipo = 'CRE' AND num = 9";
-	$sqlproc = "UPDATE documento SET cumplimiento='".$proc."', evidencia='".$eproc."', status='".$sproc."' WHERE tipo = 'CRE' AND num = 10";
-	$sqlreme = "UPDATE documento SET cumplimiento='".$reme."', evidencia='".$ereme."', status='".$sreme."' WHERE tipo = 'CRE' AND num = 11";
-	$sqlanun = "UPDATE documento SET cumplimiento='".$anuncio."', evidencia='".$eanuncio."', status='".$sanuncio."' WHERE tipo = 'CRE' AND num = 12";
+	/*$sqlsta = "UPDATE documento SET cumplimiento='".$sta."', evidencia='".$esta."', status='".$ssta."' WHERE tipo = 'CRE' AND num = 3";*/
+	$sqlcpet = "UPDATE documento SET cumplimiento='".$cpet."', evidencia='".$ecpet."', status='".$scpet."' WHERE tipo = 'CRE' AND num = 3";
+	/*$sqldcpet = "UPDATE documento SET cumplimiento='".$dcpet."', evidencia='".$edcpet."', status='".$sdcpet."' WHERE tipo = 'CRE' AND num = 5";*/
+	$sqlsup = "UPDATE documento SET cumplimiento='".$sup."', evidencia='".$esup."', status='".$ssup."' WHERE tipo = 'CRE' AND num = 4";
+	$sqlpanual = "UPDATE documento SET cumplimiento='".$panual."', evidencia='".$epanual."', status='".$spanual."' WHERE tipo = 'CRE' AND num = 5";
+	/*$sqlpseg = "UPDATE documento SET cumplimiento='".$pseg."', evidencia='".$epseg."', status='".$spseg."' WHERE tipo = 'CRE' AND num = 6";*/
+	$sqlrepq = "UPDATE documento SET cumplimiento='".$repq."', evidencia='".$erepq."', status='".$srepq."' WHERE tipo = 'CRE' AND num = 6";
+	$sqlproc = "UPDATE documento SET cumplimiento='".$proc."', evidencia='".$eproc."', status='".$sproc."' WHERE tipo = 'CRE' AND num = 7";
+	$sqlreme = "UPDATE documento SET cumplimiento='".$reme."', evidencia='".$ereme."', status='".$sreme."' WHERE tipo = 'CRE' AND num = 8";
+	$sqlanun = "UPDATE documento SET cumplimiento='".$anuncio."', evidencia='".$eanuncio."', status='".$sanuncio."' WHERE tipo = 'CRE' AND num = 9";
+	$sqlsgm = "UPDATE documento SET cumplimiento='".$sgm."', evidencia='".$esgm."', status='".$ssgm."' WHERE tipo = 'CRE' AND num = 10";
 	
 	
 	mysqli_query($con,$sqlrdv);
 	mysqli_query($con,$sqlrdp);
-	mysqli_query($con,$sqlsta);
+	/*mysqli_query($con,$sqlsta);*/
 	mysqli_query($con,$sqlcpet);
-	mysqli_query($con,$sqldcpet);
+	/*mysqli_query($con,$sqldcpet);*/
 	mysqli_query($con,$sqlpanual);
-	mysqli_query($con,$sqlpseg);
+	/*mysqli_query($con,$sqlpseg);*/
 	mysqli_query($con,$sqlrepq);
 	mysqli_query($con,$sqlproc);
 	mysqli_query($con,$sqlreme);
 	mysqli_query($con,$sqlsup);
 	mysqli_query($con,$sqlanun);
+	mysqli_query($con,$sqlsgm);
 	
 	echo "Actualización Correcta";
 	//echo $sqlrdv.$sqlrdp.$sqlsta.$sqlcpet.$sqldcpet.$sqlsup.$sqlpanual.$sqlpseg.$sqlrepq.$sqlproc.$sqlreme.$sqlanun;

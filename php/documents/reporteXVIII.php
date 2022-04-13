@@ -3,9 +3,7 @@
     $id = $_GET["x"];
     $con = Conectarse();
 
-    require __DIR__.'\vendor\autoload.php';
-    use Spipu\Html2Pdf\Html2Pdf;
-
+    
     $encab = "SELECT razonSocial AS inst, abreviatura as abrv, rtec as tecnico, rl as legal, tipoCESH as giro, correo as correo, telefono as numero FROM cesh a INNER JOIN estado b ON a.idEstado = b.idEstado WHERE idCESH = '".$id."'";
     $rese = mysqli_query($con, $encab);
     if($rese->num_rows > 0){
@@ -186,12 +184,11 @@
         $razon = "esto a falta de la completa implementación del sistema administrativo";
     }
 
-
+?>
     //PRUEBA DE DATOS
     //echo $idreporte."NO ESTACION: ".$nosa." INSTALACION: ".$nombre;
 
-    $html2pdf = new Html2Pdf('P','letter','es','true','UTF-8');
-    $html2pdf->writeHTML('<!doctype html>
+    <!doctype html>
                             <html class="no-js" lang="">
 
                             <head>
