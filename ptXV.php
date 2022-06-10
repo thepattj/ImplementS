@@ -845,11 +845,11 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <?php 
-                                    $sqlaud = "SELECT idAuditoria as num, tipoA as auditoriaTp FROM auditoria /*WHERE idcesh == $*/";
+                                    $sqlaud = "SELECT idAuditoria as ia, tipoA as auditoriaTp FROM auditoria /*WHERE idcesh == $*/";
                                     $resulsaud = mysqli_query($con, $sqlaud);
                                     if($resulsaud->num_rows > 0){
                                         while($fil = $resulsaud->fetch_assoc()){
-                                            $numAudi = $fil['num'];
+                                            $numAudi = $fil['ia'];
                                             $tAuditoria = $fil['auditoriaTp'];
                                         }
                                     }

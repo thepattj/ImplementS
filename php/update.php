@@ -56,9 +56,9 @@ if($opcion == "upd3a"){ #UPDATE PARA DOCUMENTACION DE LA ASEA
 	$scoa = $_POST['scoa'];
 	$ecoa = $_POST['ecoa'];
 
-	$poliza = $_POST['poliza'];
-	$spoliza = $_POST['spoliza'];
-	$epoliza = $_POST['epoliza'];
+	$poliz = $_POST['poliza'];
+	$spoliz = $_POST['spoliza'];
+	$epoliz = $_POST['epoliza'];
 
 	$cre = $_POST['cre'];
 
@@ -70,7 +70,7 @@ if($opcion == "upd3a"){ #UPDATE PARA DOCUMENTACION DE LA ASEA
 	$sqllf = "UPDATE documento SET cumplimiento='".$lf."', evidencia='".$elf."', status='".$slf."' WHERE tipo = 'ASEA' AND num = 4";
 	$sqlgrp = "UPDATE documento SET cumplimiento='".$grp."', evidencia='".$egrp."', status='".$sgrp."' WHERE tipo = 'ASEA' AND num = 5";
 	$sqlcoa = "UPDATE documento SET cumplimiento='".$coa."', evidencia='".$ecoa."', status='".$scoa."' WHERE tipo = 'ASEA' AND num = 6";
-	$sqlpoliza = "UPDATE documento SET cumplimiento='".$poliza."', evidencia='".$epoliza."', status='".$spoliza."' WHERE tipo = 'ASEA' AND num = 7";
+	$sqlpoliza = "UPDATE documento SET cumplimiento='".$poliz."', evidencia='".$epoliz."', status='".$spoliz."' WHERE tipo = 'ASEA' AND num = 7";
 		
 	mysqli_query($con,$sql005);
 	mysqli_query($con,$sqlmia);
@@ -78,26 +78,37 @@ if($opcion == "upd3a"){ #UPDATE PARA DOCUMENTACION DE LA ASEA
 	mysqli_query($con,$sqllf);
 	mysqli_query($con,$sqlgrp);
 	mysqli_query($con,$sqlcoa);
+	mysqli_query($con,$sqlpoliza);
 
-	//echo $sql005;
+	//echo $sqlpoliza;
 	echo "Actualización Correcta";
 }
 if($opcion == "upd3pfc"){ #UPDATE PARA DOCUMENTACION DE PROFECO
 	$cpD = $_POST['unopfc'];
 	$spD = $_POST['supfc'];
 	$epD = $_POST['eupfc'];
-	//$ppD = $_POST['pupfc'];
 
 	$ccD = $_POST['dospfc'];
 	$scD = $_POST['sdpfc'];
 	$ecD = $_POST['edpfc'];
-	//$pcD = $_POST['pdpfc'];
+
+	$cpT = $_POST['trespfc'];
+	$spT = $_POST['sppfc'];
+	$epT = $_POST['eppfc'];
+
+	$ciC = $_POST['cuatropfc'];
+	$siC = $_POST['sipfc'];
+	$eiC = $_POST['evI'];
 
 	$sqlpD = "UPDATE documento SET cumplimiento='".$cpD."', evidencia='".$epD."', status='".$spD."' WHERE tipo = 'PROFECO' AND num = 1";
 	$sqlcD = "UPDATE documento SET cumplimiento='".$ccD."', evidencia='".$ecD."', status='".$scD."' WHERE tipo = 'PROFECO' AND num = 2";
+	$sqlpT = "UPDATE documento SET cumplimiento='".$cpT."', evidencia='".$epT."', status='".$spT."' WHERE tipo = 'PROFECO' AND num = 3";
+	$sqliC = "UPDATE documento SET cumplimiento='".$ciC."', evidencia='".$eiC."', status='".$siC."' WHERE tipo = 'PROFECO' AND num = 4";
 
 	mysqli_query($con,$sqlpD);
 	mysqli_query($con,$sqlcD);
+	mysqli_query($con,$sqlpT);
+	mysqli_query($con,$sqliC);
 	
 	echo "Actualización Correcta";
 	//echo $sqlcD;
@@ -134,7 +145,7 @@ if($opcion == "upd3se"){ #UPDATE PARA DOCUMENTO UNICO DE SEC. ECONOMIA
 	//$psolo = $_POST['puse'];
 	$cre = $_POST['cre'];
 
-	if($solo == "Si"){ $solo = 1; } if ($solo == "No") { $solo = 0; }
+	//if($solo == "Si"){ $solo = 1; } if ($solo == "No") { $solo = 0; }
 
 	$sqlsolo = "UPDATE documento SET cumplimiento='".$solo."', evidencia='".$esolo."', status='".$ssolo."' WHERE tipo = 'Sec. Economia' AND num = 1";
 	
@@ -259,97 +270,115 @@ if($opcion == "upd3s"){ #UPDATE PARA DOCUMENTACION DE STPS
 	$cump001s = $_POST['unos'];
 	$scump001s = $_POST['sunos'];
 	$ecump001s = $_POST['eunos'];
-	//$pcump001s = $_POST['punos'];
+	
 	$cump002s = $_POST['doss'];
 	$scump002s = $_POST['sdoss'];
 	$ecump002s = $_POST['edoss'];
-	//$pcump002s = $_POST['pdoss'];
-	$cump009s = $_POST['tress'];
-	$scump009s = $_POST['stress'];
-	$ecump009s = $_POST['etress'];
-	//$pcump009s = $_POST['ptress'];
-	$cump010s = $_POST['cuatros'];
-	$scump010s = $_POST['scuatros'];
-	$ecump010s = $_POST['ecuatros'];
-	//$pcump010s = $_POST['pcuatros'];
-	$cump011s = $_POST['cincos'];
-	$scump011s = $_POST['scincos'];
-	$ecump011s = $_POST['ecincos'];
-	//$pcump011s = $_POST['pcincos'];
-	$cump017s = $_POST['seiss'];
-	$scump017s = $_POST['sseiss'];
-	$ecump017s = $_POST['eseiss'];
-	//$pcump017s = $_POST['pseiss'];
-	$cump018s = $_POST['sietes'];
-	$scump018s = $_POST['ssietes'];
-	$ecump018s = $_POST['esietes'];
-	//$pcump018s = $_POST['psietes'];
-	$cump019s = $_POST['ochos'];
-	$scump019s = $_POST['sochos'];
-	$ecump019s = $_POST['eochos'];
-	//$pcump019s = $_POST['pochos'];
-	$cump022s = $_POST['nueves'];
-	$scump022s = $_POST['snueves'];
-	$ecump022s = $_POST['enueves'];
-	//$pcump022s = $_POST['pnueves'];
-	$cump024s = $_POST['diezs'];
-	$scump024s = $_POST['sdiezs'];
-	$ecump024s = $_POST['ediezs'];
-	//$pcump024s = $_POST['pdiezs'];
-	$cump025s = $_POST['onces'];
-	$scump025s = $_POST['sonces'];
-	$ecump025s = $_POST['eonces'];
-	//$pcump025s = $_POST['ponces'];
-	$cump026s = $_POST['doces'];
-	$scump026s = $_POST['sdoces'];
-	$ecump026s = $_POST['edoces'];
-	//$pcump026s = $_POST['pdoces'];
-	$cump027s = $_POST['treces'];
-	$scump027s = $_POST['streces'];
-	$ecump027s = $_POST['etreces'];
-	//$pcump027s = $_POST['ptreces'];
-	$cump029s = $_POST['cators'];
-	$scump029s = $_POST['scators'];
-	$ecump029s = $_POST['ecators'];
-	//$pcump029s = $_POST['pcators'];
-	$cump033s = $_POST['quins'];
-	$scump033s = $_POST['squins'];
-	$ecump033s = $_POST['equins'];
-	//$pcump033s = $_POST['pquins'];
+	
+	$cump004s = $_POST['tress'];
+	$scump004s = $_POST['stress'];
+	$ecump004s = $_POST['etress'];
+	
+	$cump005s = $_POST['cuatros'];
+	$scump005s = $_POST['scuatros'];
+	$ecump005s = $_POST['ecuatros'];
+	
+	$cump006s = $_POST['cincos'];
+	$scump006s = $_POST['scincos'];
+	$ecump006s = $_POST['ecincos'];
+	
+	$cump009s = $_POST['seiss'];
+	$scump009s = $_POST['sseiss'];
+	$ecump009s = $_POST['eseiss'];
+	
+	$cump011s = $_POST['sietes'];
+	$scump011s = $_POST['ssietes'];
+	$ecump011s = $_POST['esietes'];
+	
+	$cump017s = $_POST['ochos'];
+	$scump017s = $_POST['sochos'];
+	$ecump017s = $_POST['eochos'];
+	
+	$cump018s = $_POST['nueves'];
+	$scump018s = $_POST['snueves'];
+	$ecump018s = $_POST['enueves'];
+	
+	$cump019s = $_POST['diezs'];
+	$scump019s = $_POST['sdiezs'];
+	$ecump019s = $_POST['ediezs'];
+	
+	$cump020s = $_POST['onces'];
+	$scump020s = $_POST['sonces'];
+	$ecump020s = $_POST['eonces'];
+	
+	$cump022s = $_POST['doces'];
+	$scump022s = $_POST['sdoces'];
+	$ecump022s = $_POST['edoces'];
+	
+	$cump025s = $_POST['treces'];
+	$scump025s = $_POST['streces'];
+	$ecump025s = $_POST['etreces'];
+	
+	$cump026s = $_POST['cators'];
+	$scump026s = $_POST['scators'];
+	$ecump026s = $_POST['ecators'];
+	
+	$cump029s = $_POST['quins'];
+	$scump029s = $_POST['squins'];
+	$ecump029s = $_POST['equins'];
+	
+	$cump030s = $_POST['disc'];
+	$scump030s = $_POST['sdisc'];
+	$ecump030s = $_POST['edisc'];
+
+	$cump033s = $_POST['diec'];
+	$scump033s = $_POST['sdiec'];
+	$ecump033s = $_POST['ediec'];
+
+	$cump035s = $_POST['dio'];
+	$scump035s = $_POST['sdio'];
+	$ecump035s = $_POST['edio'];
+	
 	$cre = $_POST['cre'];
 
 	$sql001 = "UPDATE documento SET cumplimiento='".$cump001s."', evidencia='".$ecump001s."', status='".$scump001s."' WHERE tipo = 'STPS' AND num = 1";
 	$sql002 = "UPDATE documento SET cumplimiento='".$cump002s."', evidencia='".$ecump002s."', status='".$scump002s."' WHERE tipo = 'STPS' AND num = 2";
-	$sql009 = "UPDATE documento SET cumplimiento='".$cump009s."', evidencia='".$ecump009s."', status='".$scump009s."' WHERE tipo = 'STPS' AND num = 3";
-	$sql010 = "UPDATE documento SET cumplimiento='".$cump010s."', evidencia='".$ecump010s."', status='".$scump010s."' WHERE tipo = 'STPS' AND num = 4";
-	$sql011 = "UPDATE documento SET cumplimiento='".$cump011s."', evidencia='".$ecump011s."', status='".$scump011s."' WHERE tipo = 'STPS' AND num = 5";
-	$sql017 = "UPDATE documento SET cumplimiento='".$cump017s."', evidencia='".$ecump017s."', status='".$scump017s."' WHERE tipo = 'STPS' AND num = 6";
-	$sql018 = "UPDATE documento SET cumplimiento='".$cump018s."', evidencia='".$ecump018s."', status='".$scump018s."' WHERE tipo = 'STPS' AND num = 7";
-	$sql019 = "UPDATE documento SET cumplimiento='".$cump019s."', evidencia='".$ecump019s."', status='".$scump019s."' WHERE tipo = 'STPS' AND num = 8";
-	$sql022 = "UPDATE documento SET cumplimiento='".$cump022s."', evidencia='".$ecump022s."', status='".$scump022s."' WHERE tipo = 'STPS' AND num = 9";
-	$sql024 = "UPDATE documento SET cumplimiento='".$cump024s."', evidencia='".$ecump024s."', status='".$scump024s."' WHERE tipo = 'STPS' AND num = 10";
-	$sql025 = "UPDATE documento SET cumplimiento='".$cump025s."', evidencia='".$ecump025s."', status='".$scump025s."' WHERE tipo = 'STPS' AND num = 11";
-	$sql026 = "UPDATE documento SET cumplimiento='".$cump026s."', evidencia='".$ecump026s."', status='".$scump026s."' WHERE tipo = 'STPS' AND num = 12";
-	$sql027 = "UPDATE documento SET cumplimiento='".$cump027s."', evidencia='".$ecump027s."', status='".$scump027s."' WHERE tipo = 'STPS' AND num = 13";
-	$sql029 = "UPDATE documento SET cumplimiento='".$cump029s."', evidencia='".$ecump029s."', status='".$scump029s."' WHERE tipo = 'STPS' AND num = 14";
-	$sql033 = "UPDATE documento SET cumplimiento='".$cump033s."', evidencia='".$ecump033s."', status='".$scump033s."' WHERE tipo = 'STPS' AND num = 15";
+	$sql004 = "UPDATE documento SET cumplimiento='".$cump004s."', evidencia='".$ecump004s."', status='".$scump004s."' WHERE tipo = 'STPS' AND num = 3";
+	$sql005 = "UPDATE documento SET cumplimiento='".$cump005s."', evidencia='".$ecump005s."', status='".$scump005s."' WHERE tipo = 'STPS' AND num = 4";
+	$sql006 = "UPDATE documento SET cumplimiento='".$cump006s."', evidencia='".$ecump006s."', status='".$scump006s."' WHERE tipo = 'STPS' AND num = 5";
+	$sql009 = "UPDATE documento SET cumplimiento='".$cump009s."', evidencia='".$ecump009s."', status='".$scump009s."' WHERE tipo = 'STPS' AND num = 6";
+	$sql011 = "UPDATE documento SET cumplimiento='".$cump011s."', evidencia='".$ecump011s."', status='".$scump011s."' WHERE tipo = 'STPS' AND num = 7";
+	$sql017 = "UPDATE documento SET cumplimiento='".$cump017s."', evidencia='".$ecump017s."', status='".$scump017s."' WHERE tipo = 'STPS' AND num = 8";
+	$sql018 = "UPDATE documento SET cumplimiento='".$cump018s."', evidencia='".$ecump018s."', status='".$scump018s."' WHERE tipo = 'STPS' AND num = 9";
+	$sql019 = "UPDATE documento SET cumplimiento='".$cump019s."', evidencia='".$ecump019s."', status='".$scump019s."' WHERE tipo = 'STPS' AND num = 10";
+	$sql020 = "UPDATE documento SET cumplimiento='".$cump020s."', evidencia='".$ecump020s."', status='".$scump020s."' WHERE tipo = 'STPS' AND num = 11";
+	$sql022 = "UPDATE documento SET cumplimiento='".$cump022s."', evidencia='".$ecump022s."', status='".$scump022s."' WHERE tipo = 'STPS' AND num = 12";
+	$sql025 = "UPDATE documento SET cumplimiento='".$cump025s."', evidencia='".$ecump025s."', status='".$scump025s."' WHERE tipo = 'STPS' AND num = 13";
+	$sql026 = "UPDATE documento SET cumplimiento='".$cump026s."', evidencia='".$ecump026s."', status='".$scump026s."' WHERE tipo = 'STPS' AND num = 14";
+	$sql029 = "UPDATE documento SET cumplimiento='".$cump029s."', evidencia='".$ecump029s."', status='".$scump029s."' WHERE tipo = 'STPS' AND num = 15";
+	$sql030 = "UPDATE documento SET cumplimiento='".$cump030s."', evidencia='".$ecump030s."', status='".$scump030s."' WHERE tipo = 'STPS' AND num = 16";
+	$sql033 = "UPDATE documento SET cumplimiento='".$cump033s."', evidencia='".$ecump033s."', status='".$scump033s."' WHERE tipo = 'STPS' AND num = 17";
+	$sql035 = "UPDATE documento SET cumplimiento='".$cump035s."', evidencia='".$ecump035s."', status='".$scump035s."' WHERE tipo = 'STPS' AND num = 18";
 	
 	
 	mysqli_query($con,$sql001);
 	mysqli_query($con,$sql002);
+	mysqli_query($con,$sql004);
+	mysqli_query($con,$sql005);
+	mysqli_query($con,$sql006);
 	mysqli_query($con,$sql009);
-	mysqli_query($con,$sql010);
 	mysqli_query($con,$sql011);
 	mysqli_query($con,$sql017);
 	mysqli_query($con,$sql018);
 	mysqli_query($con,$sql019);
+	mysqli_query($con,$sql020);
 	mysqli_query($con,$sql022);
-	mysqli_query($con,$sql024);
 	mysqli_query($con,$sql025);
 	mysqli_query($con,$sql026);
-	mysqli_query($con,$sql027);
 	mysqli_query($con,$sql029);
+	mysqli_query($con,$sql030);
 	mysqli_query($con,$sql033);
+	mysqli_query($con,$sql035);
 	
 	echo "Actualización Correcta";
 	//echo $sql001.$sql002.$sql009.$sql010.$sql011.$sql017.$sql018.$sql019.$sql022.$sql024.$sql025.$sql026.$sql027.$sql029.$sql033;

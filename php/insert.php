@@ -87,16 +87,22 @@ if($opcion=="addSt"){
 	$uno = $_POST['unoprofeco'];
 	$suno = $_POST['unoprofecos'];
 	$euno = $_POST['unoprofecoe'];
-	//$puno = $_POST['unoprofecop'];
 
 	$dos = $_POST['dosprofeco'];
 	$sdos = $_POST['dosprofecos'];
 	$edos = $_POST['dosprofecoe'];
-	//$pdos = $_POST['dosprofecop'];
+
+	$tres = $_POST['tresprofeco'];
+	$stres = $_POST['tresprofecos'];
+	$etres = $_POST['tresprofecoe'];
+
+	$cuatro = $_POST['cuatroprofeco'];
+	$scuatro = $_POST['cuatroprofecos'];
+	$ecuatro = $_POST['cuatroprofecoe'];
 
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('PROFECO',1,'".$cre."','".$uno."','".$euno."','".$suno."'), ('PROFECO',2,'".$cre."','".$dos."','".$edos."','".$sdos."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('PROFECO',1,'".$cre."','".$uno."','".$euno."','".$suno."'), ('PROFECO',2,'".$cre."','".$dos."','".$edos."','".$sdos."'), ('PROFECO',3,'".$cre."','".$tres."','".$etres."','".$stres."'), ('PROFECO',4,'".$cre."','".$cuatro."','".$ecuatro."','".$scuatro."')";
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
 	}else{
@@ -228,70 +234,78 @@ if($opcion=="addSt"){
 	$cump001s = $_POST['unos'];
 	$scump001s = $_POST['unosS'];
 	$ecump001s = $_POST['unosE'];
-	//$pcump001s = $_POST['unosP'];
+	
 	$cump002s = $_POST['doss'];
 	$scump002s = $_POST['dossS'];
 	$ecump002s = $_POST['dossE'];
-	//$pcump002s = $_POST['dossP'];
-	$cump009s = $_POST['tress'];
-	$scump009s = $_POST['tressS'];
-	$ecump009s = $_POST['tressE'];
-	//$pcump009s = $_POST['tressP'];
-	$cump010s = $_POST['cuatros'];
-	$scump010s = $_POST['cuatrosS'];
-	$ecump010s = $_POST['cuatrosE'];
-	//$pcump010s = $_POST['cuatrosP'];
-	$cump011s = $_POST['cincos'];
-	$scump011s = $_POST['cincosS'];
-	$ecump011s = $_POST['cincosE'];
-	//$pcump011s = $_POST['cincosP'];
-	$cump017s = $_POST['seiss'];
-	$scump017s = $_POST['seissS'];
-	$ecump017s = $_POST['seissE'];
-	//$pcump017s = $_POST['seissP'];
-	$cump018s = $_POST['sietes'];
-	$scump018s = $_POST['sietesS'];
-	$ecump018s = $_POST['sietesE'];
-	//$pcump018s = $_POST['sietesP'];
-	$cump019s = $_POST['ochos'];
-	$scump019s = $_POST['ochosS'];
-	$ecump019s = $_POST['ochosE'];
-	//$pcump019s = $_POST['ochosP'];
-	$cump022s = $_POST['nueves'];
-	$scump022s = $_POST['nuevesS'];
-	$ecump022s = $_POST['nuevesE'];
-	//$pcump022s = $_POST['nuevesP'];
-	$cump024s = $_POST['diezs'];
-	$scump024s = $_POST['diezsS'];
-	$ecump024s = $_POST['diezsE'];
-	//$pcump024s = $_POST['diezsP'];
-	$cump025s = $_POST['onces'];
-	$scump025s = $_POST['oncesS'];
-	$ecump025s = $_POST['oncesE'];
-	//$pcump025s = $_POST['oncesP'];
-	$cump026s = $_POST['doces'];
-	$scump026s = $_POST['docesS'];
-	$ecump026s = $_POST['docesE'];
-	//$pcump026s = $_POST['docesP'];
-	$cump027s = $_POST['treces'];
-	$scump027s = $_POST['trecesS'];
-	$ecump027s = $_POST['trecesE'];
-	//$pcump027s = $_POST['trecesP'];
-	$cump029s = $_POST['cators'];
-	$scump029s = $_POST['catorsS'];
-	$ecump029s = $_POST['catorsE'];
-	//$pcump029s = $_POST['catorsP'];
-	$cump033s = $_POST['quins'];
-	$scump033s = $_POST['quinsS'];
-	$ecump033s = $_POST['quinsE'];
+	
+	$cump004s = $_POST['tress'];
+	$scump004s = $_POST['tressS'];
+	$ecump004s = $_POST['tressE'];
+
+	$cump005s = $_POST['cuatros'];
+	$scump005s = $_POST['cuatrosS'];
+	$ecump005s = $_POST['cuatrosE'];
+
+	$cump006s = $_POST['cincos'];
+	$scump006s = $_POST['cincosS'];
+	$ecump006s = $_POST['cincosE'];
+
+	$cump009s = $_POST['seiss'];
+	$scump009s = $_POST['seissS'];
+	$ecump009s = $_POST['seissE'];
+	
+	$cump011s = $_POST['sietes'];
+	$scump011s = $_POST['sietesS'];
+	$ecump011s = $_POST['sietesE'];
+	
+	$cump017s = $_POST['ochos'];
+	$scump017s = $_POST['ochosS'];
+	$ecump017s = $_POST['ochosE'];
+	
+	$cump018s = $_POST['nueves'];
+	$scump018s = $_POST['nuevesS'];
+	$ecump018s = $_POST['nuevesE'];
+	
+	$cump019s = $_POST['diezs'];
+	$scump019s = $_POST['diezsS'];
+	$ecump019s = $_POST['diezsE'];
+	
+	$cump020s = $_POST['onces'];
+	$scump020s = $_POST['oncesS'];
+	$ecump020s = $_POST['oncesE'];
+
+	$cump022s = $_POST['doces'];
+	$scump022s = $_POST['docesS'];
+	$ecump022s = $_POST['docesE'];
+	
+	$cump025s = $_POST['treces'];
+	$scump025s = $_POST['trecesS'];
+	$ecump025s = $_POST['trecesE'];
+	
+	$cump026s = $_POST['cators'];
+	$scump026s = $_POST['catorsS'];
+	$ecump026s = $_POST['catorsE'];
+	
+	$cump029s = $_POST['quins'];
+	$scump029s = $_POST['quinsS'];
+	$ecump029s = $_POST['quinsE'];
+	
+	$cump030s = $_POST['diecss'];
+	$scump030s = $_POST['diecssS'];
+	$ecump030s = $_POST['diecssE'];
+
+	$cump033s = $_POST['diecs'];
+	$scump033s = $_POST['diecsS'];
+	$ecump033s = $_POST['diecsE'];
 	//$pcump033s = $_POST['quinsP'];
 
-	$cump035s = $_POST['diecss'];
-	$scump035s = $_POST['diecssS'];
-	$ecump035s = $_POST['diecssE'];
+	$cump035s = $_POST['dieo'];
+	$scump035s = $_POST['dieoS'];
+	$ecump035s = $_POST['dieoE'];
 	$cre = $_POST['cre'];
 
-	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('STPS',1,'".$cre."','".$cump001s."','".$ecump001s."','".$scump001s."'), ('STPS',2,'".$cre."','".$cump002s."','".$ecump002s."','".$scump002s."'), ('STPS',3,'".$cre."','".$cump009s."','".$ecump009s."','".$scump009s."'), ('STPS',4,'".$cre."','".$cump010s."','".$ecump010s."','".$scump010s."'), ('STPS',5,'".$cre."','".$cump011s."','".$ecump011s."','".$scump011s."'), ('STPS',6,'".$cre."','".$cump017s."','".$ecump017s."','".$scump017s."'), ('STPS',7,'".$cre."','".$cump018s."','".$ecump018s."','".$scump018s."'), ('STPS',8,'".$cre."','".$cump019s."','".$ecump019s."','".$scump019s."'), ('STPS',9,'".$cre."','".$cump022s."','".$ecump022s."','".$scump022s."'), ('STPS',10,'".$cre."','".$cump024s."','".$ecump024s."','".$scump024s."'), ('STPS',11,'".$cre."','".$cump025s."','".$ecump025s."','".$scump025s."'), ('STPS',12,'".$cre."','".$cump026s."','".$ecump026s."','".$scump026s."'), ('STPS',13,'".$cre."','".$cump027s."','".$ecump027s."','".$scump027s."'), ('STPS',14,'".$cre."','".$cump029s."','".$ecump029s."','".$scump029s."'), ('STPS',15,'".$cre."','".$cump033s."','".$ecump033s."','".$scump033s."'), ('STPS',16,'".$cre."','".$cump035s."','".$ecump035s."','".$scump035s."')";
+	$sqlcompleto = "INSERT INTO documento (tipo, num, idCESH, cumplimiento, evidencia, status) VALUES ('STPS',1,'".$cre."','".$cump001s."','".$ecump001s."','".$scump001s."'), ('STPS',2,'".$cre."','".$cump002s."','".$ecump002s."','".$scump002s."'), ('STPS',3,'".$cre."','".$cump004s."','".$ecump004s."','".$scump004s."'), ('STPS',4,'".$cre."','".$cump005s."','".$ecump005s."','".$scump005s."'), ('STPS',5,'".$cre."','".$cump006s."','".$ecump006s."','".$scump006s."'), ('STPS',6,'".$cre."','".$cump009s."','".$ecump009s."','".$scump009s."'), ('STPS',7,'".$cre."','".$cump011s."','".$ecump011s."','".$scump011s."'), ('STPS',8,'".$cre."','".$cump017s."','".$ecump017s."','".$scump017s."'), ('STPS',9,'".$cre."','".$cump018s."','".$ecump018s."','".$scump018s."'), ('STPS',10,'".$cre."','".$cump019s."','".$ecump019s."','".$scump019s."'), ('STPS',11,'".$cre."','".$cump020s."','".$ecump020s."','".$scump020s."'), ('STPS',12,'".$cre."','".$cump022s."','".$ecump022s."','".$scump022s."'), ('STPS',13,'".$cre."','".$cump025s."','".$ecump025s."','".$scump025s."'), ('STPS',14,'".$cre."','".$cump026s."','".$ecump026s."','".$scump026s."'), ('STPS',15,'".$cre."','".$cump029s."','".$ecump029s."','".$scump029s."'), ('STPS',16,'".$cre."','".$cump030s."','".$ecump030s."','".$scump030s."'), ('STPS',17,'".$cre."','".$cump033s."','".$ecump033s."','".$scump033s."'), ('STPS',18,'".$cre."','".$cump035s."','".$ecump035s."','".$scump035s."')";
 	//echo $sqlcompleto;
 	if(mysqli_query($con, $sqlcompleto)){
 		echo "Carga Completa.";
@@ -675,7 +689,7 @@ if($opcion=="addSt"){
 
 	if(mysqli_query($con,$sql)){
 		//echo "Carga Correcta";
-		$sqlselect = "SELECT idAuditoria as u, alcance as alcance FROM auditoria ORDER BY idAuditoria DESC LIMIT 1";
+		$sqlselect = "SELECT idAuditoria as u, alcance as alcance FROM auditoria WHERE idCESH = '".$i."' ORDER BY idAuditoria DESC LIMIT 1";
 		$resu = mysqli_query($con, $sqlselect);
 		if($resu->num_rows > 0){
 			while ($f = $resu -> fetch_assoc()) {

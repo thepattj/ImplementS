@@ -554,7 +554,7 @@
                                 <p>Completar el formulario con la información que se te pide para tu control.<br><b>NOTA: Debes de responder todo el formulario no importa que el documento no lo encuentres en tu estación.</b> De lo contrario no se guardara la información</p>
                             </div>
 
-                            <!-- DOCUMENTACION LEGAL -->
+                            <!-- REQUISITOS LEGALES-->
                             <div class="row" style="border: black 1px solid; display: ;" id="legal">
                                 <?php
                                     $sqldoc = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'Documentación' AND idCESH = '".$cre."' ORDER BY num ASC";
@@ -602,36 +602,36 @@
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
-                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;">En tramite</option>
-                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">Seguimiento</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[18] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
-                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;" selected>En tramite</option>
-                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">Seguimiento</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[18] == "Seguimiento"){ ?>
+                                                    <?php }if($datos6[18] == "NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
-                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;">En tramite</option>
-                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;" selected>Seguimiento</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[18] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estAct">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Otorgada</option>
-                                                                <option value="Tramite" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;">En tramite</option>
-                                                                <option value="Seguimiento" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">Seguimiento</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
@@ -660,37 +660,37 @@
                                                     <?php if($datos6[19] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPn">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos6[19] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPn">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos6[19] == "Seguimiento"){?>
+                                                    <?php } if($datos6[19] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPn">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos6[19] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPn">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
@@ -719,37 +719,37 @@
                                                     <?php if($datos6[20] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSHCP">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[20] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSHCP">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[20] == "Seguimiento"){?>
+                                                    <?php }if($datos6[20] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSHCP">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[20] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSHCP">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -778,37 +778,37 @@
                                                     <?php if($datos6[21] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSRFCS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[21] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSRFCS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[21] == "Seguimiento"){?>
+                                                    <?php }if($datos6[21] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSRFCS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[21] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSRFCS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -837,37 +837,37 @@
                                                     <?php if($datos6[22] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estPL">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[22] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estPL">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[22] == "Seguimiento"){?>
+                                                    <?php }if($datos6[22] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estPL">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[22] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estPL">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -896,37 +896,37 @@
                                                     <?php if($datos6[23] == "Otorgada"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estLFM">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[23] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estLFM">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[23] == "Seguimiento"){ ?>
+                                                    <?php }if($datos6[23] == "NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estLFM">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[23] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estLFM">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
@@ -955,53 +955,53 @@
                                                     <?php if($datos6[24] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdicS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[24] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdicS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[24] == "Seguimiento"){?>
+                                                    <?php }if($datos6[24] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdicS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[24] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdicS">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td>
                                                     <?php if($datos6[42]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[42];?>" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[42];?>" class="form-control" id="evidicS" placeholder="Numero de estudio"> </div>
                                                     <?php }else{ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidicS" placeholder="No. de Licencia"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidicS" placeholder="Numero de estudio"> </div>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
                                             <!-- VALORES DE TARJETA IMSS -->
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>8</td>
-                                                <td>Tarjeta oficial de IMSS</td>
+                                                <td>Tarjeta oficial de IMSS (Número Patronal)</td>
                                                 <?php if($datos6[7] == "Si"){ ?>
                                                 <td value="1" id="oImss" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[7] == "No") { ?>
@@ -1014,37 +1014,37 @@
                                                     <?php if($datos6[25] =="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estoIm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[25] =="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estoIm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[25] =="Seguimiento"){?>
+                                                    <?php }if($datos6[25] =="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estoIm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                               <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[25] =="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estoIm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1073,37 +1073,37 @@
                                                     <?php if($datos6[26] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estplano">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[26] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estplano">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[26] == "Seguimiento"){?>
+                                                    <?php }if($datos6[26] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estplano">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[26] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estplano">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1132,37 +1132,37 @@
                                                     <?php if($datos6[27]== "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estSiem">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[27]== "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estSiem">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[27]== "Seguimiento"){?>
+                                                    <?php }if($datos6[27]== "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estSiem">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[27]== "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estSiem">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1191,37 +1191,37 @@
                                                     <?php if($datos6[28] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdElec">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[28] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdElec">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[28] == "Seguimiento"){?>
+                                                    <?php }if($datos6[28] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdElec">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[28] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdElec">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
@@ -1250,37 +1250,37 @@
                                                     <?php if($datos6[29] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdTfi">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[29] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdTfi">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[29] == "Seguimiento"){?>
+                                                    <?php }if($datos6[29] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdTfi">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[29] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdTfi">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1296,7 +1296,7 @@
                                             <!-- VALORES DE CALIBRACION -->
                                             <tr>
                                                 <td>13</td>
-                                                <td>Calibración de dispensarios</td>
+                                                <td>Calibración de dispensarios (PROFECO)</td>
                                                 <?php if($datos6[12] == "Si"){ ?>
                                                 <td value="1" id="calDisp" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[12] == "No") { ?>
@@ -1309,37 +1309,37 @@
                                                     <?php if($datos6[30] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcalD">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos6[30] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcalD">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos6[30] == "Seguimiento"){?>
+                                                    <?php } if($datos6[30] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcalD">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos6[30] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcalD">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
@@ -1355,7 +1355,7 @@
                                             <!-- VALORES DE HERMETICIDAD -->
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>14</td>
-                                                <td>Pruebas de Hermeticidad</td>
+                                                <td>Pruebas de Hermeticidad a Tanques</td>
                                                 <?php if($datos6[13] == "Si"){ ?>
                                                 <td value="1" id="pHerm" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos6[13] == "No") { ?>
@@ -1368,43 +1368,43 @@
                                                     <?php if($datos6[31] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHerm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[31] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHerm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[31] == "Seguimiento"){?>
+                                                    <?php }if($datos6[31] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHerm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[31] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHerm">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos6[49] !=''){?>
+                                                    <?php if($datos6[49] !='-'){?>
                                                         <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos6[49];?>" class="form-control" id="evidpHerm" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidpHerm" placeholder="Número"> </div>
@@ -1427,37 +1427,37 @@
                                                     <?php if($datos6[32]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHt">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[32]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHt">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[32]=="Seguimiento"){?>
+                                                    <?php }if($datos6[32]=="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHt">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[32]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estpHt">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1486,37 +1486,37 @@
                                                     <?php if($datos6[33] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estTanque">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[33] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estTanque">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[33] == "Seguimiento"){?>
+                                                    <?php }if($datos6[33] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estTanque">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[33] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estTanque">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1545,37 +1545,37 @@
                                                     <?php if($datos6[34] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdisp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[34] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdisp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[34] == "Seguimiento"){?>
+                                                    <?php }if($datos6[34] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdisp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[34] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estdisp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
@@ -1604,37 +1604,37 @@
                                                     <?php if($datos6[35] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCiv">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[35] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCiv">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos6[35] == "Seguimiento"){?>
+                                                    <?php }if($datos6[35] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCiv">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos6[35] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCiv">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -1662,7 +1662,7 @@
                                 </div>
                                 <?php } ?>
                             </div>
-
+                            <!-- REQUISITOS LEGALES ASEA-->
                             <div class="row" style="border: black 1px solid; display: none;" id="asea">
                                 <?php
                                     $sqlasea = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'ASEA' AND idCESH = '".$cre."' ORDER BY num ASC";
@@ -1708,37 +1708,37 @@
                                                     <?php if($datos1[7] == "Otorgada") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
-                                                                <option value="Selecciona" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[7] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
-                                                                <option value="Selecciona" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[7] == "Seguimiento") {?>
+                                                    <?php } if($datos1[7] == "NA") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
-                                                                <option value="Selecciona" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[7] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estc005">
-                                                                <option value="Selecciona" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
@@ -1769,51 +1769,37 @@
                                                     <?php if ($datos1[8] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if ($datos1[8] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos1[8] == "Seguimiento") { ?>
+                                                    <?php } if ($datos1[8] == "NA") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php } if ($datos1[8] == "NoAplica") { ?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="estcMia">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica" selected>No Aplica</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if ($datos1[8] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcMia">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                        
@@ -1847,8 +1833,7 @@
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada" selected>Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
+                                                                <option value="NA">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[9] == "Tramite") { ?>
@@ -1857,38 +1842,25 @@
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
+                                                                <option value="NA">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[9] == "Seguimiento") { ?>
+                                                    <?php } if($datos1[9] == "NA") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
                                                                 <option value="0" style="display: none;">Selecciona una opción</option>
                                                                 <option value="Otorgada">Otorgada</option>
                                                                 <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php } if($datos1[9] == "NoAplica") { ?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="estcIp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica" selected>No Aplica</option>
+                                                                <option value="NA" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[9] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcIp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                                <option value="NoAplica">No Aplica</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                            
@@ -1917,37 +1889,37 @@
                                                     <?php if($datos1[10] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[10] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[10] == "Seguimiento") { ?>
+                                                    <?php } if($datos1[10] == "NA") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[10] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcLf">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                        
@@ -1976,37 +1948,37 @@
                                                     <?php if($datos1[11] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[11] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[11] == "Seguimiento") {?>
+                                                    <?php } if($datos1[11] == "NA") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[11] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcGrp">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -2035,37 +2007,37 @@
                                                     <?php if($datos1[12] == "Otorgada") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[12] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[12] == "Seguimiento") {?>
+                                                    <?php } if($datos1[12] == "NA") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[12] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estcCoa">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -2094,28 +2066,28 @@
                                                     <?php if($datos1[13] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcPol">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[13] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcPol">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos1[13] == "Seguimiento") {?>
+                                                    <?php } if($datos1[13] == "NA") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estcPol">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos1[13] == "-") {?>
@@ -2143,16 +2115,16 @@
                                 <?php if($datos1[20] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <button id="guardarDocASEA" class="btn btn-warning notika-btn-warning">Guardar</button>                   
+                                    <button id="guardarDocASEA" class="btn btn-warning notika-btn-warning">Guardar</button>                  
                                 </div>
                                 <?php }else{ ?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                    <button id="actualizarDocASEA" class="btn btn-info notika-btn-info">Actualizar </button>                   
+                                    <button id="actualizarDocASEA" class="btn btn-info notika-btn-info">Actualizar </button>                 
                                 </div>
                                 <?php } ?>
                             </div>
-
+                            <!-- REQUISITOS LEGALES CRE-->
                             <div class="row" style="border: black 1px solid; display: none;" id="cre">
                                 <?php
                                     $sqlcre = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'CRE' AND idCESH = '".$cre."' ORDER BY num ASC";
@@ -2197,37 +2169,37 @@
                                                     <?php if($datos4[10] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[10] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[10] == "Seguimiento"){?>
+                                                    <?php }if($datos4[10] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[10] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdia">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
@@ -2256,37 +2228,37 @@
                                                     <?php if($datos4[11] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos4[11] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos4[11] == "Segumiento") {?>
+                                                    <?php } if($datos4[11] == "NA") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos4[11] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estRdiap">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -2299,142 +2271,10 @@
                                                     <?php } ?>
                                                 </td>
                                             </tr>
-                                            <!-- ESTADISITCAS DE VARIOS -->
-                                            <!-- <tr>
-                                                <td>3</td>
-                                                <td>Estadística; Volúmenes, Capacidad (L), Procedencia del producto, Fletes</td>
-                                                
-                                                <td value="1" id="cEstad" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                
-                                                <td value="0" id="cEstad" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                
-                                                <td value="" id="cEstad" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                
-                                                
-                                                <td>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estcEs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estcEs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estcEs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estcEs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    
-                                                    <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porcecEs" placeholder="%"> </div>
-                                                    
-                                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcecEs" placeholder="%"> </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="evidcEs" placeholder="Número"> </div>
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcEs" placeholder="Número"> </div>
-                                                    
-                                                </td>
-                                            </tr> -->
-                                            <!-- DATO DE NOM 016 -->
-                                            <!-- <tr style="background: rgb(198,198,198);">
-                                                <td>3</td>
-                                                <td>Calidad de petrolíferos<br>(<b>NOM-016-CRE-2016</b>)</td>
-                                                
-                                                <td value="1" id="016" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                
-                                                <td value="0" id="016" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                
-                                                <td value="" id="016" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                
-                                                
-                                                <td>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" >Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                </td>
-                                                <td> 
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porce016" placeholder="%"> </div>
-
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porce016" placeholder="%"> </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="evid016" placeholder="Número"> </div>
-
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid016" placeholder="Número"> </div>
-                                                    
-                                                </td>
-                                            </tr> -->
                                             <!-- DICTAMEN DE LA 16 -->
                                             <tr>
                                                 <td>3</td>
-                                                <td>Dictamen  de Calidad de petrolíferos (Laboratorios)<br>(<b>NOM-016-CRE-2016</b>)</td>
+                                                <td>Dictamen de Calidad de petrolíferos<br>(<b>NOM-016-CRE-2016</b>)</td>
                                                 <?php if($datos4[2] == "Si"){ ?>
                                                 <td value="1" id="016" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[2] == "No") { ?>
@@ -2447,37 +2287,37 @@
                                                     <?php if($datos4[12] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[12] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[12] == "Seguimiento"){?>
+                                                    <?php }if($datos4[12] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[12] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="est016">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -2506,37 +2346,37 @@
                                                     <?php if($datos4[13] == "Otorgada"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[13] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[13] == "Seguimiento"){ ?>
+                                                    <?php }if($datos4[13] == "NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[13] == '-'){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrPs">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -2552,7 +2392,7 @@
                                             <!-- POLIZA SEGURO -->
                                             <tr>
                                                 <td>5</td>
-                                                <td>Poliza anual vigente de seguro (Seguro)</td>
+                                                <td>Poliza anual vigente de seguro</td>
                                                 <?php if($datos4[4] == "Si"){ ?>
                                                 <td value="1" id="polizAnual" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[4] == "No") { ?>
@@ -2565,37 +2405,37 @@
                                                     <?php if($datos4[14] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[14] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[14] == "Seguimiento"){?>
+                                                    <?php }if($datos4[14] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[14] == '-'){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estPoliza">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
@@ -2608,72 +2448,6 @@
                                                     <?php } ?>
                                                 </td>
                                             </tr>
-                                            <!-- POLIZA -->
-                                            <!-- <tr style="background: rgb(198,198,198);">
-                                                <td>8</td>
-                                                <td>Poliza de seguro (Seguro)</td>
-                                                
-                                                <td value="1" id="polizaSg" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                
-                                                <td value="0" id="polizaSg" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                
-                                                <td value="" id="polizaSg" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                
-                                                
-                                                <td>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estPsg">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estPsg">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estPsg">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" name="" id="estPsg">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                
-                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="porcePsg" placeholder="%"> </div>
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porcePsg" placeholder="%"> </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" value="" class="form-control" id="evidPsg" placeholder="Número"> </div>
-                                                    
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidPsg" placeholder="Número"> </div>
-                                                    
-                                                </td>
-                                            </tr> -->
                                             <!-- REPORTE DE QUEJAS -->
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>6</td>
@@ -2690,37 +2464,37 @@
                                                     <?php if($datos4[15] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[15] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[15] == "Seguimiento"){?>
+                                                    <?php }if($datos4[15] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[15] == '-'){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estrQ">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
@@ -2749,37 +2523,37 @@
                                                     <?php if($datos4[16]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[16]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[16]=="Seguimiento"){?>
+                                                    <?php }if($datos4[16]=="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[16]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estFacP">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -2808,37 +2582,37 @@
                                                     <?php if($datos4[17]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[17]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[17]=="Seguimiento"){?>
+                                                    <?php }if($datos4[17]=="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[17]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estInc">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -2867,37 +2641,37 @@
                                                     <?php if($datos4[18] == "Otorgada"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[18] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[18] == "Seguimiento"){ ?>
+                                                    <?php }if($datos4[18] == "NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[18] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estAnI">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
@@ -2913,7 +2687,7 @@
                                             <!-- SGM -->
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>10</td>
-                                                <td>Sistema de Gestión de las mediciones</td>
+                                                <td>Sistema de Gestión de las mediciones <b>(SGM)</b> </td>
                                                 <?php if($datos4[9] == "Si"){ ?>
                                                     <td value="1" id="sgm" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
                                                 <?php } if($datos4[9] == "No") { ?>
@@ -2926,37 +2700,37 @@
                                                     <?php if($datos4[19]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSgm">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[19]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSgm">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos4[19]=="Seguimiento"){?>
+                                                    <?php }if($datos4[19]=="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSgm">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos4[19]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" name="" id="estSgm">
-                                                                <option id="" value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
@@ -2984,7 +2758,7 @@
                                 </div>
                                 <?php } ?>
                             </div>
-
+                            <!-- REQUISITOS LEGALES PROFECO-->
                             <div class="row" style="border: black 1px solid; display: none;" id="profeco">
                                 <?php
                                     $sqlprofe = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'PROFECO' AND idCESH = '".$cre."' ORDER BY num ASC";
@@ -2993,17 +2767,15 @@
                                         $n = 0;
                                         while($filadoc = $resultadoprofe->fetch_assoc()){
                                             $pfdcumpl = $filadoc['cumplimiento'];
-                                            $pfstatus = $filadoc['status'];
-                                            
+                                            $pfstatus = $filadoc['status'];                                            
                                             $pfevid = $filadoc['evidencia'];
 
                                             $datos2 [$n] = $pfdcumpl;
-                                            $datos2 [$n+2] = $pfstatus;
-                                            
-                                            $datos2 [$n+4] = $pfevid;
+                                            $datos2 [$n+4] = $pfstatus;                                            
+                                            $datos2 [$n+8] = $pfevid;
                                             $n++;
                                         }
-                                    }else{  for ($i=0; $i<=5; $i++) { $datos2[$i] = "-"; } }
+                                    }else{  for ($i=0; $i<=11; $i++) { $datos2[$i] = "-"; } }
                                     //echo "datos: - ".$datos2[5];
                                 ?>
                                 <div class="bsc-tbl-cls" style="border-bottom: black 1px solid;">
@@ -3027,47 +2799,47 @@
                                                 <?php } ?>                                        
                                                 
                                                 <td>
-                                                    <?php if($datos2[2] == "Otorgada") {?>
+                                                    <?php if($datos2[4] == "Otorgada") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estvPd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos2[2] == "Tramite") { ?>
+                                                    <?php } if ($datos2[4] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estvPd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos2[2] == "Seguimiento") { ?>
+                                                    <?php } if ($datos2[4] == "NA") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estvPd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento"selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos2[2] == "-") { ?>
+                                                    <?php } if ($datos2[4] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estvPd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
                                                 <td> 
-                                                    <?php if($datos2[4] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[4];?>" class="form-control" id="evidvPd" placeholder="Número"> </div> 
+                                                    <?php if($datos2[8] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[8];?>" class="form-control" id="evidvPd" placeholder="Número"> </div> 
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidvPd" placeholder="Número"> </div> 
                                                     <?php } ?>
@@ -3086,56 +2858,174 @@
                                                 <?php } ?>                                            
                                                 
                                                 <td>
-                                                    <?php if($datos2[3] == "Otorgada") {?>
+                                                    <?php if($datos2[5] == "Otorgada") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estrCtd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos2[3] == "Tramite") {?>
+                                                    <?php } if($datos2[5] == "Tramite") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estrCtd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos2[3] == "Seguimiento") {?>
+                                                    <?php } if($datos2[5] == "NA") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estrCtd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos2[3] == "-") {?>
+                                                    <?php } if($datos2[5] == "-") {?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estrCtd">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos2[5] !='-'){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[5];?>" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
+                                                    <?php if($datos2[9] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[9];?>" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidrCtd" placeholder="Número"> </div> </td>
+                                                    <?php } ?> 
+                                                </td>   
+                                            </tr>
+                                            <!-- CERTIFICADO MODELO PROTOTICO -->
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Certificado Modelo Prototipo (NOM-005-SCFI-2017)</td>
+                                                <?php if($datos2[2] == "Si"){ ?>
+                                                <td value="1" id="prototipoi" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos2[2] == "No") { ?>
+                                                <td value="0" id="prototipoi" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos2[2] == "-") {?>   
+                                                <td value="" id="prototipoi" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                            
+                                                
+                                                <td>
+                                                    <?php if($datos2[6] == "Otorgada") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estproto">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos2[6] == "Tramite") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estproto">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos2[6] == "NA") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estproto">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos2[6] == "-") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estproto">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos2[10] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[10];?>" class="form-control" id="evidproto" placeholder="Número"> </div> </td>
+                                                    <?php } else {?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidproto" placeholder="Número"> </div> </td>
+                                                    <?php } ?> 
+                                                </td>   
+                                            </tr>
+                                            <!-- INOCUIDAD -->
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>4</td>
+                                                <td>Certificado de Inocuidad (NOM-185-SCFI-2017)</td>
+                                                <?php if($datos2[3] == "Si"){ ?>
+                                                <td value="1" id="cIno" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos2[3] == "No") { ?>
+                                                <td value="0" id="cIno" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos2[3] == "-") {?>   
+                                                <td value="" id="cIno" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                            
+                                                
+                                                <td>
+                                                    <?php if($datos2[7] == "Otorgada") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcIno">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos2[7] == "Tramite") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcIno">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos2[7] == "NA") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcIno">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } if($datos2[7] == "-") {?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="estcIno">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos2[11] !='-'){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos2[11];?>" class="form-control" id="evidcIno" placeholder="Número"> </div> </td>
+                                                    <?php } else {?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidcIno" placeholder="Número"> </div> </td>
                                                     <?php } ?> 
                                                 </td>   
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos2[5] == "-"){?>
+                                <?php if($datos2[11] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -3147,10 +3037,10 @@
                                 </div>
                                 <?php } ?>
                             </div>
-
+                            <!-- REQUISITOS LEGALES CIVIL-->
                             <div class="row" style="border: black 1px solid; display: none;" id="pc">
                                 <?php
-                                    $sqlpc = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Protección Civil' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqlpc = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'Protección Civil' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadopc = mysqli_query($con, $sqlpc);
                                     if($resultadopc->num_rows > 0){
                                         $k = 0;
@@ -3158,16 +3048,14 @@
                                         while($filapc = $resultadopc->fetch_assoc()){
                                             $pcumpl = $filapc['cumplimiento'];
                                             $pcstatus = $filapc['status'];
-                                            $pcporce = $filapc['porcentaje'];
                                             $pcevid = $filapc['evidencia'];
 
                                             $datos3 [$k] = $pcumpl;
                                             $datos3 [$k+2] = $pcstatus;
-                                            $datos3 [$k+4] = $pcporce;
-                                            $datos3 [$k+6] = $pcevid;
+                                            $datos3 [$k+4] = $pcevid;
                                             $k++;
                                         }
-                                    }else{  for ($i=0; $i<=7; $i++) { $datos3[$i] = "-"; } }
+                                    }else{  for ($i=0; $i<=5; $i++) { $datos3[$i] = "-"; } }
                                     //echo "SQL".$sqlpc." : cumplimiento".$datos3[0]." - ".$datos3[1];
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
@@ -3194,51 +3082,44 @@
                                                     <?php if($datos3[2] == "Otorgada") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estVb">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                      <?php } if($datos3[2] == "Tramite") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estVb">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                     <?php } if($datos3[2] == "Seguimiento") { ?>
+                                                     <?php } if($datos3[2] == "NA") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estVb">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                      <?php } if($datos3[2] == "-") { ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estVb">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos3[4] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos3[4];*/ ?>" class="form-control" id="porceVb" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceVb" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos3[6] != "-"){ ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[6]; ?>" class="form-control" id="evidVb" placeholder="Número"> </div>
+                                                    <?php if($datos3[4] != "-"){ ?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[4]; ?>" class="form-control" id="evidVb" placeholder="Número"> </div>
                                                     <?php } else { ?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidVb" placeholder="Número"> </div>
                                                     <?php } ?>
@@ -3260,51 +3141,44 @@
                                                     <?php if($datos3[3] == "Otorgada"){  ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCdc">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if ($datos3[3] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCdc">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if ($datos3[3] == "Seguimiento"){ ?>
+                                                    <?php } if ($datos3[3] == "NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCdc">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if ($datos3[3] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estCdc">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos3[5] != "-"){ ?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos3[5];*/ ?>" class="form-control" id="porceCdc" placeholder="%"> </div>
-                                                    <?php } else {?>
-                                                    <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceCdc" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos3[7] != "-"){?>
-                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[7]; ?>" class="form-control" id="evidCdc" placeholder="Número"> </div>
+                                                    <?php if($datos3[5] != "-"){?>
+                                                    <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos3[5]; ?>" class="form-control" id="evidCdc" placeholder="Número"> </div>
                                                     <?php } else {?>
                                                     <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidCdc" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3313,7 +3187,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos3[7] == "-"){?>
+                                <?php if($datos3[5] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocPc" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -3325,23 +3199,21 @@
                                 </div>
                                 <?php } ?>
                             </div>
-
+                            <!-- REQUISITOS LEGALES ECONOMIA -->
                             <div class="row" style="border: black 1px solid; display: none;" id="se">
                                 <?php
-                                    $sqlse = "SELECT cumplimiento, status, porcentaje, evidencia FROM documento WHERE tipo = 'Sec. Economia' AND idCESH = '".$cre."' ORDER BY num ASC";
+                                    $sqlse = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'Sec. Economia' AND idCESH = '".$cre."' ORDER BY num ASC";
                                     $resultadose = mysqli_query($con, $sqlse);
                                     if($resultadose->num_rows > 0){
                                         $l = 0;
                                         while($filase = $resultadose->fetch_assoc()){
                                             $secumpl = $filase['cumplimiento'];
                                             $sestatus = $filase['status'];
-                                            $seporce = $filase['porcentaje'];
                                             $seevid = $filase['evidencia'];
 
                                             $datos7 [$l] = $secumpl;
                                             $datos7 [$l+1] = $sestatus;
-                                            $datos7 [$l+2] = $seporce;
-                                            $datos7 [$l+3] = $seevid;
+                                            $datos7 [$l+2] = $seevid;
                                             $l++;
                                         }
                                     }else{  for ($i=0; $i<=3; $i++) { $datos7[$i] = "-"; } }
@@ -3369,51 +3241,44 @@
                                                     <?php if($datos7[1] == "Otorgada"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estconNac">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos7[1] == "Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estconNac">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php } if($datos7[1] == "Seguimiento"){ ?>
+                                                    <?php } if($datos7[1] == "NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estconNac">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } if($datos7[1] == "-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="estconNac">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
-                                                <!-- <td>
-                                                    <?php if($datos7[2] != '-') {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php /*echo $datos7[2];*/ ?>" class="form-control" id="porceconNac" placeholder="%"> </div>
-                                                    <?php } else { ?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="porceconNac" placeholder="%"> </div>
-                                                    <?php } ?>
-                                                </td> -->
                                                 <td>
-                                                    <?php if($datos7[3] != '-') {?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos7[3];?>" class="form-control" id="evidconNac" placeholder="Número"> </div>
+                                                    <?php if($datos7[2] != '-') {?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos7[2];?>" class="form-control" id="evidconNac" placeholder="Número"> </div>
                                                     <?php } else {?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evidconNac" placeholder="Número"> </div>
                                                     <?php } ?>
@@ -3422,7 +3287,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos7[3] == "-"){?>
+                                <?php if($datos7[2] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocSe" class="btn btn-warning notika-btn-warning">Guardar</button>                   
@@ -3434,7 +3299,7 @@
                                 </div>
                                 <?php } ?>
                             </div>
-
+                            <!-- REQUISITOS LEGALES STPS -->
                             <div class="row" style="border: black 1px solid; display: none;" id="stps">
                                 <?php
                                     $sqlstps = "SELECT cumplimiento, status, evidencia FROM documento WHERE tipo = 'STPS' AND idCESH = '".$cre."' ORDER BY num ASC";
@@ -3448,12 +3313,12 @@
                                             $stpsevid = $filastps['evidencia'];
 
                                             $datos5 [$m] = $stpscumpl;
-                                            $datos5 [$m+16] = $stpsstatus;
+                                            $datos5 [$m+18] = $stpsstatus;
                                             //$datos5 [$m+2] = $stpsporce;
-                                            $datos5 [$m+32] = $stpsevid;
+                                            $datos5 [$m+36] = $stpsevid;
                                             $m++;
                                         }
-                                    }else{  for ($i=0; $i<=47; $i++) { $datos5[$i] = "-"; } }
+                                    }else{  for ($i=0; $i<=53; $i++) { $datos5[$i] = "-"; } }
                                     //echo "cumplimiento: ".$datos5[15]." estatus: ".$datos5[31]." evidencia: ".$datos5[45];
                                 ?>
                                 <div class="bsc-tbl-cls" style="overflow: auto; width: 100%; height: 250px; border-bottom: black 1px solid;">
@@ -3475,47 +3340,47 @@
                                                     <td value="" id="001stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[16]=="Otorgada"){?>
+                                                    <?php if($datos5[18]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[16]=="Tramite"){ ?>
+                                                    <?php }if($datos5[18]=="Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[16]=="Seguimiento"){ ?>
+                                                    <?php }if($datos5[18]=="NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[16]=="-"){ ?>
+                                                    <?php }if($datos5[18]=="-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est001">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[32]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[32];?>" class="form-control" id="evid001" placeholder="Número"> </div>
+                                                    <?php if($datos5[36]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[36];?>" class="form-control" id="evid001" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid001" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3533,47 +3398,47 @@
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[17] == "Otorgada"){?>
+                                                    <?php if($datos5[19] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[17] == "Tramite"){?>
+                                                    <?php }if($datos5[19] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[17] == "Seguimiento"){?>
+                                                    <?php }if($datos5[19] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[17] == "-"){?>
+                                                    <?php }if($datos5[19] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est002">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[33]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[33];?>" class="form-control" id="evid002" placeholder="Número"> </div>
+                                                    <?php if($datos5[37]!='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[37];?>" class="form-control" id="evid002" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid002" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3582,55 +3447,55 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo que se utilice en los centros de trabajo<br><b>NOM-004-STPS-1999.</b></td>
-                                                <?php if($datos5[1] == "Si"){ ?>
+                                                <?php if($datos5[2] == "Si"){ ?>
                                                     <td value="1" id="004stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[1] == "No") { ?>
+                                                <?php } if($datos5[2] == "No") { ?>
                                                     <td value="0" id="004stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[1] == "-") { ?>
+                                                <?php } if($datos5[2] == "-") { ?>
                                                     <td value="" id="004stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[1]=="Otorgada"){?>
+                                                    <?php if($datos5[20]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est004">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1]=="Tramite"){ ?>
+                                                    <?php }if($datos5[20]=="Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est004">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1]=="Seguimiento"){ ?>
+                                                    <?php }if($datos5[20]=="NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est004">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1]=="-"){ ?>
+                                                    <?php }if($datos5[20]=="-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est004">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[1]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid004" placeholder="Número"> </div>
+                                                    <?php if($datos5[38]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[38];?>" class="form-control" id="evid004" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid004" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3639,56 +3504,56 @@
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>4</td>
                                                 <td>Relativa a las condiciones de seguridad e higiene en los centros de trabajo para el manejo, transporte y almacenamiento de sustancias químicas peligrosas<br><b>NOM-005-STPS-1998.</b></td>
-                                                <?php if($datos5[1] == "Si"){ ?>
+                                                <?php if($datos5[3] == "Si"){ ?>
                                                 <td value="1" id="005stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[1] == "No") { ?>
+                                                <?php } if($datos5[3] == "No") { ?>
                                                 <td value="0" id="005stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[1] == "-") { ?>
+                                                <?php } if($datos5[3] == "-") { ?>
                                                 <td value="" id="005stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[1] == "Otorgada"){?>
+                                                    <?php if($datos5[21] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est005">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1] == "Tramite"){?>
+                                                    <?php }if($datos5[21] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est005">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1] == "Seguimiento"){?>
+                                                    <?php }if($datos5[21] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est005">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1] == "-"){?>
+                                                    <?php }if($datos5[21] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est005">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[1]!='-'){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid005" placeholder="Número"> </div>
+                                                    <?php if($datos5[39]!='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[39];?>" class="form-control" id="evid005" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid005" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3697,55 +3562,55 @@
                                             <tr>
                                                 <td>5</td>
                                                 <td>Manejo y almacenamiento de materiales-Condiciones de seguridad y salud en el trabajo<br><b>NOM-006-STPS-2014.</b></td>
-                                                <?php if($datos5[1] == "Si"){ ?>
+                                                <?php if($datos5[4] == "Si"){ ?>
                                                     <td value="1" id="006stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[1] == "No") { ?>
+                                                <?php } if($datos5[4] == "No") { ?>
                                                     <td value="0" id="006stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[1] == "-") { ?>
+                                                <?php } if($datos5[4] == "-") { ?>
                                                     <td value="" id="006stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[1]=="Otorgada"){?>
+                                                    <?php if($datos5[22]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est006">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1]=="Tramite"){ ?>
+                                                    <?php }if($datos5[22]=="Tramite"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est006">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1]=="Seguimiento"){ ?>
+                                                    <?php }if($datos5[22]=="NA"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est006">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[1]=="-"){ ?>
+                                                    <?php }if($datos5[22]=="-"){ ?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est006">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[1]!="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid006" placeholder="Número"> </div>
+                                                    <?php if($datos5[40]!="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[40];?>" class="form-control" id="evid006" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid006" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3754,169 +3619,112 @@
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>6</td>
                                                 <td>Condiciones de seguridad para realizar trabajos en altura<br><b>NOM-009-STPS-2011.</b></td>
-                                                <?php if($datos5[2] == "Si"){ ?>
+                                                <?php if($datos5[5] == "Si"){ ?>
                                                     <td value="1" id="009stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[2] == "No") { ?>
+                                                <?php } if($datos5[5] == "No") { ?>
                                                     <td value="0" id="009stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[2] == "-") { ?>
+                                                <?php } if($datos5[5] == "-") { ?>
                                                     <td value="" id="009stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[18] == "Otorgada"){?>
+                                                    <?php if($datos5[23] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[18] == "Tramite"){?>
+                                                    <?php }if($datos5[23] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[18] == "Seguimiento"){?>
+                                                    <?php }if($datos5[23] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[18] == "-"){?>
+                                                    <?php }if($datos5[23] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est009">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[34] !=""){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[34];?>" class="form-control" id="evid009" placeholder="Número"> </div>
+                                                    <?php if($datos5[41] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[41];?>" class="form-control" id="evid009" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid009" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
                                             </tr>
-                                            <!-- <tr>
-                                                <td>7</td>
-                                                <td>Evaluación de sustancias química<br><b>NOM-010-STPS-2014.</b></td>
-                                                <?php if($datos5[3] == "Si"){ ?>
-                                                    <td value="1" id="010stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[3] == "No") { ?>
-                                                    <td value="0" id="010stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[3] == "-") { ?>
-                                                    <td value="" id="010stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>                                                
-                                                <td>
-                                                    <?php if($datos5[19] == "Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est010">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[19] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est010">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[19] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est010">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[19] == "-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est010">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php } ?>
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[35] !=""){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[35];?>" class="form-control" id="evid010" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid010" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr> -->
                                             <tr>
                                                 <td>7</td>
                                                 <td>Evaluación de ruido<br><b>NOM-011-STPS-2001</b></td>
-                                                <?php if($datos5[4] == "Si"){ ?>
+                                                <?php if($datos5[6] == "Si"){ ?>
                                                     <td value="1" id="011stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[4] == "No") { ?>
+                                                <?php } if($datos5[6] == "No") { ?>
                                                     <td value="0" id="011stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[4] == "-") { ?>
+                                                <?php } if($datos5[6] == "-") { ?>
                                                     <td value="" id="011stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[20] =="Otorgada"){?>
+                                                    <?php if($datos5[24] =="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[20] =="Tramite"){?>
+                                                    <?php }if($datos5[24] =="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[20] =="Seguimiento"){?>
+                                                    <?php }if($datos5[24] =="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[20] =="-"){?>
+                                                    <?php }if($datos5[24] =="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est011">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td> 
-                                                    <?php if($datos5[36] !=""){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[36];?>" class="form-control" id="evid011" placeholder="Número"> </div>
+                                                    <?php if($datos5[42] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[42];?>" class="form-control" id="evid011" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid011" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3925,56 +3733,56 @@
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>8</td>
                                                 <td>Equipo de protección personal-Selección, uso y manejo en los centros de trabajo<br><b>NOM-017-STPS-2008.</b></td>
-                                                <?php if($datos5[5] == "Si"){ ?>
+                                                <?php if($datos5[7] == "Si"){ ?>
                                                     <td value="1" id="017stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[5] == "No") { ?>
+                                                <?php } if($datos5[7] == "No") { ?>
                                                     <td value="0" id="017stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[5] == "-") { ?>
+                                                <?php } if($datos5[7] == "-") { ?>
                                                     <td value="" id="017stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[21] == "Otorgada"){?>
+                                                    <?php if($datos5[25] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[21] == "Tramite"){?>
+                                                    <?php }if($datos5[25] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[21] == "Seguimiento"){?>
+                                                    <?php }if($datos5[25] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[21] == "-"){?>
+                                                    <?php }if($datos5[25] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est017">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[37] !=""){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[37];?>" class="form-control" id="evid017" placeholder="Número"> </div>
+                                                    <?php if($datos5[43] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[43];?>" class="form-control" id="evid017" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid017" placeholder="Número"> </div>
                                                     <?php }?>
@@ -3983,55 +3791,55 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>Sistema armonizado para la identificación y comunicación de peligros y riesgos por sustancias químicas peligrosas en los centros de trabajo<br><b>NOM-018-STPS-2015.</b></td>
-                                                <?php if($datos5[6] == "Si"){ ?>
+                                                <?php if($datos5[8] == "Si"){ ?>
                                                     <td value="1" id="018stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[6] == "No") { ?>
+                                                <?php } if($datos5[8] == "No") { ?>
                                                     <td value="0" id="018stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[6] == "-") { ?>
+                                                <?php } if($datos5[8] == "-") { ?>
                                                     <td value="" id="018stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 <td>
-                                                    <?php if($datos5[22] == "Otorgada"){?>
+                                                    <?php if($datos5[26] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[22] == "Tramite"){?>
+                                                    <?php }if($datos5[26] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[22] == "Seguimiento"){?>
+                                                    <?php }if($datos5[26] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[22] == "-"){?>
+                                                    <?php }if($datos5[26] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est018">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td> 
-                                                    <?php if($datos5[38] !=''){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[38];?>" class="form-control" id="evid018" placeholder="Número"> </div>
+                                                    <?php if($datos5[44] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[44];?>" class="form-control" id="evid018" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid018" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4040,56 +3848,56 @@
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>10</td>
                                                 <td>Constitución, integración, organización y funcionamiento de las comisiones de seguridad e higiene<br><b>NOM-019-STPS-2011.</b></td>
-                                                <?php if($datos5[7] == "Si"){ ?>
+                                                <?php if($datos5[9] == "Si"){ ?>
                                                 <td value="1" id="019stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[7] == "No") { ?>
+                                                <?php } if($datos5[9] == "No") { ?>
                                                 <td value="0" id="019stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[7] == "-") { ?>
+                                                <?php } if($datos5[9] == "-") { ?>
                                                 <td value="" id="019stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
                                                 
                                                 <td>
-                                                    <?php if($datos5[23] == "Otorgada"){?>
+                                                    <?php if($datos5[27] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[23] == "Tramite"){?>
+                                                    <?php }if($datos5[27] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[23] == "Seguimiento"){?>
+                                                    <?php }if($datos5[27] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[23] == "-"){?>
+                                                    <?php }if($datos5[27] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
                                                             <select class="chosen" id="est019">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php } ?>                                                    
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[39] !=''){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[39];?>" class="form-control" id="evid019" placeholder="Número"> </div>
+                                                    <?php if($datos5[45] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[45];?>" class="form-control" id="evid019" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid019" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4098,461 +3906,461 @@
                                             <tr>
                                                 <td>11</td>
                                                 <td>Recipientes sujetos a presión, recipientes criogénicos, y generadores de vapor o calderas<br><b>NOM-020-STPS-2011</b></td>
-                                                <?php if($datos5[8] == "Si"){ ?>
-                                                <td value="1" id="022stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[8] == "No") { ?>
-                                                <td value="0" id="022stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[8] == "-") { ?>
-                                                <td value="" id="022stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php if($datos5[10] == "Si"){ ?>
+                                                <td value="1" id="020stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[10] == "No") { ?>
+                                                <td value="0" id="020stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[10] == "-") { ?>
+                                                <td value="" id="020stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>                                                
                                                 
                                                 <td>
-                                                    <?php if($datos5[24]=="Otorgada"){?>
+                                                    <?php if($datos5[28]=="Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est022">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            <select class="chosen" id="est020">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[24]=="Tramite"){?>
+                                                    <?php }if($datos5[28]=="Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est022">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            <select class="chosen" id="est020">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[24]=="Seguimiento"){?>
+                                                    <?php }if($datos5[28]=="NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est022">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            <select class="chosen" id="est020">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[24]=="-"){?>
+                                                    <?php }if($datos5[28]=="-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est022">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            <select class="chosen" id="est020">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>                                                    
                                                 </td>
                                                 <td>
-                                                    <?php if($datos5[40] !=''){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[40];?>" class="form-control" id="evid022" placeholder="Número"> </div>
+                                                    <?php if($datos5[46] !='-'){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[46];?>" class="form-control" id="evid020" placeholder="Número"> </div>
                                                     <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid022" placeholder="Número"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid020" placeholder="Número"> </div>
                                                     <?php }?>
                                                 </td>
                                             </tr>
                                             <tr style="background: rgb(198,198,198);">
                                                 <td>12</td>
                                                 <td>Evaluación de electricidad estática en los centros de trabajo<br><b>NOM-022-STPS-2008</b></td>
-                                                <?php if($datos5[10] == "Si"){ ?>
-                                                <td value="1" id="025stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[10] == "No") { ?>
-                                                <td value="0" id="025stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[10] == "-") { ?>
-                                                <td value="" id="025stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php if($datos5[11] == "Si"){ ?>
+                                                <td value="1" id="022stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[11] == "No") { ?>
+                                                <td value="0" id="022stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[11] == "-") { ?>
+                                                <td value="" id="022stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
                                                 <?php } ?>
 
                                                 <td>
-                                                    <?php if($datos5[26] == "Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est025">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[26] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est025">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[26] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est025">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[26] == "-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est025">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[42] !=""){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[42];?>" class="form-control" id="evid025" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid025" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr>
-                                            <tr >
-                                                <td>13</td>
-                                                <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
-                                                <?php if($datos5[11] == "Si"){ ?>
-                                                    <td value="1" id="026stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[11] == "No") { ?>
-                                                    <td value="0" id="026stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[11] == "-") { ?>
-                                                    <td value="" id="026stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>                                                
-                                                <td>
-                                                    <?php if($datos5[27] == "Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est026">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[27] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est026">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[27] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est026">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[27] == "-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est026">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>                                                
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[43] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[43];?>" class="form-control" id="evid026" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid026" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr>
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>14</td>
-                                                <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
-                                                <?php if($datos5[12] == "Si"){ ?>
-                                                <td value="1" id="027stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[12] == "No") { ?>
-                                                <td value="0" id="027stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[12] == "-") { ?>
-                                                <td value="" id="027stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>
-                                               
-                                                <td>
-                                                    <?php if($datos5[28] == "Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est027">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[28] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est027">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[28] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est027">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[28] == "-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est027">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[44] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[44];?>" class="form-control" id="evid027" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid027" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr>
-                                            <!--<tr >
-                                                <td>17</td>
-                                                <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
-                                                <?php if($datos5[13] == "Si"){ ?>
-                                                <td value="1" id="029stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[13] == "No") { ?>
-                                                <td value="0" id="029stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[13] == "-") { ?>
-                                                <td value="" id="029stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>
-                                                
-                                                <td>
                                                     <?php if($datos5[29] == "Otorgada"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est029">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            <select class="chosen" id="est022">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos5[29] == "Tramite"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est029">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            <select class="chosen" id="est022">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
-                                                    <?php }if($datos5[29] == "Seguimiento"){?>
+                                                    <?php }if($datos5[29] == "NA"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est029">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
+                                                            <select class="chosen" id="est022">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }if($datos5[29] == "-"){?>
                                                         <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est029">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[45] != "-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[45];?>" class="form-control" id="evid029" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid029" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr> -->
-                                            <tr>
-                                                <td>15</td>
-                                                <td>Servicios preventivos de seguridad y salud en el trabajo<br><b>NOM-030-STPS-2009.</b></td>
-                                                <?php if($datos5[1] == "Si"){ ?>
-                                                <td value="1" id="030stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[12] == "No") { ?>
-                                                <td value="0" id="030stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[12] == "-") { ?>
-                                                <td value="" id="030stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>
-                                               
-                                                <td>
-                                                    <?php if($datos5[1] == "Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est030">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[1] == "Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est030">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[1] == "Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est030">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[1] == "-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est030">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[1] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[1];?>" class="form-control" id="evid030" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid030" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr>
-                                            <tr style="background: rgb(198,198,198);">
-                                                <td>16</td>
-                                                <td>Condiciones de seguridad para realizar trabajos en espacios confinados<br><b>NOM-033-STPS-2015.</b></td>
-                                                <?php if($datos5[14] == "Si"){ ?>
-                                                    <td value="1" id="033stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[14] == "No") { ?>
-                                                    <td value="0" id="033stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[14] == "-") { ?>
-                                                    <td value="" id="033stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>
-
-                                                <td>
-                                                    <?php if($datos5[30]=="Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est033">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[30]=="Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est033">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[30]=="Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est033">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[30]=="-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est033">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }?>
-                                                </td>
-                                                <td>
-                                                    <?php if($datos5[46] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[46];?>" class="form-control" id="evid033" placeholder="Número"> </div>
-                                                    <?php }else{?>
-                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid033" placeholder="Número"> </div>
-                                                    <?php }?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>17</td>
-                                                <td>Factores de riesgo psicosocial en el trabajo-Identificación, análisis y prevención<br><b>NOM-035-STPS-2018.</b></td>
-                                                <?php if($datos5[15] == "Si"){ ?>
-                                                    <td value="1" id="035stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
-                                                <?php } if($datos5[15] == "No") { ?>
-                                                    <td value="0" id="035stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
-                                                <?php } if($datos5[15] == "-") { ?>
-                                                    <td value="" id="035stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
-                                                <?php } ?>
-
-                                                <td>
-                                                    <?php if($datos5[31]=="Otorgada"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est035">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada" selected>Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[31]=="Tramite"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est035">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite" selected>En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[31]=="Seguimiento"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est035">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento" selected>Seguimiento</option>
-                                                            </select>
-                                                        </div>
-                                                    <?php }if($datos5[31]=="-"){?>
-                                                        <div class="chosen-select-act fm-cmp-mg">
-                                                            <select class="chosen" id="est035">
-                                                                <option value="0" style="display: none;">Selecciona una opción</option>
-                                                                <option value="Otorgada">Otorgada</option>
-                                                                <option value="Tramite">En tramite</option>
-                                                                <option value="Seguimiento">Seguimiento</option>
+                                                            <select class="chosen" id="est022">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
                                                             </select>
                                                         </div>
                                                     <?php }?>
                                                 </td>
                                                 <td>
                                                     <?php if($datos5[47] !="-"){?>
-                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[47];?>" class="form-control" id="evid035" placeholder="Número"> </div>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[47];?>" class="form-control" id="evid022" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid022" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr >
+                                                <td>13</td>
+                                                <td>Evaluación de las condiciones de iluminación<br><b>NOM-025-STPS-2008</b></td>
+                                                <?php if($datos5[12] == "Si"){ ?>
+                                                    <td value="1" id="025stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[12] == "No") { ?>
+                                                    <td value="0" id="025stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[12] == "-") { ?>
+                                                    <td value="" id="025stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>                                                
+                                                <td>
+                                                    <?php if($datos5[30] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est025">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[30] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est025">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[30] == "NA"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est025">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[30] == "-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est025">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>                                                
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[48] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[48];?>" class="form-control" id="evid025" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid025" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>14</td>
+                                                <td>Colores y señales de seguridad e higiene, e identificación de riesgos por fluidos conducidos en tuberías<br><b>NOM-026-STPS-2008.</b></td>
+                                                <?php if($datos5[13] == "Si"){ ?>
+                                                <td value="1" id="026stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[13] == "No") { ?>
+                                                <td value="0" id="026stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[13] == "-") { ?>
+                                                <td value="" id="026stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+                                               
+                                                <td>
+                                                    <?php if($datos5[31] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est026">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[31] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est026">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[31] == "NA"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est026">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[31] == "-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est026">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[49] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[49];?>" class="form-control" id="evid026" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid026" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>Mantenimiento de las instalaciones eléctricas en los centros de trabajo<br><b>NOM-029-STPS-2011.</b></td>
+                                                <?php if($datos5[14] == "Si"){ ?>
+                                                <td value="1" id="029stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[14] == "No") { ?>
+                                                <td value="0" id="029stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[14] == "-") { ?>
+                                                <td value="" id="029stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+                                                
+                                                <td>
+                                                    <?php if($datos5[32] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est029">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[32] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est029">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[32] == "NA"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est029">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[32] == "-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est029">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[50] != "-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[50];?>" class="form-control" id="evid029" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid029" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>16</td>
+                                                <td>Servicios preventivos de seguridad y salud en el trabajo<br><b>NOM-030-STPS-2009.</b></td>
+                                                <?php if($datos5[15] == "Si"){ ?>
+                                                <td value="1" id="030stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[15] == "No") { ?>
+                                                <td value="0" id="030stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[15] == "-") { ?>
+                                                <td value="" id="030stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+                                               
+                                                <td>
+                                                    <?php if($datos5[33] == "Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[33] == "Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[33] == "NA"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[33] == "-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est030">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[51] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[51];?>" class="form-control" id="evid030" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid030" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>Condiciones de seguridad para realizar trabajos en espacios confinados<br><b>NOM-033-STPS-2015.</b></td>
+                                                <?php if($datos5[16] == "Si"){ ?>
+                                                    <td value="1" id="033stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[16] == "No") { ?>
+                                                    <td value="0" id="033stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[16] == "-") { ?>
+                                                    <td value="" id="033stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+
+                                                <td>
+                                                    <?php if($datos5[34]=="Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est033">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[34]=="Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est033">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[34]=="NA"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est033">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[34]=="-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est033">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[52] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[52];?>" class="form-control" id="evid033" placeholder="Número"> </div>
+                                                    <?php }else{?>
+                                                        <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid033" placeholder="Número"> </div>
+                                                    <?php }?>
+                                                </td>
+                                            </tr>
+                                            <tr style="background: rgb(198,198,198);">
+                                                <td>18</td>
+                                                <td>Factores de riesgo psicosocial en el trabajo-Identificación, análisis y prevención<br><b>NOM-035-STPS-2018.</b></td>
+                                                <?php if($datos5[17] == "Si"){ ?>
+                                                    <td value="1" id="035stps" class="" style="background: rgb(254,174,0); color: rgb(0,0,0); text-align: center;">Si</td>
+                                                <?php } if($datos5[17] == "No") { ?>
+                                                    <td value="0" id="035stps" class="" style="background: rgb(27,22,50); color: rgb(255,255,255); text-align: center;">No</td>
+                                                <?php } if($datos5[17] == "-") { ?>
+                                                    <td value="" id="035stps" style="background: rgba(198,198,198,.4); color: rgb(102,103,102); text-align: center;"> - </td>
+                                                <?php } ?>
+
+                                                <td>
+                                                    <?php if($datos5[35]=="Otorgada"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;" selected>Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[35]=="Tramite"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;" selected>En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[35]=="NA"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;" selected>No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }if($datos5[35]=="-"){?>
+                                                        <div class="chosen-select-act fm-cmp-mg">
+                                                            <select class="chosen" id="est035">
+                                                                <option value="0" style="display: none; text-align: center;">Selecciona una opción</option>
+                                                                <option value="Otorgada" style="text-align: center;">Otorgada</option>
+                                                                <option value="Tramite" style="text-align: center;">En tramite</option>
+                                                                <option value="NA" style="text-align: center;">No Aplica</option>
+                                                            </select>
+                                                        </div>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+                                                    <?php if($datos5[53] !="-"){?>
+                                                        <div class="form-group nk-int-st"> <input type="text" value="<?php echo $datos5[53];?>" class="form-control" id="evid035" placeholder="Número"> </div>
                                                     <?php }else{?>
                                                         <div class="form-group nk-int-st"> <input type="text" class="form-control" id="evid035" placeholder="Número"> </div>
                                                     <?php }?>
@@ -4561,7 +4369,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <?php if($datos5[47] == "-"){?>
+                                <?php if($datos5[53] == "-"){?>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     <button id="guardarDocstp" class="btn btn-warning notika-btn-warning">Guardar</button>                   
