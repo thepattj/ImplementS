@@ -740,7 +740,7 @@
                                 </div>                    
                     
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox"> <label> Crítica (Si/NO) </label> </div>
+                                    <div class="fm-checkbox"> <label> Actividad Crítica (Si/NO) </label> </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="fm-group nk-int-st"> <input type="text" placeholder="Situación de no ser controlada" class="form-control" id="criticaA"> </div>

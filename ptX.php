@@ -893,7 +893,7 @@
                             <!-- ******************* CAMBIOS TECNOLOGICOS *********************** -->
                             <div class="row" style="border: black 1px solid; display: none;" id="tecno">
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <div class="fm-checkbox"> <label> Equipo </label> </div>
+                                    <div class="fm-checkbox"> <label> Equipo/Proceso/tecnología </label> </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                     <div class="form-group nk-int-st"> <input type="text" class="form-control" id="equipoC"> </div>

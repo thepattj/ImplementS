@@ -26,12 +26,13 @@
     $titulo = $nosa." ".$nombre;
     //echo $titulo;
     
-    $auditoriarep = "SELECT alcance, criterioAud, tipoA, objetivos, auditorLider, auditor1, auditor2, periodo FROM auditoria WHERE idCESH = '".$id."' ORDER BY idAuditoria DESC LIMIT 1";
+    $auditoriarep = "SELECT idAuditoria as numaud, alcance, criterioAud, tipoA, objetivos, auditorLider, auditor1, auditor2, periodo FROM auditoria WHERE idCESH = '".$id."' ORDER BY idAuditoria DESC LIMIT 1";
 
     $resul = mysqli_query($con, $auditoriarep);
 
    if($resul->num_rows > 0){
         while($fila1 = $resul->fetch_assoc()){
+            $idaud = $fila1['numaud'];
             $periodo = $fila1['periodo'];
             $alcance = $fila1['alcance'];
             $criterio = $fila1['criterioAud'];
@@ -43,7 +44,16 @@
         }
     }
 
-    //$activit = "SELECT proceso FROM actauditoria WHERE idAuditoria = ".$num;
+    $reptecql = "SELECT nombre as nmb, apellidoP as appt, apellidoM as apmt FROM organigrama WHERE puesto LIKE '%Representante%' AND idCESH = '".$id."'";
+    $represul = mysqli_query($con, $reptecql);
+
+    if($represul->num_rows > 0){
+        while ($fila2 = $represul->fetch_assoc()) {
+            $n = $fila2['nmb'];
+            $app = $fila2['appt'];
+            $apm = $fila2['apmt'];
+        }
+    }
     
 
     /*echo $auditoriarep;
@@ -61,48 +71,48 @@
         </style>
     </head>
     <body>
-        <table style="margin-left: 9%;">
+        <table style="margin-left: 3%;">
             <tr>
                 <td colspan="2">Sistema de Administración de Seguridad Industrial Seguridad Operativa y Protección al Medio Ambiente</td>            
             </tr>
             <tr> <td colspan="2"><?php echo $titulo; ?></td> </tr>
                 <tr> <td>Plan de Auditoria</td> <td> SASISOPA-<?php echo $abr.'-'.$nosa; ?>-15-PL-01</td> </tr>
         </table>
-        <table width="760" style="margin-top: 7%; margin-left: 9%; margin-right: 35%;">        
+        <table width="460" style="margin-top: 4%; margin-left: 7%; margin-right: 35%;">        
             <tr>
-                <th>Estación de Servicio:</th>
+                <th style="background: rgb(178,178,178);">Estación de Servicio:</th>
                 <td><?php echo $nombre; ?></td>
             </tr>
             <tr>
-                <th>Dirección</th>
+                <th style="background: rgb(178,178,178);">Dirección</th>
                 <td><?php echo $dir; ?> </td>
             </tr>
             <tr>
-                <th>Representante Técnico</th>
-                <td></td>
+                <th style="background: rgb(178,178,178);">Representante Técnico</th>
+                <td><?php echo $n." ".$app." ".$apm; ?> </td>
             </tr>
             <tr>
-                <th>Periodo de Auditoria</th>
+                <th style="background: rgb(178,178,178);">Periodo de Auditoria</th>
                 <td><?php echo $periodo; ?></td>
             </tr>
             <tr>
-                <th>Alcance</th>
+                <th style="background: rgb(178,178,178);">Alcance</th>
                 <td><?php echo $alcance; ?></td>
             </tr>
             <tr>
-                <th>Criterios de Auditoria</th>
+                <th style="background: rgb(178,178,178);">Criterios de Auditoria</th>
                 <td><?php echo $criterio; ?></td>
             </tr>
             <tr>
-                <th>Tipo de Auditoria</th>
+                <th style="background: rgb(178,178,178);">Tipo de Auditoria</th>
                 <td><?php echo $tAuditoria; ?></td>
             </tr>
             <tr>
-                <th>Objetivos</th>
+                <th style="background: rgb(178,178,178);">Objetivos</th>
                 <td><?php echo $objetivos; ?></td>
             </tr>
             <tr>
-                <th colspan="2">Roles</th>
+                <th colspan="2" style="background: rgb(178,178,178);">Roles</th>
             </tr>
             <tr>
                 <td colspan="2">Auditor Lider: <?php echo $auditorL; ?></td>
@@ -111,22 +121,22 @@
                 <td colspan="2">Auditor 1:<?php echo $auditor1; ?></td>
             </tr>
         </table>
-        <table width="760" style="margin-top: 2%; margin-left: 7%; margin-right: 35%;">
+        <table width="460" style="margin-top: 3%; margin-left: 7%; margin-right: 35%;">
             <tr>
-                <th colspan="3">Actividades realizadas</th>
+                <th colspan="3" style="background: rgb(178,178,178);">Actividades realizadas</th>
             </tr>
             <tr>
-                <td>Fecha</td>
-                <td>Proceso</td>
-                <td>Auditor</td>
+                <th>Fecha</td>
+                <th>Proceso</td>
+                <th>Auditor</td>
             </tr>
-            <?php $activit = "SELECT proceso, fecha, auditor FROM actauditoria WHERE idAuditoria = 48";
+            <?php $activit = "SELECT proceso, fecha, auditor FROM actauditoria WHERE idAuditoria = ".$idaud;
                   $resactivi = mysqli_query($con, $activit);
                   while($row = $resactivi->fetch_object()){ ?>
             <tr>
-                <td> <?php echo $row->fecha; ?> </td>
-                <td> <?php echo $row->proceso; ?> </td>
-                <td> <?php echo $row->auditor; ?> </td>
+                <td style="font-size: .8em;"> <?php echo $row->fecha; ?> </td>
+                <td style="font-size: .8em;"> <?php echo $row->proceso; ?> </td>
+                <td style="font-size: .8em;"> <?php echo $row->auditor; ?> </td>
             </tr>
             <?php } ?>
         </table>
@@ -144,6 +154,6 @@
     $dompdf->loadHtml($html);
     $dompdf->setPaper('letter'); //A4, landscape
     $dompdf->render();
-    $dompdf->stream('planAuditoria_.pdf', array("attachment" => false)); //false para abrir, true para bajarse
+    $dompdf->stream('planAuditoria_.pdf', array("Attachment" => false)); //false para abrir, true para bajarse
 
 ?>

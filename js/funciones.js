@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	paginacion = 1;
+	return_first = "HOLA";
 
 	$("#btnclosei").click(function() { //BOTON DE CERRAR EN INICIO
 		window.location.href = "index.php"
@@ -224,6 +225,41 @@ $(document).ready(function(){
 		})	
 	});
 
+	
+
+	function callback(response) {
+		/* return_first = response;
+		//return_first = "hola";
+		console.log("dentro del callback: "+return_first);
+		return return_first; */
+	}
+
+	$("#btnBuscarEstacion17").click(function(){
+		//alert("se debera buscar y meter un innerHTML");
+		pcre = $("#stapt17").val();
+		$.ajax({
+			url: 'php/revisionres17.php',
+			method:'POST',
+			dataType:'html',
+			async: false,
+			data:{permiso:pcre},
+			success: function (info) {
+				//alert(info);
+				if(info == "Vacio"){
+					document.getElementById("punto17inserts").innerHTML = "I have changed!"	
+				}else{
+					$("#punto17inserts").load("php/revisionres17.php");
+					//revi17 = info.split(",")
+					//console.log(revi17);
+					//console.log("info: "+info)
+					//document.getElementById("punto17inserts").innerHTML = "I have changed!";
+					//$("#punto17inserts").html();
+				}
+				
+			}
+		})
+	});
+
 	/*CREA USUARIO DE GENERAL*/
 	$("#btnGuardarUser").click(function() {
 		/* Act on the event */
@@ -275,6 +311,14 @@ $(document).ready(function(){
 			});	*/
 		}
 
+	});
+
+	//CREACION DE REPORTES PARA ASEA
+	$("#btnCrearReporte").click(function () {
+		cre = $("#staRep").val();
+		//cre = localStorage.getItem("PL");
+
+		window.open('php/documents/reportesemestral_dom.php?x='+cre);
 	});
 
 
@@ -3480,10 +3524,10 @@ $(document).ready(function(){
 		//alert("se puede abrir una pagina nueva con el pdf");		
 	});
 	$("#pdfrbpo").click(function(){
-		window.open('php/documents/rbpo.php?x='+cre);
+		window.open('php/documents/rbpo_dom.php?x='+cre);
 	});
 	$("#pdfcontrolrbpo").click(function(){
-		window.open('php/documents/controlrbpo.php?x='+cre);
+		window.open('php/documents/controlrbpo_dom.php?x='+cre);
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 10*/
@@ -3637,7 +3681,7 @@ $(document).ready(function(){
 		})		
 	});
 	$("#pdfcpersonal").click(function(){
-		window.open('php/documents/cambiopersonaX.php?x='+cre);
+		window.open('php/documents/cambiopersonaX_dom.php?x='+cre);
 	});
 
 	$("#guardarCTec").click(function() {
@@ -3663,7 +3707,7 @@ $(document).ready(function(){
 		})		
 	});
 	$("#pdfctecnico").click(function(){
-		window.open('php/documents/cambiotecnicoX.php?x='+cre);
+		window.open('php/documents/cambiotecnicoX_dom.php?x='+cre);
 	});
 
 
@@ -3701,7 +3745,7 @@ $(document).ready(function(){
 		})
 	});
 	$("#pdfordenT").click(function(){
-		window.open('php/documents/ordenTrabajoX.php?x='+cre);
+		window.open('php/documents/ordenTrabajoX_dom.php?x='+cre);
 	});
 
 	$("#btnGuardar01").click(function(event) {
@@ -4102,7 +4146,7 @@ $(document).ready(function(){
 	});
 
 	$("#pdf14").click(function(){
-		window.open('php/documents/hallazgo14.php?x='+cre);
+		window.open('php/documents/hallazgo14_dom.php?x='+cre);
 	});
 
 	/*BOTONES QUE SE USAN PARA MOVER LA INFROMACION QUE SE SOLICITA PUNTO 15*/
@@ -4182,7 +4226,11 @@ $(document).ready(function(){
 	});
 	$("#pdfpAuditoria").click(function(){
 		cre = localStorage.getItem("PL");
-		window.open('php/documents/planAuditoria.php?x='+cre);
+		window.open('php/documents/planAuditoria_dom.php?x='+cre);
+	});
+	$("#pdfrAuditoria").click(function(){
+		cre = localStorage.getItem("PL");
+		window.open('php/documents/reporteAuditoria_dom.php?x='+cre);
 	});
 
 
@@ -4264,6 +4312,41 @@ $(document).ready(function(){
 			$("#tipo2").css("display","none");
 			$("#tipo3").css("display","block");
 		}
+	});
+
+
+	$("#actualizarpt17").click(function(){
+		//alert("hola");
+
+		pt1 = $("#comentpt1").val();
+		pt2 = $("#comentpt2").val();
+		pt3 = $("#comentpt3").val();
+		pt4 = $("#comentpt4").val();
+		pt5 = $("#comentpt5").val();
+		pt6 = $("#comentpt6").val();
+		pt7 = $("#comentpt7").val();
+		pt8 = $("#comentpt8").val();
+		pt9 = $("#comentpt9").val();
+		pt10 = $("#comentpt10").val();
+		pt11 = $("#comentpt11").val();
+		pt12 = $("#comentpt12").val();
+		pt13 = $("#comentpt13").val();
+		pt14 = $("#comentpt14").val();
+		pt15 = $("#comentpt15").val();
+		pt16 = $("#comentpt16").val();
+		pt17 = $("#comentpt17").val();
+		pt18 = $("#comentpt18").val();
+
+		$.ajax({
+			url: 'php/update.php',
+			method: 'POST',
+			dataType: 'html',
+			data: {opc:"up17",cpt1:pt1, cpt2:pt2, cpt3:pt3, cpt4:pt4, cpt5:pt5, cpt6:pt6, cpt7:pt7, cpt8:pt8, cpt9:pt9, cpt10:pt10, cpt11:pt11, cpt12:pt12, cpt13:pt13, cpt14:pt14, cpt15:pt15, cpt16:pt16, cpt17:pt17, cpt18:pt18, cre:cre},
+		})
+		.done(function(msg) {
+			alert(msg)
+			//location.reload();
+		})
 	});
 
 });//fin de ready

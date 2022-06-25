@@ -1,9 +1,16 @@
 <?php
-    include 'php/conex.php';
-    //$id = $_GET["x"];
-    $id = 'PL/0000/EXP/ES/2020';
-    $con = Conectarse();
+    ob_start();
+?>
 
+
+<?php
+    include '../conex.php';
+    $id = $_GET["x"];
+    //$id = 'PL/0000/EXP/ES/2020';
+    $con = Conectarse();
+    //echo $id; //prueba de que el ID si llega a esta pagina de la seleccion del modal del admin.
+    
+    // Variables para dar un cumplimiento a lo puntos de tener información dentro de la tabla, no quiere decir que este bien el contenido de la misma.
     $tienept1 = 0;
     $tienept2 = 0;
     $tienept3 = 0;
@@ -37,9 +44,10 @@
     //dividir aqui la parte del PL
     $separador = explode("/",$id);
     $nosa = $separador[0].$separador[1];
-    $titulo = $nosa." ".$nombre;    
+    $titulo = $nosa." ".$nombre;
+    //echo $titulo; // prueba de que el query y el titulo funcionan con la información correcta 
 
-    /*SQL POLITICA*/
+    //SQL POLITICA
     $politica = "SELECT idCESH, tipoD, fechaD, direccion FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt1res = mysqli_query($con, $politica);
     if($pt1res->num_rows > 0){
@@ -52,27 +60,31 @@
         }
         $tienept1 = 1;
     }
+    //echo "respuesta".$respolitica." ".$respolitica1." tipo de divulgación: ".$politicadif." fecha de divulgación: ".$politicafecha." dirección de archivo: ".$politicadir; //DA LOS RESULTADOS ESPERADOS.
 
-    /*SQL ANALISIS DE RIESGOS*/
+    //SQL ANALISIS DE RIESGOS
     $ar = "SELECT idCESH, direccion FROM ar WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt2res = mysqli_query($con, $ar);
+    $contador = 0;
     if($pt2res->num_rows > 0){
         $resar = "CUMPLIMIENTO";
         $tienept2 = 1;
         while($filaAR = $pt2res->fetch_assoc()){
+            $contador++;
             $ardireccion = $filaAR['direccion'];
         }
     }
+    //echo "Dirección del ar cargado: ".$ardireccion." cuantos archivos hay? ".$contador;
 
-    /*SQL REQUISITOS LEGALES*/
+    //SQL REQUISITOS LEGALES
     $legales = "SELECT idCESH FROM documento WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt3res = mysqli_query($con, $legales);
     if($pt3res->num_rows > 0){
-        $legalesres = "CUMPLIMIENTO";
+        $legalesres = "CUMPLIDO";
         $tienept3 = 1;
     }
 
-    /*SQL OBJETIVOS*/    
+    //SQL OBJETIVOS   
     $obj = "SELECT idCESH FROM objetivo WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt4res = mysqli_query($con, $obj);
     if($pt4res->num_rows > 0){
@@ -80,7 +92,7 @@
         $tienept4 = 1;
     }
 
-    /*SQL AUTORIDAD REP TECNICO*/
+    //SQL AUTORIDAD REP TECNICO
     $respon = "SELECT idCESH FROM organigrama WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt5res = mysqli_query($con, $respon);
     if($pt5res->num_rows > 0){
@@ -88,7 +100,7 @@
         $tienept5 = 1;
     }
 
-    /*SQL COMPETENCIAS */
+    //SQL COMPETENCIAS
     $compe = "SELECT idCESH FROM trabcurso WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt6res = mysqli_query($con, $compe);
     if($pt6res->num_rows > 0){
@@ -110,9 +122,9 @@
     if($pt8res->num_rows > 0){
         $controlres = "CUMPLIMIENTO";
         $tienept8 = 1;
-    }/*else{
-        $controlres = "Incumplimiento";
-    }*/
+    }//else{
+        //$controlres = "Incumplimiento";
+    //}
 
     $pract = "SELECT idCESH FROM rbpo WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt9res = mysqli_query($con, $pract);
@@ -120,10 +132,10 @@
         $respracticas = "CUMPLIMIENTO";
         $respracticase = "por la ejecución";
         $tienept9 = 1;
-    }/*else{
-        $respracticas = "Incumplimiento";
-        $respracticase = "nula participación";
-    }*/
+    }//else{
+        //$respracticas = "Incumplimiento";
+        //$respracticase = "nula participación";
+    //}
 
 
     $control = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."' GROUP BY idCESH";
@@ -139,6 +151,10 @@
     if($pt10->num_rows > 0) {
         $tienept10 = 1;
     }
+    if($pt10->num_rows > 3) {
+        $tienept10 = 2;
+        $res10 = "CUMPLIMIENTO";
+    }
     if($pt10o->num_rows > 0){
         $tienept10 = 2;
         $res10 = "CUMPLIMIENTO";
@@ -151,7 +167,7 @@
 
     $bitacoras = "SELECT idCESH FROM bitacoras WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt11 = mysqli_query($con, $bitacoras);
-    if($pt11->num_rows > 0){
+    if($pt11->num_rows > 3){
         $resbit11 = "CUMPLIMIENTO se presenta las ";
         $tienept11 = 1;
     }
@@ -170,12 +186,16 @@
         $respre0 = "CUMPLIDO, el anexado de la copia por medio electronicos del ingreso de formato FF-ASEA-037 y el proyecto mismo en el medio electronico.";
         $tienept13A = 1;
     }
-    $preSim = "SELECT idCESH FROM pre WHERE idCESH = '".$id."' GROUP BY idCESH";
+    $preSim = "SELECT idCESH FROM pre WHERE tipo LIKE '%reporte%' AND idCESH = '".$id."' GROUP BY idCESH";
     $pt13Sim = mysqli_query($con, $preSim);
     if($pt13Sim->num_rows > 0){
         $respreSim = "CUMPLIDO";
         $tienept13S = 1;
+    }else{
+        $tienept13S = 0;
     }
+    //echo $preSim; VERIFICACION DE QUERY
+    //echo " valores del pre: ".$tienept13A." o ".$tienept13S." acuse / reporte"; //VERIFICACION DE VALORES de reporte o acuse.
 
     $monitoreo = "SELECT idCESH FROM monverif WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt14 = mysqli_query($con, $monitoreo);
@@ -204,7 +224,7 @@
     $informe ="SELECT idCESH FROM informe WHERE idCESH = '".$id."'";
     $pt18res = mysqli_query($con, $informe);
     if($pt18res->num_rows > 0){
-        /*$fechainicio = $pt18res['fechaInicio'];*/
+        //$fechainicio = $pt18res['fechaInicio'];
         $tienept18 = 1;
     }
 ?>
@@ -217,8 +237,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-        <style>
-            
+        <style>            
             td, th {
                 border: 1px solid rgb(0, 0, 0);
                 padding: 8px;
@@ -227,9 +246,7 @@
             #cuerpo{
                 font-family: "Source Sans Pro", cursive;
             }
-
-        </style>
-        
+        </style>        
     </head>
     
     <body id="cuerpo">
@@ -242,24 +259,23 @@
                 <tr> <td>Reporte Semestral</td> <td> SASISOPA-<?php echo $abr; ?>-<?php echo $nosa; ?>-17-RP-01</td> </tr>
             </table>    
         </div>
-        <!-- POLITICA -->
-        <div>      
+        <div id="politica">      
             <h3>Elemento 1: POLÍTICA.</h3>
             <?php
                 if($tienept1 == 1){ ?>
                     <p style="text-align:justify;">Se da <b><?php echo $respolitica; ?></b> a este elemento de política de seguridad, salud y medio ambiente SASISOPA-<?php echo $abr; ?>-<?php echo $nosa; ?>-01-POL-01. La cual fue Revisada y firmada por alta dirección y <?php echo $respolitica1;?> la difusión mediante <?php echo $politicadif; ?> en fecha <?php echo $politicafecha; ?> que se realizó al personal directo, contratistas y/o proveedores de la estación de servicios como parte del cumplimiento de la implementación del SASISOPA en toda actividad y operación verificando su cumplimiento durante las visitas de inspección. Como prueba se presenta el <a href="<?php echo $politicadir; ?>">Anexo I</a> en el apartado correcto.</p>
             <?php
                 }else{ ?>
-                    <p style="text-align:justify;">Se dara cumplimiento al elemento de la política de seguridad, salud y medio ambiente al poder dar a conocer nuestro documento SASISOPA-<?php echo $abr; ?>-<?php echo $nosa; ?>-01-POL-01. La cual fue Revisada y firmada por alta dirección y se difundira en en el siguiente semestre de la implementación.</p>
+                    <p style="text-align:justify;">Se dara cumplimiento al elemento de la política de seguridad, salud y medio ambiente una vez que se de a conocer nuestro documento SASISOPA-<?php echo $abr; ?>-<?php echo $nosa; ?>-01-POL-01. La cual sera revisada y firmada por alta dirección y se difundira en en el siguiente semestre de la implementación.</p>
             <?php
                 } ?>
         </div>
         <!-- EVALUACION DE ASPECTOS AMBIENTALES Y ANALISIS DE RIESGOS -->
         <div>
-            <h3>Elemento 2: IDENTIFICACIÓN DE PELIGROS Y ANÁLISIS DE RIESGOS</h3>
+            <h3>Elemento 2: IDENTIFICACIÓN DE PELIGROS Y ASPECTOS AMBIENTALES, ANÁLISIS DE RIESGOS Y EVALUACIÓN DE IMPACTOS AMBIENTALES</h3>
             <?php
                 if($tienept2 == 1){ ?>
-                    <p style="text-align:justify;">El análisis de riesgo y la Evaluación de Aspectos ambientales se realizo, aplicando metodologías para la identificación de los riesgos o peligros. En el análisis de riesgo utilizamos el método de William T Fine para la identificación de riesgos en donde se relacionan tareas de los procesos con la identificación de consecuencias bajo las categorías de Daños al personal, Daños al medio ambiente, Daños a la instalación, así como la categoría de riesgos asociado a escenarios: C1 (riesgo bajo), C2 y C3 (riesgo medio) y C4, C5(riesgo Alto).<br>
+                    <p style="text-align:justify;">El análisis de riesgo y la Evaluación de Aspectos ambientales se realizo, aplicando metodologías para la identificación de los riesgos o peligros. En el análisis de riesgo utilizamos el método de William T Fine para la identificación de riesgos en donde se relacionan tareas de los procesos con la identificación de consecuencias bajo las categorías de Daños al personal, Daños al medio ambiente, Daños a la instalación, así como la categoría de riesgos asociado a escenarios: riesgo bajo (A y B), riesgo medio (C1 y C2) y riesgo Alto (D y E).<br>
 
                     Es nuestro compromiso identificar los peligros, así como analizar, evaluar, jerarquizar, monitorear y mitigar los riesgos y aspectos ambientales, relacionados con las actividades propias de su Proyecto en las diferentes Etapas de Desarrollo del mismo para lo cual contamos con el mecanismo descrito en los procedimientos SASISOPA-<?php echo $abr; ?>-<?php echo $nosa; ?>-02-PR-01 y SASISOPA-<?php echo $abr; ?>-<?php echo $nosa; ?>-02-PR-02.
 
@@ -267,7 +283,7 @@
                         <ol type="A">
                             <li>Evaluación de Análisis de Riesgo. (<a href="<?php echo $ardireccion; ?>">Anexo II</a>)</li>
                             <li>Evaluación de Aspectos Ambientales. (<a href="<?php echo $ardireccion; ?>">Anexo III</a>)</li>
-                            <li>Listado de Peligros, Riesgos y Aspectos Ambientales a controlar en las Áreas de Trabajo. (Anexo III inciso a)</li>
+                            <li>Listado de Peligros, Riesgos y Aspectos Ambientales a controlar en las Áreas de Trabajo. (Anexo IV)</li>
                         </ol>
 
                     Como esta establecido en la autorización de nuestro SASISOPA se da <b><?php echo $resar; ?></b> de este elemento, al establecer el mecanismo para la identificación de riesgos con la evaluación del análisis de riesgo y de los aspectos ambientales, por medio de este primer informe semestral.</p>
@@ -302,7 +318,7 @@
                             <th>Evidencia</th>
                         </tr>
                         <?php
-                            $documentacionN = ['0','Dictamen de NOM-005-ASEA-2016','Manifiesto Impacto Ambiental (MIA)','Informe Preventivo (IP)','Licencia Ambiental Única (LAU) / Licencia de Funcionamiento(LF)','Registro de Generador de Residuos Peligrosos (GRP)','Cedula Operación Anual(COA)','Registro de polizas Contratadas','Reporte Diario (Volúmenes)','Reporte Precios','Dictamen de Calidad de petrolíferos (Laboratorios) (NOM-016-CRE-2016)','Reporte de Pagos Supervisión de permisos (Derechos, Productos y Aprovechamiento)','Poliza anual vigente de seguro (Seguro)','Reporte de Quejas','Procedencia del producto (facturas)','Reporte de inicidentes o emergencias','Anuncio Independiente (número de permiso CRE PL/XX/EXP/ES/20XX)','Sistema de Gestión de las mediciones','Acta Constitutiva','Poder Notarial','Comprobante Original de alta ante hacienda','R.F.C. Original','Permiso de la comisión reguladora de Energía (CRE)','Licencia de Funcionamiento (Municipal)','Dictamenten de uso de suelo / Factibilidad de uso de suelo','Tarjeta oficial de IMSS','Planos Arquitectonicos','SIEM (Sistema de Información Empresarial Mexicano)','Dictámenes eléctricos',' Dictámenes Tierras Fisicas y pararrayos','Calibración de dispensarios','Pruebas de Hermeticidad','Pruebas de Hermeticidad a Tuberias','Ficha Técnica y manual de tanque de almacenamiento','Ficha técnica y manual de dispensarios','Ficha técnica y manual de Control de inventarios','Verificación periódica de dispensarios','Reporte de control a distancia','Visto Bueno','Auto declaratoria','Informe de Contenido Nacional (Permisos)','NOM-001-STPS-2008.','NOM-002-STPS-2010.','NOM-009-STPS-2011','NOM-010-STPS-2014.','NOM-011-STPS-2001','NOM-017-STPS-2008.','NOM-018-STPS-2015.','NOM-019-STPS-2011.','NOM-022-STPS-2008','NOM-024-STPS-2015','NOM-025-STPS-2008','NOM-026-STPS-2008.','NOM-027-STPS-2008.','NOM-029-STPS-2011.','NOM-033-STPS-2015.','NOM-035-STPS-2018.'];
+                            $documentacionN = ['0','Dictamen de NOM-005-ASEA-2016','Manifiesto Impacto Ambiental (MIA)','Informe Preventivo (IP)','Licencia Ambiental Única (LAU) / Licencia de Funcionamiento(LF)','Registro de Generador de Residuos Peligrosos (GRP)','Cedula Operación Anual(COA)','Registro de polizas Contratadas','Reporte Diario (Volúmenes)','Reporte Precios','Dictamen de Calidad de petrolíferos (Laboratorios) (NOM-016-CRE-2016)','Reporte de Pagos Supervisión de permisos (Derechos, Productos y Aprovechamiento)','Poliza anual vigente de seguro (Seguro)','Reporte de Quejas','Procedencia del producto (facturas)','Reporte de inicidentes o emergencias','Anuncio Independiente (número de permiso CRE PL/XX/EXP/ES/20XX)','Sistema de Gestión de las mediciones','Acta Constitutiva','Poder Notarial','Comprobante Original de alta ante hacienda','R.F.C. Original','Permiso de la comisión reguladora de Energía (CRE)','Licencia de Funcionamiento (Municipal)','Dictamenten de uso de suelo / Factibilidad de uso de suelo','Tarjeta oficial de IMSS','Planos Arquitectonicos','SIEM (Sistema de Información Empresarial Mexicano)','Dictámenes eléctricos',' Dictámenes Tierras Fisicas y pararrayos','Calibración de dispensarios','Pruebas de Hermeticidad','Pruebas de Hermeticidad a Tuberias','Ficha Técnica y manual de tanque de almacenamiento','Ficha técnica y manual de dispensarios','Ficha técnica y manual de Control de inventarios','Verificación periódica de dispensarios','Reporte de control a distancia','Certificado Modelo Prototipo','Certificado de Inocuidad','Visto Bueno','Auto declaratoria','Informe de Contenido Nacional (Permisos)','NOM-001-STPS-2008.','NOM-002-STPS-2010.','NOM-004-STPS-1999.','NOM-005-STPS-1998.','NOM-006-STPS-2014.','NOM-009-STPS-2011','NOM-011-STPS-2001.','NOM-017-STPS-2008.','NOM-018-STPS-2015.','NOM-019-STPS-2011.','NOM-020-STPS-2011','NOM-022-STPS-2008','NOM-025-STPS-2008','NOM-026-STPS-2008.','NOM-029-STPS-2011.','NOM-030-STPS-2009.','NOM-033-STPS-2015.','NOM-035-STPS-2018.'];
                             $docslegales = "SELECT tipo, num, cumplimiento, evidencia FROM documento WHERE idCESH = '".$id."' ORDER BY tipo ASC";
                             $respdocs = mysqli_query($con, $docslegales);
                             if($respdocs->num_rows > 0){
@@ -330,10 +346,10 @@
                         <li>La identificación de nuevos aspectos ambientales y su impacto.</li> 
                     </ol>
                     
-                    Adicional en este rubro se verifica a las empresas que nos prestan servicios para asegurar que cumplan con los requisitos de matriz de identificación de Requisitos Legales, mediante auditorías internas que se les programa, en las cuales cuando se detectan hallazgos estos son comunicados de inmediato a la empresa para su cumplimiento.<br>
-                    Los documentos que se tienen en el SASISOPA con respecto a este elemento y el seguimiento al cumplimiento de requisitos legales incluyendo los oficios de entrega y las autorizaciones respectivas, también se reporta mensualmente a nuestro gestor de los cambios realizados y que fueron comunicados vía correo electrónico.<br><br>
+                    Adicional en este rubro se realizaran verificaciones periodicas a la instalación para asegurar que se cumplan con los requisitos de matriz de identificación de Requisitos Legales, mediante auditorías internas que se les programa, en las cuales cuando se detectan hallazgos estos son comunicados de inmediato a la instalación para su cumplimiento.<br>
+                    Los documentos que se tienen en el SASISOPA con respecto a este elemento y el seguimiento al cumplimiento de requisitos legales incluyendo los oficios de entrega y las autorizaciones respectivas, también se reporta mensualmente a nuestro gestor de las actualizaciones realizados y que fueron comunicados vía correo electrónico.<br><br>
                     
-                    Se realizo la verificación de requisitos legales aplicables a la actividad de <?php echo $giro; ?> y se da por <b><?php echo $legalesres; ?></b>, donde se contemplan el listado de los requisitos legales vigentes y otros requisitos aplicables a los procesos y a las actividades de los Regulados, incluyendo permisos, autorizaciones, licencias y otros trámites.</p>
+                    Se realizo la verificación de requisitos legales aplicables a la actividad de <?php echo $giro; ?> y se da por <b><?php echo $legalesres; ?></b>, el listado que contemplan los requisitos legales vigentes y otros requisitos aplicables a los procesos y a las actividades de los Regulados, incluyendo permisos, autorizaciones, licencias y otros trámites federales, estatales y municipales.</p>
             <?php
                 }else{ ?>
                     <p style="text-align:justify;">El cumplimiento de este punto de los requisitos legales está dentro de nuestra política y por lo tanto nos comprometamos con tener cada uno de elementos y otros aplicables actualizados y correctamente identificados.
@@ -406,7 +422,7 @@
             <h3>Elemento 5: FUNCIONES, RESPONSABILIDADES Y AUTORIDAD</h3>
             <?php
                 if($tienept5 == 1){ ?>
-                    <p style="text-align:justify;">Se cuenta con un mecanismo para la visualización de funciones, responsabilidades y autoridad, que se puede ver en la estructura organizacional para las operaciones de servicios que presta la empresa, además es importante mencionar que el Sistema de Administración es conforme con los requisitos establecidos en los Lineamientos y demás normativa aplicable, donde se proponer la adopción de las mejores prácticas  en la implementación del Sistema de Administración, para coordinar las acciones necesarias y subsanar los incumplimientos de la normatividad interna y externa aplicable, Informando a la alta dirección del Regulado acerca del desempeño del Sistema de Administración.<br>
+                    <p style="text-align:justify;">Se cuenta con un mecanismo para la visualización de funciones, responsabilidades y autoridad, que se puede ver en la estructura organizacional para las operaciones de servicios que presta la empresa, además es importante mencionar que el Sistema de Administración es conforme con los requisitos establecidos en los Lineamientos y demás normativa aplicable, donde se proponer la adopción de las mejores prácticas  en la implementación del Sistema de Administración, para coordinar las acciones necesarias y subsanar los incumplimientos de la normatividad interna y externa aplicable, informando a la alta dirección de la instalación acerca del desempeño del Sistema de Administración.<br>
 
                     La siguiente matriz describe puestos y responsabilidades de esta estructura.
                     <table>
@@ -501,11 +517,10 @@
                         </tr>
                     </table>
 
-                    De acuerdo a la implementación del punto se presenta el <b><?php echo $resorganigrama; ?></b> con la designación de representante técnico actualizado (<a href="">Anexo IV</a>). De acuerdo a la revisión de la Dirección general se realizas las descripciones de puesto de los integrantes del capital humano. 
+                    De acuerdo a la implementación del punto se presenta el <b><?php echo $resorganigrama; ?></b> con la designación de representante técnico actualizado (<a href="">Anexo V</a>). De acuerdo a la revisión de la Dirección general se realizas las descripciones de puesto de los integrantes del capital humano. 
             <?php
                 }else{ ?>
-                    <p style="text-align:justify;">Se contara con un mecanismo para la visualización de funciones, responsabilidades y autoridad, que se puede ver en la estructura organizacional para las operaciones de servicios que presta la empresa, además es importante mencionar que el Sistema de Administración es conforme con los requisitos establecidos en los Lineamientos y demás normativa aplicable, donde se proponer la adopción de las mejores prácticas  en la implementación del Sistema de Administración, para coordinar las acciones necesarias y subsanar los incumplimientos de la normatividad interna y externa aplicable, Informando a la alta dirección del Regulado acerca del desempeño del Sistema de Administración.<br>
-
+                    <p style="text-align:justify;">Se contara con un mecanismo para la visualización de funciones, responsabilidades y autoridad, donde se pueda revisar la estructura organizacional para las operaciones de servicios que presta la instalación, además es importante mencionar que el Sistema de Administración es conforme con los requisitos establecidos en los Lineamientos y demás normativa aplicable, donde se proponer la adopción de las mejores prácticas  en la implementación del Sistema de Administración, para coordinar las acciones necesarias y subsanar los incumplimientos de la normatividad interna y externa aplicable, informando a la alta dirección de la instalación acerca del desempeño del Sistema de Administración.<br>
                     Implementar y emplear la asignación de representante Técnico el cual nos ayudara a definir el cumplimineto y procedimiento de nuestra implementación de SASISOPA.</p>
             <?php
                 }
@@ -516,8 +531,7 @@
             <h3>Elemento 6: COMPETENCIA, CAPACITACIÓN Y ENTRENAMIENTO</h3>
             <?php
                 if($tienept6 == 1){ ?>
-                    <p style="text-align:justify;">La empresa establece requerimientos para asegurar que el personal cuentan con las competencias técnicas y de seguridad, las mismas estan definidas por su descripción de puesto para garantizar un desempeño adecuado. Programas anuales para el desarrollo de la competencia que incluyan al menos:<br>1
-            
+                    <p style="text-align:justify;">La empresa establece requerimientos para asegurar que el personal cuentan con las competencias técnicas y de seguridad, las mismas estan definidas por su descripción de puesto para garantizar un desempeño adecuado. Programas anuales para el desarrollo de la competencia que incluyan al menos:<br>            
                     <ol>
                         <li>Capacitación para operar o mantener equipos nuevos.</li>
                         <li>Capacitación inicial para el personal de nuevo ingreso.</li>
@@ -544,7 +558,7 @@
                                 <tr>
                                     <td><?php echo $l; ?></td>
                                     <td><?php echo $pt6c['nombreCurso']; ?></td>
-                                    <td><?php echo $pt6c['nombre'].$pt6c['apellidoP'].$pt6c['apellidoM']; ?></td>
+                                    <td><?php echo $pt6c['nombre']." ".$pt6c['apellidoP']." ".$pt6c['apellidoM']; ?></td>
                                     <td><?php echo $pt6c['fecha']; ?></td>
                                 </tr>
                     <?php
@@ -553,9 +567,9 @@
                         }   ?>                                         
                     </table>
                     
-                    Se presenta un Plan Anual de Capacitación (<a href="">Anexo V</a>) para fomentar entre los trabajadores sobre los riesgos y peligros a que están expuestos durante el desempeño de sus labores, para que sean conscientes de la importancia de la política del Sistema de Administración, sus objetivos y metas, así como de la importancia de la aplicación de los controles operacionales.
+                    Se presenta un Plan Anual de Capacitación (<a href="">Anexo VI</a>) para fomentar entre los trabajadores sobre los riesgos y peligros a que están expuestos durante el desempeño de sus labores, para que sean conscientes de la importancia de la política del Sistema de Administración, sus objetivos y metas, así como de la importancia de la aplicación de los controles operacionales.
                     
-                    De acuerdo al numeral se <b><?php echo $rescompetencia; ?></b> derivado de los documentos que se tienen en el SASISOPA con respecto a este elemento, mencionando en específico la Matriz de Capacitación por Puesto de Trabajo, también se incluye el Plan Anual de Capacitación, y las difusiones de los requerimientos del elemento con el personal, así como la evidencia de capacitación generada.</p>
+                    De acuerdo al numeral se <b><?php echo $rescompetencia; ?></b>; mencionando en específico la Matriz de Capacitación por Puesto de Trabajo, también se incluye el Plan Anual de Capacitación, y las difusiones de los requerimientos del elemento con el personal, así como la evidencia de capacitación generada.</p>
             <?php
                 }else{ ?>
                     <p style="text-align:justify;">La empresa establece requerimientos para asegurar que el personal cuentan con las competencias técnicas y de seguridad, las mismas estan definidas por su descripción de puesto para garantizar un desempeño adecuado. Programas anuales para el desarrollo de la competencia que incluyan al menos:<br>
@@ -576,7 +590,7 @@
             <h3>Elemento 7: COMUNICACIÓN, PARTICIPACIÓN Y CONSULTA</h3>
             <?php
                 if($tienept7 == 1){ ?>
-                    <p style="text-align:justify;">La comunicación es fundamental, dentro de una instalación facilita que todos los colaboradores, incluyendo a los personal exterior (contratistas) cumplan utilizando como herramienta el sistema de administración. Para asegurar el reporte de los actos y condiciones inseguras de trabajo, así como, la identificación de actos y condiciones que pueden dañar al ambiente:
+                    <p style="text-align:justify;">La comunicación es fundamental, dentro de una instalación facilita que todos los colaboradores, incluyendo a los personal exterior (contratistas) cumplan, esto utilizando como herramienta el sistema de administración. Para asegurar el reporte de los actos y condiciones inseguras de trabajo, así como, la identificación de actos y condiciones que pueden dañar al ambiente:
                     <ol>
                         <li>Los Riesgos propios del Proyecto.</li>
                         <li>Los Aspectos Ambientales.</li>
@@ -613,10 +627,10 @@
                 if($tienept8 == 1){ ?>
                     <p style="text-align:justify;">El sistema de administración cuenta con un mecanismo, con el propósito de mantenerlos revisados, aprobados, actualizados y protegidos; considerando su distribución, acceso, control de cambios, prevención del uso no intencionado de documentos obsoletos y que el personal tenga acceso a los documentos pertinentes a sus actividades, cuidando que se respete la confidencialidad de la información.<br>
 
-                    Listado de la información documentada que conforma el Sistema de Administración se presenta en el <a href="documents/Punto8/<?php echo $id; ?>/08SASISOPA.zip">Anexo VI</a>. De acuerdo al numeral se da el <b><?php echo $controlres; ?></b> con todos los documentos descritos en el sistema de administración por cada uno de sus elementos y formatos correspondientes, estos registros permanecen legibles e identificables.</p>
+                    Listado de la información documentada que conforma el Sistema de Administración se presenta en el <a href="documents/Punto8/<?php echo $id; ?>/08SASISOPA.zip">Anexo VII</a>. De acuerdo al numeral se da el <b><?php echo $controlres; ?></b> con todos los documentos descritos en el sistema de administración por cada uno de sus elementos y formatos correspondientes, estos registros permanecen legibles e identificables.</p>
             <?php
                 }else{ ?>
-                    <p style="text-align:justify;">El sistema de administración cuenta con un mecanismo, con el propósito de mantenerlos revisados, aprobados, actualizados y protegidos; considerando su distribución, acceso, control de cambios, prevención del uso no intencionado de documentos obsoletos y que el personal tenga acceso a los documentos pertinentes a sus actividades, cuidando que se respete la confidencialidad de la información.</p>
+                    <p style="text-align:justify;">El sistema de administración contara con un mecanismo, con el propósito de mantenerlos revisados, aprobados, actualizados y protegidos; considerando su distribución, acceso, control de cambios, prevención del uso no intencionado de documentos obsoletos y que el personal tenga acceso a los documentos pertinentes a sus actividades, cuidando que se respete la confidencialidad de la información.</p>
             <?php
                 }
             ?>            
@@ -642,7 +656,7 @@
                     Esta revisión se realiza utilizando normas, códigos, estándares u otras regulaciones reconocidas y generalmente aceptadas a nivel internacional y garantiza las suficientes medidas de control de riesgos para todas las actividades de la compañía.</p>
             <?php
                 }else{ ?>
-                    <p style="text-align:justify;">Las mejores prácticas de ingeniería de los estándares de calidad del servicio, aplicación de mejores prácticas, para que se cumplan todas las condiciones de seguridad en el desarrollo de cada una de las actividades que con lleve a una operación libre de accidentes e incidentes, dado el registro de revisiones de buenas prácticas de operación es una parte importante para nuestra instalación dada esta revisión se realiza utilizando normas, códigos, estándares u otras regulaciones reconocidas y generalmente aceptadas a nivel internacional y garantiza las suficientes medidas de control de riesgos para todas las actividades de la compañía.<br>
+                    <p style="text-align:justify;">Las mejores prácticas de ingeniería de los estándares de calidad del servicio y la  aplicación de mejores prácticas para el cumplimeinto de todas las condiciones de seguridad en el desarrollo de cada una de las actividades que con lleve a una operación libre de accidentes e incidentes, dado el registro de revisiones de buenas prácticas de operación es una parte importante para nuestra instalación. Realizada esta revisión a traves de normas, códigos, estándares u otras regulaciones reconocidas y generalmente aceptadas a nivel internacional que garantizan las suficientes medidas de control de riesgos para todas las actividades de la instalación.<br>
 
                     La prioridad de <?php echo $nombre; ?> sera el operar y mantener conforme a las inspecciones de sus instalaciones, procesos, sistemas de seguridad y todo aquello relativo a la instalación, el objetivo es garantizar suficientes medidas de control de riesgos para todas las actividades de la compañía, incluyéndose procedimientos de acuerdo a las operaciones que se supervisan y los cuales cumplen con el proceso de control de documentos para su implementación en campo.</p>
             <?php
@@ -673,12 +687,12 @@
                         <li>d. Restauración de áreas contaminadas y manejo de pasivos ambientales, en su caso.</li>
                     </ol>
                                             
-                    Con los formatos en uso se da por <b><?php echo $res10; ?></b> este punto dado que se ejecutaron practicas de Seguridad Industrial, Seguridad Operativa y de Protección Ambiental, apegadas a los requisitos establecidos en las guías, procedimientos y practicas seguras de trabajo documentados y anexados como Bitacoras dentro del mismo reporte.</p>
+                    Con los formatos en uso se da por <b><?php echo $res10; ?></b> en este punto dado que se ejecutaron practicas de Seguridad Industrial, Seguridad Operativa y de Protección Ambiental, apegadas a los requisitos establecidos en las guías, procedimientos y practicas seguras de trabajo documentados y anexados como Bitacoras de Control de actividades y procesos (Anexo VIII).</p>
             <?php
                 }else{ ?>
                     <p style="text-align:justify;">Las actividades que se están llevando a cabo en campo y las operaciones son administradas por el Sistema de administración (SASISOPA) en las que mencionamos que podrían ocurrir en las diferentes etapas de desarrollo (Construcción, Operación, Mantenimiento, Cierre, Desmantelamiento y Abandono), con base en documentos escritos y prácticas seguras de trabajo documentadas, considerando los resultados del proceso de evaluación de impactos y riesgos y tomando en consideración los requisitos legales aplicables.<br>
             
-                    Contamos con varios mecanismos de analisis para nuestra etapa de vida de nuestra instalación (<b>Operación y Mantenimiento</b>). Esto con el finde establecer los riesgos, la seguridad de los trabajos, los instructivos que se utilizan para poder realizas las actividades diferentes de trabajo.<br> A través de los lineamientos establecidos en el Procedimiento de Revisión de Seguridad de Operación logramos ejecutar la verificación de SASISOPA, en el mantenimiento y operación de las instalaciones con reparaciones o modificaciones mayores, considerando la verificación del cumplimiento de las especificaciones de diseño, cierre y desmantelamiento.<br>            
+                    Contamos con varios mecanismos de analisis para nuestra etapa de vida de nuestra instalación (<b>Operación y Mantenimiento</b>). Esto con el fin de establecer los riesgos, la seguridad de los trabajos, los instructivos que se utilizan para poder realizas las actividades diferentes de trabajo.<br> A través de los lineamientos establecidos en el Procedimiento de Revisión de Seguridad de Operación logramos ejecutar la verificación de SASISOPA, en el mantenimiento y operación de las instalaciones con reparaciones o modificaciones mayores, considerando la verificación futura del cumplimiento de las especificaciones del cierre y desmantelamiento.<br>            
 
                     En actividades futuras de las etapas de <b>desmantelamiento y abandono</b> se considera:
                         <ol>
@@ -697,14 +711,12 @@
             <h3>Elemento 11: INTEGRIDAD MECÁNICA Y ASEGURAMIENTO DE LA CALIDAD.</h3>
             <?php
                 if($tienept11 == 1){ ?>
-                    <p style="text-align:justify;">Asegurar la integridad mecánica de los activos y el aseguramiento de la calidad de equipos de proceso, instalados o nuevos, sus refacciones y partes de repuesto, en cualquiera de las etapas de desarrollo del proyecto y desde sus especificaciones de diseño, compra, transporte, almacenamiento, construcción e instalación asi como su deshuso, desinstalación, actualización resguardo y manejo adecuado del residuo son los objetivos de <?php echo $nombre; ?>. Esto hace que se contemple el ejecutar las actividades de Seguridad Industrial, Operativa y de protección al medio ambiente en la operación, cierre, desmantelamiento y abandono de igual forma.<br>
-            
-                    También como parte de la revisión de los procesos en campo usamos el mecanismo mediante el el dictamen otorgador por un tercero de la NOM-005-ASEA-2015, con el cual verificamos el cumplimiento en campo con respecto a la calidad y servicio requeridos esto con el fin de asegurar el cumplimiento con los requisitos operativos, seguridad, salud, medio ambiente<br>
-
-                    En <?php echo $nombre; ?> se realizaron mecanismos de control para asegurar la eficiencia de los equipos, componentes y sistemas críticos, así mismo, la administración de los riesgos. Para su <b><?php echo $resbit11; ?></b> bitácoras para este control de equipos y la aplicación el mecanismo para el mantenimiento, las inspecciones y pruebas, anexados como Bitacoras dentro del mismo reporte.</p>
+                    <p style="text-align:justify;">Asegurar la integridad mecánica de los activos y la calidad de equipos de proceso, instalados o nuevos, sus refacciones y partes de repuesto, en cualquiera de las etapas de desarrollo del proyecto y desde sus especificaciones de diseño, compra, transporte, almacenamiento, construcción e instalación asi como su deshuso, desinstalación, actualización resguardo y manejo adecuado del residuo son los objetivos de <?php echo $nombre; ?>. Esto hace que se contemple el ejecutar las actividades de Seguridad Industrial, Operativa y de protección al medio ambiente en la operación, cierre, desmantelamiento y abandono de igual forma.<br>           
+                    También como parte de la revisión de los procesos en campo, usamos el mecanismo mediante el dictamen otorgado por un tercero de la NOM-005-ASEA-2015, con el cual verificamos el cumplimiento en campo con respecto a la calidad y servicio requeridos, esto, con el fin de asegurar el cumplimiento con los requisitos operativos, seguridad, salud, medio ambiente<br>
+                    En <?php echo $nombre; ?> se realizaron mecanismos de control para asegurar la eficiencia de los equipos, componentes y sistemas críticos, así mismo, la administración de los riesgos. Para su <b><?php echo $resbit11; ?></b> bitácoras para este control de equipos y la aplicación el mecanismo para el mantenimiento, las inspecciones y pruebas, anexados como Bitacoras de Integridad Mecánica y aseguramiento de la calidad (Anexo IX).</p>
             <?php
                 }else{?>
-                    <p style="text-align:justify;">Se establecen los mecanismos mediante los cuales se asegura la integridad mecánica y el aseguramiento de la calidad de equipos, sus accesorios partes de repuesto entre otros, en cualquiera de las etapas de desarrollo del proyecto. Esto hace que se contemplen las actividades de Seguridad Industrial, Operativa y de protección al medio ambiente.<br>En la estación de servicio se realizaron mecanismos de control para asegurar la eficiencia de los equipos, componentes y sistemas críticos, así mismo, la administración de los riesgos. Para su cumplimiento se presenta las bitácoras en donde se lleva el control de equipos y la aplicación del mecanismo para el mantenimiento, las inspecciones y pruebas.</p>
+                    <p style="text-align:justify;">Se establecen los mecanismos mediante los cuales se asegura la integridad mecánica y el aseguramiento de la calidad de equipos, sus accesorios, partes de repuesto entre otros, en cualquiera de las etapas de desarrollo del proyecto. Esto hace que se contemplen las actividades de Seguridad Industrial, Operativa y de protección al medio ambiente.<br>En la estación de servicio se realizaron mecanismos de control para asegurar la eficiencia de los equipos, componentes y sistemas críticos, así mismo, la administración de los riesgos. Para su cumplimiento se presenta las bitácoras en donde se lleva el control de equipos y la aplicación del mecanismo para el mantenimiento, las inspecciones y pruebas.</p>
             <?php
                 }
             ?>            
@@ -714,12 +726,9 @@
             <h3>Elemento 12: SEGURIDAD DE CONTRATISTAS</h3>
             <?php
                 if($tienept12 == 1){ ?>
-                    <p style="text-align:justify;">Todos los contratistas, proveedores y/o prestadores de <?php echo $nombre;?> tienen la responsabilidad de cumplir y hacer cumplir con las disposiciones de seguridad industrial, seguridad operativa y protección ambiental esta actividad está declarada dentro de la Política. La responsabilidad de contratar empresas de servicios para ejecutar obras y servicios necesarios y requeridos para la operación de campos en sus distintas fases de la cadena de valor.<br>
-
-                    Asume la responsabilidad por la ejecución de las actividades y la administración de riesgos que se derivan de actividades propias, de los contratistas, subcontratistas, prestadores de servicio y proveedores que participan en cualquiera de las Etapas de Desarrollo del Proyecto. El documento emitido por el Regulado donde asume la responsabilidad por la administración de Riesgo y de Impactos al Ambiente que se deriven de las actividades de los contratistas, subcontratistas, prestadores de servicio y proveedores (ANEXO VII)<br>
-
-                    Los contratistas deberán presentar mensualmente al Rep. Técnico, la medición mensual de su cumplimiento con el Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección Ambiental (SASISOPA).
-                                        
+                    <p style="text-align:justify;">Todos los contratistas, proveedores y/o prestadores de <?php echo $nombre;?> tienen la responsabilidad de cumplir y hacer cumplir con las disposiciones de seguridad industrial, seguridad operativa y protección ambiental esta actividad está declarada dentro de la Política. La responsabilidad de contratar empresas de servicios para ejecutar obras y servicios necesarios y requeridos para la operación de campos en sus distintas fases de la cadena de valor. competen la revisión y ejecución del Sistema Administrativo.<br>
+                    Asume la responsabilidad por la ejecución de las actividades y la administración de riesgos que se derivan de actividades propias, de los contratistas, subcontratistas, prestadores de servicio y proveedores que participan en cualquiera de las Etapas de Desarrollo del Proyecto. El documento emitido por el Regulado donde asume la responsabilidad por la administración de Riesgo y de Impactos al Ambiente que se deriven de las actividades de los contratistas, subcontratistas, prestadores de servicio y proveedores a traves del (ANEXO X)<br>
+                    Los contratistas deberán presentar mensualmente al Rep. Técnico, la medición mensual de su cumplimiento con el Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección Ambiental (SASISOPA).                                        
                     <h4>Desempeño de los Contratistas</h4>
                     <table>
                         <tr>
@@ -753,8 +762,7 @@
 
             <?php
                 }else{ ?>
-                    <p style="text-align:justify;">Todos los contratistas, proveedores y /o prestadores de <?php echo $nombre;?> tienen la responsabilidad de cumplir y hacer cumplir con las disposiciones de seguridad industrial, seguridad operativa y protección ambiental esta actividad está declarada dentro de la Política. La responsabilidad de contratar empresas de servicios para ejecutar obras y servicios necesarios y requeridos para la operación de campos en sus distintas fases de la cadena de valor.<br>
-
+                    <p style="text-align:justify;">Todos los contratistas, proveedores y/o prestadores de servicio de la instalación <?php echo $nombre;?> tienen la responsabilidad de cumplir y hacer cumplir con las disposiciones de seguridad industrial, seguridad operativa y protección ambiental esta actividad está declarada dentro de la Política. La responsabilidad de contratar empresas de servicios para ejecutar obras y servicios necesarios y requeridos para la operación y mantenimiento de las instalación en sus distintas fases de vida dependera de la administracion y de los elementos que competen la revisión y ejecución del Sistema Administrativo.<br>
                     Seleccionamos a nuestros contratistas, subcontratistas proveedores y prestadores de servicio considerando su desempeño en Seguridad Industrial, Seguridad Operativa y protección del medio ambiente, evaluando entre otros:
                     <ol>
                         <li>a) El histórico de incidentes y accidentes.</li>
@@ -765,7 +773,7 @@
                         <li>f) Los criterios de Seguridad Operativa, Seguridad Industrial y protección al medio ambiente para la aceptación de los contratistas, subcontratistas, prestadores de servicios y proveedores, para ser susceptibles de contrato</li>
                     </ol>
                                             
-                    Durante todos estos procesos también se realizaron inspecciones, auditoria efectivas, reuniones con contratistas inspecciones y seguimientos de no conformidades para garantizar la comunicación con los contratistas mediante todos los mecanismos establecidos.<br>Los requisitos en materia de Seguridad Industrial, Seguridad Operativa y la protección al medio ambiente a los que deben sujetarse los contratistas, subcontratistas, prestadores de servicio y proveedores.</p>
+                    Durante todos estos procesos también se realizaron inspecciones, auditorias efectivas, reuniones con contratistas inspecciones y seguimientos de no conformidades para garantizar la comunicación con los contratistas mediante todos los mecanismos establecidos, para que asi puedan cumplir los requisitos en materia de Seguridad Industrial, Seguridad Operativa y la protección al medio ambiente a los que deben sujetarse.</p>
             <?php 
                 }
             ?>            
@@ -781,8 +789,8 @@
                     
                     <b><?php echo $nombre; ?></b> establece actividades para identificar situaciones potenciales de emergencia y accidentes que pueden tener impacto en la seguridad, salud ocupacional y protección ambiental y cómo responder a ellos en el procedimiento: plan de Respuesta a emergencias.<br>
 
-                    Derivado de las nuevas Disposiciones Administrativas de Carácter General (DAGC) emitidas por la ASEA en el DOF con fecha del 22/03/2019, se realizó la actualización del mismo y fue ingresado a la AGENCIA mediante el oficio <a href="">Anexo VIII</a>, y debido a sus recientes cambios se está haciendo la difusión con el personal de la empresa incluyendo a los contratistas-subcontratistas.<br>
-                    De acuerdo lo solicitado en la Autorización: Como parte de su informe semestral de cumplimiento del Programa de Implementación, el REGULADO deberá presentar el Formato FF-ASEA-037 “Actualización del Protocolo de Respuesta a Emergencias”, anexando una copia en medios magnéticos o electrónicos del mismo.<br>
+                    Derivado de las nuevas Disposiciones Administrativas de Carácter General (DAGC) emitidas por la ASEA en el DOF con fecha del 22/03/2019, se realizó la actualización del mismo y fue ingresado a la AGENCIA mediante el oficio <a href="">AnexoXI</a>, y debido a sus recientes cambios se está haciendo la difusión con el personal de la empresa incluyendo a los contratistas-subcontratistas.<br>
+                    De acuerdo lo solicitado en la Autorización: Como parte de su informe semestral de cumplimiento del Programa de Implementación, el REGULADO deberá presentar el Formato FF-ASEA-037 “Actualización del Protocolo de Respuesta a Emergencias”, anexando una copia en medios magnéticos o electrónicos del mismo.(Anexo XII)<br>
                     Respecto a esta información solicitada se da por <b><?php echo $respre0;?></b>
 
             <?php }if(($tienept13A == 0)&&($tienept13S == 0)){ ?>
@@ -796,11 +804,11 @@
                     Es importante establecer programas de simulacros que incluyan a todas las situaciones de emergencia identificadas. Se elaboró un plan de simulacros de respuesta para los diferentes escenarios posibles, incluyendo el peor de ellos y el más frecuente, evaluando la respuesta para determinar acciones para la mejora continua.<br>
 
             <?php }if(($tienept13A == 1)&&($tienept13S == 1)){?>
-                    <p style="text-align:justify;">Derivado de las nuevas Disposiciones Administrativas de Carácter General (DAGC) emitidas por la ASEA en el DOF con fecha del 22/03/2019, se realizó la actualización del mismo y fue ingresado a la AGENCIA mediante el oficio <a href="">Anexo VIII</a>, y debido a sus recientes cambios se está haciendo la difusión con el personal de la empresa incluyendo a los contratistas-subcontratistas.<br>
-                    De acuerdo lo solicitado en la Autorización: Como parte de su informe semestral de cumplimiento del Programa de Implementación, el REGULADO deberá presentar el Formato FF-ASEA-037 “Actualización del Protocolo de Respuesta a Emergencias”, anexando una copia en medios magnéticos o electrónicos del mismo.<br>
+                    <p style="text-align:justify;">Derivado de las nuevas Disposiciones Administrativas de Carácter General (DAGC) emitidas por la ASEA en el DOF con fecha del 22/03/2019, se realizó la actualización del mismo y fue ingresado a la AGENCIA mediante el oficio <a href="">AnexoXI</a>, y debido a sus recientes cambios se está haciendo la difusión con el personal de la empresa incluyendo a los contratistas-subcontratistas.<br>
+                    De acuerdo lo solicitado en la Autorización: Como parte de su informe semestral de cumplimiento del Programa de Implementación, el REGULADO deberá presentar el Formato FF-ASEA-037 “Actualización del Protocolo de Respuesta a Emergencias”, anexando una copia en medios magnéticos o electrónicos del mismo.(Anexo XII)<br>
                     Respecto a esta información solicitada se da por <b><?php echo $respre0;?></b>
 
-                    Al ejecutar mecanismos de respuesta por medio de simulacros, esto para que se vean las posibles situaciones que se presenten en las instalaciones con el fin de evitar alguna nula ejecución de los principales protocoles de respuesta de emergencias. Esto como medidas de control y mitigación respectivas del SASISOPA.  Se adjunta el presente elemento en el numeral correspondiente, la información digital con respecto a: Reportes de Simulacros de emergencia.<br> 
+                    Al ejecutar mecanismos de respuesta por medio de simulacros, esto para que se vean las posibles situaciones que se presenten en las instalaciones con el fin de evitar alguna nula ejecución de los principales protocoles de respuesta de emergencias. Esto como medidas de control y mitigación respectivas del SASISOPA.  Se adjunta el presente elemento en el numeral correspondiente, la información digital con respecto a: Reportes de Simulacros de emergencia. (Anexo XIV)<br> 
                     <table>
                         <tr>
                             <th colspan="4">Reporte de Simulacros de <?php echo $nombre;?> </th>
@@ -828,16 +836,16 @@
                             } ?>
                     </table>
                 
-                    Dada esta información, el numeral queda <b><?php echo $respreSim; ?></b>, con todos los reportes de simulacros que se realizaron en el periodo de establecido por este reporte.</</p>
+                    Dada esta información y anexado el programa de simulacros (Anexo XIII), el numeral queda <b><?php echo $respreSim; ?></b>, con todos los reportes de simulacros que se realizaron en el periodo de establecido por este reporte.</</p>
             <?php } ?>            
         </div>
         <!-- MONITOREO -->
         <div>
             <h3>Elemento 14: MONITOREO, VERIFICACIÓN Y EVALUACIÓN</h3>
-            <p style="text-align:justify;">El seguimiento y medición de los procesos del Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección al Ambiente, se lleva a cabo mediante el mecanismo procedimiento, por medio del cual hacemos el monitoreo, verificación y evaluación, a través del cual se identifican los puntos críticos de control del proceso (requisitos, especificaciones, atributos, parámetros, rangos, operaciones o actividades) que deben ser monitoreadas y medidas en cumplimiento con el sistema de administración, verificando las especificaciones del mismo para su control a través de los registros de los procesos del Sistema de Gestión Integrado, y de ser necesario, aplicado el método apropiado para el seguimiento y la medición de los procesos. 
+            <p style="text-align:justify;">El seguimiento y medición de los procesos del Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección al Ambiente, se lleva a cabo mediante el mecanismo de auditorias internas, por medio del cual hacemos el monitoreo, verificación y evaluación. Con este mecanismo se identifican los puntos críticos de control del proceso (requisitos, especificaciones, atributos, parámetros, rangos, operaciones o actividades) que deben ser monitoreadas y medidos en cumplimiento con el sistema de administración, verificando las especificaciones del mismo para su control a través de los registros de los procesos del Sistema de Gestión Integrado, y de ser necesario, aplicado el método apropiado para el seguimiento y la medición de los procesos. 
             <?php
                 if($tienept14 == 1){ ?>
-                    <p style="text-align:justify;">Se da por <?php echo $subsanacion; ?> el elemento derivado de uso, seguimiento y subsanación de las no conformidades y el monitoreo que se realizó para la conclusión de la no conformidad.
+                    <p style="text-align:justify;">Se da por <b><?php echo $subsanacion; ?></b> el elemento derivado de uso, seguimiento y subsanación de las no conformidades y el monitoreo que se realizó para la conclusión de la no conformidad.
                         <table>
                             <tr>
                                 <th colspan="5">Reporte de subnaciones y monitoreos de <?php echo $nombre;?> </th>
@@ -869,14 +877,13 @@
                     </p>
             <?php
                 }else{ ?>
-                    <p style="text-align:justify;">Se contempla que no se tienen ningun procedimiento de no conformidades basadas en las los diversos criterios de evaluación, prodecimientos y/o auditorias establecidas por las diferentes herramientas del SASISOPA.</p>
+                    <p style="text-align:justify;">Se espera la revisión de los procedimientos para evaluar las conformmidades basadas en los diversos criterios de evaluación, prodecimientos y/o auditorias establecidas por las diferentes herramientas del SASISOPA.</p>
             <?php
                 }
             ?>
                
             </p>
-        </div>                       
-
+        </div>
         <!-- AUDITORIAS -->
         <div>
             <h3>Elemento 15: AUDITORÍAS</h3>
@@ -892,12 +899,12 @@
                     La gestión de las no conformidades detectadas, se llevaran a traves del elemento numero 14. Lo cual nos permite realizar un análisis y detectar la raíz que lo origino, así como establecer un plan de acción para su cierre y prevención. Con la finalidad de identificar el grado de cumplimiento mediante el procedimiento con el podemos saber nuestras áreas de oportunidad y mejora en procesos actuales; además de corregir actos y condiciones inseguras.<br>
                     
                     Se debe de comunicar los resultados de las Auditorías internas y externas a todos los niveles de la organización. Donde se debe indicar la forma de conservar los registros asociados a la realización de Auditorías internas y externas.<br> 
-                    De acuerdo al numeral del SASISOPA se da por <?php echo auditores; ?>, este elemento atraves de la evidencia electronica documental que se anexan como evidencia la difusión de este elemento. (Anexo: Auditorias) </p>
+                    De acuerdo al numeral del SASISOPA se da por <b><?php echo $auditores; ?></b>, este elemento atraves de la evidencia electronica documental que se anexan como evidencia la difusión de este elemento. (Anexo: Auditorias) </p>
             <?php
                 }else{ ?>
                     <p style="text-align:justify;">Las auditorías realizadas internas y externas de la organización son importantes, ya que nos permiten saber el cumplimiento de nuestros proveedores, también para evaluar cómo estamos trabajando internamente y las áreas donde debemos reforzar para que se logre una estandarización adecuada de los procesos y se controlen los riesgos durante las actividades de campo.<br>
 
-                    Utilizare un recurso de revisión, el cual establece los criterios para la realización de auditorías internas que nos ayuden a verificar el cumplimiento de nuestro sistema de gestión Integrado y la normatividad legal de las disposiciones.<br> En <?php $nombre; ?> establecemos un programa de auditorías internas ejecutadas por el corporativo para garantizar la implementación de los 18 requerimientos del Sistema de Administración de SASISOPA.<br>
+                    Utilizaremos un recurso de revisión, el cual establece los criterios para la realización de auditorías internas que nos ayuden a verificar el cumplimiento de nuestro sistema de gestión Integrado y la normatividad legal de las disposiciones.<br> En <?php $nombre; ?> establecemos un programa de auditorías internas ejecutadas por el corporativo para garantizar la implementación de los 18 requerimientos del Sistema de Administración de SASISOPA.<br>
                     La planificación, implementación y mantenenimiento del Programa de Auditorías, especificara el objetivo, alcance, Procedimientos de Auditoría, frecuencia, métodos, definición de criterios, responsabilidades, competencia, requerimientos de planeación, reporte y selección de auditores.<br>
 
                     Nuestros auditores internos deberas ser capacitados sobre los criterios de competencia establecidos por la EMA en su curso Auditores Expertos, el cual se debe de tomar para poder avalar el conocimiento y la practica  de llevar a cabo una auditoría correcta.<br>
@@ -905,31 +912,27 @@
             <?php
                 }
             ?>            
-        </div>
-        
+        </div>        
         <!-- INCIDENTES Y ACCIDENTES -->                      
         <div>
             <h3>Elemento 16: INVESTIGACIÓN DE INCIDENTES Y ACCIDENTES</h3>
             <?php
                 if($tienept16 == 1){ ?>
                     <p style="text-align:justify;">De acuerdo a las Disposiciones administrativas de carácter general que establecen los lineamientos para informar la ocurrencia de incidentes y accidentes a la Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos publicada en el Diario Oficial de la Federación el viernes 4 de noviembre de 2016, DOF estable los lineamientos para informar la ocurrencia de incidentes y accidentes a la Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos, así como la clasificación, comunicación y la divulgación de accidentes laborales, ambientales, enfermedades ocupacionales e incidentes con alto potencial.<br>
-            
                     La metodología utilizada para la investigación de Incidentes y Accidentes sera <i>Metodo Ishikawa</i>, para la determinación de la causa raíz, atendiendo a las Disposiciones administrativas de carácter general que para tal efecto emita la Agencia.<br>
-
-                    De acuerdo a la estadisitica reportado durante el desarrollo de las actividades ejecutadas en el periodo <?php echo $fechainicio.'-'.$fechafin;?>, en las diferentes áreas de esta <?php echo $giro; ?> se han cumplido con las metas y objetivos planteados en el tema de prevenir riesgos que puedan derivar en un accidente o incidente. Con esto se declara que <?php echo $succ;?> la meta de “CERO ACCIDENTES”, <?php echo $razon; ?>. Se da por <?php?> el numeral presentado, esto atraves de un reporte de Accidentabilidad del mes (<a href="">Anexo IX</a>)y un consolidado del periodo de implementación reportado.</p>
+                    De acuerdo a la estadisitica reportado durante el desarrollo de las actividades ejecutadas en el periodo <?php echo $fechainicio.'-'.$fechafin;?>, en las diferentes áreas de esta <?php echo $giro; ?> se han cumplido con las metas y objetivos planteados en el tema de prevenir riesgos que puedan derivar en un accidente o incidente. Con esto se declara que se ha <?php echo $succ;?> la meta de “CERO ACCIDENTES”, <?php echo $razon; ?>. Se da por <b>Concluido</b> el numeral presentado, esto atraves de un reporte de Accidentabilidad del mes (<a href="">Anexo XV / o formato de consolidación mensual</a>) y un consolidado del periodo de implementación reportado.</p>
             <?php
                 }else{ ?>
                     <p style="text-align:justify;">De acuerdo a las Disposiciones administrativas de carácter general que establecen los lineamientos para informar la ocurrencia de incidentes y accidentes a la Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos publicada en el Diario Oficial de la Federación el viernes 4 de noviembre de 2016, DOF estable los lineamientos para informar la ocurrencia de incidentes y accidentes a la Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos, así como la clasificación, comunicación y la divulgación de accidentes laborales, ambientales, enfermedades ocupacionales e incidentes con alto potencial.<br>
-            
                     La metodología utilizada para la investigación de Incidentes y Accidentes sera <i>Metodo Ishikawa</i>, para la determinación de la causa raíz, atendiendo a las Disposiciones administrativas de carácter general que para tal efecto emita la Agencia.<br></p>
             <?php
                 }
             ?>
         </div>
-
+        <!-- REVISIÓN DE RESULTADOS -->
         <div>
             <h3>Elemento 17: REVISIÓN DE RESULTADOS</h3>
-            <p style="text-align:justify;">Se implemento el monitoreo y medición del desempeño del Sistema de Administración se ha llevado a cabo de una manera <b>Trimestral</b>, inicialmente durante el proceso de implementación, a través de la revisión por la dirección en el cual se restablecen las directrices necesarias para la medición y mejora del sistema, estas actividades son realizadas por un comité de gestión integrado por el gerente del activo, representante técnico, gerentes y coordinadores de las diferentes áreas de la organización, su reunión es trimestral o cuando ocurran cambios que podrían impactar el sistema de gestión donde establece el mecanismo y pasos que se deben seguir para la revisión, así como el personal involucrado, y donde lo más importante es analizar los avances que hay con respecto a la implementación del SASISOPA, los cambios en los procesos y los recursos que se requieren para el logro de los objetivos y metas establecidas en la organización.<br>
+            <p style="text-align:justify;">Se implemento el monitoreo y medición del desempeño del Sistema de Administración se ha llevado a cabo de una manera <b>Semestral</b>, inicialmente durante el proceso de implementación, a través de la revisión por la dirección en el cual se restablecen las directrices necesarias para la medición y mejora del sistema, estas actividades son realizadas por un comité de gestión integrado por el gerente del activo, representante técnico, gerentes y coordinadores de las diferentes áreas de la organización, su reunión es trimestral o cuando ocurran cambios que podrían impactar el sistema de gestión donde establece el mecanismo y pasos que se deben seguir para la revisión, así como el personal involucrado, y donde lo más importante es analizar los avances que hay con respecto a la implementación del SASISOPA, los cambios en los procesos y los recursos que se requieren para el logro de los objetivos y metas establecidas en la organización.<br>
             Entre los puntos de la revisión se mencionan los siguientes:
                 <ol>
                     <li>Cumplimiento alcanzado en los objetivos, metas y programas (Objetivos de la estrategia, Planes de HSE)</li>
@@ -1006,25 +1009,69 @@
                             <th>No.</th>
                             <th>Concepto</th>
                             <th>Fecha</th>
-                        </tr>                    
+                            <th>Estatus</th>
+                        </tr>
+                        <?php
+                        $informet = "SELECT tiporeporte, fechaIngreso, estatus FROM informe WHERE idCESH = '".$id."'";
+                        $reInfo = mysqli_query($con, $informet);
+                        $x = 1;
+                        if($reInfo->num_rows > 0){
+                            while($pt18res = $reInfo->fetch_assoc()){ ?>
+                                <tr>
+                                    <td><?php echo $x; ?></td>
+                                    <td><?php echo $pt18res['tiporeporte']; ?></td>
+                                    <td><?php echo $pt18res['fechaIngreso']; ?></td>
+                                    <td><?php echo $pt18res['estatus']; ?></td>
+                                </tr>
+                    <?php   $x++;
+                            }
+                        }
+                        ?>                    
                     </table>
 
-                Para su cumplimiento a este elemento y como evidencia se presenta los reportes previos de los reportes antes ingresados antes esta agencia, en cuestión del seguimiento y ejecución a nuestro Sistema de administración de las actividades ejecutadas.<br>
-
+                Para su <b>cumplimiento</b> a este elemento y como evidencia se presenta los reportes previos de los reportes antes ingresados antes esta agencia, en cuestión del seguimiento y ejecución a nuestro Sistema de administración de las actividades ejecutadas.<br>
                 Así mismo se evidencia las actividades correspondientes a las actividades ejecutas dentro del periodo establecido, comunicando los resultados de la evaluación del Desempeño del Sistema de Administración a todos los niveles pertinentes del Regulado.<br></p>
             <?php } ?>
         </div>      
         <div>
             <h3>Conclusiones Generales.</h3>
-            <p style="text-align:justify;">De acuerdo con los resultados de las actividades ejecutadas durante el <?php?> de implementación () del Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección Ambiental se concluye lo siguiente:
-                <ol>
-                    <li><?php echo $nombre; ?> se encuentra en un proceso de implementación del sistema de administración en materia de Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente en las operaciones previstas dentro del Plan de trabajo, aplicando las buenas prácticas, procedimientos.</li>
-                    <li>Se mantiene el control y desempeño de la gestión de Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente en las operaciones previstas dentro del Plan de trabajo, aplicando las buenas prácticas, procedimientos.</li>
-                    <li>Se mantiene el compromiso de tener cero accidentes en las operaciones y actividades realizadas en campo aplicando los controles necesarios para evitar su ocurrencia, esto también incluye un seguimiento de las actividades de nuestras contratistas que participan en actividades operativas en campo.</li>
-                    <li>Se cuenta con un avance significativo en el programa de Implementación del SASISOPA de acuerdo a las disposiciones administrativas de la ASEA, por lo que se ha visto un buen desempeño en los procesos de la empresa</li>
-                    <li>Hemos fortalecido los recursos necesarios (humanos, financieros, servicios e infraestructura) para garantizar el desempeño en Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente, actualmente <?php echo $nombre; ?> tiene un [<?php?>] de avance en la implementación de este.</li>
-                </ol>
+            <p style="text-align:justify;">De acuerdo con los resultados de las actividades ejecutadas durante el periodo de implementación del Sistema de Administración de Seguridad Industrial, Seguridad Operativa y Protección Ambiental se concluye lo siguiente:
+                <?php   $tienept17 = 1;
+                        $total = $tienept1+$tienept2+$tienept3+$tienept4+$tienept5+$tienept6+$tienept7+$tienept8+$tienept9+$tienept10+$tienept11+$tienept12+$tienept13A+$tienept13S+$tienept14+$tienept15+$tienept16+$tienept17+$tienept18;
+                        $porcentaje = ($total*100)/20;
+                        if($tienept18 == 0){ ?>
+                            <ol>
+                                <li><?php echo $nombre; ?> se encuentra en un proceso de implementación del sistema de administración en materia de Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente en las operaciones previstas dentro del Programa de implementación, aplicando las buenas prácticas, procedimientos.</li>
+                                <li>Se mantiene el control y desempeño de la gestión de Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente en las operaciones previstas dentro del Plan de trabajo, aplicando las buenas prácticas, procedimientos.</li>
+                                <li>Se mantiene el compromiso de tener cero accidentes en las operaciones y actividades realizadas en campo aplicando los controles necesarios para evitar su ocurrencia, esto también incluye un seguimiento de las actividades de nuestras contratistas que participan en actividades operativas en campo.</li>
+                                <li>Se cuenta con un avance significativo en el programa de Implementación del SASISOPA de acuerdo a las disposiciones administrativas de la ASEA, por lo que se ha visto un buen desempeño en los procesos de la empresa</li>
+                                <li>Hemos fortalecido los recursos necesarios (humanos, financieros, servicios e infraestructura) para garantizar el desempeño en Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente, actualmente <?php echo $nombre; ?> tiene un <?php echo $porcentaje; ?> de avance en la implementación de este.</li>
+                            </ol>
+                <?php  } if($tienept18 == 1){ ?>
+                            <ol>
+                                <li><?php echo $nombre; ?> a finalizado proceso de implementación del sistema de administración en materia de Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente en las operaciones previstas dentro del Programa de implementación, aplicando las buenas prácticas, procedimientos.</li>
+                                <li>Se mantendra el control y desempeño de la gestión de Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente en las operaciones previstas dentro del Plan de Implementación, aplicando las buenas prácticas, procedimientos.</li>
+                                <li>Se mantiene el compromiso de tener cero accidentes en las operaciones y actividades realizadas en campo aplicando los controles necesarios para evitar su ocurrencia, esto también incluye un seguimiento de las actividades de nuestras contratistas que participan en actividades operativas en campo.</li>
+                                <li>Al terminar la implementación se a fortalecido los recursos necesarios (humanos, financieros, servicios e infraestructura) para garantizar el desempeño en Seguridad Industrial, Seguridad Operativa y Protección del Medio Ambiente, actualmente <?php echo $nombre; ?> tiene un 100% de implementación, se seguira con la mejora continua asi como las auditorias y revisiones pertinentes.</li>
+                            </ol>
+                <?php  } ?>
             </p>
         </div>                                
     </body>
 </html>
+
+<?php
+    $html=ob_get_clean();
+    echo $html;
+
+    /*require_once '../../librerias/dompdf/autoload.inc.php';
+    use Dompdf\Dompdf;
+    $dompdf = new Dompdf();*/
+
+    //$dompdf->loadHtml("1");
+    /*$dompdf->loadHtml($html);
+    $dompdf->setPaper('letter'); //A4, landscape
+    $dompdf->render();
+    $dompdf->stream('reporteSemestral_.pdf', array("attachment" => false));*/ //false para abrir, true para bajarse
+
+?>

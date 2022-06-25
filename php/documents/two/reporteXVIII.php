@@ -1,20 +1,17 @@
 <?php
     include '../conex.php';
-    $id = $_GET["x"];
+    //$id = $_GET["x"];
+    $id = 'PL/0000/EXP/ES/2020';
     $con = Conectarse();
 
     
-    $encab = "SELECT razonSocial AS inst, abreviatura as abrv, rtec as tecnico, rl as legal, tipoCESH as giro, correo as correo, telefono as numero FROM cesh a INNER JOIN estado b ON a.idEstado = b.idEstado WHERE idCESH = '".$id."'";
+    $encab = "SELECT razonSocial AS inst, abreviatura as abrv, tipoCESH as giro FROM cesh a INNER JOIN estado b ON a.idEstado = b.idEstado WHERE idCESH = '".$id."'";
     $rese = mysqli_query($con, $encab);
     if($rese->num_rows > 0){
         while($fila0 = $rese->fetch_assoc()){
             $nombre = $fila0['inst'];
             $abr = $fila0['abrv'];
-            $rept = $fila0['tecnico'];
-            $repl = $fila0['legal'];
             $giro = $fila0['giro'];
-            $correocomun = $fila0['correo'];
-            $numcomun = $fila0['numero'];
         }
     }
 
@@ -25,12 +22,14 @@
 
 
     $politica = "SELECT idCESH, tipoD, fechaD FROM politica WHERE idCESH = '".$id."' GROUP BY idCESH";
-    $pt1res = mysqli_query($con, $sql);
-    if($resultado->num_rows > 0){
-        $respolitica = "CUMPLIMIENTO";
-        $respolitica1 = "SE DIO";
-        $politicadif = $pt1res['tipoD'];
-        $politicafecha = $pt1res['fechaD'];
+    $pt1res = mysqli_query($con, $politica);
+    if($pt1res->num_rows > 0){
+        while($fila1 = $pt1res->fetch_assoc()){
+            $respolitica = "CUMPLIMIENTO";
+            $respolitica1 = "SE DIO";
+            $politicadif = $fila1['tipoD'];
+            $politicafecha = $fila1['fechaD'];
+        }
     } else {
         $respolitica = "INCUMPLIMIENTO";
         $respolitica1 = "NO SE DIO";
@@ -80,7 +79,7 @@
     if($pt6res->num_rows > 0){
         $rescompetencia = "Cumple";
     } else {
-        $rescompetencia = "No cumple"
+        $rescompetencia = "No cumple";
     }
 
 
@@ -178,8 +177,8 @@
         $succ = "logrado";
         $razon = "esto mediante la implementación de todo los controles tanto operativos, técnicos y administrativos establecidos";
     }else{
-        $fechainicio = ;
-        $fechafin = ;
+        $fechainicio = "";
+        $fechafin = "";
         $succ = "no logrado";
         $razon = "esto a falta de la completa implementación del sistema administrativo";
     }

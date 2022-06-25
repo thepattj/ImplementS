@@ -388,7 +388,7 @@
           </div>
         </div>
       </div>
-      <!-- MODAL DE AR UPDATE FALTA -->
+      <!-- MODAL DE PUNTO 17 - AGREGAR FALTA -->
       <div class="modal fade" id="modalinf"  role="dialog">
         <div class="modal-dialog modals-default">
           <div class="modal-content" style="border-radius: 35px;">
@@ -404,7 +404,7 @@
                   <div class="form-group">
                     <div class="nk-int-st">
                       <label style="margin-right: 3%;" >Razón Social </label> <div class="chosen-select-act fm-cmp-mg">
-                        <select class="chosen" name="" id="staActu">
+                        <select class="chosen" name="" id="stapt17">
                           <option value="0" style="display: none;">Selecciona la instalación</option>
                           <?php $qrcesh = "SELECT razonSocial, idCESH FROM cesh ORDER BY razonSocial ASC";
                                 $rescesh = mysqli_query($con, $qrcesh);
@@ -420,126 +420,9 @@
                   <button type="button" class="btn btn-warning" id="btnBuscarEstacion17" >Buscar</button>
                 </div>
               </div>
-              <div class="row" style="boder: black 1px solid">
-                <div class="" style="overflow: auto; width: 88%; height: 250px; margin-left: 6%;"> <!-- AQUI AGREGUE EL SCROLL -->
-                  <table class="table table-cl">
-                    <thead style="background: rgb(198,198,198);">
-                      <tr>
-                        <th>Punto</th>
-                        <th>Concluido/No Concluido</th>
-                        <th>Archivos</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">1</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"></td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"></td>
-                      </tr>
-                      <!-- VALORES QUE DE 2-->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">2</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 3 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">3</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 4 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">4</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 5 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">5</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 6 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">6</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;">
-                      </tr>
-                      <!-- VALORES DE 7 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">7</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 8 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">8</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 9 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">9</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 10 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">10</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE  11-->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">11</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALOR DE 12 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">12</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 13 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">13</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 14 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">14</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- VALORES DE 15 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">15</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- 16 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">16</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- 17 -->
-                      <tr>
-                        <td style="border-right: rgb(198,198,198) 1px solid;">17</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                      <!-- 18 -->
-                      <tr style="background: rgba(198,198,198,.4);">
-                        <td style="border-right: rgb(198,198,198) 1px solid;">18</td>
-                        <td style="background: rgb(254,174,0); border-right: rgb(198,198,198) 1px solid;"> </td>
-                        <td style="background: rgb(27,22,50); border-right: rgb(198,198,198) 1px solid; color: white;"> </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div class="row" style="boder: black 1px solid; display:;">
+                <div class="" id="punto17inserts" style="overflow: auto; width: 100%; height: 255px; margin-left: 3%;"> <!-- AQUI AGREGUE EL SCROLL -->
+                  
                 </div>
               </div>
 
@@ -553,7 +436,7 @@
           </div>
         </div>
       </div>
-      <!-- MODAL DE PUNTO4 UPDATE FALTA -->
+      <!-- MODAL DE REPORTE -->
       <div class="modal fade" id="modaldir"  role="dialog">
         <div class="modal-dialog modals-default">
           <div class="modal-content" style="border-radius: 35px;">
@@ -561,12 +444,40 @@
               <button type="button" class="close" data-dismiss="modal" style="background: #d58512;"> X </button>
             </div>
             <div class="modal-body">
-              <h2>Verficar avance</h2>
-              <p>Pendiente</p>
+              <h2>Reporte SASISOPA</h2>              
+              <p>Se creara y se subira el reporte final semestral o anual de las estaciones de servicio.</p>
+
+              <div class="row" id="" style="display: ;">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                      <div class="nk-int-st">
+                        <label style="margin-right: 3%;" >Razón Social </label> <div class="chosen-select-act fm-cmp-mg">
+                          <select class="chosen" name="" id="staRep">
+                            <option value="0" style="display: none;">Selecciona la instalación</option>
+                            <?php $qrepcesh = "SELECT razonSocial, idCESH FROM cesh ORDER BY razonSocial ASC";
+                                  $resrpcesh = mysqli_query($con, $qrepcesh);
+                                  while($row2 = $resrpcesh->fetch_object()){ ?>
+                            <option value="<?php echo ($row2->idCESH); ?>"> <?php echo ($row2->razonSocial)." ".($row2->idCESH); ?> </option>
+                            <?php } ?>
+                          </select>
+                          </div>    
+                      </div>
+                    </div>                  
+                  </div>
+                  <div class="col-lg-12">
+                    <p>Selecciona la actividad a realizar: </p>
+                  </div>
+                  <div class="col-lg-6">
+                    <button type="button" class="btn btn-warning" id="btnCrearReporte">Crear Reporte</button>
+                  </div>
+                  <div class="col-lg-6">
+                    <button type="button" class="btn btn-warning" id="btnCargarReporte">Cargar Acuse</button>
+                  </div>
+
+              </div>
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-warning" id="">Guardar</button>
             </div>
           </div>
         </div>  

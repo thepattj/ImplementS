@@ -1,4 +1,5 @@
 <?php
+//header('Content-Type: application/json');
 include 'conex.php';
 $con = Conectarse();
 
@@ -295,6 +296,119 @@ if ($opcion == "fecha") {
 	//$fechapol = [$divpol, $fecha2, $fecha3];
 	echo $divpol.",Politica,".$fecha2;
 	//echo "esta es la fecha: ".$divpol." ESTA ES LA FECHA 2: ".$fecha2;
+}
+if($opcion == "readpt17"){
+	$permiso = $_POST['permiso'];
+
+	$politica = "SELECT direccion FROM politica WHERE idCESH = '".$permiso."' GROUP BY idCESH";
+	$p=0;
+    $pt1res = mysqli_query($con, $politica);
+    if($pt1res->num_rows > 0){
+        while($filaPol = $pt1res->fetch_assoc()){
+            $politicadir = $filaPol['direccion'];
+			$dirpolitica [$p] = $politicadir;
+			$p++;
+        }
+		$menorp=$p-1;
+		$dirpolitica[$p]=$menorp;
+    }else{
+		$dirpolitica[0] = "-";
+	}
+
+	$ar = "SELECT direccion FROM ar WHERE idCESH = '".$permiso."' GROUP BY idCESH";
+	$a=0;
+    $pt2res = mysqli_query($con, $ar);
+    if($pt2res->num_rows > 0){
+        while($filaAR = $pt2res->fetch_assoc()){
+            $ardireccion = $filaAR['direccion'];
+			$dirar [$a] = $ardireccion;
+			$a++;
+        }
+		$menora=$a-1;
+		$dirar[$a]=$menora;
+    }else{
+		$dirar[0] = "-";
+	}
+
+	$control = "SELECT direccion FROM dzbitacora WHERE idCESH = '".$permiso."' GROUP BY idCESH";
+	$b=0;
+    $pt10 = mysqli_query($con, $control);
+	if($pt10->num_rows > 0) {
+        while($filabit = $pt10->fetch_assoc()){
+            $bitdireccion = $filabit['direccion'];
+			$dirbit[$b] = $bitdireccion;
+			$b++;
+        }
+		$menorb = $b-1;
+		$dirbit[$b]=$menorb;
+    }else{
+		$dirbit[0] = "-";
+	}
+
+	$bitacoras = "SELECT direccion FROM bitacoras WHERE idCESH = '".$permiso."' GROUP BY idCESH";
+	$b11=0;
+    $pt11 = mysqli_query($con, $bitacoras);
+    if($pt11->num_rows > 3){
+        while($filabit11 = $pt11->fetch_assoc()){
+            $bit11direccion = $filabit11['direccion'];
+			$dirbit11[$b11] = $bit11direccion;
+			$b11++;
+        }
+		$menorb11 = $b11-1;
+		$dirbit11[$b11]=$menorb11;
+    }else{
+		$dirbit11[0]="-";
+	}
+
+	$pres = "SELECT direccion FROM pre WHERE idCESH = '".$permiso."' GROUP BY idCESH";
+	$pr=0;
+    $pt13 = mysqli_query($con, $pres);
+    if($pt13->num_rows > 0){
+        while($filapre = $pt13->fetch_assoc()){
+            $predireccion = $filapre['direccion'];
+			$dirpre[$b11] = $predireccion;
+			$pr++;
+        }
+		$menorpr = $pr-1;
+		$dirbit[$pr]=$menorpr;
+    }
+
+	$j = 0;
+	$queryrevision = "SELECT meta, observacion, fechaRevision, estatus FROM revision WHERE idCESH = '".$permiso."'";
+	//echo $queryrevision;
+	$resultadorevision = mysqli_query($con, $queryrevision);
+	if($resultadorevision->num_rows > 0){
+		while($resrev = $resultadorevision->fetch_assoc()){
+			$meta = $resrev['meta'];
+			$observacion = $resrev['observacion'];
+			$fechaRevision = $resrev['fechaRevision'];
+			$estatus = $resrev['estatus'];
+
+			$datos1 [$j] = $meta;
+			$datos1 [$j+18] = $estatus;
+			$datos1 [$j+36] = $fechaRevision;
+			$datos1 [$j+54] = $observacion;          
+			
+            $j++;
+		}
+		//$resultadoarr = array_merge($datos1,$dirpolitica,$dirar,$dirbit,$dirbit11,$dirpre); // union de todos las respuesta para mandar las direcciones de archivos pero no funciona dado que no solo tienen una sino varias.
+		$respuesta = implode(",", $datos1);
+		echo $respuesta;
+		//echo var_dump($datos1);
+	}else{
+		echo "Vacio";
+	}
+
+	/* $resultadorevision = mysqli_query($con, $queryrevision);
+	$jsresp = array();
+	if($resultadorevision->num_rows > 0){
+		while($resrev = mysqli_fetch_assoc($resultadorevision)){
+			$jsresp[] = $resrev;
+		}
+		echo json_encode($jsresp);
+	}else {
+		echo "No";
+	} */
 }
 
 /*RFCSTA0522 PL0000*/

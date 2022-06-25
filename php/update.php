@@ -520,4 +520,68 @@ if($opcion == "upd3d"){ #UPDATE DE DOCUMENTACION LEGAL DE LA ESTACION
 	echo "Actualización Correcta";
 	//echo $sqlact.$sqlpNo.$sqlaSh.$sqlrfcE.$sqlpCr.$sqllic.$sqldic.$sqlims.$sqlpla.$sqlsie.$sqlele.$sqltie.$sqlcal.$sqlher.$sqlhet.$sqltan.$sqlfdi.$sqlinv;
 }
+if($opcion == "up17"){
+	$id = $_POST['cre'];
+
+	$compt1 = $_POST['cpt1'];
+	$compt2 = $_POST['cpt2'];
+	$compt3 = $_POST['cpt3'];
+	$compt4 = $_POST['cpt4'];
+	$compt5 = $_POST['cpt5'];
+	$compt6 = $_POST['cpt6'];
+	$compt7 = $_POST['cpt7'];
+	$compt8 = $_POST['cpt8'];
+	$compt9 = $_POST['cpt9'];
+	$compt10 = $_POST['cpt10'];
+	$compt11 = $_POST['cpt11'];
+	$compt12 = $_POST['cpt12'];
+	$compt13 = $_POST['cpt13'];
+	$compt14 = $_POST['cpt14'];
+	$compt15 = $_POST['cpt15'];
+	$compt16 = $_POST['cpt16'];
+	$compt17 = $_POST['cpt17'];
+	$compt18 = $_POST['cpt18'];
+
+
+	$sqlpt1 = "UPDATE revision SET feedback='".$compt1."' WHERE idCESH = '".$id."' AND meta = 1";
+	$sqlpt2 = "UPDATE revision SET feedback='".$compt2."' WHERE idCESH = '".$id."' AND meta = 2";
+	$sqlpt3 = "UPDATE revision SET feedback='".$compt3."' WHERE idCESH = '".$id."' AND meta = 3";
+	$sqlpt4 = "UPDATE revision SET feedback='".$compt4."' WHERE idCESH = '".$id."' AND meta = 4";
+	$sqlpt5 = "UPDATE revision SET feedback='".$compt5."' WHERE idCESH = '".$id."' AND meta = 5";
+	$sqlpt6 = "UPDATE revision SET feedback='".$compt6."' WHERE idCESH = '".$id."' AND meta = 6";
+	$sqlpt7 = "UPDATE revision SET feedback='".$compt7."' WHERE idCESH = '".$id."' AND meta = 7";
+	$sqlpt8 = "UPDATE revision SET feedback='".$compt8."' WHERE idCESH = '".$id."' AND meta = 8";
+	$sqlpt9 = "UPDATE revision SET feedback='".$compt9."' WHERE idCESH = '".$id."' AND meta = 9";
+	$sqlpt10 = "UPDATE revision SET feedback='".$compt10."' WHERE idCESH = '".$id."' AND meta = 10";
+	$sqlpt11 = "UPDATE revision SET feedback='".$compt11."' WHERE idCESH = '".$id."' AND meta = 11";
+	$sqlpt12 = "UPDATE revision SET feedback='".$compt12."' WHERE idCESH = '".$id."' AND meta = 12";
+	$sqlpt13 = "UPDATE revision SET feedback='".$compt13."' WHERE idCESH = '".$id."' AND meta = 13";
+	$sqlpt14 = "UPDATE revision SET feedback='".$compt14."' WHERE idCESH = '".$id."' AND meta = 14";
+	$sqlpt15 = "UPDATE revision SET feedback='".$compt15."' WHERE idCESH = '".$id."' AND meta = 15";
+	$sqlpt16 = "UPDATE revision SET feedback='".$compt16."' WHERE idCESH = '".$id."' AND meta = 16";
+	$sqlpt17 = "UPDATE revision SET feedback='".$compt17."' WHERE idCESH = '".$id."' AND meta = 17";
+	$sqlpt18 = "UPDATE revision SET feedback='".$compt18."' WHERE idCESH = '".$id."' AND meta = 18";
+
+
+	mysqli_query($con,$sqlpt1);
+	mysqli_query($con,$sqlpt2);
+	mysqli_query($con,$sqlpt3);
+	mysqli_query($con,$sqlpt4);
+	mysqli_query($con,$sqlpt5);
+	mysqli_query($con,$sqlpt6);
+	mysqli_query($con,$sqlpt7);
+	mysqli_query($con,$sqlpt8);
+	mysqli_query($con,$sqlpt9);
+	mysqli_query($con,$sqlpt10);
+	mysqli_query($con,$sqlpt11);
+	mysqli_query($con,$sqlpt12);
+	mysqli_query($con,$sqlpt13);
+	mysqli_query($con,$sqlpt14);
+	mysqli_query($con,$sqlpt15);
+	mysqli_query($con,$sqlpt16);
+	mysqli_query($con,$sqlpt17);
+	mysqli_query($con,$sqlpt18);
+
+	echo "Comentarios Actualizados";
+}
 ?>

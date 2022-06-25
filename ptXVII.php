@@ -727,7 +727,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[54]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[18]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[36]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt1" value="<?php echo $datos17[36]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES QUE DE 2-->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -741,7 +741,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[55]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[19]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[37]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt2" value="<?php echo $datos17[37]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 3 -->
                                             <tr>
@@ -755,7 +755,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[56]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[20]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[38]; ?>"> </td>                                              
+                                                <td> <input type="text" name="" id="comentpt3" value="<?php echo $datos17[38]; ?>"> </td>                                              
                                             </tr>
                                             <!-- VALORES DE 4 -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -769,7 +769,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[57]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[21]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[39]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt4" value="<?php echo $datos17[39]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 5 -->
                                             <tr>
@@ -783,7 +783,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[58]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[22]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[40]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt5" value="<?php echo $datos17[40]; ?>"> </td>
                                             </tr>
                                              <!-- VALORES DE 6 -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -797,7 +797,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[59]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[23]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[41]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt6" value="<?php echo $datos17[41]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 7 -->
                                             <tr>
@@ -811,7 +811,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[60]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[24]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[42]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt7" value="<?php echo $datos17[42]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 8 -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -825,7 +825,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[61]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[25]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[43]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt8" value="<?php echo $datos17[43]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 9 -->
                                             <tr>
@@ -839,7 +839,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[62]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[26]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[44]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt9" value="<?php echo $datos17[44]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 10 -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -853,7 +853,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[63]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[27]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[45]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt10" value="<?php echo $datos17[45]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE  11-->
                                             <tr>
@@ -867,7 +867,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[64]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[28]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[46]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt11" value="<?php echo $datos17[46]; ?>"> </td>
                                             </tr>
                                             <!-- VALOR DE 12 -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -881,7 +881,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[65]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[29]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[47]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt12" value="<?php echo $datos17[47]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 13 -->
                                             <tr>
@@ -895,7 +895,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[66]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[30]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[48]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt13" value="<?php echo $datos17[48]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 14 -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -909,7 +909,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[67]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[31]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[49]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt14" value="<?php echo $datos17[49]; ?>"> </td>
                                             </tr>
                                             <!-- VALORES DE 15 -->
                                             <tr>
@@ -923,7 +923,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[68]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[32]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[50]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt15" value="<?php echo $datos17[50]; ?>"> </td>
                                             </tr>
                                              <!-- DATOS DE TANQUE DE ALMACENAMIENTO -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -937,7 +937,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[69]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[33]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[51]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt16" value="<?php echo $datos17[51]; ?>"> </td>
                                             </tr>
                                              <!-- DATOS DE DISPENSARIOS -->
                                             <tr>
@@ -951,7 +951,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[70]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[34]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[52]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt17" value="<?php echo $datos17[52]; ?>"> </td>
                                             </tr>
                                             <!-- DATOS DE CONTROL DE INVENTARIOS -->
                                             <tr style="background: rgba(198,198,198,.4);">
@@ -965,7 +965,7 @@
                                                 <?php } ?>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[71]; ?></td>
                                                 <td style="border-right: rgb(198,198,198) 1px solid;"><?php echo $datos17[35]; ?></td>
-                                                <td> <input type="text" name="" value="<?php echo $datos17[52]; ?>"> </td>
+                                                <td> <input type="text" name="" id="comentpt18" value="<?php echo $datos17[52]; ?>"> </td>
                                             </tr>
                                         </tbody>
                                     </table>
