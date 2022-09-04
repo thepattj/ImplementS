@@ -727,7 +727,7 @@
                                             <option value="Administrativos">Administrativos</option>
                                             <option value="Despachador">Despachador</option>
                                             <option value="Intendente">Intendente</option>
-                                            <option value="FinLaboral">Fin de relación laboral</option>
+                                            <option value="Mantto">Mantenimiento</option>
                                         </select>
                                     </div>
                                 </div>
@@ -823,6 +823,7 @@
                                             <option value="Administrativos">Administrativos</option>
                                             <option value="Despachador">Despachador</option>
                                             <option value="Intendente">Intendente</option>
+                                            <option value="Mtto">Mantemiento</option>
                                             <option value="FinLaboral">Fin de relación laboral</option>
                                         </select>
                                     </div>
@@ -1524,7 +1525,7 @@
                                             <div class="form-group nk-int-st">
                                                <input style="display:none;" type="input" class="form-control" value="<?php /*echo $datos3;*/ ?>" placeholder="" id="idActualiza03" name="idActualiza03">
                                             </div>
-                                        </div -->>
+                                        </div -->
                                         
                                     </form>
                                     <?php }else{ ?>

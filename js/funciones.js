@@ -4010,6 +4010,29 @@ $(document).ready(function(){
 			//alert("recargar");
 		}, 5000);	
 	});
+	$("#mostrarlistado").click(function(){
+		titulo = $("#revisioNormativa").val(); // recoge la información seleccionada en la opción	
+		//alert(titulo);
+		if(titulo == "9"){
+			//alert(titulo);
+			$("#12tipo").text("Trabajos en altura");
+			$("#lista").html("CASCO<br>ARNES<br>ESLINGA DE POSICIONAMIENTO (LINEA DE POSICIONAMIENTO)<br>SALVA CAIDAS TROLL (ARRESTADOR)<br>ABSORBEDOR DE CHOQUE")
+		}if(titulo == "22"){
+			$("#12tipo").text("Trabajos de electricidad");
+			$("#lista").html("CASCO DIELÉCTRICO<br>GUANTES AISLANTES<br>CALZADO DIELÉCTRICO<br>PROTECCIÓN FACIAL<br>LENTES DE SEGURIDAD<br>OVEROL DE ALGODÓN");
+		}if(titulo == "33"){
+			$("#12tipo").text("Trabajos en espacios confinados");
+			$("#lista").html("CASCO<br>GAFAS DE SEGURIDAD<br>ROPA DE PROTECCIÓNN CONTRA PRODUCTOS QUIMICOS<br>GUANTES<br>ZAPATOS DE SEGURIDAD");
+		}if(titulo == "caliente"){
+			$("#12tipo").text("Trabajos en caliente");
+			$("#lista").html("MASCARA<br>GORRO<br>CHALECO DE CUERO<br>PECHERA<br>GUANTES DE SOLDAR<br>ZAPATOS DE SEGURIDAD");
+		}if(titulo == "mantto"){
+			$("#12tipo").text("Mantenimiento en general");
+			$("#lista").html("CASCO<br>COFIA<br>LENTES<br>MASCARILLA<br>OVEROL DE ALGODÓN<br>ZAPATOS DE SEGURIDAD<br>GUANTES PARA SUSTANCIAS QUIMICAS");
+		}		
+	});
+
+
     $("#guardartrab").click(function(){
     	n = $("#nameT").val();
     	nE = $("#nombreEmpresa").val();

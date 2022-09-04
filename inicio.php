@@ -470,7 +470,7 @@
         </div>
       </div>
 
-      <!-- MODAL DE PUNTO18 NO SIRVE -->
+      <!-- MODAL DE PUNTO18 -->
       <div class="modal fade" id="modalpt18" role="dialog">
         <div class="modal-dialog modals-default">
           <div class="modal-content" style="border-radius: 35px;">

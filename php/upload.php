@@ -218,7 +218,7 @@
 		//echo "va a guardar";
 		$fecha = $_POST['datebt01'];
 		$cre = $_POST['idbt01'];
-		list($mes,$dia,$a) = split('[/.-]',$fecha);
+		list($mes,$dia,$a) = explode('/',$fecha);
 		$nfecha = $a."-".$mes."-".$dia;
 		//echo "entro - ".$nfecha." - ".$cre;
 		$bt01 = $_FILES["archivobt01"];

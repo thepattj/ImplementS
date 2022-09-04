@@ -759,7 +759,7 @@ if($opcion=="addSt"){
 	//ESTE IF FUNCIONA PARA SABER SI VA A AGREGAR PRIMERO O VA ACTUALIZAR ALGO QUE YA SE TIENEN INGRESADO
 	if($resultadodec->num_rows > 0){
 		if($rpt == "SI"){
-			$sqlUs = "UPDATE incidentes SET fechaActualizada = '".$fecha."', fechaInicio = '".$fecha."', resp = '".$rpt."', diasT = 0";
+			$sqlUs = "UPDATE incidentes SET fechaActualizada = '".$fecha."', fechaInicio = '".$fecha."', resp = '".$rpt."', diasT = 0 WHERE idCESH = '".$cre."'";
 			//echo $sqlU;
 			if(mysqli_query($con,$sqlUs)){
 				echo "Actualización Correcta";
@@ -780,7 +780,7 @@ if($opcion=="addSt"){
 			$dif = $fechac->diff($fechat);
 			//echo $dif->days.' dias';
 			$diff = $dif->days;
-			$sqlU = "UPDATE incidentes SET fechaActualizada = '".$fecha."', diasT = ".$diff;
+			$sqlU = "UPDATE incidentes SET fechaActualizada = '".$fecha."', diasT = ".$diff." WHERE idCESH = '".$cre."'";
 			//echo $sqlU;
 			if(mysqli_query($con,$sqlU)){
 				echo "Actualización Correcta";

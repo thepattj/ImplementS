@@ -474,9 +474,10 @@
                                                     <option value="RepresentanteT">Representante Técnico</option>
                                                     <option value="Administrativos">Administrativos</option>
                                                     <option value="Despachador">Despachador</option>
-                                                    <option value="Intendente/Mantenimiento">Intendente/Mantimiento</option>
+                                                    <option value="Intendente">Intendente</option>
+                                                    <option value="Mtto">Mantimiento</option>
                                                     <option value="Seguridad">Seguridad</option>
-                                                    <option value="Seguridad">Otro</option>
+                                                    <option value="Otro">Otro</option>
                                                 </select>
                                             </div>
                                         </div>

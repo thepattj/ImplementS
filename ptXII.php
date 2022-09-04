@@ -93,7 +93,25 @@
 </head>
 
 <body id="" style="background-image:url('images/backgroundp.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-    <!--[if lt IE 8]>
+    <!-- MODAL DE LISTADO DE EPP-->
+    <div class="modal fade" id="modalist12" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content" style="border-radius: 35px;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" style="background: #d58512;"> X </button>
+            </div>
+            <div class="modal-body">
+              <h2>Listado de revisión para:</h2>
+              <h3 id="12tipo"></h3>
+              <p id="lista"></p>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
@@ -792,13 +810,20 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="fm-checkbox"> <label> Normativa </label> </div>
                                 </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                <div class="col-lg-6 col-md-4 col-sm-4 col-xs-4">
                                     <div class="chosen-select-act fm-cmp-mg">
-                                        <select class="chosen" name="" id="normas">
-                                            <option id="" value="0" style="display: none;">Selecciona la NOM</option>
-                                            <option value=""></option>
+                                        <select class="chosen" name="" id="revisioNormativa">
+                                            <option value="0" style="display: none;">Selecciona la NOM</option>
+                                            <option value="9">Trabajos en altura (NOM-009-STPS-2011)</option>
+                                            <option value="22">Trabajos de electricidad (NOM-022-STPS-2015/NOM-029-STPS-2011)</option>
+                                            <option value="33">Trabajos en espacios confinados (NOM-033-STPS-2015)</option>
+                                            <option value="caliente">Trabajos en caliente o con fuentes que generen ignición.</option>
+                                            <option value="mtto">Mantenimiento en general.</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4">
+                                <button id="mostrarlistado" class="btn btn-info notika-btn-info" data-toggle="modal" data-target="#modalist12">Listado</button>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
 

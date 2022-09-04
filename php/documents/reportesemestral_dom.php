@@ -138,7 +138,7 @@
     //}
 
 
-    $control = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."' GROUP BY idCESH";
+    $control = "SELECT idCESH FROM dzbitacora WHERE idCESH = '".$id."'";
     $controlp = "SELECT idCESH FROM dzcambiop WHERE idCESH = '".$id."' GROUP BY idCESH";
     $controlt = "SELECT idCESH FROM dzcambiot WHERE idCESH = '".$id."' GROUP BY idCESH";
     $controlo = "SELECT idCESH FROM dzordentr WHERE idCESH = '".$id."' GROUP BY idCESH";
@@ -214,11 +214,13 @@
     $incidentes ="SELECT fechaInicio, fechaActualizada FROM incidentes WHERE idCESH = '".$id."' GROUP BY idCESH";
     $pt16res = mysqli_query($con, $incidentes);
     if($pt16res->num_rows > 0){
-        $fechainicio = $pt16res['fechaInicio'];
-        $fechafin = $pt16res['fechaActualizada'];
+        $tienept16 = 1;
         $succ = "LOGRADO";
         $razon = "esto mediante la implementación de todo los controles tanto operativos, técnicos y administrativos establecidos";
-        $tienept16 = 1;
+        while($filaIncidentes = $pt16res->fetch_assoc()){
+            $fechainicio = $filaIncidentes['fechaInicio'];
+            $fechafin = $filaIncidentes['fechaActualizada'];
+        }        
     }
 
     $informe ="SELECT idCESH FROM informe WHERE idCESH = '".$id."'";
@@ -820,7 +822,7 @@
                             <th>Reporte</th> <!-- (reporte 8.1) -->
                         </tr>
                         <?php
-                            $preinfo = "SELECT tipoSimulacro, fechaSimulacro, informeSimulacro FROM pre WHERE tipo = 'Informe' AND idCESH = '".$id."'";
+                            $preinfo = "SELECT tipoSimulacro, fechaSimulacro, informeSimulacro FROM pre WHERE tipo = 'reporte' AND idCESH = '".$id."'";
                             $resprein = mysqli_query($con, $preinfo);
                             if($resprein->num_rows > 0) {
                                 $n = 1;
@@ -1062,16 +1064,16 @@
 
 <?php
     $html=ob_get_clean();
-    echo $html;
+    //echo $html;
 
-    /*require_once '../../librerias/dompdf/autoload.inc.php';
+    require_once '../../librerias/dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
-    $dompdf = new Dompdf();*/
+    $dompdf = new Dompdf();
 
     //$dompdf->loadHtml("1");
-    /*$dompdf->loadHtml($html);
+    $dompdf->loadHtml($html);
     $dompdf->setPaper('letter'); //A4, landscape
     $dompdf->render();
-    $dompdf->stream('reporteSemestral_.pdf', array("attachment" => false));*/ //false para abrir, true para bajarse
+    $dompdf->stream('reporteSemestral_.pdf', array("attachment" => false)); //false para abrir, true para bajarse
 
 ?>
